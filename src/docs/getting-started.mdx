@@ -1,65 +1,46 @@
 ---
-title: 'Getting started'
+title: "Getting started"
 description: Learn how to get started with Rocket Docs.
 ---
 
-The best way to start is by using our starter:
+This is the getting started guide for WP Lemon. We will go through the requirements and how to get a new project started.
+
+## Requirements
+
+- Local development environment
+  - PHP >= 7.1
+  - Composer ([Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos))
+  - Latest LTS of Node.
+
+## Getting started
+
+1. Create new folder in project directory and name it as the main url of the new project but change the .tld (.nl/.com) to .local or .test
+2. Clone the GIT repository
 
 ```bash
-npx gatsby new rocket-docs https://github.com/rocketseat/gatsby-starter-rocket-docs
+git clone git@github.com:Studio-Lemon/wp-lemon-2.git .
 ```
 
-But, if you prefer, you can install and configure manually.
+3. Switch to the development branch.
 
 ```bash
-# Using Yarn:
-yarn add @rocketseat/gatsby-theme-docs
-
-# Using NPM:
-npm i @rocketseat/gatsby-theme-docs
+git checkout development
 ```
 
-## Theme Options
+4. Create a database for your project.
+5. Duplicate .env.example to .env in the project root and fill DB_NAME, DB_USER, DB_PASSWORD, WP_HOME and generate the AUTH KEYS
+6. Navigate to `/web/app/themes`, duplicate the `wp-lemon-child-example` folder and rename it accordingly to your project.
+7. Open to style.css in the new child theme and change the theme name. Change Author and Author URI to your liking.
+8. Open a new terminal, navigate to your new theme and run
 
-| Key        | Default | Required | Description                                                                                                                                                            |
-| ---------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| basePath   | /       | No       | Root url for all docs                                                                                                                                                  |
-| configPath | config  | No       | Location of config files                                                                                                                                               |
-| docsPath   | docs    | No       | The site description for SEO and social (FB, Twitter) tags                                                                                                             |
-| githubUrl  | -       | No       | The complete URL of your repository. For example: `https://github/rocketseat/gatsby-themes`                                                                            |
-| baseDir    | -       | No       | If your Gatsby site does not live in the root of your project directory/git repo, pass the subdirectory name here (ex: `docs`)                                         |
-| withMdx    | true    | No       | If necessary, you can add your own MDX options to the theme. To do so, make sure you turn this option to false and include `gatsby-plugin-mdx` on your `gatsby-config` |
-| branch     | master  | No       | Default branch of the repository                                                                                                                                       |
-
-## Example usage
-
-```js title=gatsby-config.js
-module.exports = {
-  siteMetadata: {
-    siteTitle: `@rocketseat/gatsby-theme-docs`,
-    defaultTitle: `@rocketseat/gatsby-theme-docs`,
-    siteTitleShort: `gatsby-theme-docs`,
-    siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
-    siteUrl: `https://rocketdocs.netlify.com`,
-    siteAuthor: `@rocketseat`,
-    siteImage: `/banner.png`,
-    siteLanguage: `en`,
-    themeColor: `#8257E6`,
-    basePath: `/`,
-  },
-  plugins: [
-    {
-      resolve: `@rocketseat/gatsby-theme-docs`,
-      options: {
-        basePath: `/`,
-        configPath: `src/config`,
-        docsPath: `src/docs`,
-        githubUrl: `https://github.com/rocketseat/gatsby-themes`,
-        baseDir: `examples/gatsby-theme-docs`,
-      },
-    },
-  ],
-};
+```bash
+yarn run bootstrap-project
 ```
 
-Once you have installed the dependencies you will need to create the [navigation](/usage/navigation) and [documentation](/usage/creating-docs) files.
+This will install composer in root, yarn install --no-dev in the parent theme and yarn install in the new child theme.
+
+7. In your child theme, navigate to `/resources/asset/` and duplicate `config.json.example` to `config.json` and change the `rootToThemePath` and `browserSyncURL`.
+
+8. Now, create a virtual host for your project and choose `/web` as your root
+9. Navigate to your development url and do the WordPress setup.
+10. Activate the new child theme.

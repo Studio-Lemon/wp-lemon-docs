@@ -1,17 +1,17 @@
 # Sidebar navigation
 
-- label: 'Introduction'
-  link: '/'
-- label: 'Getting started'
-  link: '/getting-started'
+- label: "Introduction"
+  link: "/"
+- label: "Getting started"
+  link: "/getting-started"
 - label: Usage
   items:
-    - label: 'Creating docs'
-      link: '/usage/creating-docs'
-    - label: 'Navigation'
-      link: '/usage/navigation'
-    - label: 'Shadowing'
-      link: '/usage/shadowing'
+    - label: "Creating docs"
+      link: "/usage/creating-docs"
+    - label: "Navigation"
+      link: "/usage/navigation"
+    - label: "Shadowing"
+      link: "/usage/shadowing"
 - label: More
   items:
     - label: FAQ
@@ -20,5 +20,9 @@
       link: /changelog
 - label: Community
   items:
-    - label: 'Github'
+    - label: "Github"
       link: https://github.com/rocketseat/gatsby-themes
+    - label: "Timber"
+      link: https://timber.github.io/docs/
+    - label: "Bedrock"
+      link: https://github.com/roots/bedrock

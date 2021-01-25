@@ -1,8 +1,9 @@
 module.exports = {
+  pathPrefix: "/wp-lemon-docs",
   siteMetadata: {
-    siteTitle: `Rocket Docs`,
-    defaultTitle: `Rocket Docs`,
-    siteTitleShort: `Rocket Docs`,
+    siteTitle: `WP Lemon Docs`,
+    defaultTitle: `WP Lemon Docs`,
+    siteTitleShort: `RWP Lemon Docs`,
     siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
     siteUrl: `https://rocketdocs.netlify.com`,
     siteAuthor: `@rocketseat`,
@@ -17,8 +18,8 @@ module.exports = {
       options: {
         configPath: `src/config`,
         docsPath: `src/docs`,
-        githubUrl: `https://github.com/rocketseat/gatsby-themes`,
-        baseDir: `examples/gatsby-theme-docs`,
+        githubUrl: `https://github.com/Studio-Lemon/wp-lemon-2`,
+        baseDir: ``,
       },
     },
     {
