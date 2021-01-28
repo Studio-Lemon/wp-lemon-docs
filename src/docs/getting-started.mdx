@@ -5,14 +5,7 @@ description: Learn how to get started with Rocket Docs.
 
 This is the getting started guide for WP Lemon. We will go through the requirements and how to get a new project started.
 
-## Requirements
-
-- Local development environment
-  - PHP >= 7.1
-  - Composer ([Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos))
-  - Latest LTS of Node.
-
-## Getting started
+## How to start a new project
 
 1. Create new folder in project directory and name it as the main url of the new project but change the .tld (.nl/.com) to .local or .test
 2. Clone the GIT repository
@@ -38,9 +31,26 @@ yarn run bootstrap-project
 ```
 
 This will install composer in root, yarn install --no-dev in the parent theme and yarn install in the new child theme.
+If you get prompted for filling in credentials, please contact Erik
 
 7. In your child theme, navigate to `/resources/asset/` and duplicate `config.json.example` to `config.json` and change the `rootToThemePath` and `browserSyncURL`.
-
 8. Now, create a virtual host for your project and choose `/web` as your root
 9. Navigate to your development url and do the WordPress setup.
-10. Activate the new child theme.
+10. Activate the new child theme. This will enable required plugins and set up the theme. You will be prompted with a message that no manifest file was found.
+11. Run a first built by running
+
+```bash
+yarn run development
+```
+
+12. Profit! You now have a new project set up to start developing a new awesome website.
+
+## Webpack commands / start development
+
+To start developing you can run some commands that will compile the assets. You will have to run these commands from your child theme folder.
+
+| command             | Description                                                                                          |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| yarn run dev        | Runs the development build process once.                                                             |
+| yarn run watch      | Start a browsersync session that automatically reloads your browser on file changes and injects css. |
+| yarn run production | Creates a build optimized for production. This build will be minimized and images will be optimized. |

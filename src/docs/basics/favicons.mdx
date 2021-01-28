@@ -1,0 +1,16 @@
+---
+title: Favicons
+description: Learn how to create custom favicons.
+---
+
+WP Lemon comes with a very obvious set of default favicons. This is to force you to create your own. Luckily it is very easy to create your own set. [Real Favicon Generator](https://realfavicongenerator.net/) you can create your own set of favicons.
+
+After generating your own set please plase them in `/web/app/themes/YOURCHILDTHEME/resources/favicons`.
+
+The following function
+
+```php
+WP_Lemon\Controllers\favicon_path()
+```
+
+checks if `site.webmanifest` is present in your new favicon folder. If so, your new generated files will be loaded instad of the default ones.

@@ -2,16 +2,20 @@
 
 - label: "Introduction"
   link: "/"
+- label: "Requirements"
+  link: "/requirements"
 - label: "Getting started"
   link: "/getting-started"
-- label: Usage
+- label: Basics
   items:
-    - label: "Creating docs"
-      link: "/usage/creating-docs"
-    - label: "Navigation"
-      link: "/usage/navigation"
-    - label: "Shadowing"
-      link: "/usage/shadowing"
+    - label: "Logo's"
+      link: "/basics/logos"
+    - label: "Favicons"
+      link: "/basics/favicons"
+- label: Styling
+  items:
+    - label: "Basic styling"
+      link: "/styling/basics"
 - label: More
   items:
     - label: FAQ
