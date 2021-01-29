@@ -1,0 +1,23 @@
+---
+title: Fonts
+description: Learn how to add custom fonts
+---
+
+When creating a new website you'll probably want to add your own fonts as well. You can do this in two ways.
+
+## Using an enqueue hook (external hosting)
+
+The first is to enqueue an external stylesheet by using the `wp_enqueue_scripts` and `enqueue_block_editor_assets` hooks in your child theme.
+
+## Add them to your assets (provide fonts locally).
+
+You might want to host the fonts locally for several reasons.
+
+## Add font-family value to variables
+
+When you've added your font you will now have to add the font variables in your `_variables.scss`. Read [basic styling](/basics/basic-styling) for more information about overwriting variables.
+
+```scss
+$base-font: "Lato", sans-serif;
+$secondary-font: "Noto Serif", serif;
+```

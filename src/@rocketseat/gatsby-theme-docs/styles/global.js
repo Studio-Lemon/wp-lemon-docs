@@ -307,6 +307,11 @@ export default function GlobalStyle() {
          content: 'php';
          background: #e8bd36;
        }
+
+       pre[class~='language-scss']::before {
+        content: 'scss';
+        background: #bf4080;
+      }
       `}
     />
   );
