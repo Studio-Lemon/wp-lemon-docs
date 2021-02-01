@@ -1,0 +1,67 @@
+---
+title: First deployment
+description: How to deploy WP_Lemon on a new host.
+---
+
+This chapter will cover the initial deployment of WP_lemon on a new host.
+You can read all about the hosting requirements [over here](/requirements).
+
+## Prerequisites
+
+- Setup a hosting plan that covers the basic requirements.
+- Secure host with SSL
+- Make sure required PHP modules are active
+- Vhost with root folder pointing to `/web`
+
+## Upload files (FTP deployment)
+
+Here you will find what files/folders you want to deploy to your hosting.
+
+> ⚠️
+> Make sure that you did a `yarn run production` build before starting your upload.
+
+```
+├── .env
+├── wp-cli.yml
+├── composer.json
+├── config
+├── vendor
+└── web
+    ├── app
+    │   ├── mu-plugins
+    │   ├── languages
+    │   ├── plugins
+    │   ├── themes
+    │   │    ├── child theme - do not upload dotfiles, yarn.lock, package.json, babel.config.json and the node_modules folder)
+    │   │    └── wp_lemon - do not upload dotfiles, yarn.lock, package.json, babel.config.json and the node_modules folder)
+    │   └── uploads
+    ├── wp-config.php
+    ├── index.php
+    └── wp
+```
+
+## Create/upload database
+
+After deploying the files you can make a full export of the database on your local or staging environment using the migrate db pro plugin. Make sure that you search/replace the correct url to ensure proper url redirects throughout the website. Create a database and matching mysql user/password. Upload the database via phpmyadmin or wp cli with the `wp db upload export-db-name.sql`.
+
+## Update .env file in root.
+
+In your .env file update:
+
+- DB_NAME
+- DB_USER
+- DB_PASSWORD
+- WP_ENV. Make sure to set it to staging or production accordingly.
+- WP_HOME
+- New set of salts
+
+## Checks
+
+The website should now be up and running. Make sure to check the following:
+
+- Child theme contains a dist folder with production build.
+- Website is added to maintenance dashboard
+- Make sure mail functionality is working as expected
+- SEO plugins are setup and active.
+- Google search console is actived
+- New websites added by submitting it to the Google index.

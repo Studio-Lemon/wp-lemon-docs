@@ -18,7 +18,7 @@
       link: "/basics/fonts"
 - label: Expand
   items:
-    - label: "Add blocks (todo)"
+    - label: "Add blocks"
       link: "/expand/add-blocks"
     - label: "Add posttypes/taxonomies (todo)"
       link: "/expand/add-posttypes"
@@ -28,6 +28,12 @@
       link: "/overwrite/twig-files"
     - label: "Overwrite styles (todo)"
       link: "/overwrite/twig-files"
+- label: Deployment
+  items:
+    - label: "Initial deploy"
+      link: "/deployment/initial-deploy"
+    - label: "Deploying updates"
+      link: "/deployment/updates"
 - label: More
   items:
     - label: FAQ

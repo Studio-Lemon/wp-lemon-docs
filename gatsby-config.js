@@ -1,11 +1,11 @@
 module.exports = {
   pathPrefix: "/wp-lemon-docs",
   siteMetadata: {
-    siteTitle: `WP Lemon Docs`,
-    defaultTitle: `WP Lemon Docs`,
+    siteTitle: `WP_Lemon Lemon Docs`,
+    defaultTitle: `WP_Lemon Docs`,
     siteTitleShort: `RWP Lemon Docs`,
-    siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
-    siteUrl: `https://rocketdocs.netlify.com`,
+    siteDescription: `Your go-to theme for creating good looking and lean websites`,
+    siteUrl: `https://studio-lemon.github.io/wp-lemon-docs/`,
     siteAuthor: `@rocketseat`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,

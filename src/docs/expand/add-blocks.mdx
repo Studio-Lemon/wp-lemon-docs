@@ -1,0 +1,122 @@
+---
+title: Add blocks
+description: How to add new blocks.
+---
+
+Sometimes you want to expand the capabilities of WP_lemon. Sometimes custom blocks are required.
+
+## Register block
+
+in you custom theme in `library/blocks` you'll find `_example.php`. What you want to do is duplicate this file. After that you want to overwrite the
+`Example_Block` class and active the class on the bottom of this file by uncommenting it. After that you can update the name, title, icon data. This file automatically gets loaded.
+
+```php
+namespace WP_Lemon\Child\Blocks;
+
+use HighGround\Bulldozer\BlockRenderer;
+
+/**
+ * Example block that can be copied for making extra blocks.
+ * Change the Example_Block class on rule 11 and below the class and uncomment the class call.
+ * Don't include the render callback in the block register since we add that in our main BlockRenderer abstract class.
+ *
+ * Follow the API standard of https://www.advancedcustomfields.com/resources/acf_register_block_type/
+ */
+class Example_Block extends BlockRenderer
+{
+   public function block_register(): array
+   {
+       $block = [
+         'name' => 'example', // searches for resources/views/blocks/example.twig
+         'title' => __('Example', 'wp-lemon'),
+         'description' => __('Show a banner with a still image in the background.', 'wp-lemon'),
+         'category' => 'wp-lemon-blocks', // default custom category or add new ones.
+         'icon' => 'desktop', // regular dashicons without the 'dashicon-' prefix
+         'keywords' => ['example', 'tag2', 'tag3'], // keywords to search blocks for.
+         'supports' => [
+            'align' => false
+         ]
+      ];
+      return $block;
+   }
+
+   /**
+    * Extend the base context of our block.
+    * With this function we can add for example a query or
+    * other custom content.
+    *
+    * @param array   $block      Holds the block data
+    * @return array  $context    Returns the array with the extra content that merges into the original block context.
+    */
+   public function block_context($context): array
+   {
+
+      return $context;
+   }
+}
+/**
+ * Enable the class
+ */
+//new Example_Block();
+
+```
+
+## Create twig file
+
+After registering the block you need to create a twig file to render the view of the block. in `resources/views/blocks/` you will find `example.twig`. You want to duplicate this file and make it have the same name as set in your php file.
+
+## Test block
+
+You can now add the block to a page and see if it works. Common things why the block doesn't work:
+
+- You forgot to uncomment the block register call in your PHP file.
+- You didn't change the classnames on all places.
+
+Once verified that the block is working you can continue developing your new block.
+
+## Develop the new block
+
+Every block is different but we will give some common examples on how to expand your block.
+
+### Block that displays an x amount of (custom)posts
+
+Take a look at the `news-recent.php` block in the parent theme. You will find a method block_context().
+When going through these lines you will find several notable things.
+
+```php
+ public function block_context($context): array
+   {
+      $amount = get_field('amount') ? get_field('amount') : 3;
+      $items = latest_items_query('news', $amount);
+      $context['items'] = $items;
+      $context['card_type'] = 'news';
+      $context['holder_classes'] = 'col-12 col-md-6 col-lg-4';
+      $message = __("You haven't added any news yet, so this block will be empty.", "wp-lemon");
+
+      if ($items->found_posts == 0) {
+         parent::compose_notification($message, 'warning');
+      }
+
+      return $context;
+   }
+```
+
+- wp_lemon comes with a set of predefined queries. Here we use latest_items_query() to get the lastest posts of a specific posttype
+- We have a card_type variable that defines what card type will be loaded.
+- We have a compose_notification method that will setup a notification inside the block when previewed in the backend.
+
+### Block that displays a post archive with load more button
+
+to do
+
+### Block with custom acf fields
+
+to do
+
+### Block with custom assets
+
+to do
+
+### Block that needs conditional modifier classes
+
+to do

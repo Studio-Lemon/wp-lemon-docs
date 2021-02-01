@@ -1,0 +1,24 @@
+---
+title: Update WP_lemon
+description: How to update WP_lemon
+---
+
+This chapter will cover how to update WP_lemon projects.
+
+> ⚠️
+> The update process will change in the future.
+
+## Update project locally
+
+1. Pull the development branch/merge development into your projects branch.
+2. Run `yarn run bootstrap-project` in the child theme.
+3. Make sure that your project runs locally.
+4. Run development build
+
+## Deploy update
+
+1. Upload config/vendor folder in projects root.
+2. Upload `lemon-blocks` plugin.
+3. Do a production build in your child theme
+4. Remove both wp-lemon and child theme folders from the server.
+5. Upload both wp-lemon and child theme folders
