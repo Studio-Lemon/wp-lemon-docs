@@ -8,9 +8,9 @@ Sometimes you want to expand the capabilities of WP_lemon. Sometimes custom bloc
 ## Register block
 
 in you custom theme in `library/blocks` you'll find `_example.php`. What you want to do is duplicate this file. After that you want to overwrite the
-`Example_Block` class and active the class on the bottom of this file by uncommenting it. After that you can update the name, title, icon data. This file automatically gets loaded.
+`Example_Block` class and activate the class on the bottom of this file by uncommenting it. After that you can update the name, title, icon data. This file automatically gets loaded.
 
-```php
+```php title=library/blocks/_example.php lineNumbers=true
 namespace WP_Lemon\Child\Blocks;
 
 use HighGround\Bulldozer\BlockRenderer;
@@ -67,7 +67,7 @@ After registering the block you need to create a twig file to render the view of
 
 ## Test block
 
-You can now add the block to a page and see if it works. Common things why the block doesn't work:
+You can now add the block to a page and see if it works. Common reasons why the block doesn't work:
 
 - You forgot to uncomment the block register call in your PHP file.
 - You didn't change the classnames on all places.
@@ -83,7 +83,7 @@ Every block is different but we will give some common examples on how to expand 
 Take a look at the `news-recent.php` block in the parent theme. You will find a method block_context().
 When going through these lines you will find several notable things.
 
-```php
+```php lineNumbers=true
  public function block_context($context): array
    {
       $amount = get_field('amount') ? get_field('amount') : 3;

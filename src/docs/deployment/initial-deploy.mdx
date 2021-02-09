@@ -9,7 +9,7 @@ You can read all about the hosting requirements [over here](/requirements).
 ## Prerequisites
 
 - Setup a hosting plan that covers the basic requirements.
-- Secure host with SSL
+- Secure host with SSL certificate
 - Make sure required PHP modules are active
 - Vhost with root folder pointing to `/web`
 
@@ -42,7 +42,7 @@ Here you will find what files/folders you want to deploy to your hosting.
 
 ## Create/upload database
 
-After deploying the files you can make a full export of the database on your local or staging environment using the migrate db pro plugin. Make sure that you search/replace the correct url to ensure proper url redirects throughout the website. Create a database and matching mysql user/password. Upload the database via phpmyadmin or wp cli with the `wp db upload export-db-name.sql`.
+After deploying the files you can make a full export of the database on your local or staging environment using the migrate db pro plugin. Make sure that you search/replace the correct url to ensure proper url redirects throughout the website. Create a database and matching mysql user/password. Upload the database via phpmyadmin or wp cli with the `wp db import export-db-name.sql`.
 
 ## Update .env file in root.
 
