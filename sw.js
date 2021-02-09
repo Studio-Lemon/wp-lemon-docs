@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-4408622665e5ef01dd9f.js"
+    "url": "webpack-runtime-d5b0d1da615127a846fb.js"
   },
   {
     "url": "framework-1bcdbcdd30f43763a25c.js"
@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "f0e45107-02a22ac72de90821f3f0.js"
   },
   {
-    "url": "app-84fd9f4d7c20a09de4d3.js"
+    "url": "app-5b10b9afddc4f08d4462.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "f721f588ceb4e3c53fb9cf24a6febf05"
+    "revision": "b90292136aa4042a8e8b17216b5a78ad"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"
@@ -51,14 +51,14 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "8021f6772c5e357705eda95fc50cb374"
+    "revision": "d7f638090938341df0ae8b621d7db2ca"
   },
   {
     "url": "polyfill-d0a90a918e39f7bd0bdc.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "ea852c9a2c9afdbf92876f0313e7baed"
+    "revision": "4cfb4ad746ed729c7370408be36ddc66"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -150,7 +150,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/wp-lemon-docs/app-84fd9f4d7c20a09de4d3.js`))) {
+  if (!resources || !(await caches.match(`/wp-lemon-docs/app-5b10b9afddc4f08d4462.js`))) {
     return await fetch(event.request)
   }
 
