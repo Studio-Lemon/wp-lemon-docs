@@ -9,7 +9,7 @@ module.exports = {
     siteAuthor: `@rocketseat`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,
-    themeColor: `#8257E6`,
+    themeColor: `#f7d600`,
     basePath: `/`,
   },
   plugins: [
@@ -18,15 +18,15 @@ module.exports = {
       options: {
         configPath: `src/config`,
         docsPath: `src/docs`,
-        githubUrl: `https://github.com/Studio-Lemon/wp-lemon-2`,
+        githubUrl: `https://github.com/Studio-Lemon/wp-lemon-docs`,
         baseDir: ``,
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Rocketseat Gatsby Themes`,
-        short_name: `RS Gatsby Themes`,
+        name: `WP_Lemon documentation`,
+        short_name: `WP_Lemon docs`,
         start_url: `/`,
         background_color: `#ffffff`,
         display: `standalone`,
