@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-7a29f311a1b50fda09cc.js"
+    "url": "webpack-runtime-7c25f70a2428b230a574.js"
   },
   {
     "url": "framework-1bcdbcdd30f43763a25c.js"
@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "f0e45107-02a22ac72de90821f3f0.js"
   },
   {
-    "url": "app-a6359823a2566df68ef5.js"
+    "url": "app-cd27d0f34a85ea7e5e9e.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "6106e6799f33dd1a82d9d14658b5337d"
+    "revision": "0525ce7497f5018f84e1d0efbe5bf783"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"
@@ -51,14 +51,14 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "9650911143b89615976d81cfe54c7fae"
+    "revision": "6364eb19b6d7f7dc17d7d1781f84cca4"
   },
   {
     "url": "polyfill-d0a90a918e39f7bd0bdc.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "9c1a1b97f0d01df4a2164dd4c399b029"
+    "revision": "4cfb4ad746ed729c7370408be36ddc66"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -145,12 +145,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/wp-lemon-docs`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-a6359823a2566df68ef5.js`))) {
+  if (!resources || !(await caches.match(`/wp-lemon-docs/app-cd27d0f34a85ea7e5e9e.js`))) {
     return await fetch(event.request)
   }
 
@@ -163,7 +163,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/wp-lemon-docs/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
