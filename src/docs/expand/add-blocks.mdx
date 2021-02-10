@@ -107,7 +107,51 @@ When going through these lines you will find several notable things.
 
 ### Block that displays a post archive with load more button
 
-to do
+Take a look at the `news-overview.php` block in the parent theme. You will again find a method block_context() that will query the data from the database and add it to the block context.
+
+```php lineNumbers=true
+   public function block_context($context): array
+   {
+      $items = archive_query('news', 6); // query the news posttype
+      $context['items'] = $items;
+      $context['nav'] = true; // show nav
+      $context['count'] = get_total_posts('news', count($items)); // get a count array that feeds information to the postholder.
+      $context['post_type'] = 'news'; // sets post type for the ajax calls.
+      $context['card_type'] = 'news'; // sets the twig partial to render the actual posts in the loop.
+      $context['holder_classes'] = 'col-12 col-md-6 col-lg-4'; // holder classes around the cards in the loop.
+
+      if (isset($this->fields['show_filter']) && $this->fields['show_filter'] == true) {
+         $context['show_filter'] = true;
+         $context['terms'] = get_terms('category', array('hide_empty' => true));
+      }
+
+      // add notification when no posts are found.
+      if ($items->found_posts == 0) {
+         parent::compose_notification(__('You haven\'t added any news yet, so this block will be empty.', 'wp-lemon'), 'warning');
+      }
+
+      return $context;
+   }
+```
+
+The linked `blocks/news-overview.twig` file will include `components/archive-loop.twig` that will display the initial posts and setup everything for receiving new posts via an ajax call.
+
+When reusing above code make sure to:
+
+- set the post type correctly
+- create a new card twig file
+- include the `components/archive-loop.twig` inside your twig file that is linked to your block.
+- Update the notice to inform the administrator/editors of the website when no posts are found of the posttype you want to query.
+- include the right functions in your file like so
+
+```php lineNumbers=true
+namespace WP_Lemon\Child\Blocks;
+
+use HighGround\Bulldozer\BlockRenderer;
+
+++ use function WP_Lemon\Controllers\archive_query;
+++ use function WP_Lemon\Controllers\get_total_posts;
+```
 
 ### Block with custom acf fields
 
