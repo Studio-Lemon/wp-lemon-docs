@@ -43,12 +43,12 @@
 - label: Learn more
   items:
     - label: "Timber"
-      link: https://timber.github.io/docs/
+      link: "https://timber.github.io/docs/"
     - label: "Bedrock"
-      link: https://github.com/roots/bedrock
+      link: "https://github.com/roots/bedrock"
     - label: "Bootstrap"
-      link: https://getbootstrap.com/docs/4.6/getting-started/introduction/
+      link: "https://getbootstrap.com/docs/4.6/getting-started/introduction/"
 - label: Docs software
   items:
     - label: "Github"
-      link: https://github.com/rocketseat/gatsby-themes
+      link: "https://github.com/rocketseat/gatsby-themes"
