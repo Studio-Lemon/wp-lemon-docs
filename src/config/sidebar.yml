@@ -27,7 +27,7 @@
     - label: "Overwrite twig files (todo)"
       link: "/overwrite/twig-files"
     - label: "Overwrite styles (todo)"
-      link: "/overwrite/twig-files"
+      link: "/overwrite/styles"
 - label: Deployment
   items:
     - label: "Initial deploy"
