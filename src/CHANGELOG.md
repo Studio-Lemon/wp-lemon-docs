@@ -1,21 +1,47 @@
+### 2.0.10:
+
+_Release Date - 16 february 2021_
+
+-   ✨ **Enhanced**
+    -   Added 3rem padding above fluentform blocks for better content low
+    -   card-wrap.twig now has a new way to add classes. Use the variable (array) extra_card_classes to add more classes to the block
+    -   Updated soon to be deprecated Timer method
+-   🐛 **Bugs Fixed**
+    -   Removed extra padding when adding a container inside a container
+    -   Text in editor now renders 100%
+    -   img-container block now displays proper background color in editor
+    -   Removed double padding inside image container block
+    -   Block appender inside container block now aligns better
+    -   Background color on banner block now shows again
+-   💡 **Newly added**
+    -   Added: Generic content card
+    -   Ability to define block patterns in parent theme
+    -   First two block patterns added
+        -   Container with heading, text and form
+        -   3 Columns with the new generic cards inside them
+    -   Added: ability to add a video background to the banner block
+-   🌐 **Updated Dutch translation**
+
 ### 2.0.9:
-*Release Date - 15 februari 2021*
--  ✨ **Enhanced**
-    - better package.json defaults
-    - Banner now has a larger min-height
-    - $fancy-list-mb has now a more sane default value
-    - Removed bootstrap dropdown js to remove popper.js from bundle
-    - Added noreferer to external link in footer
-    - Better _example files for compat with upcoming block creation tool
-- 🐛 **Bugs Fixed**
-    - footer widgets are now always full width
-    - Version is now false in the enqueue hooks
-    - Fixed invalid color in head.twig
-    - Fixed favicon path containing two slashes
-    - Fixed paths to favicons in site.webmanifest
-    - Activate lemon-blocks on activation of theme
-- 💡 **Newly added**
-    - Added bundle analyzer to get a grid on bundle sizes
+
+_Release Date - 15 february 2021_
+
+-   ✨ **Enhanced**
+    -   better package.json defaults
+    -   Banner now has a larger min-height
+    -   $fancy-list-mb has now a more sane default value
+    -   Removed bootstrap dropdown js to remove popper.js from bundle
+    -   Added noreferer to external link in footer
+    -   Better \_example files for compat with upcoming block creation tool
+-   🐛 **Bugs Fixed**
+    -   footer widgets are now always full width
+    -   Version is now false in the enqueue hooks
+    -   Fixed invalid color in head.twig
+    -   Fixed favicon path containing two slashes
+    -   Fixed paths to favicons in site.webmanifest
+    -   Activate lemon-blocks on activation of theme
+-   💡 **Newly added**
+    -   Added bundle analyzer to get a grid on bundle sizes
 
 ### 2.0.8:
 
