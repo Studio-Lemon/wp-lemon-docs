@@ -1,3 +1,11 @@
+### 2.0.11:
+
+_Release Date - 17 february 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed card link and title on regular posttype grids.
+    -   Updated singular name of news.
+
 ### 2.0.10:
 
 _Release Date - 16 february 2021_
