@@ -40,6 +40,8 @@
       link: /faq
     - label: Changelog
       link: /changelog
+    - label: Presskit
+      link: /presskit
 - label: Learn more
   items:
     - label: "Timber"
