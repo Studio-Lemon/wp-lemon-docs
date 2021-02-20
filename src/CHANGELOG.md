@@ -1,3 +1,23 @@
+### 2.1.0:
+
+_Release Date - 20 february 2021_
+
+-   💡 **Newly added**
+    -   Added: First version of licence system. The system doesn't take action yet when no licence is present. This will come in later versions.
+    -   Added: Block style php file in `lib/models/register-block-styles.php` where native block styles are registered.
+    -   Added: `font-weight: $base-font-weight;` variable to set the default font weight in your child-theme
+    -   Updated default favicons and logo for wp-lemon
+    -   Added: two new block patterns.
+-   ✨ **Enhanced**
+
+    -   Better variables file in both parent and child themes
+
+-   🐛 **Bugs Fixed**
+    -   Removed unused css partials.
+    -   Removed rem calculations so 2rem would be 20px. This caused issues in the backend.
+    -   When changes are made in the customizer they will show up instantly instead after page load.
+-   🌐 **Updated Dutch translation**
+
 ### 2.0.11:
 
 _Release Date - 17 february 2021_
