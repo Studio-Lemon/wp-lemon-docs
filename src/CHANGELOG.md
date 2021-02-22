@@ -1,3 +1,17 @@
+### 2.1.1:
+
+_Release Date - 22 february 2021_
+
+-   ✨ **Enhanced**
+
+    -   Theme font size support is now in REM.
+    -   Updated theme screenshot
+
+-   🐛 **Bugs Fixed**
+    -   Text in footer now has a consistent line height.
+    -   Fixed rare case where webp filter would prefix image urls with home path.
+-   🌐 **Updated Dutch translation**
+
 ### 2.1.0:
 
 _Release Date - 20 february 2021_
