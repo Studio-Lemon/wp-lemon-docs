@@ -1,3 +1,11 @@
+### 2.1.2:
+
+_Release Date - 23 february 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed contact bar showing notification when there was no need.
+    -   Updated block pattern for generic content card and removed button from block template.
+
 ### 2.1.1:
 
 _Release Date - 22 february 2021_
