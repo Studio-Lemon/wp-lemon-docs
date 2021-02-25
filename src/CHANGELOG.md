@@ -1,3 +1,23 @@
+### 2.1.3:
+
+_Release Date - 25 february 2021_
+
+-   ✨ **Enhanced**
+
+    -   Bump dependencies
+    -   Better contact-bar styling and backend features
+    -   New way icons are added to the theme.
+    -   Map block now scales better
+    -   Styled native pullquote block
+    -   Styled native blockquote block
+    -   Better person card styling
+    -   Rework of customizer options
+    -   Added 404 page settings in customizer
+
+-   🐛 **Bugs Fixed**
+    -   lazyload fix for iframes
+    -   Added margin underneath content header
+
 ### 2.1.2:
 
 _Release Date - 23 february 2021_
