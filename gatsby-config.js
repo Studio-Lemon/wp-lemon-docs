@@ -1,12 +1,12 @@
 module.exports = {
   pathPrefix: "/wp-lemon-docs",
   siteMetadata: {
-    siteTitle: `WP_Lemon Lemon Docs`,
-    defaultTitle: `WP_Lemon Docs`,
-    siteTitleShort: `RWP Lemon Docs`,
+    siteTitle: `wp-lemon Docs`,
+    defaultTitle: `wp-lemon Docs`,
+    siteTitleShort: `wp-lemon Docs`,
     siteDescription: `Your go-to theme for creating good looking and lean websites`,
     siteUrl: `https://studio-lemon.github.io/wp-lemon-docs/`,
-    siteAuthor: `@rocketseat`,
+    siteAuthor: `@studiolemon`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,
     themeColor: `#f7d600`,
@@ -25,8 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `WP_Lemon documentation`,
-        short_name: `WP_Lemon docs`,
+        name: `wp-lemon documentation`,
+        short_name: `wp-lemon docs`,
         start_url: `/`,
         background_color: `#ffffff`,
         display: `standalone`,
