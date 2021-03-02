@@ -1,3 +1,27 @@
+### 2.2.0:
+
+_Release Date - 02 march 2021_
+
+-   💡 **Newly added**
+    -   Added hooks in the templates for theme developers to hook into.
+    -   404 pages are now manageable via the customizer
+    -   You can now set custom archive pages via the customizer.
+    -   Custom archive pages are now active in the menu when on a single item of that archive page.
+    -   Linktree alternative. See the linktree page template.
+    -   Added back navigation in single posts.
+-   ✨ **Enhanced**
+
+    -   Single.twig improvements to queries.
+    -   Complete rework of the customizer. You can now **uninstall** kirki plugin.
+
+-   🐛 **Bugs Fixed**
+    -   Fixed alignment in media/text block
+    -   Widgets now have the same fontsize as their parents.
+    -   Fixed issue where footer and header nav would show up when no nav was set on that location.
+    -   Fixed a bug where the generic card would not have a valid link.
+    -   Fixed a bug that prevented custom font sizes to show up in the generic card.
+-   🌐 **Updated Dutch translation**
+
 ### 2.1.3:
 
 _Release Date - 25 february 2021_
