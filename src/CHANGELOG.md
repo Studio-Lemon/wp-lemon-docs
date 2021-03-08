@@ -1,4 +1,28 @@
+### 2.2.2:
+
+_Release Date - 02 march 2021_
+
+-   💡 **Newly added**
+
+-   ✨ **Enhanced**
+
+-   🐛 **Bugs Fixed**
+    -   fix e-mail icon not showing up in contact bar block
+    -   Remove unused customizer fields.
+    -   Fix archive query bug when using categories.
+    -   Fall back to default bootstrap navwalker.
+    -   Sevaral html fixes for ie11
+    -   Proper image sizes now gets loaded in crd-wrap.twig
+    -   Customizer analytics fix.
+
 ### 2.2.1:
+
+_Release Date - 02 march 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fix customizer loading
+
+### 2.2.0:
 
 _Release Date - 02 march 2021_
 
