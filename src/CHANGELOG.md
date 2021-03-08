@@ -2,6 +2,13 @@
 
 _Release Date - 02 march 2021_
 
+-   ✨ **Enhanced**
+    -   better image sizes compat for picture macro.
+
+### 2.2.2:
+
+_Release Date - 02 march 2021_
+
 -   💡 **Newly added**
 
 -   ✨ **Enhanced**
