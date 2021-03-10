@@ -1,6 +1,17 @@
-### 2.2.2:
+### 2.2.4:
 
-_Release Date - 02 march 2021_
+_Release Date - 10 march 2021_
+
+-   ✨ **Enhanced**
+    -   You are now able to overwrite the card title
+    -   You can now completely disable a picture inside a card.
+    -   Better latest items query
+    -   Archive id is now overwriteable in archive-loop.twig
+    -   Enhanced ajax archive
+
+### 2.2.3:
+
+_Release Date - 08 march 2021_
 
 -   ✨ **Enhanced**
     -   better image sizes compat for picture macro.
