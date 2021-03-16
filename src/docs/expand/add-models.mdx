@@ -1,0 +1,48 @@
+---
+title: Add models
+description: How to add post types and taxonomies.
+---
+
+In the [MVC design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) the M stands for Model. As Wikipedia puts it:
+
+> The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. It  directly manages the data, logic and rules of the application.
+
+Models live in the `library/models` folder of your child theme. You can generate them by using generatewp
+
+| Type             | Description                                                                                          |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| Post type       | create a file named cpt-YOURPOSTTYPE.PHP and add generate code via [this website](https://generatewp.com/post-type/)                                                      |
+| Taxonomy     | create a file named tax-YOURTAXONOMY.PHP add generate code via [this website](https://generatewp.com/taxonomy/) |
+
+Don't forget to add the right namespace and namespace the action.
+
+```php 
+namespace WP_Lemon\Child\Models;
+...
+...
+add_action('init', __NAMESPACE__ . '\\cpt_example', 0);
+```
+
+## Post type custom page archives
+We've added a functionality so that pages can be labeled as archive pages for single-posts of any post type as long as you add support for it in your post type declaration.
+
+
+### Add support in post type
+Add the maybe_has_archive_page line to your model and change the `get_theme_mod()` accordingly to your post type name as seen on the last line of the example.
+
+```php title=library/models/your-cpt.php highlight={6}
+namespace WP_Lemon\Child\Models;
+
+    // Add
+    $args = [
+        ...
+        'maybe_has_archive_page' => get_theme_mod('archive_mycustomposttype') ? get_theme_mod('archive_mycustomposttype') : true,
+    ];
+
+    register_post_type('mycustomposttype', $args);
+```
+
+### Select page as archive page in the customizer.
+You can now navigate to the customizer > wp-lemon > Archives and posttypes
+
+Your new post type will show up in a new dropdown field. Please select or create a page that serves as the archive for your new post type.

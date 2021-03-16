@@ -10,8 +10,8 @@
   items:
     - label: "Logo's"
       link: "/basics/logos"
-    - label: "Favicons"
-      link: "/basics/favicons"
+    - label: "Favicons and manifest"
+      link: "/basics/favicons-manifest"
     - label: "Basic styling"
       link: "/basics/basic-styling"
     - label: "Fonts"
@@ -20,8 +20,8 @@
   items:
     - label: "Add blocks"
       link: "/expand/add-blocks"
-    - label: "Add posttypes/taxonomies (todo)"
-      link: "/expand/add-posttypes"
+    - label: "Add posttypes/taxonomies"
+      link: "/expand/add-models"
 - label: Overwrite
   items:
     - label: "Overwrite twig files (todo)"

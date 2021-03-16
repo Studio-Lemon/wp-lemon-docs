@@ -1,9 +1,9 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+import { useTheme, Global, css } from '@emotion/react';
 
 export default function GlobalStyle() {
   const theme = useTheme();
+
   return (
     <Global
       styles={css`
@@ -16,7 +16,6 @@ export default function GlobalStyle() {
         }
 
         body {
-          color: green;
           font-size: 16px;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
             Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -101,9 +100,13 @@ export default function GlobalStyle() {
           p {
             padding: 1rem;
             border-radius: 5px;
-            background: ${theme.colors.shape};
-            color: ${theme.colors.text};
+            background: ${theme.colors.components.blockquote.background};
+            color: ${theme.colors.components.blockquote.text};
             margin: 0;
+
+            a {
+              color: ${theme.colors.components.blockquote.text};
+            }
           }
         }
 
