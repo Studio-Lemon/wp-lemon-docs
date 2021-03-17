@@ -1,9 +1,11 @@
-### 2.3.1:
+### 2.3.1 - 2.3.2:
 
 _Release Date - 17 march 2021_
 
 -   🐛 **Bugs Fixed**
     -   Fixed a few w3.org errors and warnings
+    -   Fix ie11 bug
+    -   Add padding to full alligned media-text blocks back
 
 ### 2.3.0:
 
