@@ -1,13 +1,21 @@
+### 2.3.1:
+
+_Release Date - 17 march 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed a few w3.org errors and warnings
+
 ### 2.3.0:
 
 _Release Date - 16 march 2021_
 
 -   💡 **Newly added**
-    - Added a new way to add favicons and generate a manifest. See [updated docs](https://studio-lemon.github.io/wp-lemon-docs/basics/favicons-manifest)
+    -   Added a new way to add favicons and generate a manifest. See [updated docs](https://studio-lemon.github.io/wp-lemon-docs/basics/favicons-manifest)
 -   🐛 **Bugs Fixed**
-    - The curl call to get the latest version of the theme is now updated.
-    - Better alignment of wide media-text blocks
-    - Better font scaling.
+    -   The curl call to get the latest version of the theme is now updated.
+    -   Better alignment of wide media-text blocks
+    -   Better font scaling.
+
 ### 2.2.4:
 
 _Release Date - 10 march 2021_
@@ -29,7 +37,6 @@ _Release Date - 08 march 2021_
 ### 2.2.2:
 
 _Release Date - 02 march 2021_
-
 
 -   🐛 **Bugs Fixed**
     -   fix e-mail icon not showing up in contact bar block
