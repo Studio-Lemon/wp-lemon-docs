@@ -1,3 +1,11 @@
+### 2.4.2:
+
+_Release Date - 23 march 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Flex bugs in ie11
+    -   fixed bug with undefined localstorage setting.
+
 ### 2.4.0:
 
 _Release Date - 23 march 2021_
