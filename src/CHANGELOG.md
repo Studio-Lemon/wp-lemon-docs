@@ -1,3 +1,20 @@
+### 2.4.0:
+
+_Release Date - 23 march 2021_
+
+-   ✨ **Enhanced**
+    -   Using rem values for font sizes instead of px
+    -   Removed site icon field from customizer
+    -   Updated iconfont
+-   💡 **Newly added**
+    -   A11y
+        -   Skiplinks
+        -   Contrastmode
+        -   Reduced motion stylesheet
+        -   Larger font size toggle
+    -   Slide block
+    -   Add arrow button variant
+
 ### 2.3.1 - 2.3.3:
 
 _Release Date - 17 march 2021_
