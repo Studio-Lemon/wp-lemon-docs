@@ -1,3 +1,15 @@
+### 2.4.3:
+
+_Release Date - 12 april 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Language switcher shown twice.
+    -   Minor bugfixes
+-   ✨ **Enhanced**
+    -   Code validation & documentation
+    -   Own dropdown function for smaller js build.
+    -   Sanatize Ajax calls
+
 ### 2.4.2:
 
 _Release Date - 23 march 2021_
