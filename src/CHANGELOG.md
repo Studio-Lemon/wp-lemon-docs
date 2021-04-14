@@ -1,3 +1,12 @@
+### 2.4.4:
+
+_Release Date - 14 april 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Added way to skip smoothscroll by adding class
+    -   Removed important padding from nav links
+    -   removed console.log from function
+
 ### 2.4.3:
 
 _Release Date - 12 april 2021_
