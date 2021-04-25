@@ -39,3 +39,11 @@ $icons->theme_color      = '#f7d600';          // must be hex color
 ```
 
 This way you can overwrite the short name, background color and theme color. See [Mozilla docs for more info](https://developer.mozilla.org/en-US/docs/Web/Manifest).
+
+## Update prior to 2.4.5
+The site icon class has been moved to Bulldozer since it's a universal class across all our projects. Please update the use statement in your site setup after you ran composer update in your root dir.
+
+```php title=library/child-setup.php lineNumbers=true
+-- use WP_Lemon\Classes\Site_Icons;
+++ use HighGround\Bulldozer\Site_Icons;
+```
