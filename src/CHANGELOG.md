@@ -1,3 +1,14 @@
+### 2.4.5:
+
+_Release Date - 25 april 2021_
+
+-   ⛏️ **Breaking**
+    -   Moved Site_icons class to Bulldozer. [Please check docs](https://studio-lemon.github.io/wp-lemon-docs/basics/favicons-manifest) on how to update.
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug where the nav items would be too hight in mobile menu.
+    -   Minor archive fixes
+-   📦 **Updated dependencies**
+
 ### 2.4.4:
 
 _Release Date - 14 april 2021_
