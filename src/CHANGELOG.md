@@ -1,3 +1,10 @@
+### 2.4.6:
+
+_Release Date - 3 may 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Minor javascript fixes
+
 ### 2.4.5:
 
 _Release Date - 25 april 2021_
