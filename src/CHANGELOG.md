@@ -1,3 +1,15 @@
+### 2.5.0:
+
+_Release Date - 10 may 2021_
+
+-   💡 **Newly added**
+    -   New Generic Ajax call class added which can be extended for your specific needs.
+-   🐛 **Bugs Fixed**
+    -   Fixed smootscroll issue where links wouldn't work if navigated to other page.
+    -   Updated example posttype to have proper properties
+-   📦 **Updated dependencies**
+-   🌐 **Updated Dutch translation**
+
 ### 2.4.6:
 
 _Release Date - 3 may 2021_
