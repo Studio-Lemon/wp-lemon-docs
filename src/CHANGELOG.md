@@ -1,3 +1,17 @@
+### 2.6.0:
+
+_Release Date - 12 may 2021_
+
+-   💡 **Newly added**
+    -   New generic post type block added.
+    -   Add fallback card if no specific content card is found.
+    -   Added notification when Ajax query is empty.
+    -   Added a new way to mark blocks as deprecated.
+-   🐛 **Bugs Fixed**
+    -   Fixes to new ajax class.
+-   ⛏️ **Breaking**
+    -   Older custom blocks need to add the add_fields() method. See the example block in the parent theme.
+
 ### 2.5.0:
 
 _Release Date - 10 may 2021_
