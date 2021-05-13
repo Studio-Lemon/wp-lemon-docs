@@ -1,13 +1,129 @@
+### 2.6.1:
+
+_Release Date - 13 may 2021_
+
+-   ✨ **Enhanced**
+    -   First blocks migrated from json fields to php fields.
+        -   FAQ block
+        -   Generic content block
+        -   Image container block
+        -   Slider block
+        -   Map block
+    -   Improvements on cards classes.
+-   🐛 **Bugs Fixed**
+    -   Fix regression in block context.
+
+### 2.6.0:
+
+_Release Date - 12 may 2021_
+
+-   💡 **Newly added**
+    -   New generic post type block added.
+    -   Add fallback card if no specific content card is found.
+    -   Added notification when Ajax query is empty.
+    -   Added a new way to mark blocks as deprecated.
+-   🐛 **Bugs Fixed**
+    -   Fixes to new ajax class.
+-   ⛏️ **Breaking**
+    -   Older custom blocks need to add the add_fields() method. See the example block in the parent theme.
+    -   _block_ context used inside gutenberg blocks has been renamed to attributes.
+
+### 2.5.0:
+
+_Release Date - 10 may 2021_
+
+-   💡 **Newly added**
+    -   New Generic Ajax call class added which can be extended for your specific needs.
+-   🐛 **Bugs Fixed**
+    -   Fixed smootscroll issue where links wouldn't work if navigated to other page.
+    -   Updated example posttype to have proper properties
+-   📦 **Updated dependencies**
+-   🌐 **Updated Dutch translation**
+
+### 2.4.6:
+
+_Release Date - 3 may 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Minor javascript fixes
+
+### 2.4.5:
+
+_Release Date - 25 april 2021_
+
+-   ⛏️ **Breaking**
+    -   Moved Site_icons class to Bulldozer. [Please check docs](https://studio-lemon.github.io/wp-lemon-docs/basics/favicons-manifest) on how to update.
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug where the nav items would be too hight in mobile menu.
+    -   Minor archive fixes
+-   📦 **Updated dependencies**
+
+### 2.4.4:
+
+_Release Date - 14 april 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Added way to skip smoothscroll by adding class
+    -   Removed important padding from nav links
+    -   removed console.log from function
+
+### 2.4.3:
+
+_Release Date - 12 april 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Language switcher shown twice.
+    -   Minor bugfixes
+-   ✨ **Enhanced**
+    -   Code validation & documentation
+    -   Own dropdown function for smaller js build.
+    -   Sanatize Ajax calls
+
+### 2.4.2:
+
+_Release Date - 23 march 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Flex bugs in ie11
+    -   fixed bug with undefined localstorage setting.
+
+### 2.4.0:
+
+_Release Date - 23 march 2021_
+
+-   ✨ **Enhanced**
+    -   Using rem values for font sizes instead of px
+    -   Removed site icon field from customizer
+    -   Updated iconfont
+-   💡 **Newly added**
+    -   A11y
+        -   Skiplinks
+        -   Contrastmode
+        -   Reduced motion stylesheet
+        -   Larger font size toggle
+    -   Slide block
+    -   Add arrow button variant
+
+### 2.3.1 - 2.3.3:
+
+_Release Date - 17 march 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed a few w3.org errors and warnings
+    -   Fix ie11 bug
+    -   Add padding to full alligned media-text blocks back
+
 ### 2.3.0:
 
 _Release Date - 16 march 2021_
 
 -   💡 **Newly added**
-    - Added a new way to add favicons and generate a manifest. See [updated docs](https://studio-lemon.github.io/wp-lemon-docs/basics/favicons-manifest)
+    -   Added a new way to add favicons and generate a manifest. See [updated docs](https://studio-lemon.github.io/wp-lemon-docs/basics/favicons-manifest)
 -   🐛 **Bugs Fixed**
-    - The curl call to get the latest version of the theme is now updated.
-    - Better alignment of wide media-text blocks
-    - Better font scaling.
+    -   The curl call to get the latest version of the theme is now updated.
+    -   Better alignment of wide media-text blocks
+    -   Better font scaling.
+
 ### 2.2.4:
 
 _Release Date - 10 march 2021_
@@ -29,7 +145,6 @@ _Release Date - 08 march 2021_
 ### 2.2.2:
 
 _Release Date - 02 march 2021_
-
 
 -   🐛 **Bugs Fixed**
     -   fix e-mail icon not showing up in contact bar block
