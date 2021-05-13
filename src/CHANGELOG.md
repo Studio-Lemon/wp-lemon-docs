@@ -1,3 +1,18 @@
+### 2.6.1:
+
+_Release Date - 13 may 2021_
+
+-   ✨ **Enhanced**
+    -   First blocks migrated from json fields to php fields.
+        -   FAQ block
+        -   Generic content block
+        -   Image container block
+        -   Slider block
+        -   Map block
+    -   Improvements on cards classes.
+-   🐛 **Bugs Fixed**
+    -   Fix regression in block context.
+
 ### 2.6.0:
 
 _Release Date - 12 may 2021_
@@ -11,6 +26,7 @@ _Release Date - 12 may 2021_
     -   Fixes to new ajax class.
 -   ⛏️ **Breaking**
     -   Older custom blocks need to add the add_fields() method. See the example block in the parent theme.
+    -   _block_ context used inside gutenberg blocks has been renamed to attributes.
 
 ### 2.5.0:
 
