@@ -1,4 +1,4 @@
-### 2.6.2:
+### 2.6.3:
 
 _Release Date - 17 may 2021_
 
@@ -17,6 +17,7 @@ _Release Date - 17 may 2021_
     -   Fixes duplicate helper function issue in Bulldozer. Duplicated function calls are removed and migrated.
     -   Several typos in documentation fixed.
     -   If querieing an empty category in a Ajax call a proper notification pops up.
+    -   Fixed large padding in text-banner variant.
 
 ### 2.6.1:
 
