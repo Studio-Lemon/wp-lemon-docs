@@ -1,3 +1,23 @@
+### 2.6.2:
+
+_Release Date - 17 may 2021_
+
+-   💡 **Newly added**
+    -   Introduced a new function to check whether the correct version of Bulldozer is installed.
+    -   Introduced a new post type argument to enable the node-block.
+    -   Introduced two new customizer fields for linking to the contact and terms/conditions page.
+-   ✨ **Enhanced**
+
+    -   Blocks migrated from json fields to php fields.
+        -   Banner block
+        -   Deprecation notice in block names in the block inserter as well.
+
+-   🐛 **Bugs Fixed**
+    -   FAQ block now aligns the question better.
+    -   Fixes duplicate helper function issue in Bulldozer. Duplicated function calls are removed and migrated.
+    -   Several typos in documentation fixed.
+    -   If querieing an empty category in a Ajax call a proper notification pops up.
+
 ### 2.6.1:
 
 _Release Date - 13 may 2021_
