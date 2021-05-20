@@ -10,10 +10,10 @@
 <url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/basics/favicons-manifest</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/basics/fonts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/basics/logos</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/deployment/initial-deploy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/deployment/updates</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/expand/add-blocks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/expand/add-models</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/deployment/initial-deploy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/overwrite/styles</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://studio-lemon.github.io/wp-lemon-docs/wp-lemon-docs/overwrite/twig-files</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
