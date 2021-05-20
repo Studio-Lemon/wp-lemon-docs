@@ -1,3 +1,21 @@
+### 2.7.0:
+
+_Release Date - 20 may 2021_
+
+-   ⛏️ **Breaking**
+    -   Please update BaseBuilder to version 1.4 by setting ^1.4.0 in in your package.json and run yarn install.
+    -   Set the new scssSettingsFolder in your config.json. For older projects this is still "scssSettingsFolder": "1_common/",
+-   💡 **Newly added**
+    -   Generic content card can now have a background color.
+-   ✨ **Enhanced**
+
+    -   node-overview can now toggle excerpts
+    -   SCSS folder structure overhaul for both parent and child theme.
+
+-   🐛 **Bugs Fixed**
+    -   Fix to font size variable
+    -   Sliders work again
+
 ### 2.6.3:
 
 _Release Date - 17 may 2021_
