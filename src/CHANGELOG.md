@@ -1,3 +1,11 @@
+### 2.7.1:
+
+_Release Date - 21 may 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Lemon Blocks - Fixed an issue where no Block appender was added when blocks where already present. Please upload the lemon-blocks plugin manually.
+    -   SVGs had a margin in last release. This margin has now been removed for better compatibility with the editor.
+
 ### 2.7.0:
 
 _Release Date - 20 may 2021_
