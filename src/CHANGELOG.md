@@ -1,4 +1,4 @@
-### 2.7.2:
+### 2.7.2 - 2.7.3:
 
 _Release Date - 22 may 2021_
 
@@ -6,6 +6,7 @@ _Release Date - 22 may 2021_
     -   Fluentforms multipage form progress bar now has the primary color of the child theme.
     -   Fixed a minor backend issue where the block inserter would interfere with center and right aligned blocks.
     -   Fixed an issue where images inside media-text blocks weren't full height.
+    -   Other minor css fixes.
 
 ### 2.7.1:
 
