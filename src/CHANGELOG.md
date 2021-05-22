@@ -1,3 +1,12 @@
+### 2.7.2:
+
+_Release Date - 22 may 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fluentforms multipage form progress bar now has the primary color of the child theme.
+    -   Fixed a minor backend issue where the block inserter would interfere with center and right aligned blocks.
+    -   Fixed an issue where images inside media-text blocks weren't full height.
+
 ### 2.7.1:
 
 _Release Date - 21 may 2021_
@@ -11,8 +20,8 @@ _Release Date - 21 may 2021_
 _Release Date - 20 may 2021_
 
 -   ⛏️ **Breaking**
-    -   Please update BaseBuilder to version 1.4 by setting ^1.4.0 in in your package.json and run yarn install.
-    -   Set the new scssSettingsFolder in your config.json. For older projects this is still "scssSettingsFolder": "1_common/",
+    -   Please update BaseBuilder to version 1.4.1 by setting ^1.4.1 in in your package.json and run yarn install.
+    -   Set the new scssSettingsFolder in your config.json. For older projects this is still `"scssSettingsFolder": "1_common/",` don't forget to add this snippet to your example config as well for future reference.
 -   💡 **Newly added**
     -   Generic content card can now have a background color.
 -   ✨ **Enhanced**
