@@ -1,3 +1,20 @@
+### 2.8.0:
+
+_Release Date - 24 may 2021_
+
+-   ⛏️ **Breaking**
+    -   `enable_query_block` in post type definitions has been replaces by two new `enable_overview_block` and `enable_latest_block` options. This way you have granular control which blocks you want per posttype. Please update your custom post types on child theme level accordingly.
+-   🐛 **Bugs Fixed**
+    -   Fluent forms pagination bar now really has the proper color.
+    -   maybe_has_archive_page is now false when no customizer page is set.
+-   💡 **Newly added**
+    -   New latest nodes block added. This will give an overview of the latest items of a specific post type.
+    -   node overview block now has a variable taxonomy. This way you can choose taxonomy you want as a filter.
+-   ✨ **Enhanced**
+    -   Better keywords for blocks
+    -   Add dynamic modifier class for node-overview block for easier styling.
+-   🌐 **Updated Dutch translation**
+
 ### 2.7.2 - 2.7.3:
 
 _Release Date - 22 may 2021_
