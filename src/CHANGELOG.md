@@ -1,3 +1,13 @@
+### 2.8.1:
+
+_Release Date - 25 may 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed wrong field in map block
+    -   Fixed regression in wide aligned blocks
+    -   removed default margin from archive partial
+    -   Added proper notice when no default taxonomy was selected.
+
 ### 2.8.0:
 
 _Release Date - 24 may 2021_
