@@ -1,3 +1,29 @@
+### 2.9.0:
+
+_Release Date - 27 may 2021_
+
+-   ⛏️ **Breaking**
+    -   Removed blocks that where deprecated in version 2.6
+    -   Easier way to define custom archive pages. Please set `'maybe_has_archive_page'` in your custom post types to `true` and remove the get_theme_mod code.
+-   🐛 **Bugs Fixed**
+
+    -   Padding is applied on paragraphs inside FAQ blocks once more.
+    -   Fix gallery alignment
+    -   Fall back to default card in ajax query when there is no specific card present.
+    -   Fixed button radius variable
+    -   Fixed bug where margin would be applied on whole archive block instead of the filters only.
+    -   Font size small is now properly set on back-end.
+    -   No arrow is shown in generic content card when no link is present.
+    -   Removed relative from .lazyload class
+    -   Fix alignment of contact bar in backend.
+    -   Removed margin-top from headings inside banners.
+
+-   ✨ **Enhanced**
+    -   Complete overhaul on the way we define the taxonomy to filter by on node-overview and node-latest blocks.
+    -   You can now select one or multiple terms inside the node-latest block to filter on.
+    -   Better alignment for image container block.
+    -   Updated messages in node blocks.
+
 ### 2.8.1:
 
 _Release Date - 25 may 2021_
