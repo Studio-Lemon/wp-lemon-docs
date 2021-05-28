@@ -1,10 +1,31 @@
+### 2.9.1:
+
+_Release Date - 28 may 2021_
+
+-   🐛 **Bugs Fixed**
+
+    -   Missing title on content cards is now fixed.
+
+-   ✨ **Enhanced**
+
+    -   Added custom excerpt function for twig. `lemon_excerpt($post, $characters)`.
+    -   Remove title from picture element to prevent floating label.
+    -   Converted last fields groups to PHP.
+    -   Updated iconfont
+    -   Better colors for A11y search bar and menu items
+
+-   💡 **Newly added**
+    -   Added new meta fields for jobs & added them to the single-job.twig
+
 ### 2.9.0:
 
-_Release Date - 27 may 2021_
+    -   _Release Date - 27 may 2021_
 
 -   ⛏️ **Breaking**
+
     -   Removed blocks that where deprecated in version 2.6
     -   Easier way to define custom archive pages. Please set `'maybe_has_archive_page'` in your custom post types to `true` and remove the get_theme_mod code.
+
 -   🐛 **Bugs Fixed**
 
     -   Padding is applied on paragraphs inside FAQ blocks once more.
