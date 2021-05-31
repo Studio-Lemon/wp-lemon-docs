@@ -1,3 +1,16 @@
+### 2.9.2:
+
+_Release Date - 31 may 2021_
+
+-   ✨ **Enhanced**
+    -   Update job card with new meta fields.
+    -   Added `wp-lemon_after_footer_widgets` action to add context to the footer.
+-   🐛 **Bugs Fixed**
+    -   Fix missing label bug when post type is no longer present.
+    -   Ancestor pages are now shown active in the main menu
+    -   Added fallback to post.type when post_type is not actively set in a card.
+-   📦 **Updated dependencies & merged dependabot PR's**
+
 ### 2.9.1:
 
 _Release Date - 28 may 2021_
@@ -19,7 +32,7 @@ _Release Date - 28 may 2021_
 
 ### 2.9.0:
 
-    -   _Release Date - 27 may 2021_
+_Release Date - 27 may 2021_
 
 -   ⛏️ **Breaking**
 
