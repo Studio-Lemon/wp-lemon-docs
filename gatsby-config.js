@@ -18,8 +18,9 @@ module.exports = {
       options: {
         configPath: `src/config`,
         docsPath: `src/docs`,
-        githubUrl: `https://github.com/Studio-Lemon/wp-lemon-docs`,
+        repositoryUrl: `https://github.com/Studio-Lemon/wp-lemon-docs`,
         baseDir: ``,
+        branch: `master`,
       },
     },
     {

@@ -1,3 +1,147 @@
+### 2.9.2:
+
+_Release Date - 31 may 2021_
+
+-   ✨ **Enhanced**
+    -   Update job card with new meta fields.
+    -   Added `wp-lemon_after_footer_widgets` action to add context to the footer.
+-   🐛 **Bugs Fixed**
+    -   Fix missing label bug when post type is no longer present.
+    -   Ancestor pages are now shown active in the main menu
+    -   Added fallback to post.type when post_type is not actively set in a card.
+-   📦 **Updated dependencies & merged dependabot PR's**
+
+### 2.9.1:
+
+_Release Date - 28 may 2021_
+
+-   🐛 **Bugs Fixed**
+
+    -   Missing title on content cards is now fixed.
+
+-   ✨ **Enhanced**
+
+    -   Added custom excerpt function for twig. `lemon_excerpt($post, $characters)`.
+    -   Remove title from picture element to prevent floating label.
+    -   Converted last fields groups to PHP.
+    -   Updated iconfont
+    -   Better colors for A11y search bar and menu items
+
+-   💡 **Newly added**
+    -   Added new meta fields for jobs & added them to the single-job.twig
+
+### 2.9.0:
+
+_Release Date - 27 may 2021_
+
+-   ⛏️ **Breaking**
+
+    -   Removed blocks that where deprecated in version 2.6
+    -   Easier way to define custom archive pages. Please set `'maybe_has_archive_page'` in your custom post types to `true` and remove the get_theme_mod code.
+
+-   🐛 **Bugs Fixed**
+
+    -   Padding is applied on paragraphs inside FAQ blocks once more.
+    -   Fix gallery alignment
+    -   Fall back to default card in ajax query when there is no specific card present.
+    -   Fixed button radius variable
+    -   Fixed bug where margin would be applied on whole archive block instead of the filters only.
+    -   Font size small is now properly set on back-end.
+    -   No arrow is shown in generic content card when no link is present.
+    -   Removed relative from .lazyload class
+    -   Fix alignment of contact bar in backend.
+    -   Removed margin-top from headings inside banners.
+
+-   ✨ **Enhanced**
+    -   Complete overhaul on the way we define the taxonomy to filter by on node-overview and node-latest blocks.
+    -   You can now select one or multiple terms inside the node-latest block to filter on.
+    -   Better alignment for image container block.
+    -   Updated messages in node blocks.
+
+### 2.8.1:
+
+_Release Date - 25 may 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed wrong field in map block
+    -   Fixed regression in wide aligned blocks
+    -   removed default margin from archive partial
+    -   Added proper notice when no default taxonomy was selected.
+
+### 2.8.0:
+
+_Release Date - 24 may 2021_
+
+-   ⛏️ **Breaking**
+    -   `enable_query_block` in post type definitions has been replaces by two new `enable_overview_block` and `enable_latest_block` options. This way you have granular control which blocks you want per posttype. Please update your custom post types on child theme level accordingly.
+-   🐛 **Bugs Fixed**
+    -   Fluent forms pagination bar now really has the proper color.
+    -   maybe_has_archive_page is now false when no customizer page is set.
+-   💡 **Newly added**
+    -   New latest nodes block added. This will give an overview of the latest items of a specific post type.
+    -   node overview block now has a variable taxonomy. This way you can choose taxonomy you want as a filter.
+-   ✨ **Enhanced**
+    -   Better keywords for blocks
+    -   Add dynamic modifier class for node-overview block for easier styling.
+-   🌐 **Updated Dutch translation**
+
+### 2.7.2 - 2.7.3:
+
+_Release Date - 22 may 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fluentforms multipage form progress bar now has the primary color of the child theme.
+    -   Fixed a minor backend issue where the block inserter would interfere with center and right aligned blocks.
+    -   Fixed an issue where images inside media-text blocks weren't full height.
+    -   Other minor css fixes.
+
+### 2.7.1:
+
+_Release Date - 21 may 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Lemon Blocks - Fixed an issue where no Block appender was added when blocks where already present. Please upload the lemon-blocks plugin manually.
+    -   SVGs had a margin in last release. This margin has now been removed for better compatibility with the editor.
+
+### 2.7.0:
+
+_Release Date - 20 may 2021_
+
+-   ⛏️ **Breaking**
+    -   Please update BaseBuilder to version 1.4.1 by setting ^1.4.1 in in your package.json and run yarn install.
+    -   Set the new scssSettingsFolder in your config.json. For older projects this is still `"scssSettingsFolder": "1_common/",` don't forget to add this snippet to your example config as well for future reference.
+-   💡 **Newly added**
+    -   Generic content card can now have a background color.
+-   ✨ **Enhanced**
+
+    -   node-overview can now toggle excerpts
+    -   SCSS folder structure overhaul for both parent and child theme.
+
+-   🐛 **Bugs Fixed**
+    -   Fix to font size variable
+    -   Sliders work again
+
+### 2.6.3:
+
+_Release Date - 17 may 2021_
+
+-   💡 **Newly added**
+    -   Introduced a new function to check whether the correct version of Bulldozer is installed.
+    -   Introduced a new post type argument to enable the node-block.
+    -   Introduced two new customizer fields for linking to the contact and terms/conditions page.
+-   ✨ **Enhanced**
+
+    -   Blocks migrated from json fields to php fields.
+        -   Banner block
+        -   Deprecation notice in block names in the block inserter as well.
+
+-   🐛 **Bugs Fixed**
+    -   FAQ block now aligns the question better.
+    -   Fixes duplicate helper function issue in Bulldozer. Duplicated function calls are removed and migrated.
+    -   Several typos in documentation fixed.
+    -   If querieing an empty category in a Ajax call a proper notification pops up.
+    -   Fixed large padding in text-banner variant.
+
 ### 2.6.1:
 
 _Release Date - 13 may 2021_
