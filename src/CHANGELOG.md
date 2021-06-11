@@ -1,3 +1,23 @@
+### 2.10.0:
+
+_Release Date - 11 june 2021_
+
+-   ⛏️ **Breaking**
+    -   Updated bulldozer to 1.52. **Please upload vendor folder.**
+    -   Removed 2 block styles from banner block
+        -   No margin bottom has been removed
+        -   Small banner has been removed.
+        -   Default margin underneath block has been removed. This has been done for better styling compat when working with containers for example.
+        -   Added the removed margins back on the first heading, paragraph or list elements underneath the banner as a margin-top.
+-   ✨ **Enhanced**
+    -   Better placements of hook in footer.twig
+    -   Better menu styling
+-   🐛 **Bugs Fixed**
+    -   Fixed some typos in code.
+    -   Fixed field group name for person post type
+    -   added animation back in archive for the navigation buttons
+    -   Fixes bug where multiple dropdowns could be opened at the same time.
+
 ### 2.9.2:
 
 _Release Date - 31 may 2021_
