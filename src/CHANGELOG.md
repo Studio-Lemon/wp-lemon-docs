@@ -1,3 +1,21 @@
+### 2.11.0:
+
+_Release Date - 21 june 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Remove invalid field settings from banner
+-   ✨ **Enhanced**
+    -   acf image container block: add wide alignment.
+    -   Removed unused JS
+    -   acf slide block: added visual aid in editor.
+    -   acf slider block: added ability to toggle autoplay and set delay.
+    -   acf node overview block: You can now overwrite the node-latest block by creating node-latest-{{card_type}}.twig in the child theme for custom archive loops.
+-   💡 **Newly added**
+    -   wp image block: New icon style added.
+    -   Add button macro
+    -
+-   📦 **Updated dependencies & merged dependabot PR's**
+
 ### 2.10.0:
 
 _Release Date - 11 june 2021_
