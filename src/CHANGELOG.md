@@ -1,3 +1,22 @@
+### 2.12.0:
+
+_Release Date - 22 june 2021_
+
+-   ⛏️ **Breaking**
+    -   Updated bulldozer to 1.5.3, please update as well.
+-   🐛 **Bugs Fixed**
+    -   Added wp-image block scss
+    -   Block attribute saved with wrong heading level leads to error message in backend.
+-   ✨ **Enhanced**
+    -   Rework of enqueue names
+    -   Better names for innerBlocks
+    -   Removed unneeded api call function
+    -   Only load block patterns in backend.
+-   💡 **Newly added**
+    -   New color block added!
+    -   Added block style for columns for removing the gap between the columns.
+-   🌐 **Updated Dutch translation**
+
 ### 2.11.0:
 
 _Release Date - 21 june 2021_
@@ -13,7 +32,6 @@ _Release Date - 21 june 2021_
 -   💡 **Newly added**
     -   wp image block: New icon style added.
     -   Add button macro
-    -
 -   📦 **Updated dependencies & merged dependabot PR's**
 
 ### 2.10.0:
