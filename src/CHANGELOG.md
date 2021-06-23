@@ -1,3 +1,18 @@
+### 2.13.0:
+
+_Release Date - 23 june 2021_
+
+-   ⛏️ **Breaking**
+    -   Better scss styling for media and text block. **Please double check your existing blocks**
+-   🐛 **Bugs Fixed**
+    -   Removed unused class form img-container block
+    -   Better way to tell if block is disabled or not, fixes issue on bit site.
+-   💡 **Newly added**
+    -   Added support for custom excerpts. We don't ... the sentence if a custom excerpt is written.
+    -   Arrow icons in cards are now overwritable by filter.
+    -   Added mixin for shevron button.
+    -   Added variables for better dropdown styling
+
 ### 2.12.2:
 
 _Release Date - 23 june 2021_
