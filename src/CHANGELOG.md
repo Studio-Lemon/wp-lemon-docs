@@ -1,3 +1,10 @@
+### 2.12.2:
+
+_Release Date - 23 june 2021_
+
+-   ✨ **Enhanced**
+    -   Better translation default options
+
 ### 2.12.1:
 
 _Release Date - 23 june 2021_
