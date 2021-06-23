@@ -1,3 +1,19 @@
+### 2.12.1:
+
+_Release Date - 23 june 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes css bug where columns would not be 100% width on several screen sizes.
+-   ✨ **Enhanced**
+    -   Node blocks can now have a background and text color.
+    -   new colored block now has some extra styling.
+    -   Remove default margin beneath media-text block.
+    -   Set image sizes on generic card block.
+    -   Added .h1, .h2, etc classes for faster styling.
+    -   Added transition to theme-button to target all buttons having this class.
+-   💡 **Newly added**
+    -   Added filters for image sizes for node blocks and generic card block.
+
 ### 2.12.0:
 
 _Release Date - 22 june 2021_
