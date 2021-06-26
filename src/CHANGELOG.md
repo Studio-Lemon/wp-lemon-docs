@@ -1,3 +1,12 @@
+### 2.13.1:
+
+_Release Date - 26 june 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Media/Text block that was wide aligned had no padding on mobile. This is now fixed.
+-   ✨ **Enhanced**
+    -   Better mobile styling for repeating blocks.
+
 ### 2.13.0:
 
 _Release Date - 23 june 2021_
