@@ -1,3 +1,29 @@
+### 2.14.0:
+
+_Release Date - 29 june 2021_
+
+-   ⛏️ **Breaking**
+    -   Renaming of actions
+        -   wp-lemon_meta ➜ wp-lemon/action/head/meta
+        -   wp-lemon_before ➜ wp-lemon/action/body/before
+        -   wp-lemon_before_header ➜ wp-lemon/action/header/before
+        -   wp-lemon_after_header ➜ wp-lemon/action/header/after
+        -   wp-lemon_before_content ➜ wp-lemon/action/content/before
+        -   wp-lemon_after_content ➜ wp-lemon/action/content/after
+        -   wp-lemon_before_footer ➜ wp-lemon/action/footer/before
+        -   wp-lemon_after_footer_widgets ➜ wp-lemon/action/footer-widgets/after
+        -   wp-lemon_after_footer ➜ wp-lemon/action/footer/after
+        -   wp-lemon_after ➜ wp-lemon/action/body/after
+    -   Rename of filter
+        -   wp-lemon/card-icon ➜ wp-lemon/filter/card-icon
+-   💡 **Newly added**
+    -   New filter for filtering copyright message `wp-lemon/filter/copyright-message`
+-   🐛 **Bugs Fixed**
+    -   if no ga_id context tag is set, don't try to sent event on search.
+    -   Better styling for instagram block.
+-   ✨ **Enhanced**
+    -   Linktree template is now simpler.
+
 ### 2.13.1:
 
 _Release Date - 26 june 2021_
