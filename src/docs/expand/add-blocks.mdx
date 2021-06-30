@@ -38,7 +38,12 @@ class Example_Block extends BlockRenderer
          'keywords' => ['tag1', 'tag2', 'tag3'], // keywords to search blocks for.
          'supports' => [
             'align' => false
-         ]
+         ],
+        //'show_disable_button' => true, // This adds a button to disable the block.
+        //'deprecated' => array( // This adds a deprecation message inside the block.
+        //   'since' => '2.1', // since when is the block deprecated
+        //   'use' => 'test', // name of block to use instead of this block.
+        //),
       ];
       return $block;
    }

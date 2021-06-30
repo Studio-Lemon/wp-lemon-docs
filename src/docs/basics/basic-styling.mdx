@@ -9,7 +9,7 @@ The idea behind wp-lemon is that you can easily set up a site without thinking t
 
 The first things you'll want to do is to define your brand colors. Extract your theme/brand colors from the design document or handoff file and convert them to scss variables. I recommend using a tool like [Name that color (website)](https://chir.ag/projects/name-that-color/) or [Name that color (vs code extension)](https://marketplace.visualstudio.com/items?itemName=guillaumedoutriaux.name-that-color/) to transform colors into distinguishable names.
 
-```scss title=resources/styles/1_common/_variables.scss
+```scss title=resources/styles/01-settings/_variables.scss
 $color-viridian: #588068ff;
 $color-dark-sea-green: #85b498ff;
 $color-antique-brass: #c88e65ff;
@@ -21,7 +21,7 @@ $color-peach-puff: #e9cfb4ff;
 
 You can now create your brand colors. These are the colors that will be available in the color palette inside the Wordpress editor.
 
-```scss title=resources/styles/1_common/_variables.scss
+```scss title=resources/styles/01-settings/_variables.scss
 $brand-colors: (
   "white": $white,
   "black": $black,
@@ -46,7 +46,7 @@ When taking a look at `wp-lemon/resources/assets/styles/1_common/_variables.scss
 
 For example, when you want to overwrite the default navigation colors
 
-```scss title=resources/styles/1_common/_variables.scss
+```scss title=resources/styles/01-settings/_variables.scss
 $nav-text: (
   "font-weight": 400,
   "font-size": 16px,

@@ -26,9 +26,9 @@
       link: "/expand/hooks"
 - label: Overwrite
   items:
-    - label: "Overwrite twig files (todo)"
+    - label: "Overwrite twig files"
       link: "/overwrite/twig-files"
-    - label: "Overwrite styles (todo)"
+    - label: "Overwrite styles"
       link: "/overwrite/styles"
 - label: Deployment
   items:
