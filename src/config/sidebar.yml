@@ -22,6 +22,8 @@
       link: "/expand/add-blocks"
     - label: "Add posttypes/taxonomies"
       link: "/expand/add-models"
+    - label: "Filters & Actions"
+      link: "/expand/hooks"
 - label: Overwrite
   items:
     - label: "Overwrite twig files (todo)"

@@ -1,0 +1,100 @@
+---
+title: Filters & Actions
+description: How to use actions and filters in wp-lemon
+---
+
+Hooks are a way for one piece of code to interact/modify another piece of code at specific, pre-defined spots. You can 'hook' into them to modify a set piece of code. Hooks come in the form of **actions** and **filters**.
+
+**Actions**
+>  Actions allow you to add data or change how WordPress operates. Actions will run at a specific point in the execution of WordPress Core, plugins, and themes. Callback functions for Actions can perform some kind of a task, like echoing output to the user or inserting something into the database. Callback functions for an Action do not return anything back to the calling Action hook.
+
+We use actions in wp-lemon throughout the twig files to add new data on specific spots *without* overwriting the complete twig file. This means you can upgrade your child themes more easily in the future.
+
+**Filters**
+>  Filters give you the ability to change data during the execution of WordPress Core, plugins, and themes. Callback functions for Filters will accept a variable, modify it, and return it. They are meant to work in an isolated manner, and should never have side effects such as affecting global variables and output. Filters expect to have something returned back to them.
+
+We use filters in wp-lemon to change specific output that is already baked into the templates. It serves the same purpose as actions are used on a smaller scale, like changing an icon inside a card for example.
+
+## Actions inside wp-lemon
+Hooks are in the correct order.
+
+|Action hook  |Description  |
+|---------|---------|
+|wp-lemon/action/head/meta     |   Insert extra meta information inside the head element.      |
+|wp-lemon/action/body/before     |    Insert code inside the body opening tag **before** all other child elements     |
+|wp-lemon/action/header/before     |   Insert code directly **before** the the header/navbar      |
+|wp-lemon/action/header/after     |     Insert code directly **after** the the header/navbar    |
+|wp-lemon/action/content/before     |    Insert code inside the .main opening tag **before** all other child elements     |
+|wp-lemon/action/content/after     |    Insert code inside the .main opening tag **after** all other child elements    |
+|wp-lemon/action/footer/before     |     Insert code **before** footer    |
+|wp-lemon/action/footer-widgets/after     |     Insert code **after** footer widgets   |
+|wp-lemon/action/body/after     |  Insert code inside the body opening tag **after** all other child elements        |
+
+**Examples**
+```php title=library/controllers/hooks.php lineNumbers=true
+namespace WP_Lemon\Child\Controllers;
+
+use Timber\Timber;
+use function HighGround\Bulldozer\helpers\asset;
+
+/**
+ * Add static contact bar on every page.
+ *
+ * @return void
+ */
+function add_contact_bar()
+{
+   $context = Timber::get_context();
+   $context['classes'] = array('acf-block', 'contact-bar', 'alignfull', 'has-background', 'has-blue-background-color', 'has-text-color', 'has-black-color');
+
+   Timber::render('blocks/contact-bar.twig', $context);
+}
+
+add_action('wp-lemon/action/content/after', __NAMESPACE__ . '\\add_contact_bar');
+
+/**
+ * Insert logo's of certificates directly after the footer widgets.
+ *
+ * @return void
+ */
+function footer_logos()
+{
+   $context = Timber::get_context();
+   $context['footer_logos'] = [
+      asset('images/logos/ebn-9001.svg')->uri(),
+      asset('images/logos/veritas-f-gassen.svg')->uri(),
+      asset('images/logos/techniek-nederland.svg')->uri(),
+      asset('images/logos/veritas-brl-6000.svg')->uri(),
+      asset('images/logos/ebn-vca.svg')->uri(),
+   ];
+
+   Timber::render('partials/footer-logos.twig', $context);
+}
+
+add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_logos');
+
+```
+## Filters inside wp-lemon
+
+|Filter hook  |Description  |
+|---------|---------|
+|wp-lemon/filter/card-icon     |   Change the icon inside cards.      |
+|wp-lemon/filter/copyright-message     |    Returns the copyright message, use this to change the copyright message in the | | wp-lemon/filter/image_sizes    | Filters the image sizes inside all blocks that use image_sizes context variable |
+| wp-lemon/filter/image_sizes/{{block_name}}    | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block.|
+| wp-lemon/filter/image_sizes/{{block_name}}/{{block_variant}}    | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block and a specific variant |
+**Examples**
+```php title=library/controllers/filters.php lineNumbers=true
+namespace WP_Lemon\Child\Controllers;
+
+
+add_filter('wp-lemon/filter/card-icon', function () {
+   return 'icon-chevron-right';
+});
+
+add_filter("wp-lemon/filter/image_sizes/node-overview/discipline", function ($sizes) {
+   return '(min-width: 768px) 700px, 
+(min-width: 600px) 510px, 
+400px';
+});
+
+```
