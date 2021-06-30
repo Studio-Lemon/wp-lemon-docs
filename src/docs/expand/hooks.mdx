@@ -78,7 +78,9 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 
 |Filter hook  |Description  |
 |---------|---------|
-|wp-lemon/filter/card-icon     |   Change the icon inside cards.      |
+|wp-lemon/filter/card/icon     |   Change the icon inside cards.      |
+|wp-lemon/filter/card/excerpt_length     |   Change the excerpt length inside cards  |
+|wp-lemon/filter/card/excerpt_length/{{card_type}}     |   Change the excerpt length inside a specific cards  |
 |wp-lemon/filter/copyright-message     |    Returns the copyright message, use this to change the copyright message in the | | wp-lemon/filter/image_sizes    | Filters the image sizes inside all blocks that use image_sizes context variable |
 | wp-lemon/filter/image_sizes/{{block_name}}    | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block.|
 | wp-lemon/filter/image_sizes/{{block_name}}/{{block_variant}}    | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block and a specific variant |
