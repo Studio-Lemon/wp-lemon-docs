@@ -10,21 +10,21 @@
     "@emotion/core": "^11.0.0",
     "@rocketseat/gatsby-theme-docs": "^2.3.1",
     "emotion-theming": "^11.0.0",
-    "gatsby": "^3.5.0",
-    "gatsby-plugin-canonical-urls": "^3.5.0",
-    "gatsby-plugin-google-analytics": "^3.5.0",
-    "gatsby-plugin-manifest": "^3.5.0",
-    "gatsby-plugin-offline": "^4.5.0",
-    "gatsby-plugin-remove-trailing-slashes": "^3.5.0",
-    "gatsby-plugin-sitemap": "^3.0.0",
+    "gatsby": "^3.8.1",
+    "gatsby-plugin-canonical-urls": "^3.8.0",
+    "gatsby-plugin-google-analytics": "^3.8.0",
+    "gatsby-plugin-manifest": "^3.8.0",
+    "gatsby-plugin-offline": "^4.8.0",
+    "gatsby-plugin-remove-trailing-slashes": "^3.8.0",
+    "gatsby-plugin-sitemap": "^4.4.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sharp": "^0.28.2"
+    "sharp": "^0.28.3"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0",
-    "prismjs": "^1.23.0"
+    "gh-pages": "^3.2.3",
+    "prismjs": "^1.24.0"
   },
   "keywords": [
     "gatsby",
