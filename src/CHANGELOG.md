@@ -1,3 +1,15 @@
+### 2.14.1:
+
+_Release Date - 30 june 2021_
+
+-   💡 **Newly added**
+    -   New filter for excerpt length in cards.
+    -   Moved card filters to card-wrap
+-   ✨ **Enhanced**
+    -   Don't align img-container wide by default.
+-   🐛 **Bugs Fixed**
+    -   Fix missing paddings inside columns and img-container on some elements.
+
 ### 2.14.0:
 
 _Release Date - 29 june 2021_
@@ -16,6 +28,7 @@ _Release Date - 29 june 2021_
         -   wp-lemon_after ➜ wp-lemon/action/body/after
     -   Rename of filter
         -   wp-lemon/card-icon ➜ wp-lemon/filter/card-icon
+        -   wp-lemon/image_sizes ➜ wp-lemon/filter/image_sizes
 -   💡 **Newly added**
     -   New filter for filtering copyright message `wp-lemon/filter/copyright-message`
 -   🐛 **Bugs Fixed**
