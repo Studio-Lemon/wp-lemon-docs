@@ -8,15 +8,18 @@ This chapter will cover how to update wp-lemon projects.
 ## Update project locally
 
 1. Make sure your local repository is up-to-date
-2. Run `composer update` in your project root. This will update all the PHP dependencies including the parent theme.
-3. Run `yarn run update-parent` in the child theme.
-4. Run development build
-5. **Make sure that your project runs locally before continuing to the next step.**
+2. Run `yarn run update-parent` in the child theme, this will update wp-lemon, all php dependencies and install npm dependencies for your parent theme.
+3. Check the changelogs since your latest update and look for breaking changes
+    3.1. Find breaking changes
+    3.2. Find out it you need to handle on them
+    3.3. Make changes accordingly
+1. Run development build and test your code.
+1. **Make sure that your project runs locally before continuing to the next step.**
 
 ## Deploy update
 
 1. Upload vendor folder in projects root.
-2. Upload `lemon-blocks` plugin.
+2. Is wp-lemon-block plugin updated as well? Upload the plugin!
 3. Make a production build in your child theme by running `yarn run production`.
 4. Remove both wp-lemon and child theme folders from the server.
 5. Upload both wp-lemon and child theme folders
