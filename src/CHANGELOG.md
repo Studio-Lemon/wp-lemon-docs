@@ -1,3 +1,11 @@
+### 2.14.2:
+
+_Release Date - 30 june 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes missing card type class
+    -   Add filter for js translation directory, defaults to parent theme.
+
 ### 2.14.1:
 
 _Release Date - 30 june 2021_
