@@ -1,3 +1,18 @@
+### 2.15.0:
+
+_Release Date - 09 july 2021_
+
+-   ⛏️ **Breaking**
+    -   Please add ACF color palette plugin by:
+        -   Updating your MU section in the composer.json like so: `"web/app/mu-plugins/{$name}/": [ "type:wordpress-muplugin", "log1x/acf-editor-palette" ],`
+        -   And add the plugin as a MU-plugi using `composer require log1x/acf-editor-palette`
+        -   Don't forget to upload the mu-plugins folder when deploying.
+-   💡 **Newly added**
+    -   New Timeline and timeline item blocks.
+-   ✨ **Enhanced**
+    -   Removed backend block overrides from partials and added them in separate file.
+    -   Translated block keywords
+
 ### 2.14.2:
 
 _Release Date - 30 june 2021_
