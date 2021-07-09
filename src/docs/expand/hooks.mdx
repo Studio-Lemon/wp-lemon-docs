@@ -18,17 +18,17 @@ We use filters in wp-lemon to change specific output that is already baked into 
 ## Actions inside wp-lemon
 Hooks are in the correct order.
 
-|Action hook  |Description  |
-|---------|---------|
-|wp-lemon/action/head/meta     |   Insert extra meta information inside the head element.      |
-|wp-lemon/action/body/before     |    Insert code inside the body opening tag **before** all other child elements     |
-|wp-lemon/action/header/before     |   Insert code directly **before** the the header/navbar      |
-|wp-lemon/action/header/after     |     Insert code directly **after** the the header/navbar    |
-|wp-lemon/action/content/before     |    Insert code inside the .main opening tag **before** all other child elements     |
-|wp-lemon/action/content/after     |    Insert code inside the .main opening tag **after** all other child elements    |
-|wp-lemon/action/footer/before     |     Insert code **before** footer    |
-|wp-lemon/action/footer-widgets/after     |     Insert code **after** footer widgets   |
-|wp-lemon/action/body/after     |  Insert code inside the body opening tag **after** all other child elements        |
+| Action hook                          | Description                                                                  |
+|--------------------------------------|------------------------------------------------------------------------------|
+| wp-lemon/action/head/meta            | Insert extra meta information inside the head element.                       |
+| wp-lemon/action/body/before          | Insert code inside the body opening tag **before** all other child elements  |
+| wp-lemon/action/header/before        | Insert code directly **before** the the header/navbar                        |
+| wp-lemon/action/header/after         | Insert code directly **after** the the header/navbar                         |
+| wp-lemon/action/content/before       | Insert code inside the .main opening tag **before** all other child elements |
+| wp-lemon/action/content/after        | Insert code inside the .main opening tag **after** all other child elements  |
+| wp-lemon/action/footer/before        | Insert code **before** footer                                                |
+| wp-lemon/action/footer-widgets/after | Insert code **after** footer widgets                                         |
+| wp-lemon/action/body/after           | Insert code inside the body opening tag **after** all other child elements   |
 
 **Examples**
 ```php title=library/controllers/hooks.php lineNumbers=true
@@ -76,14 +76,17 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 ```
 ## Filters inside wp-lemon
 
-|Filter hook  |Description  |
-|---------|---------|
-|wp-lemon/filter/card/icon     |   Change the icon inside cards.      |
-|wp-lemon/filter/card/excerpt_length     |   Change the excerpt length inside cards  |
-|wp-lemon/filter/card/excerpt_length/{{card_type}}     |   Change the excerpt length inside a specific cards  |
-|wp-lemon/filter/copyright-message     |    Returns the copyright message, use this to change the copyright message in the | | wp-lemon/filter/image_sizes    | Filters the image sizes inside all blocks that use image_sizes context variable |
-| wp-lemon/filter/image_sizes/{{block_name}}    | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block.|
-| wp-lemon/filter/image_sizes/{{block_name}}/{{block_variant}}    | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block and a specific variant |
+| Filter hook                                                  | Description                                                                                                                 |
+|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| wp-lemon/filter/card/icon                                    | Change the icon inside cards.                                                                                               |
+| wp-lemon/filter/card/excerpt_length                          | Change the excerpt length inside cards                                                                                      |
+| wp-lemon/filter/card/excerpt_length/{{card_type}}            | Change the excerpt length inside a specific cards                                                                           |
+| wp-lemon/filter/copyright-message                            | Returns the copyright message, use this to change the copyright message in the                                              |  
+| wp-lemon/filter/image_sizes                                  | Filters the image sizes inside all blocks that use image_sizes context variable                                             |
+| wp-lemon/filter/image_sizes/{{block_name}}                   | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block.                       |
+| wp-lemon/filter/image_sizes/{{block_name}}/{{block_variant}} | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block and a specific variant |
+| wp-lemon/filters/javascript_translations_path                | Set translation path of javascript translations. `return get_stylesheet_directory() . '/resources/languages/'`              |
+
 **Examples**
 ```php title=library/controllers/filters.php lineNumbers=true
 namespace WP_Lemon\Child\Controllers;
