@@ -1,3 +1,10 @@
+### 2.15.1:
+
+_Release Date - 12 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes not loading child
+
 ### 2.15.0:
 
 _Release Date - 09 july 2021_
