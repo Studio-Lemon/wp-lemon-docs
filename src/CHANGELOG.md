@@ -1,3 +1,10 @@
+### 2.15.2:
+
+_Release Date - 12 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes not loading child
+
 ### 2.15.1:
 
 _Release Date - 12 july 2021_
@@ -14,6 +21,7 @@ _Release Date - 09 july 2021_
         -   Updating your MU section in the composer.json like so: `"web/app/mu-plugins/{$name}/": [ "type:wordpress-muplugin", "log1x/acf-editor-palette" ],`
         -   And add the plugin as a MU-plugi using `composer require log1x/acf-editor-palette`
         -   Don't forget to upload the mu-plugins folder when deploying.
+        -   Update bulldozer as well by upload the vendor folder in your root.
 -   💡 **Newly added**
     -   New Timeline and timeline item blocks.
 -   ✨ **Enhanced**
