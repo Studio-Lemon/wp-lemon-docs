@@ -1,3 +1,18 @@
+### 2.15.3:
+
+_Release Date - 14 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes heading colors not being inherited in timeline cards
+    -   wrap timeline items in div so even/uneven works consistently
+    -   Timeline date justify fix
+-   ✨ **Enhanced**
+    -   Simpler language menus
+    -   close dropdowns on escape
+    -   close dropdowns on click outside dropdown
+    -   Restyling of logo gallery style.
+-   📦 **Updated dependencies**
+
 ### 2.15.2:
 
 _Release Date - 12 july 2021_
