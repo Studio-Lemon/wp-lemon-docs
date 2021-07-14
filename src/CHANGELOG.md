@@ -1,3 +1,13 @@
+### 2.15.4:
+
+_Release Date - 14 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Load same amount of items in archive query as original query.
+-   ✨ **Enhanced**
+    -   Tweak font sizes
+-   📦 **Updated dependencies**
+
 ### 2.15.3:
 
 _Release Date - 14 july 2021_
