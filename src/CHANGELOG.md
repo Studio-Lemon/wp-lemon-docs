@@ -1,3 +1,12 @@
+### 2.16.1:
+
+_Release Date - 20 july 2021_
+
+-   ✨ **Enhanced**
+    -   Tweak notice inside node-latest block
+-   💡 **Newly added**
+    -   Added filter to overwrite node-latest no-items message.
+
 ### 2.16.0:
 
 _Release Date - 20 july 2021_
