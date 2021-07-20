@@ -1,3 +1,14 @@
+### 2.16.0:
+
+_Release Date - 20 july 2021_
+
+-   ⛏️ **Breaking**
+    -   Please double check custom navbar styling on child sites.
+-   ✨ **Enhanced**
+    -   Added notice on front-end when node-latest block does not contain items.
+    -   Rework of the javascript that slides the menu in and out. The timings are now snappier.
+-   🌐 **Updated Dutch translation**
+
 ### 2.15.4:
 
 _Release Date - 14 july 2021_
