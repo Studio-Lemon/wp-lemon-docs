@@ -1,3 +1,17 @@
+### 2.16.2:
+
+_Release Date - 22 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: Dropdown not closing on click
+    -   Fixed: menu animating away on mobile browsers while opening menu
+    -   Fixed: Media/text wide aligned didn't had padding on mobile
+    -   Fixed: paragraphs in cards always had a margin bottom. Now only the last paragraph has no margin.
+-   ✨ **Enhanced**
+    -   Copyright message is now placed in a smaller column.
+-   💡 **Newly added**
+    -   intrinsic image size added for cards.
+
 ### 2.16.1:
 
 _Release Date - 20 july 2021_
