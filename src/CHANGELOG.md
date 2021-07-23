@@ -6,6 +6,7 @@ _Release Date - 23 july 2021_
     -   javascript function lazyLoad is now called lazyLoadFunc. If you have custom javascript plugging into this function, please rename acordingly.
     -   Lemon blocks updated to 1.2.2. Please update manually.
 -   🐛 **Bugs Fixed**
+-   -   Fixed: missing call button
     -   Fixed: missing padding in media-text
     -   Fixed: block quotes being too small
     -   Fixed: deprecation notice since WordPress 5.8 `block_categories` is now `block_categories_all`
