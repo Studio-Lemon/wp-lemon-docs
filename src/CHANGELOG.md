@@ -1,3 +1,23 @@
+### 2.17.0-RC1:
+
+_Release Date - 23 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: missing padding in media-text
+    -   Fixed: block quotes being too small
+    -   Fixed: deprecation notice since WordPress 5.8 `block_categories` is now `block_categories_all`
+    -   Fixed: banners not lazyloading properly
+    -   Fixed: sliders not lazyloading in backend.
+    -   Fixed: Timeline dots not connecting.
+    -   Proposed fix: Timeline animations stopped abruptly after a large amount of items.
+-   ✨ **Enhanced**
+    -   Better selector usage for wp-media-text
+    -   Set translation setting in timeline block
+-   💡 **Newly added**
+    -   New block: slide-banner, this replaces the banner in sliders.
+    -   Added new $card-picture-padding variable to control image ratio.
+    -   Updated color settings for menu items. You can now set the background and text colors.
+
 ### 2.16.2:
 
 _Release Date - 22 july 2021_
