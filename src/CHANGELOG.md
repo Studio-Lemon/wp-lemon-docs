@@ -1,7 +1,10 @@
-### 2.17.0-RC1:
+### 2.17.0:
 
 _Release Date - 23 july 2021_
 
+-   ⛏️ **Breaking**
+    -   javascript function lazyLoad is now called lazyLoadFunc. If you have custom javascript plugging into this function, please rename acordingly.
+    -   Lemon blocks updated to 1.2.2. Please update manually.
 -   🐛 **Bugs Fixed**
     -   Fixed: missing padding in media-text
     -   Fixed: block quotes being too small
