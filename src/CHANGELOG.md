@@ -1,3 +1,12 @@
+### 2.17.2:
+
+_Release Date - 27 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: Intrinsic image sizes would error out due to a typo.
+-   ✨ **Enhanced**
+    -   node-overview and node-latest blocks can now query post types that are not public. These items now wont have a link.
+
 ### 2.17.1:
 
 _Release Date - 27 july 2021_
