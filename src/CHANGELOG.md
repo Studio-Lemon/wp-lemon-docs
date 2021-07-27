@@ -1,12 +1,23 @@
+### 2.17.1:
+
+_Release Date - 27 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: array to string conversion in licence class
+    -   Only show language switcher if at least two languages are activated (also takes disabled languages into account).
+    -   Fixed: timeline items would appear on a wrong spot when OS animations are disabled.
+-   🌐 **Updated Dutch translation**
+-   🌐 **Added German translation**
+
 ### 2.17.0:
 
 _Release Date - 23 july 2021_
 
 -   ⛏️ **Breaking**
     -   javascript function lazyLoad is now called lazyLoadFunc. If you have custom javascript plugging into this function, please rename acordingly.
-    -   Lemon blocks updated to 1.2.2. Please update manually.
+    -   Lemon blocks plugin updated to 1.2.2. Please update manually.
 -   🐛 **Bugs Fixed**
--   -   Fixed: missing call button
+    -   Fixed: missing call button
     -   Fixed: missing padding in media-text
     -   Fixed: block quotes being too small
     -   Fixed: deprecation notice since WordPress 5.8 `block_categories` is now `block_categories_all`
