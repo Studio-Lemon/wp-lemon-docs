@@ -1,3 +1,11 @@
+### 2.17.4:
+
+_Release Date - 27 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: Gallery alignment fixes.
+    -   Fixed: Timeline lazyload issue. Items would get loaded too early.
+
 ### 2.17.3:
 
 _Release Date - 27 july 2021_
