@@ -1,3 +1,10 @@
+### 2.17.3:
+
+_Release Date - 27 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: Gallery alignment fixes.
+
 ### 2.17.2:
 
 _Release Date - 27 july 2021_
