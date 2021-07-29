@@ -1,3 +1,11 @@
+### 2.17.5:
+
+_Release Date - 29 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: Analytics not loading.
+    -   Fixed: Don't search for missing post types when setting archive pages.
+
 ### 2.17.4:
 
 _Release Date - 27 july 2021_
