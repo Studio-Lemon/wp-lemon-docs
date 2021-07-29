@@ -1,3 +1,13 @@
+### 2.17.7:
+
+_Release Date - 29 july 2021_
+
+-   ✨ **Enhanced**
+    -   wp-gallery ➡️ logo style ➡️ items now have same height.
+    -   Archive block ➡️ tweaked vertical margins.
+    -   wp-columns ➡️ Re-added margins underneath columns except last child.
+    -   wp-image ➡️ icon style ➡️ tweaked design.
+
 ### 2.17.5:
 
 _Release Date - 29 july 2021_
