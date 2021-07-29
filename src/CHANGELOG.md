@@ -3,6 +3,7 @@
 _Release Date - 29 july 2021_
 
 -   🐛 **Bugs Fixed**
+    -   Fixed: overflowing cards.
     -   Fixed: Analytics not loading.
     -   Fixed: Don't search for missing post types when setting archive pages.
 
