@@ -27,34 +27,34 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-e899af028859fdb6c07e.js"
+    "url": "webpack-runtime-9786d986d3aae31b2324.js"
   },
   {
-    "url": "framework-142d678a22ed4f706a7c.js"
+    "url": "framework-6a886080525977b54dba.js"
   },
   {
-    "url": "f0e45107-d06ba0dd881ba746a4dc.js"
+    "url": "f0e45107-6fbda47ff26aa8d46e67.js"
   },
   {
-    "url": "app-909b6ea2c8dd4c07ce86.js"
+    "url": "app-abe806c4558d5272f3d1.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "9e6bca5db2f1e6c0ab5cb36d87f96818"
+    "revision": "f2d6b3847273930269cf970bb138210a"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-981b4315cb22891331fe.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-a5d595b40e13ee56b49c.js"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "0282e2b86db56eb397d1111699dffeba"
+    "revision": "5e8aa44d3ccef647b6cd8af56cc5d638"
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "52f4a95a089f879e1fdda70816a996cd"
+    "revision": "3e93948e42ad26696c9d4e87d21ffbd0"
   },
   {
-    "url": "polyfill-a86e36e1b420663a6838.js"
+    "url": "polyfill-a8e688b1c1b090e76a0f.js"
   },
   {
     "url": "manifest.webmanifest",
@@ -150,7 +150,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/wp-lemon-docs/app-909b6ea2c8dd4c07ce86.js`))) {
+  if (!resources || !(await caches.match(`/wp-lemon-docs/app-abe806c4558d5272f3d1.js`))) {
     return await fetch(event.request)
   }
 
