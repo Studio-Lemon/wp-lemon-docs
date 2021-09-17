@@ -1,3 +1,18 @@
+### 2.17.8:
+
+_Release Date - 17 September 2021_
+
+-   ✨ **Enhanced**
+    -   node-overview block ➡️ add extra tags for block variants
+    -   archive query / ajax query ➡️ Render excerpt on load more click if toggle is set to true
+    -   wp media / text block ➡️ Smaller margin between buttons inside content area.
+    -   node overview/latest blocks ➡️ Render proper images based on col size.
+-   🐛 **Bugs Fixed**
+    -   single-job.twig ➡️ remove meta div when no content is rendered inside.
+    -   a11y functionality ➡️ This is now succesfully rendered once more.
+    -   Node overview block ➡️ Images now render correctly in backend.
+    -   Widget editor screen ➡️ fixes notice
+
 ### 2.17.7:
 
 _Release Date - 29 july 2021_
