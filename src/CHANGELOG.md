@@ -1,3 +1,14 @@
+### 2.17.9:
+
+_Release Date - 21 September 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Add missing collapsed class to menu toggler.
+    -   Fixed button margin being applied double inside media-text block
+-   ✨ **Enhanced**
+    -   Renamed has_custom_page_archive() to custom_archive_page().
+    -   Deprecated has_custom_page_archive()
+
 ### 2.17.8:
 
 _Release Date - 17 September 2021_
