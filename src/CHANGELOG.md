@@ -1,3 +1,15 @@
+### 2.18.0:
+
+_Release Date - 30 September 2021_
+
+-   🐛 **Bugs Fixed**
+    -   set default column count in node-latest and node-overview blocks.
+-   ✨ **Enhanced**
+    -   Better lazyload picture element.
+    -   Better content card block defaults.
+    -   Don't load anayltics on production
+    -   Add WordPress ENV global to the context.
+
 ### 2.17.9:
 
 _Release Date - 21 September 2021_
