@@ -1,3 +1,22 @@
+### 2.19.0:
+
+_Release Date - 10 October 2021_
+
+-   ⛏️ **Breaking**
+    -   Basebuilder-config is updated to 2.0, please update manually in your child themes package.json and run yarn install afterwards.
+    -   Please search your child themes JavaScript for `import '@wordpress/edit-post';` and remove it.
+    -   Lemon blocks plugin updated to 1.2.3 Please update manually to your FTP.
+-   💡 **Newly added**
+    -   New ACF field to select a Fluentform.
+    -   Adding actions in header
+        -   {% do action('wp-lemon/action/menu-toggle/before') %}
+        -   {% do action('wp-lemon/action/menu-toggle/after') %}
+        -   {% do action('wp-lemon/action/main-menu/before') %}
+        -   {% do action('wp-lemon/action/main-menu/after') %}
+-   🐛 **Bugs Fixed**
+    -   remove `.footer__logobar` when no logo is present
+    -   remove unused variable
+
 ### 2.18.0:
 
 _Release Date - 30 September 2021_
