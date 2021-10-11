@@ -1,3 +1,11 @@
+### 2.19.1:
+
+_Release Date - 11 October 2021_
+
+-   ✨ **Enhanced**
+    -   add check around menu before showing hamburger
+-   💡 **Newly added** - Adding filter `"wp-lemon/filter/socials_order"` to change the order of social icons in the header and footer.
+
 ### 2.19.0:
 
 _Release Date - 10 October 2021_
