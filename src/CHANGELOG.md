@@ -1,10 +1,13 @@
-### 2.19.1:
+### 2.19.2:
 
-_Release Date - 11 October 2021_
+_Release Date - 15 October 2021_
 
 -   ✨ **Enhanced**
-    -   add check around menu before showing hamburger
--   💡 **Newly added** - Adding filter `"wp-lemon/filter/socials_order"` to change the order of social icons in the header and footer.
+    -   Overhaul to font sizes. Please check the new scss map structure in the variables file.
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug that crashes the website when Fluenforms is deactivated.
+    -   Disable gradients when not present.
+    -   Footer padding changes
 
 ### 2.19.0:
 
