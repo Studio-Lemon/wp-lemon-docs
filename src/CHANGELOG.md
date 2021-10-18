@@ -1,3 +1,10 @@
+### 2.19.3:
+
+_Release Date - 18 October 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug where theme would crash when ACF wasn't active. E.G. when setting up a new site.
+
 ### 2.19.2:
 
 _Release Date - 15 October 2021_
