@@ -1,4 +1,23 @@
+### 2.19.6:
+
+_Release Date - 26 October 2021_
+
+-   ✨ **Enhanced**
+    -   Simpler index.php and twig file
+    -   Footer code is now reused in entry-footer.twig
+    -   content-header is now entry-header to match footer naming
+    -   Simpler search markup.
+    -   Reusable blocks are now shown full width. Fixes #105
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug where element colors inside media text block would be hard overwritten
+    -   Fixes a bug in node overview and node latest bug where column count was undefined. Fixes #104
+
 ### 2.19.5:
+
+_Release Date - 22 October 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug where videos wouldn't autoplay on iphones in serval cases. ### 2.19.5:
 
 _Release Date - 22 October 2021_
 
