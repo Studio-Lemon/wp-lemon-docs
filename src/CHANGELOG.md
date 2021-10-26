@@ -1,3 +1,10 @@
+### 2.19.5:
+
+_Release Date - 22 October 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug where videos wouldn't autoplay on iphones in serval cases.
+
 ### 2.19.4:
 
 _Release Date - 18 October 2021_
