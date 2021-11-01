@@ -1,3 +1,24 @@
+### 2.20.0:
+
+_Release Date - 1 november 2021_
+
+-   ## ⛏️ **Breaking**
+-   💡 **Newly added**
+    -   New contact-cta block
+    -   Call button is not contact-buttons. You now have the possibility to show a WhatsApp button as well.
+    -   New next_post() function to navigate to the next post in that particular posttype
+    -   Updated e-mail and phone icon.
+-   ✨ **Enhanced**
+    -   Updated scss for beter compat with dart-sass 2.0
+    -   Updated dev dependencies
+    -   Linted a lot of PHP files
+    -   Slide-banner blocks can now only be placed inside a slider.
+    -   wp-media-text - Better display inside editor.
+-   🐛 **Bugs Fixed**
+    -   Lazyload in the backend now works better.
+-   🌐 **Updated Dutch translation**
+-   🌐 **Added German translation**
+
 ### 2.19.6:
 
 _Release Date - 26 October 2021_
@@ -38,7 +59,7 @@ _Release Date - 15 October 2021_
 -   ✨ **Enhanced**
     -   Overhaul to font sizes. Please check the new scss map structure in the variables file.
 -   🐛 **Bugs Fixed**
-    -   Fixes a bug that crashes the website when Fluenforms is deactivated.
+    -   Fixes a bug that crashes the website when Fluentforms is deactivated.
     -   Disable gradients when not present.
     -   Footer padding changes
 
@@ -51,7 +72,7 @@ _Release Date - 10 October 2021_
     -   Please search your child themes JavaScript for `import '@wordpress/edit-post';` and remove it.
     -   Lemon blocks plugin updated to 1.2.3 Please update manually to your FTP.
 -   💡 **Newly added**
-    -   New ACF field to select a Fluentform.
+    -   New ACF field to select a Fluentforms.
     -   Adding actions in header
         -   {% do action('wp-lemon/action/menu-toggle/before') %}
         -   {% do action('wp-lemon/action/menu-toggle/after') %}
