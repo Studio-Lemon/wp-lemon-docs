@@ -1,3 +1,11 @@
+### 2.20.1:
+
+_Release Date - 2 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   German translation now loads again
+    -   Minor tweaks to new cta block.
+
 ### 2.20.0:
 
 _Release Date - 1 november 2021_
