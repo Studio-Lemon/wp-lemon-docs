@@ -1,3 +1,13 @@
+### 2.20.2:
+
+_Release Date - 8 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes an issue where jpg's would be loaded twice.
+    -   Contact banner block image is now contained
+-   ✨ **Enhanced**
+    -   Better entry header markup.
+
 ### 2.20.1:
 
 _Release Date - 2 november 2021_
