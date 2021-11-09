@@ -1,3 +1,12 @@
+### 2.20.3:
+
+_Release Date - 9 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes licence class activation
+-   ✨ **Enhanced**
+    -   Now shows an error on non-activated websites to please activate the licence.
+
 ### 2.20.2:
 
 _Release Date - 8 november 2021_
