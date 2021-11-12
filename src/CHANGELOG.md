@@ -1,6 +1,6 @@
-### 2.20.3:
+### 2.20.[3-4]:
 
-_Release Date - 9 november 2021_
+_Release Date - 12 november 2021_
 
 -   🐛 **Bugs Fixed**
     -   Fixes licence class activation
