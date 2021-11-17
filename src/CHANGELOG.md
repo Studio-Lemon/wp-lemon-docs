@@ -1,11 +1,27 @@
+### 2.20.5:
+
+_Release Date - 17 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Footer link color now inherits the current colour.
+-   ✨ **Enhanced**
+    -   Timeline-item block, alignment is now disabled
+    -   add noopener to social items.
+    -   FAQ block, + icon now inherits button color.
+    -   PHP, all Timber calls are now properly namespaced.
+    -   Widgets now inherit the font family.
+    -   Add margin to the right of archive load-more button
+
 ### 2.20.[3-4]:
 
 _Release Date - 12 november 2021_
 
 -   🐛 **Bugs Fixed**
     -   Fixes licence class activation
+    -   Bug fixed where both contact buttons would show when only one of the two was active
 -   ✨ **Enhanced**
     -   Now shows an error on non-activated websites to please activate the licence.
+    -   Navbar now has extra scrolled modifier class when the navbar is not on top anymore.
 
 ### 2.20.2:
 
