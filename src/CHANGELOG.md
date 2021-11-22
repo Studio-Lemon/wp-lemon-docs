@@ -1,3 +1,12 @@
+### 2.20.6:
+
+_Release Date - 22 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   ul in media text element now does have a margin.
+-   💡 **Newly added**
+    -   New action added in header. `wp-lemon/action/navbar/before`
+
 ### 2.20.5:
 
 _Release Date - 17 november 2021_
