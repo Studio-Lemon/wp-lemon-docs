@@ -1,3 +1,21 @@
+### 2.21.0:
+
+_Release Date - 25 november 2021_
+
+-   ⛏️ **Breaking**
+    -   Please update bulldozer to 1.7.0 by uploading the vendor folder to the server.
+-   🐛 **Bugs Fixed**
+    -   `.navar__right` default margin-left removed.
+-   💡 **Newly added**
+    -   New social media block/widget added.
+    -   You can now easily add a link around an card image by set setting image_link to true
+    -   New widgets block category
+-   ✨ **Enhanced**
+    -   Better matching LinkedIn icon.
+    -   Default social media colors of icons in footer don't conflict anymore with background color.
+-   🌐 **Updated Dutch translation**
+-   🌐 **Added German translation**
+
 ### 2.20.6:
 
 _Release Date - 22 november 2021_
