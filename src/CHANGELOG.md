@@ -1,3 +1,20 @@
+### 3.0.0-BETA1:
+
+_Release Date - 11 november 2021_
+
+This release is still in beta. You can help get the release out of beta by updating projects locally and report any bugs or noticeable differences you encounter.
+
+-   ⛏️ **Breaking**
+    -   Please update your dependencies in package.json to
+        `"@popperjs/core": "^2.10.2", "aos": "^3.0.0-beta.6", "bootstrap": "^5.1", "lodash.throttle": "^4.1.1", "swiper": "^7.2", "vanilla-lazyload": "17.5"` and run yarn install
+    -   Please update your dev dependencies like so:
+        `"devDependencies": { "@wordpress/browserslist-config": "^4.1", "basebuilder-config": "^2.2", "prettier": "^2.4", "prettier-plugin-twig-melody": "^0.4.6", "stylelint": "^14.0" },`
+    -   Please check custom bootstrap code against https://getbootstrap.com/docs/5.1/migration/
+    -   Please update custom Swipers against https://swiperjs.com/migration-guide
+    -   Remove "babel-preset-es2015" from your packages
+-   ✨ **Enhanced**
+    -   New offcanvas bootstrap 5 mobile menu
+
 ### 2.22.0:
 
 _Release Date - 29 november 2021_
