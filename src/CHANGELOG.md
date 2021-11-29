@@ -1,3 +1,17 @@
+### 2.22.0:
+
+_Release Date - 29 november 2021_
+
+-   ⛏️ **Breaking**
+    -   Removed filter `wp-lemon/filter/card-icon` use `wp-lemon/filter/card/icon` instead
+    -   Changed filter `wp-lemon/filter/card/excerpt-length/CARD_TYPE` to `wp-lemon/filter/card/CARD_TYPE/excerpt-length`
+    -   Changed filter `wp-lemon/filter/card/animation/CARD_TYPE` to `wp-lemon/filter/card/CARD_TYPE/animation`
+-   🐛 **Bugs Fixed**
+    -   `.job-meta` is not being rendered anymore when all fields are empty.
+-   💡 **Newly added**
+-   -   New filter `wp-lemon/filter/entry-header/image-size` to change all entry-header sizes at once.,
+    -   New filter `wp-lemon/filter/entry-header/' ~ post.type ~ '/image-size` to change one specific post type image size.
+
 ### 2.21.0:
 
 _Release Date - 25 november 2021_
@@ -14,7 +28,7 @@ _Release Date - 25 november 2021_
     -   Better matching LinkedIn icon.
     -   Default social media colors of icons in footer don't conflict anymore with background color.
 -   🌐 **Updated Dutch translation**
--   🌐 **Added German translation**
+-   🌐 **Updated German translation**
 
 ### 2.20.6:
 
