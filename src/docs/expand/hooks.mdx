@@ -23,10 +23,16 @@ Hooks are in the correct order.
 | wp-lemon/action/head/meta            | Insert extra meta information inside the head element.                       |
 | wp-lemon/action/body/before          | Insert code inside the body opening tag **before** all other child elements  |
 | wp-lemon/action/header/before        | Insert code directly **before** the the header/navbar                        |
+| wp-lemon/action/navbar/before        | Insert code directly **inside** the the header/navbar                        |
+| wp-lemon/action/menu-toggle/before        | Insert code directly **before** the menu toggler                   |
+| wp-lemon/action/menu-toggle/after        | Insert code directly **after** the menu toggler                   |
+| wp-lemon/action/main-menu/before        | Insert code directly **before** the nav menu inside the navbar                |
+| wp-lemon/action/main-menu/after        | Insert code directly **after** the nav menu inside the navbar               |
 | wp-lemon/action/header/after         | Insert code directly **after** the the header/navbar                         |
 | wp-lemon/action/content/before       | Insert code inside the .main opening tag **before** all other child elements |
 | wp-lemon/action/content/after        | Insert code inside the .main opening tag **after** all other child elements  |
 | wp-lemon/action/footer/before        | Insert code **before** footer                                                |
+| wp-lemon/action/footer/after         | Insert code **after** footer                                                 |
 | wp-lemon/action/footer-widgets/after | Insert code **after** footer widgets                                         |
 | wp-lemon/action/body/after           | Insert code inside the body opening tag **after** all other child elements   |
 
@@ -78,13 +84,18 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 
 | Filter hook                                                  | Description                                                                                                                 |
 |--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| wp-lemon/filter/socials_order                                | Change the default order of the socials in blocks, headers and footers.                                                                                          |
 | wp-lemon/filter/card/icon                                    | Change the icon inside cards.                                                                                               |
 | wp-lemon/filter/card/excerpt_length                          | Change the excerpt length inside cards                                                                                      |
-| wp-lemon/filter/card/excerpt_length/{{card_type}}            | Change the excerpt length inside a specific cards                                                                           |
+| wp-lemon/filter/card/{{card_type}}/excerpt_length            | Change the excerpt length inside a specific cards                                                                           |
+| wp-lemon/filter/card/{{card_type}}/animation                 | Change default animation of a card.                                                                    |
+| wp-lemon/filter/card/icon                | Change the arrow icon inside a cards footer.                                                                  |
 | wp-lemon/filter/copyright-message                            | Returns the copyright message, use this to change the copyright message in the                                              |  
 | wp-lemon/filter/image_sizes                                  | Filters the image sizes inside all blocks that use image_sizes context variable                                             |
 | wp-lemon/filter/image_sizes/{{block_name}}                   | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block.                       |
 | wp-lemon/filter/image_sizes/{{block_name}}/{{block_variant}} | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block and a specific variant |
+| wp-lemon/filter/entry-header/image-size                      | Used to change the image size of the image in the entry-header.twig                                                         |
+| wp-lemon/filter/entry-header/{{post_type}}image-size                      | Used to change the image size of the image in the entry-header.twig of a specific post type.                                                        |
 | wp-lemon/filters/javascript_translations_path                | Set translation path of javascript translations. `return get_stylesheet_directory() . '/resources/languages/'`              |
 
 **Examples**
@@ -92,7 +103,7 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 namespace WP_Lemon\Child\Controllers;
 
 
-add_filter('wp-lemon/filter/card-icon', function () {
+add_filter('wp-lemon/filter/card/icon', function () {
    return 'icon-chevron-right';
 });
 
