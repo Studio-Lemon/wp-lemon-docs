@@ -1,3 +1,394 @@
+### 3.0.0-BETA:
+
+_Release Date - 29 november 2021_
+
+This release is still in beta. You can help get the release out of beta by updating projects locally and report any bugs or noticeable differences you encounter.
+
+-   ⛏️ **Breaking**
+    -   Please update your dependencies in package.json to
+        `"@popperjs/core": "^2.10.2", "aos": "^3.0.0-beta.6", "bootstrap": "^5.1", "lodash.throttle": "^4.1.1", "swiper": "^7.2", "vanilla-lazyload": "17.5"` and run yarn install
+    -   Please update your dev dependencies like so:
+        `"devDependencies": { "@wordpress/browserslist-config": "^4.1", "basebuilder-config": "^2.2", "prettier": "^2.4", "prettier-plugin-twig-melody": "^0.4.6", "stylelint": "^14.0" },`
+    -   Please check custom bootstrap code against https://getbootstrap.com/docs/5.1/migration/
+    -   Please update custom Swipers against https://swiperjs.com/migration-guide
+    -   Remove "babel-preset-es2015" from your packages
+-   ✨ **Enhanced**
+    -   New offcanvas bootstrap 5 mobile menu
+
+### 2.22.0:
+
+_Release Date - 29 november 2021_
+
+-   ⛏️ **Breaking**
+    -   Removed filter `wp-lemon/filter/card-icon` use `wp-lemon/filter/card/icon` instead
+    -   Changed filter `wp-lemon/filter/card/excerpt-length/CARD_TYPE` to `wp-lemon/filter/card/CARD_TYPE/excerpt-length`
+    -   Changed filter `wp-lemon/filter/card/animation/CARD_TYPE` to `wp-lemon/filter/card/CARD_TYPE/animation`
+-   🐛 **Bugs Fixed**
+    -   `.job-meta` is not being rendered anymore when all fields are empty.
+-   💡 **Newly added**
+-   -   New filter `wp-lemon/filter/entry-header/image-size` to change all entry-header sizes at once.,
+    -   New filter `wp-lemon/filter/entry-header/' ~ post.type ~ '/image-size` to change one specific post type image size.
+
+### 2.21.0:
+
+_Release Date - 25 november 2021_
+
+-   ⛏️ **Breaking**
+    -   Please update bulldozer to 1.7.0 by uploading the vendor folder to the server.
+-   🐛 **Bugs Fixed**
+    -   `.navar__right` default margin-left removed.
+-   💡 **Newly added**
+    -   New social media block/widget added.
+    -   You can now easily add a link around an card image by set setting image_link to true
+    -   New widgets block category
+-   ✨ **Enhanced**
+    -   Better matching LinkedIn icon.
+    -   Default social media colors of icons in footer don't conflict anymore with background color.
+-   🌐 **Updated Dutch translation**
+-   🌐 **Updated German translation**
+
+### 2.20.6:
+
+_Release Date - 22 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   ul in media text element now does have a margin.
+-   💡 **Newly added**
+    -   New action added in header. `wp-lemon/action/navbar/before`
+
+### 2.20.5:
+
+_Release Date - 17 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Footer link color now inherits the current colour.
+-   ✨ **Enhanced**
+    -   Timeline-item block, alignment is now disabled
+    -   add noopener to social items.
+    -   FAQ block, + icon now inherits button color.
+    -   PHP, all Timber calls are now properly namespaced.
+    -   Widgets now inherit the font family.
+    -   Add margin to the right of archive load-more button
+
+### 2.20.[3-4]:
+
+_Release Date - 12 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes licence class activation
+    -   Bug fixed where both contact buttons would show when only one of the two was active
+-   ✨ **Enhanced**
+    -   Now shows an error on non-activated websites to please activate the licence.
+    -   Navbar now has extra scrolled modifier class when the navbar is not on top anymore.
+
+### 2.20.2:
+
+_Release Date - 8 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes an issue where jpg's would be loaded twice.
+    -   Contact banner block image is now contained
+-   ✨ **Enhanced**
+    -   Better entry header markup.
+
+### 2.20.1:
+
+_Release Date - 2 november 2021_
+
+-   🐛 **Bugs Fixed**
+    -   German translation now loads again
+    -   Minor tweaks to new cta block.
+
+### 2.20.0:
+
+_Release Date - 1 november 2021_
+
+-   ## ⛏️ **Breaking**
+-   💡 **Newly added**
+    -   New contact-cta block
+    -   Call button is not contact-buttons. You now have the possibility to show a WhatsApp button as well.
+    -   New next_post() function to navigate to the next post in that particular posttype
+    -   Updated e-mail and phone icon.
+-   ✨ **Enhanced**
+    -   Updated scss for beter compat with dart-sass 2.0
+    -   Updated dev dependencies
+    -   Linted a lot of PHP files
+    -   Slide-banner blocks can now only be placed inside a slider.
+    -   wp-media-text - Better display inside editor.
+-   🐛 **Bugs Fixed**
+    -   Lazyload in the backend now works better.
+-   🌐 **Updated Dutch translation**
+-   🌐 **Added German translation**
+
+### 2.19.6:
+
+_Release Date - 26 October 2021_
+
+-   ✨ **Enhanced**
+    -   Simpler index.php and twig file
+    -   Footer code is now reused in entry-footer.twig
+    -   content-header is now entry-header to match footer naming
+    -   Simpler search markup.
+    -   Reusable blocks are now shown full width. Fixes #105
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug where element colors inside media text block would be hard overwritten
+    -   Fixes a bug in node overview and node latest bug where column count was undefined. Fixes #104
+
+### 2.19.5:
+
+_Release Date - 22 October 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug where videos wouldn't autoplay on iphones in serval cases. ### 2.19.5:
+
+_Release Date - 22 October 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug where videos wouldn't autoplay on iphones in serval cases.
+
+### 2.19.4:
+
+_Release Date - 18 October 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug where theme would crash when ACF wasn't active. E.G. when setting up a new site.
+
+### 2.19.2:
+
+_Release Date - 15 October 2021_
+
+-   ✨ **Enhanced**
+    -   Overhaul to font sizes. Please check the new scss map structure in the variables file.
+-   🐛 **Bugs Fixed**
+    -   Fixes a bug that crashes the website when Fluentforms is deactivated.
+    -   Disable gradients when not present.
+    -   Footer padding changes
+
+### 2.19.0:
+
+_Release Date - 10 October 2021_
+
+-   ⛏️ **Breaking**
+    -   Basebuilder-config is updated to 2.0, please update manually in your child themes package.json and run yarn install afterwards.
+    -   Please search your child themes JavaScript for `import '@wordpress/edit-post';` and remove it.
+    -   Lemon blocks plugin updated to 1.2.3 Please update manually to your FTP.
+-   💡 **Newly added**
+    -   New ACF field to select a Fluentforms.
+    -   Adding actions in header
+        -   {% do action('wp-lemon/action/menu-toggle/before') %}
+        -   {% do action('wp-lemon/action/menu-toggle/after') %}
+        -   {% do action('wp-lemon/action/main-menu/before') %}
+        -   {% do action('wp-lemon/action/main-menu/after') %}
+-   🐛 **Bugs Fixed**
+    -   remove `.footer__logobar` when no logo is present
+    -   remove unused variable
+
+### 2.18.0:
+
+_Release Date - 30 September 2021_
+
+-   🐛 **Bugs Fixed**
+    -   set default column count in node-latest and node-overview blocks.
+    -   Node blocks not having proper col count by default.
+-   ✨ **Enhanced**
+    -   Better lazyload picture element.
+    -   Better content card block defaults.
+    -   Don't load anayltics on production
+    -   Add WordPress ENV global to the context.
+
+### 2.17.9:
+
+_Release Date - 21 September 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Add missing collapsed class to menu toggler.
+    -   Fixed button margin being applied double inside media-text block
+-   ✨ **Enhanced**
+    -   Renamed has_custom_page_archive() to custom_archive_page().
+    -   Deprecated has_custom_page_archive()
+
+### 2.17.8:
+
+_Release Date - 17 September 2021_
+
+-   ✨ **Enhanced**
+    -   node-overview block ➡️ add extra tags for block variants
+    -   archive query / ajax query ➡️ Render excerpt on load more click if toggle is set to true
+    -   wp media / text block ➡️ Smaller margin between buttons inside content area.
+    -   node overview/latest blocks ➡️ Render proper images based on col size.
+-   🐛 **Bugs Fixed**
+    -   single-job.twig ➡️ remove meta div when no content is rendered inside.
+    -   a11y functionality ➡️ This is now succesfully rendered once more.
+    -   Node overview block ➡️ Images now render correctly in backend.
+    -   Widget editor screen ➡️ fixes notice
+
+### 2.17.7:
+
+_Release Date - 29 july 2021_
+
+-   ✨ **Enhanced**
+    -   wp-gallery ➡️ logo style ➡️ items now have same height.
+    -   Archive block ➡️ tweaked vertical margins.
+    -   wp-columns ➡️ Re-added margins underneath columns except last child.
+    -   wp-image ➡️ icon style ➡️ tweaked design.
+
+### 2.17.5:
+
+_Release Date - 29 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: overflowing cards.
+    -   Fixed: Analytics not loading.
+    -   Fixed: Don't search for missing post types when setting archive pages.
+
+### 2.17.4:
+
+_Release Date - 27 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: Gallery alignment fixes.
+    -   Fixed: Timeline lazyload issue. Items would get loaded too early.
+
+### 2.17.3:
+
+_Release Date - 27 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: Gallery alignment fixes.
+
+### 2.17.2:
+
+_Release Date - 27 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: Intrinsic image sizes would error out due to a typo.
+-   ✨ **Enhanced**
+    -   node-overview and node-latest blocks can now query post types that are not public. These items now wont have a link.
+
+### 2.17.1:
+
+_Release Date - 27 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: array to string conversion in licence class
+    -   Only show language switcher if at least two languages are activated (also takes disabled languages into account).
+    -   Fixed: timeline items would appear on a wrong spot when OS animations are disabled.
+-   🌐 **Updated Dutch translation**
+-   🌐 **Added German translation**
+
+### 2.17.0:
+
+_Release Date - 23 july 2021_
+
+-   ⛏️ **Breaking**
+    -   javascript function lazyLoad is now called lazyLoadFunc. If you have custom javascript plugging into this function, please rename acordingly.
+    -   Lemon blocks plugin updated to 1.2.2. Please update manually.
+-   🐛 **Bugs Fixed**
+    -   Fixed: missing call button
+    -   Fixed: missing padding in media-text
+    -   Fixed: block quotes being too small
+    -   Fixed: deprecation notice since WordPress 5.8 `block_categories` is now `block_categories_all`
+    -   Fixed: banners not lazyloading properly
+    -   Fixed: sliders not lazyloading in backend.
+    -   Fixed: Timeline dots not connecting.
+    -   Proposed fix: Timeline animations stopped abruptly after a large amount of items.
+-   ✨ **Enhanced**
+    -   Better selector usage for wp-media-text
+    -   Set translation setting in timeline block
+-   💡 **Newly added**
+    -   New block: slide-banner, this replaces the banner in sliders.
+    -   Added new $card-picture-padding variable to control image ratio.
+    -   Updated color settings for menu items. You can now set the background and text colors.
+
+### 2.16.2:
+
+_Release Date - 22 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed: Dropdown not closing on click
+    -   Fixed: menu animating away on mobile browsers while opening menu
+    -   Fixed: Media/text wide aligned didn't had padding on mobile
+    -   Fixed: paragraphs in cards always had a margin bottom. Now only the last paragraph has no margin.
+-   ✨ **Enhanced**
+    -   Copyright message is now placed in a smaller column.
+-   💡 **Newly added**
+    -   intrinsic image size added for cards.
+
+### 2.16.1:
+
+_Release Date - 20 july 2021_
+
+-   ✨ **Enhanced**
+    -   Tweak notice inside node-latest block
+-   💡 **Newly added**
+    -   Added filter to overwrite node-latest no-items message.
+
+### 2.16.0:
+
+_Release Date - 20 july 2021_
+
+-   ⛏️ **Breaking**
+    -   Please double check custom navbar styling on child sites.
+-   ✨ **Enhanced**
+    -   Added notice on front-end when node-latest block does not contain items.
+    -   Rework of the javascript that slides the menu in and out. The timings are now snappier.
+-   🌐 **Updated Dutch translation**
+
+### 2.15.4:
+
+_Release Date - 14 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Load same amount of items in archive query as original query.
+-   ✨ **Enhanced**
+    -   Tweak font sizes
+-   📦 **Updated dependencies**
+
+### 2.15.3:
+
+_Release Date - 14 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes heading colors not being inherited in timeline cards
+    -   wrap timeline items in div so even/uneven works consistently
+    -   Timeline date justify fix
+-   ✨ **Enhanced**
+    -   Simpler language menus
+    -   close dropdowns on escape
+    -   close dropdowns on click outside dropdown
+    -   Restyling of logo gallery style.
+-   📦 **Updated dependencies**
+
+### 2.15.2:
+
+_Release Date - 12 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes not loading child
+
+### 2.15.1:
+
+_Release Date - 12 july 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes not loading child
+
+### 2.15.0:
+
+_Release Date - 09 july 2021_
+
+-   ⛏️ **Breaking**
+    -   Please add ACF color palette plugin by:
+        -   Updating your MU section in the composer.json like so: `"web/app/mu-plugins/{$name}/": [ "type:wordpress-muplugin", "log1x/acf-editor-palette" ],`
+        -   And add the plugin as a MU-plugi using `composer require log1x/acf-editor-palette`
+        -   Don't forget to upload the mu-plugins folder when deploying.
+        -   Update bulldozer as well by upload the vendor folder in your root.
+-   💡 **Newly added**
+    -   New Timeline and timeline item blocks.
+-   ✨ **Enhanced**
+    -   Removed backend block overrides from partials and added them in separate file.
+    -   Translated block keywords
+
 ### 2.14.2:
 
 _Release Date - 30 june 2021_
