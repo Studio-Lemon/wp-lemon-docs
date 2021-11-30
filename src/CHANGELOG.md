@@ -1,6 +1,6 @@
-### 3.0.0-BETA1:
+### 3.0.0-BETA:
 
-_Release Date - 11 november 2021_
+_Release Date - 29 november 2021_
 
 This release is still in beta. You can help get the release out of beta by updating projects locally and report any bugs or noticeable differences you encounter.
 
