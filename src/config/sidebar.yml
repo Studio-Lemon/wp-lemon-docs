@@ -36,6 +36,10 @@
       link: "/deployment/initial-deploy"
     - label: "Deploying updates"
       link: "/deployment/updates"
+- label: Upgrade guides
+  items:
+     - label: Upgrade to 3.0
+       link: /upgrade-guides/3.0
 - label: More
   items:
     - label: FAQ
