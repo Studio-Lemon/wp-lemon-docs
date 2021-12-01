@@ -17,7 +17,7 @@ Navigate to your composer.json file in the project root and update it as follows
 
 ```json
 -    "satispress/wp-lemon": "^2.0",
-+    "satispress/wp-lemon": "^3.0-BETA2",
++    "satispress/wp-lemon": "^3.0-BETA3",
 ```
 
 ### Step 2. Update child-theme dependencies
@@ -29,7 +29,7 @@ Navigate to your child theme and open package.json and update the following depe
 ```json
     "devDependencies": {
         "@wordpress/browserslist-config": "^4.1.0",
-        "basebuilder-config": "^2.2.5",
+        "basebuilder-config": "^2.3.0",
         "prettier": "^2.5",
         "prettier-plugin-twig-melody": "^0.4.6"
     },
@@ -39,12 +39,36 @@ Navigate to your child theme and open package.json and update the following depe
         "bootstrap": "^5.1",
         "lodash.throttle": "^4.1.1",
         "swiper": "^7.3",
-        "vanilla-lazyload": "17.5"
+        "vanilla-lazyload": "17.5",
+        "aos": "^3.0.0-beta.6",
     }
 ```
 
-### Step 3. import new dependencies in app.json
-Navigate to resources/assets/scripts/app.json and locate the bootstrap imports at te top. Remove the util import and add the offcanvas import as shown in this code example.
+### Step 3. Update child-theme script
+Navigate to your child theme and open package.json and replace the scripts section with the following code.
+
+```json
+    "scripts": {
+        "bootstrap-project": "composer install --working-dir=../../../../ && yarn install",
+        "composer-deploy": "composer install --working-dir=../../../../ --no-dev --optimize-autoloader",
+        "composer-update": "composer update --working-dir=../../../../",
+        "update-parent": "composer update --working-dir=../../../../ && yarn install",
+        "dev": "basebuilder-config development",
+        "development": "basebuilder-config development",
+        "watch": "basebuilder-config watch",
+        "production": "basebuilder-config production",
+        "lint": "yarn run -s lint:scripts && npm run -s lint:styles",
+        "lint:styles": "stylelint \"resources/assets/styles/**/*.scss\"",
+        "lint:scripts": "eslint resources/assets/scripts",
+        "lint:twig": "yarn run prettier --write \"resources/views/**/*.twig\""
+    },
+```
+
+### Step 4. Remove iconfont and lato folders
+Navigate to `resources/assets/fonts` and remove the `iconfont` and `lato` folders.  
+
+### Step 5. import new dependencies in app.js
+Navigate to resources/assets/scripts/app.js and locate the bootstrap imports at te top. Remove the util import and add the offcanvas import as shown in this code example.
 
 ```js
 - import 'bootstrap/js/dist/util';
@@ -54,17 +78,12 @@ Navigate to resources/assets/scripts/app.json and locate the bootstrap imports a
 ```
 
 
-### Step 4. Run update-parent command
+### Step 6. Run update-parent command
 Open a new console in your child theme and run the following command: `yarn run update-parent`
 
 This will update both PHP and node dependencies to their latest versions.
 
-### Step 5. Update icons
-Open a new console in your child theme and run the following command: `yarn run update-iconfont`
-
-This will update the local iconfont. Please make sure you re-add any icons you need.
-
-### Step 6. Run production build
+### Step 7. Run production build
 Open a new console in your child theme and run the following command: `yarn run production`
 This will create a fresh build with the new dependencies. If the build fails, please try to debug the error or open a new ticket.
 
