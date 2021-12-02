@@ -37,7 +37,7 @@ Hooks are in the correct order.
 | wp-lemon/action/body/after           | Insert code inside the body opening tag **after** all other child elements   |
 
 **Examples**
-```php title=library/controllers/hooks.php lineNumbers=true
+```php title=library/controllers/actions.php lineNumbers=true
 namespace WP_Lemon\Child\Controllers;
 
 use Timber\Timber;
@@ -82,22 +82,36 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 ```
 ## Filters inside wp-lemon
 
+
+### Filters available inside regular PHP files.
+
 | Filter hook                                                  | Description                                                                                                                 |
 |--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| wp-lemon/filter/socials_order                                | Change the default order of the socials in blocks, headers and footers.                                                                                          |
-| wp-lemon/filter/card/icon                                    | Change the icon inside cards.                                                                                               |
-| wp-lemon/filter/card/excerpt_length                          | Change the excerpt length inside cards                                                                                      |
-| wp-lemon/filter/card/{{card_type}}/excerpt_length            | Change the excerpt length inside a specific cards                                                                           |
-| wp-lemon/filter/card/{{card_type}}/animation                 | Change default animation of a card.                                                                    |
-| wp-lemon/filter/card/icon                | Change the arrow icon inside a cards footer.                                                                  |
-| wp-lemon/filter/copyright-message                            | Returns the copyright message, use this to change the copyright message in the                                              |  
-| wp-lemon/no_items_message/{{block_slug}}/{{dynamic_post_type}}                         | Used in the node-latest block to change the message when no items are found that is shown to the site visitors.          |  
-| wp-lemon/filter/image_sizes                                  | Filters the image sizes inside all blocks that use image_sizes context variable                                             |
-| wp-lemon/filter/image_sizes/{{block_name}}                   | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block.                       |
-| wp-lemon/filter/image_sizes/{{block_name}}/{{block_variant}} | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block and a specific variant |
+| wp-lemon/filter/javascript-translations-path                 | Set translation path of javascript translations. `return get_stylesheet_directory() . '/resources/languages/'`              |
+| wp-lemon/filter/socials-order                                | Change the default order of the socials in blocks, headers and footers.                                                     |
+
+### Filters available PHP block declarations
+
+| Filter hook                                                  | Description                                                                                                                 |
+|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| wp-lemon/filter/block/image-sizes                            | Filters the image sizes inside all blocks that use image_sizes context variable                                             |
+| wp-lemon/filter/block/{{block_name}}/image-sizes             | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block.                       |
+| wp-lemon/filter/block/{{block_name}}/{{dynamic_post_type}}/image-sizes      |  Filters the image sizes inside all blocks that use image_sizes context variable for a specific block and a specific variant      |
+| wp-lemon/filter/block/{{block_name}}/{{dynamic_post_type}}/no-items-message | Used in the node-latest block to change the message when no items are found that is shown to the site visitors.  
+
+### Filters available Twig files
+
+| Filter hook                                                  | Description                                                                                                                 |
+|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| wp-lemon/filter/card/icon                                    | Change the arrow icon inside a cards footer.                                                                                |
+| wp-lemon/filter/card/excerpt-length                          | Change the excerpt length inside cards                                                                                      |
+| wp-lemon/filter/card/{{card_type}}/excerpt-length            | Change the excerpt length inside a specific cards                                                                           |
+| wp-lemon/filter/card/{{card_type}}/animation                 | Change default animation of a card.                                                                                         |
 | wp-lemon/filter/entry-header/image-size                      | Used to change the image size of the image in the entry-header.twig                                                         |
-| wp-lemon/filter/entry-header/{{post_type}}image-size                      | Used to change the image size of the image in the entry-header.twig of a specific post type.                                                        |
-| wp-lemon/filters/javascript_translations_path                | Set translation path of javascript translations. `return get_stylesheet_directory() . '/resources/languages/'`              |
+| wp-lemon/filter/entry-header/{{post_type}}/image-size        | Used to change the image size of the image in the entry-header.twig of a specific post type.                                |
+| wp-lemon/filter/entry-header/{{post_type}}/image-id          | Used to change the image id of the image in the entry-header.twig of a specific post type. Or set to false to remove it completely. |
+| wp-lemon/filter/entry-header/{{post_type}}/tags              | Used to change the tags section in the entry-header.twig of a specific post type. Or set to false to remove it completely.          |
+| wp-lemon/filter/copyright-message                            | Returns the copyright message, use this to change the copyright message in the                                                      |  
 
 **Examples**
 ```php title=library/controllers/filters.php lineNumbers=true
@@ -108,10 +122,10 @@ add_filter('wp-lemon/filter/card/icon', function () {
    return 'icon-chevron-right';
 });
 
-add_filter("wp-lemon/filter/image_sizes/node-overview/discipline", function ($sizes) {
+add_filter("wp-lemon/filter/node-overview/news/image-sizes", function ($sizes) {
    return '(min-width: 768px) 700px, 
-(min-width: 600px) 510px, 
-400px';
+           (min-width: 600px) 510px, 
+           400px';
 });
 
 ```
