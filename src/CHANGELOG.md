@@ -1,8 +1,8 @@
-### 3.0.0-BETA:
+### 3.0.0:
 
-_Release Date - 29 november 2021_
+_Release Date - 2 december 2021_
 
-This release is still in beta. You can help get the release out of beta by updating projects locally and report any bugs or noticeable differences you encounter.
+Please read our upgrade guide for a step-by-step plan to upgrade to the newest version: [3.0 upgrade guide](/upgrade-guides/3.0)
 
 -   ⛏️ **Breaking**
     -   Please update your dependencies in package.json to
@@ -12,6 +12,8 @@ This release is still in beta. You can help get the release out of beta by updat
     -   Please check custom bootstrap code against https://getbootstrap.com/docs/5.1/migration/
     -   Please update custom Swipers against https://swiperjs.com/migration-guide
     -   Remove "babel-preset-es2015" from your packages
+    -   New naming for filters. Please double check if filters are still working.
+    -   Icons classnames are now namespaced. So you can more easily add your own icon font.
 -   ✨ **Enhanced**
     -   New offcanvas bootstrap 5 mobile menu
 
