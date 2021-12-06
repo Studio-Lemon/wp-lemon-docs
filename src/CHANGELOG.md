@@ -1,3 +1,11 @@
+### 3.0.1:
+
+_Release Date - 6 december 2021_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes navbar being sticky top all the time
+    -   proposed fix for overflowing navbar due to two transforming element inside each other.
+
 ### 3.0.0:
 
 _Release Date - 2 december 2021_
