@@ -1,3 +1,11 @@
+### 3.0.2:
+
+_Release Date - 7 december 2021_
+
+-   🐛 **Bugs Fixed**.
+    -   Fixes missing icon in card wrap
+    -   Fixes the word "menu" not being translatable.
+
 ### 3.0.1:
 
 _Release Date - 6 december 2021_
