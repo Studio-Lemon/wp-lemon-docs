@@ -1,9 +1,40 @@
+### 3.1.1:
+
+_Release Date - 13 december 2021_
+
+-   🐛 **Bugs Fixed**.
+    -   Fixes sass deprecation.
+    -   Updated changelog for new theme.json
+-   🌐 **Updated Dutch translation**
+
 ### 3.1.0:
 
 _Release Date - 13 december 2021_
 
 -   ⛏️ **Breaking**
     -   Please update bulldozer to 1.8.1 by uploading the vendor folder to the server.
+    -   Please create a new file named `theme.json` with the following contents in your child theme.
+
+```json title=theme.json lineNumbers=true
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 1,
+    "settings": {
+        "border": {
+            "customRadius": false
+        },
+        "spacing": {
+            "customPadding": false,
+            "customMargin": false
+        },
+        "layout": {
+            "contentSize": "1100px",
+            "wideSize": "1400px"
+        }
+    }
+}
+```
+
 -   💡 **Newly added**
     -   New Block: Card grid
     -   Filter added: `wp-lemon/filter/card/' ~ card_type ~ '/image-id'`
