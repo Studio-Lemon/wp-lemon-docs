@@ -1,3 +1,26 @@
+### 3.1.0:
+
+_Release Date - 13 december 2021_
+
+-   ⛏️ **Breaking**
+    -   Please update bulldozer to 1.8.1 by uploading the vendor folder to the server.
+-   💡 **Newly added**
+    -   New Block: Card grid
+    -   Filter added: `wp-lemon/filter/card/' ~ card_type ~ '/image-id'`
+    -   Filter added: `wp-lemon/filter/entry-header/' ~ post.type ~ '/type'`
+    -   Filter added: `wp-lemon/filter/card/' ~ card_type ~ '/image-el'`
+    -   Filter added: `wp-lemon/filter/entry-header/' ~ post.type ~ '/picture-el'`
+-   ✨ **Enhanced**
+    -   Font sizes are now set with css vars.
+    -   Smaller css bundle by removing not used styles.
+    -   Better icons for block to differentiate between them inside the editor.
+    -   Various block context improvements
+    -   macro picture now doesn't have any children elements when there is now image set.
+    -   Move colors to css vars for several blocks
+        -   Node latest
+        -   Node overview
+        -   Timeline
+
 ### 3.0.2:
 
 _Release Date - 7 december 2021_
