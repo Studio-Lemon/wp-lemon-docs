@@ -1,3 +1,19 @@
+### 3.1.2:
+
+_Release Date - 13 december 2021_
+
+-   Please update bulldozer to 1.8.2 by uploading the vendor folder to the server.
+-   🐛 **Bugs Fixed**.
+    -   Disable mode switching for sevaral blocks.
+    -   Fixes bug where card images would render at incorrect heights in the backend.
+    -   Fixes wrong display of card grid with two columns.
+-   ✨ **Enhanced**
+    -   Card grid now shows horizontal alignment buttons.
+    -   Several backend style improvements.
+    -   Better checks if acf fields inside blocks are empty.
+    -   Some block fields are no longer required.
+    -   Better overwriting of styles
+
 ### 3.1.1:
 
 _Release Date - 13 december 2021_
