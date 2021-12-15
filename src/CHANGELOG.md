@@ -1,3 +1,13 @@
+### 3.1.3:
+
+_Release Date - 15 december 2021_
+
+-   🐛 **Bugs Fixed**.
+    -   Fixes missing media text bg color
+-   ✨ **Enhanced**
+    -   minor css var improvements
+    -   added date filter in entry header
+
 ### 3.1.2:
 
 _Release Date - 13 december 2021_
