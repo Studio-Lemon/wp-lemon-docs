@@ -1,3 +1,12 @@
+### 3.1.5:
+
+_Release Date - 17 december 2021_
+
+-   🐛 **Bugs Fixed**.
+    -   Fixes a bug where the excerpt would always be set
+-   ✨ **Enhanced**
+    -   New actions and filters added, please check the docs.
+
 ### 3.1.4:
 
 _Release Date - 17 december 2021_
