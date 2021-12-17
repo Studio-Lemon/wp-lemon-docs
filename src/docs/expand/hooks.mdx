@@ -28,12 +28,15 @@ Hooks are in the correct order.
 | wp-lemon/action/menu-toggle/after        | Insert code directly **after** the menu toggler                   |
 | wp-lemon/action/main-menu/before        | Insert code directly **before** the nav menu inside the navbar                |
 | wp-lemon/action/main-menu/after        | Insert code directly **after** the nav menu inside the navbar               |
+| wp-lemon/action/navbar/after        | Insert code directly **inside & before the end** of the the header/navbar                        |
 | wp-lemon/action/header/after         | Insert code directly **after** the the header/navbar                         |
 | wp-lemon/action/content/before       | Insert code inside the .main opening tag **before** all other child elements |
 | wp-lemon/action/content/after        | Insert code inside the .main opening tag **after** all other child elements  |
 | wp-lemon/action/footer/before        | Insert code **before** footer                                                |
 | wp-lemon/action/footer/after         | Insert code **after** footer                                                 |
-| wp-lemon/action/footer-widgets/after | Insert code **after** footer widgets                                         |
+| wp-lemon/action/footer-widgets/after | Insert code **after** footer widgets area                                         |
+| wp-lemon/action/footer-widgets-row/before | Insert code **before** actual widgets                                    |
+| wp-lemon/action/footer-widgets-row/after | Insert code **after** actual widgets                                         |
 | wp-lemon/action/body/after           | Insert code inside the body opening tag **after** all other child elements   |
 
 **Examples**
@@ -97,7 +100,9 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 | wp-lemon/filter/block/image-sizes                            | Filters the image sizes inside all blocks that use image_sizes context variable                                             |
 | wp-lemon/filter/block/{{block_name}}/image-sizes             | Filters the image sizes inside all blocks that use image_sizes context variable for a specific block.                       |
 | wp-lemon/filter/block/{{block_name}}/{{dynamic_post_type}}/image-sizes      |  Filters the image sizes inside all blocks that use image_sizes context variable for a specific block and a specific variant      |
-| wp-lemon/filter/block/{{block_name}}/{{dynamic_post_type}}/no-items-message | Used in the node-latest block to change the message when no items are found that is shown to the site visitors.  
+| wp-lemon/filter/block/node-latest/{{dynamic_post_type}}/no-items-message | Used in the node-latest block to change the message when no items are found that is shown to the site visitors.  |
+| wp-lemon/filter/block/node-latest/{{dynamic_post_type}}/overview-button-text| Used in the node-latest block to change the text in the button leading to the overview page of that post type |
+| wp-lemon/filter/block/node-overview/{{dynamic_post_type}}/select-all-text| Used in the node-overview block to change the text of the first option in the select element. |
 
 ### Filters available Twig files
 
