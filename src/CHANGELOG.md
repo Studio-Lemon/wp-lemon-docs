@@ -1,3 +1,10 @@
+### 3.1.4:
+
+_Release Date - 17 december 2021_
+
+-   ✨ **Enhanced**
+    -   Woocommerce improvements.
+
 ### 3.1.3:
 
 _Release Date - 15 december 2021_
