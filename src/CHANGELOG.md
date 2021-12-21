@@ -1,3 +1,15 @@
+### 3.1.6:
+
+_Release Date - 21 december 2021_
+
+-   🐛 **Bugs Fixed**.
+    -   fluentform acf field now allows for a null value.
+-   ✨ **Enhanced**
+    -   Skip licence check on development.
+    -   Add possibility to add a margin underneath a banner block
+    -   Allow wide alignment on card grid block
+    -   other_items_query now supports taxonomies as well.
+
 ### 3.1.5:
 
 _Release Date - 17 december 2021_
