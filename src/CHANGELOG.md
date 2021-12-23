@@ -1,3 +1,14 @@
+### 3.1.7:
+
+_Release Date - 23 december 2021_
+
+-   🐛 **Bugs Fixed**.
+    -   Fixed media and text display in backend.
+-   ✨ **Enhanced**
+    -   Allow lists inside banner block
+    -   Improved navwalker
+    -   You are now able to overwrite font sizes inside cards more easily.
+
 ### 3.1.6:
 
 _Release Date - 21 december 2021_
