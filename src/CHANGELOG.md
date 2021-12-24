@@ -1,3 +1,15 @@
+### 3.2.0:
+
+_Release Date - 24 december 2021_
+
+-   💡 **Newly added**
+    -   wp-lemon now supports nested sub menus.
+-   🐛 **Bugs Fixed**.
+    -   Margin bottom is now fixed in banner block
+-   ✨ **Enhanced**
+    -   Search.js is now vanilla JS
+    -   Contact-buttons is now vanilla js
+
 ### 3.1.7:
 
 _Release Date - 23 december 2021_
