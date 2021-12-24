@@ -6,7 +6,9 @@ _Release Date - 24 december 2021_
     -   wp-lemon now supports nested sub menus.
 -   🐛 **Bugs Fixed**.
     -   Margin bottom is now fixed in banner block
+    -   Button block now has a proper hover color
 -   ✨ **Enhanced**
+    -   Navbar toggle now has an aria label
     -   Search.js is now vanilla JS
     -   Contact-buttons is now vanilla js
 
