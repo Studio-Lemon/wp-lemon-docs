@@ -1,3 +1,19 @@
+### 3.2.2:
+
+_Release Date - 05 januari 2022_
+
+-   💡 **Newly added**
+    -   wp-lemon now supports nested sub menus.
+-   🐛 **Bugs Fixed**.
+    -   JS fix in search.js
+    -   JS fix in contact-buttons.js
+-   ✨ **Enhanced**
+    -   share.js is now vanilla js
+    -   smoothscroll.js in now vanilla js
+    -   Block-slider.js is now vanilla js
+    -   A11y.js is now vanilla js
+-   📦 **Updated dependencies**
+
 ### 3.2.0:
 
 _Release Date - 24 december 2021_
