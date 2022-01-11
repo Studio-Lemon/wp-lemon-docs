@@ -1,6 +1,22 @@
+### 3.3.0:
+
+_Release Date - 11 january 2022_
+
+-   Please update bulldozer to 1.9.0 by uploading the vendor folder to the server.
+-   💡 **Newly added**
+    -   No more jQuery dependency in wp-lemon. Read: [Javascript](/basics/basic-javascript)
+-   🐛 **Bugs Fixed**.
+    -   Several JS bugs fixed.
+    -   bug where dropdown menus wouldn't close is fixed
+-   ✨ **Enhanced**
+    -   Its now possible to overwrite block attributes inside a block declaration class.
+    -   Cleaned deprecated functions
+    -   navwalker improvements. Less classes and better markup.
+    -   Vanilla js Archive.js
+
 ### 3.2.2:
 
-_Release Date - 05 januari 2022_
+_Release Date - 05 january 2022_
 
 -   💡 **Newly added**
     -   wp-lemon now supports nested sub menus.
