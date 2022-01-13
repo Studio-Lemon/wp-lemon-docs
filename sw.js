@@ -27,20 +27,20 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-38fd85c1ef21e0beab1b.js"
+    "url": "webpack-runtime-e4c21633c2ce6f0cbceb.js"
   },
   {
-    "url": "framework-c05959621a41f2b38685.js"
+    "url": "framework-747f97962545bcd4fe2b.js"
   },
   {
     "url": "f0e45107-6fbda47ff26aa8d46e67.js"
   },
   {
-    "url": "app-455c8513be2699e2daab.js"
+    "url": "app-04c847687a4b10183511.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "ecdda908ec3774bb1cac72527747d580"
+    "revision": "5b6e62f24e4dc004a159291ac9ce6b27"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-a5d595b40e13ee56b49c.js"
@@ -51,7 +51,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "5e980239c14cfa3971cb75d8e5f2011d"
+    "revision": "9ddd71c26c2fa78e438b00d4517400bc"
   },
   {
     "url": "polyfill-65a6a5f8a09a8a754807.js"
@@ -84,6 +84,24 @@ const MessageAPI = {
 
   clearPathResources: event => {
     event.waitUntil(idbKeyval.clear())
+
+    // We detected compilation hash mismatch
+    // we should clear runtime cache as data
+    // files might be out of sync and we should
+    // do fresh fetches for them
+    event.waitUntil(
+      caches.keys().then(function (keyList) {
+        return Promise.all(
+          keyList.map(function (key) {
+            if (key && key.includes(`runtime`)) {
+              return caches.delete(key)
+            }
+
+            return Promise.resolve()
+          })
+        )
+      })
+    )
   },
 
   enableOfflineShell: () => {
@@ -150,7 +168,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/wp-lemon-docs/app-455c8513be2699e2daab.js`))) {
+  if (!resources || !(await caches.match(`/wp-lemon-docs/app-04c847687a4b10183511.js`))) {
     return await fetch(event.request)
   }
 
