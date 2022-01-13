@@ -14,6 +14,8 @@
       link: "/basics/favicons-manifest"
     - label: "Basic styling"
       link: "/basics/basic-styling"
+    - label: "Basic javascript"
+      link: "/basics/basic-javascript"
     - label: "Fonts"
       link: "/basics/fonts"
 - label: Expand
