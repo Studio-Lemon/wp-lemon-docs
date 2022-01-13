@@ -115,10 +115,13 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 | wp-lemon/filter/card/{{card_type}}/image-id                  | Filters the image id inside a card.                                                                                         |
 | wp-lemon/filter/card/{{card_type}}/picture-el                | filter the whole picture element inside cards                                                                               |
 | wp-lemon/filter/entry-header/image-size                      | Used to change the image size of the image in the entry-header.twig                                                         |
+| wp-lemon/filter/entry-header/{{post_type}}/title             | Used to change the title in the entry-header.twig of a specific post type. Or set to false to remove it completely.          |
+| wp-lemon/filter/entry-header/{{post_type}}/tags              | Used to change the tags section in the entry-header.twig of a specific post type. Or set to false to remove it completely.          |
+| wp-lemon/filter/entry-header/{{post_type}}/type              | Used to change the post type text above the title in the entry-header.twig of a specific post type. Or set to false to remove it completely.          |
+| wp-lemon/filter/entry-header/{{post_type}}/date              | Used to change the date text in the entry-header.twig of a specific post type. Or set to false to remove it completely.          |
+| wp-lemon/filter/entry-header/{{post_type}}/picture-el        | Filters the complete picture element.                                                                                               |
 | wp-lemon/filter/entry-header/{{post_type}}/image-size        | Used to change the image size of the image in the entry-header.twig of a specific post type.                                |
 | wp-lemon/filter/entry-header/{{post_type}}/image-id          | Used to change the image id of the image in the entry-header.twig of a specific post type. Or set to false to remove it completely. |
-| wp-lemon/filter/entry-header/{{post_type}}/tags              | Used to change the tags section in the entry-header.twig of a specific post type. Or set to false to remove it completely.          |
-| wp-lemon/filter/entry-header/{{post_type}}/picture-el        | Filters the complete picture element.                                                                                               |
 | wp-lemon/filter/copyright-message                            | Returns the copyright message, use this to change the copyright message in the                                                      |  
 
 **Examples**
