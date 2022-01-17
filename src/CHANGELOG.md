@@ -1,3 +1,11 @@
+### 3.3.2:
+
+_Release Date - 17 january 2022_
+
+-   Please update bulldozer to 1.9.1 by uploading the vendor folder to the server.
+-   🐛 **Bugs Fixed**.
+    -   block classes would be rendered incorrectly.
+
 ### 3.3.1:
 
 _Release Date - 17 january 2022_
