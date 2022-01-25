@@ -1,3 +1,16 @@
+### 3.4.0:
+
+_Release Date - 25 january 2022_
+
+-   🐛 **Bugs Fixed**.
+    -   Several JS bugs fixed.
+-   ✨ **Enhanced**
+    -   Added margin to first block if not full aligned, this reduces the usage of container blocks. Please check layouts of pages.
+    -   better positioning of blocks inside editor
+    -   acf boxes are not draggable anymore in backend.
+    -   cleanup of files
+    -   Woocommerce improvements
+
 ### 3.3.2:
 
 _Release Date - 17 january 2022_
