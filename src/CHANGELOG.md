@@ -1,3 +1,15 @@
+### 3.5.0:
+
+_Release Date - 27 january 2022_
+
+-   💡 **Newly added**
+    -   New testimonial block
+-   🐛 **Bugs Fixed**.
+    -   Fixed smoothscroll bug
+-   ✨ **Enhanced**
+    -   Support responsive embeds.
+    -   Tweaked font sizes a bit
+
 ### 3.4.0:
 
 _Release Date - 25 january 2022_
