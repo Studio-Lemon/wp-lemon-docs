@@ -1,3 +1,11 @@
+### 3.5.2:
+
+_Release Date - 01 februari 2022_
+
+-   ✨ **Enhanced**
+    -   Better editor block alignment
+    -   img container block now support text alignment
+
 ### 3.5.1:
 
 _Release Date - 01 februari 2022_
