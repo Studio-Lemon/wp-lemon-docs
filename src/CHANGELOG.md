@@ -1,3 +1,15 @@
+### 3.5.1:
+
+_Release Date - 01 februari 2022_
+
+-   💡 **Newly added**
+    -   New hook `wp-lemon/action/entry/before` and `wp-lemon/action/entry/after` inside single.twig and index.twig
+-   ✨ **Enhanced**
+    -   Linting & security fixes
+    -   Better WordPress 5.9 support
+    -   Minor scss impromenets
+    -   testimonial support inside sliders
+
 ### 3.5.0:
 
 _Release Date - 27 january 2022_
