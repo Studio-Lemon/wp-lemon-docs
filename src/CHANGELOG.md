@@ -1,3 +1,15 @@
+### 3.5.3:
+
+_Release Date - 03 februari 2022_
+
+-   💡 **Newly added**
+    -   New hook `wp-lemon/filter/navwalker/{{item}}/link-attributes` to filter attributes
+    -   Menu items that function as an archive page now have a specific class named `.archive-{{posttype}}`
+-   ✨ **Enhanced**
+    -   Better editor block alignment
+-   🐛 **Bugs Fixed**.
+    -   Minor css fixes in front- and backend
+
 ### 3.5.2:
 
 _Release Date - 01 februari 2022_
