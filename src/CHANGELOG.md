@@ -1,3 +1,14 @@
+### 3.6.0:
+
+_Release Date - 06 februari 2022_
+
+-   Please update bulldozer to 1.9.4 by uploading the vendor folder to the server.
+-   ✨ **Enhanced**
+    -   ⚠️ Enhanced FAQ block with new innerblock, please migrate your FAQ questions to the new innerblocks!
+    -   Better editor block alignment
+-   🐛 **Bugs Fixed**.
+    -   Minor css fixes in front- and backend
+
 ### 3.5.3:
 
 _Release Date - 03 februari 2022_
