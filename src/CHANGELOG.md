@@ -1,3 +1,14 @@
+### 3.6.2:
+
+_Release Date - 07 februari 2022_
+
+-   ✨ **Enhanced**
+    -   content card grid - allow 1 col layouts.
+    -   archive - filter is now a overwritable partial.
+    -   Footer - don't show navholder div when not needed.
+-   🐛 **Bugs Fixed**.
+    -   backend - fully alligned blocks cannot overflow anymore.
+
 ### 3.6.1:
 
 _Release Date - 07 februari 2022_
