@@ -1,3 +1,10 @@
+### 3.6.1:
+
+_Release Date - 07 februari 2022_
+
+-   🐛 **Bugs Fixed**.
+    -   Fixes overflow bug
+
 ### 3.6.0:
 
 _Release Date - 06 februari 2022_
