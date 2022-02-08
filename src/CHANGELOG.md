@@ -1,3 +1,14 @@
+### 3.6.3:
+
+_Release Date - 08 februari 2022_
+
+-   ✨ **Enhanced**
+    -   Rework on menu.js and dropdown.js for better compat with custom dropdown elements outside the navbar.
+    -   archive.js now is splited into two functions: an ajax call and listereners. This allows to use ajaxcall separately.
+-   🐛 **Bugs Fixed**.
+    -   css headings were not displayed correctly because of an css regression introduces in 3.6.0
+    -   Better footer css
+
 ### 3.6.2:
 
 _Release Date - 07 februari 2022_
