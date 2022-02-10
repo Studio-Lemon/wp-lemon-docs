@@ -1,3 +1,17 @@
+### 3.7.0:
+
+_Release Date - 10 februari 2022_
+
+-   ⛏️ **Breaking**
+    -   Please double check custom cards in your theme. We added custom footer in the card-wrap.twig that your card will probably extend. Disable the default footer by adding a twig var in your custom card `{% set hide_default_footer = true %}` or remake your custom cards and remove the footer.
+-   ✨ **Enhanced**
+    -   All cards now share the same footer.
+    -   Allow lists inside faq items.
+    -   Add default margin underneath img-container blocks.
+-   🐛 **Bugs Fixed**.
+    -   Fixed backend notice not being correct.
+    -   Hopefully a permanent bug for the overflowing navbar without setting the navbar to overflow: hidden.
+
 ### 3.6.3:
 
 _Release Date - 08 februari 2022_
