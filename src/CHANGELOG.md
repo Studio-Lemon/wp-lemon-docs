@@ -1,3 +1,14 @@
+### 3.7.1:
+
+_Release Date - 14 februari 2022_
+
+-   🐛 **Bugs Fixed**.
+    -   Css bootstrap5 gutter fix
+    -   Link in colored paragraph now inherits color properly
+    -   Fixed logo variant of gallery.
+    -   Media and text without background color is now shown correctly without padding on mobile.
+    -   Block positioning fixes.
+
 ### 3.7.0:
 
 _Release Date - 10 februari 2022_
