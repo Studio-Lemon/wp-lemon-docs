@@ -1,3 +1,11 @@
+### 3.7.2:
+
+_Release Date - 15 februari 2022_
+
+-   🐛 **Bugs Fixed**.
+    -   Banner block margin backend fix #133
+    -   img-container block not having correct background color.
+
 ### 3.7.1:
 
 _Release Date - 14 februari 2022_
