@@ -1,3 +1,12 @@
+### 3.7.3:
+
+_Release Date - 21 februari 2022_
+
+-   💡 **Newly added**
+    -   Slide block now hase a fade option
+-   🐛 **Bugs Fixed**
+    -   acf-fluentform class could throw a notice in some cases.
+
 ### 3.7.2:
 
 _Release Date - 15 februari 2022_
