@@ -1,3 +1,19 @@
+### 3.7.0:
+
+_Release Date - 24 februari 2022_
+
+-   ⛏️ **Breaking**
+    -   Bumped minimal WordPress version to 5.9
+    -   Removed the primary sidebar since it is not used in any project.
+-   ✨ **Enhanced**
+    -   Complete overhaul to the site.php file.
+    -   Animate on scroll library is now handles by css custom properties. This decreases the css size by 20kb
+    -   Simplified css for several blocks. This also decreased css size.
+    -   Cleaned some PHP files
+    -   Editor alignment of blocks on smaller screens is now better.
+-   🐛 **Bugs Fixed**.
+    -   Cleaned the Ajax query class.
+
 ### 3.7.3:
 
 _Release Date - 21 februari 2022_
