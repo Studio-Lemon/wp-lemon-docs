@@ -1,4 +1,4 @@
-### 3.7.0:
+### 3.8.0:
 
 _Release Date - 24 februari 2022_
 
