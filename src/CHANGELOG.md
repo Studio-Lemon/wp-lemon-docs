@@ -1,6 +1,14 @@
+### 3.8.3:
+
+_Release Date - 25 februari 2022_
+
+-   🐛 **Bugs Fixed**.
+    -   Media text fixes
+    -   Timeline fixes
+
 ### 3.8.2:
 
-_Release Date - 24 februari 2022_
+_Release Date - 25 februari 2022_
 
 -   ⛏️ **Breaking**
     -   Bumped bulldozer to 1.9.8
