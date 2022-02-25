@@ -1,3 +1,23 @@
+### 3.8.2:
+
+_Release Date - 24 februari 2022_
+
+-   ⛏️ **Breaking**
+    -   Bumped bulldozer to 1.9.8
+-   ✨ **Enhanced**
+    -   Better backend block alignment.
+    -   Aria improvements to language switcher and currentpage.
+-   🐛 **Bugs Fixed**.
+    -   Fixed double notices in blocks.
+    -   wp-seperator block is now properly displayed.
+
+### 3.8.1:
+
+_Release Date - 24 februari 2022_
+
+-   🐛 **Bugs Fixed**.
+    -   Block alignment fixes
+
 ### 3.8.0:
 
 _Release Date - 24 februari 2022_
