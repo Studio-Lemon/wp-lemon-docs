@@ -1,3 +1,15 @@
+### 3.9.0:
+
+_Release Date - 9 march 2022_
+
+-   ⛏️ **Breaking**
+    -   Please update **basedbuilder-config** to 2.6
+-   ✨ **Enhanced**
+    -   Colors are now inserted into the theme.json file for maximum compat with new WordPress versions.
+    -   Timeline positioning fixes.
+-   ## 🐛 **Bugs Fixed**.
+    -   Disable alignment on timeline block.
+
 ### 3.8.3:
 
 _Release Date - 25 februari 2022_
