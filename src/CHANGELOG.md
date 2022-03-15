@@ -1,3 +1,11 @@
+### 3.9.1:
+
+_Release Date - 15 march 2022_
+
+-   ## 🐛 **Bugs Fixed**.
+    -   Fixes to child block modifications
+    -   Temporary fix for color palette issue, see: https://github.com/Log1x/acf-editor-palette/issues/30
+
 ### 3.9.0:
 
 _Release Date - 9 march 2022_
