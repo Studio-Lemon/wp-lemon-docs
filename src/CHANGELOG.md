@@ -1,10 +1,25 @@
+### 3.10.0:
+
+_Release Date - 21 march 2022_
+
+-   💡 **Newly added**
+    -   Card grid mode now has a flexible layout mode where you can build the layout of the grid by hand. You can choose from 3 different layouts to start with.
+-   ✨ **Enhanced**
+    -   Cleanup of setup function.
+    -   scss vendor imports no longer prefixed
+    -   Better slider JS
+    -   Overlaps of media-text are now done purely by css grid instead of after element.
+    -   Contrast mode work in progress
+-   🐛 **Bugs Fixed**
+-   Disable alignment on timeline block.
+
 ### 3.9.1:
 
 _Release Date - 15 march 2022_
 
--   ## 🐛 **Bugs Fixed**.
-    -   Fixes to child block modifications
-    -   Temporary fix for color palette issue, see: https://github.com/Log1x/acf-editor-palette/issues/30
+-   🐛 **Bugs Fixed**
+-   Fixes to child block modifications
+-   Temporary fix for color palette issue, see: https://github.com/Log1x/acf-editor-palette/issues/30
 
 ### 3.9.0:
 
@@ -15,14 +30,14 @@ _Release Date - 9 march 2022_
 -   ✨ **Enhanced**
     -   Colors are now inserted into the theme.json file for maximum compat with new WordPress versions.
     -   Timeline positioning fixes.
--   ## 🐛 **Bugs Fixed**.
-    -   Disable alignment on timeline block.
+-   🐛 **Bugs Fixed**
+-   Disable alignment on timeline block.
 
 ### 3.8.3:
 
 _Release Date - 25 februari 2022_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Media text fixes
     -   Timeline fixes
 
@@ -35,7 +50,7 @@ _Release Date - 25 februari 2022_
 -   ✨ **Enhanced**
     -   Better backend block alignment.
     -   Aria improvements to language switcher and currentpage.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixed double notices in blocks.
     -   wp-seperator block is now properly displayed.
 
@@ -43,7 +58,7 @@ _Release Date - 25 februari 2022_
 
 _Release Date - 24 februari 2022_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Block alignment fixes
 
 ### 3.8.0:
@@ -59,7 +74,7 @@ _Release Date - 24 februari 2022_
     -   Simplified css for several blocks. This also decreased css size.
     -   Cleaned some PHP files
     -   Editor alignment of blocks on smaller screens is now better.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Cleaned the Ajax query class.
 
 ### 3.7.3:
@@ -75,7 +90,7 @@ _Release Date - 21 februari 2022_
 
 _Release Date - 15 februari 2022_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Banner block margin backend fix #133
     -   img-container block not having correct background color.
 
@@ -83,7 +98,7 @@ _Release Date - 15 februari 2022_
 
 _Release Date - 14 februari 2022_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Css bootstrap5 gutter fix
     -   Link in colored paragraph now inherits color properly
     -   Fixed logo variant of gallery.
@@ -100,7 +115,7 @@ _Release Date - 10 februari 2022_
     -   All cards now share the same footer.
     -   Allow lists inside faq items.
     -   Add default margin underneath img-container blocks.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixed backend notice not being correct.
     -   Hopefully a permanent bug for the overflowing navbar without setting the navbar to overflow: hidden.
 
@@ -111,7 +126,7 @@ _Release Date - 08 februari 2022_
 -   ✨ **Enhanced**
     -   Rework on menu.js and dropdown.js for better compat with custom dropdown elements outside the navbar.
     -   archive.js now is splited into two functions: an ajax call and listereners. This allows to use ajaxcall separately.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   css headings were not displayed correctly because of an css regression introduces in 3.6.0
     -   Better footer css
 
@@ -123,14 +138,14 @@ _Release Date - 07 februari 2022_
     -   content card grid - allow 1 col layouts.
     -   archive - filter is now a overwritable partial.
     -   Footer - don't show navholder div when not needed.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   backend - fully alligned blocks cannot overflow anymore.
 
 ### 3.6.1:
 
 _Release Date - 07 februari 2022_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixes overflow bug
 
 ### 3.6.0:
@@ -141,7 +156,7 @@ _Release Date - 06 februari 2022_
 -   ✨ **Enhanced**
     -   ⚠️ Enhanced FAQ block with new innerblock, please migrate your FAQ questions to the new innerblocks!
     -   Better editor block alignment
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Minor css fixes in front- and backend
 
 ### 3.5.3:
@@ -153,7 +168,7 @@ _Release Date - 03 februari 2022_
     -   Menu items that function as an archive page now have a specific class named `.archive-{{posttype}}`
 -   ✨ **Enhanced**
     -   Better editor block alignment
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Minor css fixes in front- and backend
 
 ### 3.5.2:
@@ -182,7 +197,7 @@ _Release Date - 27 january 2022_
 
 -   💡 **Newly added**
     -   New testimonial block
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixed smoothscroll bug
 -   ✨ **Enhanced**
     -   Support responsive embeds.
@@ -192,7 +207,7 @@ _Release Date - 27 january 2022_
 
 _Release Date - 25 january 2022_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Several JS bugs fixed.
 -   ✨ **Enhanced**
     -   Added margin to first block if not full aligned, this reduces the usage of container blocks. Please check layouts of pages.
@@ -206,14 +221,14 @@ _Release Date - 25 january 2022_
 _Release Date - 17 january 2022_
 
 -   Please update bulldozer to 1.9.1 by uploading the vendor folder to the server.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   block classes would be rendered incorrectly.
 
 ### 3.3.1:
 
 _Release Date - 17 january 2022_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   antispambot filter fixed
     -   bug where dropdown menus wouldn't close is fixed
 -   ✨ **Enhanced**
@@ -230,7 +245,7 @@ _Release Date - 11 january 2022_
 -   Please update bulldozer to 1.9.0 by uploading the vendor folder to the server.
 -   💡 **Newly added**
     -   No more jQuery dependency in wp-lemon. Read: [Javascript](/basics/basic-javascript)
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Several JS bugs fixed.
     -   bug where dropdown menus wouldn't close is fixed
 -   ✨ **Enhanced**
@@ -245,7 +260,7 @@ _Release Date - 05 january 2022_
 
 -   💡 **Newly added**
     -   wp-lemon now supports nested sub menus.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   JS fix in search.js
     -   JS fix in contact-buttons.js
 -   ✨ **Enhanced**
@@ -261,7 +276,7 @@ _Release Date - 24 december 2021_
 
 -   💡 **Newly added**
     -   wp-lemon now supports nested sub menus.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Margin bottom is now fixed in banner block
     -   Button block now has a proper hover color
 -   ✨ **Enhanced**
@@ -273,7 +288,7 @@ _Release Date - 24 december 2021_
 
 _Release Date - 23 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixed media and text display in backend.
 -   ✨ **Enhanced**
     -   Allow lists inside banner block
@@ -284,7 +299,7 @@ _Release Date - 23 december 2021_
 
 _Release Date - 21 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   fluentform acf field now allows for a null value.
 -   ✨ **Enhanced**
     -   Skip licence check on development.
@@ -296,7 +311,7 @@ _Release Date - 21 december 2021_
 
 _Release Date - 17 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixes a bug where the excerpt would always be set
 -   ✨ **Enhanced**
     -   New actions and filters added, please check the docs.
@@ -312,7 +327,7 @@ _Release Date - 17 december 2021_
 
 _Release Date - 15 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixes missing media text bg color
 -   ✨ **Enhanced**
     -   minor css var improvements
@@ -323,7 +338,7 @@ _Release Date - 15 december 2021_
 _Release Date - 13 december 2021_
 
 -   Please update bulldozer to 1.8.2 by uploading the vendor folder to the server.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Disable mode switching for sevaral blocks.
     -   Fixes bug where card images would render at incorrect heights in the backend.
     -   Fixes wrong display of card grid with two columns.
@@ -338,7 +353,7 @@ _Release Date - 13 december 2021_
 
 _Release Date - 13 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixes sass deprecation.
     -   Updated changelog for new theme.json
 -   🌐 **Updated Dutch translation**
@@ -392,7 +407,7 @@ _Release Date - 13 december 2021_
 
 _Release Date - 7 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixes missing icon in card wrap
     -   Fixes the word "menu" not being translatable.
 
