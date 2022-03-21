@@ -2,6 +2,8 @@
 
 _Release Date - 21 march 2022_
 
+-   ⛏️ **Breaking**
+    -   Bumped bulldozer to 1.10.
 -   💡 **Newly added**
     -   Card grid mode now has a flexible layout mode where you can build the layout of the grid by hand. You can choose from 3 different layouts to start with.
 -   ✨ **Enhanced**
