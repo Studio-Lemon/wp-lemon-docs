@@ -1,3 +1,11 @@
+### 3.10.2:
+
+_Release Date - 222 march 2022_
+
+-   ✨ **Enhanced**
+    -   Allowed blocks are now filterable so you can add your extra or your own blocks to wp-lemon blocks.
+    -   Two new footer actions added.
+
 ### 3.10.0:
 
 _Release Date - 21 march 2022_
