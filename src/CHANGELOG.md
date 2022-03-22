@@ -1,3 +1,12 @@
+### 3.11.0:
+
+_Release Date - 21 march 2022_
+
+-   💡 **Newly added**
+    -   New logo block for usage in widget areas.
+-   ✨ **Enhanced**
+    -   Custom blocks added via the new card-grid filter introduced in 3.10.2 are now displayed the same way as regular cards inside the grid.
+
 ### 3.10.2:
 
 _Release Date - 222 march 2022_
