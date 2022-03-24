@@ -1,3 +1,16 @@
+### 3.11.1:
+
+_Release Date - 22 march 2022_
+
+-   💡 **Newly added**
+    -   Archive pages now have an extra body class 'archive-page'
+-   🐛 **Bugs Fixed**
+    -   Footer widgets css improvements
+    -   Card grid backend layout fixed
+-   ✨ **Enhanced**
+    -   Removed instagram feed block references.
+    -   dim ratio moved to global
+
 ### 3.11.0:
 
 _Release Date - 21 march 2022_
@@ -37,8 +50,8 @@ _Release Date - 21 march 2022_
 _Release Date - 15 march 2022_
 
 -   🐛 **Bugs Fixed**
--   Fixes to child block modifications
--   Temporary fix for color palette issue, see: https://github.com/Log1x/acf-editor-palette/issues/30
+    -   Fixes to child block modifications
+    -   Temporary fix for color palette issue, see: https://github.com/Log1x/acf-editor-palette/issues/30
 
 ### 3.9.0:
 
