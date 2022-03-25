@@ -1,3 +1,16 @@
+### 3.11.2:
+
+_Release Date - 25 march 2022_
+
+-   💡 **Newly added**
+    -   Added before footer widgets action
+-   🐛 **Bugs Fixed**
+    -   Card grid backend layout fixed
+-   ✨ **Enhanced**
+    -   Removed instagram feed block references.
+    -   dim ratio moved to global
+    -
+
 ### 3.11.1:
 
 _Release Date - 22 march 2022_
