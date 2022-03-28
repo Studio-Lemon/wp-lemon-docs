@@ -1,3 +1,13 @@
+### 3.11.4:
+
+_Release Date - 25 march 2022_
+
+-   💡 **Newly added**
+    -   Fields of person and job are now filterable.
+-   🐛 **Bugs Fixed**
+    -   ACF fields at jobs and persons are translated once more
+    -   Css grid fix in backend
+
 ### 3.11.2:
 
 _Release Date - 25 march 2022_
@@ -9,7 +19,6 @@ _Release Date - 25 march 2022_
 -   ✨ **Enhanced**
     -   Removed instagram feed block references.
     -   dim ratio moved to global
-    -
 
 ### 3.11.1:
 
