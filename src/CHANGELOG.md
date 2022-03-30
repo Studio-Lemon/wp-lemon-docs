@@ -1,3 +1,12 @@
+### 3.12.0:
+
+_Release Date - 30 march 2022_
+
+-   ✨ **Enhanced**
+    -   slide block now has a proper option for an image. You can now choose between innerblocks and a single image
+    -   Continued on contrast mode
+    -   header and nav colors are transformed to css vars
+
 ### 3.11.4:
 
 _Release Date - 25 march 2022_
