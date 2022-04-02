@@ -1,3 +1,20 @@
+### 3.12.1:
+
+_Release Date - 2 april 2022_
+
+-   💡 **Newly added**
+    -   REST url added
+    -   card-button-color variable added
+-   ✨ **Enhanced**
+    -   removed image size `small` and upsized `medium_large` to 800
+-   🐛 **Bugs Fixed**
+    -   A11y
+        -   set body class directly on startup in head when in a11y mode to prevent flash when switching pages
+        -   Fixed a lot of bugs in contrast mode
+    -   wp-gallery block logo variant is working again
+    -   Better image size loaded for content-cards
+    -   less compression on webp generation
+
 ### 3.12.0:
 
 _Release Date - 30 march 2022_
