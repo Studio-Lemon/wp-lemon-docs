@@ -1,6 +1,6 @@
-### 3.12.1:
+### 3.12.1 - 3.12.2:
 
-_Release Date - 2 april 2022_
+_Release Date - 4 april 2022_
 
 -   💡 **Newly added**
     -   REST url added
