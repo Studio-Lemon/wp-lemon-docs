@@ -1,3 +1,24 @@
+### 3.13.0:
+
+_Release Date - 15 april 2022_
+
+-   ⛏️ **Breaking**
+    -   Please update the version number to 2 in your theme.json in your child theme.
+-   ✨ **Enhanced**
+    -   font sizes inside searchbar are tweaked
+    -   Improvements to other-items.twig
+    -   Major overhaul to how blocks display their background colors
+    -   Nav items with a background now have a has-background class
+    -   Load more archives are more responsive to user input.
+    -   Theme.json update to v2 and did some householding.
+    -   Several queries in queries.php are now leaner and thus should perform better.
+    -   Hide empty categories in node-overview block.
+-   🐛 **Bugs Fixed**
+    -   post_type_name() would throw notice on some post types.
+    -   gallery block logo view with links now display properly
+    -   Translation inside search-list.twig is fixed
+    -   Load more archives with filters now load the correct next items.
+
 ### 3.12.1 - 3.12.2:
 
 _Release Date - 4 april 2022_
