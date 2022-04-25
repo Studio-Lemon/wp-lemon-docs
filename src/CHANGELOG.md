@@ -1,3 +1,24 @@
+### 3.14.0:
+
+_Release Date - 25 april 2022_
+
+-   ✨ **Enhanced**
+
+    -   PHP linting
+    -   Filter added to show share buttons, overwrite labels and platforms of sharer.
+    -   Css improvements
+        -   ⚠️ Overall process of enhancing the default flow of blocks. Please double check your sites on weird margin issues ⚠️
+        -   Changed all 30px margins to $vertical-gutter.
+        -   logo grid now has same margin on the side as bottom
+        -   Eliminated a lot of media queries by using custom properties.
+        -   Menu toggler black outline removed on focus
+        -   Rework of icons-list.scss for more consistent icons
+        -   Table.scss display fix
+        -   Media-text block css reworked and reduces total css size by 4kb
+
+-   🐛 **Bugs Fixed**
+    -   card grid backend display fix
+
 ### 3.13.0:
 
 _Release Date - 15 april 2022_
