@@ -1,3 +1,15 @@
+### 3.15.0:
+
+_Release Date - 15 april 2022_
+
+-   ⛏️ **Breaking**
+    -   Please update basebuilder to 2.8.0
+-   ✨ **Enhanced**
+    -   slider block now loads slider library when its actually needed. This decreases the amount of kb's to load on a non-slider site with 80kb.
+-   🐛 **Bugs Fixed**
+    -   Proposed fix for lazyload issue on safari mobile
+    -   Footer menu items not aligning properly.
+
 ### 3.14.0:
 
 _Release Date - 25 april 2022_
