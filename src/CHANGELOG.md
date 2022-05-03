@@ -4,6 +4,7 @@ _Release Date - 15 april 2022_
 
 -   ⛏️ **Breaking**
     -   Please update basebuilder to 2.8.0
+    -   Please update bulldozer to 1.11.0
 -   ✨ **Enhanced**
     -   slider block now loads slider library when its actually needed. This decreases the amount of kb's to load on a non-slider site with 80kb.
 -   🐛 **Bugs Fixed**
