@@ -1,6 +1,14 @@
+### 3.15.1:
+
+_Release Date - 5 may 2022_
+
+-   ✨ **Enhanced**
+    -   Updated workflow dependencies
+    -   Updated workflow files
+
 ### 3.15.0:
 
-_Release Date - 15 april 2022_
+_Release Date - 5 may 2022_
 
 -   ⛏️ **Breaking**
     -   Please update basebuilder to 2.8.0
