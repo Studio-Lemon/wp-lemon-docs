@@ -1,4 +1,4 @@
-### 3.15.1 - 3.15.2:
+### 3.15.1 - 3.15.3:
 
 _Release Date - 5 may 2022_
 
@@ -13,8 +13,6 @@ _Release Date - 5 may 2022_
 -   ⛏️ **Breaking**
     -   Please update basebuilder to 2.8.0
     -   Please update bulldozer to 1.11.0
--   ✨ **Enhanced**
-    -   slider block now loads slider library when its actually needed. This decreases the amount of kb's to load on a non-slider site with 80kb.
 -   🐛 **Bugs Fixed**
     -   Proposed fix for lazyload issue on safari mobile
     -   Footer menu items not aligning properly.
