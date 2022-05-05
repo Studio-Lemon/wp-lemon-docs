@@ -1,6 +1,21 @@
-### 3.15.1 - 3.15.4:
+### 3.16.0:
 
 _Release Date - 5 may 2022_
+
+-   💡 **Newly added**
+    -   Detail page for persons can now be enabled via the customizer
+-   ✨ **Enhanced**
+    -   Slider block improvements
+    -   Removed deprecated FAQ fields
+    -   Less css due to smart selectors
+    -   Better icon positioning
+    -   Excerpts can now recieve a -1 argument to post all content inside cards.
+-   🐛 **Bugs Fixed**
+    -   fix for lazyload issue on safari mobile
+
+### 3.15.1 - 3.15.4:
+
+_Release Date - 3 may 2022_
 
 -   ✨ **Enhanced**
     -   Updated workflow dependencies
@@ -8,7 +23,7 @@ _Release Date - 5 may 2022_
 
 ### 3.15.0:
 
-_Release Date - 5 may 2022_
+_Release Date - 3 may 2022_
 
 -   ⛏️ **Breaking**
     -   Please update basebuilder to 2.8.0
