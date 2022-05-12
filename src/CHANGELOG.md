@@ -1,3 +1,12 @@
+### 3.16.1:
+
+_Release Date - 12 may 2022_
+
+-   🐛 **Bugs Fixed**
+    -   fixed domready
+    -   top adminbar alignment fix
+    -   Padding fix inside icons.
+
 ### 3.16.0:
 
 _Release Date - 5 may 2022_
