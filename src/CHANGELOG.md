@@ -1,3 +1,13 @@
+### 3.16.2:
+
+_Release Date - 14 may 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Excerpt can now be hidden in default cards.
+    -   Banner block: Set background opacity on videos now works again
+-   💡 **Newly added**
+    -   You can now set extra arguments on queries using a filter used in the virtual node-latest and node-overview blocks.
+
 ### 3.16.1:
 
 _Release Date - 12 may 2022_
