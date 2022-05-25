@@ -1,3 +1,21 @@
+### 3.17.0:
+
+_Release Date - 25 may 2022_
+
+-   ⛏️ **Breaking**
+    -   Please run `composer require giggsey/libphonenumber-for-php` in root and upload your vendor folder!
+-   💡 **Newly added**
+    -   New site class added for more structured context.
+    -   New phone number methods added. This fixes a lot of multilanguage phonenumber issues.
+-   ✨ **Enhanced**
+    -   Updated default look and feel of hamburger menu
+-   🐛 **Bugs Fixed**
+    -   Navbar only gets a class when fully on top of the viewport.
+    -   Fixed banner display
+    -   Banners can now be text center aligned
+    -   Proper card footer color
+    -   You can now switch to the default font size after change.
+
 ### 3.16.2:
 
 _Release Date - 14 may 2022_
