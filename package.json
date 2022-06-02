@@ -23,7 +23,7 @@
     "sharp": "^0.30.6"
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^4.0.0",
     "prismjs": "^1.28.0"
   },
   "keywords": [
