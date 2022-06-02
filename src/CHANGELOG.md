@@ -1,3 +1,19 @@
+### 3.17.1:
+
+_Release Date - 2 june 2022_
+
+-   💡 **Newly added**
+    -   Password protected pages are now working
+    -   New get_fluent_form function
+    -   New block loader so you can filter blocks that are loaded by the parent theme.
+-   ✨ **Enhanced**
+    -   Added extra class when navbar is on top of the viewport.
+    -   Better controls for slide and slider block.
+    -   Added a localized phone number option. The site will show an national phonenumber on the default language and an internationized phone number on other languages.
+-   🐛 **Bugs Fixed**
+    -   Fixed large padding in wp-block-pullquote
+    -   Minor css fixes in block columns and slider arrow colors
+
 ### 3.17.0:
 
 _Release Date - 25 may 2022_
