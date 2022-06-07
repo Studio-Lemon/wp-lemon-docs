@@ -1,3 +1,14 @@
+### 3.17.2:
+
+_Release Date - 7 june 2022_
+
+-   💡 **Newly added**
+    -   show bottom bar filter added in footer.
+-   🐛 **Bugs Fixed**
+    -   Fix contact bar icon color
+    -   Fixed blockloader
+    -   body background as css var is now working
+
 ### 3.17.1:
 
 _Release Date - 2 june 2022_
