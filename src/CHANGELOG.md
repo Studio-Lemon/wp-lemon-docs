@@ -1,3 +1,17 @@
+### 3.17.3:
+
+_Release Date - 7 june 2022_
+
+-   💡 **Newly added**
+    -   New get_contact_information method that creates a single array of all contact information from the customizer.
+    -   The contact_icons macro now requires contact as a first parameter that you will pass.
+-   ✨ **Enhanced**
+    -   PHP linted.
+    -   Language switcher is now twig and has a helper function that formats the language switcher. This helps with custom language switcher implementation.
+-   🐛 **Bugs Fixed**
+    -   Fixed typo in license class all over the codebase.
+    -   Fixed an issue where the phone number could not be empty.
+
 ### 3.17.2:
 
 _Release Date - 7 june 2022_
@@ -522,7 +536,7 @@ _Release Date - 21 december 2021_
 -   🐛 **Bugs Fixed**
     -   fluentform acf field now allows for a null value.
 -   ✨ **Enhanced**
-    -   Skip licence check on development.
+    -   Skip license check on development.
     -   Add possibility to add a margin underneath a banner block
     -   Allow wide alignment on card grid block
     -   other_items_query now supports taxonomies as well.
