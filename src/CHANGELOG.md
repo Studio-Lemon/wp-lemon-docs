@@ -1,3 +1,18 @@
+### 3.18.0:
+
+_Release Date - 17 june 2022_
+
+-   💡 **Newly added**
+    -   New container block added. This is still in beta.
+-   ✨ **Enhanced**
+    -   Only show block ID when one is set via attributes.
+-   🐛 **Bugs Fixed**
+    -   Removed unneeded normal font size
+    -   Fixed license page not loading
+    -   Fixed a bug where you could not overwrite blocks in theme.json
+    -   Fixed typo in license class all over the codebase.
+    -   Fixed an issue where the phone number could not be empty.
+
 ### 3.17.3:
 
 _Release Date - 7 june 2022_
