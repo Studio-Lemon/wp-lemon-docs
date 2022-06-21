@@ -1,7 +1,25 @@
+### 3.18.1:
+
+_Release Date - 21 june 2022_
+
+-   💡 **Newly added**
+    -   New icon block added.
+    -   New get_svg_image() function to load the contents of an SVG image from the media library.
+-   ✨ **Enhanced**
+    -   New container block improvements
+    -   Three new icons added in iconfont.
+    -   Removed unneeded macro imports in blocks.
+-   🐛 **Bugs Fixed**
+    -   Fixed an issue with columns block.
+-   🪦 **deprecated**
+    -   Banner block is now marked as deprecated
+
 ### 3.18.0:
 
 _Release Date - 17 june 2022_
 
+-   ⛏️ **Breaking**
+    -   Please update basebuilder to 2.12.0
 -   💡 **Newly added**
     -   New container block added. This is still in beta.
 -   ✨ **Enhanced**
