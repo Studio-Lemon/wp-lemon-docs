@@ -1,3 +1,15 @@
+### 3.19.0:
+
+_Release Date - 24 june 2022_
+
+-   ⛏️ **Breaking**
+    -   Please re-save your customizer fields after updating on the live site. You can do this by changing a value and going back to the old value.
+-   💡 **Newly added**
+    -   A page can now be the archive for multiple pages.
+    -   class-site.php has been extended to add archive pages to the Timber context.
+    -   entry-header now directly uses this new context instead of doing a separate database call.
+    -   This overall enhances the experience to link back to an archive page from any custom post type.
+
 ### 3.18.1:
 
 _Release Date - 21 june 2022_
