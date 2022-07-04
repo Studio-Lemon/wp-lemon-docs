@@ -1,3 +1,19 @@
+### 3.19.1:
+
+_Release Date - 4 july 2022_
+
+-   ✨ **Enhanced**
+    -   Improved block positioning classes. All blocks are now displayed with max width instead of an combination between width and max width. This is a bit experimental.
+    -   Better default map styling due to new section class.
+    -   Better css styling for headings.
+    -   Cleaned css a bit
+-   🐛 **Bugs Fixed**
+    -   Map block fix in backend
+    -   Fixed an issue where menu items were not active in sub menus when selected.
+    -   Fixed a bug where the block edit block would be behind other block element.
+    -   Fixed PHP bug when there were no widgets present.
+    -   Fixed a JS bug where the menu.js would crash if the collapse element was not present.
+
 ### 3.19.0:
 
 _Release Date - 24 june 2022_
@@ -31,7 +47,7 @@ _Release Date - 21 june 2022_
 _Release Date - 17 june 2022_
 
 -   ⛏️ **Breaking**
-    -   Please update basebuilder to 2.12.0
+    -   Please update bulldozer to 2.12.0
 -   💡 **Newly added**
     -   New container block added. This is still in beta.
 -   ✨ **Enhanced**
