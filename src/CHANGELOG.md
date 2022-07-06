@@ -1,3 +1,15 @@
+### 3.19.2:
+
+_Release Date - 6 july 2022_
+
+-   ✨ **Enhanced**
+    -   Better css for new section block.
+    -   Added extra information on how to create your flexible card grid inside the editor.
+    -   person card improved.
+-   🐛 **Bugs Fixed**
+    -   css alignment improvements
+    -   Fixed map not being 100% height inside the editor.
+
 ### 3.19.1:
 
 _Release Date - 4 july 2022_
