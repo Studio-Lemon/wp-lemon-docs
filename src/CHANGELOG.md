@@ -1,3 +1,11 @@
+### 3.19.3:
+
+_Release Date - 6 july 2022_
+
+-   ✨ **Enhanced**
+    -   Better css for new section block.
+    -   Improved language switcher code.
+
 ### 3.19.2:
 
 _Release Date - 6 july 2022_
