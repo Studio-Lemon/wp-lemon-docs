@@ -1,4 +1,13 @@
-### 3.19.3:
+### 3.19.4:
+
+_Release Date - 8 july 2022_
+
+-   ✨ **Enhanced**
+    -   You can now set a initial term on the archive.twig partial.
+    -   new post_per_page filter in node-overview block.
+-   🐛 **Bugs Fixed**
+    -   Map permanent fix.
+    -   Fixed "no more items" message in node-archive
 
 _Release Date - 6 july 2022_
 
