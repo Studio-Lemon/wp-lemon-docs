@@ -1,3 +1,14 @@
+### 3.19.5:
+
+_Release Date - 8 july 2022_
+
+-   💡 **Newly added**
+    -   New log function added
+-   ✨ **Enhanced**
+    -   Better css for new section block.
+-   🐛 **Bugs Fixed**
+    -   Fixed an issue where width and height inside picture element were empty.
+
 ### 3.19.4:
 
 _Release Date - 8 july 2022_
