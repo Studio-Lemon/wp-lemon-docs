@@ -1,6 +1,21 @@
+### 3.19.6:
+
+_Release Date - 13 july 2022_
+
+-   ✨ **Enhanced**
+    -   Easier backend styling with .ibb class to add really good section differentiation.
+    -   better apply_filter name to easier apply filters on blocks. You now can directly copy the filter name from the source code.
+    -   FAQ block doesn't have the edit mode anymore.
+    -   Added picture.ratio class to automatically set a ratio on images.
+-   🐛 **Bugs Fixed**
+    -   REST api point now has proper permission callback
+    -   Several contrast mode improvements
+-   📦 **updated packages**
+-   🤖 **linted PHP/CSS/JS**
+
 ### 3.19.5:
 
-_Release Date - 8 july 2022_
+_Release Date - 12 july 2022_
 
 -   💡 **Newly added**
     -   New log function added
