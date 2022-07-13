@@ -1,4 +1,4 @@
-### 3.19.6:
+### 3.19.6 and 3.19.7:
 
 _Release Date - 13 july 2022_
 
@@ -10,6 +10,7 @@ _Release Date - 13 july 2022_
 -   🐛 **Bugs Fixed**
     -   REST api point now has proper permission callback
     -   Several contrast mode improvements
+    -   Fix in node-archive
 -   📦 **updated packages**
 -   🤖 **linted PHP/CSS/JS**
 
