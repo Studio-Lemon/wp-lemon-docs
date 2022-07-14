@@ -1,3 +1,18 @@
+### 3.19.8:
+
+_Release Date - 14 july 2022_
+
+-   💡 **Newly added**
+    -   New checklist style for lists.
+-   ✨ **Enhanced**
+    -   Enhanced icon font usage.
+    -   Archives now have a getTerm and setTerm function to get and set the active term on the archive holder element.
+    -   Transitioned some scss vars to css vars.
+-   🐛 **Bugs Fixed**
+    -   Fix bug with term_ids in node-overview
+    -   Fixed a bug in menu.js where the --scoll modifier wouldn't go away.
+    -   Fixed a bug in the header an footer where containers were wider then content containers.
+
 ### 3.19.6 and 3.19.7:
 
 _Release Date - 13 july 2022_
