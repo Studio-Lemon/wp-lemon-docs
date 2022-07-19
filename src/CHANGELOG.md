@@ -1,3 +1,10 @@
+### 3.19.9:
+
+_Release Date - 19 july 2022_
+
+-   💡 **Newly added**
+    -   New experimental css clamp functionality added.
+
 ### 3.19.8:
 
 _Release Date - 14 july 2022_
