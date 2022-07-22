@@ -1,3 +1,18 @@
+### 3.20.0:
+
+_Release Date - 22 july 2022_
+
+-   ⛏️ **Breaking**
+    -   Update bootstrap to 5.2
+    -   if you are using a custom archive with loadmore function, please rework your block. see node-overview.php block for reference.
+        -   Echo urban design controleren
+        -   zalm, vaantje, gouda petanque, chilibra, controleren
+        -   nederhoff, geen node-archive.twig gebruiken, want we gebruiken geen filter.
+-   💡 **Newly added**
+    -   Added translation hints.
+-   ✨ **Enhanced**
+    -   Rework of archive query mechanism
+
 ### 3.19.9:
 
 _Release Date - 19 july 2022_
