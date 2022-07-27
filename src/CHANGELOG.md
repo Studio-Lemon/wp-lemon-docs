@@ -1,3 +1,12 @@
+### 3.20.1:
+
+_Release Date - 27 july 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug where the current menuitem wouldn't have an active state.
+    -   Fixed a bug where heading fontsizes in the backend were too small
+    -   Archive block improvements.
+
 ### 3.20.0:
 
 _Release Date - 22 july 2022_
