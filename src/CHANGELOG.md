@@ -1,3 +1,17 @@
+### 3.20.2:
+
+_Release Date - 1 august 2022_
+
+-   💡 **Newly added**
+    -   New get_contact_buttons() method that will return an array to build the contact buttons displayed on the bottom right of the screen when activated. This array can be extended by overwriting this method.
+-   🐛 **Bugs Fixed**
+    -   Backend notices in blocks are now visible again when a background image is added to a block.
+    -   Fixed a bug where matrix displayed blocks would get css that will get inherited by child blocks.
+    -
+-   ✨ **Enhanced**
+    -   card padding classes for pictures are now css vars and added filter for picture classes.
+    -   remove lemon blocks from being activated by default.
+
 ### 3.20.1:
 
 _Release Date - 27 july 2022_
