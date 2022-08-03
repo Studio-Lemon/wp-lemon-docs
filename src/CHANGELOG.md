@@ -1,3 +1,21 @@
+### 3.21.0:
+
+_Release Date - 3 august 2022_
+
+-   ⚠️ **Please add the following to your child theme**
+    -   `resources/assets/styles/app.scss --> add new rule before @import "01-settings";` and add `@use "~parentThemeStyles/02-tools/functions" as *;`
+    -   -   `resources/assets/styles/editor.scss --> add new rule before @import "01-settings/variables";` and add `@use "~parentThemeStyles/02-tools/functions" as *;`
+-   ## 💡 **Newly added**
+-   🐛 **Bugs Fixed**
+    -   Node overview block, fixed undefined fixes on rule 263 and 264
+    -   class-site.php, fixed undefined fixes
+    -   Fixed a bug where a a full aligned block after a full aligned section block with a background would have a margin-top
+    -   Fixed alignment in entry-header.twig
+    -   Archive load more buttons are not showing up anymore if there are no more items.
+-   ✨ **Enhanced**
+    -   Add ability to easily overwrite color for FAQ item buttons.
+    -   New filters added in entry-footer.twig and single.twig
+
 ### 3.20.2:
 
 _Release Date - 1 august 2022_
