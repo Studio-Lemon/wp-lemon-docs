@@ -181,7 +181,7 @@ _Release Date - 21 june 2022_
 _Release Date - 17 june 2022_
 
 -   ⛏️ **Breaking**
-    -   Please update bulldozer to 2.12.0
+    -   Please update basebuilder-config to 2.12.0
 -   💡 **Newly added**
     -   New container block added. This is still in beta.
 -   ✨ **Enhanced**
