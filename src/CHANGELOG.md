@@ -1,3 +1,19 @@
+### 3.21.2:
+
+_Release Date - 9 august 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed phonenumber being incorrectly formatted when wpml is not active.
+
+### 3.21.1:
+
+_Release Date - 4 august 2022_
+
+-   ## 💡 **Newly added**
+    -   New full height option in container
+-   🐛 **Bugs Fixed**
+    -   Fixed whatsapp button being shown when only call button is set
+
 ### 3.21.0:
 
 _Release Date - 3 august 2022_
@@ -5,7 +21,6 @@ _Release Date - 3 august 2022_
 -   ⚠️ **Please add the following to your child theme**
     -   `resources/assets/styles/app.scss --> add new rule before @import "01-settings";` and add `@use "~parentThemeStyles/02-tools/functions" as *;`
     -   -   `resources/assets/styles/editor.scss --> add new rule before @import "01-settings/variables";` and add `@use "~parentThemeStyles/02-tools/functions" as *;`
--   ## 💡 **Newly added**
 -   🐛 **Bugs Fixed**
     -   Node overview block, fixed undefined fixes on rule 263 and 264
     -   class-site.php, fixed undefined fixes
