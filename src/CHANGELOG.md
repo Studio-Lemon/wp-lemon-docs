@@ -1,3 +1,20 @@
+### 3.22.0:
+
+_Release Date - 9 september 2022_
+
+-   ## 💡 **Newly added**
+    -   New filter added to change share buttons and social buttons.
+    -   New filters/actions added in archive-loop.twig to change the load more text and add items before/after the loop.
+    -   Added archive page of current singular page to the navigation context. (nav.back)
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug where full/wide sections did not have a margin.
+    -   Changed the person card.
+    -   Fixed button background color scss variable not working.
+-   ✨ **Enhanced**
+    -   Better feedback when license server fails.
+    -   Added anchor link support for sections
+-   📦 **updated packages**
+
 ### 3.21.2:
 
 _Release Date - 9 august 2022_
