@@ -1,3 +1,13 @@
+### 3.22.1:
+
+_Release Date - 12 september 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed phone number default region
+    -   Fixed a bug where section paddings would not be applied to latest section in .entry
+    -   Fixed social icons on person card missing
+    -   Fixed a not correctly closed heading tag inside the twig marco elements.twig
+
 ### 3.22.0:
 
 _Release Date - 9 september 2022_
