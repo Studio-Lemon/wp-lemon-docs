@@ -1,3 +1,20 @@
+### 3.22.3:
+
+_Release Date - 21 september 2022_
+
+-   💡 **Newly added**
+    -   New customizer field added for google tag manager.
+    -   new wp-lemon/filter/header/logo filter added
+-   ✨ **Enhanced**
+    -   Re-ordered customizer tabs and fields.
+    -   Shorter default css navigation on links.
+    -   added template uri to pb_site variable.
+    -   Rework of get_attached_file() function
+    -   Updated iconfont with nicer icons.
+-   🐛 **Bugs Fixed**
+    -   Fixed button hover color.
+    -   Fixed menu issue #170
+
 ### 3.22.[1-2]:
 
 _Release Date - 12 september 2022_
@@ -12,7 +29,7 @@ _Release Date - 12 september 2022_
 
 _Release Date - 9 september 2022_
 
--   ## 💡 **Newly added**
+-   💡 **Newly added**
     -   New filter added to change share buttons and social buttons.
     -   New filters/actions added in archive-loop.twig to change the load more text and add items before/after the loop.
     -   Added archive page of current singular page to the navigation context. (nav.back)
@@ -36,7 +53,7 @@ _Release Date - 9 august 2022_
 
 _Release Date - 4 august 2022_
 
--   ## 💡 **Newly added**
+-   💡 **Newly added**
     -   New full height option in container
 -   🐛 **Bugs Fixed**
     -   Fixed whatsapp button being shown when only call button is set
