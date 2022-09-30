@@ -1,3 +1,19 @@
+### 3.23.0:
+
+_Release Date - 30 september 2022_
+
+-   💡 **Newly added**
+    -   Added hooks file for actions and filters
+-   🐛 **Bugs Fixed**
+    -   Removed console logs.
+    -   Better error handling for WP_Lemon\Controllers\format_phone_number() function.
+-   ✨ **Enhanced**
+    -   More css var usage
+    -   WP_Lemon\Controllers\socials() is updated to be a named array.
+    -   WP_Lemon\Controllers\log_message() now writes the time in the timezone selected from the site.
+-   🗑️ **Removed**
+    -   Cleaned up block patterns
+
 ### 3.22.3:
 
 _Release Date - 21 september 2022_
