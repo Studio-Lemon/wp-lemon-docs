@@ -1,3 +1,19 @@
+### 3.23.1:
+
+_Release Date - 30 september 2022_
+
+-   💡 **Newly added**
+    -   Added hook for overwriting card classes
+-   🐛 **Bugs Fixed**
+
+    -   Already activated licenses on websites can now be reactivated.
+    -   Full height sections in backend are properly displayed
+
+-   ✨ **Enhanced**
+    -   Font sizes are not overwritten in footer by force anymore
+    -   Add body class when search is active
+    -   Its now easier to overwrite css of the footer
+
 ### 3.23.0:
 
 _Release Date - 30 september 2022_
