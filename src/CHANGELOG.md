@@ -1,16 +1,754 @@
+### 3.23.1:
+
+_Release Date - 30 september 2022_
+
+-   💡 **Newly added**
+    -   Added hook for overwriting card classes
+-   🐛 **Bugs Fixed**
+
+    -   Already activated licenses on websites can now be reactivated.
+    -   Full height sections in backend are properly displayed
+
+-   ✨ **Enhanced**
+    -   Font sizes are not overwritten in footer by force anymore
+    -   Add body class when search is active
+    -   Its now easier to overwrite css of the footer
+
+### 3.23.0:
+
+_Release Date - 30 september 2022_
+
+-   💡 **Newly added**
+    -   Added hooks file for actions and filters
+-   🐛 **Bugs Fixed**
+    -   Removed console logs.
+    -   Better error handling for WP_Lemon\Controllers\format_phone_number() function.
+-   ✨ **Enhanced**
+    -   More css var usage
+    -   WP_Lemon\Controllers\socials() is updated to be a named array.
+    -   WP_Lemon\Controllers\log_message() now writes the time in the timezone selected from the site.
+-   🗑️ **Removed**
+    -   Cleaned up block patterns
+
+### 3.22.3:
+
+_Release Date - 21 september 2022_
+
+-   💡 **Newly added**
+    -   New customizer field added for google tag manager.
+    -   new wp-lemon/filter/header/logo filter added
+-   ✨ **Enhanced**
+    -   Re-ordered customizer tabs and fields.
+    -   Shorter default css navigation on links.
+    -   added template uri to pb_site variable.
+    -   Rework of get_attached_file() function
+    -   Updated iconfont with nicer icons.
+-   🐛 **Bugs Fixed**
+    -   Fixed button hover color.
+    -   Fixed menu issue #170
+
+### 3.22.[1-2]:
+
+_Release Date - 12 september 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed phone number default region
+    -   Fixed a bug where section paddings would not be applied to latest section in .entry
+    -   Fixed social icons on person card missing
+    -   Fixed a not correctly closed heading tag inside the twig marco elements.twig
+
+### 3.22.0:
+
+_Release Date - 9 september 2022_
+
+-   💡 **Newly added**
+    -   New filter added to change share buttons and social buttons.
+    -   New filters/actions added in archive-loop.twig to change the load more text and add items before/after the loop.
+    -   Added archive page of current singular page to the navigation context. (nav.back)
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug where full/wide sections did not have a margin.
+    -   Changed the person card.
+    -   Fixed button background color scss variable not working.
+-   ✨ **Enhanced**
+    -   Better feedback when license server fails.
+    -   Added anchor link support for sections
+-   📦 **updated packages**
+
+### 3.21.2:
+
+_Release Date - 9 august 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed phonenumber being incorrectly formatted when wpml is not active.
+
+### 3.21.1:
+
+_Release Date - 4 august 2022_
+
+-   💡 **Newly added**
+    -   New full height option in container
+-   🐛 **Bugs Fixed**
+    -   Fixed whatsapp button being shown when only call button is set
+
+### 3.21.0:
+
+_Release Date - 3 august 2022_
+
+-   ⚠️ **Please add the following to your child theme**
+    -   `resources/assets/styles/app.scss --> add new rule before @import "01-settings";` and add `@use "~parentThemeStyles/02-tools/functions" as *;`
+    -   -   `resources/assets/styles/editor.scss --> add new rule before @import "01-settings/variables";` and add `@use "~parentThemeStyles/02-tools/functions" as *;`
+-   🐛 **Bugs Fixed**
+    -   Node overview block, fixed undefined fixes on rule 263 and 264
+    -   class-site.php, fixed undefined fixes
+    -   Fixed a bug where a a full aligned block after a full aligned section block with a background would have a margin-top
+    -   Fixed alignment in entry-header.twig
+    -   Archive load more buttons are not showing up anymore if there are no more items.
+-   ✨ **Enhanced**
+    -   Add ability to easily overwrite color for FAQ item buttons.
+    -   New filters added in entry-footer.twig and single.twig
+
+### 3.20.2:
+
+_Release Date - 1 august 2022_
+
+-   💡 **Newly added**
+    -   New get_contact_buttons() method that will return an array to build the contact buttons displayed on the bottom right of the screen when activated. This array can be extended by overwriting this method.
+-   🐛 **Bugs Fixed**
+    -   Backend notices in blocks are now visible again when a background image is added to a block.
+    -   Fixed a bug where matrix displayed blocks would get css that will get inherited by child blocks.
+    -
+-   ✨ **Enhanced**
+    -   card padding classes for pictures are now css vars and added filter for picture classes.
+    -   remove lemon blocks from being activated by default.
+
+### 3.20.1:
+
+_Release Date - 27 july 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug where the current menuitem wouldn't have an active state.
+    -   Fixed a bug where heading fontsizes in the backend were too small
+    -   Archive block improvements.
+
+### 3.20.0:
+
+_Release Date - 22 july 2022_
+
+-   ⛏️ **Breaking**
+    -   Update bootstrap to 5.2
+    -   if you are using a custom archive with loadmore function, please rework your block. see node-overview.php block for reference.
+        -   Echo urban design controleren
+        -   zalm, vaantje, gouda petanque, chilibra, controleren
+        -   nederhoff, geen node-archive.twig gebruiken, want we gebruiken geen filter.
+-   💡 **Newly added**
+    -   Added translation hints.
+-   ✨ **Enhanced**
+    -   Rework of archive query mechanism
+
+### 3.19.9:
+
+_Release Date - 19 july 2022_
+
+-   💡 **Newly added**
+    -   New experimental css clamp functionality added.
+
+### 3.19.8:
+
+_Release Date - 14 july 2022_
+
+-   💡 **Newly added**
+    -   New checklist style for lists.
+-   ✨ **Enhanced**
+    -   Enhanced icon font usage.
+    -   Archives now have a getTerm and setTerm function to get and set the active term on the archive holder element.
+    -   Transitioned some scss vars to css vars.
+-   🐛 **Bugs Fixed**
+    -   Fix bug with term_ids in node-overview
+    -   Fixed a bug in menu.js where the --scoll modifier wouldn't go away.
+    -   Fixed a bug in the header an footer where containers were wider then content containers.
+
+### 3.19.6 and 3.19.7:
+
+_Release Date - 13 july 2022_
+
+-   ✨ **Enhanced**
+    -   Easier backend styling with .ibb class to add really good section differentiation.
+    -   better apply_filter name to easier apply filters on blocks. You now can directly copy the filter name from the source code.
+    -   FAQ block doesn't have the edit mode anymore.
+    -   Added picture.ratio class to automatically set a ratio on images.
+-   🐛 **Bugs Fixed**
+    -   REST api point now has proper permission callback
+    -   Several contrast mode improvements
+    -   Fix in node-archive
+-   📦 **updated packages**
+-   🤖 **linted PHP/CSS/JS**
+
+### 3.19.5:
+
+_Release Date - 12 july 2022_
+
+-   💡 **Newly added**
+    -   New log function added
+-   ✨ **Enhanced**
+    -   Better css for new section block.
+-   🐛 **Bugs Fixed**
+    -   Fixed an issue where width and height inside picture element were empty.
+
+### 3.19.4:
+
+_Release Date - 8 july 2022_
+
+-   ✨ **Enhanced**
+    -   You can now set a initial term on the archive.twig partial.
+    -   new post_per_page filter in node-overview block.
+-   🐛 **Bugs Fixed**
+    -   Map permanent fix.
+    -   Fixed "no more items" message in node-archive
+
+_Release Date - 6 july 2022_
+
+-   ✨ **Enhanced**
+    -   Better css for new section block.
+    -   Improved language switcher code.
+
+### 3.19.2:
+
+_Release Date - 6 july 2022_
+
+-   ✨ **Enhanced**
+    -   Better css for new section block.
+    -   Added extra information on how to create your flexible card grid inside the editor.
+    -   person card improved.
+-   🐛 **Bugs Fixed**
+    -   css alignment improvements
+    -   Fixed map not being 100% height inside the editor.
+
+### 3.19.1:
+
+_Release Date - 4 july 2022_
+
+-   ✨ **Enhanced**
+    -   Improved block positioning classes. All blocks are now displayed with max width instead of an combination between width and max width. This is a bit experimental.
+    -   Better default map styling due to new section class.
+    -   Better css styling for headings.
+    -   Cleaned css a bit
+-   🐛 **Bugs Fixed**
+    -   Map block fix in backend
+    -   Fixed an issue where menu items were not active in sub menus when selected.
+    -   Fixed a bug where the block edit block would be behind other block element.
+    -   Fixed PHP bug when there were no widgets present.
+    -   Fixed a JS bug where the menu.js would crash if the collapse element was not present.
+
+### 3.19.0:
+
+_Release Date - 24 june 2022_
+
+-   ⛏️ **Breaking**
+    -   Please re-save your customizer fields after updating on the live site. You can do this by changing a value and going back to the old value.
+-   💡 **Newly added**
+    -   A page can now be the archive for multiple pages.
+    -   class-site.php has been extended to add archive pages to the Timber context.
+    -   entry-header now directly uses this new context instead of doing a separate database call.
+    -   This overall enhances the experience to link back to an archive page from any custom post type.
+
+### 3.18.1:
+
+_Release Date - 21 june 2022_
+
+-   💡 **Newly added**
+    -   New icon block added.
+    -   New get_svg_image() function to load the contents of an SVG image from the media library.
+-   ✨ **Enhanced**
+    -   New container block improvements
+    -   Three new icons added in iconfont.
+    -   Removed unneeded macro imports in blocks.
+-   🐛 **Bugs Fixed**
+    -   Fixed an issue with columns block.
+-   🪦 **deprecated**
+    -   Banner block is now marked as deprecated
+
+### 3.18.0:
+
+_Release Date - 17 june 2022_
+
+-   ⛏️ **Breaking**
+    -   Please update basebuilder-config to 2.12.0
+-   💡 **Newly added**
+    -   New container block added. This is still in beta.
+-   ✨ **Enhanced**
+    -   Only show block ID when one is set via attributes.
+-   🐛 **Bugs Fixed**
+    -   Removed unneeded normal font size
+    -   Fixed license page not loading
+    -   Fixed a bug where you could not overwrite blocks in theme.json
+    -   Fixed typo in license class all over the codebase.
+    -   Fixed an issue where the phone number could not be empty.
+
+### 3.17.3:
+
+_Release Date - 7 june 2022_
+
+-   💡 **Newly added**
+    -   New get_contact_information method that creates a single array of all contact information from the customizer.
+    -   The contact_icons macro now requires contact as a first parameter that you will pass.
+-   ✨ **Enhanced**
+    -   PHP linted.
+    -   Language switcher is now twig and has a helper function that formats the language switcher. This helps with custom language switcher implementation.
+-   🐛 **Bugs Fixed**
+    -   Fixed typo in license class all over the codebase.
+    -   Fixed an issue where the phone number could not be empty.
+
+### 3.17.2:
+
+_Release Date - 7 june 2022_
+
+-   💡 **Newly added**
+    -   show bottom bar filter added in footer.
+-   🐛 **Bugs Fixed**
+    -   Fix contact bar icon color
+    -   Fixed blockloader
+    -   body background as css var is now working
+
+### 3.17.1:
+
+_Release Date - 2 june 2022_
+
+-   💡 **Newly added**
+    -   Password protected pages are now working
+    -   New get_fluent_form function
+    -   New block loader so you can filter blocks that are loaded by the parent theme.
+-   ✨ **Enhanced**
+    -   Added extra class when navbar is on top of the viewport.
+    -   Better controls for slide and slider block.
+    -   Added a localized phone number option. The site will show an national phonenumber on the default language and an internationized phone number on other languages.
+-   🐛 **Bugs Fixed**
+    -   Fixed large padding in wp-block-pullquote
+    -   Minor css fixes in block columns and slider arrow colors
+
+### 3.17.0:
+
+_Release Date - 25 may 2022_
+
+-   ⛏️ **Breaking**
+    -   Please run `composer require giggsey/libphonenumber-for-php` in root and upload your vendor folder!
+-   💡 **Newly added**
+    -   New site class added for more structured context.
+    -   New phone number methods added. This fixes a lot of multilanguage phonenumber issues.
+-   ✨ **Enhanced**
+    -   Updated default look and feel of hamburger menu
+-   🐛 **Bugs Fixed**
+    -   Navbar only gets a class when fully on top of the viewport.
+    -   Fixed banner display
+    -   Banners can now be text center aligned
+    -   Proper card footer color
+    -   You can now switch to the default font size after change.
+
+### 3.16.2:
+
+_Release Date - 14 may 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Excerpt can now be hidden in default cards.
+    -   Banner block: Set background opacity on videos now works again
+-   💡 **Newly added**
+    -   You can now set extra arguments on queries using a filter used in the virtual node-latest and node-overview blocks.
+
+### 3.16.1:
+
+_Release Date - 12 may 2022_
+
+-   🐛 **Bugs Fixed**
+    -   fixed domready
+    -   top adminbar alignment fix
+    -   Padding fix inside icons.
+
+### 3.16.0:
+
+_Release Date - 5 may 2022_
+
+-   💡 **Newly added**
+    -   Detail page for persons can now be enabled via the customizer
+-   ✨ **Enhanced**
+    -   Slider block improvements
+    -   Removed deprecated FAQ fields
+    -   Less css due to smart selectors
+    -   Better icon positioning
+    -   Excerpts can now recieve a -1 argument to post all content inside cards.
+-   🐛 **Bugs Fixed**
+    -   fix for lazyload issue on safari mobile
+
+### 3.15.1 - 3.15.4:
+
+_Release Date - 3 may 2022_
+
+-   ✨ **Enhanced**
+    -   Updated workflow dependencies
+    -   Updated workflow files
+
+### 3.15.0:
+
+_Release Date - 3 may 2022_
+
+-   ⛏️ **Breaking**
+    -   Please update basebuilder to 2.8.0
+    -   Please update bulldozer to 1.11.0
+-   🐛 **Bugs Fixed**
+    -   Proposed fix for lazyload issue on safari mobile
+    -   Footer menu items not aligning properly.
+
+### 3.14.0:
+
+_Release Date - 25 april 2022_
+
+-   ✨ **Enhanced**
+
+    -   PHP linting
+    -   Filter added to show share buttons, overwrite labels and platforms of sharer.
+    -   Css improvements
+        -   ⚠️ Overall process of enhancing the default flow of blocks. Please double check your sites on weird margin issues ⚠️
+        -   Changed all 30px margins to $vertical-gutter.
+        -   logo grid now has same margin on the side as bottom
+        -   Eliminated a lot of media queries by using custom properties.
+        -   Menu toggler black outline removed on focus
+        -   Rework of icons-list.scss for more consistent icons
+        -   Table.scss display fix
+        -   Media-text block css reworked and reduces total css size by 4kb
+
+-   🐛 **Bugs Fixed**
+    -   card grid backend display fix
+
+### 3.13.0:
+
+_Release Date - 15 april 2022_
+
+-   ⛏️ **Breaking**
+    -   Please update the version number to 2 in your theme.json in your child theme.
+-   ✨ **Enhanced**
+    -   font sizes inside searchbar are tweaked
+    -   Improvements to other-items.twig
+    -   Major overhaul to how blocks display their background colors
+    -   Nav items with a background now have a has-background class
+    -   Load more archives are more responsive to user input.
+    -   Theme.json update to v2 and did some householding.
+    -   Several queries in queries.php are now leaner and thus should perform better.
+    -   Hide empty categories in node-overview block.
+-   🐛 **Bugs Fixed**
+    -   post_type_name() would throw notice on some post types.
+    -   gallery block logo view with links now display properly
+    -   Translation inside search-list.twig is fixed
+    -   Load more archives with filters now load the correct next items.
+
+### 3.12.1 - 3.12.2:
+
+_Release Date - 4 april 2022_
+
+-   💡 **Newly added**
+    -   REST url added
+    -   card-button-color variable added
+-   ✨ **Enhanced**
+    -   removed image size `small` and upsized `medium_large` to 800
+-   🐛 **Bugs Fixed**
+    -   A11y
+        -   set body class directly on startup in head when in a11y mode to prevent flash when switching pages
+        -   Fixed a lot of bugs in contrast mode
+    -   wp-gallery block logo variant is working again
+    -   Better image size loaded for content-cards
+    -   less compression on webp generation
+
+### 3.12.0:
+
+_Release Date - 30 march 2022_
+
+-   ✨ **Enhanced**
+    -   slide block now has a proper option for an image. You can now choose between innerblocks and a single image
+    -   Continued on contrast mode
+    -   header and nav colors are transformed to css vars
+
+### 3.11.4:
+
+_Release Date - 25 march 2022_
+
+-   💡 **Newly added**
+    -   Fields of person and job are now filterable.
+-   🐛 **Bugs Fixed**
+    -   ACF fields at jobs and persons are translated once more
+    -   Css grid fix in backend
+
+### 3.11.2:
+
+_Release Date - 25 march 2022_
+
+-   💡 **Newly added**
+    -   Added before footer widgets action
+-   🐛 **Bugs Fixed**
+    -   Card grid backend layout fixed
+-   ✨ **Enhanced**
+    -   Removed instagram feed block references.
+    -   dim ratio moved to global
+
+### 3.11.1:
+
+_Release Date - 22 march 2022_
+
+-   💡 **Newly added**
+    -   Archive pages now have an extra body class 'archive-page'
+-   🐛 **Bugs Fixed**
+    -   Footer widgets css improvements
+    -   Card grid backend layout fixed
+-   ✨ **Enhanced**
+    -   Removed instagram feed block references.
+    -   dim ratio moved to global
+
+### 3.11.0:
+
+_Release Date - 21 march 2022_
+
+-   💡 **Newly added**
+    -   New logo block for usage in widget areas.
+-   ✨ **Enhanced**
+    -   Custom blocks added via the new card-grid filter introduced in 3.10.2 are now displayed the same way as regular cards inside the grid.
+
+### 3.10.2:
+
+_Release Date - 222 march 2022_
+
+-   ✨ **Enhanced**
+    -   Allowed blocks are now filterable so you can add your extra or your own blocks to wp-lemon blocks.
+    -   Two new footer actions added.
+
+### 3.10.0:
+
+_Release Date - 21 march 2022_
+
+-   ⛏️ **Breaking**
+    -   Bumped bulldozer to 1.10.
+-   💡 **Newly added**
+    -   Card grid mode now has a flexible layout mode where you can build the layout of the grid by hand. You can choose from 3 different layouts to start with.
+-   ✨ **Enhanced**
+    -   Cleanup of setup function.
+    -   scss vendor imports no longer prefixed
+    -   Better slider JS
+    -   Overlaps of media-text are now done purely by css grid instead of after element.
+    -   Contrast mode work in progress
+-   🐛 **Bugs Fixed**
+-   Disable alignment on timeline block.
+
+### 3.9.1:
+
+_Release Date - 15 march 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes to child block modifications
+    -   Temporary fix for color palette issue, see: https://github.com/Log1x/acf-editor-palette/issues/30
+
+### 3.9.0:
+
+_Release Date - 9 march 2022_
+
+-   ⛏️ **Breaking**
+    -   Please update **basedbuilder-config** to 2.6
+-   ✨ **Enhanced**
+    -   Colors are now inserted into the theme.json file for maximum compat with new WordPress versions.
+    -   Timeline positioning fixes.
+-   🐛 **Bugs Fixed**
+-   Disable alignment on timeline block.
+
+### 3.8.3:
+
+_Release Date - 25 februari 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Media text fixes
+    -   Timeline fixes
+
+### 3.8.2:
+
+_Release Date - 25 februari 2022_
+
+-   ⛏️ **Breaking**
+    -   Bumped bulldozer to 1.9.8
+-   ✨ **Enhanced**
+    -   Better backend block alignment.
+    -   Aria improvements to language switcher and currentpage.
+-   🐛 **Bugs Fixed**
+    -   Fixed double notices in blocks.
+    -   wp-seperator block is now properly displayed.
+
+### 3.8.1:
+
+_Release Date - 24 februari 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Block alignment fixes
+
+### 3.8.0:
+
+_Release Date - 24 februari 2022_
+
+-   ⛏️ **Breaking**
+    -   Bumped minimal WordPress version to 5.9
+    -   Removed the primary sidebar since it is not used in any project.
+-   ✨ **Enhanced**
+    -   Complete overhaul to the site.php file.
+    -   Animate on scroll library is now handles by css custom properties. This decreases the css size by 20kb
+    -   Simplified css for several blocks. This also decreased css size.
+    -   Cleaned some PHP files
+    -   Editor alignment of blocks on smaller screens is now better.
+-   🐛 **Bugs Fixed**
+    -   Cleaned the Ajax query class.
+
+### 3.7.3:
+
+_Release Date - 21 februari 2022_
+
+-   💡 **Newly added**
+    -   Slide block now hase a fade option
+-   🐛 **Bugs Fixed**
+    -   acf-fluentform class could throw a notice in some cases.
+
+### 3.7.2:
+
+_Release Date - 15 februari 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Banner block margin backend fix #133
+    -   img-container block not having correct background color.
+
+### 3.7.1:
+
+_Release Date - 14 februari 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Css bootstrap5 gutter fix
+    -   Link in colored paragraph now inherits color properly
+    -   Fixed logo variant of gallery.
+    -   Media and text without background color is now shown correctly without padding on mobile.
+    -   Block positioning fixes.
+
+### 3.7.0:
+
+_Release Date - 10 februari 2022_
+
+-   ⛏️ **Breaking**
+    -   Please double check custom cards in your theme. We added custom footer in the card-wrap.twig that your card will probably extend. Disable the default footer by adding a twig var in your custom card `{% set hide_default_footer = true %}` or remake your custom cards and remove the footer.
+-   ✨ **Enhanced**
+    -   All cards now share the same footer.
+    -   Allow lists inside faq items.
+    -   Add default margin underneath img-container blocks.
+-   🐛 **Bugs Fixed**
+    -   Fixed backend notice not being correct.
+    -   Hopefully a permanent bug for the overflowing navbar without setting the navbar to overflow: hidden.
+
+### 3.6.3:
+
+_Release Date - 08 februari 2022_
+
+-   ✨ **Enhanced**
+    -   Rework on menu.js and dropdown.js for better compat with custom dropdown elements outside the navbar.
+    -   archive.js now is splited into two functions: an ajax call and listereners. This allows to use ajaxcall separately.
+-   🐛 **Bugs Fixed**
+    -   css headings were not displayed correctly because of an css regression introduces in 3.6.0
+    -   Better footer css
+
+### 3.6.2:
+
+_Release Date - 07 februari 2022_
+
+-   ✨ **Enhanced**
+    -   content card grid - allow 1 col layouts.
+    -   archive - filter is now a overwritable partial.
+    -   Footer - don't show navholder div when not needed.
+-   🐛 **Bugs Fixed**
+    -   backend - fully alligned blocks cannot overflow anymore.
+
+### 3.6.1:
+
+_Release Date - 07 februari 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixes overflow bug
+
+### 3.6.0:
+
+_Release Date - 06 februari 2022_
+
+-   Please update bulldozer to 1.9.4 by uploading the vendor folder to the server.
+-   ✨ **Enhanced**
+    -   ⚠️ Enhanced FAQ block with new innerblock, please migrate your FAQ questions to the new innerblocks!
+    -   Better editor block alignment
+-   🐛 **Bugs Fixed**
+    -   Minor css fixes in front- and backend
+
+### 3.5.3:
+
+_Release Date - 03 februari 2022_
+
+-   💡 **Newly added**
+    -   New hook `wp-lemon/filter/navwalker/{{item}}/link-attributes` to filter attributes
+    -   Menu items that function as an archive page now have a specific class named `.archive-{{posttype}}`
+-   ✨ **Enhanced**
+    -   Better editor block alignment
+-   🐛 **Bugs Fixed**
+    -   Minor css fixes in front- and backend
+
+### 3.5.2:
+
+_Release Date - 01 februari 2022_
+
+-   ✨ **Enhanced**
+    -   Better editor block alignment
+    -   img container block now support text alignment
+
+### 3.5.1:
+
+_Release Date - 01 februari 2022_
+
+-   💡 **Newly added**
+    -   New hook `wp-lemon/action/entry/before` and `wp-lemon/action/entry/after` inside single.twig and index.twig
+-   ✨ **Enhanced**
+    -   Linting & security fixes
+    -   Better WordPress 5.9 support
+    -   Minor scss impromenets
+    -   testimonial support inside sliders
+
+### 3.5.0:
+
+_Release Date - 27 january 2022_
+
+-   💡 **Newly added**
+    -   New testimonial block
+-   🐛 **Bugs Fixed**
+    -   Fixed smoothscroll bug
+-   ✨ **Enhanced**
+    -   Support responsive embeds.
+    -   Tweaked font sizes a bit
+
+### 3.4.0:
+
+_Release Date - 25 january 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Several JS bugs fixed.
+-   ✨ **Enhanced**
+    -   Added margin to first block if not full aligned, this reduces the usage of container blocks. Please check layouts of pages.
+    -   better positioning of blocks inside editor
+    -   acf boxes are not draggable anymore in backend.
+    -   cleanup of files
+    -   Woocommerce improvements
+
 ### 3.3.2:
 
 _Release Date - 17 january 2022_
 
 -   Please update bulldozer to 1.9.1 by uploading the vendor folder to the server.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   block classes would be rendered incorrectly.
 
 ### 3.3.1:
 
 _Release Date - 17 january 2022_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   antispambot filter fixed
     -   bug where dropdown menus wouldn't close is fixed
 -   ✨ **Enhanced**
@@ -27,7 +765,7 @@ _Release Date - 11 january 2022_
 -   Please update bulldozer to 1.9.0 by uploading the vendor folder to the server.
 -   💡 **Newly added**
     -   No more jQuery dependency in wp-lemon. Read: [Javascript](/basics/basic-javascript)
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Several JS bugs fixed.
     -   bug where dropdown menus wouldn't close is fixed
 -   ✨ **Enhanced**
@@ -42,7 +780,7 @@ _Release Date - 05 january 2022_
 
 -   💡 **Newly added**
     -   wp-lemon now supports nested sub menus.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   JS fix in search.js
     -   JS fix in contact-buttons.js
 -   ✨ **Enhanced**
@@ -58,7 +796,7 @@ _Release Date - 24 december 2021_
 
 -   💡 **Newly added**
     -   wp-lemon now supports nested sub menus.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Margin bottom is now fixed in banner block
     -   Button block now has a proper hover color
 -   ✨ **Enhanced**
@@ -70,7 +808,7 @@ _Release Date - 24 december 2021_
 
 _Release Date - 23 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixed media and text display in backend.
 -   ✨ **Enhanced**
     -   Allow lists inside banner block
@@ -81,10 +819,10 @@ _Release Date - 23 december 2021_
 
 _Release Date - 21 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   fluentform acf field now allows for a null value.
 -   ✨ **Enhanced**
-    -   Skip licence check on development.
+    -   Skip license check on development.
     -   Add possibility to add a margin underneath a banner block
     -   Allow wide alignment on card grid block
     -   other_items_query now supports taxonomies as well.
@@ -93,7 +831,7 @@ _Release Date - 21 december 2021_
 
 _Release Date - 17 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixes a bug where the excerpt would always be set
 -   ✨ **Enhanced**
     -   New actions and filters added, please check the docs.
@@ -109,7 +847,7 @@ _Release Date - 17 december 2021_
 
 _Release Date - 15 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixes missing media text bg color
 -   ✨ **Enhanced**
     -   minor css var improvements
@@ -120,7 +858,7 @@ _Release Date - 15 december 2021_
 _Release Date - 13 december 2021_
 
 -   Please update bulldozer to 1.8.2 by uploading the vendor folder to the server.
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Disable mode switching for sevaral blocks.
     -   Fixes bug where card images would render at incorrect heights in the backend.
     -   Fixes wrong display of card grid with two columns.
@@ -135,7 +873,7 @@ _Release Date - 13 december 2021_
 
 _Release Date - 13 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixes sass deprecation.
     -   Updated changelog for new theme.json
 -   🌐 **Updated Dutch translation**
@@ -189,7 +927,7 @@ _Release Date - 13 december 2021_
 
 _Release Date - 7 december 2021_
 
--   🐛 **Bugs Fixed**.
+-   🐛 **Bugs Fixed**
     -   Fixes missing icon in card wrap
     -   Fixes the word "menu" not being translatable.
 
