@@ -14,8 +14,15 @@ We use actions in wp-lemon throughout the twig files to add new data on specific
 >  Filters give you the ability to change data during the execution of WordPress Core, plugins, and themes. Callback functions for Filters will accept a variable, modify it, and return it. They are meant to work in an isolated manner, and should never have side effects such as affecting global variables and output. Filters expect to have something returned back to them.
 
 We use filters in wp-lemon to change specific output that is already baked into the templates. It serves the same purpose as actions are used on a smaller scale, like changing an icon inside a card for example.
+## Actions inside blocks
+Hooks are in the correct order.
 
-## Actions inside wp-lemon
+| Action hook                                                           | Description                                                                  |
+|-----------------------------------------------------------------------|------------------------------------------------------------------------------|
+| wp-lemon/action/block/node-overview/{{card_type}}/loop/before         | Add elements before the loop                      |
+| wp-lemon/action/block/node-overview/{{card_type}}/loop/after          | Add elements after the loop                      |
+
+## Actions inside wp-lemon core files
 Hooks are in the correct order.
 
 | Action hook                          | Description                                                                  |
@@ -32,13 +39,17 @@ Hooks are in the correct order.
 | wp-lemon/action/header/after         | Insert code directly **after** the the header/navbar                         |
 | wp-lemon/action/content/before       | Insert code inside the .main opening tag **before** all other child elements |
 | wp-lemon/action/entry/before       | Insert code inside the .entry opening tag **before** all other child elements |
+| wp-lemon/action/entry/entry-header/before       | Insert code after the the entry-header.twig file |
+| wp-lemon/action/entry/entry-footer/before       | Insert code before the the entry-after.twig file |
 | wp-lemon/action/entry/after       | Insert code just before the closing .entry tag |
 | wp-lemon/action/content/after        | Insert code inside the .main opening tag **after** all other child elements  |
 | wp-lemon/action/footer/before        | Insert code **before** footer                                                |
 | wp-lemon/action/footer/inside/before        | Insert code inside the footer as the first element.                                          |
 | wp-lemon/action/footer-widgets/after | Insert code **after** footer widgets area                                         |
+| wp-lemon/action/footer-widgets/inside/before | Insert code **before and inside** footer widgets area                                         |
 | wp-lemon/action/footer-widgets-row/before | Insert code **before** actual widgets                                    |
 | wp-lemon/action/footer-widgets-row/after | Insert code **after** actual widgets                                         |
+| wp-lemon/action/footer-widgets/inside/after | Insert code **after and inside** footer widgets area                                         |
 | wp-lemon/action/footer/inside/after        | Insert code inside the footer as the last element.                                          |
 | wp-lemon/action/footer/after         | Insert code **after** footer                                                 |
 | wp-lemon/action/body/after           | Insert code inside the body opening tag **after** all other child elements   |
@@ -87,7 +98,6 @@ function footer_logos()
 add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_logos');
 
 ```
-## Filters inside wp-lemon
 
 
 ### Filters available inside regular PHP files.
@@ -98,7 +108,8 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 | wp-lemon/filter/socials-order                                | Change the default order of the socials in blocks, headers and footers.                                                     |
 | wp-lemon/filter/blocks                                       | Filters the blocks loaded by the parent theme.                                                                              |
 | wp-lemon/filter/navwalker/{{item_archive}}/link-attributes                                   | Add extra arguments to item archive blocks.                                                                       |
-
+| wp-lemon/filter/share-context                                   | Filter the share array. You can change the name, icon and share url or add/remove share platforms                                                            |
+| wp-lemon/filter/socials-context                                   | Filter the socials array to be shown                                                                   |
 ### Filters available inside models
 | Filter hook                                                  | Description                                                                                                                 |
 |--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -116,17 +127,24 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 | wp-lemon/filter/block/node-latest/{{dynamic_post_type}}/no-items-message | Used in the node-latest block to change the message when no items are found that is shown to the site visitors.  |
 | wp-lemon/filter/block/node-latest/{{dynamic_post_type}}/overview-button-text| Used in the node-latest block to change the text in the button leading to the overview page of that post type |
 | wp-lemon/filter/block/node-latest/{{dynamic_post_type}}/args| Filter the query args for the latest items query |
+| wp-lemon/action/block/node-latest/{{card_type}}/holder-classes         | Filter the holder classes                   |
+| wp-lemon/filter/block/node-overview/{{dynamic_post_type}}/load-more-text | Change load more text. |
+| wp-lemon/action/block/node-overview/{{card_type}}/holder-classes         | Filter the holder classes                   |
+| wp-lemon/action/block/node-overview/{{card_type}}/items        | Filter the post array               |
+| wp-lemon/action/block/node-overview/{{card_type}}/posts-per-page        | Filter the amount of posts to be loaded via Ajax             |
 | wp-lemon/filter/block/node-overview/{{dynamic_post_type}}/select-all-text| Used in the node-overview block to change the text of the first option in the select element. |
 | wp-lemon/filter/block/node-overview/{{dynamic_post_type}}/args| Filter the query args for the node overview query |
 ### Filters available Twig files
 
-| Filter hook                                                  | Description                                                                                                                 |
-|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Filter hook                                                  | Description                                                                                                                 |arguments                                                                                                                 |
+|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| wp-lemon/filter/header/logo                                  | Change output of the logo inside the header , has logo array as argument.                                                   |
 | wp-lemon/filter/card/icon                                    | Change the arrow icon inside a cards footer.                                                                                |
 | wp-lemon/filter/card/excerpt-length                          | Change the excerpt length inside cards                                                                                      |
 | wp-lemon/filter/card/{{card_type}}/excerpt-length            | Change the excerpt length inside a specific cards                                                                           |
 | wp-lemon/filter/card/{{card_type}}/animation                 | Change default animation of a card.                                                                                         |
 | wp-lemon/filter/card/{{card_type}}/image-id                  | Filters the image id inside a card.                                                                                         |
+| wp-lemon/filter/card/{{card_type}}/picture-classes           | Filter the picture classes inside a card                                                                                   |
 | wp-lemon/filter/card/{{card_type}}/picture-el                | filter the whole picture element inside cards                                                                               |
 | wp-lemon/filter/card/{{card_type}}/footer                | filter the card footer                                                            |
 | wp-lemon/filter/entry-header/image-size                      | Used to change the image size of the image in the entry-header.twig                                                         |
@@ -134,13 +152,15 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 | wp-lemon/filter/entry-header/{{post_type}}/type              | Used to change the post type text above the title in the entry-header.twig of a specific post type. Or set to false to remove it completely.          |
 | wp-lemon/filter/entry-header/{{post_type}}/date              | Used to change the date text in the entry-header.twig of a specific post type. Or set to false to remove it completely.          |
 | wp-lemon/filter/entry-header/{{post_type}}/title             | Used to change the title in the entry-header.twig of a specific post type. Or set to false to remove it completely.          |
-| wp-lemon/filter/entry-header/{{post_type}}/picture-el        | Filters the complete picture element.                                                                                               |
+| wp-lemon/filter/entry-header/{{post_type}}/picture-el        | Filters the complete picture element.                                                                                               | (mixed) image id
 | wp-lemon/filter/entry-header/{{post_type}}/image-size        | Used to change the image size of the image in the entry-header.twig of a specific post type.                                |
 | wp-lemon/filter/entry-header/{{post_type}}/image-id          | Used to change the image id of the image in the entry-header.twig of a specific post type. Or set to false to remove it completely. |
+| wp-lemon/filter/entry-header/{{post_type}}/archive-page      | Filter the archive page array | (array) nav
 | wp-lemon/filter/entry-footer/{{post_type}}/share-label         | Change share heading label |
 | wp-lemon/filter/entry-footer/{{post_type}}/share-platforms         | Filter the platform array to add/remove share platforms |
-| wp-lemon/filter/entry-footer/{{post_type}}/show-share-buttons         | Used to change the image id of the image in the entry-header.twig of a specific post type. Or set to false to remove it completely. |
-| wp-lemon/filter/footer/show-logo                            | Whether to show the footer logo             
+| wp-lemon/filter/entry-footer/{{post_type}}/show-share-buttons         | Whether to show the share buttons |
+| wp-lemon/filter/footer/show-logo                            | Whether to show the footer logo             |
+| wp-lemon/filter/footer/show-bottombar                            | Whether to show the bottom bar holding to copyright message etc         |
 | wp-lemon/filter/copyright-message                            | Returns the copyright message, use this to change the copyright message in the                                                      |  
 
 **Examples**
