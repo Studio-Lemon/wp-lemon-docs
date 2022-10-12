@@ -1,5 +1,16 @@
 ### 3.23.1:
 
+_Release Date - 12 oktober 2022_
+
+-   📖 **Documented new filters**
+-   🐛 **Bugs Fixed**
+
+    -   Fix animation bug in archives where too many items would lead to weird fade in animations.
+    -   Fixed a bug where small excerpts would not be shown completely inside cards.
+    -   Fixed a bug where a person card would always show a link to the detail page, even if the detail page feature was not activated.
+
+### 3.23.1:
+
 _Release Date - 30 september 2022_
 
 -   💡 **Newly added**
