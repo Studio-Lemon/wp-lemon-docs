@@ -1,4 +1,29 @@
-### 3.23.1:
+### 3.23.3:
+
+_Release Date - 14 oktober 2022_
+
+-   ✨ **Enhanced**
+    -   Larger pagination buttons for swiper
+    -   more css vars introduced
+    -   Enhanced search page display
+    -   Enhanced search bar experience
+        -   Auto focussing when opening the search bar
+        -   Exit search bar when clicking outside the bar or search results
+        -   Exit search bar when pressing escape
+-   🐛 **Bugs Fixed**
+    -   Removed default letter spacing in navigation items
+    -   Fixed a bug where max widths couldn't be overwritten due to a specificity issue in the css.
+    -   Possible fix for issue where too large images would crash the server on resizing or moving to webp
+    -   Fixed an issue where lemon_excerpt() would return too little text when the content was not that long.
+    -   Fixed a bug when searching for content and a password protected page would come up the password template would be loaded.
+    -   Removed default order of team post type introduced in 3.23.0, this caused custom orders to not work.
+-   🗑️ **Removed**
+
+    -   Removed small cols and no-ml styles from core/columns
+
+-   🌐 **Updated Dutch translation**
+
+### 3.23.2:
 
 _Release Date - 12 oktober 2022_
 
