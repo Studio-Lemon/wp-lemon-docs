@@ -1,6 +1,16 @@
+### 3.24.0:
+
+_Release Date - 17 october 2022_
+
+-   💡 **Newly added**
+    -   New block image-card added that can be used inside the card grid.
+-   ✨ **Enhanced**
+    -   Bumped PHP version to 8.0.2 minimum
+    -   Further enhance search bar experience
+
 ### 3.23.3:
 
-_Release Date - 14 oktober 2022_
+_Release Date - 14 october 2022_
 
 -   ✨ **Enhanced**
     -   Larger pagination buttons for swiper
@@ -25,7 +35,7 @@ _Release Date - 14 oktober 2022_
 
 ### 3.23.2:
 
-_Release Date - 12 oktober 2022_
+_Release Date - 12 october 2022_
 
 -   📖 **Documented new filters**
 -   🐛 **Bugs Fixed**
