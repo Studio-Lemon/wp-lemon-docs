@@ -1,3 +1,16 @@
+### 3.24.1:
+
+_Release Date - 20 october 2022_
+
+-   🐛 **Bugs Fixed**
+
+    -   Fix dropdowns not working when importing the bootstrap dropdown module
+    -   Removed margin underneath last element inside an image card.
+
+-   ✨ **Enhanced**
+    -   Filter added for card type
+    -   Swiper pagination color is now a scss var
+
 ### 3.24.0:
 
 _Release Date - 17 october 2022_
