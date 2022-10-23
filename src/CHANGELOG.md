@@ -1,3 +1,19 @@
+### 3.25.0:
+
+_Release Date - 23 october 2022_
+
+-   ⛏️ **Breaking**
+    -   Please update bulldozer to 2.1.0
+-   ✨ **Enhanced**
+    -   Added 'combined' to phone number utility. it will output phone number as +31 (6) 12345678
+    -   Less html/css for img-container block. This is a total rework, so if you encounter any bugs, let us know
+    -   Complete rework of the section (beta) block. The container does not have a .section\_\_inner container anymore and elements inherit the --max-width css variable. If you encounter any bugs, let us know!
+    -   Map block now support setting your own ratio via a field. You can make the card 16x9, 4x3 and square. Gets overwritten when fully aligned.
+    -   Added instructions if there is a WPML field that has the copy setting.
+    -   img card now supports
+        -   Background color
+        -   vertical alignment
+
 ### 3.24.1:
 
 _Release Date - 20 october 2022_
@@ -330,8 +346,6 @@ _Release Date - 21 june 2022_
 
 _Release Date - 17 june 2022_
 
--   ⛏️ **Breaking**
-    -   Please update basebuilder-config to 2.12.0
 -   💡 **Newly added**
     -   New container block added. This is still in beta.
 -   ✨ **Enhanced**
