@@ -1,4 +1,4 @@
-### 3.25.1:
+### 3.25.1 and 3.25.2:
 
 _Release Date - 28 october 2022_
 
@@ -16,6 +16,7 @@ _Release Date - 28 october 2022_
     -   archive filter now has better styling
     -   improved disabled state of block
     -   archive filters are now more opinionated
+    -   Custom order plugin extra css added for better interface in backend
 
 ### 3.25.0:
 
