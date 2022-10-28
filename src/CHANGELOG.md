@@ -1,4 +1,4 @@
-### 3.25.1 and 3.25.2:
+### 3.25.1 3.25.2, 3,25.3:
 
 _Release Date - 28 october 2022_
 
@@ -10,6 +10,7 @@ _Release Date - 28 october 2022_
     -   Fixed wrong default aria state in faq-item
     -   Fixed a bug where tablet/mobile display would display wrong css.
     -   Fixed a excerpt bug
+    -   Fixed regression in custom archives.
 
 -   ✨ **Enhanced**
     -   node latest and node overview can now also query builtin post types.
