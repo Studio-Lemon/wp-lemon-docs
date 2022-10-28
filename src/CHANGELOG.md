@@ -1,3 +1,22 @@
+### 3.25.1:
+
+_Release Date - 28 october 2022_
+
+-   🐛 **Bugs Fixed**
+
+    -   image card image sizes are now full size.
+    -   Navwalker background color is not added anymore when no color is set.
+    -   Dropdown active and hover states fixed
+    -   Fixed wrong default aria state in faq-item
+    -   Fixed a bug where tablet/mobile display would display wrong css.
+    -   Fixed a excerpt bug
+
+-   ✨ **Enhanced**
+    -   node latest and node overview can now also query builtin post types.
+    -   archive filter now has better styling
+    -   improved disabled state of block
+    -   archive filters are now more opinionated
+
 ### 3.25.0:
 
 _Release Date - 23 october 2022_
