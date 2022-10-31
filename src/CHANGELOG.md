@@ -1,4 +1,4 @@
-### 3.25.1 3.25.2, 3,25.3:
+### 3.25.1 t/m 3.25.4:
 
 _Release Date - 28 october 2022_
 
@@ -18,6 +18,7 @@ _Release Date - 28 october 2022_
     -   improved disabled state of block
     -   archive filters are now more opinionated
     -   Custom order plugin extra css added for better interface in backend
+    -   team pages are now searchable when detail page is active.
 
 ### 3.25.0:
 
