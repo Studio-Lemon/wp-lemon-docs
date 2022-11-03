@@ -1,6 +1,19 @@
-### 3.25.1 t/m 3.25.4:
+### 3.26.0
 
-_Release Date - 28 october 2022_
+_Release Date - 3 november 2022_
+
+-   ✨ **Enhanced**
+    -   Compat fix with WordPress 6.1
+    -   using new style.css labels to disable accidential updates when there is a theme with the same name.
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug where custom sizes for media/text would be overwritten
+    -   Added missing rel and target attributes to external links in socials.twig
+    -   Temp fix for regression in WordPress 6.1 regarding the navwalker, see https://core.trac.wordpress.org/ticket/5694
+    -   Fixed an issue where wide alligned elements inside full containers woulds still be wide alligned.
+
+### 3.25.1 t/m 3.25.5:
+
+_Release Date - 1 november 2022_
 
 -   🐛 **Bugs Fixed**
 
@@ -11,6 +24,10 @@ _Release Date - 28 october 2022_
     -   Fixed a bug where tablet/mobile display would display wrong css.
     -   Fixed a excerpt bug
     -   Fixed regression in custom archives.
+    -   Custom orders weren't obeyed in class-generic-ajax-call.php ajax calls.
+    -   Some blocks wouldn't properly lazyload in tablet/mobile preview mode.
+    -   Fix to map block having a too large margin when not used fully aligned.
+    -   Fixed a bug where large amount of posts inside the ajax call would result in weird animations.
 
 -   ✨ **Enhanced**
     -   node latest and node overview can now also query builtin post types.
