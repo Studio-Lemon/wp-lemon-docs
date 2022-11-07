@@ -1,3 +1,15 @@
+### 3.26.1
+
+_Release Date - 7 november 2022_
+
+-   ## ✨ **Enhanced**
+    -   Load more button is now unfocussed after successful load.
+    -   Some style improvements that leads to less css.
+-   🐛 **Bugs Fixed**
+    -   Fixed animation being wrong in node-overview block
+    -   Fixed incorrect lang domain
+    -   Fixed a edge case bug in the editor when removing a specific block.
+
 ### 3.26.0
 
 _Release Date - 3 november 2022_
