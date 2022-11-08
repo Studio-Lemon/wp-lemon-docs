@@ -1,3 +1,12 @@
+### 3.27.0
+
+_Release Date - 8 november 2022_
+
+-   ⛏️ **Breaking**
+    -   Due to bug in Timber 1.22 where Twig is updated to 3.x branch we have this version. Please update your full vendor folder after twig update.
+-   ## ✨ **Enhanced**
+    -   Removed first large margin before media text block.
+
 ### 3.26.1
 
 _Release Date - 7 november 2022_
