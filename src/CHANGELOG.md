@@ -1,17 +1,35 @@
+### 3.28.0
+
+_Release Date - 16 november 2022_
+
+-   ⛏️ **Breaking**
+    -   Changed a lot within the css of the share buttons. Please double check your child theme if you custom styled the share buttons.
+-   💡 **Newly added**
+    -   Cookiebar added.
+-   ✨ **Enhanced**
+    -   Removed first large margin before media text block.
+    -   card padding is now a css var
+    -   Overhoul in share button css
+    -   Added section class to more-items twig file for better default spacing
+-   🐛 **Bugs Fixed**
+    -   Fixed two aria bugs in the search form and header
+    -   Search query is now done in the correct language
+    -   Change order of styles. Fixes #181
+
 ### 3.27.0
 
 _Release Date - 8 november 2022_
 
 -   ⛏️ **Breaking**
     -   Due to bug in Timber 1.22 where Twig is updated to 3.x branch we have this version. Please update your full vendor folder after twig update.
--   ## ✨ **Enhanced**
+-   ✨ **Enhanced**
     -   Removed first large margin before media text block.
 
 ### 3.26.1
 
 _Release Date - 7 november 2022_
 
--   ## ✨ **Enhanced**
+-   ✨ **Enhanced**
     -   Load more button is now unfocussed after successful load.
     -   Some style improvements that leads to less css.
 -   🐛 **Bugs Fixed**
