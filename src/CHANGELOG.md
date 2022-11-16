@@ -1,3 +1,12 @@
+### 3.28.1
+
+_Release Date - 16 november 2022_
+
+-   ✨ **Enhanced**
+    -   card grid can now be 5 columns.
+-   🐛 **Bugs Fixed**
+    -   removed animation from a element inside a widget
+
 ### 3.28.0
 
 _Release Date - 16 november 2022_
