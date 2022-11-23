@@ -1,3 +1,25 @@
+### 3.29.0
+
+_Release Date - 23 november 2022_
+
+-   ⛏️ **Breaking**
+
+    -   Testimonial block is now reworked to circle-text block for more utility.
+    -   slide-banner block is now also marked as deprecated
+    -   Reworked a lot of css for easier overwriting in child theme, see [this ticket](https://github.com/Studio-Lemon/wp-lemon/issues/184) for the ongoing process.
+
+-   💡 **Newly added**
+    -   New animations added for node-overview and node-latest cards
+-   ✨ **Enhanced**
+    -   Enhanced the order of categories inside the block editor to highlight wp-lemon blocks
+    -   Removed new full site editor blocks
+    -   Added --max-width--default
+    -   picture macro yet again improved
+-   🐛 **Bugs Fixed**
+    -   Fixed missing hover color on regular links
+-   🗑️ **Removed**
+    -   Removed linktree template
+
 ### 3.28.1
 
 _Release Date - 16 november 2022_
