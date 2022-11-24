@@ -1,3 +1,15 @@
+### 3.29.1
+
+_Release Date - 24 november 2022_
+
+-   ✨ **Enhanced**
+    -   added scss variables for first and last block margins.
+    -   Better default styling for nav togglers
+    -   Better styling for circle-text block on mobile phones
+    -   IMG container is now aligned correctly once more in wide align mode
+-   🐛 **Bugs Fixed**
+    -   removed templatelock fron circle-text
+
 ### 3.29.0
 
 _Release Date - 23 november 2022_
