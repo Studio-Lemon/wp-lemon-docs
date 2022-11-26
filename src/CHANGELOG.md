@@ -1,3 +1,16 @@
+### 3.29.2
+
+_Release Date - 26 november 2022_
+
+-   ✨ **Enhanced**
+    -   Better iconfont
+    -   Better A11y css resulting in less css.
+    -   Reduced utility classes from bootstrap resulting in less css.
+-   🐛 **Bugs Fixed**
+    -   removed default letter spacing from buttons
+    -   Fixed two variables that were not overwriteble
+    -   Fixed wrong namespace in contact-cta.php
+
 ### 3.29.1
 
 _Release Date - 24 november 2022_
