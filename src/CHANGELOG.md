@@ -1,3 +1,11 @@
+### 3.29.4
+
+_Release Date - 29 november 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed alignment of wide blocks inside other blocks
+    -   Fixed card styles being overwritten after 3.28.0 release
+
 ### 3.29.2
 
 _Release Date - 26 november 2022_
