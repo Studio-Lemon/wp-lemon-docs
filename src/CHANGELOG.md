@@ -1,3 +1,12 @@
+### 3.29.5
+
+_Release Date - 29 november 2022_
+
+-   💡 **Newly added**
+    -   Added a way to deprecate scss variables
+-   🐛 **Bugs Fixed**
+    -   Fixed missing widgets
+
 ### 3.29.4
 
 _Release Date - 29 november 2022_
