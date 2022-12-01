@@ -1,3 +1,12 @@
+### 3.29.6
+
+_Release Date - 1 december 2022_
+
+-   💡 **Newly added**
+    -   Filter default phone format.
+-   🐛 **Bugs Fixed**
+    -   Fix wide alignment
+
 ### 3.29.5
 
 _Release Date - 29 november 2022_
