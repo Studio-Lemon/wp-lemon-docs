@@ -1,3 +1,22 @@
+### 3.30.0
+
+_Release Date - 23 december 2022_
+
+-   💡 **Newly added**
+    -   You can now beta test the new partials instead of widgets
+    -   New widgets and widget block added.
+        -   Widget block support both innerblocks and nav menus.
+    -   Container is now out of beta
+    -   You can now set $smaller-width-percentage to manually set the small size for container blocks
+    -   new $animation-settings added for more control over animation in your child theme
+    -   configurable link_markup for twig cards.
+-   🐛 **Bugs Fixed**
+    -   Section min height in de editor fixed
+    -   Fixed margins for figcaptions in embeds and images.
+    -   remove margin form last widget on mobile
+    -   Removed last margin left from footer menu
+    -   Fix for logo gallery missing flex wrap
+
 ### 3.29.6
 
 _Release Date - 1 december 2022_
