@@ -1,3 +1,12 @@
+### 3.30.1
+
+_Release Date - 27 december 2022_
+
+-   🐛 **Bugs Fixed**
+    -   sections not aligning properly
+    -   Fixed section wrap being wrong
+    -   fixed naming of css custom property --max-width-default
+
 ### 3.30.0
 
 _Release Date - 23 december 2022_
