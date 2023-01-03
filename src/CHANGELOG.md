@@ -1,3 +1,15 @@
+### 3.30.2
+
+_Release Date - 03 january 2023_
+
+-   💡 **Newly added**
+    -   Add escapers to twig files for hrefs and title attributes
+    -   Share and social icons can now be fully modified without overwrting the socials.twig macro.
+-   🐛 **Bugs Fixed**
+    -   Smoothscroll.js bug fixed where clicking a hash buton could lead to jumping around the page.
+    -   fixed a bug in the animation macro where an animation code would still be loaded when the value was 'none'
+    -   Undo the code introduced to fix a WP issue regarding the nav menus in WP6.1
+
 ### 3.30.1
 
 _Release Date - 27 december 2022_
