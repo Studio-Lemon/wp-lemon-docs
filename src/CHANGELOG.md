@@ -1,3 +1,25 @@
+### 3.31.0
+
+_Release Date - 05 january 2023_
+
+-   ⛏️ **Breaking**
+    -   Rework of cards. (check your custom cards twig files and scss)
+        -   `.crd__inner` a/div element is removed. The `.crd` element is now the link if the link is active. This reduces the amount of elements in the DOM.
+        -   `.crd__bottom` is renamed to `.crd__content`. It's recommended to also rename these classes in your custom cards.
+        -   `.crd__text` is removed from .`crd__bottom/.crd__content` and `.crd__footer` elements. Check your padding!
+-   ## 💡 **Newly added**
+    -   New block carousel added. This is a nice image slider.
+    -   New infrastructure added for pluggable functions which you can active via add_theme_support().
+    -   First new pluggable function added: FAQ - This is still in active development.
+-   ✨ **Enhanced**
+    -   Better default padding for small aligned sections with a background.
+    -   Remove block suggestions from the editor.
+    -   Removed old palette function.
+    -   Faster file inclusion in function.php by not using locate_template() since we only want the parent theme files to load here anyway.
+-   🐛 **Bugs Fixed**
+    -   JS: Fixed a bug where in smoothscroll.js when there is not navbar present.
+    -   Twig: Fixed missing icons on person card.
+
 ### 3.30.2
 
 _Release Date - 03 january 2023_
