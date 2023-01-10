@@ -1,3 +1,12 @@
+### 3.31.1
+
+_Release Date - 10 january 2023_
+
+-   💡 **Newly added**
+    -   Continued on FAQ.
+-   🐛 **Bugs Fixed**
+    -   Fixed FAQ js bug.
+
 ### 3.31.0
 
 _Release Date - 05 january 2023_
@@ -7,7 +16,7 @@ _Release Date - 05 january 2023_
         -   `.crd__inner` a/div element is removed. The `.crd` element is now the link if the link is active. This reduces the amount of elements in the DOM.
         -   `.crd__bottom` is renamed to `.crd__content`. It's recommended to also rename these classes in your custom cards.
         -   `.crd__text` is removed from .`crd__bottom/.crd__content` and `.crd__footer` elements. Check your padding!
--   ## 💡 **Newly added**
+-   💡 **Newly added**
     -   New block carousel added. This is a nice image slider.
     -   New infrastructure added for pluggable functions which you can active via add_theme_support().
     -   First new pluggable function added: FAQ - This is still in active development.
