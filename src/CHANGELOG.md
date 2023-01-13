@@ -1,3 +1,16 @@
+### 3.31.2
+
+_Release Date - 13 january 2023_
+
+-   💡 **Newly added**
+    -   Continued on FAQ feature.
+    -   Contact cta improvements
+    -   filter added to change navbar breakpoint
+-   🐛 **Bugs Fixed**
+    -   Proper image slider name
+    -   Removed default wp-lemon-faq support
+    -   archive.js bug fixed
+
 ### 3.31.1
 
 _Release Date - 10 january 2023_
