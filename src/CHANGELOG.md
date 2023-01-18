@@ -1,3 +1,19 @@
+### 3.31.3
+
+_Release Date - 18 january 2023_
+
+-   ✨ **Enhanced**
+    -   Added missing property for generic-ajax-query to prepare for PHP8.2
+    -   Better labels for post types
+    -   get_archive_page method rewritten.
+    -   next_post() deprecated in favor of next_post_info() and previous_post_info()
+    -   Filters added to change the date notion in several post types.
+    -   Two icons added
+    -   Proposed fix for offcanvas overflow.
+-   🐛 **Bugs Fixed**
+    -   Contact cta final fixes
+    -   Added missing allowed_block in slide.php
+
 ### 3.31.2
 
 _Release Date - 13 january 2023_
