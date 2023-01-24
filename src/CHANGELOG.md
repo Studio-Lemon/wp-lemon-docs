@@ -1,3 +1,17 @@
+### 3.32.0
+
+_Release Date - 24 january 2023_
+
+-   ⛏️ **Breaking**
+    -   Make sure Advanced Custom Fields: Editor Palette Field plugin is version 1.1.6, if not upload manually.
+    -   Bundled all PHP functions that we encourage to use in child themes in the API folder. All functions/queries are being redirected to the new location and throw a deprecated notice in the log. Please update your function calls accordingly.
+-   💡 **Newly added**
+    -   Better reusable blocks
+-   ✨ **Enhanced**
+    -   Continued work on FAQ function
+    -   Renamed FAQ to Accordion to differentiate between the new FAQ and collapse.
+-   📦 **updated packages**
+
 ### 3.31.3
 
 _Release Date - 18 january 2023_
