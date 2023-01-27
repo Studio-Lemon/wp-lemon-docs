@@ -1,3 +1,14 @@
+### 3.32.1
+
+_Release Date - 27 january 2023_
+
+-   ✨ **Enhanced**
+-   Disabled blocks are now visibility:hidden, for better block flow.
+-   🐛 **Bugs Fixed**
+    -   Translations in Twig files now work once more.
+    -   node-overview and node overview excerpt toggle field now works as intended.
+    -   Related FAQs question fix.
+
 ### 3.32.0
 
 _Release Date - 24 january 2023_
