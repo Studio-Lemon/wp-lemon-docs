@@ -1,3 +1,16 @@
+### 3.33.0
+
+_Release Date - 01 february 2023_
+
+-   💡 **Newly added**
+    -   New block: pricing cards.
+-   ✨ **Enhanced**
+    -   Continued work on FAQ function
+    -   Renamed FAQ to Accordion to differentiate between the new FAQ and collapse.
+        🐛 **Bugs Fixed**
+    -   Hide contact button div when no button is visible.
+    -   Offcanvas js fix.
+
 ### 3.32.1
 
 _Release Date - 27 january 2023_
@@ -913,7 +926,7 @@ _Release Date - 9 march 2022_
 
 ### 3.8.3:
 
-_Release Date - 25 februari 2022_
+_Release Date - 25 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Media text fixes
@@ -921,7 +934,7 @@ _Release Date - 25 februari 2022_
 
 ### 3.8.2:
 
-_Release Date - 25 februari 2022_
+_Release Date - 25 february 2022_
 
 -   ⛏️ **Breaking**
     -   Bumped bulldozer to 1.9.8
@@ -934,14 +947,14 @@ _Release Date - 25 februari 2022_
 
 ### 3.8.1:
 
-_Release Date - 24 februari 2022_
+_Release Date - 24 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Block alignment fixes
 
 ### 3.8.0:
 
-_Release Date - 24 februari 2022_
+_Release Date - 24 february 2022_
 
 -   ⛏️ **Breaking**
     -   Bumped minimal WordPress version to 5.9
@@ -957,7 +970,7 @@ _Release Date - 24 februari 2022_
 
 ### 3.7.3:
 
-_Release Date - 21 februari 2022_
+_Release Date - 21 february 2022_
 
 -   💡 **Newly added**
     -   Slide block now hase a fade option
@@ -966,7 +979,7 @@ _Release Date - 21 februari 2022_
 
 ### 3.7.2:
 
-_Release Date - 15 februari 2022_
+_Release Date - 15 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Banner block margin backend fix #133
@@ -974,7 +987,7 @@ _Release Date - 15 februari 2022_
 
 ### 3.7.1:
 
-_Release Date - 14 februari 2022_
+_Release Date - 14 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Css bootstrap5 gutter fix
@@ -985,7 +998,7 @@ _Release Date - 14 februari 2022_
 
 ### 3.7.0:
 
-_Release Date - 10 februari 2022_
+_Release Date - 10 february 2022_
 
 -   ⛏️ **Breaking**
     -   Please double check custom cards in your theme. We added custom footer in the card-wrap.twig that your card will probably extend. Disable the default footer by adding a twig var in your custom card `{% set hide_default_footer = true %}` or remake your custom cards and remove the footer.
@@ -999,7 +1012,7 @@ _Release Date - 10 februari 2022_
 
 ### 3.6.3:
 
-_Release Date - 08 februari 2022_
+_Release Date - 08 february 2022_
 
 -   ✨ **Enhanced**
     -   Rework on menu.js and dropdown.js for better compat with custom dropdown elements outside the navbar.
@@ -1010,7 +1023,7 @@ _Release Date - 08 februari 2022_
 
 ### 3.6.2:
 
-_Release Date - 07 februari 2022_
+_Release Date - 07 february 2022_
 
 -   ✨ **Enhanced**
     -   content card grid - allow 1 col layouts.
@@ -1021,14 +1034,14 @@ _Release Date - 07 februari 2022_
 
 ### 3.6.1:
 
-_Release Date - 07 februari 2022_
+_Release Date - 07 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Fixes overflow bug
 
 ### 3.6.0:
 
-_Release Date - 06 februari 2022_
+_Release Date - 06 february 2022_
 
 -   Please update bulldozer to 1.9.4 by uploading the vendor folder to the server.
 -   ✨ **Enhanced**
@@ -1039,7 +1052,7 @@ _Release Date - 06 februari 2022_
 
 ### 3.5.3:
 
-_Release Date - 03 februari 2022_
+_Release Date - 03 february 2022_
 
 -   💡 **Newly added**
     -   New hook `wp-lemon/filter/navwalker/{{item}}/link-attributes` to filter attributes
@@ -1051,7 +1064,7 @@ _Release Date - 03 februari 2022_
 
 ### 3.5.2:
 
-_Release Date - 01 februari 2022_
+_Release Date - 01 february 2022_
 
 -   ✨ **Enhanced**
     -   Better editor block alignment
@@ -1059,7 +1072,7 @@ _Release Date - 01 februari 2022_
 
 ### 3.5.1:
 
-_Release Date - 01 februari 2022_
+_Release Date - 01 february 2022_
 
 -   💡 **Newly added**
     -   New hook `wp-lemon/action/entry/before` and `wp-lemon/action/entry/after` inside single.twig and index.twig
