@@ -1,3 +1,16 @@
+### 3.33.1
+
+_Release Date - 03 february 2023_
+
+-   💡 **Newly added**
+    -   add_spaces_to_phonenumber() function and twig filter.
+-   ✨ **Enhanced**
+    -   Ehanced price cards css.
+    -   entry-header smaller margin by default.
+-   🐛 **Bugs Fixed**
+    -   header flex bug fixed from Clearwell
+    -   several section bugs fixed.
+
 ### 3.33.0
 
 _Release Date - 01 february 2023_
