@@ -1,3 +1,14 @@
+### 3.33.2
+
+_Release Date - 06 february 2023_
+
+-   🐛 **Bugs Fixed**
+    -   Cookie bar fix
+    -   icon block fixed
+    -   contact cta buttons now have correct font size
+-   ✨ **Enhanced**
+    -   Price card improved
+
 ### 3.33.1
 
 _Release Date - 03 february 2023_
