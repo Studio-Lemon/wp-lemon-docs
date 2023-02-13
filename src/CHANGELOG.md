@@ -1,3 +1,21 @@
+### 3.33.3
+
+_Release Date - 13 february 2023_
+
+-   💡 **Newly added**
+    -   Add two new filters to disable the header/footer
+-   🐛 **Bugs Fixed**
+    -   Fixed two deprecations.
+    -   Removed default margin from logo block.
+    -   Removed left border from block-quote inside circle-text
+    -   price card render fixes.
+    -   Fixed not properly rendered google maps cards when there are url entities in the name.
+    -   get_total_posts() fix when there are no terms.
+    -   Added classes to widget block for centered text to work.
+-   ✨ **Enhanced**
+    -   WCAG 1.3.2 (NIVEAU A) fix in new cards.
+    -   Faq setup improvements.
+
 ### 3.33.2
 
 _Release Date - 06 february 2023_
