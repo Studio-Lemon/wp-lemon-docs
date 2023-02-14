@@ -1,3 +1,19 @@
+### 3.34.0:
+
+_Release Date - 14 february 2023_
+
+-   ⛏️ **Breaking**
+    -   Please update bulldozer to 3.0.0
+    -   Please run the following search/replace in your library/blocks folder. wp-lemon 4.0 will feature the new ACF6.0 way to register blocks which will use the BlockRendererV2 in the future.
+        -   Search: `use HighGround\Bulldozer\BlockRenderer;`
+        -   Replace: `use HighGround\Bulldozer\BlockRendererV1 as BlockRenderer;`
+-   ✨ **Enhanced**
+    -   Add preparations in Bulldozer for wp-lemon 4.0.
+    -   Added deprecation for the old widgets and set new theme partials as default in the customizer. It's recommended to switch existing sites to the new widgets.
+    -   New cache buster added for simple post type plugin.
+-   🐛 **Bugs Fixed**
+    -   Lazyload bug fixed on Safari by disableing native_lazyloading
+
 ### 3.33.3
 
 _Release Date - 13 february 2023_
