@@ -1,3 +1,15 @@
+### 3.34.1
+
+_Release Date - 20 february 2023_
+
+-   🐛 **Bugs Fixed**
+    -   navbar css fix
+    -   Cookiebar fix
+    -   Two footer fixes.
+-   💡 **Newly added**
+    -   New diagnostics class added.
+    -
+
 ### 3.34.0:
 
 _Release Date - 14 february 2023_
