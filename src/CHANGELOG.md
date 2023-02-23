@@ -1,3 +1,14 @@
+### 3.35.0:
+
+_Release Date - 23 february 2023_
+
+-   ✨ **Enhanced**
+    -   Removed most of the vanilla-lazyload.js usage as a test in favor of native lazyloading.
+-   🐛 **Bugs Fixed**
+    -   Removed WordPress version from enques
+    -   Slider block now has proper margin when aligned fully.
+    -   Minor fix in diagnostics class.
+
 ### 3.34.1
 
 _Release Date - 20 february 2023_
@@ -6,9 +17,6 @@ _Release Date - 20 february 2023_
     -   navbar css fix
     -   Cookiebar fix
     -   Two footer fixes.
--   💡 **Newly added**
-    -   New diagnostics class added.
-    -
 
 ### 3.34.0:
 
@@ -19,6 +27,8 @@ _Release Date - 14 february 2023_
     -   Please run the following search/replace in your library/blocks folder. wp-lemon 4.0 will feature the new ACF6.0 way to register blocks which will use the BlockRendererV2 in the future.
         -   Search: `use HighGround\Bulldozer\BlockRenderer;`
         -   Replace: `use HighGround\Bulldozer\BlockRendererV1 as BlockRenderer;`
+-   💡 **Newly added**
+    -   New diagnostics class added.
 -   ✨ **Enhanced**
     -   Add preparations in Bulldozer for wp-lemon 4.0.
     -   Added deprecation for the old widgets and set new theme partials as default in the customizer. It's recommended to switch existing sites to the new widgets.
