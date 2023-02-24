@@ -1,3 +1,14 @@
+### 3.35.1:
+
+_Release Date - 24 february 2023_
+
+-   ✨ **Enhanced**
+    -   Disable auto activation of FluentForms plugin via theme activation. This is now handles by the CLI tool.
+-   🐛 **Bugs Fixed**
+    -   Fixed lazyload bugs
+    -   Fixed footer widget width in single widget layouts. #211
+    -   get_archive_page() method fixed in backend.
+
 ### 3.35.0:
 
 _Release Date - 23 february 2023_
