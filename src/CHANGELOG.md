@@ -1,3 +1,20 @@
+### 3.35.2:
+
+_Release Date - 27 february 2023_
+
+-   💡 **Newly added**
+    -   New filter for adjacent_post_info added.
+    -   Font weight can now be changed inside the editor.
+-   ✨ **Enhanced**
+    -   section now always loads the largest image.
+    -   Better default fonts sizes for headings and custom sizes.
+    -   Some improvements to diagnostics class.
+    -   Started with enhancing the site class, this is still a work in progress.
+-   🐛 **Bugs Fixed**
+    -   Fixed lazyload bugs
+    -   Fixed footer widget width in single widget layouts. #211
+    -   get_archive_page() method fixed in backend.
+
 ### 3.35.1:
 
 _Release Date - 24 february 2023_
