@@ -1,3 +1,11 @@
+### 3.35.3:
+
+_Release Date - 27 february 2023_
+
+-   🐛 **Bugs Fixed**
+    -   Class site bug fixed
+    -   section css bug fixed.
+
 ### 3.35.2:
 
 _Release Date - 27 february 2023_
