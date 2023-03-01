@@ -1,3 +1,10 @@
+### 3.35.4:
+
+_Release Date - 28 february 2023_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug where navigation information was missing because nav menus were called too early.
+
 ### 3.35.3:
 
 _Release Date - 27 february 2023_
