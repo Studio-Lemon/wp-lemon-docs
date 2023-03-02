@@ -1,13 +1,19 @@
-### 3.35.4:
+## 3.36.0:
 
-_Release Date - 28 february 2023_
+_Release Date - 02 march 2023_
 
--   🐛 **Bugs Fixed**
-    -   Fixed a bug where navigation information was missing because nav menus were called too early.
+-   💡 **Newly added**
+    -   Add action_deprecated() to be used inside twig.\
+    -   New filter added wp-lemon/action/entry/content/before and wp-lemon/action/entry/content/after
+-   ✨ **Enhanced**
 
-### 3.35.3:
+    -   Full rework of class-site.php after some tests.
+    -   Check added if fields with name "name" are not added. This field name conflicts with timber.
+    -   deprecated wp-lemon/action/entry-footer/before in favor of wp-lemon/action/entry/content/after
 
-_Release Date - 27 february 2023_
+## 3.35.[3-5]:
+
+_Release Date - 02 march 2023_
 
 -   🐛 **Bugs Fixed**
     -   Class site bug fixed
