@@ -1,4 +1,4 @@
-export default {
+const styling = {
    colors: {
       primary: '#222',
       background: '#fffffd',
@@ -13,3 +13,6 @@ export default {
       },
    },
 };
+
+export default styling;
+
