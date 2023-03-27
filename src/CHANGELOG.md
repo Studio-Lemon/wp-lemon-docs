@@ -1,3 +1,505 @@
+## 3.36.0:
+
+_Release Date - 02 march 2023_
+
+-   💡 **Newly added**
+    -   Add action_deprecated() to be used inside twig.\
+    -   New filter added wp-lemon/action/entry/content/before and wp-lemon/action/entry/content/after
+-   ✨ **Enhanced**
+
+    -   Full rework of class-site.php after some tests.
+    -   Check added if fields with name "name" are not added. This field name conflicts with timber.
+    -   deprecated wp-lemon/action/entry-footer/before in favor of wp-lemon/action/entry/content/after
+
+## 3.35.[3-5]:
+
+_Release Date - 02 march 2023_
+
+-   🐛 **Bugs Fixed**
+    -   Class site bug fixed
+    -   section css bug fixed.
+
+### 3.35.2:
+
+_Release Date - 27 february 2023_
+
+-   💡 **Newly added**
+    -   New filter for adjacent_post_info added.
+    -   Font weight can now be changed inside the editor.
+-   ✨ **Enhanced**
+    -   section now always loads the largest image.
+    -   Better default fonts sizes for headings and custom sizes.
+    -   Some improvements to diagnostics class.
+    -   Started with enhancing the site class, this is still a work in progress.
+-   🐛 **Bugs Fixed**
+    -   Fixed lazyload bugs
+    -   Fixed footer widget width in single widget layouts. #211
+    -   get_archive_page() method fixed in backend.
+
+### 3.35.1:
+
+_Release Date - 24 february 2023_
+
+-   ✨ **Enhanced**
+    -   Disable auto activation of FluentForms plugin via theme activation. This is now handles by the CLI tool.
+-   🐛 **Bugs Fixed**
+    -   Fixed lazyload bugs
+    -   Fixed footer widget width in single widget layouts. #211
+    -   get_archive_page() method fixed in backend.
+
+### 3.35.0:
+
+_Release Date - 23 february 2023_
+
+-   ✨ **Enhanced**
+    -   Removed most of the vanilla-lazyload.js usage as a test in favor of native lazyloading.
+-   🐛 **Bugs Fixed**
+    -   Removed WordPress version from enques
+    -   Slider block now has proper margin when aligned fully.
+    -   Minor fix in diagnostics class.
+
+### 3.34.1
+
+_Release Date - 20 february 2023_
+
+-   🐛 **Bugs Fixed**
+    -   navbar css fix
+    -   Cookiebar fix
+    -   Two footer fixes.
+
+### 3.34.0:
+
+_Release Date - 14 february 2023_
+
+-   ⛏️ **Breaking**
+    -   Please update bulldozer to 3.0.0
+    -   Please run the following search/replace in your library/blocks folder. wp-lemon 4.0 will feature the new ACF6.0 way to register blocks which will use the BlockRendererV2 in the future.
+        -   Search: `use HighGround\Bulldozer\BlockRenderer;`
+        -   Replace: `use HighGround\Bulldozer\BlockRendererV1 as BlockRenderer;`
+-   💡 **Newly added**
+    -   New diagnostics class added.
+-   ✨ **Enhanced**
+    -   Add preparations in Bulldozer for wp-lemon 4.0.
+    -   Added deprecation for the old widgets and set new theme partials as default in the customizer. It's recommended to switch existing sites to the new widgets.
+    -   New cache buster added for simple post type plugin.
+-   🐛 **Bugs Fixed**
+    -   Lazyload bug fixed on Safari by disableing native_lazyloading
+
+### 3.33.3
+
+_Release Date - 13 february 2023_
+
+-   💡 **Newly added**
+    -   Add two new filters to disable the header/footer
+-   🐛 **Bugs Fixed**
+    -   Fixed two deprecations.
+    -   Removed default margin from logo block.
+    -   Removed left border from block-quote inside circle-text
+    -   price card render fixes.
+    -   Fixed not properly rendered google maps cards when there are url entities in the name.
+    -   get_total_posts() fix when there are no terms.
+    -   Added classes to widget block for centered text to work.
+-   ✨ **Enhanced**
+    -   WCAG 1.3.2 (NIVEAU A) fix in new cards.
+    -   Faq setup improvements.
+
+### 3.33.2
+
+_Release Date - 06 february 2023_
+
+-   🐛 **Bugs Fixed**
+    -   Cookie bar fix
+    -   icon block fixed
+    -   contact cta buttons now have correct font size
+-   ✨ **Enhanced**
+    -   Price card improved
+
+### 3.33.1
+
+_Release Date - 03 february 2023_
+
+-   💡 **Newly added**
+    -   add_spaces_to_phonenumber() function and twig filter.
+-   ✨ **Enhanced**
+    -   Ehanced price cards css.
+    -   entry-header smaller margin by default.
+-   🐛 **Bugs Fixed**
+    -   header flex bug fixed from Clearwell
+    -   several section bugs fixed.
+
+### 3.33.0
+
+_Release Date - 01 february 2023_
+
+-   💡 **Newly added**
+    -   New block: pricing cards.
+-   ✨ **Enhanced**
+    -   Continued work on FAQ function
+    -   Renamed FAQ to Accordion to differentiate between the new FAQ and collapse.
+        🐛 **Bugs Fixed**
+    -   Hide contact button div when no button is visible.
+    -   Offcanvas js fix.
+
+### 3.32.1
+
+_Release Date - 27 january 2023_
+
+-   ✨ **Enhanced**
+-   Disabled blocks are now visibility:hidden, for better block flow.
+-   🐛 **Bugs Fixed**
+    -   Translations in Twig files now work once more.
+    -   node-overview and node overview excerpt toggle field now works as intended.
+    -   Related FAQs question fix.
+
+### 3.32.0
+
+_Release Date - 24 january 2023_
+
+-   ⛏️ **Breaking**
+    -   Make sure Advanced Custom Fields: Editor Palette Field plugin is version 1.1.6, if not upload manually.
+    -   Bundled all PHP functions that we encourage to use in child themes in the API folder. All functions/queries are being redirected to the new location and throw a deprecated notice in the log. Please update your function calls accordingly.
+-   💡 **Newly added**
+    -   Better reusable blocks
+-   ✨ **Enhanced**
+    -   Continued work on FAQ function
+    -   Renamed FAQ to Accordion to differentiate between the new FAQ and collapse.
+-   📦 **updated packages**
+
+### 3.31.3
+
+_Release Date - 18 january 2023_
+
+-   ✨ **Enhanced**
+    -   Added missing property for generic-ajax-query to prepare for PHP8.2
+    -   Better labels for post types
+    -   get_archive_page method rewritten.
+    -   next_post() deprecated in favor of next_post_info() and previous_post_info()
+    -   Filters added to change the date notion in several post types.
+    -   Two icons added
+    -   Proposed fix for offcanvas overflow.
+-   🐛 **Bugs Fixed**
+    -   Contact cta final fixes
+    -   Added missing allowed_block in slide.php
+
+### 3.31.2
+
+_Release Date - 13 january 2023_
+
+-   💡 **Newly added**
+    -   Continued on FAQ feature.
+    -   Contact cta improvements
+    -   filter added to change navbar breakpoint
+-   🐛 **Bugs Fixed**
+    -   Proper image slider name
+    -   Removed default wp-lemon-faq support
+    -   archive.js bug fixed
+
+### 3.31.1
+
+_Release Date - 10 january 2023_
+
+-   💡 **Newly added**
+    -   Continued on FAQ.
+-   🐛 **Bugs Fixed**
+    -   Fixed FAQ js bug.
+
+### 3.31.0
+
+_Release Date - 05 january 2023_
+
+-   ⛏️ **Breaking**
+    -   Rework of cards. (check your custom cards twig files and scss)
+        -   `.crd__inner` a/div element is removed. The `.crd` element is now the link if the link is active. This reduces the amount of elements in the DOM.
+        -   `.crd__bottom` is renamed to `.crd__content`. It's recommended to also rename these classes in your custom cards.
+        -   `.crd__text` is removed from .`crd__bottom/.crd__content` and `.crd__footer` elements. Check your padding!
+-   💡 **Newly added**
+    -   New block carousel added. This is a nice image slider.
+    -   New infrastructure added for pluggable functions which you can active via add_theme_support().
+    -   First new pluggable function added: FAQ - This is still in active development.
+-   ✨ **Enhanced**
+    -   Better default padding for small aligned sections with a background.
+    -   Remove block suggestions from the editor.
+    -   Removed old palette function.
+    -   Faster file inclusion in function.php by not using locate_template() since we only want the parent theme files to load here anyway.
+-   🐛 **Bugs Fixed**
+    -   JS: Fixed a bug where in smoothscroll.js when there is not navbar present.
+    -   Twig: Fixed missing icons on person card.
+
+### 3.30.2
+
+_Release Date - 03 january 2023_
+
+-   💡 **Newly added**
+    -   Add escapers to twig files for hrefs and title attributes
+    -   Share and social icons can now be fully modified without overwrting the socials.twig macro.
+-   🐛 **Bugs Fixed**
+    -   Smoothscroll.js bug fixed where clicking a hash buton could lead to jumping around the page.
+    -   fixed a bug in the animation macro where an animation code would still be loaded when the value was 'none'
+    -   Undo the code introduced to fix a WP issue regarding the nav menus in WP6.1
+
+### 3.30.1
+
+_Release Date - 27 december 2022_
+
+-   🐛 **Bugs Fixed**
+    -   sections not aligning properly
+    -   Fixed section wrap being wrong
+    -   fixed naming of css custom property --max-width-default
+
+### 3.30.0
+
+_Release Date - 23 december 2022_
+
+-   💡 **Newly added**
+    -   You can now beta test the new partials instead of widgets
+    -   New widgets and widget block added.
+        -   Widget block support both innerblocks and nav menus.
+    -   Container is now out of beta
+    -   You can now set $smaller-width-percentage to manually set the small size for container blocks
+    -   new $animation-settings added for more control over animation in your child theme
+    -   configurable link_markup for twig cards.
+-   🐛 **Bugs Fixed**
+    -   Section min height in de editor fixed
+    -   Fixed margins for figcaptions in embeds and images.
+    -   remove margin form last widget on mobile
+    -   Removed last margin left from footer menu
+    -   Fix for logo gallery missing flex wrap
+
+### 3.29.6
+
+_Release Date - 1 december 2022_
+
+-   💡 **Newly added**
+    -   Filter default phone format.
+-   🐛 **Bugs Fixed**
+    -   Fix wide alignment
+
+### 3.29.5
+
+_Release Date - 29 november 2022_
+
+-   💡 **Newly added**
+    -   Added a way to deprecate scss variables
+-   🐛 **Bugs Fixed**
+    -   Fixed missing widgets
+
+### 3.29.4
+
+_Release Date - 29 november 2022_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed alignment of wide blocks inside other blocks
+    -   Fixed card styles being overwritten after 3.28.0 release
+
+### 3.29.2
+
+_Release Date - 26 november 2022_
+
+-   ✨ **Enhanced**
+    -   Better iconfont
+    -   Better A11y css resulting in less css.
+    -   Reduced utility classes from bootstrap resulting in less css.
+-   🐛 **Bugs Fixed**
+    -   removed default letter spacing from buttons
+    -   Fixed two variables that were not overwriteble
+    -   Fixed wrong namespace in contact-cta.php
+
+### 3.29.1
+
+_Release Date - 24 november 2022_
+
+-   ✨ **Enhanced**
+    -   added scss variables for first and last block margins.
+    -   Better default styling for nav togglers
+    -   Better styling for circle-text block on mobile phones
+    -   IMG container is now aligned correctly once more in wide align mode
+-   🐛 **Bugs Fixed**
+    -   removed templatelock fron circle-text
+
+### 3.29.0
+
+_Release Date - 23 november 2022_
+
+-   ⛏️ **Breaking**
+
+    -   Testimonial block is now reworked to circle-text block for more utility.
+    -   slide-banner block is now also marked as deprecated
+    -   Reworked a lot of css for easier overwriting in child theme, see [this ticket](https://github.com/Studio-Lemon/wp-lemon/issues/184) for the ongoing process.
+
+-   💡 **Newly added**
+    -   New animations added for node-overview and node-latest cards
+-   ✨ **Enhanced**
+    -   Enhanced the order of categories inside the block editor to highlight wp-lemon blocks
+    -   Removed new full site editor blocks
+    -   Added --max-width--default
+    -   picture macro yet again improved
+-   🐛 **Bugs Fixed**
+    -   Fixed missing hover color on regular links
+-   🗑️ **Removed**
+    -   Removed linktree template
+
+### 3.28.1
+
+_Release Date - 16 november 2022_
+
+-   ✨ **Enhanced**
+    -   card grid can now be 5 columns.
+-   🐛 **Bugs Fixed**
+    -   removed animation from a element inside a widget
+
+### 3.28.0
+
+_Release Date - 16 november 2022_
+
+-   ⛏️ **Breaking**
+    -   Changed a lot within the css of the share buttons. Please double check your child theme if you custom styled the share buttons.
+-   💡 **Newly added**
+    -   Cookiebar added.
+-   ✨ **Enhanced**
+    -   Removed first large margin before media text block.
+    -   card padding is now a css var
+    -   Overhoul in share button css
+    -   Added section class to more-items twig file for better default spacing
+-   🐛 **Bugs Fixed**
+    -   Fixed two aria bugs in the search form and header
+    -   Search query is now done in the correct language
+    -   Change order of styles. Fixes #181
+
+### 3.27.0
+
+_Release Date - 8 november 2022_
+
+-   ⛏️ **Breaking**
+    -   Due to bug in Timber 1.22 where Twig is updated to 3.x branch we have this version. Please update your full vendor folder after twig update.
+-   ✨ **Enhanced**
+    -   Removed first large margin before media text block.
+
+### 3.26.1
+
+_Release Date - 7 november 2022_
+
+-   ✨ **Enhanced**
+    -   Load more button is now unfocussed after successful load.
+    -   Some style improvements that leads to less css.
+-   🐛 **Bugs Fixed**
+    -   Fixed animation being wrong in node-overview block
+    -   Fixed incorrect lang domain
+    -   Fixed a edge case bug in the editor when removing a specific block.
+
+### 3.26.0
+
+_Release Date - 3 november 2022_
+
+-   ✨ **Enhanced**
+    -   Compat fix with WordPress 6.1
+    -   using new style.css labels to disable accidential updates when there is a theme with the same name.
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug where custom sizes for media/text would be overwritten
+    -   Added missing rel and target attributes to external links in socials.twig
+    -   Temp fix for regression in WordPress 6.1 regarding the navwalker, see https://core.trac.wordpress.org/ticket/5694
+    -   Fixed an issue where wide alligned elements inside full containers woulds still be wide alligned.
+
+### 3.25.1 t/m 3.25.5:
+
+_Release Date - 1 november 2022_
+
+-   🐛 **Bugs Fixed**
+
+    -   image card image sizes are now full size.
+    -   Navwalker background color is not added anymore when no color is set.
+    -   Dropdown active and hover states fixed
+    -   Fixed wrong default aria state in faq-item
+    -   Fixed a bug where tablet/mobile display would display wrong css.
+    -   Fixed a excerpt bug
+    -   Fixed regression in custom archives.
+    -   Custom orders weren't obeyed in class-generic-ajax-call.php ajax calls.
+    -   Some blocks wouldn't properly lazyload in tablet/mobile preview mode.
+    -   Fix to map block having a too large margin when not used fully aligned.
+    -   Fixed a bug where large amount of posts inside the ajax call would result in weird animations.
+
+-   ✨ **Enhanced**
+    -   node latest and node overview can now also query builtin post types.
+    -   archive filter now has better styling
+    -   improved disabled state of block
+    -   archive filters are now more opinionated
+    -   Custom order plugin extra css added for better interface in backend
+    -   team pages are now searchable when detail page is active.
+
+### 3.25.0:
+
+_Release Date - 23 october 2022_
+
+-   ⛏️ **Breaking**
+    -   Please update bulldozer to 2.1.0
+-   ✨ **Enhanced**
+    -   Added 'combined' to phone number utility. it will output phone number as +31 (6) 12345678
+    -   Less html/css for img-container block. This is a total rework, so if you encounter any bugs, let us know
+    -   Complete rework of the section (beta) block. The container does not have a .section\_\_inner container anymore and elements inherit the --max-width css variable. If you encounter any bugs, let us know!
+    -   Map block now support setting your own ratio via a field. You can make the card 16x9, 4x3 and square. Gets overwritten when fully aligned.
+    -   Added instructions if there is a WPML field that has the copy setting.
+    -   img card now supports
+        -   Background color
+        -   vertical alignment
+
+### 3.24.1:
+
+_Release Date - 20 october 2022_
+
+-   🐛 **Bugs Fixed**
+
+    -   Fix dropdowns not working when importing the bootstrap dropdown module
+    -   Removed margin underneath last element inside an image card.
+
+-   ✨ **Enhanced**
+    -   Filter added for card type
+    -   Swiper pagination color is now a scss var
+
+### 3.24.0:
+
+_Release Date - 17 october 2022_
+
+-   💡 **Newly added**
+    -   New block image-card added that can be used inside the card grid.
+-   ✨ **Enhanced**
+    -   Bumped PHP version to 8.0.2 minimum
+    -   Further enhance search bar experience
+
+### 3.23.3:
+
+_Release Date - 14 october 2022_
+
+-   ✨ **Enhanced**
+    -   Larger pagination buttons for swiper
+    -   more css vars introduced
+    -   Enhanced search page display
+    -   Enhanced search bar experience
+        -   Auto focussing when opening the search bar
+        -   Exit search bar when clicking outside the bar or search results
+        -   Exit search bar when pressing escape
+-   🐛 **Bugs Fixed**
+    -   Removed default letter spacing in navigation items
+    -   Fixed a bug where max widths couldn't be overwritten due to a specificity issue in the css.
+    -   Possible fix for issue where too large images would crash the server on resizing or moving to webp
+    -   Fixed an issue where lemon_excerpt() would return too little text when the content was not that long.
+    -   Fixed a bug when searching for content and a password protected page would come up the password template would be loaded.
+    -   Removed default order of team post type introduced in 3.23.0, this caused custom orders to not work.
+-   🗑️ **Removed**
+
+    -   Removed small cols and no-ml styles from core/columns
+
+-   🌐 **Updated Dutch translation**
+
+### 3.23.2:
+
+_Release Date - 12 october 2022_
+
+-   📖 **Documented new filters**
+-   🐛 **Bugs Fixed**
+
+    -   Fix animation bug in archives where too many items would lead to weird fade in animations.
+    -   Fixed a bug where small excerpts would not be shown completely inside cards.
+    -   Fixed a bug where a person card would always show a link to the detail page, even if the detail page feature was not activated.
+
 ### 3.23.1:
 
 _Release Date - 30 september 2022_
@@ -271,8 +773,6 @@ _Release Date - 21 june 2022_
 
 _Release Date - 17 june 2022_
 
--   ⛏️ **Breaking**
-    -   Please update basebuilder-config to 2.12.0
 -   💡 **Newly added**
     -   New container block added. This is still in beta.
 -   ✨ **Enhanced**
@@ -555,7 +1055,7 @@ _Release Date - 9 march 2022_
 
 ### 3.8.3:
 
-_Release Date - 25 februari 2022_
+_Release Date - 25 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Media text fixes
@@ -563,7 +1063,7 @@ _Release Date - 25 februari 2022_
 
 ### 3.8.2:
 
-_Release Date - 25 februari 2022_
+_Release Date - 25 february 2022_
 
 -   ⛏️ **Breaking**
     -   Bumped bulldozer to 1.9.8
@@ -576,14 +1076,14 @@ _Release Date - 25 februari 2022_
 
 ### 3.8.1:
 
-_Release Date - 24 februari 2022_
+_Release Date - 24 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Block alignment fixes
 
 ### 3.8.0:
 
-_Release Date - 24 februari 2022_
+_Release Date - 24 february 2022_
 
 -   ⛏️ **Breaking**
     -   Bumped minimal WordPress version to 5.9
@@ -599,7 +1099,7 @@ _Release Date - 24 februari 2022_
 
 ### 3.7.3:
 
-_Release Date - 21 februari 2022_
+_Release Date - 21 february 2022_
 
 -   💡 **Newly added**
     -   Slide block now hase a fade option
@@ -608,7 +1108,7 @@ _Release Date - 21 februari 2022_
 
 ### 3.7.2:
 
-_Release Date - 15 februari 2022_
+_Release Date - 15 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Banner block margin backend fix #133
@@ -616,7 +1116,7 @@ _Release Date - 15 februari 2022_
 
 ### 3.7.1:
 
-_Release Date - 14 februari 2022_
+_Release Date - 14 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Css bootstrap5 gutter fix
@@ -627,7 +1127,7 @@ _Release Date - 14 februari 2022_
 
 ### 3.7.0:
 
-_Release Date - 10 februari 2022_
+_Release Date - 10 february 2022_
 
 -   ⛏️ **Breaking**
     -   Please double check custom cards in your theme. We added custom footer in the card-wrap.twig that your card will probably extend. Disable the default footer by adding a twig var in your custom card `{% set hide_default_footer = true %}` or remake your custom cards and remove the footer.
@@ -641,7 +1141,7 @@ _Release Date - 10 februari 2022_
 
 ### 3.6.3:
 
-_Release Date - 08 februari 2022_
+_Release Date - 08 february 2022_
 
 -   ✨ **Enhanced**
     -   Rework on menu.js and dropdown.js for better compat with custom dropdown elements outside the navbar.
@@ -652,7 +1152,7 @@ _Release Date - 08 februari 2022_
 
 ### 3.6.2:
 
-_Release Date - 07 februari 2022_
+_Release Date - 07 february 2022_
 
 -   ✨ **Enhanced**
     -   content card grid - allow 1 col layouts.
@@ -663,14 +1163,14 @@ _Release Date - 07 februari 2022_
 
 ### 3.6.1:
 
-_Release Date - 07 februari 2022_
+_Release Date - 07 february 2022_
 
 -   🐛 **Bugs Fixed**
     -   Fixes overflow bug
 
 ### 3.6.0:
 
-_Release Date - 06 februari 2022_
+_Release Date - 06 february 2022_
 
 -   Please update bulldozer to 1.9.4 by uploading the vendor folder to the server.
 -   ✨ **Enhanced**
@@ -681,7 +1181,7 @@ _Release Date - 06 februari 2022_
 
 ### 3.5.3:
 
-_Release Date - 03 februari 2022_
+_Release Date - 03 february 2022_
 
 -   💡 **Newly added**
     -   New hook `wp-lemon/filter/navwalker/{{item}}/link-attributes` to filter attributes
@@ -693,7 +1193,7 @@ _Release Date - 03 februari 2022_
 
 ### 3.5.2:
 
-_Release Date - 01 februari 2022_
+_Release Date - 01 february 2022_
 
 -   ✨ **Enhanced**
     -   Better editor block alignment
@@ -701,7 +1201,7 @@ _Release Date - 01 februari 2022_
 
 ### 3.5.1:
 
-_Release Date - 01 februari 2022_
+_Release Date - 01 february 2022_
 
 -   💡 **Newly added**
     -   New hook `wp-lemon/action/entry/before` and `wp-lemon/action/entry/after` inside single.twig and index.twig
