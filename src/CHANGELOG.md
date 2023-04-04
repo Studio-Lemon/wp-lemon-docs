@@ -1,4 +1,4 @@
-## 4.0.0-BETA1:
+## 4.0.0-BETA[1-2]:
 
 _Release Date - 04 april 2023_
 
@@ -18,7 +18,9 @@ This is the first beta release for the upcoming 4.0 version of wp-lemon.
 -   ✨ **Enhanced**
     -   Reorganized the lib folder.
     -   Class WP_Lemon_Site() updated with
-    -   is_post_type() method to easily conditionally add data to global context.
+        -   is_post_type() method to easily conditionally add data to global context.
+        -   add_site_information() method to set specific context.
+        -   get_site_information() to get specific context.
     -   Updated Swiper to 9.x
 -   🐛 **Bugs Fixed**
     -   log_message() function now supports more content types to log.
