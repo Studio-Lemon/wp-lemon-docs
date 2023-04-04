@@ -1,3 +1,35 @@
+## 4.0.0-BETA1:
+
+_Release Date - 04 april 2023_
+
+This is the first beta release for the upcoming 4.0 version of wp-lemon.
+
+-   💡 **Newly added**
+
+    -   ACF 6.0 block support.
+        -   Blocks are now registered via json files.
+        -   wp-lemon core blocks updated to new block register method.
+        -   wp-lemon core blocks assets are only loaded when embedded on a page.
+        -   Build process updated to build core block assets as well and ship them.
+        -   Bulldozer library updated as well to support these new blocks. Introduced a new BlockRendererV2 class.
+        -   Example blocks updated as well to reflect the new block structure.
+    -   Several filters added and updated
+
+-   ✨ **Enhanced**
+    -   Reorganized the lib folder.
+    -   Class WP_Lemon_Site() updated with
+    -   is_post_type() method to easily conditionally add data to global context.
+    -   Updated Swiper to 9.x
+-   🐛 **Bugs Fixed**
+    -   log_message() function now supports more content types to log.
+    -   Fixed unregistering of several wp core blocks.
+    -   Several minor css improvements
+-   🗑️ **Removed**
+    -   Removed deprecated functions
+    -   Removed slide-banner block
+    -   Removed banner block
+    -   Removed widgets support in favor of block template parts.
+
 ## 3.36.0:
 
 _Release Date - 02 march 2023_
