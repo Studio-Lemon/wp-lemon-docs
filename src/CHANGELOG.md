@@ -1,4 +1,4 @@
-## 4.0.0-BETA[1-3]:
+## 4.0.0-BETA[1-4]:
 
 _Release Date - 04 april 2023_
 
@@ -22,6 +22,7 @@ This is the first beta release for the upcoming 4.0 version of wp-lemon.
         -   add_site_information() method to set specific context.
         -   get_site_information() to get specific context.
     -   Updated Swiper to 9.x
+    -   Enhanced backend rendering of block classes
 -   🐛 **Bugs Fixed**
     -   log_message() function now supports more content types to log.
     -   Fixed unregistering of several wp core blocks.
@@ -37,7 +38,7 @@ This is the first beta release for the upcoming 4.0 version of wp-lemon.
 _Release Date - 02 march 2023_
 
 -   💡 **Newly added**
-    -   Add action_deprecated() to be used inside twig.\
+    -   Add action_deprecated() to be used inside twig.
     -   New filter added wp-lemon/action/entry/content/before and wp-lemon/action/entry/content/after
 -   ✨ **Enhanced**
 
