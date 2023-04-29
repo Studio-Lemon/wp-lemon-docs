@@ -22,8 +22,10 @@
   items:
     - label: "Add blocks"
       link: "/expand/add-blocks"
-    - label: "Add posttypes/taxonomies"
+    - label: "Add posttypes & taxonomies"
       link: "/expand/add-models"
+    - label: "Add ACF fields"
+      link: "/expand/add-fields"
     - label: "Filters & Actions"
       link: "/expand/hooks"
 - label: Overwrite
@@ -56,10 +58,12 @@
   items:
     - label: "Timber"
       link: "https://timber.github.io/docs/"
+    - label: "ACF Builder"
+      link: "https://github.com/StoutLogic/acf-builder/wiki/"
     - label: "Bedrock"
       link: "https://github.com/roots/bedrock"
     - label: "Bootstrap"
-      link: "https://getbootstrap.com/docs/4.6/getting-started/introduction/"
+      link: "https://getbootstrap.com/docs/5.3/getting-started/introduction/"
 - label: Docs software
   items:
     - label: "Github"
