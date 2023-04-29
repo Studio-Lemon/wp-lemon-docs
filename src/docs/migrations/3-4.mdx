@@ -1,0 +1,117 @@
+---
+title: Migrate to wp-lemon 4
+description: How to update to the newest version of wp-lemon
+disableTableOfContents: true
+---
+
+Welcome to version 4.0 of wp-lemon. In this guide we will go over the details to upgrade your current 3.x website to the 4.x.
+
+## Before we get started
+Please make sure you have the latest version of your project checked out and have a recent database and media files to check your website locally.
+
+## Upgrade steps
+Follow the next steps to upgrade your project to use wp-lemon 4.
+
+### Step 1. Set new major version of wp-lemon
+Navigate to your composer.json file in the project root and update it as follows.
+
+```json
+-    "satispress/wp-lemon": "^3.0",
++    "satispress/wp-lemon": "^4.0",
+```
+
+### Step 2. Update child-theme dependencies
+Navigate to your child theme and open package.json and update the following dependencies to at least these versions. 
+
+> ⚠️
+> Make sure not to delete/overwrite extra dependencies that you may have included.
+
+```json
+    "devDependencies": {
+        "@wordpress/browserslist-config": "^5.15",
+        "basebuilder-config": "^3.3.2",
+        "prettier": "^2.8",
+        "prettier-plugin-twig-melody": "^0.4.6",
+        "stylelint": "^15.6",
+        "stylelint-basebuilder": "^2.3"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.7",
+        "aos": "^3.0.0-beta.6",
+        "bootstrap": "^5.2",
+        "lodash.throttle": "^4.1.1",
+        "swiper": "^9.2",
+        "vanilla-lazyload": "17.8"
+    }
+```
+### Step 3. Movemove backend() function outside of domReady in editor.js
+move backend() function outside of domReady
+
+```js
+import domReady from '@wordpress/dom-ready';
+import backend from 'parentThemeScripts/components/functions-backend';
+
+++ backend();
+domReady(() => {
+    acf.addAction('render_block_preview', function (el, block) {
+        -- backend();
+    });
+});
+
+```
+
+### Step 4. Run update-parent command
+Open a new console in your child theme and run the following command: `yarn run update-parent`
+
+This will update both PHP and node dependencies to their latest versions.
+
+### Step 5. Run production build
+Open a new console in your child theme and run the following command: `yarn run production`
+This will create a fresh build with the new dependencies. If the build fails, please try to debug the error or open a new ticket.
+
+### Step 6. Change the following in your code:
+
+#### PHP Helper functions moved:
+
+-   search for usage of format_phone_number and use new location
+-   search for usage of get_fluent_form and use new location
+-   search for usage of log_message and use new location
+-   search for usage of get_svg_image and use new location
+-   search for usage of post_type_name and use new location
+-   search for usage of custom_archive_page and use get_archive_page instead
+-   search for usage of language_switcher and use get_language_switcher instead
+
+#### PHP Query helpers functions moved:
+
+-   search for latest_items_query and use new location
+-   search for other_items_query and use new location
+-   search for specific_items_query and use new location
+-   search for archive_query and use new location
+-   search for get_total_posts and use new location
+-   search for adjacent_post_info and use new location
+-   search for next_post and use previous_post_info instead
+
+#### Block migration: acf/testimonial to acf/circle-text
+
+| Search            | Replace           |
+| ----------------- | ----------------- |
+| acf/testimonial   | acf/circle-text   |
+| field_testimonial | field_circle-text |
+
+#### Block migration: acf/faq to acf/accordion
+
+| Search            | Replace           |
+| ----------------- | ----------------- |
+| acf/faq   | acf/accordion   |
+| acf/faq-item   | acf/accordion-item   |
+| field_testimonial | field_circle-text |
+
+## Visual/Code check
+Since this is a new major version please check the build locally with the latest database and media files. Check for any visual differences. If you find a major difference please try to debug or open a ticket.
+
+If you've written custom code based on Swiper or Bootstrap, for example created a new block or a slider that involves on of these libraries, please check out the following migration guides.
+
+- Please update custom Swipers against https://swiperjs.com/migration-guide
+
+## Deploy
+Please follow the following guide to deploy the update to the production server. [Deploy update!](/deployment/updates#deploy-update)

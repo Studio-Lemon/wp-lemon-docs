@@ -38,10 +38,12 @@
       link: "/deployment/initial-deploy"
     - label: "Deploying updates"
       link: "/deployment/updates"
-- label: Upgrade guides
+- label: Migration guides
   items:
-     - label: Upgrade to 3.0
-       link: /upgrade-guides/3.0
+     - label: Migrate from 3 to 4
+       link: /migrations/3-4
+     - label: Migrate from 2 to 3
+       link: /migrations/2-3
 - label: More
   items:
     - label: FAQ
