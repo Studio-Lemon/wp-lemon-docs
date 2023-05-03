@@ -1,6 +1,6 @@
-## 4.0.0-BETA[1-4]:
+## 4.0.0-BETA:
 
-_Release Date - 04 april 2023_
+_Release Date - 03 may 2023_
 
 This is the first beta release for the upcoming 4.0 version of wp-lemon.
 
@@ -23,9 +23,11 @@ This is the first beta release for the upcoming 4.0 version of wp-lemon.
         -   get_site_information() to get specific context.
     -   Updated Swiper to 9.x
     -   Enhanced backend rendering of block classes
+    -   FAQ block renamed to accordion
 -   🐛 **Bugs Fixed**
     -   log_message() function now supports more content types to log.
     -   Fixed unregistering of several wp core blocks.
+    -   Fixed display of variable blocks in backend.
     -   Several minor css improvements
 -   🗑️ **Removed**
     -   Removed deprecated functions
