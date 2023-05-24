@@ -116,7 +116,7 @@ When going through these lines you will find several notable things.
       $message = __("You haven't added any news yet, so this block will be empty.", "wp-lemon");
 
       if ($items->found_posts == 0) {
-         parent::compose_notification($message, 'warning');
+         parent::add_notification($message, 'warning');
       }
 
       return $context;
@@ -125,7 +125,7 @@ When going through these lines you will find several notable things.
 
 - wp-lemon comes with a set of predefined queries. Here we use latest_items_query() to get the lastest posts of a specific posttype
 - We have a card_type variable that defines what card type will be loaded.
-- We have a compose_notification method that will setup a notification inside the block when previewed in the backend.
+- We have a add_notification method that will setup a notification inside the block when previewed in the backend.
 
 ### Block that displays a post archive with load more button
 
@@ -149,7 +149,7 @@ Take a look at the `news-overview.php` block in the parent theme. You will again
 
       // add notification when no posts are found.
       if ($items->found_posts == 0) {
-         parent::compose_notification(__('You haven\'t added any news yet, so this block will be empty.', 'wp-lemon'), 'warning');
+         parent::add_notification(__('You haven\'t added any news yet, so this block will be empty.', 'wp-lemon'), 'warning');
       }
 
       return $context;
