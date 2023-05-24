@@ -34,6 +34,14 @@
       link: "/overwrite/twig-files"
     - label: "Overwrite styles"
       link: "/overwrite/styles"
+- label: Reference
+  items:
+    - label: "Functions"
+      link: "/reference/functions"
+    - label: "Classes"
+      link: "/reference/classes"
+    - label: "Filters"
+      link: "/reference/hooks/filters"
 - label: Deployment
   items:
     - label: "Initial deploy"
