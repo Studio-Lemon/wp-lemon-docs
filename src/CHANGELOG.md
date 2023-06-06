@@ -1,3 +1,17 @@
+## 4.1.0:
+
+_Release Date - 06 june 2023_
+
+-   💡 **Newly added**
+    -   added filter so all acf/oembed fields are wrapped in boostrap responsive class.
+    -   Updated to Bootstrap 5.3, please update the dependency in your child theme as well.
+    -   Added filter to modify 'skip links'.
+-   🪦 **Deprecated**
+    -   WP_Lemon\Controllers\socials(), use WP_Lemon\API\get_socials() instead
+    -   WP_Lemon\Controllers\share_context(), use WP_Lemon\API\get_share_platforms() instead
+-   ✨ **Enhanced**
+    -   Enhanced multiple queries by adding no_found_rows and ignore_sticky_posts to the query.
+
 ## 4.0.0:
 
 _Release Date - 29 may 2023_
