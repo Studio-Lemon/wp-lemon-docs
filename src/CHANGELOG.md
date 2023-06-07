@@ -1,5 +1,13 @@
 ## 4.1.0:
 
+_Release Date - 07 june 2023_
+
+-   🐛 **Bugs Fixed**
+    -   Fix deprecated notice in single.php
+    -   Fixed translation bug
+
+## 4.1.0:
+
 _Release Date - 06 june 2023_
 
 -   💡 **Newly added**
