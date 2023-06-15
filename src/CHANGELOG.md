@@ -1,4 +1,22 @@
-## 4.1.0:
+## 4.2.0:
+
+_Release Date - 06 june 2023_
+
+-   ⛏️ **Breaking**
+
+    -   Please update bulldozer to 3.7.0
+
+-   💡 **Newly added**
+    -   Added statistics script setting in customizer to add scripts that do not need consent.
+    -   Push consentGiven event to datalayer for tag manager intergration.
+    -   Added datalayer search tracking when properly setup.
+-   ✨ **Enhanced**
+    -   Reworked cookiebar messages
+    -   Cookiebar now defaults set analytics tracking to true, this can be disabled by the end-user.
+-   🐛 **Bugs Fixed**
+-   Added two more fixes for Bootstrap 5.3 release.
+
+## 4.1.1:
 
 _Release Date - 07 june 2023_
 
