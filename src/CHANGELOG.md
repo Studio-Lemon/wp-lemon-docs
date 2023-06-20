@@ -1,6 +1,18 @@
+## 4.3.0:
+
+_Release Date - 20 june 2023_
+
+-   ✨ **Enhanced**
+    -   Enhanced special pages with id, url, link and title.
+    -   Added filter to filter the twig template array on single templates.
+-   🐛 **Bugs Fixed**
+    -   Fixed node overview and node archive blocks.
+    -   Fixed unregister bug in backend.
+    -   Fixed a bug where small font sizes where not overwritten properly.
+
 ## 4.2.0:
 
-_Release Date - 06 june 2023_
+_Release Date - 15 june 2023_
 
 -   ⛏️ **Breaking**
 
