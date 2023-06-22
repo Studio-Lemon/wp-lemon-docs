@@ -1,3 +1,11 @@
+## 4.3.1:
+
+_Release Date - 22 june 2023_
+
+-   🐛 **Bugs Fixed**
+    -   Fixed archive query not showing a load more button
+    -   Fixed a bug where block twig files would not load on Windows (by upgrading to Bulldozer 3.7.1)
+
 ## 4.3.0:
 
 _Release Date - 20 june 2023_
