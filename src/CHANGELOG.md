@@ -1,3 +1,14 @@
+## 4.3.3:
+
+_Release Date - 22 june 2023_
+
+-   🐛 **Bugs Fixed**
+    -   JS: Fixed archive query not showing proper archive results when filtering inside term.
+    -   SCSS: Fixed archive css missing.
+    -   Fixed missing bootstrap variables.
+-   ✨ **Enhanced**
+-   PHP: Better debugging of diagnostics class. This also fixes a rare case where diagnostics wouldn't be send.
+
 ## 4.3.2:
 
 _Release Date - 22 june 2023_
