@@ -1,3 +1,13 @@
+## 4.3.4:
+
+_Release Date - 30 june 2023_
+
+-   🐛 **Bugs Fixed**
+    -   Scss fixed missing --max-width-default
+-   ✨ **Enhanced**
+    -   Cookiebar now has a decline button
+    -   Social media buttons now have rel="me" instead of rel="nofollow noopener"
+
 ## 4.3.3:
 
 _Release Date - 22 june 2023_
