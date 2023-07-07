@@ -1,3 +1,18 @@
+## 4.4.0:
+
+_Release Date - 07 july 2023_
+
+-   💡 **Newly added**
+    -   New is_post_type() helper function added that takes a string or array of post type names.
+    -   Added additional image_sizes filter inside cards.
+    -   Added 4 additional round social icons.
+-   🐛 **Bugs Fixed**
+    -   Update deprecated function call in woocommerce.php
+    -   Backend scss section css fix.
+-   ✨ **Enhanced**
+    -   Rework of the format_phone_number() function to cache the number results but not the actual output.
+    -   Rework of scss icons. The icons are now loaded as a css variable and all the scss variables are added to a map that generated the clases.
+
 ## 4.3.4:
 
 _Release Date - 30 june 2023_
