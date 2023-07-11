@@ -3,97 +3,88 @@ title: Add blocks
 description: How to add new blocks.
 ---
 
-As a block driven theme, wp-lemon is heavily orientated towards using ACF blocks. Since blocks are saved within the content area and not in meta, load times will be better and the database will stay smaller. Translations will also be much easier.
+Sometimes you want to extend the capabilities of wp-lemon. Sometimes custom blocks are required.
 
-You can add new blocks pretty easy. The following guide gives a step by step example how you can create a block.
+## Register block
 
-## Just let me create a block
-Navigate to your block folder in the terminal and run `npx bp-create-block`. This will run a cli tool that will scaffold a new block for you based on the example block in your child theme.
-
-## Add a block manually
-
-in you child theme there is a `blocks`folder in which you'll find `_example/`. What you want to do is duplicate this folder to a new specific name.
-
-You can now rename the scss, php and twig file to match the folder name.
-
-
-### change the block.json
-The block.json file holds the metadata for your new block. You can set an icon, description, tags and much more. For now change name to reflect your folder name. See all the variables you can add to the `$block` array over here at the [ACF docs](https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/).
-
-### change the php file
-
-
-After that you want to change the
-`Example_Block` class to also reflect your block name and activate the class on the bottom of this file by uncommenting the class call. After that you can update the NAME, constant to also reflect the name. This file automatically gets loaded.
+in you custom theme in `library/blocks` you'll find `_example.php`. What you want to do is duplicate this file. After that you want to overwrite the
+`Example_Block` class and activate the class on the bottom of this file by uncommenting the class call. After that you can update the name, title, icon data. This file automatically gets loaded. See all the variables you can add to the `$block` array over here at the [ACF docs](https://www.advancedcustomfields.com/resources/acf_register_block_type/).
 
 ```php title=library/blocks/_example.php lineNumbers=true
 <?php
 
-/**
- * ACF Block declaration
- *
- * @package WordPress
- * @subpackage WP_Lemon
- */
-
 namespace WP_Lemon\Child\Blocks;
 
-use HighGround\Bulldozer\BlockRendererV2 as BlockRenderer;
+use HighGround\Bulldozer\BlockRenderer;
 
 /**
- * Example block that can be copied for making extra blocks.
- *
- * Follow the API standard of https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/
- */
+* Register a new ACF Block.
+*
+* The array is passed to the acf_register_block_type() function that registers the block with ACF.
+*
+* @link https://www.advancedcustomfields.com/resources/acf_register_block_type/
+* @return array
+*/
 class Example_Block extends BlockRenderer
 {
+   public function block_register(): array
+   {
+      $block = [
+         'name' => 'example', // searches for resources/views/blocks/example.twig
+         'title' => __('Example name', 'wp-lemon'),
+         'description' => __('Example description', 'wp-lemon'),
+         'category' => 'wp-lemon-blocks', // default custom category or add new ones.
+         'icon' => 'desktop', // regular dashicons without the 'dashicon-' prefix
+         'keywords' => ['tag1', 'tag2', 'tag3'], // keywords to search blocks for.
+         'supports' => [
+            'align' => false
+         ],
+        //'show_disable_button' => true, // This adds a button to disable the block.
+        //'deprecated' => array( // This adds a deprecation message inside the block.
+        //   'since' => '2.1', // since when is the block deprecated
+        //   'use' => 'test', // name of block to use instead of this block.
+        //),
+      ];
+      return $block;
+   }
 
-	/**
-	 * The name of the block.
-	 * This needs to be the same as the folder and file name.
-	 */
-	const NAME = 'example';
+   /**
+    * Extend the base context of our block.
+    * With this function we can add for example a query or
+    * other custom content.
+    *
+    * @param array   $context    Holds the current block data that you'll expand in this method.
+    * @return array  $context    Returns the array with the extra content that merges into the original block context.
+    */
+   public function block_context($context): array
+   {
 
-	/**
-	 * Extend the base context of our block.
-	 * With this function we can add for example a query or
-	 * other custom content.
-	 *
-	 * @param array $context      Holds the block data.
-	 * @return array  $context    Returns the array with the extra content that merges into the original block context.
-	 */
-	public function block_context($context): array
-	{
+      return $context;
+   }
 
-		$args = [
-		 // 'InnerBlocks' => self::create_inner_blocks(['core/heading', 'core/paragraph']),
-		];
-
-		return array_merge($context, $args);
-	}
-
-
-	/**
-	 * Register fields to the block.
-	 *
-	 * @link https://github.com/StoutLogic/acf-builder
-	 * @return StoutLogic\AcfBuilder\FieldsBuilder
-	 */
-	public function add_fields(): object
-	{
-		return $this->registered_fields;
-	}
+   /**
+    * Register fields via acfbuilder
+    *
+    * @link https://github.com/StoutLogic/acf-builder
+    * @return object
+    */
+   public function add_fields(): object
+   {
+      return $this->registered_fields;
+   }
 }
 
 /**
  * Enable the class
  */
-// new Example_Block();
+//new Example_Block();
+
+
 ```
 
-### Check the twig file
+## Create twig file
 
-After completing the above steps you can check if the twig file has something to show.
+After registering the block you need to create a twig file to render the view of the block. in `resources/views/blocks/` you will find `example.twig`. You want to duplicate this file and make it have the same name as set in your php file.
 
 ## Test block
 
@@ -101,7 +92,7 @@ You can now add the block to a page and see if it works. Common reasons why the 
 
 - You forgot to uncomment the block register call in your PHP file.
 - You didn't change the classnames on all places.
-- The folder name, php file name and twig file, the name in your block.json and the NAME constant in your php file don't match.
+- There is no matching twig file.
 
 Once verified that the block is working you can continue developing your new block.
 
@@ -125,14 +116,14 @@ When going through these lines you will find several notable things.
       $message = __("You haven't added any news yet, so this block will be empty.", "wp-lemon");
 
       if ($items->found_posts == 0) {
-         self::add_notification($message, 'warning');
+         parent::add_notification($message, 'warning');
       }
 
       return $context;
    }
 ```
 
-- wp-lemon comes with a set of predefined queries. Here we use latest_items_query() to get the latest posts of a specific posttype
+- wp-lemon comes with a set of predefined queries. Here we use latest_items_query() to get the lastest posts of a specific posttype
 - We have a card_type variable that defines what card type will be loaded.
 - We have a add_notification method that will setup a notification inside the block when previewed in the backend.
 
@@ -158,7 +149,7 @@ Take a look at the `news-overview.php` block in the parent theme. You will again
 
       // add notification when no posts are found.
       if ($items->found_posts == 0) {
-         self::add_notification(__('You haven\'t added any news yet, so this block will be empty.', 'wp-lemon'), 'warning');
+         parent::add_notification(__('You haven\'t added any news yet, so this block will be empty.', 'wp-lemon'), 'warning');
       }
 
       return $context;
@@ -180,8 +171,8 @@ namespace WP_Lemon\Child\Blocks;
 
 use HighGround\Bulldozer\BlockRenderer;
 
-++ use function WP_Lemon\API\archive_query;
-++ use function WP_Lemon\API\get_total_posts;
+++ use function WP_Lemon\Controllers\archive_query;
+++ use function WP_Lemon\Controllers\get_total_posts;
 ```
 
 ### Block with custom assets
@@ -252,3 +243,9 @@ will result in
 ...
 </div>
 ```
+
+## Major changes to blocks
+Major changes to the way you register blocks will be reported down here.
+
+### 2.6
+Blocks will now require the `add_fields()` method in each block. See [Block with custom acf fields](#block-with-custom-acf-fields) on how to use this method.
