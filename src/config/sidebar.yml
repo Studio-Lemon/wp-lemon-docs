@@ -18,16 +18,18 @@
       link: "/basics/basic-javascript"
     - label: "Fonts"
       link: "/basics/fonts"
-- label: Expand
+- label: Extend
   items:
-    - label: "Add blocks"
-      link: "/expand/add-blocks"
-    - label: "Add posttypes & taxonomies"
-      link: "/expand/add-models"
+    - label: "Global context"
+      link: "/extend/add-context"
+    - label: "Blocks"
+      link: "/extend/add-blocks"
+    - label: "Posttypes & taxonomies"
+      link: "/extend/add-models"
     - label: "Add ACF fields"
-      link: "/expand/add-fields"
+      link: "/extend/add-fields"
     - label: "Filters & Actions"
-      link: "/expand/hooks"
+      link: "/extend/hooks"
 - label: Overwrite
   items:
     - label: "Overwrite twig files"

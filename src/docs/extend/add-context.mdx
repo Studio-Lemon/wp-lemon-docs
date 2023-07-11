@@ -1,0 +1,102 @@
+---
+title: Add global context
+description: Learn how to add global context the wp-lemon way.
+---
+The context is one of the most important concepts to understand in wp-lemon. Think of the context as the set of variables that are passed to your Twig template, whether this is a template, component or even a block.
+
+By default wp-lemon prepares and adds quite a few element to the global context:
+
+
+|Key      |Type  |Description  |
+|---------|---------|---------|
+|env      | string  | Holds the environment version: development, staging or production      |
+|logo     | array   | By default holds header and footer logos and their uri's, width and height. |
+|pages    | array   | Holds the important pages in wp-lemon as well as the archive pages that can be set via the customizer |
+|socials  | array   | Returns all the socials links set in the customizer and their labels, names, url and icons.
+|contact  | array   | Returns phonenumer and whatsapp number in a variety of formats. As well as the e-mail address.
+|nav     |  array   | Returns primary, footer, multilanguage menus. As well as nav.back on single pages to return to the archive page.
+|google_api_key     | string      | Google api key
+|contact_buttons     | array        | Context for floating buttons on the bottom left of the page.
+|child_theme_author     | array      | returns name and url of the child theme author set in style.css
+
+There are two ways you can alter the context:
+
+1. by overriding parent methods inside your `WP_Lemon_Child_Site` class.
+1. Adding additional methods to your `WP_Lemon_Child_Site` class and adding them to `WP_Lemon_Child_Site::extend_site_information()`
+
+## Overriding parent methods inside your WP_Lemon_Child_Site class.
+In the example below we add the get_navs method to the child class, call the parent method so we have that context as well, and then expanding the property. In this example you could use `nav.primary` `nav.secondary` to get the new nav menus.
+
+```php
+	protected static function get_navs(): array
+	{
+		parent::get_navs();
+
+		static::$menus['primary'] = wp_nav_menu(
+			[
+				'echo'           => false,
+				'theme_location' => 'primary_navigation',
+				'menu_class'     => 'navbar-nav',
+				'depth'          => 1,
+				'container'      => false,
+			]
+		);
+
+		static::$menus['secondary'] = wp_nav_menu(
+			[
+				'echo'           => false,
+				'theme_location' => 'secondary_navigation',
+				'menu_class'     => 'navbar-nav',
+				'depth'          => 1,
+				'container'      => false,
+			]
+		);
+
+		return static::$menus;
+	}
+```
+
+## Adding additional methods to your WP_Lemon_Child_Site class
+In the following example we will extend the global context to add a 'label' to use in templates that holds the current page title or title of the archive page for single pages.
+
+We first create our method builds the context and returns it.
+```php
+	public function add_label_context()
+	{
+		$label = false;
+		// if is front page, return
+		if (is_front_page()) {
+			return false;
+		}
+
+		if (is_page()) {
+			$label = get_the_title();
+		} else if (self::is_post_type(['job', 'news', 'case'])) {
+			$label = WP_Lemon_Child_Site::get_archive_page();
+			$label = $label['title'];
+		}
+
+		return $label;
+	}
+```
+After that we add it to our extend_site_information method under a convinient key.
+
+```php
+
+	protected function extend_site_information(): array
+	{
+		return [
+			++ 'nav_label' => $this->add_label_context(),
+		];
+	}
+```
+
+We can now use it inside twig files like this:
+
+```twig
+{% if nav_label %}
+    <div class="nav-label">
+        <span>{{ nav_label }}</span>
+    </div>
+{% endif %}
+```
