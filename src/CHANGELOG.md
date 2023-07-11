@@ -1,3 +1,16 @@
+## 4.5.0:
+
+-   ⛏️ **Breaking**
+    -   Css classes for the old faq/faq-item / new accordion/accordion-item are now also changes after the change in 4.0. If you have custom styling for the accordion block, please check/rename your classes.
+    -   Swiper is updated to 10.0, please update swiper in your package.json and read the following [Migration guide](https://swiperjs.com/migration-guide-v10#modules-imports) if you have custom swipers
+-   🐛 **Bugs Fixed**
+    -   Accordion block: Fixed a bug where multiple accordeon items could be extended at the same time.
+    -   Fluent form filter renamed to be compatible with Fluent Forms 5.0
+-   ✨ **Enhanced**
+    -   Rework of scss imports to move partials out of settings and into their proper folders. This is a work in progress.
+    -   You can now, for example, use `add_filter('wp-lemon/filter/model/acf-fields/person', '__return_false');` to remove all the custom fields from the person post type. This way you can clean fields that are already defined by wp-lemon.
+    -   Allow color override of the default close button in the offcanvas element by using `$offcanvas-close-color`
+
 ## 4.4.0:
 
 _Release Date - 07 july 2023_
