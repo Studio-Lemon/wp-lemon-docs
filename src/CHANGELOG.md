@@ -1,3 +1,13 @@
+## 4.5.1:
+
+-   💡 **Newly added**
+    -   Added new $button-padding variable
+-   🐛 **Bugs Fixed**
+    -   Fixed wide aligned blocks when around 1400px wide.
+    -   Moved .faq-highlight classes to other partial file
+-   ✨ **Enhanced**
+    -   Linted PHP files
+
 ## 4.5.0:
 
 -   ⛏️ **Breaking**
