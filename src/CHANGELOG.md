@@ -1,4 +1,6 @@
-## 4.5.1:
+## 4.5.1-2:
+
+_Release Date - 18 july 2023_
 
 -   💡 **Newly added**
     -   Added new $button-padding variable
@@ -7,6 +9,7 @@
     -   Moved .faq-highlight classes to other partial file
 -   ✨ **Enhanced**
     -   Linted PHP files
+    -   Enhanced PHP 8.1 compatibility
 
 ## 4.5.0:
 
