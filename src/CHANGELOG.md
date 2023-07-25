@@ -1,3 +1,18 @@
+## 4.6.0:
+
+_Release Date - 25 july 2023_
+
+-   💡 **Newly added**
+    -   Next filter wp-lemon/filter/core-blocks-to-remove added to remove additional core blocks.
+    -   New internal Site health class added with a first test.
+-   ✨ **Enhanced**
+    -   Added loading parameters to picture & video macros.
+    -   Person card now uses icons for phonenumber and email
+    -   Media text blocks now use gap instead of paddings
+    -   Rework of wide aligned sections so they behave in a predicable way when scaling your screen.
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug were ACF oembed fields would return a string, even when there was no value.
+
 ## 4.5.1-2:
 
 _Release Date - 18 july 2023_
