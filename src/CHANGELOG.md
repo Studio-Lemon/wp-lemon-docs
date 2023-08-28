@@ -1,3 +1,17 @@
+## 4.7.0:
+
+_Release Date - 25 july 2023_
+
+-   ⛏️ **Breaking**
+    -   Please update bulldozer to `^4.0.0` in your package.json file.
+    -   Please update `"apiVersion": 2` to `"apiVersion": 3` in all your block.json files to use the new editor rendering mode.
+-   💡 **Newly added**
+    -   Updated compatibility with WordPress 6.3
+    -   Basebuilder now generates a palette.json file seperately of the theme.json which gets merged by `WP_Lemon\Controllers\Theme\theme_json_data_theme` this way its easier to make changes to your theme.json file without exiting watch mode.
+-   🐛 **Bugs Fixed**
+    -   Fixed a bug were oembeds weren't rendered in `block_template_part()`.
+    -   Fixed a bug where the analytics ajax call would render the wrong codes for the body call.
+
 ## 4.6.0:
 
 _Release Date - 25 july 2023_
