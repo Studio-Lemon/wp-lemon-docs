@@ -1,3 +1,13 @@
+# 4.7.1:
+
+_Release Date - 31 august 2023_
+
+-   ✨ **Enhanced**
+    -   Refactor of the card-grid block which results in less inline css.
+    -   You can now transform a block or multiple blocks into a container block.
+-   🐛 **Bugs Fixed**
+    -   Order of columns in single-person.twig is now correct again on mobile.
+
 ## 4.7.1:
 
 _Release Date - 29 august 2023_
