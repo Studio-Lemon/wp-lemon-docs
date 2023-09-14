@@ -1,4 +1,20 @@
-# 4.7.1:
+# 4.8.0:
+
+_Release Date - 14 september 2023_
+
+-   💡 **Newly added**
+    -   Added a archive.php and archive.twig file to the theme.
+    -   Added a pagination.twig partial for pagination.
+    -   Added a way to allow page navigation on archive blocks. So you can have example.com/my-custom-archive-page/page/2/
+-   ✨ **Enhanced**
+    -   Updated icon for jobs post type
+    -   updated example post type icon
+    -
+-   🐛 **Bugs Fixed**
+    -   Fixed an issue where password-protected.php would not work properly on multi language sites in the non-primary language.
+    -   Fixed a bug where you could not disable the default wp-lemon fields for the job post type by using wp-lemon/filter/model/acf-fields/job filter
+
+# 4.7.2:
 
 _Release Date - 31 august 2023_
 
