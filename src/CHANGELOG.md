@@ -1,3 +1,11 @@
+# 4.8.1:
+
+_Release Date - 18 september 2023_
+
+-   ✨ **Enhanced**
+    -   JS - Add a hidePagination function to hide the pagination blocks on page render.
+    -   PHP - Linted PHP files
+
 # 4.8.0:
 
 _Release Date - 14 september 2023_
