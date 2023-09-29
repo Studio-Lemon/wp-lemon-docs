@@ -1,3 +1,21 @@
+# 4.8.2:
+
+_Release Date - 29 september 2023_
+
+-   💡 **Newly added**
+    -   PHP - New html_attributes function added which is still a work in progress.
+    -   SCSS - Added a new overwrite-icon function to overwrite the icon in the icon library.
+    -   Twig - New filters/actions added in Cookiebar to add your own content more easily.
+-   ✨ **Enhanced**
+    -   PHP - Moved new archive code introduced in 4.8.0 to new router folder.
+    -   PHP - Refactored the way get_post_types() is called for getting the archive pages. This query is now only run once.
+    -   PHP - Only add rewrite rules to team post type if the post type has a detail page activated.
+    -   JS - Activated mousewheel/touchpad scroll for Carousel blocks.
+-   🐛 **Bugs Fixed**
+    -   JS - Fixed a bug in hidePagination function were it would thow an error when no pagination was found.
+    -   PHP - Fixed a bug where phone formatting would be cached too agressively
+    -   SCSS - Fixed a bug where ACF blocks in the backend would render as grid elements because classes get applied to two elements.
+
 # 4.8.1:
 
 _Release Date - 18 september 2023_
