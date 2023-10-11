@@ -1,4 +1,16 @@
-# 4.8.2:
+## 4.8.3:
+
+_Release Date - 11 october 2023_
+
+-   💡 **Newly added**
+    -   PHP - Add license check in non-bedrock environments
+-   ✨ **Enhanced**
+    -   PHP - Refactored format_phone_number() function so filters will always be applied whether there is a transient or not and moved opinionated formatting to a new filter wp-lemon/filter/phone-number/result.
+    -   PHP - add additional check in process_delete_generated_files to make sure the extension matches.
+    -   JS - Changed deprecated window.pageYOffset to window.scrollY
+    -   SCSS - Enhanced make-icon mixin to directly set/overwrite an icon, see example in the mixin file.
+
+## 4.8.2:
 
 _Release Date - 29 september 2023_
 
@@ -16,7 +28,7 @@ _Release Date - 29 september 2023_
     -   PHP - Fixed a bug where phone formatting would be cached too agressively
     -   SCSS - Fixed a bug where ACF blocks in the backend would render as grid elements because classes get applied to two elements.
 
-# 4.8.1:
+## 4.8.1:
 
 _Release Date - 18 september 2023_
 
@@ -24,7 +36,7 @@ _Release Date - 18 september 2023_
     -   JS - Add a hidePagination function to hide the pagination blocks on page render.
     -   PHP - Linted PHP files
 
-# 4.8.0:
+## 4.8.0:
 
 _Release Date - 14 september 2023_
 
@@ -40,7 +52,7 @@ _Release Date - 14 september 2023_
     -   Fixed an issue where password-protected.php would not work properly on multi language sites in the non-primary language.
     -   Fixed a bug where you could not disable the default wp-lemon fields for the job post type by using wp-lemon/filter/model/acf-fields/job filter
 
-# 4.7.2:
+## 4.7.2:
 
 _Release Date - 31 august 2023_
 
