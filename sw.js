@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "f0e45107-714a5fc43ccbb3576660.js"
   },
   {
-    "url": "app-320178bc650833f0b385.js"
+    "url": "app-5429d83fb870f2c4419d.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "00c87e0ed8aa3a778e383773002f9617"
+    "revision": "e05846e2852fc84e8b37ba64a535dacb"
   },
   {
     "url": "polyfill-20be5bba0d3e6e93fd93.js"
@@ -157,7 +157,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/wp-lemon-docs/app-320178bc650833f0b385.js`))) {
+  if (!resources || !(await caches.match(`/wp-lemon-docs/app-5429d83fb870f2c4419d.js`))) {
     return await fetch(event.request)
   }
 
