@@ -1,3 +1,19 @@
+## 4.9.0:
+
+_Release Date - 18 october 2023_
+
+-   💡 **Newly added**
+    -   PHP - New `taxonomy_post_collection` API function added that returns a collection of posts per taxonomy term. This is now used in the faq-overview block.
+    -   TWIG - New helpers.todo macro added
+    -   TWIG - blocks that have the section class also get a `.section__inner` class on first descendant div.
+-   ✨ **Enhanced**
+    -   SCSS - Better cookiebar styling
+    -   SCSS - Better image card styling
+    -   PHP - mark current archive page as active in the menu when in a secondary language
+-   🐛 **Bugs Fixed**
+    -   PHP - License check no longer fires on staging environments
+    -   JS - Remove console.log from cookiebar
+
 ## 4.8.3:
 
 _Release Date - 11 october 2023_
