@@ -146,12 +146,7 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 | Filter hook                                                  | Description                                                                                                                 |arguments                                                                                                                 |
 |--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | wp-lemon/filter/header/render                                | Render the header, use __return_false to disable the header. | 
-| wp-lemon/filter/header/breakpoint                            | Set the breakpoint on which the menu collapses. Can be xs,sm, md, lg,xl, xxl. Use it in combination with  ```scss $menu-breakpoints: (
-	xs: 0,
-	menu: 992px,
-) !default;
-
-```|
+| wp-lemon/filter/header/breakpoint                            | Set the breakpoint on which the menu collapses. Can be xs,sm, md, lg,xl, xxl. Use it in combination with  ```$menu-breakpoints: (	xs: 0,	menu: 992px);``` |
 | wp-lemon/filter/header/logo                                  | Change output of the logo inside the header , has logo array as argument.                                                   |
 | wp-lemon/filter/card/icon                                    | Change the arrow icon inside a cards footer.                                                                                |
 | wp-lemon/filter/card/excerpt-length                          | Change the excerpt length inside cards                                                                                      |
