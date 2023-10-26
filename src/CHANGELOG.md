@@ -1,3 +1,13 @@
+## 4.9.1:
+
+_Release Date - 26 october 2023_
+
+-   ✨ **Enhanced**
+    -   PHP/Twig - Rework of contact buttons for less code duplication
+    -   PHP - active-archive page is now also set on archive pages that are a translation of the default language is an archive page.
+    -   JS - script-injector now also support noscript elements
+    -   SCSS - Less utility classes are now loaded by default, this decreases the css file size by ~ 6kb.
+
 ## 4.9.0:
 
 _Release Date - 18 october 2023_
