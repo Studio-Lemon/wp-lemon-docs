@@ -1,3 +1,18 @@
+## 4.9.2:
+
+_Release Date - 31 october 2023_
+
+-   ✨ **Enhanced**
+    -   PHP - New cache.php controller file added where all cache related functions are stored.
+    -   PHP - new filter added to set webp quality
+    -   PHP - Cache block template parts in transient
+-   🐛 **Bugs Fixed**
+    -   JS - Fixed missing import of swiper in the carousel block
+-   🗑️ **Removed**
+    -   Removed alter_acf_block_scripts filter since a fix was introduced in WordPress 6.1.1
+
+## 4.9.0:
+
 ## 4.9.1:
 
 _Release Date - 26 october 2023_
