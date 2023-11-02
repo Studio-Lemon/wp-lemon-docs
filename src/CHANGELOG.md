@@ -1,3 +1,14 @@
+## 4.9.3:
+
+_Release Date - 2 november 2023_
+
+-   ✨ **Enhanced**
+    -   PHP - support new simple-page-ordering plugin
+    -   Twig - new hooks added for block-wrap and card-wrap
+-   🐛 **Bugs Fixed**
+    -   PHP - fix cache_cleared function.
+    -   TWIG - removed unused icon class for contact-buttons.twig that might cause css issues.
+
 ## 4.9.2:
 
 _Release Date - 31 october 2023_
