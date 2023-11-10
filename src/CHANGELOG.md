@@ -1,3 +1,39 @@
+## 4.9.3:
+
+_Release Date - 2 november 2023_
+
+-   ✨ **Enhanced**
+    -   PHP - support new simple-page-ordering plugin
+    -   Twig - new hooks added for block-wrap and card-wrap
+-   🐛 **Bugs Fixed**
+    -   PHP - fix cache_cleared function.
+    -   TWIG - removed unused icon class for contact-buttons.twig that might cause css issues.
+
+## 4.9.2:
+
+_Release Date - 31 october 2023_
+
+-   ✨ **Enhanced**
+    -   PHP - New cache.php controller file added where all cache related functions are stored.
+    -   PHP - new filter added to set webp quality
+    -   PHP - Cache block template parts in transient
+-   🐛 **Bugs Fixed**
+    -   JS - Fixed missing import of swiper in the carousel block
+-   🗑️ **Removed**
+    -   Removed alter_acf_block_scripts filter since a fix was introduced in WordPress 6.1.1
+
+## 4.9.0:
+
+## 4.9.1:
+
+_Release Date - 26 october 2023_
+
+-   ✨ **Enhanced**
+    -   PHP/Twig - Rework of contact buttons for less code duplication
+    -   PHP - active-archive page is now also set on archive pages that are a translation of the default language is an archive page.
+    -   JS - script-injector now also support noscript elements
+    -   SCSS - Less utility classes are now loaded by default, this decreases the css file size by ~ 6kb.
+
 ## 4.9.0:
 
 _Release Date - 18 october 2023_
