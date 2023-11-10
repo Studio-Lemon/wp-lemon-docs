@@ -61,7 +61,7 @@
     - label: FAQ
       link: /faq
     - label: Changelog
-      link: /changelogs/changelog
+      link: /changelog
     - label: Presskit
       link: /presskit
 - label: Learn more
