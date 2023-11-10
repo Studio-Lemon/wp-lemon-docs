@@ -52,6 +52,8 @@
       link: "/deployment/updates"
 - label: Migration guides
   items:
+     - label: Migrate from 4 to 5
+       link: /migrations/4-5
      - label: Migrate from 3 to 4
        link: /migrations/3-4
      - label: Migrate from 2 to 3
