@@ -1,3 +1,16 @@
+## 5.0.1:
+
+_Release Date - 13 november 2023_
+
+-   ✨ **Enhanced**
+    -   Workflow - run changelog sync separately from build
+-   🐛 **Bugs Fixed**
+    -   PHP - Update return type of query API functions to be more specific
+    -   PHP - load correct dependencies for lock-reusable-block.js
+    -   PHP - Fix array_map function in faq-highlight.php block
+    -   PHP - Merge in full color settings from palette.json
+    -   Twig - fix deprecated Image call in media.twig
+
 ## 5.0.0:
 
 _Release Date - 10 november 2023_
