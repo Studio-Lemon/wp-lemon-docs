@@ -1,3 +1,11 @@
+## 5.0.2:
+
+_Release Date - 13 november 2023_
+
+-   🐛 **Bugs Fixed**
+    -   PHP - Temporary fix added for Timber 2.0.0 bug where the wrong twig files would be loaded when you want to overwrite a twig file from the parent theme.
+    -   SCSS - Fix section background color in contrast mode.
+
 ## 5.0.1:
 
 _Release Date - 13 november 2023_
