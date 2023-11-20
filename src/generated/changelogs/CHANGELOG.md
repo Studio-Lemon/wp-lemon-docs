@@ -1,3 +1,30 @@
+## 5.1.0 - 20 November 2023
+
+### ⛰️ Features
+
+-   [**breaking**] wp-button component now has the `theme-button` class added. Outline buttons also get the modifier class `theme-button--ghost`. This makes it easier to style default button components as well as gutenberg buttons the same way. Make sure you check your custom button css to see if it is still needed/works.
+-   _(php)_ Add modifier class to body when on a custom archive page
+-   _(php)_ HTML classes now are more easily filterable via bootstrap_navwalker `nav_menu_link_attributes` filter
+-   _(js)_ Add custom event dispatcher in search.js, menu.js and dropdown.js
+-   _(lang)_ updated languages
+-   _(css)_ Footer update - Realized by section of footer is now less intrusive
+-   _(css)_ partially revert changes to remove default font weight in favor of a variable.
+-   _(js)_ New eventHanler function added
+-   _(Twig)_ Background images in sections now scale to 100vw
+-   _(Twig)_ Remove deprecated action
+-   Add automatic changelog generation
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Overwrite css value of button when parent text color is set.
+-   _(css)_ Set proper flex direction in .img-container
+-   _(css)_ make headings scale the same way in the backend as in the frontend
+
+### 🎨 Styling
+
+-   Better default .theme-button-row
+-   Better default ghost buttons
+
 ## 5.0.2:
 
 _Release Date - 13 november 2023_
