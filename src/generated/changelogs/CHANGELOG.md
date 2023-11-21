@@ -1,3 +1,16 @@
+## 5.2.0 - 21 November 2023
+
+### ⛰️ Features
+
+-   Updated Bulldozer required version to 4.1.0
+-   New block opening-hours added, this will only be loaded when Rank Math is active
+
+### 🐛 Bug Fixes
+
+-   _(js)_ Add element as detail to eventHandler
+-   _(php)_ Fixed WordPress 6.4 deprecation in functions.php
+-   _(php)_ Reset array if more then one value in theme.php
+
 ## 5.1.0 - 20 November 2023
 
 ### ⛰️ Features
