@@ -1,3 +1,17 @@
+## 5.2.1 - 01 December 2023
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Add back padding on non wide aligned containers with a background
+-   _(css)_ Remove maximum height from select inputs in fluentforms
+-   _(php)_ Replace Image class with api alternative
+-   _(twig)_ Make it possible to also completely disable the share_lable in the share macro.
+
+### ⚙️ Miscellaneous Tasks
+
+-   Phpstan fixes
+-   Lint php files
+
 ## 5.2.0 - 21 November 2023
 
 ### ⛰️ Features
