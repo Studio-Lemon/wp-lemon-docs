@@ -19,6 +19,8 @@ Hooks are in the correct order.
 
 | Action hook                                                           | Description                                                                  |
 |-----------------------------------------------------------------------|------------------------------------------------------------------------------|
+| wp-lemon/action/block/{{slug}}/before         | Add elements inside a block, before the actual block                      |
+| wp-lemon/action/block/{{slug}}/after          | Add elements inside a block, after the actual block                      |
 | wp-lemon/action/block/node-overview/{{card_type}}/loop/before         | Add elements before the loop                      |
 | wp-lemon/action/block/node-overview/{{card_type}}/loop/after          | Add elements after the loop                      |
 
@@ -60,6 +62,8 @@ Hooks are in the correct order.
 | wp-lemon/action/body/after           | Insert code inside the body opening tag **after** all other child elements   |
 | wp-lemon/action/floating-buttons/before                            | Add additional floating items in the contact-buttons div before the other buttons                                                      |  
 | wp-lemon/action/floating-buttons/after                            | Add additional floating items in the contact-buttons div after the other buttons                                                   |  
+| wp-lemon/action/cookiebar/text/before                            | Add text before the default text in the cookiebar                                                  |  
+| wp-lemon/action/cookiebar/text/after                          | Add text after the default text in the cookiebar                                                |  
 
 **Examples**
 ```php title=library/hooks.php lineNumbers=true
