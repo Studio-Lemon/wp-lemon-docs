@@ -1,3 +1,52 @@
+## 5.2.2 - 08 December 2023
+
+### ⛰️ Features
+
+-   _(twig)_ New apply_filters_deprecated filter added
+-   _(twig)_ renamed filters in entry-footer.twig to be more consistent and deprecated old filters.
+-   _(php)_ remove caching from widgets
+-   _(php)_ add a default title to maps block to comply with wcag
+
+Fixes #248
+
+### 🐛 Bug Fixes
+
+-   _(js)_ Importing unregisterPlugin
+-   _(php)_ Added new editor_css function that hooks into enqueue_block_assets to load styles in the block editor iframe, Fixes #249
+-   _(twig)_ Added spaceless filter to remove extra whitespaces in editor that caused a react warning in the editor
+-   Fix label filter
+
+-   Change domready in opening hours block
+
+### 📚 Documentation
+
+-   Document hooks
+
+### ⚙️ Miscellaneous Tasks
+
+-   Remove unneeded js translation
+-   Chore(translations) updated translations
+
+-   Rename variable
+
+## 5.2.1 - 06 December 2023
+
+### ⛰️ Features
+
+-   _(PHP/Twig)_ New apply_filters_deprecated filter added
+-   _(twig)_ renamed filters in entry-footer.twig to be more consistent and deprecate old filters.
+-   _(PHP)_ remove caching from widgets
+-   _(PHP/Twig)_ add a default title to maps block iframe to comply with WCAG, fixes #248
+
+### 🐛 Bug Fixes
+
+-   Change domready in opening hours block
+
+### ⚙️ Miscellaneous Tasks
+
+-   Removed unneeded js translation task in package.json
+-   Updated Dutch translations
+
 ## 5.2.1 - 01 December 2023
 
 ### 🐛 Bug Fixes
