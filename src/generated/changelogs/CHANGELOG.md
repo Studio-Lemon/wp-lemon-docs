@@ -1,3 +1,20 @@
+## 5.2.3 - 13 December 2023
+
+### ⛰️ Features
+
+-   _(php)_ Add zoom level option to map block
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Overwrite text alignment on card level
+-   _(css)_ Set bigger specificity
+-   _(css)_ Remove specificity
+-   Overwrite Woo's prevent admin check
+
+### ⚙️ Miscellaneous Tasks
+
+-   Reorder functions
+
 ## 5.2.2 - 08 December 2023
 
 ### ⛰️ Features
@@ -5,9 +22,7 @@
 -   _(twig)_ New apply_filters_deprecated filter added
 -   _(twig)_ renamed filters in entry-footer.twig to be more consistent and deprecated old filters.
 -   _(php)_ remove caching from widgets
--   _(php)_ add a default title to maps block to comply with wcag
-
-Fixes #248
+-   _(php)_ add a default title to maps block to comply with wcag, Fixes #248
 
 ### 🐛 Bug Fixes
 
@@ -15,7 +30,6 @@ Fixes #248
 -   _(php)_ Added new editor_css function that hooks into enqueue_block_assets to load styles in the block editor iframe, Fixes #249
 -   _(twig)_ Added spaceless filter to remove extra whitespaces in editor that caused a react warning in the editor
 -   Fix label filter
-
 -   Change domready in opening hours block
 
 ### 📚 Documentation
@@ -26,7 +40,6 @@ Fixes #248
 
 -   Remove unneeded js translation
 -   Chore(translations) updated translations
-
 -   Rename variable
 
 ## 5.2.1 - 06 December 2023
@@ -46,20 +59,6 @@ Fixes #248
 
 -   Removed unneeded js translation task in package.json
 -   Updated Dutch translations
-
-## 5.2.1 - 01 December 2023
-
-### 🐛 Bug Fixes
-
--   _(css)_ Add back padding on non wide aligned containers with a background
--   _(css)_ Remove maximum height from select inputs in fluentforms
--   _(php)_ Replace Image class with api alternative
--   _(twig)_ Make it possible to also completely disable the share_lable in the share macro.
-
-### ⚙️ Miscellaneous Tasks
-
--   Phpstan fixes
--   Lint php files
 
 ## 5.2.0 - 21 November 2023
 
