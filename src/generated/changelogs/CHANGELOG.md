@@ -1,3 +1,18 @@
+## 5.3.0 - 18 December 2023
+
+### ⛰️ Features
+
+-   _(blocks)_ Node overview is only allowed on pages
+-   _(php)_ When the autoloader is not yet loaded, load in from the site root.
+-   _(php)_ Map block now uses the place_id over address
+-   _(twig)_ Add additional extendable blocks for a more fluent way to extend custom cards.
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Use proper css class
+-   _(twig)_ Remove stray class
+-   _(twig)_ Remove extra span tag
+
 ## 5.2.3 - 13 December 2023
 
 ### ⛰️ Features
