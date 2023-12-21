@@ -7,7 +7,7 @@
 ### 🐛 Bug Fixes
 
 -   _(php)_ On vanilla wp, only show licence notice when noindex is false
--   Fix animation
+-   _(ci)_ Fix Github actions
 
 ## 5.3.0 - 18 December 2023
 
