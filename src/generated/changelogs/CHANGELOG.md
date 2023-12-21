@@ -1,3 +1,14 @@
+## 5.3.1 - 21 December 2023
+
+### ⛰️ Features
+
+-   _(blocks)_ Add filters to hide all animations at once
+
+### 🐛 Bug Fixes
+
+-   _(php)_ On vanilla wp, only show licence notice when noindex is false
+-   Fix animation
+
 ## 5.3.0 - 18 December 2023
 
 ### ⛰️ Features
