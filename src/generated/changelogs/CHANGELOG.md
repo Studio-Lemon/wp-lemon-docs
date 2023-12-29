@@ -1,3 +1,16 @@
+## 5.3.2 - 29 December 2023
+
+### 🐛 Bug Fixes
+
+-   _(twig)_ Fixed missing information in faq-overview.twig
+-   _(php)_ Fixed a bug in taxonomy_post_collection and made the query faster
+-   _(twig)_ filterable animations for cards as well
+
+### ⚙️ Miscellaneous Tasks
+
+-   Update packages
+-   Lint php files
+
 ## 5.3.1 - 21 December 2023
 
 ### ⛰️ Features
@@ -6,7 +19,7 @@
 
 ### 🐛 Bug Fixes
 
--   _(php)_ On vanilla wp, only show licence notice when noindex is false
+-   _(php)_ On vanilla wp, only show license notice when noindex is false
 -   _(ci)_ Fix Github actions
 
 ## 5.3.0 - 18 December 2023
