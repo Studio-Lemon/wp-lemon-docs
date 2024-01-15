@@ -4,10 +4,14 @@
   link: "/"
 - label: "Requirements"
   link: "/requirements"
+- label: "Setup new project"
+  link: "/setup"
 - label: "Getting started"
   link: "/getting-started"
 - label: Basics
   items:
+    - label: "Customizer settings"
+      link: "/basics/logos"
     - label: "Logo's"
       link: "/basics/logos"
     - label: "Favicons and manifest"
@@ -60,8 +64,6 @@
        link: /migrations/2-3
 - label: More
   items:
-    - label: FAQ
-      link: /faq
     - label: Changelog
       link: /changelog
     - label: Presskit

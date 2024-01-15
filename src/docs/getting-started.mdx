@@ -1,44 +1,29 @@
 ---
 title: "Getting started"
-description: Learn how to get started with Rocket Docs.
+description: Getting started with your project
 ---
 
-This is the getting started guide for wp-lemon. We will go through the requirements and how to get a new project started.
+Once the setup of your new project is complete, you can start developing your theme. This guide will help you get started with the basics of wp-lemon in a order that makes sense to the development workflow.
 
-## How to start a new project by using wp-lemon-create
+## Create post types and taxonomies
+As a first step it is recommended to create the post types that you will need for your project. This will help you to get a better understanding of the data structure of your project and in a later step, you can link the post types to a custom archive page.
 
-wp-lemon-create is a [npx package](https://www.npmjs.com/package/wp-lemon-create) hosted on npm.com to do all the heavy lifting for you. Just run the package, fill in some variables and get yourself a cup of coffee and voilla!
+You can read more about creating post types and taxonomies in the [post types guide](/extend/add-models).
 
-### What you'll need beforehand
+You can also deregister existing post types via library/models/modify-post-types.php
 
-- Yarn installed ([How to install](https://classic.yarnpkg.com/en/docs/install#windows-stable))
-- Git installed ([How to install](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
-- Composer installed ([How to install](https://getcomposer.org/download/))
-- WP-cli installed ([How to install](https://make.wordpress.org/cli/handbook/guides/installing/))
+## Create menu structure via the customizer
 
-The CLI tool will check all the requirements before starting a new project.
+Its recommended to create the menu structure of your project via the customizer. This way you can easily add pages to the menu and preview the output directly.
 
-### Running the package
+## Set defaults via the customizer
+After that you can set the default values for your project. This includes the archive pages for your post types, setting contact information among other things.
 
-To start a new project you'll first want to create a new folder in your projects folder. When using Laravel Valet as your webserver you'll have to add it in the following format: `your-project-name`.
+## Create footer
+Via template parts in the WordPress admin you can create the footer of your project. The default footer is setup with 3 "widget" blocks which you can use to display text or a menu for example.
 
-After adding this folder you can open a new terminal inside this folder and run the following command `npx wp-lemon-create` to run the cli-tool. This will automatically download the latest version of this package and starts the installation process. You will now want to follow the instructions given by the cli-tool itself.
+## setup colors, fonts, logos and favicons
+Its now time to setup some basic branding for your project. Please read [basic styling](/basics/basic-styling), [how to create fonts](/basics/fonts), [Logo's](/basics/logos) and [favicons](/basics/favicons-manifest) for more information.
 
-> 💡
-> Accept default values by pressing enter.
-
-Feedback? Create a ticket at [Github](https://github.com/Studio-Lemon/wp-lemon-create/issues).
-
-> 💡
-> If you want a vanilla (non-bedrock) WordPress installation, please run `npx wp-lemon-create vanilla`. You can use this command for both the initial setup as setting up an existing project.
-
-
-## Webpack commands / start development
-
-To start developing you can run some commands that will compile the assets. You will have to run these commands from your child theme folder.
-
-| command             | Description                                                                                          |
-| ------------------- | ---------------------------------------------------------------------------------------------------- |
-| yarn run dev        | Runs the development build process once.                                                             |
-| yarn run watch      | Start a browsersync session that automatically reloads your browser on file changes and injects css. |
-| yarn run production | Creates a build optimized for production. This build will be minimized and images will be optimized. |
+## Start creating your blocks
+Based on your design, you can figure out what blocks you can use to create the pages of your project. You can use the default set of blocks available in wp-lemon and you can create your own for unique blocks. You can read more about creating blocks in the [blocks guide](/extend/add-blocks).
