@@ -1,3 +1,20 @@
+## 5.4.0 - 16 January 2024
+
+### ⛰️ Features
+
+-   get_attachment_info API function added
+
+### 🐛 Bug Fixes
+
+-   _(js)_ Don't inject analytics script when there is no consent given for analytics.
+
+### ⚙️ Miscellaneous Tasks
+
+-   Update cookiebar.js to use api function trigger() to dispatch cookiebar events.
+-   Update packages
+-   Update phpcs version
+-   Use suppored version of prettier melody
+
 ## 5.3.2 - 29 December 2023
 
 ### 🐛 Bug Fixes
