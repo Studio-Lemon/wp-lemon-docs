@@ -1,3 +1,20 @@
+## 5.5.0 - 23 January 2024
+
+### ⛰️ Features
+
+-   [**breaking**] Twitter to X, Thanks Elon.. If you've overwritten the social icons to show in the share or social macros, please change the name to x.
+-   _(tracking)_ Able to easily add Tagmananager or Analytics tracking via the theme settings
+-   Translations are now managed via wp-i18n-twig
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Theme-button--ghost now inherits correct outline styles
+-   _(js)_ Trigger cookiebar event based on consent type
+-   _(js)_ Better domReady function
+-   _(php)_ Proper check to see if the array is empty or not in the taxonomy_post_collection function
+-   Block_id was being inherited by cards that were used in loops. Variable now renamed to card_id
+-   Better naming for cookie setting
+
 ## 5.4.0 - 16 January 2024
 
 ### ⛰️ Features
