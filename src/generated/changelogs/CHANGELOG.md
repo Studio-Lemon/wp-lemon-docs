@@ -1,3 +1,10 @@
+## 5.5.1 - 25 January 2024
+
+### 🐛 Bug Fixes
+
+-   _(php)_ First check if object is available in archive.js
+-   _(php)_ Enhanced adjacent_post_info function
+
 ## 5.5.0 - 23 January 2024
 
 ### ⛰️ Features
