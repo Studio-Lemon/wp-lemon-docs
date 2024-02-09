@@ -1,3 +1,31 @@
+## 5.6.0 - 09 February 2024
+
+### ⛰️ Features
+
+-   _(js)_ Add new findParentBlock function to find the parent acf block
+-   New block TODO added. New block added to track development/content process while the website is still under construction. This block will only be shown in development/staging environments and will be hidden from the block inserter
+-   Is_preview twig function added for usage in macros
+-   Allow content in widget when menu is active
+-   Fully qualify name in add_fields methods in the acf blocks so that IDE's can autocomplete the fields
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Fix ghost button in contrast mode
+-   _(twig)_ Fix language switcher dropdown issues
+-   Fix text alignment in circle-text block
+-   Add lazy to footer logo
+
+### ⚙️ Miscellaneous Tasks
+
+-   Cleanup blocks
+-   Update packages
+-   Lint files
+
+### ⚡ Enhancements
+
+-   Loading strategy via wp_enqueue_script tags
+-   Better logic for checking the password protected template
+
 ## 5.5.1 - 25 January 2024
 
 ### 🐛 Bug Fixes
