@@ -1,3 +1,24 @@
+## 5.7.0 - ❤️ 14 February 2024
+
+### ⛰️ Features
+
+-   Full integration of acf icon plugin, closes #252
+-   Add Bulldozer package information
+
+### 🐛 Bug Fixes
+
+-   Allow overwrites of body background in editor.scss
+-   Better ordering of scss vars
+-   Better carousel defaults
+
+### ⚙️ Miscellaneous Tasks
+
+-   Bump required bulldozer version to 4.4.0, please update your bulldozer version
+-   Update packages
+-   Remove unused import
+-   Update the way Timber handles the extension of functions and filters nowwayday
+-   Update packages
+
 ## 5.6.0 - 09 February 2024
 
 ### ⛰️ Features
