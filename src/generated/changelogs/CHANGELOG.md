@@ -1,8 +1,23 @@
+## 5.7.1 - 19 February 2024
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Minor css fix for accordion item
+-   Fix wrong icon path in icon path filter
+-   Fix license page error
+
 ## 5.7.0 - ❤️ 14 February 2024
 
 ### ⛰️ Features
 
--   Full integration of acf icon plugin, closes #252
+-   _(php/css)_ [**breaking**] More consistent archive classes in menu:
+    current-active-archive renamed to is-archive--active
+    archive-{{name}} renamed to is-archive--{{name}}
+    additional class is-arhive added
+
+BREAKING CHANGE: classes have been changed, please check your codebase if you rely on these classes and if so, change accordingly.
+
+-   Full integration of acf icon plugin, you can now use get\*svg_icon('icon-name') to get an svg icon from the acf icon plugin. If you have this integration setup yourself, we recommend to remove it and use the new get_svg_icon function and remove the filters starting with `acf_icon`
 -   Add Bulldozer package information
 
 ### 🐛 Bug Fixes
