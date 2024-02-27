@@ -1,3 +1,21 @@
+## 5.8.0 - 27 February 2024
+
+### ⛰️ Features
+
+-   _(block)_ Add pagination option to carousel block
+-   Smaller containers will give the smaller width to their children instead to the actual container
+-   Add archive-content classes to each .row element for easier styling of archives in one place.
+-   New wp-lemon/filter/core-blocks-to-allow filter added to create an allowlist of core blocks to be used in the editor this takes precedence over the wp-lemon/filter/core-blocks-to-remove filter when filled.
+
+### 🐛 Bug Fixes
+
+-   _(css)_ .share-buttons padding to margin for better flow
+-   _(css)_ Fix link hover color
+-   Add proper quotes around tagmanager
+-   Run WP_Lemon_Site::prepare_site_information later in the lifecycle
+-   Hide notice for "do not translate field" for fields in non-native languages. This is because block fields cannot be translated in the blockeditor.
+-   Hide pagination in editor
+
 ## 5.7.1 - 19 February 2024
 
 ### 🐛 Bug Fixes
