@@ -1,3 +1,14 @@
+## 5.8.1 - 28 February 2024
+
+### 🐛 Bug Fixes
+
+-   Bump version to wp-lemon 5.8.1
+
+### ⚙️ Miscellaneous Tasks
+
+-   _(build)_ Add new version script and move block build script to separate folder
+-   Update languages
+
 ## 5.8.0 - 27 February 2024
 
 ### ⛰️ Features
