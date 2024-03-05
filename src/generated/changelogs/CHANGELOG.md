@@ -1,3 +1,10 @@
+## 5.8.3 - 05 March 2024
+
+### 🐛 Bug Fixes
+
+- *(css)* Fix headings sizes breaking due to scss maps
+- *(runner)* Fix node version
+
 ## 5.8.2 - 05 March 2024
 
 ### ⛰️  Features
