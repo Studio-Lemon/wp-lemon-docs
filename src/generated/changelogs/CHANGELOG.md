@@ -1,3 +1,22 @@
+## 5.8.2 - 05 March 2024
+
+### ⛰️  Features
+
+- *(css)* Better configuarable animations
+
+### 🐛 Bug Fixes
+
+- *(css)* Fix archive margin
+- Fix swiper configurations
+
+### ⚡ Enhancements
+
+- *(js)* Move trigger to api functions
+
+### ⚙️ Miscellaneous Tasks
+
+- *(actions)* Update action runner
+
 ## 5.8.1 - 28 February 2024
 
 ### 🐛 Bug Fixes
