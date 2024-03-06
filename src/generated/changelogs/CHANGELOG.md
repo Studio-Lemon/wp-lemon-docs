@@ -1,28 +1,35 @@
+## 5.8.4 - 06 March 2024
+
+### ⛰️ Features
+
+-   _(twig)_ Overwritable card holder classes in crd-wrap.twig
+-   Several improvements how pages are displayed in preview mode. closes #257
+
 ## 5.8.3 - 05 March 2024
 
 ### 🐛 Bug Fixes
 
-- *(css)* Fix headings sizes breaking due to scss maps
-- *(runner)* Fix node version
+-   _(css)_ Fix headings sizes breaking due to scss maps
+-   _(runner)_ Fix node version
 
 ## 5.8.2 - 05 March 2024
 
-### ⛰️  Features
+### ⛰️ Features
 
-- *(css)* Better configuarable animations
+-   _(css)_ Better configuarable animations
 
 ### 🐛 Bug Fixes
 
-- *(css)* Fix archive margin
-- Fix swiper configurations
+-   _(css)_ Fix archive margin
+-   Fix swiper configurations
 
 ### ⚡ Enhancements
 
-- *(js)* Move trigger to api functions
+-   _(js)_ Move trigger to api functions
 
 ### ⚙️ Miscellaneous Tasks
 
-- *(actions)* Update action runner
+-   _(actions)_ Update action runner
 
 ## 5.8.1 - 28 February 2024
 
