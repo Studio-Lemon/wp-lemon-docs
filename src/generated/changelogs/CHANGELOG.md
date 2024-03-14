@@ -1,3 +1,32 @@
+## 5.9.0 - 14 March 2024
+
+### ⛰️ Features
+
+-   Extend wp-lemon/filter/card/' ~ card_type ~ '/picture-el filter
+-   Add warnings about non-overwritable templates
+
+### 🐛 Bug Fixes
+
+-   Minor css tweaks
+-   Update translateion
+-   Fix typo in translation command
+-   Fix rare condition with custom post order plugins that the first post is also the last post.
+-   Force 100% width to inner children
+-   Remove unneeded phpstan warning
+-   Optimize performance for ajax queries
+
+### 📚 Documentation
+
+-   Enhance documentation in twig file
+
+### ⚙️ Miscellaneous Tasks
+
+-   Lint PHP files
+
+### Fix
+
+-   #259 get rid of error in the template
+
 ## 5.8.4 - 06 March 2024
 
 ### ⛰️ Features
