@@ -1,3 +1,27 @@
+## 5.10.0 - 21 March 2024
+
+### ⛰️ Features
+
+-   Add card grid fix where colors would not be inherited
+-   Cache part of site context
+-   Add new WP actions to app.twig and head.twig to be compatible with modern WordPress standards.
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Fix css property for form input
+-   The image macro now orders the sizes from small to large and creates a right sizes attribute
+-   Increase image size from 400 to 420 px to cover the 412px size for the lighthouse test
+-   Set output path for webpack build the correct way
+
+### ⚙️ Miscellaneous Tasks
+
+-   Update dependencies
+-   Update packages
+
+### Perf
+
+-   Cache twig output
+
 ## 5.9.0 - 14 March 2024
 
 ### ⛰️ Features
