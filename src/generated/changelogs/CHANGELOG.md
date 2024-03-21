@@ -1,3 +1,9 @@
+## 5.10.1 - 21 March 2024
+
+### ◀️ Revert
+
+- Revert caching on main files until we have a way to globally enable/disable caching
+
 ## 5.10.0 - 21 March 2024
 
 ### ⛰️ Features
