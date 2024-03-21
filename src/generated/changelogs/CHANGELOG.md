@@ -1,3 +1,10 @@
+## 5.10.2 - 21 March 2024
+
+### ◀️ Revert
+
+- Revert other caching
+
+
 ## 5.10.1 - 21 March 2024
 
 ### ◀️ Revert
