@@ -1,3 +1,17 @@
+## 5.10.3 - 22 March 2024
+
+### ⛰️  Features
+
+- Rework of entry header
+
+### ⚙️ Miscellaneous Tasks
+
+- Package updates
+
+### ◀️ Revert
+
+- Caching of menus is not working as expected
+
 ## 5.10.2 - 21 March 2024
 
 ### ◀️ Revert
