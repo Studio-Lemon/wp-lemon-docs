@@ -1,29 +1,36 @@
+## 5.10.4 - 02 April 2024
+
+### 🐛 Bug Fixes
+
+-   Fix missing text in crd-wrap.twig string due to bug in twig translator
+-   Fix ordering in adjacent_post_info function when custom order plugins are in use.
+-   If no file name is set in get_svg_icon, bail early.
+
 ## 5.10.3 - 22 March 2024
 
-### ⛰️  Features
+### ⛰️ Features
 
-- Rework of entry header
+-   Rework of entry header
 
 ### ⚙️ Miscellaneous Tasks
 
-- Package updates
+-   Package updates
 
 ### ◀️ Revert
 
-- Caching of menus is not working as expected
+-   Caching of menus is not working as expected
 
 ## 5.10.2 - 21 March 2024
 
 ### ◀️ Revert
 
-- Revert other caching
-
+-   Revert other caching
 
 ## 5.10.1 - 21 March 2024
 
 ### ◀️ Revert
 
-- Revert caching on main files until we have a way to globally enable/disable caching
+-   Revert caching on main files until we have a way to globally enable/disable caching
 
 ## 5.10.0 - 21 March 2024
 
