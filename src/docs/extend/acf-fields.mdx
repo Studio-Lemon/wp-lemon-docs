@@ -1,0 +1,128 @@
+---
+title: ACF fields.
+description: This page will describe the recommended process of adding additional field groups using ACF builder.
+---
+
+Although it's possible to add or modify ACF fields using the build in UI method, we highly recommend adding the fields using PHP configurations. We find this method more robust, especially in larger websites.
+If you want to see all the different field types that exist and their default atrtributes you can take a look right [here](https://github.com/StoutLogic/acf-builder/wiki/field-types).
+
+To add or modify ACF fields using PHP configurations you need a fieldgroup. Within WP-lemon some post types will already have an existing fieldgroup. 
+In the following documentation we will explain both how you can manage your ACF fields that have an existing fieldgroup, and how to create your own fieldgroup.
+
+
+
+
+## Modifying existing fieldgroups
+Because these post types will have a fieldgroup by default you don't have to create it yourself. 
+By navigating to the `libary/hooks.php` file in your child theme, you can use filters to add, modify or remove fields in an existing fieldgroup.
+
+below we've listed all the existing fieldgroups with the filter name you can use.
+
+| **Fieldgroups**          | **Fieldgroups filter name**    |
+|------------------------|------------------------|
+| Job                    | wp-lemon/filter/model/acf-fields/job  |
+| Person                 | wp-lemon/filter/model/acf-fields/person  |
+| Menu                   | wp-lemon/filter/model/acf-fields/menu  |
+
+
+### Adding ACF fields
+```php 
+add_filter(
+   'wp-lemon/filter/model/acf-fields/job',
+   function ($job) {
+      $job
+         ->addText('job_location');
+      return $job;
+   },
+);
+```
+
+### Remove ACF Fields
+In the same way we can remove an existing ACF field by using the build in function that ACF provides like so:
+```php
+add_filter(
+   'wp-lemon/filter/model/acf-fields/job',
+   function ($job) {
+      $job
+         ->removeField('salary');
+      return $job;
+   },
+);
+```
+
+### Remove all ACF Fields at once
+In case you want to remove the whole specific fieldgroup of a post type to start from scratch you can return `false`.
+
+```php
+add_filter(
+   'wp-lemon/filter/model/acf-fields/job',
+   function ($job) {
+      return false;
+   },
+);
+```
+
+
+In the examples above we showed you the different options seperately but when you're modifying a single post type you can remove and add multiple ACF fields all within the same filter. You do this by chaining the methods together like so:
+```php 
+add_filter(
+   'wp-lemon/filter/model/acf-fields/job',
+   function ($job) {
+      $job
+         ->removeField('salary')
+         ->addText('job_location');
+      return $job;
+   },
+);
+```
+
+
+
+
+
+
+## Creating new fieldgroups
+When adding ACF fields to a post type that doesn't already have a fieldgroup you can start by creating a file in `library/models` folder of your child theme.
+For example `fields-news.php`. Inside this file.
+
+```php 
+<?php
+
+/**
+ * Adds extra fields to news.
+ *
+ * @package WordPress
+ * @subpackage WP_Lemon
+ */
+
+namespace WP_Lemon\Child\Models;
+
+use StoutLogic\AcfBuilder\FieldsBuilder;
+
+$news = new FieldsBuilder(
+   'news',
+   [
+      'title' => __('Additonal news fields', 'wp-lemon-child'),
+      'style' => 'seamless',
+   ]
+);
+
+$news
+   ->addText('label', [
+      'label'    => __('Label', 'wp-lemon-child'),
+      'required' => 1,
+   ])
+   ->setLocation('post_type', '==', 'news');
+
+add_action('acf/init', function () use ($news) {
+   acf_add_local_field_group($news->build());
+});
+```
+
+
+
+
+
+
+## In case of a custom block
+When you've build your own custom block and want to add ACF fields you'll have to go trough a similar process, you can find more information on this  [here](/extend/add-blocks#block-with-custom-acf-fields).

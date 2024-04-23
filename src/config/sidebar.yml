@@ -30,8 +30,8 @@
       link: "/extend/add-blocks"
     - label: "Posttypes & taxonomies"
       link: "/extend/add-models"
-    - label: "Add ACF fields"
-      link: "/extend/add-fields"
+    - label: "ACF fields"
+      link: "/extend/acf-fields"
     - label: "Filters & Actions"
       link: "/extend/hooks"
 - label: Overwrite
