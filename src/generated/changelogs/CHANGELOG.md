@@ -1,3 +1,35 @@
+## 5.11.0 - 26 April 2024
+
+### ⛰️ Features
+
+-   Allow fluentforms field to directly return a form instead of an id
+-   Add additional parameters to get_fluent_form function to allow for theme and type to be set
+-   Add make-php command
+-   Add card types on all cards
+-   Disable new font library feature of WordPress
+-   Add Timber to license page
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Remove unneeded margin when a block covers comes directly after a section with a background color.
+-   _(css)_ Add margin to fluent form if it is the last element directly in the .entry element
+-   (twig) Remove spaceless filters because the caused errors with latest twig version
+-   (css) Make underline visible in editor when needed
+-   (css) Fix block alignment in backend on smaller devices
+
+### 🚜 Refactor
+
+-   Run rector and refactor codebase
+
+### 📚 Documentation
+
+-   Add return types to functions
+
+### ⚙️ Miscellaneous Tasks
+
+-   Lint files
+-   Bump required WordPress version to 6.5.0
+
 ## 5.10.4 - 02 April 2024
 
 ### 🐛 Bug Fixes
