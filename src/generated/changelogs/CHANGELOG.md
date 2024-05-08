@@ -1,3 +1,13 @@
+## 5.12.1 - 08 May 2024
+
+### ⛰️ Features
+
+-   Update timeline styles to allow switching between how even/uneven items align. Also made the css smaller.
+
+### ⚙️ Miscellaneous Tasks
+
+-   Rename translate:makepot command to translate:make-pot
+
 ## 5.12.0 - 08 May 2024
 
 ### ⛰️ Features
