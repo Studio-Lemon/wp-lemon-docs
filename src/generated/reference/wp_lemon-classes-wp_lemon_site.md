@@ -12,11 +12,11 @@ You will be able to retrieve this information from the context in your twig file
 
 | Name | Return Type | Summary/Returns |
 | --- | --- | --- |
-| <span class="method-name">[add_site_information()](#add_site_information)</span> | <span class="method-type">`void`</span> | <span class="method-description">Static method to add site information from wherever you want.</span> |
+| <span class="method-name">[add_site_information()](#add_site_information)</span> | <span class="method-type"></span> | <span class="method-description">Static method to add site information from wherever you want.</span> |
 | <span class="method-name">[extend_site_information()](#extend_site_information)</span> | <span class="method-type">`array`</span> | <span class="method-description">This is the main method that is overriden by the child-site class.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> $context The updated Timber context.</span></span> |
 | <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get archive information ofr singular item.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['title', 'url']</span></span> |
 | <span class="method-name">[get_site_information()](#get_site_information)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get specific site information.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> $value     The value retrieved from the site information.</span></span> |
-| <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type">`bool`</span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
+| <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type"></span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
 
 </div>
 
@@ -56,8 +56,6 @@ Check if the current post type is one of the given post types.
 
 `is_post_type( string|array $post_type )`
 
-**Returns:** `bool` 
-
 | Name | Type | Description |
 | --- | --- | --- |
 | $post_type | `string` or `array` | The post type to check against. |
@@ -83,8 +81,6 @@ This method is internally used to check if the key already exists before adding 
 **since** 4.0
 
 `add_site_information( string $key, mixed $value )`
-
-**Returns:** `void` 
 
 | Name | Type | Description |
 | --- | --- | --- |

@@ -1,3 +1,23 @@
+## 5.12.0 - 08 May 2024
+
+### ⛰️ Features
+
+-   **breaking**: Everything related to Woocommerce will slowly be moved to a separate plugin. This is the first step in that direction. You can add `composer require satispress/lemon-woo` to make the switch to this new feature plugin. Use the css variables to overwrite the given css. You can also safely remove all logic involving the Woocommerce cart. This will be handled by the new plugin. Please submit issues at the [Github repository](https://github.com/Studio-Lemon/lemon-woo/issues) if you encounter any problems.
+
+### 🐛 Bug Fixes
+
+-   Allow null on get_svg_icon function
+
+### 📚 Documentation
+
+-   Update function documentation
+
+### ⚙️ Miscellaneous Tasks
+
+-   Update languages
+-   Update to newer version
+-   Lint files
+
 ## 5.11.0 - 26 April 2024
 
 ### ⛰️ Features
