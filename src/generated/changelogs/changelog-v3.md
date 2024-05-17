@@ -121,7 +121,7 @@ _Release Date - 03 february 2023_
 -   💡 **Newly added**
     -   add_spaces_to_phonenumber() function and twig filter.
 -   ✨ **Enhanced**
-    -   Ehanced price cards css.
+    -   Enhanced price cards css.
     -   entry-header smaller margin by default.
 -   🐛 **Bugs Fixed**
     -   header flex bug fixed from Clearwell
@@ -233,7 +233,7 @@ _Release Date - 03 january 2023_
     -   Add escapers to twig files for hrefs and title attributes
     -   Share and social icons can now be fully modified without overwrting the socials.twig macro.
 -   🐛 **Bugs Fixed**
-    -   Smoothscroll.js bug fixed where clicking a hash buton could lead to jumping around the page.
+    -   Smoothscroll.js bug fixed where clicking a hash button could lead to jumping around the page.
     -   fixed a bug in the animation macro where an animation code would still be loaded when the value was 'none'
     -   Undo the code introduced to fix a WP issue regarding the nav menus in WP6.1
 
@@ -314,7 +314,7 @@ _Release Date - 24 november 2022_
     -   Better styling for circle-text block on mobile phones
     -   IMG container is now aligned correctly once more in wide align mode
 -   🐛 **Bugs Fixed**
-    -   removed templatelock fron circle-text
+    -   removed templatelock from circle-text
 
 ### 3.29.0
 
@@ -392,12 +392,12 @@ _Release Date - 3 november 2022_
 
 -   ✨ **Enhanced**
     -   Compat fix with WordPress 6.1
-    -   using new style.css labels to disable accidential updates when there is a theme with the same name.
+    -   using new style.css labels to disable accidental updates when there is a theme with the same name.
 -   🐛 **Bugs Fixed**
     -   Fixed a bug where custom sizes for media/text would be overwritten
     -   Added missing rel and target attributes to external links in socials.twig
     -   Temp fix for regression in WordPress 6.1 regarding the navwalker, see https://core.trac.wordpress.org/ticket/5694
-    -   Fixed an issue where wide alligned elements inside full containers woulds still be wide alligned.
+    -   Fixed an issue where wide aligned elements inside full containers woulds still be wide aligned.
 
 ### 3.25.1 t/m 3.25.5:
 
@@ -666,7 +666,7 @@ _Release Date - 14 july 2022_
     -   Transitioned some scss vars to css vars.
 -   🐛 **Bugs Fixed**
     -   Fix bug with term_ids in node-overview
-    -   Fixed a bug in menu.js where the --scoll modifier wouldn't go away.
+    -   Fixed a bug in menu.js where the --scroll modifier wouldn't go away.
     -   Fixed a bug in the header an footer where containers were wider then content containers.
 
 ### 3.19.6 and 3.19.7:
@@ -873,7 +873,7 @@ _Release Date - 5 may 2022_
     -   Removed deprecated FAQ fields
     -   Less css due to smart selectors
     -   Better icon positioning
-    -   Excerpts can now recieve a -1 argument to post all content inside cards.
+    -   Excerpts can now receive a -1 argument to post all content inside cards.
 -   🐛 **Bugs Fixed**
     -   fix for lazyload issue on safari mobile
 
@@ -1072,7 +1072,7 @@ _Release Date - 25 february 2022_
     -   Aria improvements to language switcher and currentpage.
 -   🐛 **Bugs Fixed**
     -   Fixed double notices in blocks.
-    -   wp-seperator block is now properly displayed.
+    -   wp-separator block is now properly displayed.
 
 ### 3.8.1:
 
@@ -1145,7 +1145,7 @@ _Release Date - 08 february 2022_
 
 -   ✨ **Enhanced**
     -   Rework on menu.js and dropdown.js for better compat with custom dropdown elements outside the navbar.
-    -   archive.js now is splited into two functions: an ajax call and listereners. This allows to use ajaxcall separately.
+    -   archive.js now is split into two functions: an ajax call and listereners. This allows to use ajaxcall separately.
 -   🐛 **Bugs Fixed**
     -   css headings were not displayed correctly because of an css regression introduces in 3.6.0
     -   Better footer css
@@ -1159,7 +1159,7 @@ _Release Date - 07 february 2022_
     -   archive - filter is now a overwritable partial.
     -   Footer - don't show navholder div when not needed.
 -   🐛 **Bugs Fixed**
-    -   backend - fully alligned blocks cannot overflow anymore.
+    -   backend - fully aligned blocks cannot overflow anymore.
 
 ### 3.6.1:
 
@@ -1359,7 +1359,7 @@ _Release Date - 13 december 2021_
 
 -   Please update bulldozer to 1.8.2 by uploading the vendor folder to the server.
 -   🐛 **Bugs Fixed**
-    -   Disable mode switching for sevaral blocks.
+    -   Disable mode switching for several blocks.
     -   Fixes bug where card images would render at incorrect heights in the backend.
     -   Fixes wrong display of card grid with two columns.
 -   ✨ **Enhanced**

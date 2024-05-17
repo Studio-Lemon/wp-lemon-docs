@@ -64,7 +64,7 @@ Can be extended by running the parent method from within the child class.
 
 Setup query arguments for the query.
 
-Can be entended or overwritten by running the parent method from within the child class.
+Can be extended or overwritten by running the parent method from within the child class.
 
 **Returns:** `void` 
 

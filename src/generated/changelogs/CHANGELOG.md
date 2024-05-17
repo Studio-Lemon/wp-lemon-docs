@@ -1,3 +1,73 @@
+## 5.12.2 - 15 May 2024
+
+### 🐛 Bug Fixes
+
+- Fix text direction in timeline cards
+- Fix shortcode defaults assignment in get_fluent_form function
+- Refactor remove_generated_webp function for better readability and error handling
+
+## 5.12.1 - 08 May 2024
+
+### ⛰️ Features
+
+-   Update timeline styles to allow switching between how even/uneven items align. Also made the css smaller.
+
+### ⚙️ Miscellaneous Tasks
+
+-   Rename translate:makepot command to translate:make-pot
+
+## 5.12.0 - 08 May 2024
+
+### ⛰️ Features
+
+-   **breaking**: Everything related to Woocommerce will slowly be moved to a separate plugin. This is the first step in that direction. You can add `composer require satispress/lemon-woo` to make the switch to this new feature plugin. Use the css variables to overwrite the given css. You can also safely remove all logic involving the Woocommerce cart. This will be handled by the new plugin. Please submit issues at the [GitHub repository](https://github.com/Studio-Lemon/lemon-woo/issues) if you encounter any problems.
+
+### 🐛 Bug Fixes
+
+-   Allow null on get_svg_icon function
+
+### 📚 Documentation
+
+-   Update function documentation
+
+### ⚙️ Miscellaneous Tasks
+
+-   Update languages
+-   Update to newer version
+-   Lint files
+
+## 5.11.0 - 26 April 2024
+
+### ⛰️ Features
+
+-   Allow fluentforms field to directly return a form instead of an id
+-   Add additional parameters to get_fluent_form function to allow for theme and type to be set
+-   Add make-php command
+-   Add card types on all cards
+-   Disable new font library feature of WordPress
+-   Add Timber to license page
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Remove unneeded margin when a block covers comes directly after a section with a background color.
+-   _(css)_ Add margin to fluent form if it is the last element directly in the .entry element
+-   (twig) Remove spaceless filters because the caused errors with latest twig version
+-   (css) Make underline visible in editor when needed
+-   (css) Fix block alignment in backend on smaller devices
+
+### 🚜 Refactor
+
+-   Run rector and refactor codebase
+
+### 📚 Documentation
+
+-   Add return types to functions
+
+### ⚙️ Miscellaneous Tasks
+
+-   Lint files
+-   Bump required WordPress version to 6.5.0
+
 ## 5.10.4 - 02 April 2024
 
 ### 🐛 Bug Fixes
@@ -162,7 +232,7 @@
 -   _(php/css)_ [**breaking**] More consistent archive classes in menu:
     current-active-archive renamed to is-archive--active
     archive-{{name}} renamed to is-archive--{{name}}
-    additional class is-arhive added
+    additional class is-archive added
 
 BREAKING CHANGE: classes have been changed, please check your codebase if you rely on these classes and if so, change accordingly.
 
@@ -250,7 +320,7 @@ BREAKING CHANGE: classes have been changed, please check your codebase if you re
 -   Update cookiebar.js to use api function trigger() to dispatch cookiebar events.
 -   Update packages
 -   Update phpcs version
--   Use suppored version of prettier melody
+-   Use supported version of prettier melody
 
 ## 5.3.2 - 29 December 2023
 
@@ -274,7 +344,7 @@ BREAKING CHANGE: classes have been changed, please check your codebase if you re
 ### 🐛 Bug Fixes
 
 -   _(php)_ On vanilla wp, only show license notice when noindex is false
--   _(ci)_ Fix Github actions
+-   _(ci)_ Fix GitHub actions
 
 ## 5.3.0 - 18 December 2023
 

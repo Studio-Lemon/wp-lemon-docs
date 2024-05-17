@@ -12,12 +12,12 @@ This class is used for the node-archive block. Can be extended for custom ajax q
 
 | Name | Return Type | Summary/Returns |
 | --- | --- | --- |
-| <span class="method-name">[extra_args()](#extra_args)</span> | <span class="method-type">`array` or `null`</span> | <span class="method-description">Add extra arguments to the query.</span> |
-| <span class="method-name">[handle()](#handle)</span> | <span class="method-type">`void`</span> | <span class="method-description">Hook into the wp_ajax actions</span> |
+| <span class="method-name">[extra_args()](#extra_args)</span> | <span class="method-type"></span> | <span class="method-description">Add extra arguments to the query.</span> |
+| <span class="method-name">[handle()](#handle)</span> | <span class="method-type"></span> | <span class="method-description">Hook into the wp_ajax actions</span> |
 | <span class="method-name">[prepare()](#prepare)</span> | <span class="method-type">`void`</span> | <span class="method-description">Prepare parameters before building the query arguments.</span> |
 | <span class="method-name">[query()](#query)</span> | <span class="method-type">`void`</span> | <span class="method-description">Run the query</span> |
 | <span class="method-name">[query_args()](#query_args)</span> | <span class="method-type">`void`</span> | <span class="method-description">Setup query arguments for the query.</span> |
-| <span class="method-name">[register()](#register)</span> | <span class="method-type">`void`</span> | <span class="method-description">Handle the registration of the AJAX actions.</span> |
+| <span class="method-name">[register()](#register)</span> | <span class="method-type"></span> | <span class="method-description">Handle the registration of the AJAX actions.</span> |
 
 </div>
 
@@ -30,8 +30,6 @@ Handle the registration of the AJAX actions.
 
 Can be extended for custom AJAX queries.
 
-**Returns:** `void` 
-
 ---
 
 ### handle()
@@ -40,8 +38,6 @@ Hook into the wp_ajax actions
 
 Handles the AJAX request.
 This first checks if the request is valid, then prepares the parameters.
-
-**Returns:** `void` 
 
 ---
 
@@ -72,8 +68,6 @@ Add extra arguments to the query.
 Can be extended by running the parent method from within the child class.
 
 `extra_args( null|array $extra_args )`
-
-**Returns:** `array|null` 
 
 | Name | Type | Description |
 | --- | --- | --- |

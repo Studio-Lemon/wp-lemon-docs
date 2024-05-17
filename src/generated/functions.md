@@ -1,3 +1,5 @@
+# Functions
+
 <div class="table-methods">
 
 | Name                                                                                       | Return Type                                            | Summary/Returns                                                                                                                                                                                                                                |
@@ -6,12 +8,14 @@
 | <span class="method-name">[cache_clearer()](#cache_clearer)</span>                         | <span class="method-type">`void`</span>                | <span class="method-description">Cache clearer for spinupwp and wp-rocket.</span>                                                                                                                                                              |
 | <span class="method-name">[format_phone_number()](#format_phone_number)</span>             | <span class="method-type">`string[]` or `false`</span> | <span class="method-description">Function to format phone numbers throughout our template.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with information about the phone number.</span></span> |
 | <span class="method-name">[get_archive_page()](#get_archive_page)</span>                   | <span class="method-type">`int` or `false`</span>      | <span class="method-description">Checks if posttype has custom page archive.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> the page id or false if not found.</span></span>                           |
+| <span class="method-name">[get_attachment_info()](#get_attachment_info)</span>             | <span class="method-type">`string[]` or `false`</span> | <span class="method-description">Get the attachment file info.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The attachment file info or false if not found.</span></span>                            |
 | <span class="method-name">[get_fluent_form()](#get_fluent_form)</span>                     | <span class="method-type">`string`</span>              | <span class="method-description">Return a fluent form.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The html of the form.</span></span>                                                              |
 | <span class="method-name">[get_language_switcher()](#get_language_switcher)</span>         | <span class="method-type">`false` or `array`</span>    | <span class="method-description">Collects all languages and returns them as an array for twig language switcher.</span>                                                                                                                        |
 | <span class="method-name">[get_share_platforms()](#get_share_platforms)</span>             | <span class="method-type">`array`</span>               | <span class="method-description">Builds the sharing context.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array of shares that can be addressed by the share macro.</span></span>                    |
 | <span class="method-name">[get_socials()](#get_socials)</span>                             | <span class="method-type">`array`</span>               | <span class="method-description">Builds the social context.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array of platforms that can be addressed by the share macro.</span></span>                  |
+| <span class="method-name">[get_svg_icon()](#get_svg_icon)</span>                           | <span class="method-type">`string` or `false`</span>   | <span class="method-description">Retrieve a SVG icon.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The svg icon or false if not found.</span></span>                                                 |
 | <span class="method-name">[get_svg_image()](#get_svg_image)</span>                         | <span class="method-type">`string` or `false`</span>   | <span class="method-description">Get SVG image contents.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> the attachment image svg data or false if not found.</span></span>                             |
-| <span class="method-name">[is_post_type()](#is_post_type)</span>                           | <span class="method-type">`bool`</span>                | <span class="method-description">Check if the current post type is one of the given post types.</span>                                                                                                                                         |
+| <span class="method-name">[is_post_type()](#is_post_type)</span>                           | <span class="method-type"></span>                      | <span class="method-description">Check if the current post type is one of the given post types.</span>                                                                                                                                         |
 | <span class="method-name">[log_message()](#log_message)</span>                             | <span class="method-type">`void`</span>                | <span class="method-description">Adds a log message to a specific log file in the website base folder.</span>                                                                                                                                  |
 | <span class="method-name">[post_type_name()](#post_type_name)</span>                       | <span class="method-type">`string` or `false`</span>   | <span class="method-description">Get singular name of a posttype.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The singular name.</span></span>                                                      |
 
@@ -36,13 +40,17 @@ Get singular name of a posttype.
 
 Return a fluent form.
 
-`get_fluent_form( int $id )`
+**see** WP_Lemon\API\fluentFormRender function
+
+`get_fluent_form( string|int $id, string $theme = '', string $type = 'classic' )`
 
 **Returns:** `string` The html of the form.
 
-| Name | Type  | Description         |
-| ---- | ----- | ------------------- |
-| $id  | `int` | the id of the form. |
+| Name   | Type              | Description                                                                       |
+| ------ | ----------------- | --------------------------------------------------------------------------------- |
+| $id    | `string` or `int` | the id of the form.                                                               |
+| $theme | `string`          | the theme of the form, use 'ffs_inherit_theme' to inherit wp-lemon theme styling. |
+| $type  | `string`          | the type of the form, can be 'classic' or 'conversational'.                       |
 
 ---
 
@@ -179,8 +187,6 @@ Check if the current post type is one of the given post types.
 
 `is_post_type( string|array $post_type )`
 
-**Returns:** `bool`
-
 | Name       | Type                   | Description                     |
 | ---------- | ---------------------- | ------------------------------- |
 | $post_type | `string` or `string[]` | The post type to check against. |
@@ -215,6 +221,38 @@ This function will clear the cache for the current post or the entire site.
 
 ---
 
+### get_attachment_info()
+
+Get the attachment file info.
+
+**since** 5.4.0
+
+`get_attachment_info( int|null $attachment_id )`
+
+**Returns:** `string[]|false` The attachment file info or false if not found.
+
+| Name           | Type            | Description                            |
+| -------------- | --------------- | -------------------------------------- |
+| $attachment_id | `int` or `null` | The attachment id to get the info for. |
+
+---
+
+### get_svg_icon()
+
+Retrieve a SVG icon.
+
+**since** 5.7.0
+
+`get_svg_icon( string $filename )`
+
+**Returns:** `string|false` The svg icon or false if not found.
+
+| Name      | Type     | Description               |
+| --------- | -------- | ------------------------- |
+| $filename | `string` | The filename of the icon. |
+
+---
+
 <div class="table-methods">
 
 | Name                                                                             | Return Type                                                                  | Summary/Returns                                                                                                                                                                                                                                                                                                                                  |
@@ -222,11 +260,11 @@ This function will clear the cache for the current post or the entire site.
 | <span class="method-name">[adjacent_post_info()](#adjacent_post_info)</span>     | <span class="method-type">`array` or `false`</span>                          | <span class="method-description">Get next or previous post when available, otherwise get the first or last post.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with post id, title and url.</span></span>                                                                                         |
 | <span class="method-name">[archive_query()](#archive_query)</span>               | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Archive query that queries an x amount of posts of a specific post type.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                      |
 | <span class="method-name">[get_total_posts()](#get_total_posts)</span>           | <span class="method-type">`array`</span>                                     | <span class="method-description">Count function to use in relation with the above archive_query() Counts total amount of posts that can be queried in our ajax load more archives.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with context data to be added to the archive.twig.</span></span> |
-| <span class="method-name">[latest_items_query()](#latest_items_query)</span>     | <span class="method-type"></span>                                            | <span class="method-description">Context function that queries the latest x amount of posts.</span>                                                                                                                                                                                                                                              |
+| <span class="method-name">[latest_items_query()](#latest_items_query)</span>     | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Context function that queries the latest x amount of posts.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                                   |
 | <span class="method-name">[next_post_info()](#next_post_info)</span>             | <span class="method-type">`array`</span>                                     | <span class="method-description">Get next post when available, otherwise get the first post.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with post id, title and url.</span></span>                                                                                                             |
-| <span class="method-name">[other_items_query()](#other_items_query)</span>       | <span class="method-type">`array` or `bool` or `null`</span>                 | <span class="method-description">Context function that queries other ID's of a specific post type on a singular template.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Result of the query.</span></span>                                                                                              |
+| <span class="method-name">[other_items_query()](#other_items_query)</span>       | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Context function that queries other ID's of a specific post type on a singular template.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                      |
 | <span class="method-name">[previous_post_info()](#previous_post_info)</span>     | <span class="method-type">`array`</span>                                     | <span class="method-description">Get previous post when available, otherwise get the last post.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with post id, title and url.</span></span>                                                                                                          |
-| <span class="method-name">[specific_items_query()](#specific_items_query)</span> | <span class="method-type">`array` or `bool` or `null`</span>                 | <span class="method-description">Context function that queries specific ID's from a specific posttype<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                          |
+| <span class="method-name">[specific_items_query()](#specific_items_query)</span> | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Context function that queries specific ID's from a specific posttype<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                          |
 
 </div>
 
@@ -237,6 +275,8 @@ Context function that queries the latest x amount of posts.
 Does have a $predefined_posts param to filter which post to query.
 
 `latest_items_query( string $type, int $amount = 2, array $predefined_posts = null, string $taxonomy = null, array $term_ids = null, array|bool|null $extra_args = null )`
+
+**Returns:** `\Timber\PostCollectionInterface|null` Returns collection of posts.
 
 | Name              | Type                        | Description                               |
 | ----------------- | --------------------------- | ----------------------------------------- |
@@ -257,7 +297,7 @@ Excludes current post.
 
 `other_items_query( string $type, int $amount, int $current_id, string $taxonomy = null, array $terms = [] )`
 
-**Returns:** `array|bool|null` Result of the query.
+**Returns:** `\Timber\PostCollectionInterface|null` Returns collection of posts.
 
 | Name        | Type     | Description                               |
 | ----------- | -------- | ----------------------------------------- |
@@ -275,7 +315,7 @@ Context function that queries specific ID's from a specific posttype
 
 `specific_items_query( string $type, int $amount = -1, array $post_ids = [] )`
 
-**Returns:** `array|bool|null` Returns collection of posts.
+**Returns:** `\Timber\PostCollectionInterface|null` Returns collection of posts.
 
 | Name      | Type     | Description                       |
 | --------- | -------- | --------------------------------- |
@@ -330,13 +370,14 @@ Counts total amount of posts that can be queried in our ajax load more archives.
 
 Get next or previous post when available, otherwise get the first or last post.
 
-`adjacent_post_info( string $direction )`
+`adjacent_post_info( string $direction, string|null $orderby = null )`
 
 **Returns:** `array|false` Array with post id, title and url.
 
-| Name       | Type     | Description                                  |
-| ---------- | -------- | -------------------------------------------- |
-| $direction | `string` | Direction to query. Can be next or previous. |
+| Name       | Type               | Description                                  |
+| ---------- | ------------------ | -------------------------------------------- |
+| $direction | `string`           | Direction to query. Can be next or previous. |
+| $orderby   | `string` or `null` | Orderby parameter for the query.             |
 
 ---
 
@@ -346,7 +387,13 @@ Get next post when available, otherwise get the first post.
 
 **since** 3.31.3
 
+`next_post_info( string|null $orderby = null )`
+
 **Returns:** `array` Array with post id, title and url.
+
+| Name     | Type               | Description                      |
+| -------- | ------------------ | -------------------------------- |
+| $orderby | `string` or `null` | Orderby parameter for the query. |
 
 ---
 
@@ -356,15 +403,22 @@ Get previous post when available, otherwise get the last post.
 
 **since** 3.31.3
 
+`previous_post_info( string|null $orderby = null )`
+
 **Returns:** `array` Array with post id, title and url.
+
+| Name     | Type               | Description                      |
+| -------- | ------------------ | -------------------------------- |
+| $orderby | `string` or `null` | Orderby parameter for the query. |
 
 ---
 
 <div class="table-methods">
 
-| Name                                                                   | Return Type                               | Summary/Returns                                                                            |
-| ---------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| <span class="method-name">[html_attributes()](#html_attributes)</span> | <span class="method-type">`string`</span> | <span class="method-description">Function to add html attributes to a html element.</span> |
+| Name                                                                   | Return Type                             | Summary/Returns                                                                            |
+| ---------------------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------ |
+| <span class="method-name">[html_attributes()](#html_attributes)</span> | <span class="method-type"></span>       | <span class="method-description">Function to add html attributes to a html element.</span> |
+| <span class="method-name">[is_preview()](#is_preview)</span>           | <span class="method-type">`bool`</span> | <span class="method-description">Function to check if we are in preview mode.</span>       |
 
 </div>
 
@@ -378,10 +432,20 @@ TODO: Finish this function.
 
 `html_attributes( array $attributes = [] )`
 
-**Returns:** `string`
-
 | Name        | Type    | Description                    |
 | ----------- | ------- | ------------------------------ |
 | $attributes | `array` | The attributes we want to add. |
+
+---
+
+### is_preview()
+
+Function to check if we are in preview mode.
+
+Primarily used in macros.
+
+**since** 5.6.0
+
+**Returns:** `bool`
 
 ---

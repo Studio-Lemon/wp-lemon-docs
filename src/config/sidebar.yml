@@ -30,10 +30,13 @@
       link: "/extend/add-blocks"
     - label: "Posttypes & taxonomies"
       link: "/extend/add-models"
-    - label: "Add ACF fields"
-      link: "/extend/add-fields"
+    - label: "ACF fields"
+      link: "/extend/acf-fields"
     - label: "Filters & Actions"
       link: "/extend/hooks"
+    - label: "Icon picker"
+      link: "/extend/icon-picker"
+
 - label: Overwrite
   items:
     - label: "Overwrite twig files"
@@ -80,5 +83,5 @@
       link: "https://getbootstrap.com/docs/5.3/getting-started/introduction/"
 - label: Docs software
   items:
-    - label: "Github"
+    - label: "GitHub"
       link: "https://github.com/rocketseat/gatsby-themes"

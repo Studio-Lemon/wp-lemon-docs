@@ -76,8 +76,8 @@ _Release Date - 29 september 2023_
     -   PHP - Only add rewrite rules to team post type if the post type has a detail page activated.
     -   JS - Activated mousewheel/touchpad scroll for Carousel blocks.
 -   🐛 **Bugs Fixed**
-    -   JS - Fixed a bug in hidePagination function were it would thow an error when no pagination was found.
-    -   PHP - Fixed a bug where phone formatting would be cached too agressively
+    -   JS - Fixed a bug in hidePagination function were it would throw an error when no pagination was found.
+    -   PHP - Fixed a bug where phone formatting would be cached too aggressively
     -   SCSS - Fixed a bug where ACF blocks in the backend would render as grid elements because classes get applied to two elements.
 
 ## 4.8.1:
@@ -130,7 +130,7 @@ _Release Date - 28 august 2023_
     -   Please update `"apiVersion": 2` to `"apiVersion": 3` in all your block.json files to use the new editor rendering mode.
 -   💡 **Newly added**
     -   Updated compatibility with WordPress 6.3
-    -   Basebuilder now generates a palette.json file seperately of the theme.json which gets merged by `WP_Lemon\Controllers\Theme\theme_json_merge_palette_json` this way its easier to make changes to your theme.json file without exiting watch mode.
+    -   Basebuilder now generates a palette.json file separately of the theme.json which gets merged by `WP_Lemon\Controllers\Theme\theme_json_merge_palette_json` this way its easier to make changes to your theme.json file without exiting watch mode.
 -   🐛 **Bugs Fixed**
     -   Fixed a bug were oembeds weren't rendered in `block_template_part()`.
     -   Fixed a bug where the analytics ajax call would render the wrong codes for the body call.
@@ -169,7 +169,7 @@ _Release Date - 18 july 2023_
     -   Css classes for the old faq/faq-item / new accordion/accordion-item are now also changes after the change in 4.0. If you have custom styling for the accordion block, please check/rename your classes.
     -   Swiper is updated to 10.0, please update swiper in your package.json and read the following [Migration guide](https://swiperjs.com/migration-guide-v10#modules-imports) if you have custom swipers
 -   🐛 **Bugs Fixed**
-    -   Accordion block: Fixed a bug where multiple accordeon items could be extended at the same time.
+    -   Accordion block: Fixed a bug where multiple accordion items could be extended at the same time.
     -   Fluent form filter renamed to be compatible with Fluent Forms 5.0
 -   ✨ **Enhanced**
     -   Rework of scss imports to move partials out of settings and into their proper folders. This is a work in progress.
@@ -189,7 +189,7 @@ _Release Date - 07 july 2023_
     -   Backend scss section css fix.
 -   ✨ **Enhanced**
     -   Rework of the format_phone_number() function to cache the number results but not the actual output.
-    -   Rework of scss icons. The icons are now loaded as a css variable and all the scss variables are added to a map that generated the clases.
+    -   Rework of scss icons. The icons are now loaded as a css variable and all the scss variables are added to a map that generated the classes.
 
 ## 4.3.4:
 
@@ -249,7 +249,7 @@ _Release Date - 15 june 2023_
 
 -   💡 **Newly added**
     -   Added statistics script setting in customizer to add scripts that do not need consent.
-    -   Push consentGiven event to datalayer for tag manager intergration.
+    -   Push consentGiven event to datalayer for tag manager integration.
     -   Added datalayer search tracking when properly setup.
 -   ✨ **Enhanced**
     -   Reworked cookiebar messages
@@ -270,7 +270,7 @@ _Release Date - 07 june 2023_
 _Release Date - 06 june 2023_
 
 -   💡 **Newly added**
-    -   added filter so all acf/oembed fields are wrapped in boostrap responsive class.
+    -   added filter so all acf/oembed fields are wrapped in bootstrap responsive class.
     -   Updated to Bootstrap 5.3, please update the dependency in your child theme as well.
     -   Added filter to modify 'skip links'.
 -   🪦 **Deprecated**
