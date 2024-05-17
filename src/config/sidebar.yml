@@ -34,6 +34,9 @@
       link: "/extend/acf-fields"
     - label: "Filters & Actions"
       link: "/extend/hooks"
+    - label: "Icon picker"
+      link: "/extend/icon-picker"
+
 - label: Overwrite
   items:
     - label: "Overwrite twig files"

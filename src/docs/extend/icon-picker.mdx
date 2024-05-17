@@ -1,0 +1,74 @@
+---
+title: Icon picker
+description: How to use an icon-picker in wp-lemon
+---
+
+When building a website using icons in your design is common. In wp-lemon you can easily add an icon-picker. 
+When incorporating the icon-picker you and/or your client can easily select icons and use them in the website. 
+Now how do we go about doing this?
+
+## Installation and set-up
+### Install & activate icon plugin
+First, you'll need to install and activate the icon plugin provided by WordPress. 
+You can do this by running `composer require houke/acf-icon-picker` in the root directory.
+Once that is finished, navigate to the plugin list in WP Admin. Here, you'll find the plugin "Advanced Custom Fields: Icon Picker". 
+Once you find it, activate it.
+
+### Create folder and add your icons
+We want to keep all our icons in one place, therefore you can create a new folder in the `resources` directory. 
+We'll call this new folder: `icons`.
+In this new icons folder you can add all your icons.
+
+### Optimize your svg's
+Even tho your icons will work fine this way, we strongly advice you to optimize your svg's. 
+We prefer using only outlines our svg's, instead of for example paths. 
+We found that only using outlines adds constistency and the icons scale better. 
+Additionally, it will be easier to style your icons later on. 
+
+A popular tool to convert your svg's with is Adobe Illustrator, but you can use whichever tool works best for you!
+
+### Remove colors
+You'll also want to remove all inline colors in your svg's. To stay consistent and use best practices we 
+want to do all the styling in one place so it will be easier to maintain the code.
+
+## Using your icons 
+### Icon field
+If you're building a custom block for example and want to add an icon picker to the block, 
+you'll need to add a field to the fieldgroup like so:
+
+``` php
+
+$this->registered_fields
+->addField(
+	'icon', // field name,
+	'icon-picker', // field type, do not change
+	[
+		'label'               => _x('Icon', 'Block field label', 'wp-lemon-child'),
+		'wpml_cf_preferences' => 1,
+	]
+);
+
+```
+
+With this field added to the fieldgroup you'll now find the icon picker in your wordpress editor.
+
+### Placing your icons 
+If you want to use your icons in your twig file you can do so by using our build in function `get_svg_icon('icon-name')`.
+
+Please note that the icon field will return a list of icons. 
+To use it in your Twig file, you'll need to loop through it as follows:
+
+``` php
+
+    {% for item in fields.icons %}
+    <div class="icons">
+        <div class="icons__icon">{{ get_svg_icon(item.icon) }}</div>
+    </div>
+{% endfor %}
+
+
+```
+You can also place your icons in PHP using the function `WP_Lemon\API\get_svg_icon('icon-name')`.
+
+
+
