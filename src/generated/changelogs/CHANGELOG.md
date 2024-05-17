@@ -1,3 +1,11 @@
+## 5.12.2 - 15 May 2024
+
+### 🐛 Bug Fixes
+
+- Fix text direction in timeline cards
+- Fix shortcode defaults assignment in get_fluent_form function
+- Refactor remove_generated_webp function for better readability and error handling
+
 ## 5.12.1 - 08 May 2024
 
 ### ⛰️ Features

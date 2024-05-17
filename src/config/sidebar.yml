@@ -83,5 +83,5 @@
       link: "https://getbootstrap.com/docs/5.3/getting-started/introduction/"
 - label: Docs software
   items:
-    - label: "Github"
+    - label: "GitHub"
       link: "https://github.com/rocketseat/gatsby-themes"
