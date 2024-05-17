@@ -16,5 +16,5 @@ jobs:
             - name: Use custom config file
               uses: crate-ci/typos@master
               with:
-                  config: ./build/typos.toml
+                  config: ./typos.toml
                   write_changes: true
