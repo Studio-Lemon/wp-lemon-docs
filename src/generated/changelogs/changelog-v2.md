@@ -93,7 +93,7 @@ _Release Date - 1 november 2021_
     -   New next_post() function to navigate to the next post in that particular posttype
     -   Updated e-mail and phone icon.
 -   ✨ **Enhanced**
-    -   Updated scss for beter compat with dart-sass 2.0
+    -   Updated scss for better compat with dart-sass 2.0
     -   Updated dev dependencies
     -   Linted a lot of PHP files
     -   Slide-banner blocks can now only be placed inside a slider.
@@ -176,7 +176,7 @@ _Release Date - 30 September 2021_
 -   ✨ **Enhanced**
     -   Better lazyload picture element.
     -   Better content card block defaults.
-    -   Don't load anayltics on production
+    -   Don't load analytics on production
     -   Add WordPress ENV global to the context.
 
 ### 2.17.9:
@@ -201,7 +201,7 @@ _Release Date - 17 September 2021_
     -   node overview/latest blocks ➡️ Render proper images based on col size.
 -   🐛 **Bugs Fixed**
     -   single-job.twig ➡️ remove meta div when no content is rendered inside.
-    -   a11y functionality ➡️ This is now succesfully rendered once more.
+    -   a11y functionality ➡️ This is now successfully rendered once more.
     -   Node overview block ➡️ Images now render correctly in backend.
     -   Widget editor screen ➡️ fixes notice
 
@@ -264,7 +264,7 @@ _Release Date - 27 july 2021_
 _Release Date - 23 july 2021_
 
 -   ⛏️ **Breaking**
-    -   javascript function lazyLoad is now called lazyLoadFunc. If you have custom javascript plugging into this function, please rename acordingly.
+    -   javascript function lazyLoad is now called lazyLoadFunc. If you have custom javascript plugging into this function, please rename accordingly.
     -   Lemon blocks plugin updated to 1.2.2. Please update manually.
 -   🐛 **Bugs Fixed**
     -   Fixed: missing call button
@@ -722,7 +722,7 @@ _Release Date - 25 april 2021_
 -   ⛏️ **Breaking**
     -   Moved Site_icons class to Bulldozer. [Please check docs](https://studio-lemon.github.io/wp-lemon-docs/basics/favicons-manifest) on how to update.
 -   🐛 **Bugs Fixed**
-    -   Fixed a bug where the nav items would be too hight in mobile menu.
+    -   Fixed a bug where the nav items would be too high in mobile menu.
     -   Minor archive fixes
 -   📦 **Updated dependencies**
 
@@ -779,7 +779,7 @@ _Release Date - 17 march 2021_
 -   🐛 **Bugs Fixed**
     -   Fixed a few w3.org errors and warnings
     -   Fix ie11 bug
-    -   Add padding to full alligned media-text blocks back
+    -   Add padding to full aligned media-text blocks back
 
 ### 2.3.0:
 
@@ -800,7 +800,7 @@ _Release Date - 10 march 2021_
     -   You are now able to overwrite the card title
     -   You can now completely disable a picture inside a card.
     -   Better latest items query
-    -   Archive id is now overwriteable in archive-loop.twig
+    -   Archive id is now overwritable in archive-loop.twig
     -   Enhanced ajax archive
 
 ### 2.2.3:
@@ -819,7 +819,7 @@ _Release Date - 02 march 2021_
     -   Remove unused customizer fields.
     -   Fix archive query bug when using categories.
     -   Fall back to default bootstrap navwalker.
-    -   Sevaral html fixes for ie11
+    -   Several html fixes for ie11
     -   Proper image sizes now gets loaded in crd-wrap.twig
     -   Customizer analytics fix.
 

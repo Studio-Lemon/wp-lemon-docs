@@ -20,7 +20,7 @@
 
 ### ⛰️ Features
 
--   **breaking**: Everything related to Woocommerce will slowly be moved to a separate plugin. This is the first step in that direction. You can add `composer require satispress/lemon-woo` to make the switch to this new feature plugin. Use the css variables to overwrite the given css. You can also safely remove all logic involving the Woocommerce cart. This will be handled by the new plugin. Please submit issues at the [Github repository](https://github.com/Studio-Lemon/lemon-woo/issues) if you encounter any problems.
+-   **breaking**: Everything related to Woocommerce will slowly be moved to a separate plugin. This is the first step in that direction. You can add `composer require satispress/lemon-woo` to make the switch to this new feature plugin. Use the css variables to overwrite the given css. You can also safely remove all logic involving the Woocommerce cart. This will be handled by the new plugin. Please submit issues at the [GitHub repository](https://github.com/Studio-Lemon/lemon-woo/issues) if you encounter any problems.
 
 ### 🐛 Bug Fixes
 
@@ -232,7 +232,7 @@
 -   _(php/css)_ [**breaking**] More consistent archive classes in menu:
     current-active-archive renamed to is-archive--active
     archive-{{name}} renamed to is-archive--{{name}}
-    additional class is-arhive added
+    additional class is-archive added
 
 BREAKING CHANGE: classes have been changed, please check your codebase if you rely on these classes and if so, change accordingly.
 
@@ -320,7 +320,7 @@ BREAKING CHANGE: classes have been changed, please check your codebase if you re
 -   Update cookiebar.js to use api function trigger() to dispatch cookiebar events.
 -   Update packages
 -   Update phpcs version
--   Use suppored version of prettier melody
+-   Use supported version of prettier melody
 
 ## 5.3.2 - 29 December 2023
 
@@ -344,7 +344,7 @@ BREAKING CHANGE: classes have been changed, please check your codebase if you re
 ### 🐛 Bug Fixes
 
 -   _(php)_ On vanilla wp, only show license notice when noindex is false
--   _(ci)_ Fix Github actions
+-   _(ci)_ Fix GitHub actions
 
 ## 5.3.0 - 18 December 2023
 
