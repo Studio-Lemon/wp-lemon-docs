@@ -22,3 +22,4 @@ extend-ignore-re = [
 # Typos
 "Github" = "GitHub"
 "Wordpress" = "WordPress"
+"wordpress" = "WordPress"
