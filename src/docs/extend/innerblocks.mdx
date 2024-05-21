@@ -84,7 +84,7 @@ We did this like so:
 			['acf/content-card'],
 		];
 
-		$allowed_blocks = apply_filters('wp-lemon/filter/block/card-grid/allowed-blocks', ['acf/content-card', 'acf/image-card', 'acf/price-card']);
+		$allowed_blocks = ['acf/content-card', 'acf/image-card', 'acf/price-card'];
 
 		$args = [
 			'InnerBlocks' => self::create_inner_blocks($allowed_blocks, $template),
