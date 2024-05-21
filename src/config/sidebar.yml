@@ -36,6 +36,9 @@
       link: "/extend/hooks"
     - label: "Icon picker"
       link: "/extend/icon-picker"
+    - label: "Special pages"
+      link: "/extend/special-pages"
+
 
 - label: Overwrite
   items:

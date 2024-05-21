@@ -1,0 +1,50 @@
+---
+title: Special pages
+description: How and why to use an special pages in wp-lemon
+---
+
+## Why use special pages 
+1. Links willen nog eens stuk gaan, je klant kan klooien met de pagina's waardoor een pagina ID bijvoorbeeld 
+niet meer werkt of simpel weg de verkeerde link selecteren of een link volledig vergeten toe te voegen aan de button.
+2. Het is voor belangrijke pagina's die cruciaal zijn voor een website. 
+
+## How to create your own special page
+1. create in hooks.php
+2. select in cms
+
+```php
+/**
+ * Add special pages
+ *
+ * For banking page follow the @see
+ * @see 
+ * @param [type] $pages
+ * @return void
+ */
+function special_pages($pages)
+{
+   $pages['open_application'] = esc_html__('Open application', 'wp-lemon-child');
+   $pages['bank_page']        = esc_html__('Bank page', 'wp-lemon-child');
+
+   return $pages;
+}
+add_filter('wp-lemon/filter/special-pages', __NAMESPACE__ . '\\special_pages');
+```
+
+![afbeelding](https://github.com/Studio-Lemon/wp-lemon-docs/assets/17764157/43a4daa0-6389-4589-98a3-5b95552435f1)
+
+
+## How to use it in your code base
+1. Simpel voorbeeld in twig
+2. Voorbeeld wanneer je het in je controller laag wilt gebruiken
+
+```twig
+ <a href="{{ pages.open_application.link }}" class="theme-button">
+   Apply here
+</a>
+```
+
+```php
+$pages = WP_Lemon_Site::get_site_information('pages');
+$special_page = $pages['my_special_page'];
+```
