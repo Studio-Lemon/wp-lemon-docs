@@ -1,4 +1,4 @@
-# WP\_Lemon\_Site
+# WP_Lemon_Site
 
 You will be able to retrieve this information from the context in your twig files or in your php files under the global $context variable.
 
@@ -10,22 +10,21 @@ You will be able to retrieve this information from the context in your twig file
 
 <div class="table-methods">
 
-| Name | Return Type | Summary/Returns |
-| --- | --- | --- |
-| <span class="method-name">[add_site_information()](#add_site_information)</span> | <span class="method-type"></span> | <span class="method-description">Static method to add site information from wherever you want.</span> |
-| <span class="method-name">[extend_site_information()](#extend_site_information)</span> | <span class="method-type">`array`</span> | <span class="method-description">This is the main method that is overriden by the child-site class.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> $context The updated Timber context.</span></span> |
-| <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get archive information ofr singular item.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['title', 'url']</span></span> |
-| <span class="method-name">[get_site_information()](#get_site_information)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get specific site information.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> $value     The value retrieved from the site information.</span></span> |
-| <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type"></span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
+| Name                                                                                   | Return Type                                         | Summary/Returns                                                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <span class="method-name">[add_site_information()](#add_site_information)</span>       | <span class="method-type"></span>                   | <span class="method-description">Static method to add site information from wherever you want.</span>                                                                                                                                        |
+| <span class="method-name">[extend_site_information()](#extend_site_information)</span> | <span class="method-type">`array`</span>            | <span class="method-description">This is the main method that is overridden by the child-site class.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> $context The updated Timber context.</span></span> |
+| <span class="method-name">[get_archive_page()](#get_archive_page)</span>               | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get archive information of singular item.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['title', 'url']</span></span>                                      |
+| <span class="method-name">[get_site_information()](#get_site_information)</span>       | <span class="method-type">`mixed`</span>            | <span class="method-description">Get specific site information.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> $value The value retrieved from the site information.</span></span>                     |
+| <span class="method-name">[is_post_type()](#is_post_type)</span>                       | <span class="method-type"></span>                   | <span class="method-description">Check if the current post type is one of the given post types.</span>                                                                                                                                       |
 
 </div>
 
-
 ## Class Methods
 
-### extend\_site\_information()
+### extend_site_information()
 
-This is the main method that is overriden by the child-site class.
+This is the main method that is overridden by the child-site class.
 
 Everything returned from this method will be added to the site information if the key does not exist yet.
 
@@ -48,7 +47,7 @@ function extend_site_information(): array
 
 ---
 
-### is\_post\_type()
+### is_post_type()
 
 Check if the current post type is one of the given post types.
 
@@ -56,8 +55,8 @@ Check if the current post type is one of the given post types.
 
 `is_post_type( string|array $post_type )`
 
-| Name | Type | Description |
-| --- | --- | --- |
+| Name       | Type                | Description                     |
+| ---------- | ------------------- | ------------------------------- |
 | $post_type | `string` or `array` | The post type to check against. |
 
 Example usage:
@@ -72,7 +71,7 @@ if (self::is_post_type(['example', 'example2'])) {
 
 ---
 
-### add\_site\_information()
+### add_site_information()
 
 Static method to add site information from wherever you want.
 
@@ -82,10 +81,10 @@ This method is internally used to check if the key already exists before adding 
 
 `add_site_information( string $key, mixed $value )`
 
-| Name | Type | Description |
-| --- | --- | --- |
-| $key | `string` | The key under which this context can be accessed. |
-| $value | `mixed` | The value to be added to the context. |
+| Name   | Type     | Description                                       |
+| ------ | -------- | ------------------------------------------------- |
+| $key   | `string` | The key under which this context can be accessed. |
+| $value | `mixed`  | The value to be added to the context.             |
 
 Example usage:
 
@@ -101,7 +100,7 @@ protected function my_custom_method() {
 
 ---
 
-### get\_site\_information()
+### get_site_information()
 
 Get specific site information.
 
@@ -109,17 +108,17 @@ Get specific site information.
 
 `get_site_information( string $key )`
 
-**Returns:** `mixed` $value     The value retrieved from the site information.
+**Returns:** `mixed` $value The value retrieved from the site information.
 
-| Name | Type | Description |
-| --- | --- | --- |
+| Name | Type     | Description                                       |
+| ---- | -------- | ------------------------------------------------- |
 | $key | `string` | The key under which this context can be accessed. |
 
 ---
 
-### get\_archive\_page()
+### get_archive_page()
 
-Get archive information ofr singular item.
+Get archive information of singular item.
 
 When a page is set as the archive page for a post type, this method will return the title and url of that page.
 
@@ -127,8 +126,8 @@ When a page is set as the archive page for a post type, this method will return 
 
 **Returns:** `array|false` Contains ['title', 'url']
 
-| Name | Type | Description |
-| --- | --- | --- |
+| Name       | Type               | Description                                      |
+| ---------- | ------------------ | ------------------------------------------------ |
 | $post_type | `string` or `null` | Use this post type instead of current post type. |
 
 Example usage:
@@ -143,4 +142,3 @@ public function block_context($context): array {
 ```
 
 ---
-

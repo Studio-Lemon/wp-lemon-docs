@@ -1,10 +1,32 @@
+## 5.13.0 - 22 May 2024
+
+### ⛰️ Features
+
+-   _(block)_ Accordion now has a setting to choose heading level of sub-items
+-   _(php)_ Enhanced output of taxonomy_post_collection collection, see documentation for more information
+-   _(block)_ Use enhanced output of taxonomy_post_collection() function to give understandable warnings when using the list view in the FAQ overview block and the categories or items are empty.
+-   New textarea_to_array (timber) API function
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Fix regression in block alignment in backend
+-   _(css)_ Update WP gallery styles for logo style and responsive columns
+-   _(css)_ Fix buttons being styled in footer
+
+### ⚙️ Miscellaneous Tasks
+
+-   _(lang)_ Update translations
+-   Run phpstan
+-   Run spellchecker and fix typos in codebase
+-   Add typos spellchecker
+
 ## 5.12.2 - 15 May 2024
 
 ### 🐛 Bug Fixes
 
-- Fix text direction in timeline cards
-- Fix shortcode defaults assignment in get_fluent_form function
-- Refactor remove_generated_webp function for better readability and error handling
+-   Fix text direction in timeline cards
+-   Fix shortcode defaults assignment in get_fluent_form function
+-   Refactor remove_generated_webp function for better readability and error handling
 
 ## 5.12.1 - 08 May 2024
 
