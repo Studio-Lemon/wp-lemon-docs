@@ -2,31 +2,28 @@
 title: Special pages
 description: How and why to use an special pages in wp-lemon
 ---
+Special pages is a feature in wp-lemon to make it easier to store and then access crucial pages in your codebase of your website by creating a field in the customizer to select a page as a specific special page. Prior to this feature you could link to pages via the page ID or hardcoding the link in the codebase.
 
-## What are special pages?
-In our website we van register and store special pages. But what would you classify as a special page? 
+But this method is prone to errors because pages can be renamed or deleted and thus the hardcoded link or page ID would be invalid.
+
+## Examples of special pages
+But what would you classify as a special page? 
+
 As it's in the name, we use this method for pages that are 'special', or crucial for the website. 
-Good examples of pages that are commonly defined as 'special pages' 
-within a website are the login and registration pages, 
-in case of a e-commerce site the special page could be the check-out page.
-
-## Why use special pages?
-Links and page IDs are sensitive to error and there could be a dozen of reasons that could make a link break.
-By marking a page a special page we create a link we can access globally in the backend. 
-This will make the link easier and safer to use.
-
+Good examples of pages that are commonly defined as 'special pages' within a website are custom registration pages, crucial forms or landing pages that are cornerstone content for a brand/website.
 
 ## Creating your own special page
-To Create your own special page you'll firstly need to add it in the `hooks.php` file like so:
+To manage your own special page you'll first need to register it the `hooks.php` file like so:
 
 ```php
 /**
  * Register special pages entries.
+ *
  * This function is used to add special pages to the theme.
  * The special pages are used to store important pages in the theme.
  *
- * @param array $pages
- * @return array $pages Updated array with special pages.
+ * @param array $pages Existing special pages.
+ * @return array updated array with new registered special pages.
  */
 function special_pages($pages): array
 {
@@ -37,10 +34,13 @@ function special_pages($pages): array
 }
 add_filter('wp-lemon/filter/special-pages', __NAMESPACE__ . '\\special_pages');
 ```
+This creates a sort of "placeholder" for your special page. The key you set can be used to access to special page in the global context but only once you select a page as the special page you desire.
 
-After you've done this you can navigate to the Customizer in your cms. 
+After you've done this you can navigate to the Customizer in WordPress. 
 Under `wp-lemon > special pages` you'll now find drop down menu's with the default special pages and the ones you've just added.
 
+After you've done this you can navigate to your Customizer in your WordPress. 
+Under special pages you'll now find drop down menu's where you can select your special pages. 
 Using the code example above it will look like this:
 
 ![afbeelding](https://github.com/Studio-Lemon/wp-lemon-docs/assets/17764157/43a4daa0-6389-4589-98a3-5b95552435f1)
