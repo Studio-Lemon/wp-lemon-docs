@@ -23,8 +23,7 @@ To create your own special page you'll firstly to register it the `hooks.php` fi
 /**
  * Add special pages
  *
- * @see 
- * @param [type] $pages
+ * @param array $pages
  * @return array updated array with new registered special pages.
  */
 function special_pages($pages)
@@ -36,7 +35,7 @@ function special_pages($pages)
 }
 add_filter('wp-lemon/filter/special-pages', __NAMESPACE__ . '\\special_pages');
 ```
-
+This creates a sort of "placeholder" for your special page. The key you set can be used to access to special page in the global context but only once you select a page as the special page you desire.
 After you've done this you can navigate to your Customizer in your cms. 
 Under special pages you'll now find drop down menu's where you can select your special pages. 
 Using the code example above it will look like this:
