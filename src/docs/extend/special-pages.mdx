@@ -3,14 +3,21 @@ title: Special pages
 description: How and why to use an special pages in wp-lemon
 ---
 
-## Why use special pages 
-1. Links willen nog eens stuk gaan, je klant kan klooien met de pagina's waardoor een pagina ID bijvoorbeeld 
-niet meer werkt of simpel weg de verkeerde link selecteren of een link volledig vergeten toe te voegen aan de button.
-2. Het is voor belangrijke pagina's die cruciaal zijn voor een website. 
+## What are special pages?
+In our website we van define special pages. But what would you classify as a special page? 
+As it's in the name we use this method for pages that are 'special', or crucial for the website. 
+Good examples of pages that are commonly defined as 'special pages' 
+within a website are the login and registration pages, 
+in case of a e-commerce site the special page could be the check-out page.
 
-## How to create your own special page
-1. create in hooks.php
-2. select in cms
+## Why use special pages?
+Links are sensitive to error and there could be a dozen of reasons that could make a link break.
+By making a page a special page we create a link we can acces globally in the backend. 
+This will make the link easier and safer to use.
+
+
+## Creating your own special page
+To Create your own special page you'll firstly need to add it in the `hooks.php` file like so:
 
 ```php
 /**
@@ -31,18 +38,24 @@ function special_pages($pages)
 add_filter('wp-lemon/filter/special-pages', __NAMESPACE__ . '\\special_pages');
 ```
 
+After you've done this you can navigate to your customizer in your cms. 
+Under special pages you'll now find drop down menu's where you can select your special pages. 
+Using the code example above it will look like this:
+
 ![afbeelding](https://github.com/Studio-Lemon/wp-lemon-docs/assets/17764157/43a4daa0-6389-4589-98a3-5b95552435f1)
 
 
-## How to use it in your code base
-1. Simpel voorbeeld in twig
-2. Voorbeeld wanneer je het in je controller laag wilt gebruiken
+## Using special pages in your code base
+Now you're all set up you can start using it in your website. The most common way to use it is in your twig file.
+Again elaborating on the examples above you can do this like so:
 
 ```twig
  <a href="{{ pages.open_application.link }}" class="theme-button">
    Apply here
 </a>
 ```
+
+I you want to use it in you controller layer for any reason you can use it like this in you php files:
 
 ```php
 $pages = WP_Lemon_Site::get_site_information('pages');
