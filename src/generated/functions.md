@@ -8,7 +8,7 @@
 | <span class="method-name">[cache_clearer()](#cache_clearer)</span>                         | <span class="method-type">`void`</span>                | <span class="method-description">Cache clearer for spinupwp and wp-rocket.</span>                                                                                                                                                              |
 | <span class="method-name">[format_phone_number()](#format_phone_number)</span>             | <span class="method-type">`string[]` or `false`</span> | <span class="method-description">Function to format phone numbers throughout our template.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with information about the phone number.</span></span> |
 | <span class="method-name">[get_archive_page()](#get_archive_page)</span>                   | <span class="method-type">`int` or `false`</span>      | <span class="method-description">Checks if posttype has custom page archive.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> the page id or false if not found.</span></span>                           |
-| <span class="method-name">[get_attachment_info()](#get_attachment_info)</span>             | <span class="method-type">`string[]` or `false`</span> | <span class="method-description">Get the attachment file info.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The attachment file info or false if not found.</span></span>                            |
+| <span class="method-name">[get_attachment_info()](#get_attachment_info)</span>             | <span class="method-type">`array` or `false`</span>    | <span class="method-description">Get the attachment file info.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The attachment file info or false if not found.</span></span>                            |
 | <span class="method-name">[get_fluent_form()](#get_fluent_form)</span>                     | <span class="method-type">`string`</span>              | <span class="method-description">Return a fluent form.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The html of the form.</span></span>                                                              |
 | <span class="method-name">[get_language_switcher()](#get_language_switcher)</span>         | <span class="method-type">`false` or `array`</span>    | <span class="method-description">Collects all languages and returns them as an array for twig language switcher.</span>                                                                                                                        |
 | <span class="method-name">[get_share_platforms()](#get_share_platforms)</span>             | <span class="method-type">`array`</span>               | <span class="method-description">Builds the sharing context.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array of shares that can be addressed by the share macro.</span></span>                    |
@@ -18,6 +18,7 @@
 | <span class="method-name">[is_post_type()](#is_post_type)</span>                           | <span class="method-type"></span>                      | <span class="method-description">Check if the current post type is one of the given post types.</span>                                                                                                                                         |
 | <span class="method-name">[log_message()](#log_message)</span>                             | <span class="method-type">`void`</span>                | <span class="method-description">Adds a log message to a specific log file in the website base folder.</span>                                                                                                                                  |
 | <span class="method-name">[post_type_name()](#post_type_name)</span>                       | <span class="method-type">`string` or `false`</span>   | <span class="method-description">Get singular name of a posttype.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The singular name.</span></span>                                                      |
+| <span class="method-name">[textarea_to_array()](#textarea_to_array)</span>                 | <span class="method-type">`array` or `false`</span>    | <span class="method-description">Text helper to convert a textarea to an array.</span>                                                                                                                                                         |
 
 </div>
 
@@ -143,7 +144,7 @@ This function can be used to add a specific pattern of spaces to a phone number.
 | Name     | Type     | Description                         |
 | -------- | -------- | ----------------------------------- |
 | $phone   | `string` | the phone number we want to filter. |
-| $pattern | `array`  | the spacing pattern.                |
+| $pattern | `int[]`  | the spacing pattern.                |
 
 ---
 
@@ -169,13 +170,13 @@ Builds the social context.
 
 This sets up the social content that is being used in the social buttons macro.
 
-`get_socials( array $platforms )`
+`get_socials( array<string,mixed> $platforms )`
 
 **Returns:** `array` Array of platforms that can be addressed by the share macro.
 
-| Name       | Type    | Description                                          |
-| ---------- | ------- | ---------------------------------------------------- |
-| $platforms | `array` | platforms in an order we want to output the socials. |
+| Name       | Type                  | Description                                          |
+| ---------- | --------------------- | ---------------------------------------------------- |
+| $platforms | `array<string,mixed>` | platforms in an order we want to output the socials. |
 
 ---
 
@@ -229,7 +230,7 @@ Get the attachment file info.
 
 `get_attachment_info( int|null $attachment_id )`
 
-**Returns:** `string[]|false` The attachment file info or false if not found.
+**Returns:** `array|false` The attachment file info or false if not found.
 
 | Name           | Type            | Description                            |
 | -------------- | --------------- | -------------------------------------- |
@@ -243,28 +244,48 @@ Retrieve a SVG icon.
 
 **since** 5.7.0
 
-`get_svg_icon( string $filename )`
+`get_svg_icon( string|null $filename )`
 
 **Returns:** `string|false` The svg icon or false if not found.
 
-| Name      | Type     | Description               |
-| --------- | -------- | ------------------------- |
-| $filename | `string` | The filename of the icon. |
+| Name      | Type      | Description               |
+| --------- | --------- | ------------------------- |
+| $filename | `?string` | The filename of the icon. |
+
+---
+
+### textarea_to_array()
+
+Text helper to convert a textarea to an array.
+
+This can be used to convert a textarea ACF field with line breaks to an array.
+So you don't have to create a repeater field.
+
+**since** 5.12.3
+
+`textarea_to_array( string $text )`
+
+**Returns:** `array|false`
+
+| Name  | Type     | Description |
+| ----- | -------- | ----------- |
+| $text | `string` |             |
 
 ---
 
 <div class="table-methods">
 
-| Name                                                                             | Return Type                                                                  | Summary/Returns                                                                                                                                                                                                                                                                                                                                  |
-| -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <span class="method-name">[adjacent_post_info()](#adjacent_post_info)</span>     | <span class="method-type">`array` or `false`</span>                          | <span class="method-description">Get next or previous post when available, otherwise get the first or last post.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with post id, title and url.</span></span>                                                                                         |
-| <span class="method-name">[archive_query()](#archive_query)</span>               | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Archive query that queries an x amount of posts of a specific post type.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                      |
-| <span class="method-name">[get_total_posts()](#get_total_posts)</span>           | <span class="method-type">`array`</span>                                     | <span class="method-description">Count function to use in relation with the above archive_query() Counts total amount of posts that can be queried in our ajax load more archives.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with context data to be added to the archive.twig.</span></span> |
-| <span class="method-name">[latest_items_query()](#latest_items_query)</span>     | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Context function that queries the latest x amount of posts.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                                   |
-| <span class="method-name">[next_post_info()](#next_post_info)</span>             | <span class="method-type">`array`</span>                                     | <span class="method-description">Get next post when available, otherwise get the first post.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with post id, title and url.</span></span>                                                                                                             |
-| <span class="method-name">[other_items_query()](#other_items_query)</span>       | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Context function that queries other ID's of a specific post type on a singular template.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                      |
-| <span class="method-name">[previous_post_info()](#previous_post_info)</span>     | <span class="method-type">`array`</span>                                     | <span class="method-description">Get previous post when available, otherwise get the last post.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with post id, title and url.</span></span>                                                                                                          |
-| <span class="method-name">[specific_items_query()](#specific_items_query)</span> | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Context function that queries specific ID's from a specific posttype<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                          |
+| Name                                                                                     | Return Type                                                                  | Summary/Returns                                                                                                                                                                                                                                                                                                                                  |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <span class="method-name">[adjacent_post_info()](#adjacent_post_info)</span>             | <span class="method-type">`array` or `false`</span>                          | <span class="method-description">Get next or previous post when available, otherwise get the first or last post.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with post id, title and url.</span></span>                                                                                         |
+| <span class="method-name">[archive_query()](#archive_query)</span>                       | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Archive query that queries an x amount of posts of a specific post type.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                      |
+| <span class="method-name">[get_total_posts()](#get_total_posts)</span>                   | <span class="method-type">`array`</span>                                     | <span class="method-description">Count function to use in relation with the above archive_query() Counts total amount of posts that can be queried in our ajax load more archives.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with context data to be added to the archive.twig.</span></span> |
+| <span class="method-name">[latest_items_query()](#latest_items_query)</span>             | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Context function that queries the latest x amount of posts.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                                   |
+| <span class="method-name">[next_post_info()](#next_post_info)</span>                     | <span class="method-type">`array` or `false`</span>                          | <span class="method-description">Get next post when available, otherwise get the first post.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with post id, title and url.</span></span>                                                                                                             |
+| <span class="method-name">[other_items_query()](#other_items_query)</span>               | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Context function that queries other ID's of a specific post type on a singular template.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                      |
+| <span class="method-name">[previous_post_info()](#previous_post_info)</span>             | <span class="method-type">`array` or `false`</span>                          | <span class="method-description">Get previous post when available, otherwise get the last post.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array with post id, title and url.</span></span>                                                                                                          |
+| <span class="method-name">[specific_items_query()](#specific_items_query)</span>         | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Context function that queries specific ID's from a specific posttype<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns collection of posts.</span></span>                                                                                                          |
+| <span class="method-name">[taxonomy_post_collection()](#taxonomy_post_collection)</span> | <span class="method-type">`array`</span>                                     | <span class="method-description">Returns a collection of posts based on a taxonomy and post type.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns an array with (bool) categories, (nested-array) collection, (int) amount and (string) debug.</span></span>                                      |
 
 </div>
 
@@ -274,18 +295,18 @@ Context function that queries the latest x amount of posts.
 
 Does have a $predefined_posts param to filter which post to query.
 
-`latest_items_query( string $type, int $amount = 2, array $predefined_posts = null, string $taxonomy = null, array $term_ids = null, array|bool|null $extra_args = null )`
+`latest_items_query( string $type, int $amount = 2, array $predefined_posts = null, string $taxonomy = null, int[] $term_ids = null, array<string,mixed>|bool|null $extra_args = null )`
 
 **Returns:** `\Timber\PostCollectionInterface|null` Returns collection of posts.
 
-| Name              | Type                        | Description                               |
-| ----------------- | --------------------------- | ----------------------------------------- |
-| $type             | `string`                    | which post type we want to query.         |
-| $amount           | `int`                       | Amount of posts we want to query.         |
-| $predefined_posts | `array`                     | Array with predefined post ids.           |
-| $taxonomy         | `string`                    | name of the taxonomy we want to query.    |
-| $term_ids         | `array`                     | Array of term ids which we want to query. |
-| $extra_args       | `array` or `bool` or `null` | Extra arguments we want to mix in.        |
+| Name              | Type                                      | Description                               |
+| ----------------- | ----------------------------------------- | ----------------------------------------- |
+| $type             | `string`                                  | which post type we want to query.         |
+| $amount           | `int`                                     | Amount of posts we want to query.         |
+| $predefined_posts | `array<string,mixed>`                     | Array with predefined post ids.           |
+| $taxonomy         | `string`                                  | name of the taxonomy we want to query.    |
+| $term_ids         | `int[]`                                   | Array of term ids which we want to query. |
+| $extra_args       | `array<string,mixed>` or `bool` or `null` | Extra arguments we want to mix in.        |
 
 ---
 
@@ -389,7 +410,11 @@ Get next post when available, otherwise get the first post.
 
 `next_post_info( string|null $orderby = null )`
 
-**Returns:** `array` Array with post id, title and url.
+**Returns:** `array|false` Array with post id, title and url.
+
+| Name     | Type               | Description                      |
+| -------- | ------------------ | -------------------------------- |
+| $orderby | `string` or `null` | Orderby parameter for the query. |
 
 | Name     | Type               | Description                      |
 | -------- | ------------------ | -------------------------------- |
@@ -405,7 +430,54 @@ Get previous post when available, otherwise get the last post.
 
 `previous_post_info( string|null $orderby = null )`
 
-**Returns:** `array` Array with post id, title and url.
+**Returns:** `array|false` Array with post id, title and url.
+
+| Name     | Type               | Description                      |
+| -------- | ------------------ | -------------------------------- |
+| $orderby | `string` or `null` | Orderby parameter for the query. |
+
+---
+
+### taxonomy_post_collection()
+
+Returns a collection of posts based on a taxonomy and post type.
+
+Use the 'collection' key to first loop through the main categories which holds
+name, slug, id, description and posts and then run a nested loop through the posts.
+
+```twig
+<nav class="post-overview__nav">
+    {% for category in post.collection %}
+        <a class="post-overview__navbtn" href="#{{ category.slug }}">{{ category.name }}</a>
+    {% endfor %}
+</nav>
+<div class="post-overview__content">
+    {% for category in faqs.collection %}
+        <div class="post-overview__category" id="{{ category.slug }}">
+            <h2 class="post-overview__categorytitle">{{ category.name }}</h2>
+            <div class="post-overview__categorycontent row archive-content">
+                {% set index = 1 %}
+                {% for post in category.posts %}
+                    {% set index = index == 3 + 1 ? 1 : index %}
+                    {% set delay = 100 * index %}
+                    {% include ['components/cards/crd-' ~ card_type ~ '.twig', 'components/cards/crd-default.twig'] %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+```
+
+**since** 4.9.0
+
+`taxonomy_post_collection( string $taxonomy, string $post_type )`
+
+**Returns:** `array` Returns an array with (bool) categories, (nested-array) collection, (int) amount and (string) debug.
+
+| Name       | Type     | Description             |
+| ---------- | -------- | ----------------------- |
+| $taxonomy  | `string` | The taxonomy to query.  |
+| $post_type | `string` | The post type to query. |
 
 | Name     | Type               | Description                      |
 | -------- | ------------------ | -------------------------------- |

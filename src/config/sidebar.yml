@@ -38,6 +38,8 @@
       link: "/extend/icon-picker"
     - label: "Special pages"
       link: "/extend/special-pages"
+    - label: "Innerblocks"
+      link: "/extend/innerblocks"
 
 
 - label: Overwrite
