@@ -1,0 +1,125 @@
+---
+title: Customizer fields
+description: How and why to use an customizer fields in wp-lemon
+---
+
+## What are customizer fields?
+Customizer fields in WordPress refer to the settings and controls available in the WordPress Customizer.
+The Customizer is an integral part of WordPress, providing a user-friendly interface for adjusting various 
+aspects of your website without requiring any coding knowledge. 
+You can imagine that this is really usefull for your clients.
+Now, with wp-lemon you can easily add your own customizer fields.
+
+In the code example we've used a bit further down in the documentation you can see what kind of use cases it could be used for.
+
+## Customizer fields in wp-lemon
+1. aanmaken bestand
+2. veld section aanmaken. velden aanmaken met setting en control
+3. in twig bestan een customizer valie ophalen met get_theme_mod(stt)
+
+``` php
+
+<?php
+
+/**
+ *Customizer
+ *
+ * @package WordPress
+ * @subpackage WP_Lemon\Child
+ */
+
+namespace WP_Lemon\Child\Models;
+
+/**
+ * Register customizer fields via native api.
+ *
+ * @param object $wp_customize  The cutomizer object we are going to extend.
+ * @return void
+ */
+function customize_register($wp_customize)
+{
+   $wp_customize->add_section(
+      'uibt',
+      [
+         'title'       => esc_attr_x('United', 'Backend - Customizer section title', 'wp-lemon'),
+         'priority'    => 50,
+         'description' => esc_attr_x('Uited custom features.', 'Backend - Customizer section description', 'wp-lemon'),
+      ]
+   );
+
+   $wp_customize->add_setting(
+      'address',
+      [
+         'validate_callback' => '',
+         'sanitize_callback' => 'wp_kses_post',
+      ]
+   );
+
+   $wp_customize->add_control(
+      'address',
+      [
+         'label'       => _x('Address', 'Backend - Customizer field label', 'wp-lemon-child'),
+         'section'     => 'uibt',
+         'type'        => 'textarea',
+      ]
+   );
+
+
+   // add url customizer field
+   $wp_customize->add_setting(
+      'banking_url',
+      [
+         'validate_callback' => '',
+         'sanitize_callback' => 'esc_url_raw',
+      ]
+   );
+
+   $wp_customize->add_control(
+      'banking_url',
+      [
+         'label'       => _x('Banking URL', 'Backend - Customizer field label', 'wp-lemon-child'),
+         'section'     => 'uibt',
+         'type'        => 'url',
+      ]
+   );
+
+   $wp_customize->add_setting(
+      'disclaimer',
+      [
+         'validate_callback' => '',
+         'sanitize_callback' => 'wp_kses_post',
+      ]
+   );
+
+   $wp_customize->add_control(
+      'disclaimer',
+      [
+         'label'       => _x('Disclaimer footer text', 'Backend - Customizer field label', 'wp-lemon-child'),
+         'section'     => 'uibt',
+         'type'        => 'textarea',
+      ]
+   );
+
+   $wp_customize->add_setting(
+      'cookiebar_text',
+      [
+         'validate_callback' => '',
+         'sanitize_callback' => 'wp_kses_post',
+      ]
+   );
+
+   $wp_customize->add_control(
+      'cookiebar_text',
+      [
+         'label'       => _x('Cookiebar text', 'Backend - Customizer field label', 'wp-lemon-child'),
+         'section'     => 'uibt',
+         'type'        => 'textarea',
+      ]
+   );
+}
+add_action('customize_register', __NAMESPACE__ . '\\customize_register');
+
+
+```
+
+[Link naar extra documentatie](https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls)
