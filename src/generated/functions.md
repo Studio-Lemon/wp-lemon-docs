@@ -416,6 +416,10 @@ Get next post when available, otherwise get the first post.
 | -------- | ------------------ | -------------------------------- |
 | $orderby | `string` or `null` | Orderby parameter for the query. |
 
+| Name     | Type               | Description                      |
+| -------- | ------------------ | -------------------------------- |
+| $orderby | `string` or `null` | Orderby parameter for the query. |
+
 ---
 
 ### previous_post_info()
@@ -474,6 +478,10 @@ name, slug, id, description and posts and then run a nested loop through the pos
 | ---------- | -------- | ----------------------- |
 | $taxonomy  | `string` | The taxonomy to query.  |
 | $post_type | `string` | The post type to query. |
+
+| Name     | Type               | Description                      |
+| -------- | ------------------ | -------------------------------- |
+| $orderby | `string` or `null` | Orderby parameter for the query. |
 
 ---
 
