@@ -1,3 +1,14 @@
+## 5.14.1 - 31 May 2024
+
+### 🐛 Bug Fixes
+
+-   _(php)_ Remove open call dir from file paths
+
+### ⚙️ Miscellaneous Tasks
+
+-   _(php)_ stronger typing for phpstan
+-   Lint files
+
 ## 5.14.0 - 31 May 2024
 
 ### ⛰️ Features
