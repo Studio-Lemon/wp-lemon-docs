@@ -1,3 +1,34 @@
+## 5.14.0 - 31 May 2024
+
+### ⛰️ Features
+
+-   _(css)_ contact-buttons are now focusable and have an aria-label
+-   _(php)_ Start introducing named template locations. We will continue on this in upcoming releases.
+-   _(php)_ Fix exception message in get_site_information method
+-   _(css)_ use css gap instead of margin for footer menu items and icon lists
+
+### 🐛 Bug Fixes
+
+-   _(backend)_ Report proper version of Timber on the license page
+-   _(php)_ Set default heading level to 'h3' in Accordion_Item_Block class
+-   _(js)_ Disallow smooth scroll on Woocommerce anchors
+-   _(css)_ Add gap between items in footer menu
+
+### 🚜 Refactor
+
+-   _(css)_ Improve focus styles for elements
+-   _(php)_ Refactor Generic_Ajax_Query class for better code organization and encapsulation
+
+### 📚 Documentation
+
+-   _(php)_ Return correct docblock class in log_error_message
+
+### ⚙️ Miscellaneous Tasks
+
+-   _(css)_ Lint css files
+-   Update npm dependencies and configuration files
+-   Update translations
+
 ## 5.13.0 - 22 May 2024
 
 ### ⛰️ Features

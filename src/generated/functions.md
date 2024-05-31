@@ -63,15 +63,15 @@ You can use this function in your classes and functions to log errors and other 
 
 **since** 3.19.5
 
-`log_message( string $prefix, string|array|object|null|bool|\WP_Lemon\API\WP_Error $message, string $filename = 'application' )`
+`log_message( string $prefix, string|array|object|null|bool|\WP_Error $message, string $filename = 'application' )`
 
 **Returns:** `void`
 
-| Name      | Type                                                                            | Description                    |
-| --------- | ------------------------------------------------------------------------------- | ------------------------------ |
-| $prefix   | `string`                                                                        | The prefix of the log message. |
-| $message  | `string` or `array` or `object` or `null` or `bool` or `\WP_Lemon\API\WP_Error` | The message to log.            |
-| $filename | `string`                                                                        | The filename of the log file.  |
+| Name      | Type                                                               | Description                    |
+| --------- | ------------------------------------------------------------------ | ------------------------------ |
+| $prefix   | `string`                                                           | The prefix of the log message. |
+| $message  | `string` or `array` or `object` or `null` or `bool` or `\WP_Error` | The message to log.            |
+| $filename | `string`                                                           | The filename of the log file.  |
 
 ---
 
@@ -416,10 +416,6 @@ Get next post when available, otherwise get the first post.
 | -------- | ------------------ | -------------------------------- |
 | $orderby | `string` or `null` | Orderby parameter for the query. |
 
-| Name     | Type               | Description                      |
-| -------- | ------------------ | -------------------------------- |
-| $orderby | `string` or `null` | Orderby parameter for the query. |
-
 ---
 
 ### previous_post_info()
@@ -478,10 +474,6 @@ name, slug, id, description and posts and then run a nested loop through the pos
 | ---------- | -------- | ----------------------- |
 | $taxonomy  | `string` | The taxonomy to query.  |
 | $post_type | `string` | The post type to query. |
-
-| Name     | Type               | Description                      |
-| -------- | ------------------ | -------------------------------- |
-| $orderby | `string` or `null` | Orderby parameter for the query. |
 
 ---
 
