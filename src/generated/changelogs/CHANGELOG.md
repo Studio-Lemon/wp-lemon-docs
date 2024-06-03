@@ -1,3 +1,14 @@
+## 5.15.0 - 03 June 2024
+
+### ⛰️ Features
+
+-   _(twig)_ Work on new argument structure for picture elements
+-   Continue on deprecating WooCommerce integration in wp-lemon. See release 5.12.0 for more information.
+
+### ⚙️ Miscellaneous Tasks
+
+-   Remove unneeded todo's
+
 ## 5.14.1 - 31 May 2024
 
 ### 🐛 Bug Fixes
