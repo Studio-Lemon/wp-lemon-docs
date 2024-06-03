@@ -1,3 +1,9 @@
+## 5.15.1 - 03 June 2024
+
+### 🐛 Bug Fixes
+
+- Fix twig files
+
 ## 5.15.0 - 03 June 2024
 
 ### ⛰️ Features
