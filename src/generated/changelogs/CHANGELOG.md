@@ -1,8 +1,31 @@
+## 5.16.0 - 11 June 2024
+
+### ⛰️ Features
+
+-   Allow special pages to be external links as well
+-   Added filter to set faq-related posts
+-   Add 'textarea_to_array' to Timber/Twig as a filter. This filter will convert a textarea field to an array of lines.
+
+### 🐛 Bug Fixes
+
+-   _(php)_ Fix undefined error in node-latest block
+-   _(php)_ Fix google analytics (non-tagmanager) instances not being loaded since version 5.10.0
+
+### 📚 Documentation
+
+-   Add filter documentation
+
+### ⚙️ Miscellaneous Tasks
+
+-   Fix codestyle
+-   Update translations
+-   Css fixes
+
 ## 5.15.1 - 03 June 2024
 
 ### 🐛 Bug Fixes
 
-- Fix twig files
+-   Fix twig files
 
 ## 5.15.0 - 03 June 2024
 
