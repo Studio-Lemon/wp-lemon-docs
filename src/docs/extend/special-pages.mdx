@@ -27,8 +27,18 @@ To manage your own special page you'll first need to register it the `hooks.php`
  */
 function special_pages($pages): array
 {
-   $pages['open_application'] = esc_html__('Open application', 'wp-lemon-child');
-   $pages['bank_page']        = esc_html__('Bank page', 'wp-lemon-child');
+
+   // add a new special page 
+   $pages['open_application'] = [
+      'type' => 'page',
+      'label' => esc_html__('Open application', 'wp-lemon-child'),
+   ];
+   
+   // add a new special page to an external link
+   $pages['bank_page'] = [
+      'type' => 'url',
+      'label' => esc_html__('Bank page', 'wp-lemon-child'),
+   ];
 
    return $pages;
 }
