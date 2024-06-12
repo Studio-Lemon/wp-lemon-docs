@@ -1,3 +1,9 @@
+## 5.17.0-BETA3 - 12 June 2024
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix version bumper setting correct version numbers in pre releases
+
 ## 5.17.0-BETA2 - 12 June 2024
 
 ### 🐛 Bug Fixes
