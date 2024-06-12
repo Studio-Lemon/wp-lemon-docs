@@ -1,3 +1,9 @@
+## 5.17.0-BETA1 - 12 June 2024
+
+### ⛰️  Features
+
+- Support consent mode v2 in cookiebar
+
 ## 5.16.0 - 11 June 2024
 
 ### ⛰️ Features
