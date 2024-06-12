@@ -1,3 +1,9 @@
+## 5.17.0-BETA2 - 12 June 2024
+
+### 🐛 Bug Fixes
+
+- Correct debugging
+
 ## 5.17.0-BETA1 - 12 June 2024
 
 ### ⛰️  Features
