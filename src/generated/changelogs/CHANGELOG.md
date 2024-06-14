@@ -1,20 +1,20 @@
-## 5.17.0-BETA3 - 12 June 2024
+## 5.16.1 - 14 June 2024
 
-### ⚙️ Miscellaneous Tasks
+### ⛰️ Features
 
-- Fix version bumper setting correct version numbers in pre releases
-
-## 5.17.0-BETA2 - 12 June 2024
+-   Add filter for current archive in navwalker
 
 ### 🐛 Bug Fixes
 
-- Correct debugging
+-   _(twig)_ Cards are not displaying the image anymore when set on page
+-   Fix for dynamic blocks
 
-## 5.17.0-BETA1 - 12 June 2024
+-   Fix css layout faq list
+-   Revert "fix: correct debugging"
 
-### ⛰️  Features
+This reverts commit 2e9a3a3b48bebf29df7b044cea08288bbb2cf183.
 
-- Support consent mode v2 in cookiebar
+-   Generic ajax queries several fixes for extended queries
 
 ## 5.16.0 - 11 June 2024
 
