@@ -1,3 +1,28 @@
+## 5.17.0-BETA4 - 17 June 2024
+
+### 🐛 Bug Fixes
+
+- Timeline-item set image_sizes correctly
+- fix: add delay to cookiebar consent mode
+
+## 5.17.0-BETA3 - 12 June 2024
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix version bumper setting correct version numbers in pre releases
+
+## 5.17.0-BETA2 - 12 June 2024
+
+### 🐛 Bug Fixes
+
+- Correct debugging
+
+## 5.17.0-BETA1 - 12 June 2024
+
+### ⛰️  Features
+
+- Support consent mode v2 in cookiebar
+
 ## 5.16.1 - 14 June 2024
 
 ### ⛰️ Features
