@@ -1,3 +1,17 @@
+## 5.17.0-BETA5 - 18 June 2024
+
+### ⛰️  Features
+
+- Add conditional preferences checkbox to cookiebar
+
+### 🐛 Bug Fixes
+
+- Add back context
+
+### 🚜 Refactor
+
+- Refactor the cookiebar to use localstorage
+
 ## 5.17.0-BETA4 - 17 June 2024
 
 ### 🐛 Bug Fixes
