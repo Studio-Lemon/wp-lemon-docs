@@ -1,41 +1,13 @@
-## 5.17.0-BETA5 - 18 June 2024
-
-### ⛰️ Features
-
--   Add conditional preferences checkbox to cookiebar
+## 5.16.2 - 18 June 2024
 
 ### 🐛 Bug Fixes
 
--   Add back context
-
-### 🚜 Refactor
-
--   Refactor the cookiebar to use localstorage
-
-## 5.17.0-BETA4 - 17 June 2024
-
-### 🐛 Bug Fixes
-
--   Timeline-item set image_sizes correctly
--   fix: add delay to cookiebar consent mode
-
-## 5.17.0-BETA3 - 12 June 2024
+-   Fix regression in 5.16.1 where we check the wrong variable to see if there are posts in the generic ajax query.
+-   Fix regression in 5.16.0 where special pages could sometimes not be added to context.
 
 ### ⚙️ Miscellaneous Tasks
 
--   Fix version bumper setting correct version numbers in pre releases
-
-## 5.17.0-BETA2 - 12 June 2024
-
-### 🐛 Bug Fixes
-
--   Correct debugging
-
-## 5.17.0-BETA1 - 12 June 2024
-
-### ⛰️ Features
-
--   Support consent mode v2 in cookiebar
+-   Set default show title attribute in media.twig
 
 ## 5.16.1 - 14 June 2024
 
