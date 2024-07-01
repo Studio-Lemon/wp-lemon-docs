@@ -1,3 +1,24 @@
+## 5.17.0 - 01 July 2024
+
+### ⛰️ Features
+
+-   _(acf/content-card)_ Add option to inherit a featured image from an existing post object
+-   Update Bulldozer version requirement to 5.0.0 in functions.php
+-   Introduce new @blocks directive.
+-   Remove the need for Javascript evals() which are not save.
+
+### 🐛 Bug Fixes
+
+-   _(blocks)_ Only set parent block on accordion to prevent block cache not working. This feature increases the overall speed in the editor by roughly 200% based on the amount of blocks being loaded
+-   _(php)_ Add additional check if function exists in WP_Lemon\API\get_fluent_form
+-   _(twig)_ Show correct version of installed Bulldozer version in the wp-lemon backend page
+
+### ⚙️ Miscellaneous Tasks
+
+-   Set correct block directive in timeline-item block
+-   Remove ACF json load path from parent theme since we are not using it
+-   Package updates
+
 ## 5.16.2 - 18 June 2024
 
 ### 🐛 Bug Fixes
