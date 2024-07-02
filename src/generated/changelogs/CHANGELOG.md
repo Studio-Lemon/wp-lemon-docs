@@ -1,9 +1,19 @@
+## 5.17.1 - 02 July 2024
+
+### ⛰️ Features
+
+-   Add feature to set card type per other item being loaded
+
+### 🐛 Bug Fixes
+
+-   _(content-card)_ Use addRelationship field instead of addPostObject field
+
 ## 5.17.0 - 01 July 2024
 
 ### ⛰️ Features
 
+-   **breaking** Bumped Bulldozer version requirement to 5.0.0 in functions.php, please set your Bulldozer version to ^5.0 in your root composer.json file.
 -   _(acf/content-card)_ Add option to inherit a featured image from an existing post object
--   Update Bulldozer version requirement to 5.0.0 in functions.php
 -   Introduce new @blocks directive.
 -   Remove the need for Javascript evals() which are not save.
 
