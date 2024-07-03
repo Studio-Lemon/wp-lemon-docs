@@ -1,3 +1,21 @@
+## 5.17.2 - 03 July 2024
+
+### ⛰️ Features
+
+-   _(blocks)_ In 5.17.0 we introduced a fix where the block editor will no longer add block IDs to every **newly added** block. This new extra feature will actively remove all block IDs from all blocks on that page when the item is saved in the editor and therefore improve the loading speed of the item.
+-   Keep search query in search form when searching
+-   Only add redirect rules when page is actually published
+
+### 🐛 Bug Fixes
+
+-   _(blocks)_ Removed required parameter from some fields
+
+### ⚙️ Miscellaneous Tasks
+
+-   Run the PHP generator of language files on the pre-release step automatically.
+-   Update translations
+-   Update checkout in changelog.yml
+
 ## 5.17.1 - 02 July 2024
 
 ### ⛰️ Features
@@ -19,7 +37,7 @@
 
 ### 🐛 Bug Fixes
 
--   _(blocks)_ Only set parent block on accordion to prevent block cache not working. This feature increases the overall speed in the editor by roughly 200% based on the amount of blocks being loaded
+-   _(blocks)_ Only set parent block on accordion to prevent block cache not working. This feature will speed up the loading of the block editor once unneeded block IDs are removed. This will be added in a future release. You can already activally remove all blocks by running a search and replace on the wp_post table. You can run the following regex to remove all block IDs: `/\,"id":"[a-z0-9]*"/` and leave the replace empty. **Please make sure to backup your database before running this query.**
 -   _(php)_ Add additional check if function exists in WP_Lemon\API\get_fluent_form
 -   _(twig)_ Show correct version of installed Bulldozer version in the wp-lemon backend page
 
