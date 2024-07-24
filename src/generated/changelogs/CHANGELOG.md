@@ -1,3 +1,10 @@
+## 5.17.3 - 24 July 2024
+
+### 🐛 Bug Fixes
+
+-   Bedrock 1.24 does not support getenv & putenv anymore so we now use another way to get environment variables.
+-   Fix critical error when get_latest_packagist_version couldn't fetch a version number for any reason.
+
 ## 5.17.2 - 03 July 2024
 
 ### ⛰️ Features
