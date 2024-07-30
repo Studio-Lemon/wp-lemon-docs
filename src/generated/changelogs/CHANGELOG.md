@@ -1,3 +1,27 @@
+## 5.18.0 - 30 July 2024
+
+### ⛰️ Features
+
+-   Add possibility to add additional classes to the wrapper element inside other-items.twig file
+
+### 🐛 Bug Fixes
+
+-   _(theme.json)_ Remove default fonts sizes in editor
+-   _(twig)_ Fix an issue where images would render too small when no size was being set in the context
+-   Remove unneeded .crd\_\_content div from timeline-item-card
+-   Fix a rare behavior in the format_phone_number API function where multiple () were applied when the country code (for example 31) was also somewhere else in the phonenumber.
+-   Apply proper spaces format to the now updated add_spaces_to_phonenumber function
+-   Fix(php) Enhance the add_spaces_to_phonenumber API function to now take an array in the proper order.
+
+### 📚 Documentation
+
+-   Enhance docs for timber_file_paths function/action
+
+### ⚙️ Miscellaneous Tasks
+
+-   Package updates
+-   Update dependencies
+
 ## 5.17.3 - 24 July 2024
 
 ### 🐛 Bug Fixes
