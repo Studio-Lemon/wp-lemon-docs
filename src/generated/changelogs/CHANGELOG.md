@@ -1,3 +1,20 @@
+## 5.18.1 - 31 July 2024
+
+### ⛰️ Features
+
+-   Feat : Add card type filter in node-latest and node-overview blocks
+
+### 🐛 Bug Fixes
+
+-   _(scss)_ Add css margin between share label and share items
+-   _(scss)_ Timeline card date now flows correctly
+-   Add proper class on card-grid that was missing
+-   Prevent that classes in other-items.twig will overwrite child elements
+
+### ⚙️ Miscellaneous Tasks
+
+-   Prevent media.twig from querying existing Attachment objects when they are already available.
+
 ## 5.18.0 - 30 July 2024
 
 ### ⛰️ Features
