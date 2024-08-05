@@ -1,3 +1,22 @@
+## 5.19.0 - 05 August 2024
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Timeline block css now has better defaults regarding the flowing of labels and animations
+
+### 📚 Documentation
+
+-   Rename function name to reflect what it actually does
+
+### ⚙️ Miscellaneous Tasks
+
+-   Complete removal of WooCommerce as started in 5.12.0, make sure you update to lemon-woo 1.10 or higher if you need WooCommerce functionality.
+-   Update pot file
+
+### ◀️ Revert
+
+-   Revert creation of strings.twig file since twig translator plugin now works as expected
+
 ## 5.18.1 - 31 July 2024
 
 ### ⛰️ Features
