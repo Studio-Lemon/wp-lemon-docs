@@ -1,3 +1,19 @@
+## 5.20.0 - 12 August 2024
+
+### ⛰️ Features
+
+-   Add (beta) support for consent mode v2 in Google Tag Manager. There will be a guide on the docs website soon on how to implement consent mode v2 in your tagmanager. You can enable this feature in the Customizer settings.
+-   Add conditional preferences checkbox to cookiebar
+
+### 🚜 Refactor
+
+-   Update conditional rendering for contact buttons in controller-helpers.php and contact-buttons.twig
+-   Refactor the cookiebar to use localstorage instead of cookies
+
+### 🎨 Styling
+
+-   Update button class in \_wp-buttons.scss to reflect new theme-button style
+
 ## 5.19.0 - 05 August 2024
 
 ### 🐛 Bug Fixes
