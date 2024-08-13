@@ -1,3 +1,246 @@
+## 5.20.0 - 12 August 2024
+
+### ⛰️ Features
+
+-   Add (beta) support for consent mode v2 in Google Tag Manager. There will be a guide on the docs website soon on how to implement consent mode v2 in your tagmanager. You can enable this feature in the Customizer settings.
+-   Add conditional preferences checkbox to cookiebar
+
+### 🚜 Refactor
+
+-   Update conditional rendering for contact buttons in controller-helpers.php and contact-buttons.twig
+-   Refactor the cookiebar to use localstorage instead of cookies
+
+### 🎨 Styling
+
+-   Update button class in \_wp-buttons.scss to reflect new theme-button style
+
+## 5.19.0 - 05 August 2024
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Timeline block css now has better defaults regarding the flowing of labels and animations
+
+### 📚 Documentation
+
+-   Rename function name to reflect what it actually does
+
+### ⚙️ Miscellaneous Tasks
+
+-   Complete removal of WooCommerce as started in 5.12.0, make sure you update to lemon-woo 1.10 or higher if you need WooCommerce functionality.
+-   Update pot file
+
+### ◀️ Revert
+
+-   Revert creation of strings.twig file since twig translator plugin now works as expected
+
+## 5.18.1 - 31 July 2024
+
+### ⛰️ Features
+
+-   Feat : Add card type filter in node-latest and node-overview blocks
+
+### 🐛 Bug Fixes
+
+-   _(scss)_ Add css margin between share label and share items
+-   _(scss)_ Timeline card date now flows correctly
+-   Add proper class on card-grid that was missing
+-   Prevent that classes in other-items.twig will overwrite child elements
+
+### ⚙️ Miscellaneous Tasks
+
+-   Prevent media.twig from querying existing Attachment objects when they are already available.
+
+## 5.18.0 - 30 July 2024
+
+### ⛰️ Features
+
+-   Add possibility to add additional classes to the wrapper element inside other-items.twig file
+
+### 🐛 Bug Fixes
+
+-   _(theme.json)_ Remove default fonts sizes in editor
+-   _(twig)_ Fix an issue where images would render too small when no size was being set in the context
+-   Remove unneeded .crd\_\_content div from timeline-item-card
+-   Fix a rare behavior in the format_phone_number API function where multiple () were applied when the country code (for example 31) was also somewhere else in the phonenumber.
+-   Apply proper spaces format to the now updated add_spaces_to_phonenumber function
+-   Fix(php) Enhance the add_spaces_to_phonenumber API function to now take an array in the proper order.
+
+### 📚 Documentation
+
+-   Enhance docs for timber_file_paths function/action
+
+### ⚙️ Miscellaneous Tasks
+
+-   Package updates
+-   Update dependencies
+
+## 5.17.3 - 24 July 2024
+
+### 🐛 Bug Fixes
+
+-   Bedrock 1.24 does not support getenv & putenv anymore so we now use another way to get environment variables.
+-   Fix critical error when get_latest_packagist_version couldn't fetch a version number for any reason.
+
+## 5.17.2 - 03 July 2024
+
+### ⛰️ Features
+
+-   _(blocks)_ In 5.17.0 we introduced a fix where the block editor will no longer add block IDs to every **newly added** block. This new extra feature will actively remove all block IDs from all blocks on that page when the item is saved in the editor and therefore improve the loading speed of the item.
+-   Keep search query in search form when searching
+-   Only add redirect rules when page is actually published
+
+### 🐛 Bug Fixes
+
+-   _(blocks)_ Removed required parameter from some fields
+
+### ⚙️ Miscellaneous Tasks
+
+-   Run the PHP generator of language files on the pre-release step automatically.
+-   Update translations
+-   Update checkout in changelog.yml
+
+## 5.17.1 - 02 July 2024
+
+### ⛰️ Features
+
+-   Add feature to set card type per other item being loaded
+
+### 🐛 Bug Fixes
+
+-   _(content-card)_ Use addRelationship field instead of addPostObject field
+
+## 5.17.0 - 01 July 2024
+
+### ⛰️ Features
+
+-   **breaking** Bumped Bulldozer version requirement to 5.0.0 in functions.php, please set your Bulldozer version to ^5.0 in your root composer.json file.
+-   _(acf/content-card)_ Add option to inherit a featured image from an existing post object
+-   Introduce new @blocks directive.
+-   Remove the need for Javascript evals() which are not save.
+
+### 🐛 Bug Fixes
+
+-   _(blocks)_ Only set parent block on accordion to prevent block cache not working. This feature will speed up the loading of the block editor once unneeded block IDs are removed. This will be added in a future release. You can already activally remove all blocks by running a search and replace on the wp_post table. You can run the following regex to remove all block IDs: `/\,"id":"[a-z0-9]*"/` and leave the replace empty. **Please make sure to backup your database before running this query.**
+-   _(php)_ Add additional check if function exists in WP_Lemon\API\get_fluent_form
+-   _(twig)_ Show correct version of installed Bulldozer version in the wp-lemon backend page
+
+### ⚙️ Miscellaneous Tasks
+
+-   Set correct block directive in timeline-item block
+-   Remove ACF json load path from parent theme since we are not using it
+-   Package updates
+
+## 5.16.2 - 18 June 2024
+
+### 🐛 Bug Fixes
+
+-   Fix regression in 5.16.1 where we check the wrong variable to see if there are posts in the generic ajax query.
+-   Fix regression in 5.16.0 where special pages could sometimes not be added to context.
+
+### ⚙️ Miscellaneous Tasks
+
+-   Set default show title attribute in media.twig
+
+## 5.16.1 - 14 June 2024
+
+### ⛰️ Features
+
+-   Add filter for current archive in navwalker
+
+### 🐛 Bug Fixes
+
+-   _(twig)_ Cards are not displaying the image anymore when set on page
+-   Fix for dynamic blocks
+
+-   Fix css layout faq list
+-   Revert "fix: correct debugging"
+
+This reverts commit 2e9a3a3b48bebf29df7b044cea08288bbb2cf183.
+
+-   Generic ajax queries several fixes for extended queries
+
+## 5.16.0 - 11 June 2024
+
+### ⛰️ Features
+
+-   Allow special pages to be external links as well
+-   Added filter to set faq-related posts
+-   Add 'textarea_to_array' to Timber/Twig as a filter. This filter will convert a textarea field to an array of lines.
+
+### 🐛 Bug Fixes
+
+-   _(php)_ Fix undefined error in node-latest block
+-   _(php)_ Fix google analytics (non-tagmanager) instances not being loaded since version 5.10.0
+
+### 📚 Documentation
+
+-   Add filter documentation
+
+### ⚙️ Miscellaneous Tasks
+
+-   Fix codestyle
+-   Update translations
+-   Css fixes
+
+## 5.15.1 - 03 June 2024
+
+### 🐛 Bug Fixes
+
+-   Fix twig files
+
+## 5.15.0 - 03 June 2024
+
+### ⛰️ Features
+
+-   _(twig)_ Work on new argument structure for picture elements
+-   Continue on deprecating WooCommerce integration in wp-lemon. See release 5.12.0 for more information.
+
+### ⚙️ Miscellaneous Tasks
+
+-   Remove unneeded todo's
+
+## 5.14.1 - 31 May 2024
+
+### 🐛 Bug Fixes
+
+-   _(php)_ Remove open call dir from file paths
+
+### ⚙️ Miscellaneous Tasks
+
+-   _(php)_ stronger typing for phpstan
+-   Lint files
+
+## 5.14.0 - 31 May 2024
+
+### ⛰️ Features
+
+-   _(css)_ contact-buttons are now focusable and have an aria-label
+-   _(php)_ Start introducing named template locations. We will continue on this in upcoming releases.
+-   _(php)_ Fix exception message in get_site_information method
+-   _(css)_ use css gap instead of margin for footer menu items and icon lists
+
+### 🐛 Bug Fixes
+
+-   _(backend)_ Report proper version of Timber on the license page
+-   _(php)_ Set default heading level to 'h3' in Accordion_Item_Block class
+-   _(js)_ Disallow smooth scroll on Woocommerce anchors
+-   _(css)_ Add gap between items in footer menu
+
+### 🚜 Refactor
+
+-   _(css)_ Improve focus styles for elements
+-   _(php)_ Refactor Generic_Ajax_Query class for better code organization and encapsulation
+
+### 📚 Documentation
+
+-   _(php)_ Return correct docblock class in log_error_message
+
+### ⚙️ Miscellaneous Tasks
+
+-   _(css)_ Lint css files
+-   Update npm dependencies and configuration files
+-   Update translations
+
 ## 5.13.0 - 22 May 2024
 
 ### ⛰️ Features

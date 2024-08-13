@@ -8,7 +8,7 @@ By using this filter you can change the output of the language switcher.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $switcher | `array` | The language switcher array. |
+| $switcher | `array<string,mixed>` | The language switcher array. |
 
 ## wp-lemon/filter/block/faq-item/allowed-blocks
 
@@ -122,6 +122,19 @@ Filters the query args for the node-latest block.
 | --- | --- | --- |
 | $no_items_message | `string` | The message. |
 | $terms | `array` | The terms. |
-| $term_name | `string` | The term name. |
+| $term_name | `string` or `false` | The term name. |
 | $label | `string` | The post type label. |
+
+## wp-lemon/filter/core-blocks-to-allow
+
+Filters the allowlist of blocks that will be allowed in the editor.
+
+This will override the block removal list and short-circuit the function.
+
+**since** 5.8.0
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $blocks | `array<string,mixed>` | to allow array of core blocks that we only want to show in the editor. |
+| $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 

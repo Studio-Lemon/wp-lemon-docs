@@ -63,15 +63,15 @@ You can use this function in your classes and functions to log errors and other 
 
 **since** 3.19.5
 
-`log_message( string $prefix, string|array|object|null|bool|\WP_Lemon\API\WP_Error $message, string $filename = 'application' )`
+`log_message( string $prefix, string|array|object|null|bool|\WP_Error $message, string $filename = 'application' )`
 
 **Returns:** `void`
 
-| Name      | Type                                                                            | Description                    |
-| --------- | ------------------------------------------------------------------------------- | ------------------------------ |
-| $prefix   | `string`                                                                        | The prefix of the log message. |
-| $message  | `string` or `array` or `object` or `null` or `bool` or `\WP_Lemon\API\WP_Error` | The message to log.            |
-| $filename | `string`                                                                        | The filename of the log file.  |
+| Name      | Type                                                               | Description                    |
+| --------- | ------------------------------------------------------------------ | ------------------------------ |
+| $prefix   | `string`                                                           | The prefix of the log message. |
+| $message  | `string` or `array` or `object` or `null` or `bool` or `\WP_Error` | The message to log.            |
+| $filename | `string`                                                           | The filename of the log file.  |
 
 ---
 

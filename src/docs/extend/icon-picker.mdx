@@ -10,7 +10,7 @@ Now how do we go about doing this?
 ## Installation and set-up
 ### Install & activate icon plugin
 First, you'll need to install and activate the the ACF icon picker plugin.
-You can do this by running `composer require houke/acf-icon-picker` in the root directory.
+You can do this by running `composer require smithfield-studio/acf-svg-icon-picker` in the root directory.
 Once that is finished, navigate to the plugin list in WP Admin. Here, you'll find the plugin "Advanced Custom Fields: Icon Picker". 
 Once you find it, activate it.
 
@@ -39,7 +39,7 @@ You can add the icon picker to your fieldgroup by adding the following code to y
 $my_existing_fieldgroup
 ->addField(
 	'icon', // field name,
-	'icon-picker', // field type, do not change
+	'svg_icon_picker', // field type, do not change
 	[
 		'label'               => _x('Icon', 'Block field label', 'wp-lemon-child'),
 		'wpml_cf_preferences' => 1,
