@@ -1,9 +1,8 @@
 name: Run spell check with Typos
 on:
     workflow_dispatch:
+    push:
     pull_request:
-        branches:
-            - master
 
 jobs:
     run:
@@ -12,7 +11,8 @@ jobs:
         steps:
             - name: Checkout Actions Repository
               uses: actions/checkout@v4
-
+              with:
+                ref: ${{ github.event.pull_request.head.sha }}
             - name: Use custom config file
               uses: crate-ci/typos@master
               with:
