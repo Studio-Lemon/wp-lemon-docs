@@ -40,8 +40,8 @@
       link: "/extend/special-pages"
     - label: "Innerblocks"
       link: "/extend/innerblocks"
-
-
+    - label: "Customizer fields"
+      link: "/extend/customizer-fields"
 - label: Overwrite
   items:
     - label: "Overwrite twig files"
