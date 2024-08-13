@@ -1,6 +1,7 @@
 name: Run spell check with Typos
 on:
     workflow_dispatch:
+    push:
     pull_request:
 
 jobs:
