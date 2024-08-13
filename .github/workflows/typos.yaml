@@ -1,7 +1,6 @@
 name: Run spell check with Typos
 on:
     workflow_dispatch:
-    push:
     pull_request:
 
 jobs:
@@ -11,9 +10,6 @@ jobs:
         steps:
             - name: Checkout Actions Repository
               uses: actions/checkout@v4
-              with:
-                ref: ${{ github.event.pull_request.head.sha }}
-                # add a step that lists all files in the repository
             - name: list files
               run: ls -R
             - name: Use custom config file
