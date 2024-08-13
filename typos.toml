@@ -10,14 +10,6 @@ extend-ignore-re = [
     "wordpress-"
 ]
 
-[default.extend-identifiers]
-"PNGs" = "PNGs"
-"struc" = "struc"
-"testPNGtoJPG" = "testPNGtoJPG"
-"testPNGtoWEBP" = "testPNGtoWEBP"
-# Known typo
-"timber_wp_title_seperator" = "timber_wp_title_seperator"
-"tmis" = "tmis"
 
 # Typos
 "Github" = "GitHub"
