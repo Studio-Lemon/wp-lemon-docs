@@ -17,3 +17,4 @@ jobs:
               with:
                   config: ./typos.toml
                   write_changes: true
+                  files: "**/*"
