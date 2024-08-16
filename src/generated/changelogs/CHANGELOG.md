@@ -1,3 +1,21 @@
+## 5.21.0 - 16 August 2024
+
+### ⛰️  Features
+
+- Set filters for setting the base delay
+- Add anonymize_ip by default on the analytics integration
+
+### 🐛 Bug Fixes
+
+- Remove unneeded
+- Remove console debug statements in cookiebar.js
+
+### ⚙️ Miscellaneous Tasks
+
+- Simplify cpt registration
+- Update packages
+- Update packages
+
 ## 5.20.0 - 12 August 2024
 
 ### ⛰️ Features
