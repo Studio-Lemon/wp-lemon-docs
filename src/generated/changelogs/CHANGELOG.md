@@ -1,3 +1,20 @@
+## 5.22.0 - 04 September 2024
+
+### ⛰️  Features
+
+- Start with extended Post object class for wp-lemon usage.
+
+### 🐛 Bug Fixes
+
+- Update block appender/ button block alignment in editor
+- Make it easier to select the maps block in the editor for a better editing experience
+
+### ⚙️ Miscellaneous Tasks
+
+- Add additional actions
+- Add parameter to related_faq_query function for specifying the number of items to query
+- Update packages
+
 ## 5.21.2 - 02 September 2024
 
 ### 🐛 Bug Fixes
