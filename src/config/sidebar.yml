@@ -11,7 +11,7 @@
 - label: Basics
   items:
     - label: "Customizer settings"
-      link: "/basics/logos"
+      link: "/basics/customizer"
     - label: "Logo's"
       link: "/basics/logos"
     - label: "Favicons and manifest"
