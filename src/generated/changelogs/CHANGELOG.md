@@ -1,3 +1,18 @@
+## 5.22.1 - 10 September 2024
+
+### ⛰️  Features
+
+- Allow setting a amount of posts per page in the faq-highlight block
+
+### 🐛 Bug Fixes
+
+- Typos
+
+### ⚙️ Miscellaneous Tasks
+
+- Update typos toml config
+- Update overwrite-icon function to handle icon variables with missing quotes
+
 ## 5.22.0 - 04 September 2024
 
 ### ⛰️  Features
