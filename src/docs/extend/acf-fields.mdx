@@ -27,9 +27,19 @@ below we've listed all the existing fieldgroups with the filter name you can use
 
 ### Adding ACF fields
 ```php 
+/**
+ * Fields
+ *
+ * @package WordPress
+ * @subpackage WP_Lemon\Child
+ */
+
+namespace WP_Lemon\Child\Models;
+
+use StoutLogic\AcfBuilder\FieldsBuilder;
 add_filter(
    'wp-lemon/filter/model/acf-fields/job',
-   function ($job) {
+   function (FieldsBuilder $job) {
       $job
          ->addText('job_location');
       return $job;
@@ -40,9 +50,18 @@ add_filter(
 ### Remove ACF Fields
 In the same way we can remove an existing ACF field by using the build-in function that ACF provides like so:
 ```php
+/**
+ * Fields
+ *
+ * @package WordPress
+ * @subpackage WP_Lemon\Child
+ */
+
+namespace WP_Lemon\Child\Models;
+
 add_filter(
    'wp-lemon/filter/model/acf-fields/job',
-   function ($job) {
+   function (FieldsBuilder $job) {
       $job
          ->removeField('salary');
       return $job;
