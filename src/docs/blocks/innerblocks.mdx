@@ -54,6 +54,20 @@ Ofcourse, you can add other core blocks or even wp-lemon blocks. You can do this
 ];
 
 ```
+## Displaying your template
+Now place the `{{ InnerBlocks }}` tag in your twig block to see the block inserter in the backend and display the innercontent in the frontend.
+
+``` twig
+
+
+{% extends 'layouts/block-wrap.twig' %}
+
+{% block block__inner %}
+    {{ InnerBlocks }}
+{% endblock %}
+
+
+```
 
 ## Template properties 
 By adding extra parameters in the `create_inner_blocks` function we can add some extra functionality. 

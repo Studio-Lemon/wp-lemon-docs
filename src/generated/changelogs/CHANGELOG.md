@@ -1,3 +1,67 @@
+## 5.22.1 - 10 September 2024
+
+### ⛰️  Features
+
+- Allow setting a amount of posts per page in the faq-highlight block
+
+### 🐛 Bug Fixes
+
+- Typos
+
+### ⚙️ Miscellaneous Tasks
+
+- Update typos toml config
+- Update overwrite-icon function to handle icon variables with missing quotes
+
+## 5.22.0 - 04 September 2024
+
+### ⛰️  Features
+
+- Start with extended Post object class for wp-lemon usage.
+
+### 🐛 Bug Fixes
+
+- Update block appender/ button block alignment in editor
+- Make it easier to select the maps block in the editor for a better editing experience
+
+### ⚙️ Miscellaneous Tasks
+
+- Add additional actions
+- Add parameter to related_faq_query function for specifying the number of items to query
+- Update packages
+
+## 5.21.2 - 02 September 2024
+
+### 🐛 Bug Fixes
+
+- Fix release version
+
+### 🐛 Bug Fixes
+
+-   _(a11y)_ Load cookiebar earlier in the HTML so its faster to tab to.
+-   _(js)_ Fixed a bug in the faq-search.js code where in rare conditions an element could not be found and thus the whole code would not run
+-   _(js)_ Allow menu.js running when no navCollapse is found
+-   _(php)_ Fixed a bug in the FAQ class where 0 results would cause an empty faq area instead of a notice that there were no results
+-   Don't require highlighted faqs anymore so we can fall back on the default query
+
+## 5.21.0 - 16 August 2024
+
+### ⛰️ Features
+
+-   Set filters for setting the base delay
+-   Add anonymize_ip by default on the analytics integration
+
+### 🐛 Bug Fixes
+
+-   Remove unneeded
+-   Remove console debug statements in cookiebar.js
+
+### ⚙️ Miscellaneous Tasks
+
+-   Simplify cpt registration
+-   Update packages
+-   Update packages
+
 ## 5.20.0 - 12 August 2024
 
 ### ⛰️ Features
