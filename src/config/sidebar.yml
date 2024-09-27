@@ -22,12 +22,24 @@
       link: "/basics/basic-javascript"
     - label: "Fonts"
       link: "/basics/fonts"
+- label: Blocks
+  items:
+    - label: "Key concepts"
+      link: "/blocks/key-concepts"
+    - label: "Create block"
+      link: "/blocks/create-block"
+    - label: "Declaration (json)"
+      link: "/blocks/block-declaration"
+    - label: "Controller (php)"
+      link: "/blocks/block-controller"
+    - label: "View (twig)"
+      link: "/blocks/block-view"
+    - label: "Innerblocks"
+      link: "/blocks/innerblocks"
 - label: Extend
   items:
     - label: "Global context"
       link: "/extend/add-context"
-    - label: "Blocks"
-      link: "/extend/add-blocks"
     - label: "Posttypes & taxonomies"
       link: "/extend/add-models"
     - label: "ACF fields"
@@ -38,8 +50,6 @@
       link: "/extend/icon-picker"
     - label: "Special pages"
       link: "/extend/special-pages"
-    - label: "Innerblocks"
-      link: "/extend/innerblocks"
     - label: "Customizer fields"
       link: "/extend/customizer-fields"
 - label: Overwrite
