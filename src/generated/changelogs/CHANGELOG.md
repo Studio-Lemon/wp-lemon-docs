@@ -1,3 +1,24 @@
+## 5.23.0 - 30 September 2024
+
+### ⛰️  Features
+
+- *(js)* Add trigger for starting cookie bar
+- Continue on LemonPost post class
+
+### 🚜 Refactor
+
+- Refactor import paths for API helper functions in components
+- Refactor other-items.twig to set default value for holder_classes if not provided
+- Get_share_platforms function to accept a Post object or post ID
+
+### ⚙️ Miscellaneous Tasks
+
+- Update scroll behavior in API helper function
+- Add additional arguments to node-overview query arguments filter. This makes it easier to alter the query based on field values and post type id.
+- Update analytics section description in customizer-fields.php
+- Update rector
+- Run linting
+
 ## 5.22.1 - 10 September 2024
 
 ### ⛰️  Features
