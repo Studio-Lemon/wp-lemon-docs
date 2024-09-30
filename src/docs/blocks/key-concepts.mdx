@@ -12,20 +12,20 @@ A block always consists of 5 separate files,
 the most important files to understand how a block works are the .json, .php, and .twig files. 
 These 3 files represent the declaration, controller and view layer of the block.
 
-### Block declaration
+## Block declaration
 Your declaration file (`.json`) is where it all starts as this file handles the registration with WordPress. 
 This file is essential because it registers the block and defines settings, 
 such as color and width options, determining what configuration options are available in the WordPress editor.
 Read more about all the possibilities in your block declaration file right [here](/blocks/block-declaration).
 
-### Block controller
+## Block controller
 The controller file (`.php`) is where the block’s logic is handled. 
 This is where you process any dynamic data and control how your block behaves based on input from the editor. 
 The idea is to put all of our logic in here, so that when were working in the view layer, 
 you only have to focus on creating a beautiful front end. 
 There is a lot that goes into your controller layer so you'll definitely want to check out our detailed documentation right [here](/blocks/block-controller).
 
-### Block view
+## Block view
 Now that your block is all set up you can start building your front end. This will happen in the view file (`.twig`).
 The view file (`.twig`) is responsible for rendering the block's front-end appearance. 
 Using the data passed from the controller, this template file determines how the block is displayed on the website. 

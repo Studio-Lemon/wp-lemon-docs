@@ -4,3 +4,58 @@ description: General introduction and deep dive into block declarations.
 ---
 As explained on the Key concepts page, 
 Your declaration file (`.json`) is where it all starts as this file handles the registration with WordPress. 
+This file is essential because it defines all the necessary metadata for the block, including its name, title, 
+description, and various configuration options that determine its behavior within the WordPress editor.
+
+## Anatomy of a block declaration
+Although the declaration file is being generated when creating a new block, it's important to understand the structure of this file.
+Below you'll find an example of a block declaration file:
+
+```json
+{
+    "$schema": "https://raw.githubusercontent.com/Levdbas/acf-json-schema/main/acf-blocks.json",
+    "name": "acf/block-slug",
+    "title": "Block title", 
+    "description": "Block description",
+    "category": "wp-lemon-blocks",
+    "icon": "Dashicon", // Make sure to add a relevant dashicon without the 'dashicons-' prefix from https://developer.wordpress.org/resource/dashicons/
+    "keywords": ["keyword", "keyword 2", "keyword 3"], // Make sure to add relevant keywords that make the block easy to find
+    "apiVersion": 3,
+    "textdomain": "wp-lemon-child",
+    "acf": {
+        "mode": "preview"
+    },
+    "supports": {
+        "align": ["full"],
+        "color": {
+            "background": true,
+            "text": false
+    }
+}
+}
+```
+
+## Using block supports
+The support section defines what features are available to the block. 
+For example, you can enable or disable support for alignment options, color settings, custom classes, and more. 
+This allows fine-grained control over what functionality the block exposes to users.
+
+When defining this section it's important to think about how much control you want to give to the user.
+In most cases you'll want to limit the available options to prevent users from breaking the design of the block.
+While in other cases you might want to give users more control over the block's appearance.
+
+Common examples of support properties you might want to use are `align` and `color`. 
+This way you can enable or disable alignment options and color settings for the block. This will look something like this:
+
+```json
+{
+    "supports": {
+        "align": ["full"],
+        "color": {
+            "background": true,
+            "text": false
+        }
+    }
+}
+```	
+You can find a full list of available support properties in the [wordpress documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/).

@@ -1,0 +1,90 @@
+---
+title: Block view
+description: Documentation on the view layer.
+---
+
+After you've set up your block and added the necessary logic in the controller file, 
+it's time to start building the front end. This will happen in the view file (`.twig`). 
+
+The core responsibility of the .twig file is to define the HTML structure of your block. 
+This is where you lay out the various elements (text, images, buttons, etc.) that make up the block.
+
+## Using your ACF fields
+The Twig template is capable of receiving data passed from the block controller, 
+such as block attributes and field values. You can use placeholders in the .twig file to inject this data dynamically into the HTML.
+
+To take a look at what your working with you can use the following example:
+
+```html
+<pre>
+    {{ dump(fields) }}
+</pre>
+```
+This will show you all the fields that are available in the block. When you know the field names you can use them in your template like this:
+
+```html
+<div class="classname">
+    {{ fields.fieldname }}
+</div>
+```
+## Advanced Twig features
+Twig offers a lot of advanced features that can help you build complex and dynamic templates. For our use case however we will focus on the following features:
+- Programming locic (Conditional statements, loops)
+- Includes and extends
+
+Twig offers an extensive documentation on all the features that are available. You can find this documentation [here](https://twig.symfony.com/doc/).
+
+### Conditional statements
+Twig supports basic programming logic, allowing you to conditionally display elements based on the values of the block’s attributes. 
+For example, you can choose to display a special background only if a certain color is selected like this:
+
+```html
+{% if fields.color %}
+    <div class="background-color-{{ fields.color }}">
+        {{ fields.text }}
+    </div>
+{% endif %}
+```
+
+### Loops
+Also, if your block contains repeatable items (like a list of testimonials or products), 
+you can use Twig loops to render these items dynamically, based on the number of entries in the data passed from the controller.
+Below an example is given of how you can loop through a repeater field:
+
+```html
+{% for item in fields.items %}
+    <div class="item">
+        <img src="{{ item.image }}" alt="{{ item.caption }}">
+        <p>{{ item.caption }}</p>
+    </div>
+{% endfor %}
+```
+
+## Includes and extends
+Twig also supports includes and extends, which allow you to reuse your code.
+
+### Includes
+Includes are the most straightforward as they are used for simple code reuse.
+This can be useful when you have a block that is used in multiple places on your website.
+It will look something like this:
+```html
+{% include 'blocks/_example.twig' %}
+```
+
+### Extends
+Extends are used when you want to create a base template that other templates can inherit from. 
+When working with custom blocks in wp-lemon, you're already making use of this feature. 
+Because every block you create automatically extends our block-wrap.twig file. 
+The block-wrap sets the default classes based on you configured your block in the back-end like (background) color and alignment. 
+It also prepares your block for block notifications.
+We recommend to always extend the block-wrap.twig file in your block view file, but you can do without.
+An example of when you wouldn't want to extend the block-wrap.twig file is when you have a really small inline component like an icon or something similar.
+
+If we look at how the block-wrap.twig file is extended in your custom block we can see how it's done:
+```html
+{% extends 'layouts/block-wrap.twig' %}
+
+{% block block__inner %}
+    Here comes the block content.
+{% endblock %}
+```

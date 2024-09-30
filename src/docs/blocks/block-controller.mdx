@@ -1,10 +1,66 @@
 ---
 title: Block controller
-description: where you control the block.
+description: Documentation on the block controller layer.
 ---
-# Tijdelijk... nog van de oude docs:
 
-## Develop the new block
+The block controller is where you'll probably spend most time while developing a custom block. 
+This is where you process any dynamic data and control how your block behaves based on input from the editor. 
+The idea is to put all of our logic in here, so that when you're working in the view layer, you only have to focus on creating a beautiful front end.
+
+## Anatomy of a block controller
+In the block controller you will find 2 methods you can use to expand your block:
+- `block_context()`
+- `add_fields()`
+
+The block_context() function is used to query the data from the database and add it to the block context.
+
+## Block content
+There are two main ways to add content to your block. 
+- InnerBlocks
+- ACF fields
+
+We prefer InnerBlocks over ACF fields because it uses native WordPress functionality. 
+The reason you might want to use ACF fields is for repeater fields like slides or testimonials. 
+Below we'll show you how to use both methods.
+
+### InnerBlocks
+InnerBlocks are blocks within blocks. This way you can create complex blocks with multiple child blocks.
+This gives the user a lot of control over the layout of the block.
+To learn how to use InnerBlocks, take a look at the [InnerBlocks documentation](/blocks/innerblocks).
+
+### Adding ACF fields to the block
+You can add any type of ACF field to the block. To find out all the possibilities take a look at the [ACF documentation](https://github.com/StoutLogic/acf-builder/wiki/field-types).
+Here you'll find all the different field types and how to use them.
+Below is a simple example of what your add_fields() function could look like. 
+
+```php
+	public function add_fields(): object
+	{
+		$this->registered_fields
+			->addRepeater(
+				'slides',
+				[
+					'layout' => 'block',
+					'min'    => 1,
+					'max'    => 4,
+				]
+			)
+			->addImage('image', [
+				'label' => 'Image',
+				'return_format' => 'id',
+				'preview_size' => 'medium',
+			])
+			->addText('caption', [
+				'label'     => 'Bijschrift',
+			])
+			->endRepeater();
+		return $this->registered_fields;
+	}
+```
+
+To learn how to use these fields in your block view, take a look at the [block view documentation](/blocks/block-view).
+
+## Extending the block context
 
 Every block is different but we will give some common examples on how to expand your block.
 
@@ -103,29 +159,6 @@ You might want to add a specific asset to the blocks context as it is only used 
 	}
 ```
 
-
-### Block with custom acf fields
-Blocks can be added in two ways. You can add them by using the administrative interface of ACF. Fields created this way get saved to json and stored in `resources/acf-json`. These fields are thus added to version control.
-
-For a more rigid approach of adding fields you can use the `add_fields()` method.
-Here we see a field being added to our already registered group. Fields are added via a pretty straightforward using the OOP method of [ACF Builder](https://github.com/StoutLogic/acf-builder). You can read the docs on how to add [fields](https://github.com/StoutLogic/acf-builder/wiki/fields) and see the per field type [examples](https://github.com/StoutLogic/acf-builder/wiki/field-types).
-```php lineNumbers=true
-	public function add_fields(): object
-	{
-
-		$this->registered_fields
-			->addImage('image', [
-				'label' => __('Image', 'wp-lemon'),
-				'instructions' => '',
-				'required' => 1,
-				'return_format' => 'id',
-				'preview_size' => 'thumbnail',
-				'library' => 'all',
-			]);
-
-		return $this->registered_fields;
-	}
-```
 ### Block that needs conditional modifier classes
 
 You might want to add conditional classes based on a field setting. This is where `$this->add_modifier_class('yourmodifier');` comes in.
