@@ -44,7 +44,18 @@ export default function Layout({
                      {title}
                   </h1>
                )}
-               <Children disableTOC={disableTOC}>
+               <Children disableTOC={disableTableOfContents}>
+                  {title && (
+                     <h1
+                        css={css`
+                  @media (max-width: 1200px) {
+                    display: none;
+                  }
+                `}
+                     >
+                        {title}
+                     </h1>
+                  )}
                   {children}
                </Children>
                {disableTOC ? null : (
