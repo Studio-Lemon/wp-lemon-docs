@@ -1,7 +1,8 @@
 ---
 title: Functions
-disableTableOfContents: false
+disableTableOfContents: true
 ---
+
 import Functions from "../../generated/functions.md";
 
 The following function documentation is automatically generated.
