@@ -1,3 +1,20 @@
+## 5.23.2 - 07 October 2024
+
+### 🐛 Bug Fixes
+
+- *(php)* Fix missing method in card-grid block
+- The card type in other-items.twig could only be set once, this fixes that so each card type can be a different one if needed.
+- Fix search result not showing the excerpt
+
+### 📚 Documentation
+
+- Generate new docs and add them
+- Document filters
+
+### ⚙️ Miscellaneous Tasks
+
+- Update packages
+
 ## 5.23.1 - 02 October 2024
 
 ### 🐛 Bug Fixes
