@@ -390,7 +390,7 @@ Filters the link attributes for a wp-lemon archive page.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $atts | `array` | The HTML attributes applied to the menu item's <a> element, empty strings are ignored. |
+| $atts | `array` | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
 | $menu_item | `\WP_Post` | The current menu item. |
 | $args | `\stdClass` | An object of wp_nav_menu() arguments. |
 | $depth | `int` | Depth of menu ite |
