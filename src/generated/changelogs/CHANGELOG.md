@@ -1,19 +1,40 @@
+## 5.24.0 - 16 October 2024
+
+### 🐛 Bug Fixes
+
+-   Remove stray character
+-   Fixes empty excerpt when there is content present. We add all acf blocks by default now to allow to be searched for inner content. closes #276
+
+### 📚 Documentation
+
+-   Better docblock above filter
+-   Fix function reference
+-   Fix doc generation
+
+### ⚙️ Miscellaneous Tasks
+
+-   Linting files
+-   Update packages
+-   Remove some oembed providers from default blocks
+-   Update docs to proper tag
+-   Add search replace step to fix docs building process
+
 ## 5.23.2 - 07 October 2024
 
 ### 🐛 Bug Fixes
 
-- *(php)* Fix missing method in card-grid block
-- The card type in other-items.twig could only be set once, this fixes that so each card type can be a different one if needed.
-- Fix search result not showing the excerpt
+-   _(php)_ Fix missing method in card-grid block
+-   The card type in other-items.twig could only be set once, this fixes that so each card type can be a different one if needed.
+-   Fix search result not showing the excerpt
 
 ### 📚 Documentation
 
-- Generate new docs and add them
-- Document filters
+-   Generate new docs and add them
+-   Document filters
 
 ### ⚙️ Miscellaneous Tasks
 
-- Update packages
+-   Update packages
 
 ## 5.23.1 - 02 October 2024
 

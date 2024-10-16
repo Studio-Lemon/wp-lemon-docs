@@ -264,6 +264,7 @@ Filters the query args for the node-latest block.
 | Name | Type | Description |
 | --- | --- | --- |
 | $args | `null` or `array` | the original query args |
+| $post_id | `int` | the post id |
 
 </div>
 
@@ -373,11 +374,11 @@ Example usage:
 function add_archive($archive_pages, $post_id, $item, $classes)
 {
 
-  if ($post_id == wc_get_page_id('shop')) {
-	  $archive_pages = array('product');
-  }
+   if ($post_id == wc_get_page_id('shop')) {
+       $archive_pages = array('product');
+   }
 
-  return $archive_pages;
+   return $archive_pages;
 }
 add_filter('wp-lemon/filter/navwalker/archive-pages', __NAMESPACE__ . '\\add_archive', 10, 4);
 ```
@@ -436,7 +437,7 @@ This allows developers to add or remove context before rendering the cards.
 | Name | Type | Description |
 | --- | --- | --- |
 | $context | `array` | The context array. |
-| $this | `object` | The current ajax query object. |
+| $instance | `\Generic_Ajax_Query` | The current instance of the class. |
 
 </div>
 
