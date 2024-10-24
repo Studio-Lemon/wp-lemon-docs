@@ -1,3 +1,21 @@
+## 5.25.0 - 24 October 2024
+
+### ⛰️ Features
+
+-   Add gravity forms select field to ACF
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Fix job lists going horizontally instead of vertically.
+-   _(css)_ Remove css margin from contact-cta block
+-   Fix issue in css where in rare cases, when the editor is loaded in iframe mode would contain unstyled buttons. Fixes #281
+-   Fix a issue in the picture macro where passing an array instead of an idea could lead to a critical error.
+-   Fix a bug where you could not overwrite the card to use inside other-items.twig anymore by setting card_type. This broke backward compatibility and is now fixed.
+
+### 📚 Documentation
+
+-   Add proper docblock
+
 ## 5.24.0 - 16 October 2024
 
 ### 🐛 Bug Fixes
