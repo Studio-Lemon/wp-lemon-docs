@@ -1,61 +1,135 @@
+## 5.25.0 - 24 October 2024
+
+### ⛰️ Features
+
+-   Add gravity forms select field to ACF
+
+### 🐛 Bug Fixes
+
+-   _(css)_ Fix job lists going horizontally instead of vertically.
+-   _(css)_ Remove css margin from contact-cta block
+-   Fix issue in css where in rare cases, when the editor is loaded in iframe mode would contain unstyled buttons. Fixes #281
+-   Fix a issue in the picture macro where passing an array instead of an idea could lead to a critical error.
+-   Fix a bug where you could not overwrite the card to use inside other-items.twig anymore by setting card_type. This broke backward compatibility and is now fixed.
+
+### 📚 Documentation
+
+-   Add proper docblock
+
+## 5.24.0 - 16 October 2024
+
+### 🐛 Bug Fixes
+
+-   Remove stray character
+-   Fixes empty excerpt when there is content present. We add all acf blocks by default now to allow to be searched for inner content. closes #276
+
+### 📚 Documentation
+
+-   Better docblock above filter
+-   Fix function reference
+-   Fix doc generation
+
+### ⚙️ Miscellaneous Tasks
+
+-   Linting files
+-   Update packages
+-   Remove some oembed providers from default blocks
+-   Update docs to proper tag
+-   Add search replace step to fix docs building process
+
+## 5.23.2 - 07 October 2024
+
+### 🐛 Bug Fixes
+
+-   _(php)_ Fix missing method in card-grid block
+-   The card type in other-items.twig could only be set once, this fixes that so each card type can be a different one if needed.
+-   Fix search result not showing the excerpt
+
+### 📚 Documentation
+
+-   Generate new docs and add them
+-   Document filters
+
+### ⚙️ Miscellaneous Tasks
+
+-   Update packages
+
+## 5.23.1 - 02 October 2024
+
+### 🐛 Bug Fixes
+
+-   Update compatibility with new live search and WPML
+-   Fix share title filter not working in entry-footer.twig. Fixes #274
+-   Fix missing e-mail share icon, closes #273
+
+### 📚 Documentation
+
+-   Enhance filter documentation in PHP code. This is an ongoing process.
+
+### ⚙️ Miscellaneous Tasks
+
+-   Update twig templates to use default() fijlter for easier to understand code
+-   Update template part naming
+-   Update composer dependencies
+
 ## 5.23.0 - 30 September 2024
 
-### ⛰️  Features
+### ⛰️ Features
 
-- *(js)* Add trigger for starting cookie bar
-- Continue on LemonPost post class
+-   _(js)_ Add trigger for starting cookie bar
+-   Continue on LemonPost post class
 
 ### 🚜 Refactor
 
-- Refactor import paths for API helper functions in components
-- Refactor other-items.twig to set default value for holder_classes if not provided
-- Get_share_platforms function to accept a Post object or post ID
+-   Refactor import paths for API helper functions in components
+-   Refactor other-items.twig to set default value for holder_classes if not provided
+-   Get_share_platforms function to accept a Post object or post ID
 
 ### ⚙️ Miscellaneous Tasks
 
-- Update scroll behavior in API helper function
-- Add additional arguments to node-overview query arguments filter. This makes it easier to alter the query based on field values and post type id.
-- Update analytics section description in customizer-fields.php
-- Update rector
-- Run linting
+-   Update scroll behavior in API helper function
+-   Add additional arguments to node-overview query arguments filter. This makes it easier to alter the query based on field values and post type id.
+-   Update analytics section description in customizer-fields.php
+-   Update rector
+-   Run linting
 
 ## 5.22.1 - 10 September 2024
 
-### ⛰️  Features
+### ⛰️ Features
 
-- Allow setting a amount of posts per page in the faq-highlight block
+-   Allow setting a amount of posts per page in the faq-highlight block
 
 ### 🐛 Bug Fixes
 
-- Typos
+-   Typos
 
 ### ⚙️ Miscellaneous Tasks
 
-- Update typos toml config
-- Update overwrite-icon function to handle icon variables with missing quotes
+-   Update typos toml config
+-   Update overwrite-icon function to handle icon variables with missing quotes
 
 ## 5.22.0 - 04 September 2024
 
-### ⛰️  Features
+### ⛰️ Features
 
-- Start with extended Post object class for wp-lemon usage.
+-   Start with extended Post object class for wp-lemon usage.
 
 ### 🐛 Bug Fixes
 
-- Update block appender/ button block alignment in editor
-- Make it easier to select the maps block in the editor for a better editing experience
+-   Update block appender/ button block alignment in editor
+-   Make it easier to select the maps block in the editor for a better editing experience
 
 ### ⚙️ Miscellaneous Tasks
 
-- Add additional actions
-- Add parameter to related_faq_query function for specifying the number of items to query
-- Update packages
+-   Add additional actions
+-   Add parameter to related_faq_query function for specifying the number of items to query
+-   Update packages
 
 ## 5.21.2 - 02 September 2024
 
 ### 🐛 Bug Fixes
 
-- Fix release version
+-   Fix release version
 
 ### 🐛 Bug Fixes
 
