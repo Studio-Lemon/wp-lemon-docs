@@ -37,7 +37,7 @@ In wp-lemon we do this inside the `HighGround\Bulldozer\AbstractBlockRenderer::b
 		];
 
 		$args = [
-			'InnerBlocks' => self::create_inner_blocks(false, $template),
+			'InnerBlocks' => self::create_inner_blocks(template: $template),
 		];
 
 		return array_merge($context, $args);
@@ -101,7 +101,7 @@ We did this like so:
 		$allowed_blocks = ['acf/content-card', 'acf/image-card', 'acf/price-card'];
 
 		$args = [
-			'InnerBlocks' => self::create_inner_blocks($allowed_blocks, $template),
+			'InnerBlocks' => self::create_inner_blocks(allowed_blocks: $allowed_blocks, template: $template),
 		];
 
 		return array_merge($context, $args);
@@ -118,7 +118,7 @@ To add custom classes to your innerblocks use the third parameter. You can put a
 ``` php
 
 $args = [
-    'InnerBlocks' => self::create_inner_blocks($template, 'classname classname'),
+    'InnerBlocks' => self::create_inner_blocks(template: $template, classes: 'classname classname'),
 ];
 
 
@@ -135,7 +135,7 @@ By setting it on true you'll lock down the template so no changes can be made. T
 ``` php
 
 $args = [
-    'InnerBlocks' => self::create_inner_blocks($template, 'classname classname', false, true),
+    'InnerBlocks' => self::create_inner_blocks(template: $template, classes: 'classname classname', templatelock: true),
 ];
 
 
