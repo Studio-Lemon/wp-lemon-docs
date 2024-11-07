@@ -1,3 +1,27 @@
+## 5.26.0 - 07 November 2024
+
+### ⛰️ Features
+
+-   Pass whole timber object to wp-lemon/filter/single/templates filter
+-   Introduce new actions in block-wrap.twig to make it easier to extend blocks.
+
+### 🐛 Bug Fixes
+
+-   Change live-search-results results key to posts to be consistent with the search.php file
+
+### 🚜 Refactor
+
+-   [**breaking**] Deprecate get_share_platforms in favor of get_shares to prevent mixing up functionality. When using wp-lemon/filter/share-context or wp-lemon/filter/socials-context its no longer recommended to change the icons via the 'icon' key but by setting only the class via 'icon_class'.
+-   [**breaking**] Move button macro from helpers to elements, search for '.button(' in your codebase and add a import path called '{% import 'macros/elements.twig' as elements %}' to the top of the file. and change the prefix of .button to elements.button
+
+### ⚙️ Miscellaneous Tasks
+
+-   _(css)_ Hide duplicate button from WPML inside the editor
+-   Lint files
+-   Cleanup unneeded extra query lookups when already provided by Timber
+-   Update packages
+-   Hide additional blocks from inserter for a more understandable content edit experience
+
 ## 5.25.0 - 24 October 2024
 
 ### ⛰️ Features
