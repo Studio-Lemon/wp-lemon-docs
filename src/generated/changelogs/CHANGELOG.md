@@ -1,3 +1,17 @@
+## 5.26.1 - 11 November 2024
+
+### ⛰️  Features
+
+- Allow compat with ACF icon picker 4.0
+
+### 🐛 Bug Fixes
+
+- Fix excerpt length
+
+### ⚙️ Miscellaneous Tasks
+
+- Add variables to hooks
+
 ## 5.26.0 - 07 November 2024
 
 ### ⛰️ Features
