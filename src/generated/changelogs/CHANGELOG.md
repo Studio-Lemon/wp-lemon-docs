@@ -1,3 +1,15 @@
+## 5.26.2 - 13 November 2024
+
+### 🐛 Bug Fixes
+
+- Fix label of pricing card field
+- Fix social icons class
+
+### ⚙️ Miscellaneous Tasks
+
+- *(css)* Some css improvements
+- Iupdate translations
+
 ## 5.26.1 - 11 November 2024
 
 ### ⛰️  Features
