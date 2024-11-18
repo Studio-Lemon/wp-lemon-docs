@@ -1,0 +1,40 @@
+---
+title: Cards
+description: How to go about cards in wp-lemon
+---
+
+Because cards are a common design element in modern web design, we've made it easy to use them in wp-lemon. 
+We have a few default cards available, but you can easily create your own custom cards as well.
+
+## So how does this work?
+
+When using the node-overview or the node-latest block, they'll always try to look for a custom card `components/cards/crd-POSTYPENAME.twig`, 
+if this file doesn't exist it will fall back to the default card `components/cards/crd-default.twig`. 
+Meaning, you can easily create your own custom card like this: `components/cards/crd-POSTYPENAAM.twig` for your specific posttype.
+
+Every default-card extends the `components/cards/crd-wrap.twig` file. 
+This file is used to wrap the card and contains the default card structure.
+We highly recommend taking a look in `resources/views/components/cards/crd-wrap.twig' to see how the default card is structured 
+and get a rough understanding of how it works.
+
+A quick overview of some of the settings we predefined for you that you could use in your custom card:
+
+| **Functionality**            | **Twig Code**                                   | **Description**                                                                                                           |
+|------------------------------|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| **Hide default footer**      | `{% set hide_default_footer = true %}`         | Hides the default footer of the card.                                                                                     |
+| **Custom icon**              | `{% set icon = 'custom-icon-class' %}`         | Sets the icon displayed in the footer. Default: `'wp-lemon-icon-arrow-right'`.                                            |
+| **Excerpt length**           | `{% set length = 150 %}`                       | Adjusts the excerpt length. Default: `100`. Can be customized per card type via a filter.                                 |
+| **Enable animation**         | `{% set do_animation = true %}`                | Enables animations on the card. Affected by filters for specific card types.                                              |
+| **Animation configuration**  | `{% set animation = {type: 'fade', parent: true} %}` | Configures the animation settings, including the type (`'fade'`) and whether it's linked to a parent element.           |
+| **Make card clickable**      | `{% set link = link_markup %}`                 | Makes the entire card clickable using the default link (`link_markup`).                                                   |
+| **Make image clickable**     | `{% set image_link = link_markup %}`           | Makes the image in the card clickable using the default link (`link_markup`).                                             |
+| **Set image size**           | `{% set image_size = 'medium' %}`              | Specifies the size of the image displayed in the card. Default: `'thumbnail'`.                                            |
+| **Add extra card classes**   | `{% set extra_card_classes = ['custom-class'] %}` | Adds additional CSS classes to the card element.                                                                         |
+| **Add extra holder classes** | `{% set extra_holder_classes = ['holder-class'] %}` | Adds additional CSS classes to the card container (holder).                                                             |
+
+
+Working with posts
+- Post type registration (model)
+- Extending Post objects (controller)
+- Using Post objects (view)
+
