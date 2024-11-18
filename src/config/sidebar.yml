@@ -40,8 +40,6 @@
   items:
     - label: "Global context"
       link: "/extend/add-context"
-    - label: "Posttypes & taxonomies"
-      link: "/extend/add-models"
     - label: "ACF fields"
       link: "/extend/acf-fields"
     - label: "Filters & Actions"

@@ -116,7 +116,7 @@ If for whatever reason you don't want your post type to have a single-page you c
 
 ## Extending the post object
 In wp-lemon it's possible to extend the post objects to add functionality if needed.
-This should be done by creating a new file in the `/library/controllers/` directory.
+This should be done by navigating to the `/library/controllers/` directory.
 Here you can create a new file that extends the `Post` class. This will look something like this:
     
 ```php
@@ -152,55 +152,126 @@ class post_type_name extends Post
 
 ```
 
-Below you can see a simple example of what you could use it for. 
-Here we've extended the news post object to make a function that calculates the reading time.
+After you've created this file you'll need to add it to the classmap, this needs to be done so that Timber knows where to find the new class.
+You should do this inside the `/library` directory. 
+In essence you could place it anywhere like in the `hooks.php` file but we prever to place it in the `child-setup.php` file since it's part of the setup process.
+This will look something like this:
 
 ```php
 
-<?php
+add_filter(
+	'timber/post/classmap',
+	function ($classmap) {
+		$custom_classmap = [
+			'person'         => Person::class,
+			'publication'    => Publication::class,
+			'project'        => Project::class,
+			'lectorate'      => Lectorate::class,
+			'news'           => News::class,
+			'post-education' => PostEduction::class,
+			'education'      => Education::class,
+		];
 
-/**
- * Setup an extended post query class.
- * Used for News
- *
- * @package WordPress
- * @subpackage WP_Lemon\Child
- */
-
-namespace WP_Lemon\Child\Classes;
-
-use Timber\Post;
-use Timber\Timber;
-
-/**
- * Post object class for News.
- */
-class News extends Post
-{
-
-	/**
-	 * Calculate the reading time of the post.
-	 *
-	 * @return string
-	 */
-	public function reading_time(): string
-	{
-		$words_per_minute = 228;
-
-		$words = str_word_count(wp_strip_all_tags($this->content()));
-
-		if ($words / $words_per_minute < 1) {
-			return __('< 1 minute', 'wp-lemon-child');
-		}
-
-		$minutes = round($words / $words_per_minute);
-
-		/* translators: %s: Time duration in minute or minutes. */
-		return sprintf(_n('%s minute', '%s minutes', $minutes, 'wp-lemon-child'), (int) $minutes);
+		return array_merge($classmap, $custom_classmap);
 	}
+);
+
+```
+
+Below you can see a couple simple examples that you could use in your extended post object, 
+and also how you can then use it in your front-end. 
+
+### Example 1
+Below you'll find a simple example of a function that calculates the reading time of a post.
+
+```php
+
+/**
+ * Calculate the reading time of the post.
+ *
+ * @return string
+ */
+public function reading_time(): string
+{
+	$words_per_minute = 228;
+
+	$words = str_word_count(wp_strip_all_tags($this->content()));
+
+	if ($words / $words_per_minute < 1) {
+		return __('< 1 minute', 'wp-lemon-child');
+	}
+
+	$minutes = round($words / $words_per_minute);
+
+	/* translators: %s: Time duration in minute or minutes. */
+	return sprintf(_n('%s minute', '%s minutes', $minutes, 'wp-lemon-child'), (int) $minutes);
 }
 
 ```
+
+This newly created function can be used in your single page for example like this:
+
+```html
+
+{% block content %}
+	<header class="section">
+		<div class="entry__header-top">
+			<div class="readingtime">
+				<i class="icon-clock-o"></i>
+				{{ post.reading_time }}
+			</div>
+		</div>
+		<h1>{{ post.title }}</h1>
+	</header>
+	{{ post.content }}
+{% endblock %}
+
+```
+
+### Example 2
+In this example the name of a person needed to be formatted in a certain way, ofc we could've also done it in the front-end 
+but we believe that it's best to let the back-end handle most of the logic.
+
+```php	
+
+	/**
+	 * Fetch the full name of the person, including title.
+	 *
+	 * @return string
+	 */
+	public function get_full_name(): string
+	{
+		if (!is_null($this->_full_name)) {
+			return $this->_full_name;
+		}
+		$name = null;
+
+		$names_group = $this->meta('names');
+
+		$name .= $names_group['title'] ? $names_group['title'] . ' ' : '';
+		$name .= $names_group['first_name'] ? $names_group['first_name'] . ' ' : '';
+		$name .= $names_group['last_name'] ? $names_group['last_name'] : '';
+
+		$this->_full_name = $name;
+
+		return $this->_full_name;
+	}
+
+```
+
+This again could then easily be used in the single person page like this:
+
+```html
+
+{% block content %}
+	<header class="section">
+		<h1>{{ person.get_full_name }}</h1>
+	</header>
+	{{ person.content }}
+{% endblock %}
+
+```
+
 
 ## Wp-lemon queries
 In wp-lemon we've added a set of predefined queries that you can use to fetch posts. You could use these for example in your block context.
