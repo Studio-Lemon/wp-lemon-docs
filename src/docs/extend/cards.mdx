@@ -17,6 +17,15 @@ This file is used to wrap the card and contains the default card structure.
 We highly recommend taking a look in `resources/views/components/cards/crd-wrap.twig' to see how the default card is structured 
 and get a rough understanding of how it works.
 
+# Blocks in `card-wrap.twig`
+
+| **Block Name**  | **Description**                                                                                                  |
+|------------------|------------------------------------------------------------------------------------------------------------------|
+| `card_top`       | Content placed at the top of the card. Often used for images or highlights.                                     |
+| `card_inner`     | The main content area of the card. Default content is `No content`. Can be overwritten to show card details.    |
+| `card_footer`    | The footer area of the card. Contains default functionality for the footer, which can include links or buttons. |
+
+
 A quick overview of some of the settings we predefined for you that you could use in your custom card:
 
 | **Functionality**            | **Twig Code**                                   | **Description**                                                                                                           |
