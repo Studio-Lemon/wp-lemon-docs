@@ -1,28 +1,44 @@
+## 5.27.0 - 22 November 2024
+
+### ⛰️ Features
+
+-   Add support for search/ui setting in Gravity Forms & Fluent Forms Custom Fields
+
+### 🐛 Bug Fixes
+
+-   _(blocks)_ Load larger images to prevent low quality images in node-latest and node-overview blocks
+-   _(css)_ Fix in css view of media-text block
+-   Phpstan fixes
+
+### ⚙️ Miscellaneous Tasks
+
+-   Add stubs
+
 ## 5.26.2 - 13 November 2024
 
 ### 🐛 Bug Fixes
 
-- Fix label of pricing card field
-- Fix social icons class
+-   Fix label of pricing card field
+-   Fix social icons class
 
 ### ⚙️ Miscellaneous Tasks
 
-- *(css)* Some css improvements
-- Iupdate translations
+-   _(css)_ Some css improvements
+-   Iupdate translations
 
 ## 5.26.1 - 11 November 2024
 
-### ⛰️  Features
+### ⛰️ Features
 
-- Allow compat with ACF icon picker 4.0
+-   Allow compat with ACF icon picker 4.0
 
 ### 🐛 Bug Fixes
 
-- Fix excerpt length
+-   Fix excerpt length
 
 ### ⚙️ Miscellaneous Tasks
 
-- Add variables to hooks
+-   Add variables to hooks
 
 ## 5.26.0 - 07 November 2024
 
