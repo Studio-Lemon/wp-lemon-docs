@@ -1,0 +1,15 @@
+---
+title: "Using post objects"
+description: "Using post objects in wp-lemon"ss
+---
+
+```html
+
+{% block content %}
+	<header class="section">
+		<h1>{{ person.get_full_name }}</h1>
+	</header>
+	{{ person.content }}
+{% endblock %}
+
+```
