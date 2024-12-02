@@ -1,3 +1,23 @@
+## 5.28.0 - 02 December 2024
+
+### ⛰️  Features
+
+- Update custom post type labels and arguments for better localization and functionality
+- Add support for special log messages in log_message function
+- Move wp-lemon/action/body/after action to just before the body end tag in app.twig
+
+### 🐛 Bug Fixes
+
+- Fix todo block
+- Normalize version numbers in backend page
+
+### ⚙️ Miscellaneous Tasks
+
+- Add additional variables to hooks in block-wrap.twig
+- Minor tweaks to icon font helpers
+- Update arrow icons in icon font
+- Update packages
+
 ## 5.27.0 - 22 November 2024
 
 ### ⛰️ Features
