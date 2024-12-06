@@ -550,7 +550,7 @@ Returns a collection of posts based on a taxonomy and post type.
 Use the 'collection' key to first loop through the main categories which holds
 name, slug, id, description and posts and then run a nested loop through the posts.
 
-```twig
+```twig lineNumbers=true
 <nav class="post-overview__nav">
     {% for category in post.collection %}
         <a class="post-overview__navbtn" href="#{{ category.slug }}">{{ category.name }}</a>
