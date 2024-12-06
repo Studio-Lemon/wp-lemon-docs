@@ -34,28 +34,28 @@ Here you'll find all the different field types and how to use them.
 Below is a simple example of what your add_fields() function could look like. 
 
 ```php
-	public function add_fields(): object
-	{
-		$this->registered_fields
-			->addRepeater(
-				'slides',
-				[
-					'layout' => 'block',
-					'min'    => 1,
-					'max'    => 4,
-				]
-			)
-			->addImage('image', [
-				'label' => 'Image',
-				'return_format' => 'id',
-				'preview_size' => 'medium',
-			])
-			->addText('caption', [
-				'label'     => 'Bijschrift',
-			])
-			->endRepeater();
-		return $this->registered_fields;
-	}
+public function add_fields(): object
+{
+   $this->registered_fields
+      ->addRepeater(
+         'slides',
+         [
+            'layout' => 'block',
+            'min'    => 1,
+            'max'    => 4,
+         ]
+      )
+      ->addImage('image', [
+         'label' => 'Image',
+         'return_format' => 'id',
+         'preview_size' => 'medium',
+      ])
+      ->addText('caption', [
+         'label'     => 'Bijschrift',
+      ])
+      ->endRepeater();
+   return $this->registered_fields;
+}
 ```
 
 To learn how to use these fields in your block view, take a look at the [block view documentation](/blocks/block-view).
@@ -70,21 +70,21 @@ Take a look at the `news-recent.php` block in the parent theme. You will find a 
 When going through these lines you will find several notable things.
 
 ```php lineNumbers=true
- public function block_context($context): array
-   {
-      $amount = get_field('amount') ? get_field('amount') : 3;
-      $items = latest_items_query('news', $amount);
-      $context['items'] = $items;
-      $context['card_type'] = 'news';
-      $context['holder_classes'] = 'col-12 col-md-6 col-lg-4';
-      $message = __("You haven't added any news yet, so this block will be empty.", "wp-lemon");
+public function block_context($context): array
+{
+   $amount = get_field('amount') ? get_field('amount') : 3;
+   $items = latest_items_query('news', $amount);
+   $context['items'] = $items;
+   $context['card_type'] = 'news';
+   $context['holder_classes'] = 'col-12 col-md-6 col-lg-4';
+   $message = __("You haven't added any news yet, so this block will be empty.", "wp-lemon");
 
-      if ($items->found_posts == 0) {
-         self::add_notification($message, 'warning');
-      }
-
-      return $context;
+   if ($items->found_posts == 0) {
+      self::add_notification($message, 'warning');
    }
+
+   return $context;
+}
 ```
 
 - wp-lemon comes with a set of predefined queries. Here we use latest_items_query() to get the latest posts of a specific posttype
@@ -96,28 +96,28 @@ When going through these lines you will find several notable things.
 Take a look at the `news-overview.php` block in the parent theme. You will again find a method block_context() that will query the data from the database and add it to the block context.
 
 ```php lineNumbers=true
-   public function block_context($context): array
-   {
-      $items = archive_query('news', 6); // query the news posttype
-      $context['items'] = $items;
-      $context['nav'] = true; // show nav
-      $context['count'] = get_total_posts('news', count($items)); // get a count array that feeds information to the postholder.
-      $context['post_type'] = 'news'; // sets post type for the ajax calls.
-      $context['card_type'] = 'news'; // sets the twig partial to render the actual posts in the loop.
-      $context['holder_classes'] = 'col-12 col-md-6 col-lg-4'; // holder classes around the cards in the loop.
+public function block_context($context): array
+{
+   $items = archive_query('news', 6); // query the news posttype
+   $context['items'] = $items;
+   $context['nav'] = true; // show nav
+   $context['count'] = get_total_posts('news', count($items)); // get a count array that feeds information to the postholder.
+   $context['post_type'] = 'news'; // sets post type for the ajax calls.
+   $context['card_type'] = 'news'; // sets the twig partial to render the actual posts in the loop.
+   $context['holder_classes'] = 'col-12 col-md-6 col-lg-4'; // holder classes around the cards in the loop.
 
-      if (isset($this->fields['show_filter']) && $this->fields['show_filter'] == true) {
-         $context['show_filter'] = true;
-         $context['terms'] = get_terms('category', array('hide_empty' => true));
-      }
-
-      // add notification when no posts are found.
-      if ($items->found_posts == 0) {
-         self::add_notification(__('You haven\'t added any news yet, so this block will be empty.', 'wp-lemon'), 'warning');
-      }
-
-      return $context;
+   if (isset($this->fields['show_filter']) && $this->fields['show_filter'] == true) {
+      $context['show_filter'] = true;
+      $context['terms'] = get_terms('category', array('hide_empty' => true));
    }
+
+   // add notification when no posts are found.
+   if ($items->found_posts == 0) {
+      self::add_notification(__('You haven\'t added any news yet, so this block will be empty.', 'wp-lemon'), 'warning');
+   }
+
+   return $context;
+}
 ```
 
 The linked `blocks/news-overview.twig` file will include `components/archive-loop.twig` that will display the initial posts and setup everything for receiving new posts via an ajax call.
@@ -144,19 +144,19 @@ use HighGround\Bulldozer\BlockRenderer;
 You might want to add a specific asset to the blocks context as it is only used by this specific block. You can use the `asset()` helper function for that.
 
 ```php lineNumbers=true
-	public function block_context($context): array
-	{
-      // Check if shape exists.
-      if(true == asset('images/banner.png')->exists()){
-            // get URL to image/shape
-            $context['banner_uri'] = asset('images/banner.png')->uri();
-      }
+public function block_context($context): array
+{
+   // Check if shape exists.
+   if(true == asset('images/banner.png')->exists()){
+         // get URL to image/shape
+         $context['banner_uri'] = asset('images/banner.png')->uri();
+   }
 
-      // get contents of the svg to use directly in to your block.
-      $context['sphere'] = asset('images/sphere.svg')->contents();
+   // get contents of the svg to use directly in to your block.
+   $context['sphere'] = asset('images/sphere.svg')->contents();
 
-      return $context;
-	}
+   return $context;
+}
 ```
 
 ### Block that needs conditional modifier classes
@@ -165,16 +165,16 @@ You might want to add conditional classes based on a field setting. This is wher
 This method adds a BEM modifier class to your block. An example:
 
 ```php lineNumbers=true
-	public function block_context($context): array
-	{
-    
-		if (isset($this->fields['show_pagination']) && true == $this->fields['show_pagination']) {
-            $context['show_pagination'] = true;
-            $this->add_modifier_class('has-pagination');
-		}
-    
-		return $context;
-	}
+public function block_context($context): array
+{
+   
+   if (isset($this->fields['show_pagination']) && true == $this->fields['show_pagination']) {
+         $context['show_pagination'] = true;
+         $this->add_modifier_class('has-pagination');
+   }
+   
+   return $context;
+}
 ```
 
 will result in

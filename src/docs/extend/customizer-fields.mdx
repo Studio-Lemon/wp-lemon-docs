@@ -94,14 +94,14 @@ This allows support for control types such as `text`, `hidden`, `number`, `range
 After adding your content trough the WordPress customizer you can now use the value from your customizer field in any twig file. 
 To use the disclaimer text example from above this would look like this:
 
-``` php 
+```php 
 $disclaimer_text = get_theme_mod('disclaimer') ;
 ```
 
 or in a twig file:
 
-``` html 
-   <p>
-      {{ get_theme_mod('disclaimer') }}
-   </p>
+```twig 
+<p>
+   {{ get_theme_mod('disclaimer') }}
+</p>
 ```
