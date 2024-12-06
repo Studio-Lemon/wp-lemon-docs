@@ -184,3 +184,19 @@ will result in
 ...
 </div>
 ```
+
+## Wp-lemon queries
+When you want to use post objects within your custom block you can use the following queries in your block context:
+
+| Function                    | Description                                                                                  |
+|-----------------------------|----------------------------------------------------------------------------------------------|
+| `latest_items_query`        | Retrieves the latest posts of a specific type, optionally filtered by taxonomy and terms.    |
+| `other_items_query`         | Fetches posts of a specific type, excluding a given post, optionally filtered by taxonomy and terms. |
+| `specific_items_query`      | Retrieves specific posts by their IDs and type.                                              |
+| `archive_query`             | Fetches a set of posts of a specific type for archive display, supporting pagination.        |
+| `get_total_posts`           | Calculates the total number of posts available for an AJAX "load more" functionality.        |
+| `adjacent_post_info`        | Gets information about the next or previous post, or returns the first/last post if unavailable. |
+| `next_post_info`            | Returns information about the next post or the first post if no next post exists.            |
+| `previous_post_info`        | Returns information about the previous post or the last post if no previous post exists.     |
+| `taxonomy_post_collection`  | Retrieves a collection of posts organized by category, based on a taxonomy and post type.    |
+
