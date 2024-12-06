@@ -50,6 +50,15 @@ namespace WP_Lemon\Child\Models;
  */
 function customize_register($wp_customize)
 {
+   $wp_customize->add_section(
+		'my-custom-section',
+		[
+			'title'    => _x('Custom settings', 'Backend - Customizer section title', 'wp-lemon-child'),
+			'priority' => 30,
+			'panel'    => 'lemon_customizer',
+		]
+	);
+
    $wp_customize->add_setting(
       'disclaimer',
       [
@@ -62,7 +71,7 @@ function customize_register($wp_customize)
       'disclaimer',
       [
          'label'       => _x('Disclaimer footer text', 'Backend - Customizer field label', 'wp-lemon-child'),
-         'section'     => 'uibt',
+         'section'     => '-custom-section',
          'type'        => 'textarea',
       ]
    );
@@ -91,7 +100,7 @@ $disclaimer_text = get_theme_mod('disclaimer') ;
 
 or in a twig file:
 
-``` twig 
+``` html 
    <p>
       {{ get_theme_mod('disclaimer') }}
    </p>
