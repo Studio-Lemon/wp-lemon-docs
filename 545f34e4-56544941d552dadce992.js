@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_rocket_docs=self.webpackChunkgatsby_starter_rocket_docs||[]).push([[203],{37609:function(t,r,a){a.d(r,{Jtp:function(){return s}});var e=a(64084);function s(t){return(0,e.k5)({tag:"svg",attr:{viewBox:"0 0 512 512"},child:[{tag:"path",attr:{d:"M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"}}]})(t)}}}]);
+//# sourceMappingURL=545f34e4-56544941d552dadce992.js.map
