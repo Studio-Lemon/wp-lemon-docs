@@ -31,6 +31,13 @@ export default function GlobalStyle() {
           font-weight: bold;
           margin-bottom: 24px;
         }
+        h1 + h1, #filter-hooks {
+          display: none;
+        }
+        
+        h1:has(+ .table-methods){
+          display: none;
+        }
 
         h2 {
           font-size: 24px;
