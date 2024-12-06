@@ -58,14 +58,22 @@
       link: "/overwrite/twig-files"
     - label: "Overwrite styles"
       link: "/overwrite/styles"
-- label: Reference
+- label: Functions & hooks
   items:
-    - label: "Functions"
-      link: "/reference/functions"
-    - label: "Classes"
-      link: "/reference/classes"
-    - label: "Filters"
+    - label: "Helper functions"
+      link: "/reference/api-functions"
+    - label: "Query functions"
+      link: "/reference/query-functions"
+    - label: "Filter Hooks"
       link: "/reference/hooks/filters"
+- label: Classes
+  items:
+    - label: "Generic Ajax Query"
+      link: "/reference/classes/generic-ajax-query"
+    - label: "wp-lemon Site"
+      link: "/reference/classes/wp-lemon-site"
+    - label: "Lemon Post object"
+      link: "/reference/classes/lemon-post"
 - label: Deployment
   items:
     - label: "Initial deploy"
