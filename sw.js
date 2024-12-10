@@ -36,17 +36,17 @@ self.__precacheManifest = [
     "url": "07b5f5ab-f39781b895352da0162c.js"
   },
   {
-    "url": "39b59e48-7f9f7292f28188d08819.js"
+    "url": "39b59e48-865825e823e83056d5c0.js"
   },
   {
     "url": "f0e45107-3e1473a269f4a4db9726.js"
   },
   {
-    "url": "app-01c78007dfe6492a4384.js"
+    "url": "app-9ae7d0c192f0218331a8.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "52fbab1bf77cf48175ef01317d043226"
+    "revision": "d8661a3442986e9ff9b4bca92a8447f0"
   },
   {
     "url": "manifest.webmanifest",
@@ -160,7 +160,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/wp-lemon-docs/app-01c78007dfe6492a4384.js`))) {
+  if (!resources || !(await caches.match(`/wp-lemon-docs/app-9ae7d0c192f0218331a8.js`))) {
     return await fetch(event.request)
   }
 
