@@ -8,32 +8,32 @@ Use this filter to modify the phone number result.
 
 <div class="table-responsive">
 
-| Name         | Type       | Description                           |
-| ------------ | ---------- | ------------------------------------- |
-| $result      | `string[]` | The phone number result.              |
-| $countrycode | `int`      | The country code of the phone number. |
+| Name | Type | Description |
+| --- | --- | --- |
+| $result | `string[]` | The phone number result. |
+| $countrycode | `int` | The country code of the phone number. |
 
 </div>
 
 ## wp-lemon/filter/phone-number/default-format
 
--   `wp-lemon/filter/phone-number/default-format`
--   `wp-lemon/filter/phone-number/default-format`
+- `wp-lemon/filter/phone-number/default-format`
+- `wp-lemon/filter/phone-number/default-format`
 
 Filters the default phone number format.
 
 Can be one of the following:
 
--   national (default)
--   international (+31 6 12345678)
--   combined (+31 (0) 6 12345678)
--   localized (only if WPML is active and the current language is not the default language)
+- national (default)
+- international (+31 6 12345678)
+- combined (+31 (0) 6 12345678)
+- localized (only if WPML is active and the current language is not the default language)
 
 <div class="table-responsive">
 
-| Name            | Type     | Description |
-| --------------- | -------- | ----------- |
-| $default_format | `string` | See above.  |
+| Name | Type | Description |
+| --- | --- | --- |
+| $default_format | `string` | See above. |
 
 </div>
 
@@ -45,8 +45,8 @@ By using this filter you can change the output of the language switcher.
 
 <div class="table-responsive">
 
-| Name      | Type                  | Description                  |
-| --------- | --------------------- | ---------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $switcher | `array<string,mixed>` | The language switcher array. |
 
 </div>
@@ -57,9 +57,9 @@ Filters the loaded card type for the node-latest block.
 
 <div class="table-responsive">
 
-| Name    | Type                  | Description                                                                                            |
-| ------- | --------------------- | ------------------------------------------------------------------------------------------------------ |
-| $shares | `array<string,mixed>` | an array of shares that can be addressed by the share partial. Array format: 'name' 'icon' 'share_url' |
+| Name | Type | Description |
+| --- | --- | --- |
+| $shares | `array<string,mixed>` | an array of shares that can be addressed by the share partial.  Array format: 'name' 'icon_class' 'share_url' |
 
 </div>
 
@@ -71,8 +71,8 @@ This filter can be used to change the socials that are being outputted.
 
 <div class="table-responsive">
 
-| Name     | Type                           | Description                                                    |
-| -------- | ------------------------------ | -------------------------------------------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $socials | `array<int` or `string,array>` | array of socials that can be addressed by the socials partial. |
 
 </div>
@@ -90,8 +90,8 @@ Filters the allowed blocks for the accordion-item block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
@@ -102,8 +102,8 @@ Filters the allowed blocks for the accordion block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
@@ -114,8 +114,8 @@ Filters the allowed blocks for the card grid block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
@@ -126,8 +126,8 @@ Filters the allowed blocks for the carousel block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
@@ -138,8 +138,8 @@ Filters the allowed blocks for the color-block block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
@@ -150,8 +150,8 @@ Filters the allowed blocks for the contact-cta block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
@@ -162,8 +162,8 @@ Filters the default image sizes in blocks.
 
 <div class="table-responsive">
 
-| Name         | Type     | Description              |
-| ------------ | -------- | ------------------------ |
+| Name | Type | Description |
+| --- | --- | --- |
 | $image_sizes | `string` | the default image sizes. |
 
 </div>
@@ -174,8 +174,8 @@ Filters the default image sizes in the content-card block.
 
 <div class="table-responsive">
 
-| Name         | Type     | Description              |
-| ------------ | -------- | ------------------------ |
+| Name | Type | Description |
+| --- | --- | --- |
 | $image_sizes | `string` | the default image sizes. |
 
 </div>
@@ -186,8 +186,8 @@ Filters the allowed post types to link to in the content-card block link field.
 
 <div class="table-responsive">
 
-| Name        | Type    | Description             |
-| ----------- | ------- | ----------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $post_types | `array` | the allowed post types. |
 
 </div>
@@ -198,8 +198,8 @@ Filters the amount of posts per page for the faq-highlights block.
 
 <div class="table-responsive">
 
-| Name    | Type  | Description                   |
-| ------- | ----- | ----------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `int` | the amount of posts per page. |
 
 </div>
@@ -210,8 +210,8 @@ Filters the allowed blocks for the faq-highlights block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
@@ -222,8 +222,8 @@ Filters the overview button text for the faq-highlights block.
 
 <div class="table-responsive">
 
-| Name                  | Type     | Description               |
-| --------------------- | -------- | ------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $overview_button_text | `string` | the overview button text. |
 
 </div>
@@ -234,26 +234,26 @@ Filters the allowed blocks for the image-card block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic_post_type}/overview-button-text
+## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/overview-button-text
 
 Filters the allowed blocks for the faq-highlights block.
 
 <div class="table-responsive">
 
-| Name                  | Type     | Description         |
-| --------------------- | -------- | ------------------- |
-| $overview_button_text | `string` | the button text     |
-| $label                | `string` | the post type label |
+| Name | Type | Description |
+| --- | --- | --- |
+| $overview_button_text | `string` | the button text |
+| $label | `string` | the post type label |
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic_post_type}/args
+## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/args
 
 Filters the query args for the node-latest block.
 
@@ -261,14 +261,14 @@ Filters the query args for the node-latest block.
 
 <div class="table-responsive">
 
-| Name     | Type              | Description             |
-| -------- | ----------------- | ----------------------- |
-| $args    | `null` or `array` | the original query args |
-| $post_id | `int`             | the post id             |
+| Name | Type | Description |
+| --- | --- | --- |
+| $args | `null` or `array` | the original query args |
+| $post_id | `int` | the post id |
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic_post_type}/no-items-message
+## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/no-items-message
 
 Filters the query args for the node-latest block.
 
@@ -276,16 +276,16 @@ Filters the query args for the node-latest block.
 
 <div class="table-responsive">
 
-| Name              | Type                | Description         |
-| ----------------- | ------------------- | ------------------- |
-| $no_items_message | `string`            | the message         |
-| $terms            | `array`             | the terms           |
-| $term_name        | `false` or `string` | the term name       |
-| $label            | `string`            | the post type label |
+| Name | Type | Description |
+| --- | --- | --- |
+| $no_items_message | `string` | the message |
+| $terms | `array` | the terms |
+| $term_name | `false` or `string` | the term name |
+| $label | `string` | the post type label |
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic_post_type}/holder-classes
+## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/holder-classes
 
 Filters the number of columns on lg format for the node-latest block.
 
@@ -293,8 +293,8 @@ Filters the number of columns on lg format for the node-latest block.
 
 <div class="table-responsive">
 
-| Name          | Type     | Description           |
-| ------------- | -------- | --------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $col_lg_class | `string` | the number of columns |
 
 </div>
@@ -305,20 +305,20 @@ Filters the default card type for the node-latest block.
 
 <div class="table-responsive">
 
-| Name       | Type     | Description                           |
-| ---------- | -------- | ------------------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $card_name | `string` | the card name without the crd- prefix |
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic_post_type}/card-type
+## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/card-type
 
 Filters the card type for the specific post type of the node-latest block.
 
 <div class="table-responsive">
 
-| Name       | Type     | Description                           |
-| ---------- | -------- | ------------------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $card_name | `string` | the card name without the crd- prefix |
 
 </div>
@@ -329,8 +329,8 @@ Filters the allowed blocks for the timeline-item block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
@@ -341,8 +341,8 @@ Filters the allowed blocks for the widget-row block.
 
 <div class="table-responsive">
 
-| Name    | Type    | Description         |
-| ------- | ------- | ------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $blocks | `array` | the allowed blocks. |
 
 </div>
@@ -357,12 +357,12 @@ Primarily used by the lemon-woo plugin to mark the shop page as the archive page
 
 <div class="table-responsive">
 
-| Name           | Type    | Description                                 |
-| -------------- | ------- | ------------------------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $archive_pages | `mixed` | The archive page for the current post type. |
-| $post_id       | `int`   | The post ID of the current menu item.       |
-| $item          | `mixed` | The current menu item.                      |
-| $classes       | `array` | The current menu item classes.              |
+| $post_id | `int` | The post ID of the current menu item. |
+| $item | `mixed` | The current menu item. |
+| $classes | `array` | The current menu item classes. |
 
 </div>
 
@@ -389,12 +389,12 @@ Filters the link attributes for a wp-lemon archive page.
 
 <div class="table-responsive">
 
-| Name       | Type        | Description                                                                              |
-| ---------- | ----------- | ---------------------------------------------------------------------------------------- |
-| $atts      | `array`     | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
-| $menu_item | `\WP_Post`  | The current menu item.                                                                   |
-| $args      | `\stdClass` | An object of wp_nav_menu() arguments.                                                    |
-| $depth     | `int`       | Depth of menu ite                                                                        |
+| Name | Type | Description |
+| --- | --- | --- |
+| $atts | `array` | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
+| $menu_item | `\WP_Post` | The current menu item. |
+| $args | `\stdClass` | An object of wp_nav_menu() arguments. |
+| $depth | `int` | Depth of menu ite |
 
 </div>
 
@@ -406,8 +406,8 @@ Use this filter to change the slug of the FAQ post type.
 
 <div class="table-responsive">
 
-| Name      | Type     | Description   |
-| --------- | -------- | ------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $faq_slug | `string` | The FAQ slug. |
 
 </div>
@@ -420,13 +420,13 @@ Defaults to 6.
 
 <div class="table-responsive">
 
-| Name   | Type  | Description                   |
-| ------ | ----- | ----------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $items | `int` | The number of items to query. |
 
 </div>
 
-## "wp-lemon/filter/ajax-query/{$this->current_action}/context
+## "wp-lemon/filter/ajax-query/{$this->current\_action}/context
 
 Filters the context before rendering the cards.
 
@@ -434,9 +434,9 @@ This allows developers to add or remove context before rendering the cards.
 
 <div class="table-responsive">
 
-| Name      | Type                  | Description                        |
-| --------- | --------------------- | ---------------------------------- |
-| $context  | `array`               | The context array.                 |
+| Name | Type | Description |
+| --- | --- | --- |
+| $context | `array` | The context array. |
 | $instance | `\Generic_Ajax_Query` | The current instance of the class. |
 
 </div>
@@ -454,8 +454,8 @@ You can read more about special pages in the documentation.
 
 <div class="table-responsive">
 
-| Name           | Type    | Description        |
-| -------------- | ------- | ------------------ |
+| Name | Type | Description |
+| --- | --- | --- |
 | $special_pages | `array` | The special pages. |
 
 </div>
@@ -468,8 +468,8 @@ We use this filter to change the order of social media platforms in the footer.
 
 <div class="table-responsive">
 
-| Name                    | Type    | Description                         |
-| ----------------------- | ------- | ----------------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $social_media_platforms | `array` | An array of social media platforms. |
 
 </div>
@@ -484,8 +484,8 @@ This allows developers to add or remove skip links.
 
 <div class="table-responsive">
 
-| Name   | Type    | Description                   |
-| ------ | ------- | ----------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $links | `array` | Original array of skip links. |
 
 </div>
@@ -498,8 +498,8 @@ Filters the quality of the webp image.
 
 <div class="table-responsive">
 
-| Name     | Type  | Description                    |
-| -------- | ----- | ------------------------------ |
+| Name | Type | Description |
+| --- | --- | --- |
 | $quality | `int` | The quality of the webp image. |
 
 </div>
@@ -520,10 +520,10 @@ This will override the block removal list and short-circuit the function.
 
 <div class="table-responsive">
 
-| Name       | Type                  | Description                                                                |
-| ---------- | --------------------- | -------------------------------------------------------------------------- |
-| $blocks    | `array<string,mixed>` | to allow array of core blocks that we only want to show in the editor.     |
-| $post_type | `string`              | The current post type. Use this to remove blocks for a specific post type. |
+| Name | Type | Description |
+| --- | --- | --- |
+| $blocks | `array<string,mixed>` | to allow array of core blocks that we only want to show in the editor. |
+| $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
 
@@ -535,8 +535,8 @@ We have a list of blocks that we do not want to show in the editor, this filter 
 
 <div class="table-responsive">
 
-| Name       | Type     | Description                                                                |
-| ---------- | -------- | -------------------------------------------------------------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
@@ -549,8 +549,8 @@ Filters the job post type fields registered with ACF.
 
 <div class="table-responsive">
 
-| Name           | Type                                   | Description             |
-| -------------- | -------------------------------------- | ----------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $person_fields | `\StoutLogic\AcfBuilder\FieldsBuilder` | The fields for the job. |
 
 </div>
@@ -563,8 +563,8 @@ Filters the person post type fields registered with ACF.
 
 <div class="table-responsive">
 
-| Name           | Type                                   | Description             |
-| -------------- | -------------------------------------- | ----------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | $person_fields | `\StoutLogic\AcfBuilder\FieldsBuilder` | The fields for the job. |
 
 </div>
@@ -577,8 +577,9 @@ Filters the menu fields registered with ACF.
 
 <div class="table-responsive">
 
-| Name         | Type                                   | Description              |
-| ------------ | -------------------------------------- | ------------------------ |
+| Name | Type | Description |
+| --- | --- | --- |
 | $menu_fields | `\StoutLogic\AcfBuilder\FieldsBuilder` | The fields for the menu. |
 
 </div>
+
