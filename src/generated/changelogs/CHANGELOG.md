@@ -1,3 +1,11 @@
+## 5.29.1 - 13 December 2024
+
+### 🐛 Bug Fixes
+
+- Always use largest size
+- Adjust padding for section container in contact CTA styles
+- Add aria-label for search button in FAQ highlights
+
 ## 5.29.0 - 10 December 2024
 
 ### ⛰️ Features
