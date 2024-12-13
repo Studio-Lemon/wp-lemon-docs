@@ -1,3 +1,10 @@
+## 5.29.2 - 13 December 2024
+
+### 🐛 Bug Fixes
+
+- Unregister cron job upon license deactivation
+- Ensure sizes are sorted only if present in media macro
+
 ## 5.29.1 - 13 December 2024
 
 ### 🐛 Bug Fixes
