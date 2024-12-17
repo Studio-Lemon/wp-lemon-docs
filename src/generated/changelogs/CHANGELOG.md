@@ -1,3 +1,17 @@
+## 5.30.0 - 17 December 2024
+
+### ⛰️  Features
+
+- Enhance get_archive_page function with WPML support and improved documentation
+
+### 🚜 Refactor
+
+- Deprecate get_archive_link method in favor of get_archive_page method in LemonPost class
+
+### 📚 Documentation
+
+- Update return type documentation for get_archive_page method
+
 ## 5.29.2 - 13 December 2024
 
 ### 🐛 Bug Fixes

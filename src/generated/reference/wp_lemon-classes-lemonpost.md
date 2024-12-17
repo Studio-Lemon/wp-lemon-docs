@@ -23,7 +23,7 @@ my_method( 'example', false );
 
 | Name | Return Type | Summary/Returns |
 | --- | --- | --- |
-| <span class="method-name">[get_archive_link()](#get_archive_link)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Method to get the archive link for the post type.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The archive link.</span></span> |
+| <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Method to get the archive page for the post type.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The archive link.</span></span> |
 | <span class="method-name">[get_excerpt()](#get_excerpt)</span> | <span class="method-type">`string`</span> | <span class="method-description">Custom excerpt.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Returns the excerpt.</span></span> |
 | <span class="method-name">[get_other_items()](#get_other_items)</span> | <span class="method-type">`\Timber\PostCollectionInterface` or `null`</span> | <span class="method-description">Method to get other post items.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The other items.</span></span> |
 
@@ -32,9 +32,9 @@ my_method( 'example', false );
 
 ## Class Methods
 
-### get\_archive\_link()
+### get\_archive\_page()
 
-Method to get the archive link for the post type.
+Method to get the archive page for the post type.
 
 **Returns:** `array|false` The archive link.
 
