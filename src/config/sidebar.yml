@@ -36,6 +36,9 @@
       link: "/blocks/block-view"
     - label: "Innerblocks"
       link: "/blocks/innerblocks"
+    - label: "Disabling blocks"
+      link: "/blocks/disabling-blocks"
+
 - label: Extend
   items:
     - label: "Global context"
@@ -52,6 +55,9 @@
       link: "/extend/special-pages"
     - label: "Customizer fields"
       link: "/extend/customizer-fields"
+    - label: "Post objects"
+      link: "/extend/post-objects"
+
 - label: Overwrite
   items:
     - label: "Overwrite twig files"

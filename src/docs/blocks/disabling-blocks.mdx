@@ -1,0 +1,76 @@
+---
+title: Disabling blocks
+description: Documentation on how to disable blocks.
+---
+
+WordPress blocks are a powerful tool to create content in the WordPress editor. 
+However, sometimes you might want to disable certain blocks. There are WordPress core blocks and wp-lemon blocks, and both can be disabled.
+It is possible to disable certain blocks, or make a specific allow list of blocks that can be used.
+
+
+## Wp-lemon blocks
+Filtering the blocks is done by using the `wp-lemon/filter/blocks` filter. This filter works as an allow list, 
+meaning that only the blocks that are in the array will be allowed.
+```php
+
+add_filter(
+	'wp-lemon/filter/blocks',
+	function ($blocks) {
+		return [
+			'logo',
+			'node-overview',
+			'widgets',
+			'widget',
+		];
+	}
+);
+
+```
+
+You can also use this accent same hook to create a deny list, by unsetting the blocks you want to disable. 
+This means that all blocks are allowed, except the ones that are unset.
+
+```php	
+
+add_filter(
+	'wp-lemon/filter/blocks',
+		function ($blocks) {
+			unset($blocks['price-card']);
+			return $blocks;
+		}
+);
+
+```
+
+## Core blocks
+Also for core blocks we've created a hook in wp-lemon. This hook again works as an allow list, specifically for core blocks.
+
+```php	
+
+add_filter('wp-lemon/filter/core-blocks-to-allow',
+	function ($blocks) {
+		return [
+			'core/paragraph',
+			'core/list',
+			'core/heading',
+		];
+	}
+);
+
+```
+
+To create a deny list for core blocks, you'll have to use another hook:
+
+```php
+
+add_filter(
+	'wp-lemon/filter/core-blocks-to-remove',
+	function ($blocks) {
+		$extra_blocks_to_remove = ['core/list'];
+		return array_merge($blocks, $extra_blocks_to_remove);
+	}
+);
+
+```
+
+To see the full list of hooks we've build for you to use, please take a look at the [filter documentation](/reference/hooks/filters).
