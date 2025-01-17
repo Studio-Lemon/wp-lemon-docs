@@ -34,10 +34,10 @@ This means that all blocks are allowed, except the ones that are unset.
 
 add_filter(
 	'wp-lemon/filter/blocks',
-	function ($blocks) {
-                unset($blocks['price-card']);
-		return $blocks;
-	}
+		function ($blocks) {
+			unset($blocks['price-card']);
+			return $blocks;
+		}
 );
 
 ```
@@ -47,13 +47,12 @@ Also for core blocks we've created a hook in wp-lemon. This hook again works as 
 
 ```php	
 
-add_filter(
-	'wp-lemon/filter/core-blocks-to-allow',
+add_filter('wp-lemon/filter/core-blocks-to-allow',
 	function ($blocks) {
-                return [
+		return [
 			'core/paragraph',
-	                'core/list',
-                        'core/heading',
+			'core/list',
+			'core/heading',
 		];
 	}
 );
@@ -67,10 +66,8 @@ To create a deny list for core blocks, you'll have to use another hook:
 add_filter(
 	'wp-lemon/filter/core-blocks-to-remove',
 	function ($blocks) {
-                
-                $extra_blocks_to_remove = ['core/list'];
-
-                return array_merge($blocks, $extra_blocks_to_remove);
+		$extra_blocks_to_remove = ['core/list'];
+		return array_merge($blocks, $extra_blocks_to_remove);
 	}
 );
 
