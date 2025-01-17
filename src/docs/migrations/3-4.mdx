@@ -27,22 +27,22 @@ Navigate to your child theme and open package.json and update the following depe
 > Make sure not to delete/overwrite extra dependencies that you may have included.
 
 ```json
-    "devDependencies": {
-        "@wordpress/browserslist-config": "^5.17",
-        "basebuilder-config": "^3.3.7",
-        "prettier": "^2.8",
-        "prettier-plugin-twig-melody": "^0.4.6",
-        "stylelint": "^15.6",
-        "stylelint-basebuilder": "^2.3"
-    },
-    "dependencies": {
-        "@popperjs/core": "^2.11.8",
-        "aos": "^3.0.0-beta.6",
-        "bootstrap": "^5.3",
-        "lodash.throttle": "^4.1.1",
-        "swiper": "^10.0",
-        "vanilla-lazyload": "17.8"
-    }
+"devDependencies": {
+    "@wordpress/browserslist-config": "^5.17",
+    "basebuilder-config": "^3.3.7",
+    "prettier": "^2.8",
+    "prettier-plugin-twig-melody": "^0.4.6",
+    "stylelint": "^15.6",
+    "stylelint-basebuilder": "^2.3"
+},
+"dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "aos": "^3.0.0-beta.6",
+    "bootstrap": "^5.3",
+    "lodash.throttle": "^4.1.1",
+    "swiper": "^10.0",
+    "vanilla-lazyload": "17.8"
+}
 ```
 ### Step 3. Move backend() function outside of domReady in editor.js
 move backend() function outside of domReady

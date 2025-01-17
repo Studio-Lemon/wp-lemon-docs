@@ -1,6 +1,6 @@
 ---
-title: Filter hooks
-description: Function reference
+title: Filter hooks reference
+description: PHP Filters of wp-lemon
 disableTableOfContents: false
 ---
 import Filters from "../../../generated/hooks/filters.md";

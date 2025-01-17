@@ -59,7 +59,7 @@ Filters the loaded card type for the node-latest block.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $shares | `array<string,mixed>` | an array of shares that can be addressed by the share partial.  Array format: 'name' 'icon' 'share_url' |
+| $shares | `array<string,mixed>` | an array of shares that can be addressed by the share partial.  Array format: 'name' 'icon_class' 'share_url' |
 
 </div>
 
@@ -295,7 +295,7 @@ Filters the number of columns on lg format for the node-latest block.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $col_lg_count | `string` | the number of columns |
+| $col_lg_class | `string` | the number of columns |
 
 </div>
 

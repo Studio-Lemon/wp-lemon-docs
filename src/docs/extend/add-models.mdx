@@ -33,13 +33,13 @@ Add the maybe_has_archive_page line to your model. This will activate the field 
 ```php title=library/models/your-cpt.php highlight={6}
 namespace WP_Lemon\Child\Models;
 
-    // Add
-    $args = [
-        ...
-        'maybe_has_archive_page' => true,
-    ];
+// Add
+$args = [
+    ...
+    'maybe_has_archive_page' => true,
+];
 
-    register_post_type('mycustomposttype', $args);
+register_post_type('mycustomposttype', $args);
 ```
 
 ### Select page as archive page in the customizer.
@@ -54,12 +54,12 @@ This way  new block variants will be registered specifically for your new post t
 ```php title=library/models/your-cpt.php highlight={6,7}
 namespace WP_Lemon\Child\Models;
 
-    // Add
-    $args = [
-        ...
-        'enable_overview_block'  => true,
-        'enable_latest_block'	 => true,
-    ];
+// Add
+$args = [
+    ...
+    'enable_overview_block'  => true,
+    'enable_latest_block'	 => true,
+];
 
-    register_post_type('mycustomposttype', $args);
+register_post_type('mycustomposttype', $args);
 ```
