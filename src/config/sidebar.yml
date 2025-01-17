@@ -58,8 +58,6 @@
       link: "/extend/special-pages"
     - label: "Customizer fields"
       link: "/extend/customizer-fields"
-    - label: "Post objects"
-      link: "/extend/post-objects"
 
 - label: Overwrite
   items:
