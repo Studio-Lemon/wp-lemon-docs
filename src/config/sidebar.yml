@@ -36,15 +36,18 @@
       link: "/blocks/block-view"
     - label: "Innerblocks"
       link: "/blocks/innerblocks"
-    - label: "Disabling blocks"
-      link: "/blocks/disabling-blocks"
-
+- label: Working with posts
+  items:
+    - label: "Post type registration (model)"
+      link: "/working-with-posts/post-type-registration"
+    - label: "Extending Post objects (controller)"
+      link: "/working-with-posts/extending-post-objects"
+    - label: "Using Post objects (view)"
+      link: "/working-with-posts/using-post-objects"
 - label: Extend
   items:
     - label: "Global context"
       link: "/extend/add-context"
-    - label: "Posttypes & taxonomies"
-      link: "/extend/add-models"
     - label: "ACF fields"
       link: "/extend/acf-fields"
     - label: "Filters & Actions"
