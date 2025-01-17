@@ -1,10 +1,10 @@
 ---
-title: Functions
+title: Query Functions
 disableTableOfContents: true
 ---
 
-import Functions from "../../generated/functions.md";
+import Qunctions from "../../generated/query-functions.md";
 
 The following function documentation is automatically generated.
 
-<Functions />
+<Qunctions />

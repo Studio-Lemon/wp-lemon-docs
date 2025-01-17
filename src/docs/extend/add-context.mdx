@@ -28,32 +28,32 @@ There are two ways you can alter the context:
 In the example below we add the get_navs method to the child class, call the parent method so we have that context as well, and then expanding the property. In this example you could use `nav.primary` `nav.secondary` to get the new nav menus.
 
 ```php
-	protected static function get_navs(): array
-	{
-		parent::get_navs();
+protected static function get_navs(): array
+{
+	parent::get_navs();
 
-		static::$menus['primary'] = wp_nav_menu(
-			[
-				'echo'           => false,
-				'theme_location' => 'primary_navigation',
-				'menu_class'     => 'navbar-nav',
-				'depth'          => 1,
-				'container'      => false,
-			]
-		);
+	static::$menus['primary'] = wp_nav_menu(
+		[
+			'echo'           => false,
+			'theme_location' => 'primary_navigation',
+			'menu_class'     => 'navbar-nav',
+			'depth'          => 1,
+			'container'      => false,
+		]
+	);
 
-		static::$menus['secondary'] = wp_nav_menu(
-			[
-				'echo'           => false,
-				'theme_location' => 'secondary_navigation',
-				'menu_class'     => 'navbar-nav',
-				'depth'          => 1,
-				'container'      => false,
-			]
-		);
+	static::$menus['secondary'] = wp_nav_menu(
+		[
+			'echo'           => false,
+			'theme_location' => 'secondary_navigation',
+			'menu_class'     => 'navbar-nav',
+			'depth'          => 1,
+			'container'      => false,
+		]
+	);
 
-		return static::$menus;
-	}
+	return static::$menus;
+}
 ```
 
 ## Adding additional methods to your WP_Lemon_Child_Site class
@@ -61,34 +61,33 @@ In the following example we will extend the global context to add a 'label' to u
 
 We first create our method builds the context and returns it.
 ```php
-	public function add_label_context()
-	{
-		$label = false;
-		// if is front page, return
-		if (is_front_page()) {
-			return false;
-		}
-
-		if (is_page()) {
-			$label = get_the_title();
-		} else if (self::is_post_type(['job', 'news', 'case'])) {
-			$label = WP_Lemon_Child_Site::get_archive_page();
-			$label = $label['title'];
-		}
-
-		return $label;
+public function add_label_context()
+{
+	$label = false;
+	// if is front page, return
+	if (is_front_page()) {
+		return false;
 	}
+
+	if (is_page()) {
+		$label = get_the_title();
+	} else if (self::is_post_type(['job', 'news', 'case'])) {
+		$label = WP_Lemon_Child_Site::get_archive_page();
+		$label = $label['title'];
+	}
+
+	return $label;
+}
 ```
 After that we add it to our extend_site_information method under a convenient key.
 
 ```php
-
-	protected function extend_site_information(): array
-	{
-		return [
-			++ 'nav_label' => $this->add_label_context(),
-		];
-	}
+protected function extend_site_information(): array
+{
+	return [
+		++ 'nav_label' => $this->add_label_context(),
+	];
+}
 ```
 
 We can now use it inside twig files like this:
