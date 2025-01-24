@@ -1,3 +1,14 @@
+## 5.32.0 - 24 January 2025
+
+### ⛰️ Features
+
+- _(blocks/cards)_ Add parent to context, this is the invoker that called the card in question. We can use this context to extend/change cards based on the location its called form, props to Mees.
+- Add actions to card-wrap to extend cards based on their context, props to Mees.
+
+### 🚜 Refactor
+
+- _(ajax-query)_ Add parent parameter to ajax query
+
 ## 5.31.0 - 20 January 2025
 
 ### ⛰️ Features
