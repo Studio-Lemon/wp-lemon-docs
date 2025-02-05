@@ -1,6 +1,43 @@
+## 5.32.0 - 24 January 2025
+
+### ⛰️ Features
+
+- _(blocks/cards)_ Add parent to context, this is the invoker that called the card in question. We can use this context to extend/change cards based on the location its called form, props to Mees.
+- Add actions to card-wrap to extend cards based on their context, props to Mees.
+
+### 🚜 Refactor
+
+- _(ajax-query)_ Add parent parameter to ajax query
+
+## 5.31.0 - 20 January 2025
+
+### ⛰️ Features
+
+- _(media)_ Enhance picture macro to include focal point handling and improve argument structure
+
+### 🐛 Bug Fixes
+
+- _(cards)_ Update holder_classes to use an array for improved flexibility
+- _(diagnostics)_ Change send_diagnostics method to static and directly run first diagnostics run after activation
+- _(logo)_ Ensure keys are retrieved safely from logo information
+- _(media)_ Correct object-position style in picture macro and set default image size
+- _(opening-hours)_ Wrap day label in a span for improved styling
+- _(post)_ Update get_archive_link method to return the archive link and mark it as deprecated
+- _(search-result)_ Change date container from div to small for semantic improvement
+- _(site)_ Replace exception throw with error trigger in get_site_information method
+
+### 🚜 Refactor
+
+- Update method signatures and improve error handling in site class
+
+### ⚙️ Miscellaneous Tasks
+
+- _(style)_ Update gap in share buttons list to use CSS variable for improved responsiveness
+- Lint files
+
 ## 5.30.0 - 17 December 2024
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Enhance get_archive_page function with WPML support and improved documentation
 
