@@ -1,3 +1,26 @@
+## 5.33.0 - 14 February 2025
+
+### ⛰️ Features
+
+- _(blocks)_ Block examples added in the editor for most wp-lemon blocks.
+- _(buttons)_ Add bottom margin variable for button spacing
+- _(navwalker)_ Add filter for link attributes based on menu item ID
+- _(timber-extend)_ Enhance webp_src_set function to be compatible with be-media-from-production and improve width handling
+
+### 🐛 Bug Fixes
+
+- _(entry-header)_ Ensure picture holder is only rendered when image_id is present
+- _(head)_ Ensure gtag function is defined before usage to prevent errors
+- _(wp-column)_ Set gap to 0 for no-margin columns on small screens, since margins are now gap based
+
+### 📚 Documentation
+
+- _(navwalker)_ Add documentation for the new filter in the navwalker
+
+### Remove
+
+- Remove unfinished html_attributes function to clean up code
+
 ## 5.32.0 - 24 January 2025
 
 ### ⛰️ Features
