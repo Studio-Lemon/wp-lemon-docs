@@ -398,6 +398,73 @@ Filters the link attributes for a wp-lemon archive page.
 
 </div>
 
+Example usage:
+
+**PHP**
+
+```php
+function link_attributes_job($atts, $item, $args, $depth)
+{
+
+$args = [
+   'post_type'      => 'job',
+   'posts_per_page' => -1,
+   'status'         => 'publish',
+ ];
+
+$posts = \Timber\Timber::get_posts($args);
+ $count = count($posts);
+
+if ($count > 0) {
+    $atts['data-jobs'] = $count;
+}
+
+  return $atts;
+}
+
+add_filter('wp-lemon/filter/navwalker/job/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
+```
+
+## wp-lemon/filter/navwalker/.$menu\_item->ID./link-attributes
+
+Filters the link attributes for a menu item based on the menu item ID.
+
+Example usage:
+
+```php
+function link_attributes_job($atts, $item, $args, $depth)
+{
+
+$args = [
+   'post_type'      => 'job',
+   'posts_per_page' => -1,
+   'status'         => 'publish',
+ ];
+
+$posts = \Timber\Timber::get_posts($args);
+ $count = count($posts);
+
+if ($count > 0) {
+    $atts['data-jobs'] = $count;
+}
+
+  return $atts;
+}
+
+add_filter('wp-lemon/filter/navwalker/10/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
+```
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $atts | `array` | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
+| $menu_item | `\WP_Post` | The current menu item. |
+| $args | `\stdClass` | An object of wp_nav_menu() arguments. |
+| $depth | `int` | Depth of menu ite |
+
+</div>
+
 ## wp-lemon/filter/model/faq-slug
 
 Filters the FAQ slug.

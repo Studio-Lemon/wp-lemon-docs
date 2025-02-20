@@ -1,3 +1,32 @@
+## 5.34.0 - 20 February 2025
+
+### ⛰️ Features
+
+- _(image)_ Add custom Image class to extend TimberImage functionality
+- _(package)_ Enhance pre-release script to include documentation generation
+- _(post)_ Extend Timber classes to use custom LemonPost and Image classes
+
+### 🐛 Bug Fixes
+
+- _(ajax)_ Update parent property type from string to mixed
+- _(card)_ Update email icon to use wp-lemon-icon-logo-e-mail
+- _(docs)_ Clean up docblocks and fix phpcs issues
+- _(media-text)_ Exclude .section from margin-top spacing adjustment
+- _(setup)_ Update return type in add_wp_lemon_post_classes function docblock
+
+### 🚜 Refactor
+
+- _(image)_ Rename focal method to focalpoint and update references
+
+### 📚 Documentation
+
+- _(filters)_ Add example usage for navwalker link attributes filter
+
+### ⚙️ Miscellaneous Tasks
+
+- _(package)_ Update basebuilder-config to version 5.1
+- Lint twig files
+
 ## 5.33.0 - 14 February 2025
 
 ### ⛰️ Features
