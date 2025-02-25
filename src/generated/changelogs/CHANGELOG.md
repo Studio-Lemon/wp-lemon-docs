@@ -1,3 +1,11 @@
+## 5.34.1 - 25 February 2025
+
+### 🐛 Bug Fixes
+
+- _(blocks)_ Rename image card to overlay card and update translations
+- _(icons)_ Fix e-mail icon
+- _(translations)_ Update Dutch language file
+
 ## 5.34.0 - 20 February 2025
 
 ### ⛰️ Features
