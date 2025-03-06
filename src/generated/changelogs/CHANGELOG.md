@@ -1,3 +1,14 @@
+## 5.34.2 - 06 March 2025
+
+### 🐛 Bug Fixes
+
+- *(carousel)* Refactor swiper initialization to use a configurable object. This fixes a missing scrollbar on mobile
+- *(cookiebar)* If no consent cookie is found, empty local storage object. Also set security_storage to true
+- *(excerpt)* BR tags are now being replaced with spaces. issue lemon_excerpt. Fixes #288
+- *(styles)* Update margin variables for responsive breakpoints
+- *(theme)* Add outline variation for button with ghost text color
+- *(timber)* Reorder use statements and adjust formatting for consistency
+
 ## 5.34.1 - 25 February 2025
 
 ### 🐛 Bug Fixes
