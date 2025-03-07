@@ -1,3 +1,9 @@
+## 5.34.3 - 07 March 2025
+
+### 🐛 Bug Fixes
+
+- Correct css variables regarding first and last block margins.
+
 ## 5.34.2 - 06 March 2025
 
 ### 🐛 Bug Fixes
