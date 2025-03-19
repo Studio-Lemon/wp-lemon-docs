@@ -1,3 +1,18 @@
+## 5.35.0 - 19 March 2025
+
+### ⛰️  Features
+
+- *(navwalker)* Add current_item property and filters for menu level classes and output. We can use this filter to add mega menu functions for example
+- Add additional hooks in node-latest block
+- Make full context available in ajax query results
+
+### 🐛 Bug Fixes
+
+- *(carousel)* Adjust swiper-progress styles for improved layout and consistency
+- *(carousel)* Change swiper progress height to inherit for better responsiveness
+- *(content-card)* Ensure linked_item is an array before accessing its first element
+- Wp-lemon/filter/core-blocks-to-allow filter now only filters core/ blocks instead of all registered blocks
+
 ## 5.34.3 - 07 March 2025
 
 ### 🐛 Bug Fixes

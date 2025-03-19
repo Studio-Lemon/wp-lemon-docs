@@ -383,6 +383,57 @@ function add_archive($archive_pages, $post_id, $item, $classes)
 add_filter('wp-lemon/filter/navwalker/archive-pages', __NAMESPACE__ . '\\add_archive', 10, 4);
 ```
 
+## wp-lemon/filter/navwalker/start-lvl-classes
+
+Filters the classes for the start of a menu level.
+
+**since** 5.35.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $div_class_names | `array` | The classes for the start of a menu level. |
+| $depth | `int` | The depth of the menu item. |
+| $args | `\stdClass` | An object of wp_nav_menu() arguments. |
+| $current_item | `\WP_Post` | The current menu item. |
+
+</div>
+
+## wp-lemon/filter/navwalker/start-lvl
+
+Filters the output for the start of a menu level.
+
+**since** 5.35.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $output | `string` | The output for the start of a menu level. |
+| $depth | `int` | The depth of the menu item. |
+| $args | `\stdClass` | An object of wp_nav_menu() arguments. |
+| $current_item | `\WP_Post` | The current menu item. |
+
+</div>
+
+## wp-lemon/filter/navwalker/end-lvl
+
+Filters the output for the end of a menu level.
+
+**since** 5.35.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $output | `string` | The output for the end of a menu level. |
+| $depth | `int` | The depth of the menu item. |
+| $args | `\stdClass` | An object of wp_nav_menu() arguments. |
+| $current_item | `\WP_Post` | The current menu item. |
+
+</div>
+
 ## wp-lemon/filter/navwalker/.$page./link-attributes
 
 Filters the link attributes for a wp-lemon archive page.
@@ -577,13 +628,28 @@ Filters the blocks to load.
 
 With this filter you can remove blocks from the parent theme.
 
-## wp-lemon/filter/core-blocks-to-allow
+## wp-lemon/filter/blocks-to-allow
 
 Filters the allowlist of blocks that will be allowed in the editor.
 
 This will override the block removal list and short-circuit the function.
 
-**since** 5.8.0
+**since** 5.35.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $blocks | `array<string,mixed>` | to allow array of core blocks that we only want to show in the editor. |
+| $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
+
+</div>
+
+## wp-lemon/filter/core-blocks-to-allow
+
+Filters the list of core blocks that will be allowed in the editor.
+
+**since** 5.8.0 introduced the filter.
 
 <div class="table-responsive">
 
