@@ -36,6 +36,8 @@
       link: "/blocks/block-view"
     - label: "Innerblocks"
       link: "/blocks/innerblocks"
+    - label: "Disabling blocks"
+      link: "/blocks/disabling-blocks"
 - label: Working with posts
   items:
     - label: "Post type registration (model)"
