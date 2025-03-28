@@ -59,7 +59,7 @@ Filters the loaded card type for the node-latest block.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $shares | `array<string,mixed>` | an array of shares that can be addressed by the share partial.  Array format: 'name' 'icon' 'share_url' |
+| $shares | `array<string,mixed>` | an array of shares that can be addressed by the share partial.  Array format: 'name' 'icon_class' 'share_url' |
 
 </div>
 
@@ -295,7 +295,7 @@ Filters the number of columns on lg format for the node-latest block.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $col_lg_count | `string` | the number of columns |
+| $col_lg_class | `string` | the number of columns |
 
 </div>
 
@@ -383,9 +383,127 @@ function add_archive($archive_pages, $post_id, $item, $classes)
 add_filter('wp-lemon/filter/navwalker/archive-pages', __NAMESPACE__ . '\\add_archive', 10, 4);
 ```
 
+## wp-lemon/filter/navwalker/start-lvl-classes
+
+Filters the classes for the start of a menu level.
+
+**since** 5.35.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $div_class_names | `array` | The classes for the start of a menu level. |
+| $depth | `int` | The depth of the menu item. |
+| $args | `\stdClass` | An object of wp_nav_menu() arguments. |
+| $current_item | `\WP_Post` | The current menu item. |
+
+</div>
+
+## wp-lemon/filter/navwalker/start-lvl
+
+Filters the output for the start of a menu level.
+
+**since** 5.35.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $output | `string` | The output for the start of a menu level. |
+| $depth | `int` | The depth of the menu item. |
+| $args | `\stdClass` | An object of wp_nav_menu() arguments. |
+| $current_item | `\WP_Post` | The current menu item. |
+
+</div>
+
+## wp-lemon/filter/navwalker/end-lvl
+
+Filters the output for the end of a menu level.
+
+**since** 5.35.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $output | `string` | The output for the end of a menu level. |
+| $depth | `int` | The depth of the menu item. |
+| $args | `\stdClass` | An object of wp_nav_menu() arguments. |
+| $current_item | `\WP_Post` | The current menu item. |
+
+</div>
+
 ## wp-lemon/filter/navwalker/.$page./link-attributes
 
 Filters the link attributes for a wp-lemon archive page.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $atts | `array` | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
+| $menu_item | `\WP_Post` | The current menu item. |
+| $args | `\stdClass` | An object of wp_nav_menu() arguments. |
+| $depth | `int` | Depth of menu ite |
+
+</div>
+
+Example usage:
+
+**PHP**
+
+```php
+function link_attributes_job($atts, $item, $args, $depth)
+{
+
+$args = [
+   'post_type'      => 'job',
+   'posts_per_page' => -1,
+   'status'         => 'publish',
+ ];
+
+$posts = \Timber\Timber::get_posts($args);
+ $count = count($posts);
+
+if ($count > 0) {
+    $atts['data-jobs'] = $count;
+}
+
+  return $atts;
+}
+
+add_filter('wp-lemon/filter/navwalker/job/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
+```
+
+## wp-lemon/filter/navwalker/.$menu\_item->ID./link-attributes
+
+Filters the link attributes for a menu item based on the menu item ID.
+
+Example usage:
+
+```php
+function link_attributes_job($atts, $item, $args, $depth)
+{
+
+$args = [
+   'post_type'      => 'job',
+   'posts_per_page' => -1,
+   'status'         => 'publish',
+ ];
+
+$posts = \Timber\Timber::get_posts($args);
+ $count = count($posts);
+
+if ($count > 0) {
+    $atts['data-jobs'] = $count;
+}
+
+  return $atts;
+}
+
+add_filter('wp-lemon/filter/navwalker/10/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
+```
 
 <div class="table-responsive">
 
@@ -510,13 +628,28 @@ Filters the blocks to load.
 
 With this filter you can remove blocks from the parent theme.
 
-## wp-lemon/filter/core-blocks-to-allow
+## wp-lemon/filter/blocks-to-allow
 
 Filters the allowlist of blocks that will be allowed in the editor.
 
 This will override the block removal list and short-circuit the function.
 
-**since** 5.8.0
+**since** 5.35.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $blocks | `array<string,mixed>` | to allow array of core blocks that we only want to show in the editor. |
+| $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
+
+</div>
+
+## wp-lemon/filter/core-blocks-to-allow
+
+Filters the list of core blocks that will be allowed in the editor.
+
+**since** 5.8.0 introduced the filter.
 
 <div class="table-responsive">
 

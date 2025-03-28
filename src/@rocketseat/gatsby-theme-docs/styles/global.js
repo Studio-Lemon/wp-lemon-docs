@@ -31,6 +31,13 @@ export default function GlobalStyle() {
           font-weight: bold;
           margin-bottom: 24px;
         }
+        h1 + h1, #filter-hooks {
+          display: none;
+        }
+        
+        h1:has(+ .table-methods){
+          display: none;
+        }
 
         h2 {
           font-size: 24px;
@@ -205,7 +212,6 @@ export default function GlobalStyle() {
           color: #232129;
           font-size: 12px;
           font-family: inherit;
-          letter-spacing: 0.075em;
           line-height: 1;
           padding: 0.25rem 0.5rem;
           position: absolute;
@@ -306,9 +312,14 @@ export default function GlobalStyle() {
           background: #e8bd36;
         }
 
-        pre[class~='language-php']::before {
+       pre[class~='language-php']::before {
          content: 'php';
          background: #e8bd36;
+       }
+
+       pre[class~='language-twig']::before {
+         content: 'twig';
+         background: #bacf29;
        }
 
        pre[class~='language-scss']::before {

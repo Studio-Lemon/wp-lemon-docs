@@ -15,18 +15,19 @@ such as block attributes and field values. You can use placeholders in the .twig
 
 To take a look at what your working with you can use the following example:
 
-```html
+```twig
 <pre>
     {{ dump(fields) }}
 </pre>
 ```
 This will show you all the fields that are available in the block. When you know the field names you can use them in your template like this:
 
-```html
+```twig
 <div class="classname">
     {{ fields.fieldname }}
 </div>
 ```
+
 ## Advanced Twig features
 Twig offers a lot of advanced features that can help you build complex and dynamic templates. For our use case however we will focus on the following features:
 - Programming locic (Conditional statements, loops)
@@ -38,7 +39,7 @@ Twig offers an extensive documentation on all the features that are available. Y
 Twig supports basic programming logic, allowing you to conditionally display elements based on the values of the block’s attributes. 
 For example, you can choose to display a special background only if a certain color is selected like this:
 
-```html
+```twig
 {% if fields.color %}
     <div class="background-color-{{ fields.color }}">
         {{ fields.text }}
@@ -51,7 +52,7 @@ Also, if your block contains repeatable items (like a list of testimonials or pr
 you can use Twig loops to render these items dynamically, based on the number of entries in the data passed from the controller.
 Below an example is given of how you can loop through a repeater field:
 
-```html
+```twig
 {% for item in fields.items %}
     <div class="item">
         <img src="{{ item.image }}" alt="{{ item.caption }}">
@@ -67,7 +68,7 @@ Twig also supports includes and extends, which allow you to reuse your code.
 Includes are the most straightforward as they are used for simple code reuse.
 This can be useful when you have a block that is used in multiple places on your website.
 It will look something like this:
-```html
+```twig
 {% include 'blocks/_example.twig' %}
 ```
 
@@ -81,7 +82,7 @@ We recommend to always extend the block-wrap.twig file in your block view file, 
 An example of when you wouldn't want to extend the block-wrap.twig file is when you have a really small inline component like an icon or something similar.
 
 If we look at how the block-wrap.twig file is extended in your custom block we can see how it's done:
-```html
+```twig
 {% extends 'layouts/block-wrap.twig' %}
 
 {% block block__inner %}
