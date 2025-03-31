@@ -64,7 +64,7 @@ To create a deny list for core blocks, you'll have to use another hook:
 ```php
 
 add_filter(
-	'wp-lemon/filter/core-blocks-to-remove',
+	'wp-lemon/filter/blocks-to-remove',
 	function ($blocks) {
 		$extra_blocks_to_remove = ['core/list'];
 		return array_merge($blocks, $extra_blocks_to_remove);
