@@ -111,10 +111,11 @@ Below is a overview of all those settings, and how you can overwrite them to cus
 
 A quick overview of some of the settings we predefined for you that you could use in your custom card:
 
-| **Functionality**            | **Twig Code**                                   | **Description**                                                                                                           |
+| **Functionality**            | **Twig Code**                                  | **Description**                                                                                                           |
 |------------------------------|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| **Card type**                | `{% set card_type = 'CARDTYPE' %}`         | Sets the card-type to the right type.                                                                                     |
+| **Card type**                | `{% set card_type = 'CARDTYPE' %}`             | Sets the card-type to the right type.                                                                                     |
 | **Hide default footer**      | `{% set hide_default_footer = true %}`         | Hides the default footer of the card.                                                                                     |
+| **Set link**      | `{% set link = true %}`                        | Makes the card clickable.                                                                                     |
 | **Custom icon**              | `{% set icon = 'custom-icon-class' %}`         | Sets the icon displayed in the footer. Default: `'wp-lemon-icon-arrow-right'`.                                            |
 | **Excerpt length**           | `{% set length = 150 %}`                       | Adjusts the excerpt length. Default: `100`. Can be customized per card type via a filter.                                 |
 | **Enable animation**         | `{% set do_animation = true %}`                | Enables animations on the card. Affected by filters for specific card types.                                              |
