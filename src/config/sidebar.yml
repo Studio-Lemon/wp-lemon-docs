@@ -60,6 +60,8 @@
       link: "/extend/special-pages"
     - label: "Customizer fields"
       link: "/extend/customizer-fields"
+    - label: "Cards"
+      link: "/extend/cards"
 
 - label: Overwrite
   items:
