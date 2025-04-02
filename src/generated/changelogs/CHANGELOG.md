@@ -1,16 +1,48 @@
+## 5.36.0 - 02 April 2025
+
+### ⛰️ Features
+
+- _(site)_ Add getter method to retrieve special page information, see WP_Lemon_Site::get_special_page()
+- _(styles)_ Enhance the way we load in media breakpoints in the global stylesheet
+
+### 🐛 Bug Fixes
+
+- _(carousel)_ Make carousel block easier to edit in the editor, fixes #292
+- _(cli)_ Fix build process
+- _(editor-styles)_ Add alignment styles for reusable blocks in the editor. Fixes #291
+- _(hooks)_ Disable automatic sizes for image tags
+- _(image)_ Add check to ensure attachment is an image, this fixes a compat issue with the Simple History plugin
+- _(image-card)_ Update styles and descriptions for image overlay card
+- _(load-blocks)_ Update deprecated filter for block removal list
+- _(navwalker)_ Correct output handling for end of menu level
+
+### 🚜 Refactor
+
+- _(blocks)_ Streamline dynamic block example handling with a mapping array
+
+### 🎨 Styling
+
+- _(styles)_ Comment out bootstrap root import in \_vendor.scss
+
+### ⚙️ Miscellaneous Tasks
+
+- _(node-overview)_ Increase maximum value for node overview block
+- Update translations
+- Update dependencies in package.json and yarn.lock
+
 ## 5.35.0 - 19 March 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
-- *(navwalker)* Add current_item property and filters for menu level classes and output. We can use this filter to add mega menu functions for example
+- _(navwalker)_ Add current_item property and filters for menu level classes and output. We can use this filter to add mega menu functions for example
 - Add additional hooks in node-latest block
 - Make full context available in ajax query results
 
 ### 🐛 Bug Fixes
 
-- *(carousel)* Adjust swiper-progress styles for improved layout and consistency
-- *(carousel)* Change swiper progress height to inherit for better responsiveness
-- *(content-card)* Ensure linked_item is an array before accessing its first element
+- _(carousel)_ Adjust swiper-progress styles for improved layout and consistency
+- _(carousel)_ Change swiper progress height to inherit for better responsiveness
+- _(content-card)_ Ensure linked_item is an array before accessing its first element
 - Wp-lemon/filter/core-blocks-to-allow filter now only filters core/ blocks instead of all registered blocks
 
 ## 5.34.3 - 07 March 2025
@@ -23,12 +55,12 @@
 
 ### 🐛 Bug Fixes
 
-- *(carousel)* Refactor swiper initialization to use a configurable object. This fixes a missing scrollbar on mobile
-- *(cookiebar)* If no consent cookie is found, empty local storage object. Also set security_storage to true
-- *(excerpt)* BR tags are now being replaced with spaces. issue lemon_excerpt. Fixes #288
-- *(styles)* Update margin variables for responsive breakpoints
-- *(theme)* Add outline variation for button with ghost text color
-- *(timber)* Reorder use statements and adjust formatting for consistency
+- _(carousel)_ Refactor swiper initialization to use a configurable object. This fixes a missing scrollbar on mobile
+- _(cookiebar)_ If no consent cookie is found, empty local storage object. Also set security_storage to true
+- _(excerpt)_ BR tags are now being replaced with spaces. issue lemon_excerpt. Fixes #288
+- _(styles)_ Update margin variables for responsive breakpoints
+- _(theme)_ Add outline variation for button with ghost text color
+- _(timber)_ Reorder use statements and adjust formatting for consistency
 
 ## 5.34.1 - 25 February 2025
 

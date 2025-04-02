@@ -24,6 +24,7 @@ my_method( 'example', false );
 | <span class="method-name">[extend_site_information()](#extend_site_information)</span> | <span class="method-type">`array`</span> | <span class="method-description">This is the main method that is overridden by the child-site class.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> $context The updated Timber context.</span></span> |
 | <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get archive information of singular item.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['id', 'title', 'url/link', 'status']</span></span> |
 | <span class="method-name">[get_site_information()](#get_site_information)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get specific site information.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> $value     The value retrieved from the site information.</span></span> |
+| <span class="method-name">[get_special_page()](#get_special_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get special page information.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['id', 'title', 'url/link'] or false if key does not exist.</span></span> |
 | <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type"></span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
 
 </div>
@@ -137,6 +138,36 @@ Get specific site information.
 | $key | `string` | The key under which this context can be accessed. |
 
 </div>
+
+---
+
+### get\_special\_page()
+
+Get special page information.
+
+**since** 5.36.0
+
+`get_special_page( string $key )`
+
+**Returns:** `array|false` Contains ['id', 'title', 'url/link'] or false if key does not exist.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $key | `string` | The key of the special page. |
+
+</div>
+
+Example usage:
+
+**PHP**
+
+```php
+public function block_context($context): array {
+  $contact_page = WP_Lemon_Child_Site::get_special_page('contact');
+}
+```
 
 ---
 

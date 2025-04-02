@@ -419,7 +419,7 @@ Filters the output for the start of a menu level.
 
 ## wp-lemon/filter/navwalker/end-lvl
 
-Filters the output for the end of a menu level.
+Filters the output for the end of a menu level just before the closing ul tag.
 
 **since** 5.35.0
 
@@ -661,6 +661,22 @@ Filters the list of core blocks that will be allowed in the editor.
 </div>
 
 ## wp-lemon/filter/core-blocks-to-remove
+
+Filters the block removal list.
+
+**DEPRECATED** since 5.35.0 Use wp-lemon/filter/blocks-to-remove instead. The name of the filter is misleading.
+
+We have a list of blocks that we do not want to show in the editor, this filter allows us to remove blocks from that list.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
+
+</div>
+
+## wp-lemon/filter/blocks-to-remove
 
 Filters the block removal list.
 
