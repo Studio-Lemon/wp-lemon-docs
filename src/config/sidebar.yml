@@ -8,6 +8,16 @@
   link: "/setup"
 - label: "Getting started"
   link: "/getting-started"
+- label: Getting started
+  items:
+    - label: "The Analysis Phase"
+      link: "/getting-started/analysis-phase"
+    - label: "Set up"
+      link: "/getting-started/set-up"
+    - label: "Basic styling"
+      link: "/basics/basic-styling"
+    - label: "Basic javascript"
+      link: "/basics/basic-javascript"
 - label: Basics
   items:
     - label: "Customizer settings"

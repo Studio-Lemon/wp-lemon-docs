@@ -1,0 +1,112 @@
+---
+title: "Set up"
+description: Learn what the first things are you need to set up in your project
+---
+
+## Set up phase
+
+Posttypes/taxonomies aanmaken
+Custom blocken
+First branding
+logo's en favicons
+kleuren
+fonts
+Pagina's aanmaken
+Inrichten met zoveel mogelijk content
+Menu's aanmaken
+header
+footer inrichten
+Customizer
+archiefpagina's en single pages instellen
+Socials
+
+## Customizer settings
+We tried to strike a good balance between managing settings via the customizer and WordPress filters.
+The settings that you can manage via the customizer are:
+
+- Site title and description (Native WordPress)
+- Create menus (Native WordPress)
+- Archive pages
+- social links
+- Contact information
+- 404 page settings
+- analytics and tracking codes
+- Add additional important pages like terms of service and contact page
+
+It is recommended to create your menu structure, add your custom post types and after that set your archive pages.
+
+
+## Logo's
+WP Lemon comes with default logo's that you can overwrite. You can create a `images/logo.svg` and a `images/logo-footer.svg` file in `resources/assets/images/`. After running one of the webpack commands your new files will be loaded.
+
+We recommend running the following checks on your logo's:
+
+- Check if there are no bloated elements in your SVG
+- Are there unnneeded transforms? Remove them via a tool like Affinity Designer
+- Is your logo minified? If not, use a tool like https://jakearchibald.github.io/svgomg/ to minify the source file.
+
+If you want to use other formats or you want to inject a svg file directly, please see [global context](/extend/add-context)
+
+## Fonts
+When creating a new website you'll probably want to add your own fonts as well. You can do this in two ways.
+
+### Using an enqueue hook (external hosting)
+
+The first is to enqueue an external stylesheet by using the `wp_enqueue_scripts` and `enqueue_block_editor_assets` hooks in your child theme.
+
+### Add them to your assets (provide fonts locally).
+
+You might want to host the fonts locally for several reasons. One of them is that you are not dependent on external CDN's. If the design requires a Google font you can [download it locally](https://gwfh.mranftl.com/fonts) via this tool.
+
+Once downloaded you can add the fonts to the resources/fonts/FONTNAME folder and include the generated stylesheet to `resources/style/01-settings/_fonts.scss`
+
+> ⚠️
+> Make sure to update the filepath when generating the font when using the above tool.
+
+### Add font-family value to variables
+
+When you've added your font you will now have to add the font variables in your `_variables.scss`. Read [basic styling](/basics/basic-styling) for more information about overwriting variables.
+
+```scss
+$base-font: "Lato", sans-serif;
+$secondary-font: "Noto Serif", serif;
+```
+
+
+
+## Favicons
+wp-lemon comes with a class that automatically checks for the right icons and then pass them to WordPress. This way the favicon get's displayed on all theme pages. It also handles the generation of a  `site.webmanifest`.
+
+wp-Lemon comes with a very obvious set of default favicons. This is to force you to create your own. Luckily it is very easy to create your own set. [Real Favicon Generator](https://realfavicongenerator.net/) you can create your own set of favicons.
+
+After generating your own set please place them in `/web/app/themes/YOURCHILDTHEME/resources/favicons`.
+
+The following method checks if `android-chrome-512x512.png` is present in your new favicon folder. If so, your new generated files will be loaded instead of the default ones provided by the parent theme.
+
+```php
+HighGround\Bulldozer\Site_Icons::filter_favicon_path
+```
+
+## Manifest
+The manifest is also handled by wp-lemon. `Site_Icons` creates a virtual `site.webmanifest` file in your site root and adds it to the head of your site as well. This way you do not have to worry about setting the proper URLs etc. It comes with sane default that you can overwrite.
+
+If you're coming from version < 2.3 please add the following to your child theme.
+
+```php title=library/child-setup.php lineNumbers=true
+use HighGround\Bulldozer\Site_Icons;
+...
+...
+
+/**
+ * Setup Site icons and manifest.
+ */
+$icons                   = new Site_Icons;
+$icons->name             = 'Name';             //defaults to site name
+$icons->short_name       = 'Short name';       //defaults to '' https://developer.mozilla.org/en-US/docs/Web/Manifest/short_name
+$icons->display          = 'standalone';       // can be fullscreen, standalone, minimal-ui, browser
+$icons->orientation      = 'portrait';         // can be portrait, landscape, any
+$icons->background_color = '#f7d600';          // must be hex color
+$icons->theme_color      = '#f7d600';          // must be hex color
+```
+
+This way you can overwrite the short name, background color and theme color. See [Mozilla docs for more info](https://developer.mozilla.org/en-US/docs/Web/Manifest).
