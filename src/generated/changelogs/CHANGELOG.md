@@ -1,3 +1,20 @@
+## 5.36.1 - 09 April 2025
+
+### 🐛 Bug Fixes
+
+- _(acf-field-fluentforms)_ Set default choices to an empty array, this prevents a query on page load
+- _(node-overview)_ Add load more and no more items text filters for better localization on a per posttype basis.
+- _(styles)_ Add custom root file to make sure the variables that are needed by the bootstrap css are available
+
+### 📚 Documentation
+
+- _(node-overview)_ Add filters for query arguments, load more text, and no more items message for better customization
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies
+- _(node-overview)_ Update parameter types in docblock for clarity and consistency
+
 ## 5.36.0 - 02 April 2025
 
 ### ⛰️ Features
