@@ -329,17 +329,16 @@ export default function GlobalStyle() {
 
       h2[id^=wp-lemon] {
         margin-top: 60px;
-        font-size:32px;
         position: relative;
-          &::after {
-              border-bottom:
-              2px solid #e8bd36;
-              content: "";
-              display: block;
-              height: 2px;
-              margin-top: .25em;
-              width: 100%;
-          }
+       &::after {
+          border-bottom:
+          2px solid #e8bd36;
+          content: "";
+          display: block;
+          height: 2px;
+          margin-top: .25em;
+          width: 100%;
+       }
       }
       `}
     />
