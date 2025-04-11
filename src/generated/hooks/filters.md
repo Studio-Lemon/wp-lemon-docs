@@ -120,7 +120,7 @@ Filters the allowed blocks for the card grid block.
 
 </div>
 
-## "wp-lemon/filter/block/{$this->slug}/allowed-blocks
+## "wp-lemon/filter/block/carousel/allowed-blocks"
 
 Filters the allowed blocks for the carousel block.
 
@@ -228,7 +228,7 @@ Filters the overview button text for the faq-highlights block.
 
 </div>
 
-## "wp-lemon/filter/block/{$this->slug}/allowed-blocks
+## "wp-lemon/filter/block/image-card/allowed-blocks"
 
 Filters the allowed blocks for the image-card block.
 
@@ -240,9 +240,13 @@ Filters the allowed blocks for the image-card block.
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/overview-button-text
+## "wp-lemon/filter/block/node-latest/{$post\_type}/overview-button-text
 
-Filters the allowed blocks for the faq-highlights block.
+Filters the overview button text for the node-latest block.
+
+You can use this filter to change the button text on a per post type basis.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
@@ -253,11 +257,13 @@ Filters the allowed blocks for the faq-highlights block.
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/args
+## "wp-lemon/filter/block/node-latest/{$post\_type}/args
 
 Filters the query args for the node-latest block.
 
-'$this->dynamic_post_type' The post type.
+You can use this filter to change the query args on a per post type basis.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
@@ -268,11 +274,13 @@ Filters the query args for the node-latest block.
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/no-items-message
+## "wp-lemon/filter/block/node-latest/{$post\_type}/no-items-message
 
-Filters the query args for the node-latest block.
+Filters the no items message for the node-latest block.
 
-'$this->dynamic_post_type' The post type.
+You can use this filter to change the message on a per post type basis.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
@@ -285,11 +293,13 @@ Filters the query args for the node-latest block.
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/holder-classes
+## "wp-lemon/filter/block/node-latest/{$post\_type}/holder-classes
 
 Filters the number of columns on lg format for the node-latest block.
 
-'$this->dynamic_post_type' The post type.
+You can use this filter to change the classes on a per post type basis.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
@@ -311,9 +321,13 @@ Filters the default card type for the node-latest block.
 
 </div>
 
-## "wp-lemon/filter/block/node-latest/{$this->dynamic\_post\_type}/card-type
+## "wp-lemon/filter/block/node-latest/{$post\_type}/card-type
 
 Filters the card type for the specific post type of the node-latest block.
+
+You can use this filter to change the card type on a per post type basis.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
@@ -323,9 +337,11 @@ Filters the card type for the specific post type of the node-latest block.
 
 </div>
 
-## "wp-lemon/filter/block/node-overview/{$this->dynamic\_post\_type}/args
+## "wp-lemon/filter/block/node-overview/$post\_type}/args
 
 Filters the arguments for the initial query in the node-overview block.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
@@ -334,33 +350,34 @@ Filters the arguments for the initial query in the node-overview block.
 | $args | `array` | The arguments for the query. |
 | $post_id | `int` | The post ID of the block. |
 | $fields | `array` | The fields of the block. |
-| $post_type | `string` | The post type of the block. |
 
 </div>
 
-## "wp-lemon/filter/block/node-overview/{$this->dynamic\_post\_type}/select-all-text
+## "wp-lemon/filter/block/node-overview/{$post\_type}/select-all-text
 
 Filters the text for the "all" option in the filter of the node-overview block.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $all_text | `string` | The text for the select all option. |
-| $post_type | `string` | The post type of the block. |
 
 </div>
 
-## "wp-lemon/filter/block/node-overview/{$this->dynamic\_post\_type}/holder-classes
+## "wp-lemon/filter/block/node-overview/{$post\_type}/holder-classes
 
 Filters the holder classes for the cards in the node overview block.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $holder_classes | `string` | The holder classes for the block. |
-| $post_type | `string` | The post type of the block. |
 
 </div>
 
@@ -388,91 +405,97 @@ Filters the image sizes for the node overview block.
 
 </div>
 
-## "wp-lemon/filter/block/node-overview/{$this->dynamic\_post\_type}/image-sizes
+## "wp-lemon/filter/block/node-overview/{$post\_type}/image-sizes
 
 Filters the image sizes for the node-overview block.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $image_sizes | `string` | The image sizes for the block. |
-| $post_type | `string` | The post type of the block. |
 
 </div>
 
-## "wp-lemon/filter/block/node-overview/{$this->dynamic\_post\_type}/card-type
+## "wp-lemon/filter/block/node-overview/{$post\_type}/card-type
 
 Filters the card_type for a specific post type used inside the node-overview block
 
 You can use this filter to change the card type for a specific post type.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $card_type | `string` | The card type for the block. |
-| $post_type | `string` | The post type of the block. |
 
 </div>
 
-## "wp-lemon/filter/block/node-overview/{$this->dynamic\_post\_type}/items
+## "wp-lemon/filter/block/node-overview/{$post\_type}/items
 
 Filters the posts that are going to be displayed in the initial load of the node-overview block.
 
 You can use this filter to add additional posts to the initial load or add an additional card in a specific spot.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $items | `\Timber\PostCollectionInterface` or `null` | The posts that are going to be displayed in the initial load. |
-| $post_type | `string` | The post type of the block. |
 
 </div>
 
-## "wp-lemon/filter/block/node-overview/{$this->dynamic\_post\_type}/posts-per-page
+## "wp-lemon/filter/block/node-overview/{$post\_type}/posts-per-page
 
 Filters the amount of posts that are are being queried for the node-overview block.
 
 This number is used for loads after the initial load.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $posts_to_query | `int` | The amount of posts to query for the block. |
-| $post_type | `string` | The post type of the block. |
 
 </div>
 
-## "wp-lemon/filter/block/node-overview/{$this->dynamic\_post\_type}/load-more-text
+## wplemon/filter/block/node-overview/{$post\_type}/load-more-text
 
 Filters the text for the load more button in the node-overview block.
 
 You can use this filter to change the text for the load more button for a specific post type.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $load_more_text | `string` | The text for the load more button. |
-| $post_type | `string` | The post type of the block. |
 
 </div>
 
-## "wp-lemon/filter/block/node-overview/{$this->dynamic\_post\_type}/no-more-items-text
+## "wp-lemon/filter/block/node-overview/{$post\_type}/no-more-items-text
 
 Filters the text for the "no more items" message in the node-overview block.
 
 You can use this filter to change the text for the no more items message for a specific post type.
+
+`$post_type` the post type dynamically set in the block.
 
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $no_more_items_text | `string` | The text for the no more items message. |
-| $post_type | `string` | The post type of the block. |
 
 </div>
 
@@ -587,7 +610,7 @@ Filters the output for the end of a menu level just before the closing ul tag.
 
 </div>
 
-## wp-lemon/filter/navwalker/.$page./link-attributes
+## "wp-lemon/filter/navwalker/{$page}/link-attributes
 
 Filters the link attributes for a wp-lemon archive page.
 
@@ -629,34 +652,11 @@ if ($count > 0) {
 add_filter('wp-lemon/filter/navwalker/job/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
 ```
 
-## wp-lemon/filter/navwalker/.$menu\_item->ID./link-attributes
+## "wp-lemon/filter/navwalker/{$menu\_item\_id}/link-attributes
 
 Filters the link attributes for a menu item based on the menu item ID.
 
-Example usage:
-
-```php
-function link_attributes_job($atts, $item, $args, $depth)
-{
-
-$args = [
-   'post_type'      => 'job',
-   'posts_per_page' => -1,
-   'status'         => 'publish',
- ];
-
-$posts = \Timber\Timber::get_posts($args);
- $count = count($posts);
-
-if ($count > 0) {
-    $atts['data-jobs'] = $count;
-}
-
-  return $atts;
-}
-
-add_filter('wp-lemon/filter/navwalker/10/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
-```
+`$menu_item_id` is the ID of the menu item.
 
 <div class="table-responsive">
 
@@ -665,7 +665,7 @@ add_filter('wp-lemon/filter/navwalker/10/link-attributes', __NAMESPACE__ . '\\li
 | $atts | `array` | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
 | $menu_item | `\WP_Post` | The current menu item. |
 | $args | `\stdClass` | An object of wp_nav_menu() arguments. |
-| $depth | `int` | Depth of menu ite |
+| $depth | `int` | Depth of menu ite  Example usage:  ```php function link_attributes_job($atts, $item, $args, $depth) {  $args = [    'post_type'      => 'job',    'posts_per_page' => -1,    'status'         => 'publish',  ];  $posts = \Timber\Timber::get_posts($args);  $count = count($posts);  if ($count > 0) {     $atts['data-jobs'] = $count; }    return $atts; }  add_filter('10/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4); ``` |
 
 </div>
 

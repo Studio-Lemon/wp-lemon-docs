@@ -82,6 +82,17 @@ Return a fluent form.
 
 </div>
 
+Use this field in your ACF field group:
+**PHP**
+
+```php
+->addField('form', 'fluentforms', [
+         'label' => __('Form', 'wp-lemon'),
+         'instructions' => __('Select the form you want to display.', 'wp-lemon'),
+         'return_format' => 'id',
+     ]);
+```
+
 ---
 
 ### log\_message()
