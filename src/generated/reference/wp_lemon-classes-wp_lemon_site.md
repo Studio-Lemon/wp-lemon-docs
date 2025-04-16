@@ -145,6 +145,10 @@ Get specific site information.
 
 Get special page information.
 
+Use in conjunction with the special pages filter to setup special pages and then retrieve them via this method.
+
+**link** <https://studio-lemon.github.io/wp-lemon-docs/extend/special-pages>
+
 **since** 5.36.0
 
 `get_special_page( string $key )`

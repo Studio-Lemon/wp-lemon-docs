@@ -1,3 +1,33 @@
+## 5.37.0 - 16 April 2025
+
+### ⛰️ Features
+
+- Core/file block now gets theme-button class as well
+
+### 🐛 Bug Fixes
+
+- Fix load just in time translation errors introduced in WordPress 6.8
+- Rename focal argument to focalpoint for consistency in card filters
+- Update card shadow color to use rgba for better transparency
+- Improve focal point check in Image class
+- Correct filter namespace for load more text in node overview block
+- Correct formatting in changelog replacement step
+- Refine comments and improve code readability in multiple files
+
+### 📚 Documentation
+
+- Enhance documentation for get_special_page method with usage details and link
+- Update documentation for link attributes filter in Bootstrap_Navwalker
+- Improve class documentation for ACF_Field_Fluentforms
+- Rewrite hooks for better display in documentation
+- Add usage example for ACF field fluentforms
+
+### ⚙️ Miscellaneous Tasks
+
+- Add find and replace step for changelog formatting in workflow
+- Update composer dependencies
+- Lint files
+
 ## 5.36.1 - 09 April 2025
 
 ### 🐛 Bug Fixes

@@ -84,7 +84,7 @@ Filters the front-end translations.
 This filter is used to add or modify the translations array.
 The translations is used in javascript to translate strings.
 
-## wp-lemon/filter/block/faq-item/allowed-blocks
+## wp-lemon/filter/block/accordion-item/allowed-blocks
 
 Filters the allowed blocks for the accordion-item block.
 
@@ -96,7 +96,7 @@ Filters the allowed blocks for the accordion-item block.
 
 </div>
 
-## wp-lemon/filter/block/faq/allowed-blocks
+## wp-lemon/filter/block/accordion/allowed-blocks
 
 Filters the allowed blocks for the accordion block.
 
@@ -339,7 +339,7 @@ You can use this filter to change the card type on a per post type basis.
 
 ## wp-lemon/filter/block/node-overview/$post\_type}/args
 
-Filters the arguments for the initial query in the node-overview block.
+Filters the additional arguments for the initial query in the node-overview block.
 
 `$post_type` the post type dynamically set in the block.
 
@@ -347,7 +347,7 @@ Filters the arguments for the initial query in the node-overview block.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $args | `array` | The arguments for the query. |
+| $args | `null` or `array` | The arguments for the query. |
 | $post_id | `int` | The post ID of the block. |
 | $fields | `array` | The fields of the block. |
 
@@ -467,7 +467,7 @@ This number is used for loads after the initial load.
 
 </div>
 
-## "wplemon/filter/block/node-overview/{$post\_type}/load-more-text
+## wp-lemon/filter/block/node-overview/{$post\_type}/load-more-text
 
 Filters the text for the load more button in the node-overview block.
 
