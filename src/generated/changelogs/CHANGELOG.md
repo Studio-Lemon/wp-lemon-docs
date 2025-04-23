@@ -1,3 +1,18 @@
+## 5.38.0 - 23 April 2025
+
+### ⛰️ Features
+
+- Overwrite Fluent Forms email attachments with media attachments from form data
+- Add button to view all frequently asked questions in related questions section
+
+### 🐛 Bug Fixes
+
+- Update alignment settings for block styles and adjust theme.json configuration fixes #297
+
+### ⚙️ Miscellaneous Tasks
+
+- Tested to 6.8
+
 ## 5.37.0 - 16 April 2025
 
 ### ⛰️ Features
