@@ -1,3 +1,9 @@
+## 5.38.1 - 23 April 2025
+
+### 🐛 Bug Fixes
+
+- Add padding to body for consistent layout
+
 ## 5.38.0 - 23 April 2025
 
 ### ⛰️ Features
