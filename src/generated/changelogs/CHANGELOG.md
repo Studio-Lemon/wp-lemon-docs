@@ -1,3 +1,23 @@
+## 5.38.2 - 29 April 2025
+
+### ⛰️  Features
+
+- Add filter for logo in footer
+
+### 🐛 Bug Fixes
+
+- Ensure type consistency in apply_filters arguments
+
+### 📚 Documentation
+
+- Document all the things
+- Continue documentation
+- Make a start with twig filter documentation
+
+### ⚙️ Miscellaneous Tasks
+
+- Exclude lib/api/twig-filters.php from rsync deployments
+
 ## 5.38.1 - 23 April 2025
 
 ### 🐛 Bug Fixes

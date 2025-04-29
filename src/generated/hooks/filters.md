@@ -77,6 +77,73 @@ This filter can be used to change the socials that are being outputted.
 
 </div>
 
+## wp-lemon/filter/block/animation/hide
+
+Filters whether or not to add an animation to the block.
+
+## wp-lemon/filter/block/{$slug}/animation/hide
+
+Filters whether or not to add an animation to the block but then for a specific block.
+
+Use this filter to toggle the animation for a specific block.
+
+`$slug` the post type dynamically set in the block.
+
+## wp-lemon/filter/header/render
+
+Filters whether or not to render the header.
+
+This is intended to be used on custom landing pages where you want to hide the header.
+
+## wp-lemon/filter/footer/render
+
+Filters whether or not to render the footer.
+
+This is intended to be used on custom landing pages where you want to hide the header.
+
+## wp-lemon/filter/cookiebar/reject
+
+Filters the text for the reject button in the cookie bar.
+
+## wp-lemon/filter/cookiebar/accept
+
+Filters the text for the accept button in the cookie bar.
+
+## wp-lemon/filter/header/breakpoint
+
+Filters the breakpoint for the header.
+
+This filter is used to determine the breakpoint at which the header will change its layout.
+
+## wp-lemon/filter/offcanvas/bootstrap-offcanvas-scroll
+
+Filters the boolean value to active the scroll listener for the offcanvas menu.
+
+This filter comes in handy when you are working with a onepager website and you want to place anchor links in the offcanvas menu.
+This way, the offcanvas menu will scroll to the desired section when the menu item is clicked.
+
+## wp-lemon/filter/header/logo
+
+Filters the logo HTML for the header.
+
+## wp-lemon/filter/footer/show-logo
+
+Filters if the logo should be shown in the footer.
+
+## wp-lemon/filter/footer/show-bottombar
+
+Filters if the bottombar should be shown in the footer.
+
+The bottombar is the bar in the footer containing the copyright message and footer menu.
+
+## wp-lemon/filter/footer/logo
+
+Filters the logo HTML for the footer.
+
+## wp-lemon/filter/copyright-message
+
+Filters the copyright message for the footer.
+
 ## wp-lemon/filter/translations/frontend
 
 Filters the front-end translations.
