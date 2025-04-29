@@ -34,10 +34,18 @@ This means that all blocks are allowed, except the ones that are unset.
 
 add_filter(
 	'wp-lemon/filter/blocks',
-		function ($blocks) {
-			unset($blocks['price-card']);
-			return $blocks;
-		}
+	function ($blocks) {
+
+		$to_remove = [
+			'contact-cta',
+			'circle-text',
+			'contact-bar',
+			'color-block'
+		];
+
+		$blocks = array_diff($blocks, $to_remove);
+		return $blocks;
+	}
 );
 
 ```
