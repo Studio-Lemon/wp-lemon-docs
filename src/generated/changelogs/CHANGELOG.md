@@ -1,3 +1,22 @@
+## 5.38.3 - 30 April 2025
+
+### 🐛 Bug Fixes
+
+- Correct JavaScript syntax in search-list.twig. Fixes #299
+
+### 📚 Documentation
+
+- Enhance documentation for phone number and attachment functions
+- Improve documentation for filters
+- Enhance documentation for get_attachment_info function
+- Update filter documentation for clarity and consistency
+- Enhance documentation for phone number formatting function
+
+### ⚙️ Miscellaneous Tasks
+
+- Update animation handling in various Twig templates and PHP files for improved consistency
+- Update copyright year variable in footer template
+
 ## 5.38.2 - 29 April 2025
 
 ### ⛰️  Features

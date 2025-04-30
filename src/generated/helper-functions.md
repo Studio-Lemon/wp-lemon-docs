@@ -124,6 +124,17 @@ You can use this function in your classes and functions to log errors and other 
 
 Function to format phone numbers throughout our template.
 
+This array contains the following information:
+
+- uri: The uri of the phone number. Used in the tel link.
+- whatsapp: The whatsapp link of the phone number. Used to create a whatsapp link.
+- timezone: The timezone of the phone number.
+- countrycode: The country code of the phone number.
+- national: The national format of the phone number without the country code.
+- international: The international format of the phone number with the country code.
+- combined: The combined format of the phone number resulting in a format like +31 (0) 6 12345678.
+- localized: The localized format of the phone number. This is only used if WPML is active and the current language is not the default language.
+
 **since** 3.17.0
 
 `format_phone_number( string|int $number )`
@@ -307,6 +318,13 @@ This function will clear the cache for the current post or the entire site.
 ### get\_attachment\_info()
 
 Get the attachment file info.
+
+This function will return the following information:
+
+- filename: The name of the file.
+- link: The link to the file.
+- extension: The file extension.
+- filesize: The size of the file in KB, MB or GB depending on the size.
 
 **since** 5.4.0
 

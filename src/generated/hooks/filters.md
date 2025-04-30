@@ -81,13 +81,436 @@ This filter can be used to change the socials that are being outputted.
 
 Filters whether or not to add an animation to the block.
 
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $maybe_hide_animation | `bool` | false in the frontend, true in the backend. |
+
+</div>
+
 ## wp-lemon/filter/block/{$slug}/animation/hide
 
-Filters whether or not to add an animation to the block but then for a specific block.
+Filters whether or not to hide the animation of a specific block.
 
 Use this filter to toggle the animation for a specific block.
 
 `$slug` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $maybe_hide_animation | `bool` | false in the frontend, true in the backend. |
+
+</div>
+
+## wp-lemon/filter/date-notation
+
+Filters the default date notation
+
+This filter is used in search results, news cards and the entry header.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $date_notation | `string` | The date notation. |
+
+</div>
+
+## wp-lemon/filter/card/person/phonenumber
+
+Filters the phonenumber that is displayed in the person card.
+
+**link** <More information about what the phone number array contains: https://studio-lemon.github.io/wp-lemon-docs/reference/api-functions#format_phone_number>
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $default_number | `string` | The default number. |
+| $phone_numbers | `array` | The phone numbers array containing the phone number information. |
+
+</div>
+
+## wp-lemon/filter/card/icon
+
+Filters the card icon.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $icon | `string` | The icon class name. |
+
+</div>
+
+## wp-lemon/filter/card/excerpt-length
+
+Filters the card excerpt length.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $excerpt_length | `int` | The excerpt length. |
+
+</div>
+
+## wp-lemon/filter/card/{$card\_type}/excerpt-length
+
+Filters the card excerpt length for a specific card type.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $excerpt_length | `int` | The excerpt length. |
+
+</div>
+
+## wp-lemon/filter/card/{$card\_type}/animation/hide
+
+Filters whether or not to hide the animation.
+
+Return true to hide the animation.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $maybe_hide_animation | `bool` | false in the frontend, true in the backend. |
+
+</div>
+
+## wp-lemon/filter/card/{$card\_type}/animation
+
+Filters what animation to use for the card.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $animation | `string` | The AOS animation name. |
+
+</div>
+
+## wp-lemon/filter/card/{$card\_type}/image-id
+
+Filters the image ID for the card.
+
+Use this filter to change the image ID of the card.
+You can use this filter to fall back to a default image if the image is not set.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $attachment_id | `int` | The attachment ID. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/card/news/image-id', function($attachment_id) {
+  if (empty($attachment_id)) {
+    return get_theme_mod('fallback_image_news');
+  }
+
+  return $attachment_id;
+});
+```
+
+## wp-lemon/filter/card/{$card\_type}/image-sizes
+
+Filters the image ID for the card.
+
+Use this filter to change the image ID of the card.
+You can use this filter to fall back to a default image if the image is not set.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $attachment_id | `int` | The attachment ID. |
+
+</div>
+
+An example of how to use this filter:
+**PHP**
+
+```php
+function overview_image_sizes($sizes)
+{
+  return '
+  (min-width: 768px) 750px,
+  (min-width: 600px) 510px,
+  400px';
+}
+add_filter('wp-lemon/filter/block/node-overview/case/image-sizes', __NAMESPACE__ . '\\overview_image_sizes');
+```
+
+## wp-lemon/filter/card/{$card\_type}/picture-classes
+
+Filters the picture classes for the card.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $picture_classes | `array` | The picture classes. |
+
+</div>
+
+## wp-lemon/filter/card/{$card\_type}/picture-el
+
+Filters the picture element for the card.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $picture_el | `string` | The picture element. |
+| $args | `array` | additional arguments to help you filter the picture element.<br/><br/> |
+
+</div>
+
+An example of how to use this filter:
+**PHP**
+
+```php
+function overwrite_news_card_media($content, $id)
+{
+
+  if (!get_field('video', $id)) {
+     return $content;
+  }
+
+  return Timber::compile('components/cards/video.twig', [
+     'video' => get_field('video', $id),
+     'id' => get_post_thumbnail_id($id),
+  ]);
+}
+add_filter('wp-lemon/filter/card/case/picture-el', __NAMESPACE__ . '\\overwrite_news_card_media', 10, 2); description
+```
+
+## wp-lemon/filter/card/{$card\_type}/picture-args
+
+Filters the picture arguments to render the picture element in the card.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $args | `array` | the arguments used by the picture macro to render the picture element.<br/><br/> |
+| $attachment_id | `int` | The attachment ID. |
+
+</div>
+
+## wp-lemon/filter/card/{$card\_type}/footer
+
+Filters the card footer for a specific card type.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $card_footer | `string` | The card footer. |
+| $post_id | `int` | The post ID. |
+| $fields | `array` or `null` | The fields if the current card is an ACF block. |
+
+</div>
+
+## wp-lemon/filter/block/node-overview/{$card\_type}/load-more-text
+
+Filters the load more text in the node overview block for a specific post type.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $load_more_text | `string` | The load more text. |
+
+</div>
+
+## wp-lemon/filter/block/node-overview/load-more-delay
+
+Filters the load more delay in the node overview block.
+
+Use this to slow down the fade in effect when loading more cards.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $delay | `int` | The delay in milliseconds. |
+
+</div>
+
+## wp-lemon/filter/block/node-overview/{$card\_type}/load-more-delay
+
+Filters the load more delay in the node overview block for a specific post type.
+
+Use this to slow down the fade in effect when loading more cards.
+
+`$card_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $delay | `int` | The delay in milliseconds. |
+
+</div>
+
+## wp-lemon/filter/cookiebar/show-analytics-checkbox
+
+Filters whether or not to show the analytics checkbox in the cookie bar.
+
+Default is true.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_checkbox | `string` | True if the checkbox should be shown, false if it should be hidden. |
+
+</div>
+
+## wp-lemon/filter/cookiebar/show-marketing-checkbox
+
+Filters whether or not to show the marketing checkbox in the cookie bar.
+
+Default is false.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_checkbox | `string` | True if the checkbox should be shown, false if it should be hidden. |
+
+</div>
+
+## wp-lemon/filter/cookiebar/show-preferences-checkbox
+
+Filters whether or not to show the preferences checkbox in the cookie bar.
+
+Default is false.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_checkbox | `string` | True if the checkbox should be shown, false if it should be hidden. |
+
+</div>
+
+## wp-lemon/filter/cookiebar/text
+
+Filters the complementary text for the cookie bar.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $text | `string` | The text for the cookie bar. |
+| $site_name | `string` | The site name. |
+
+</div>
+
+## wp-lemon/filter/cookiebar/functional
+
+Filters the explanation text for the functional cookies in the cookie bar.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $text | `string` | The text for the functional cookies. |
+
+</div>
+
+## wp-lemon/filter/cookiebar/analytics
+
+Filters the explanation text for the analytics cookies in the cookie bar.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $text | `string` | The text for the analytics cookies. |
+
+</div>
+
+## wp-lemon/filter/cookiebar/marketing
+
+Filters the explanation text for the marketing cookies in the cookie bar.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $text | `string` | The text for the marketing cookies. |
+
+</div>
+
+## wp-lemon/filter/cookiebar/preferences
+
+Filters the explanation text for the preference cookies in the cookie bar.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $text | `string` | The text for the preference cookies. |
+
+</div>
+
+## wp-lemon/filter/cookiebar/reject
+
+Filters the text for the reject button in the cookie bar.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $reject | `string` | default: 'Reject' |
+
+</div>
+
+## wp-lemon/filter/cookiebar/accept
+
+Filters the text for the accept button in the cookie bar.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $accept | `string` | default: 'Accept' |
+
+</div>
 
 ## wp-lemon/filter/header/render
 
@@ -95,25 +518,40 @@ Filters whether or not to render the header.
 
 This is intended to be used on custom landing pages where you want to hide the header.
 
-## wp-lemon/filter/footer/render
+<div class="table-responsive">
 
-Filters whether or not to render the footer.
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_header | `bool` | True if the header should be shown, false if it should be hidden. |
 
-This is intended to be used on custom landing pages where you want to hide the header.
+</div>
 
-## wp-lemon/filter/cookiebar/reject
+## wp-lemon/filter/header/logo
 
-Filters the text for the reject button in the cookie bar.
+Filters the logo HTML for the header.
 
-## wp-lemon/filter/cookiebar/accept
+<div class="table-responsive">
 
-Filters the text for the accept button in the cookie bar.
+| Name | Type | Description |
+| --- | --- | --- |
+| $logo_html | `string` | defaults to the logo HTML. |
+| $logo | `array` | The array containing the logo data. |
+
+</div>
 
 ## wp-lemon/filter/header/breakpoint
 
 Filters the breakpoint for the header.
 
 This filter is used to determine the breakpoint at which the header will change its layout.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $breakpoint | `string` | default: 'lg' |
+
+</div>
 
 ## wp-lemon/filter/offcanvas/bootstrap-offcanvas-scroll
 
@@ -122,13 +560,39 @@ Filters the boolean value to active the scroll listener for the offcanvas menu.
 This filter comes in handy when you are working with a onepager website and you want to place anchor links in the offcanvas menu.
 This way, the offcanvas menu will scroll to the desired section when the menu item is clicked.
 
-## wp-lemon/filter/header/logo
+<div class="table-responsive">
 
-Filters the logo HTML for the header.
+| Name | Type | Description |
+| --- | --- | --- |
+| $activate_scroll_listener | `bool` |  |
+
+</div>
+
+## wp-lemon/filter/footer/render
+
+Filters whether or not to render the footer.
+
+This is intended to be used on custom landing pages where you want to hide the header.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_footer | `bool` | True if the footer should be shown, false if it should be hidden. |
+
+</div>
 
 ## wp-lemon/filter/footer/show-logo
 
 Filters if the logo should be shown in the footer.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_logo | `bool` | defaults to true. |
+
+</div>
 
 ## wp-lemon/filter/footer/show-bottombar
 
@@ -136,13 +600,39 @@ Filters if the bottombar should be shown in the footer.
 
 The bottombar is the bar in the footer containing the copyright message and footer menu.
 
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_bottombar | `bool` | defaults to true. |
+
+</div>
+
 ## wp-lemon/filter/footer/logo
 
 Filters the logo HTML for the footer.
 
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $logo_html | `string` | defaults to the logo HTML. |
+| $logo | `array` | The array containing the logo data. |
+
+</div>
+
 ## wp-lemon/filter/copyright-message
 
 Filters the copyright message for the footer.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $copyright_message | `string` | The copyright message. |
+| $year | `string` | The current year. |
+
+</div>
 
 ## wp-lemon/filter/translations/frontend
 
