@@ -45,10 +45,10 @@ namespace WP_Lemon\Child\Models;
 /**
  * Register customizer fields via native api.
  *
- * @param object $wp_customize  The cutomizer object we are going to extend.
+ * @param \WP_Customize_Manager $wp_customize  The cutomizer object we are going to extend.
  * @return void
  */
-function customize_register($wp_customize)
+function customize_register(\WP_Customize_Manager  $wp_customize)
 {
    $wp_customize->add_section(
 		'my-custom-section',
