@@ -1182,14 +1182,12 @@ Filters the link attributes for a wp-lemon archive page.
 
 </div>
 
-Example usage:
-
 **PHP**
 
 ```php
+Example usage:
 function link_attributes_job($atts, $item, $args, $depth)
 {
-
 $args = [
    'post_type'      => 'job',
    'posts_per_page' => -1,
@@ -1205,7 +1203,6 @@ if ($count > 0) {
 
   return $atts;
 }
-
 add_filter('wp-lemon/filter/navwalker/job/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
 ```
 

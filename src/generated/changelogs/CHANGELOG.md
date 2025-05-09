@@ -1,3 +1,26 @@
+## 5.39.0 - 09 May 2025
+
+### ⛰️  Features
+
+- Add get_posty_type_options function to retrieve post type options
+
+### 🐛 Bug Fixes
+
+- Correct function name in changelog and update get_archive_page logic
+- Correct function name from get_posty_type_options to get_post_type_options
+- Update get_archive_page logic to check for singular posts
+- Correct button background color hover variable assignment
+- Fix query
+- Fix docs
+
+### 📚 Documentation
+
+- Add function to overwrite Fluent Forms payment URL
+
+### ⚙️ Miscellaneous Tasks
+
+- Linting
+
 ## 5.38.3 - 30 April 2025
 
 ### 🐛 Bug Fixes
@@ -19,7 +42,7 @@
 
 ## 5.38.2 - 29 April 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add filter for logo in footer
 
