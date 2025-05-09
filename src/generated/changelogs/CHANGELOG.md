@@ -1,6 +1,13 @@
+## 5.40.0 - 09 May 2025
+
+### 🐛 Bug Fixes
+
+- Fixes an issue where the cache clearing process would block the saving speed of a post. This process now runs async.
+- Invert condition in get_archive_page to return false for admin context
+
 ## 5.39.0 - 09 May 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add get_posty_type_options function to retrieve post type options
 
