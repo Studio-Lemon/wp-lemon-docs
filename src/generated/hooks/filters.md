@@ -634,6 +634,250 @@ Filters the copyright message for the footer.
 
 </div>
 
+## wp-lemon/filter/entry-header/{$post\_type}/tags
+
+Filters the tags/categories in the entry header.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $ | `array` | An array of taxonomies. |
+
+</div>
+
+## wp-lemon/filter/entry-header/{$post\_type}/archive-page
+
+Filters the back button information that leads back to the archive page.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $ | `array` | An array containing the back button information. |
+
+</div>
+
+## wp-lemon/filter/entry-header/{$post\_type}/type
+
+Filters the post type name for the entry header.
+
+This is shown above the title to indicate the post type.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $title | `string` | The title of the entry header. |
+
+</div>
+
+## wp-lemon/filter/entry-header/{$post\_type}/date
+
+Filters the date html for the entry header.
+
+Use this filter to change the date completely.
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $date | `string` | The date HTML. |
+
+</div>
+
+## wp-lemon/filter/entry-header/{$post\_type}/title
+
+Filters the title html for the entry header.
+
+Use this filter to change the title completely.
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $title | `string` | The title HTML. |
+
+</div>
+
+## wp-lemon/filter/entry-header/image-size
+
+Filters the image size for the entry header.
+
+Use this filter change the image size that is used in the entry header.
+Can be thumbnail, medium, large, full or any custom size.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $image_size | `string` | The image size, default: 'large'. |
+
+</div>
+
+## wp-lemon/filter/entry-header/{$post\_type}/image-size
+
+Filters the image size for the entry header.
+
+Use this filter change the image size that is used in the entry header.
+Can be thumbnail, medium, large, full or any custom size.
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $image_size | `string` | The image size, default: 'large'. |
+
+</div>
+
+## wp-lemon/filter/entry-header/{$post\_type}/image-id
+
+Filters the image ID for the entry header.
+
+Use this filter to change the image ID of the entry header.
+You can use this filter to fall back to a default image if the image is not set.
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $attachment_id | `int` | The attachment ID. |
+
+</div>
+
+## wp-lemon/filter/entry-header/{$post\_type}/picture-el
+
+Filters the full picture element for the entry header.
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $picture_html | `string` | The picture element HTML. |
+| $post_id | `int` | The post ID. |
+
+</div>
+
+## wp-lemon/filter/entry-header/person/archive-page
+
+Filters the back button information that leads back to the archive page.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $nav_back | `array` | An array containing the back button information. |
+
+</div>
+
+## wp-lemon/filter/entry-footer/share-buttons/show
+
+Filters whether or not to show the share buttons in the entry footer.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_share_buttons | `bool` | Whether or not to show the share buttons, default: true. |
+
+</div>
+
+## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/show
+
+Filters whether or not to show the share buttons in the entry footer for a specific post type.
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_share_buttons | `bool` | Whether or not to show the share buttons, default: true. |
+
+</div>
+
+## wp-lemon/filter/entry-footer/share-buttons/platforms
+
+Filters the share buttons for the entry footer.
+
+Contains 'linkedin', 'x', 'facebook', 'e-mail', 'whatsapp'
+
+You can change the order of the share buttons as well via this filter.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $share_buttons | `array` | The share buttons array. |
+
+</div>
+
+## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/platforms
+
+Filters the share platforms in the entry footer for a specific post type.
+
+Contains 'linkedin', 'x', 'facebook', 'e-mail', 'whatsapp'
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $share_buttons | `array` | The share buttons array. |
+
+</div>
+
+## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/post-type-name
+
+Filters the post type name for the entry footer.
+
+Use this if the share button sentence is vague.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $title | `string` | the post type name. |
+
+</div>
+
+## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/title
+
+Filters the title for the share buttons in the entry footer for a specific post type.
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $title | `string` | the title of the entry footer. |
+
+</div>
+
+## wp-lemon/filter/entry-footer/share-platforms/hide-labels
+
+Filters whether or not to show the share platforms labels in the entry footer.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_labels | `bool` | Whether or not to show the labels, default: true. |
+
+</div>
+
 ## wp-lemon/filter/translations/frontend
 
 Filters the front-end translations.

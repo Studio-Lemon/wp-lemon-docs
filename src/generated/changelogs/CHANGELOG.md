@@ -1,3 +1,17 @@
+## 5.40.1 - 10 May 2025
+
+### 🐛 Bug Fixes
+
+- Remove admin check from get_archive_page function
+
+### 📚 Documentation
+
+- Document remaining twig filters
+
+### ⚙️ Miscellaneous Tasks
+
+- Cleanup filters and twig files
+
 ## 5.40.0 - 09 May 2025
 
 ### 🐛 Bug Fixes
