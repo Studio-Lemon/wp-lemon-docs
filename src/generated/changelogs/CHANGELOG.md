@@ -1,3 +1,9 @@
+## 5.40.2 - 12 May 2025
+
+### 🐛 Bug Fixes
+
+- Update max-width calculation to use block-side-gutter variable
+
 ## 5.40.1 - 10 May 2025
 
 ### 🐛 Bug Fixes
