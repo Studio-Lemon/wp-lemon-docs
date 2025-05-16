@@ -1,3 +1,18 @@
+## 5.40.3 - 16 May 2025
+
+### ⛰️  Features
+
+- Add modal styles with background, input, and border radius variables
+
+### 🐛 Bug Fixes
+
+- Remove !important from dropdown background padding for better specificity
+- Update max-width calculations to use block-side-gutter-side variable
+
+### 📚 Documentation
+
+- Enhance documentation for get_attachment_info and get_svg_icon functions with Twig examples
+
 ## 5.40.2 - 12 May 2025
 
 ### 🐛 Bug Fixes
