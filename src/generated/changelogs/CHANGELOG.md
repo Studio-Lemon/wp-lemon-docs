@@ -1,6 +1,12 @@
+## 5.40.4 - 22 May 2025
+
+### 🐛 Bug Fixes
+
+- Update max-width calculations to use block-side-gutter for consistency
+
 ## 5.40.3 - 16 May 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add modal styles with background, input, and border radius variables
 
