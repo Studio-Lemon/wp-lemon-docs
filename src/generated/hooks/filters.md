@@ -1138,7 +1138,7 @@ You can use this filter to change the card type on a per post type basis.
 
 </div>
 
-## wp-lemon/filter/block/node-overview/$post\_type}/args
+## wp-lemon/filter/block/node-overview/{$post\_type}/args
 
 Filters the additional arguments for the initial query in the node-overview block.
 

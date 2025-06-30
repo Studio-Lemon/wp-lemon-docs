@@ -1,3 +1,22 @@
+## 5.41.0 - 30 June 2025
+
+### ⛰️  Features
+
+- Add 'ucfirst' filter to Timber Twig functionality
+
+### 🐛 Bug Fixes
+
+- Correct link reference for archive page in single-person template
+- Correct archive page link reference in entry header
+- Correct filter hook syntax in Node_Overview_Block
+- Remove 'wp-block-button__link' class from theme button
+- Add 'author' support to news post type
+- Fix Mollie payment in Woocommerce
+
+### ⚙️ Miscellaneous Tasks
+
+- Update block categories from dynamic to overview for consistency
+
 ## 5.40.4 - 22 May 2025
 
 ### 🐛 Bug Fixes
