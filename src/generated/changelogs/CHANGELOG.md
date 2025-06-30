@@ -1,3 +1,9 @@
+## 5.41.1 - 30 June 2025
+
+### 🐛 Bug Fixes
+
+- Update class name check for button block in theme button class function
+
 ## 5.41.0 - 30 June 2025
 
 ### ⛰️  Features
