@@ -348,10 +348,10 @@ This function will return the following information:
 {% set attachment = get_attachment_info(attachment_id) %}
 {% if attachment %}
   <div class="attachment-info">
-	 <h3>{{ attachment.filename }}</h3>
-	 <p>({{ file_info.filesize }} / {{ file_info.extension }})</p>
-	 <p>{{ attachment.extension }}</p>
-	 <a href="{{ attachment.link }}">{{ attachment.link }}</a>
+  <h3>{{ attachment.filename }}</h3>
+  <p>({{ file_info.filesize }} / {{ file_info.extension }})</p>
+  <p>{{ attachment.extension }}</p>
+  <a href="{{ attachment.link }}">{{ attachment.link }}</a>
  </div>
 {% endif %}
 

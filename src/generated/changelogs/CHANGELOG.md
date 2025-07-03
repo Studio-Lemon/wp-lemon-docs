@@ -1,3 +1,13 @@
+## 5.42.0 - 03 July 2025
+
+### 🚜 Refactor
+
+- Run cache function also on delete post and make the logic behind cache clearing faster.
+
+### ⚙️ Miscellaneous Tasks
+
+- Update basebuilder to 6.0
+
 ## 5.41.1 - 30 June 2025
 
 ### 🐛 Bug Fixes
@@ -6,7 +16,7 @@
 
 ## 5.41.0 - 30 June 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add 'ucfirst' filter to Timber Twig functionality
 
@@ -15,7 +25,7 @@
 - Correct link reference for archive page in single-person template
 - Correct archive page link reference in entry header
 - Correct filter hook syntax in Node_Overview_Block
-- Remove 'wp-block-button__link' class from theme button
+- Remove 'wp-block-button\_\_link' class from theme button
 - Add 'author' support to news post type
 - Fix Mollie payment in Woocommerce
 
