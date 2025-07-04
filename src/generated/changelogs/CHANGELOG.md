@@ -1,3 +1,14 @@
+## 5.42.1 - 04 July 2025
+
+### 🐛 Bug Fixes
+
+- [**breaking**] Fix function imports after update of sass
+
+    to fix this in your child theme, search replace the following:
+
+    Search for: @use "~parentThemeStyles/02-tools/functions" as \*;
+    Replace with: @import "~parentThemeStyles/02-tools/functions";
+
 ## 5.42.0 - 03 July 2025
 
 ### 🚜 Refactor
@@ -1429,7 +1440,6 @@ _Release Date - 10 november 2023_
     - Timber 2.0 introduces breaking changes. Most of them are handled by wp-lemon but please check your child theme `Timber` calls to see if they are still valid. Also check your debug.log for any errors or deprecation notices.
     - Swiper is updated to 11.x
 - 💡 **Newly added**
-
     - wp-lemon now uses Timber 2.0 which is way more modern then Timber 1. See [upgrade guide](https://timber.github.io/docs/v2/upgrade-guides/2.0/). We updated wp-lemon to be fully compatible with Timber 2.0
 
 - ✨ **Enhanced**
