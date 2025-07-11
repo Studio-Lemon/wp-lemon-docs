@@ -1,3 +1,21 @@
+
+## 5.42.2 - 11 July 2025
+
+### ⛰️  Features
+
+- Add card_type class to archive holder div. This makes it possible to target specific archive divs
+
+### 🐛 Bug Fixes
+
+- Fix core/file rendering
+- Disable pointer events on links within acf-block to prevent interaction in the backend
+- Wrap pagination include in conditional to prevent rendering when hidden
+- Change class selector to figure for wp-block-embed styles
+
+### ⚙️ Miscellaneous Tasks
+
+- Update max-width to use CSS variable for entry header picture holder
+
 ## 5.42.1 - 04 July 2025
 
 ### 🐛 Bug Fixes
