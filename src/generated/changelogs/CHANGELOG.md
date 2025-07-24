@@ -1,7 +1,24 @@
+## 5.43.0 - 24 July 2025
+
+### ⛰️ Features
+
+- Add font-weight variable for strong text elements
+- Add is_special_page method to check for special pages in the site class
+- Implement unique ID generation for ACF accordion blocks and update related templates
+- Add documentation for action hooks in twig-actions.php
+
+### 🐛 Bug Fixes
+
+- Ensure full width for non-aligned entries in frontend alignment styles
+- Add usage examples for card icon and footer filters
+
+### ⚙️ Miscellaneous Tasks
+
+- Add GitHub Action to check for undocumented WordPress hooks
 
 ## 5.42.2 - 11 July 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add card_type class to archive holder div. This makes it possible to target specific archive divs
 

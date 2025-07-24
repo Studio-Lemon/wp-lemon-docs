@@ -146,6 +146,15 @@ Filters the card icon.
 
 </div>
 
+An example of how to use this filter:
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/card/icon', function($icon) {
+   return 'icon-arrow-right';
+});
+```
+
 ## wp-lemon/filter/card/excerpt-length
 
 Filters the card excerpt length.
@@ -340,6 +349,16 @@ Filters the card footer for a specific card type.
 | $fields | `array` or `null` | The fields if the current card is an ACF block. |
 
 </div>
+
+**PHP**
+
+```php
+function custom_card_footer($card_footer, $post_id, $fields)
+{
+    return Timber::compile('components/cards/custom-footer.twig', []);
+}
+add_filter("wp-lemon/filter/card/{$card_type}/footer", __NAMESPACE__ . '\\custom_card_footer', 10, 3);
+```
 
 ## wp-lemon/filter/block/node-overview/{$card\_type}/load-more-text
 
