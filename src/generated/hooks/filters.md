@@ -374,6 +374,14 @@ Filters the load more text in the node overview block for a specific post type.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/node-overview/story/load-more-text', function ($text) {
+    return 'Meer verhalen';
+}, 10, 1);
+```
+
 ## wp-lemon/filter/block/node-overview/load-more-delay
 
 Filters the load more delay in the node overview block.
@@ -404,6 +412,14 @@ Use this to slow down the fade in effect when loading more cards.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/node-overview/load-more-delay', function () {
+  return 200;
+});
+```
+
 ## wp-lemon/filter/cookiebar/show-analytics-checkbox
 
 Filters whether or not to show the analytics checkbox in the cookie bar.
@@ -417,6 +433,12 @@ Default is true.
 | $show_checkbox | `string` | True if the checkbox should be shown, false if it should be hidden. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/show-analytics-checkbox', '__return_true');
+```
 
 ## wp-lemon/filter/cookiebar/show-marketing-checkbox
 
@@ -432,6 +454,12 @@ Default is false.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/show-marketing-checkbox', '__return_true');
+```
+
 ## wp-lemon/filter/cookiebar/show-preferences-checkbox
 
 Filters whether or not to show the preferences checkbox in the cookie bar.
@@ -446,6 +474,12 @@ Default is false.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/show-preferences-checkbox', '__return_true');
+```
+
 ## wp-lemon/filter/cookiebar/text
 
 Filters the complementary text for the cookie bar.
@@ -458,6 +492,14 @@ Filters the complementary text for the cookie bar.
 | $site_name | `string` | The site name. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/text', function ($text) {
+  return 'Text shown in the cookie bar.';
+});
+```
 
 ## wp-lemon/filter/cookiebar/functional
 
@@ -483,6 +525,14 @@ Filters the explanation text for the analytics cookies in the cookie bar.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/analytics', function ($text) {
+  return 'Text shown in the cookie bar.';
+});
+```
+
 ## wp-lemon/filter/cookiebar/marketing
 
 Filters the explanation text for the marketing cookies in the cookie bar.
@@ -494,6 +544,14 @@ Filters the explanation text for the marketing cookies in the cookie bar.
 | $text | `string` | The text for the marketing cookies. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/marketing', function ($type) {
+  return 'Text shown in the cookie bar';
+});
+```
 
 ## wp-lemon/filter/cookiebar/preferences
 
@@ -507,6 +565,14 @@ Filters the explanation text for the preference cookies in the cookie bar.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/preferences', function ($type) {
+  return 'Text shown in the cookie bar';
+});
+```
+
 ## wp-lemon/filter/cookiebar/reject
 
 Filters the text for the reject button in the cookie bar.
@@ -519,6 +585,14 @@ Filters the text for the reject button in the cookie bar.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/reject', function ($type) {
+  return 'Text shown in the cookie bar';
+});
+```
+
 ## wp-lemon/filter/cookiebar/accept
 
 Filters the text for the accept button in the cookie bar.
@@ -530,6 +604,14 @@ Filters the text for the accept button in the cookie bar.
 | $accept | `string` | default: 'Accept' |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/accept', function ($type) {
+  return 'Text shown in the cookie bar';
+});
+```
 
 ## wp-lemon/filter/header/render
 
@@ -545,6 +627,12 @@ This is intended to be used on custom landing pages where you want to hide the h
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/render', '__return_false');
+```
+
 ## wp-lemon/filter/header/logo
 
 Filters the logo HTML for the header.
@@ -557,6 +645,14 @@ Filters the logo HTML for the header.
 | $logo | `array` | The array containing the logo data. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/logo', function () {
+   return Timber::compile('partials/header-logo.twig');
+});
+```
 
 ## wp-lemon/filter/header/breakpoint
 
@@ -571,6 +667,14 @@ This filter is used to determine the breakpoint at which the header will change 
 | $breakpoint | `string` | default: 'lg' |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/breakpoint', function () {
+   return 'xl';
+});
+```
 
 ## wp-lemon/filter/offcanvas/bootstrap-offcanvas-scroll
 
@@ -587,6 +691,12 @@ This way, the offcanvas menu will scroll to the desired section when the menu it
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/offcanvas/bootstrap-offcanvas-scroll', '__return_true');
+```
+
 ## wp-lemon/filter/footer/render
 
 Filters whether or not to render the footer.
@@ -601,6 +711,12 @@ This is intended to be used on custom landing pages where you want to hide the h
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/footer/render', '__return_false');
+```
+
 ## wp-lemon/filter/footer/show-logo
 
 Filters if the logo should be shown in the footer.
@@ -612,6 +728,12 @@ Filters if the logo should be shown in the footer.
 | $show_logo | `bool` | defaults to true. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/footer/show-logo', '__return_false');
+```
 
 ## wp-lemon/filter/footer/show-bottombar
 
@@ -626,6 +748,12 @@ The bottombar is the bar in the footer containing the copyright message and foot
 | $show_bottombar | `bool` | defaults to true. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/footer/show-bottombar', '__return_false');
+```
 
 ## wp-lemon/filter/footer/logo
 
@@ -653,6 +781,16 @@ Filters the copyright message for the footer.
 
 </div>
 
+**PHP**
+
+```php
+function filter_copyright_message($message)
+{
+   return 'Copyright ' . date('Y') . ' - ' . get_bloginfo('name');
+}
+add_filter('wp-lemon/filter/copyright-message', __NAMESPACE__ . '\\filter_copyright_message');
+```
+
 ## wp-lemon/filter/entry-header/{$post\_type}/tags
 
 Filters the tags/categories in the entry header.
@@ -664,6 +802,14 @@ Filters the tags/categories in the entry header.
 | $ | `array` | An array of taxonomies. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter("wp-lemon/filter/entry-header/news/tags", function ($tag) {
+   return get_the_date() . " | " . $tag;
+});
+```
 
 ## wp-lemon/filter/entry-header/{$post\_type}/archive-page
 
@@ -691,6 +837,14 @@ This is shown above the title to indicate the post type.
 
 </div>
 
+**PHP**
+
+```php
+add_filter("wp-lemon/filter/entry-header/news/type", function ($type) {
+   return "News type text";
+});
+```
+
 ## wp-lemon/filter/entry-header/{$post\_type}/date
 
 Filters the date html for the entry header.
@@ -706,6 +860,12 @@ Use this filter to change the date completely.
 | $date | `string` | The date HTML. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter("wp-lemon/filter/entry-header/news/date", "__return_false");
+```
 
 ## wp-lemon/filter/entry-header/{$post\_type}/title
 
@@ -787,6 +947,19 @@ Filters the full picture element for the entry header.
 
 </div>
 
+**PHP**
+
+```php
+function overwrite_news_card_media($content, $id){
+
+	if (get_field('oembed',$id)){
+		return get_field('oembed',$id);
+	}
+	return $content;
+}
+add_filter('wp-lemon/filter/entry-header/news/picture-el', __NAMESPACE__ . '\\overwrite_news_card_media',10,2);
+```
+
 ## wp-lemon/filter/entry-header/person/archive-page
 
 Filters the back button information that leads back to the archive page.
@@ -811,6 +984,12 @@ Filters whether or not to show the share buttons in the entry footer.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/share-buttons/show', '__return_false');
+```
+
 ## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/show
 
 Filters whether or not to show the share buttons in the entry footer for a specific post type.
@@ -824,6 +1003,12 @@ Filters whether or not to show the share buttons in the entry footer for a speci
 | $show_share_buttons | `bool` | Whether or not to show the share buttons, default: true. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/faq/show-share-buttons', '__return_false');
+```
 
 ## wp-lemon/filter/entry-footer/share-buttons/platforms
 
@@ -841,6 +1026,14 @@ You can change the order of the share buttons as well via this filter.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/share-buttons/platforms', function ($platforms) {
+    return array_diff($platforms, ['x', 'facebook']);
+});
+```
+
 ## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/platforms
 
 Filters the share platforms in the entry footer for a specific post type.
@@ -856,6 +1049,14 @@ Contains 'linkedin', 'x', 'facebook', 'e-mail', 'whatsapp'
 | $share_buttons | `array` | The share buttons array. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/job/share-buttons/platforms', function ($platforms) {
+    return array_diff($platforms, ['x', 'facebook']);
+});
+```
 
 ## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/post-type-name
 
@@ -896,6 +1097,12 @@ Filters whether or not to show the share platforms labels in the entry footer.
 | $show_labels | `bool` | Whether or not to show the labels, default: true. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/share-platforms/hide-labels', '__return_false');
+```
 
 ## wp-lemon/filter/translations/frontend
 

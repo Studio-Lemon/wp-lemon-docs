@@ -39,6 +39,31 @@ This is useful for creating a dropdown or select field in a form where the user 
 
 </div>
 
+**PHP**
+
+```php
+use function WP_Lemon\API\get_post_type_options;
+$choices = get_post_type_options('person');
+
+... additional customizer code ...
+$wp_customize->add_setting(
+   'job_contact',
+   [
+       'sanitize_callback' => 'absint',
+   ]
+);
+$wp_customize->add_control(
+       'job_contact',
+       [
+        'label'          => esc_html_x('Job contact', 'Backend - Customizer field label', 'wp-lemon'),
+        'section'        => 'project',
+        'allow_addition' => true,
+        'type'           => 'select',
+        'settings'       => 'job_contact',
+        'choices'        => $choices
+      ]
+    );
+
 ---
 
 ### latest\_items\_query()
