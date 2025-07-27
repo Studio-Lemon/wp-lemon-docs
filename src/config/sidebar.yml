@@ -69,17 +69,18 @@
       link: "/overwrite/twig-files"
     - label: "Overwrite styles"
       link: "/overwrite/styles"
-- label: Functions & hooks
+- label: API function
   items:
     - label: "Helper functions"
       link: "/reference/api-functions"
     - label: "Query functions"
       link: "/reference/query-functions"
+- label: Hooks
+  items:
     - label: "Filter Hooks"
       link: "/reference/hooks/filters"
     - label: "Action Hooks"
       link: "/reference/hooks/actions"
-
 - label: Classes
   items:
     - label: "Generic Ajax Query"
