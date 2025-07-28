@@ -952,10 +952,10 @@ Filters the full picture element for the entry header.
 ```php
 function overwrite_news_card_media($content, $id){
 
-	if (get_field('oembed',$id)){
-		return get_field('oembed',$id);
-	}
-	return $content;
+ if (get_field('oembed',$id)){
+     return get_field('oembed',$id);
+ }
+ return $content;
 }
 add_filter('wp-lemon/filter/entry-header/news/picture-el', __NAMESPACE__ . '\\overwrite_news_card_media',10,2);
 ```

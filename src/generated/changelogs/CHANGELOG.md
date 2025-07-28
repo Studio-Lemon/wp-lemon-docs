@@ -1,3 +1,30 @@
+
+## 5.43.1 - 28 July 2025
+
+### 🐛 Bug Fixes
+
+- Correct conditional check for parent block ID in Accordion_Item_Block
+- Add missing body background variable to Bootstrap root styles
+
+### 📚 Documentation
+
+- Better docblocks
+- Add missing parameter description for picture arguments filter
+- Add closing code block to get_post_type_options function documentation
+- Add closing code block to documentation for get_attachment_info function
+- Add examples for various filters in twig-filters.php
+- Add examples in queries and filter docs
+- Enhance docs for get_post_type_options function
+
+### 🎨 Styling
+
+- Exclude theme-button from inheriting color in img-container
+
+### ⚙️ Miscellaneous Tasks
+
+- Phpstan
+- Linting
+
 ## 5.43.0 - 24 July 2025
 
 ### ⛰️ Features
