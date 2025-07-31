@@ -62,6 +62,8 @@
       link: "/extend/customizer-fields"
     - label: "Cards"
       link: "/extend/cards"
+    - label: "Internationalization"
+      link: "/extend/internationalization"
 
 - label: Overwrite
   items:
