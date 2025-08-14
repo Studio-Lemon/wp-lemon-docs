@@ -1,5 +1,41 @@
 # Action Hooks
 
+## wp-lemon/action/head/meta
+
+Fires in the head for custom meta tags.
+
+## wp-lemon/action/body/before
+
+Fires inside the body tag, before any content is rendered.
+
+## wp-lemon/action/header/before
+
+Fires before the header is rendered.
+
+## wp-lemon/action/header/after
+
+Fires after the header renders.
+
+## wp-lemon/action/content/before
+
+Fires inside the main content area, before any content is rendered.
+
+## wp-lemon/action/content/after
+
+Fires inside the main content area, after the main content is rendered.
+
+## wp-lemon/action/footer/before
+
+Fires before the footer renders.
+
+## wp-lemon/action/footer/after
+
+Fires after the footer renders.
+
+## wp-lemon/action/body/after
+
+Fires before the body tag closes.
+
 ## wp-lemon/action/block/node-latest/{$card\_type}/loop/before
 
 Fires before the node-latest loop for a specific card type.
@@ -132,38 +168,6 @@ Fires after a specific block renders.
 
 </div>
 
-## wp-lemon/action/body/before
-
-Fires before the body tag opens.
-
-## wp-lemon/action/header/before
-
-Fires before the header renders.
-
-## wp-lemon/action/header/after
-
-Fires after the header renders.
-
-## wp-lemon/action/content/before
-
-Fires before the main content area.
-
-## wp-lemon/action/content/after
-
-Fires after the main content area.
-
-## wp-lemon/action/footer/before
-
-Fires before the footer renders.
-
-## wp-lemon/action/footer/after
-
-Fires after the footer renders.
-
-## wp-lemon/action/body/after
-
-Fires before the body tag closes.
-
 ## wp-lemon/action/card/{$card\_type}/before
 
 Fires before a card of a specific type renders.
@@ -211,10 +215,6 @@ Fires after the node-overview loop for a specific card type.
 | $card_type | `string` | The card type dynamically set in the block. |
 
 </div>
-
-## wp-lemon/action/head/meta
-
-Fires in the head for custom meta tags.
 
 ## wp-lemon/action/cookiebar/text/before
 

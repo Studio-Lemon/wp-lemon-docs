@@ -33,7 +33,7 @@ Can be one of the following:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $default_format | `string` | See above. |
+| $default_format | `string` | Default phone number format, defaults to 'national'. |
 
 </div>
 
@@ -1784,6 +1784,16 @@ This allows developers to add or remove skip links.
 | $links | `array` | Original array of skip links. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/a11y/skip-links', function ($skip_links) {
+    unset($skip_links['navbar']);
+    $skip_links['menu'] = __('Skip to primary navigation', 'wp-lemon');
+    return $skip_links;
+}, 10, 1);
+```
 
 ## wp-lemon/filter/webp-quality
 

@@ -1,3 +1,35 @@
+## 5.44.0 - 14 August 2025
+
+### ⛰️ Features
+
+- Add reserved keys for site information and enforce validation in context addition
+- Move attributes to new methods
+
+### 🐛 Bug Fixes
+
+- Speed up loading of wp-lemon by 10% by better class_exist calls.
+- Increase default excerpt length in search result component
+- Correct boolean casting for maybe_hide_animation in Section_Block
+- Adjust aspect ratio handling for entry header picture
+- Contact bar fixes
+
+### 📚 Documentation
+
+- Update generated docs
+- Add examples in codebase
+- Better docblock
+- Change order of actions
+- Update documentation for previous_post_info and taxonomy_post_collection functions
+
+### 🎨 Styling
+
+- Adjust width calculation for icons-list items
+
+### ⚙️ Miscellaneous Tasks
+
+- Ignore error
+- Bump minimal Bulldozer version
+- Update dependencies
 
 ## 5.43.1 - 28 July 2025
 

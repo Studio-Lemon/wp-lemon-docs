@@ -251,6 +251,23 @@ Returns a collection of posts based on a taxonomy and post type.
 Use the 'collection' key to first loop through the main categories which holds
 name, slug, id, description and posts and then run a nested loop through the posts.
 
+**since** 4.9.0
+
+`taxonomy_post_collection( string $taxonomy, string $post_type )`
+
+**Returns:** `array` Returns an array with (bool) categories, (nested-array) collection, (int) amount and (string) debug.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $taxonomy | `string` | The taxonomy to query. |
+| $post_type | `string` | The post type to query. |
+
+</div>
+
+**Twig**
+
 ```twig
   <nav class="post-overview__nav">
       {% for category in post.collection %}
@@ -277,21 +294,6 @@ name, slug, id, description and posts and then run a nested loop through the pos
   </div>
 
 ```
-
-**since** 4.9.0
-
-`taxonomy_post_collection( string $taxonomy, string $post_type )`
-
-**Returns:** `array` Returns an array with (bool) categories, (nested-array) collection, (int) amount and (string) debug.
-
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $taxonomy | `string` | The taxonomy to query. |
-| $post_type | `string` | The post type to query. |
-
-</div>
 
 ---
 
