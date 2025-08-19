@@ -119,6 +119,14 @@ This filter is used in search results, news cards and the entry header.
 
 </div>
 
+**PHP**
+
+```php
+  add_filter('wp-lemon/filter/date-notation', function($date_notation) {
+     return 'F j, Y';
+  });
+```
+
 ## wp-lemon/filter/card/person/phonenumber
 
 Filters the phonenumber that is displayed in the person card.
@@ -386,7 +394,7 @@ add_filter('wp-lemon/filter/block/node-overview/story/load-more-text', function 
 
 Filters the load more delay in the node overview block.
 
-Use this to slow down the fade in effect when loading more cards.
+Set a delay in milliseconds between the fade-ins of the different cards when they get loaded.
 
 <div class="table-responsive">
 
@@ -400,7 +408,7 @@ Use this to slow down the fade in effect when loading more cards.
 
 Filters the load more delay in the node overview block for a specific post type.
 
-Use this to slow down the fade in effect when loading more cards.
+Set a delay in milliseconds between the fade-ins of the different cards when they get loaded.
 
 `$card_type` the post type dynamically set in the block.
 
@@ -1147,7 +1155,7 @@ Filters the allowed blocks for the card grid block.
 
 </div>
 
-## wp-lemon/filter/block/carousel/allowed-blocks"
+## wp-lemon/filter/block/carousel/allowed-blocks
 
 Filters the allowed blocks for the carousel block.
 
@@ -1158,6 +1166,15 @@ Filters the allowed blocks for the carousel block.
 | $blocks | `array` | the allowed blocks. |
 
 </div>
+
+**PHP**
+
+```php
+  add_filter('wp-lemon/filter/block/carousel/allowed-blocks', function($blocks) {
+     $blocks[] = 'acf/icon-card';
+     return $blocks;
+  });
+```
 
 ## wp-lemon/filter/block/color-block/allowed-blocks
 
@@ -1648,7 +1665,7 @@ Filters the link attributes for a wp-lemon archive page.
 | $atts | `array` | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
 | $menu_item | `\WP_Post` | The current menu item. |
 | $args | `\stdClass` | An object of wp_nav_menu() arguments. |
-| $depth | `int` | Depth of menu ite |
+| $depth | `int` | Depth of menu item. |
 
 </div>
 
@@ -1769,6 +1786,17 @@ We use this filter to change the order of social media platforms in the footer.
 
 </div>
 
+**PHP**
+
+```php
+add_filter(
+'wp-lemon/filter/socials-order',
+function () {
+   return ['linkedin', 'x', 'facebook', 'instagram', 'youtube'];
+}
+);
+```
+
 ## wp-lemon/filter/a11y/skip-links
 
 Filters the array of skip links.
@@ -1815,6 +1843,27 @@ Filters the blocks to load.
 
 With this filter you can remove blocks from the parent theme.
 
+**PHP**
+
+```php
+function allowed_vanilla_lemon_blocks($blocks)
+{
+  return [
+     'accordion',
+     'accordion-item',
+     'card-grid',
+     'content-card',
+     'node-latest',
+     'node-overview',
+     'section',
+     'todo',
+     'widgets',
+     'widget',
+  ];
+}
+add_filter('wp-lemon/filter/blocks', __NAMESPACE__ . '\\allowed_vanilla_lemon_blocks', 10, 1);
+```
+
 ## wp-lemon/filter/blocks-to-allow
 
 Filters the allowlist of blocks that will be allowed in the editor.
@@ -1831,6 +1880,34 @@ This will override the block removal list and short-circuit the function.
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
+
+**PHP**
+
+```php
+function core_blocks_to_allow($blocks, $post_type)
+{
+   // Add the core block 'core/quote' to the allowed blocks for the post type 'faq'.
+   switch ($post_type) {
+      case 'partner':
+         $blocks = [];
+         $blocks[] = 'core/paragraph';
+         $blocks[] = 'core/list';
+         $blocks[] = 'core/embed';
+         $blocks[] = 'core/heading';
+         $blocks[] = 'core/image';
+         $blocks[] = 'core/gallery';
+
+         // Add more cases if needed
+
+      default:
+         // Optional: handle other post types
+         break;
+  }
+
+  return $blocks;
+}
+add_filter('wp-lemon/filter/blocks-to-allow', __NAMESPACE__ . '\\core_blocks_to_allow', 10, 2);
+```
 
 ## wp-lemon/filter/core-blocks-to-allow
 
@@ -1876,6 +1953,40 @@ We have a list of blocks that we do not want to show in the editor, this filter 
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
+
+**PHP**
+
+```php
+ add_filter(
+'wp-lemon/filter/blocks-to-remove',
+function ($blocks) {
+   $core_blocks_to_remove = [
+      'core/details',
+      'core/code',
+      'core/preformatted',
+      'core/group',
+      'core/cover',
+      'core/audio',
+      'core/video',
+      'core/media-text',
+      'core/nextpage',
+      'core/quote',
+      'core/spacer',
+      'core/social-links',
+      'core/post-title',
+      'core/navigation',
+      'core/shortcode',
+      'searchwp/results-template',
+      'searchwp/search-form',
+      'rank-math/rich-snippet',
+      'rank-math/howto-block',
+      'rank-math/faq-block',
+      'rank-math/command',
+      'rank-math/toc-block',
+  ];
+    return array_merge($blocks, $core_blocks_to_remove);
+},10,1);
+```
 
 ## wp-lemon/filter/model/acf-fields/job
 

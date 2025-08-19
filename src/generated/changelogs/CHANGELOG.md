@@ -1,3 +1,13 @@
+## 5.44.1 - 19 August 2025
+
+### 🐛 Bug Fixes
+
+- Fix focal point check in Image class
+
+### 📚 Documentation
+
+- Add PHP code examples for various filter hooks
+
 ## 5.44.0 - 14 August 2025
 
 ### ⛰️ Features
