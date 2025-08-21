@@ -18,7 +18,7 @@
 | <span class="method-name">[get_svg_image()](#get_svg_image)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get SVG image contents.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> the attachment image svg data or false if not found.</span></span> |
 | <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type"></span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
 | <span class="method-name">[log_message()](#log_message)</span> | <span class="method-type">`void`</span> | <span class="method-description">Adds a log message to a specific log file in the website base folder.</span> |
-| <span class="method-name">[post_type_name()](#post_type_name)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get singular name of a posttype.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The singular name.</span></span> |
+| <span class="method-name">[post_type_name()](#post_type_name)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get singular name of a posttype.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The post type label, defaults to the singular name.</span></span> |
 | <span class="method-name">[textarea_to_array()](#textarea_to_array)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Text helper to convert a textarea to an array.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The array of text or false if empty.</span></span> |
 
 </div>
@@ -49,7 +49,7 @@ Get singular name of a posttype.
 
 `post_type_name( string $post_type, string $type = null )`
 
-**Returns:** `string|false` The singular name.
+**Returns:** `string|false` The post type label, defaults to the singular name.
 
 <div class="table-responsive">
 

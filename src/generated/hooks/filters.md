@@ -304,7 +304,7 @@ Filters the picture element for the card.
 | Name | Type | Description |
 | --- | --- | --- |
 | $picture_el | `string` | The picture element. |
-| $args | `array` | additional arguments to help you filter the picture element.<br/><br/> |
+| $args | `array` | additional arguments to help you filter the picture element.<br/><br/><ul><li>**$**<br/>`object` post the post object.</li><li>**$**<br/>`object` loop the loop object.</li><li>**$**<br/>`string` card_type the card type.</li><li>**$**<br/>`int` attachment_id the attachment ID.</li><li>**$**<br/>`string` picture_classes the picture classes.</li><li>**$**<br/>`string` image_size the image size.</li><li>**$**<br/>`\image_sizes` the image sizes attribute.</li><li>**$**<br/>`bool` focalpoint whether or not to use the focal point.</li></ul> |
 
 </div>
 
@@ -337,7 +337,7 @@ Filters the picture arguments to render the picture element in the card.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $args | `array` | the arguments used by the picture macro to render the picture element.<br/><br/> |
+| $args | `array` | the arguments used by the picture macro to render the picture element.<br/><br/><ul><li>**$**<br/>`string` picture_class the picture classes.</li><li>**$**<br/>`string` image_size the image size.</li><li>**$**<br/>`\image_sizes` the image sizes attribute.</li><li>**$**<br/>`bool` focalpoint whether or not to use the focal point.</li></ul> |
 | $attachment_id | `int` | The attachment ID. |
 
 </div>
@@ -1654,9 +1654,11 @@ Filters the output for the end of a menu level just before the closing ul tag.
 
 </div>
 
-## wp-lemon/filter/navwalker/{$page}/link-attributes
+## wp-lemon/filter/navwalker/{$archive\_page\_post\_type}/link-attributes
 
 Filters the link attributes for a wp-lemon archive page.
+
+`$archive_page_post_type` is the post type of the archive page.
 
 <div class="table-responsive">
 
@@ -1706,9 +1708,36 @@ Filters the link attributes for a menu item based on the menu item ID.
 | $atts | `array` | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
 | $menu_item | `\WP_Post` | The current menu item. |
 | $args | `\stdClass` | An object of wp_nav_menu() arguments. |
-| $depth | `int` | Depth of menu ite  Example usage:  ```php function link_attributes_job($atts, $item, $args, $depth) {  $args = [    'post_type'      => 'job',    'posts_per_page' => -1,    'status'         => 'publish',  ];  $posts = \Timber\Timber::get_posts($args);  $count = count($posts);  if ($count > 0) {     $atts['data-jobs'] = $count; }    return $atts; }  add_filter('10/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4); ``` |
+| $depth | `int` | Depth of menu item. |
 
 </div>
+
+Example usage:
+
+**PHP**
+
+```php
+function link_attributes_job($atts, $item, $args, $depth)
+{
+
+$args = [
+   'post_type'      => 'job',
+   'posts_per_page' => -1,
+   'status'         => 'publish',
+ ];
+
+$posts = \Timber\Timber::get_posts($args);
+ $count = count($posts);
+
+if ($count > 0) {
+    $atts['data-jobs'] = $count;
+}
+
+  return $atts;
+}
+
+add_filter('wp-lemon/filter/navwalker/10/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
+```
 
 ## wp-lemon/filter/model/faq-slug
 

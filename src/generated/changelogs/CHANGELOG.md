@@ -1,3 +1,21 @@
+## 5.44.2 - 21 August 2025
+
+### 📚 Documentation
+
+- Update documentation of helper functions
+- Update action docblocks
+- Fix docblocks in navwalker
+
+### 🎨 Styling
+
+- Update wp-lemon icon font
+
+### ⚙️ Miscellaneous Tasks
+
+- PHPStan level 8
+- Run rector & lint files
+- Speed up wp-lemon by disabling some ACF functions
+
 ## 5.44.1 - 19 August 2025
 
 ### 🐛 Bug Fixes

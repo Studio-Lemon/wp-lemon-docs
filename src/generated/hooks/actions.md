@@ -4,9 +4,36 @@
 
 Fires in the head for custom meta tags.
 
+**Hooked** 
+
+<div class="table-hooked table-responsive">
+
+| Name | Priority | Description |
+| --- | --- | --- |
+| <span class="hook-name"><code>WP_Lemon\Controllers\Analytics\head_statistics</code></span> | <span class="hook-priority">10</span> | <span class="hook-description">No description provided</span> |
+| <span class="hook-name"><code>WP_Lemon\Controllers\Analytics\head_analytics</code></span> | <span class="hook-priority">11</span> | <span class="hook-description">No description provided</span> |
+| <span class="hook-name"><code>WP_Lemon\Controllers\A11y\skip_links</code></span> | <span class="hook-priority">10</span> | <span class="hook-description">Outputs the skip links</span> |
+
+
+</div>
+
 ## wp-lemon/action/body/before
 
 Fires inside the body tag, before any content is rendered.
+
+**Hooked** 
+
+<div class="table-hooked table-responsive">
+
+| Name | Priority | Description |
+| --- | --- | --- |
+| <span class="hook-name"><code>WP_Lemon\Controllers\Analytics\body_open_analytics</code></span> | <span class="hook-priority">9</span> | <span class="hook-description">Outputs the analytics code right after the body tag opens</span> |
+| <span class="hook-name"><code>WP_Lemon\Controllers\A11y\skip_links</code></span> | <span class="hook-priority">10</span> | <span class="hook-description">Outputs the skip links</span> |
+| <span class="hook-name"><code>WP_Lemon\Controllers\A11y\a11y_toolbar</code></span> | <span class="hook-priority">10</span> | <span class="hook-description">Outputs the accessibility toolbar</span> |
+| <span class="hook-name"><code>WP_Lemon\Controllers\Analytics\add_cookiebar</code></span> | <span class="hook-priority">11</span> | <span class="hook-description">Outputs the cookie bar, if enabled</span> |
+
+
+</div>
 
 ## wp-lemon/action/header/before
 
@@ -32,6 +59,17 @@ Fires before the footer renders.
 
 Fires after the footer renders.
 
+**Hooked** 
+
+<div class="table-hooked table-responsive">
+
+| Name | Priority | Description |
+| --- | --- | --- |
+| <span class="hook-name"><code>WP_Lemon\Controllers\add_contact_buttons</code></span> | <span class="hook-priority">10</span> | <span class="hook-description">Outputs the contact buttons, if enabled</span> |
+
+
+</div>
+
 ## wp-lemon/action/body/after
 
 Fires before the body tag closes.
@@ -40,25 +78,13 @@ Fires before the body tag closes.
 
 Fires before the node-latest loop for a specific card type.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $card_type | `string` | The card type dynamically set in the block. |
-
-</div>
+`$card_type` The card type dynamically set in the block.
 
 ## wp-lemon/action/block/node-latest/{$card\_type}/loop/after
 
 Fires after the node-latest loop for a specific card type.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $card_type | `string` | The card type dynamically set in the block. |
-
-</div>
+`$card_type` The card type dynamically set in the block.
 
 ## wp-lemon/action/block/before
 
@@ -77,13 +103,14 @@ Fires before any block renders.
 
 Fires before a specific block renders.
 
+`$slug` The block slug dynamically set.
+
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $fields | `array` | The block fields. |
 | $attributes | `array` | The block attributes. |
-| $slug | `string` | The block slug dynamically set. |
 
 </div>
 
@@ -104,13 +131,14 @@ Fires at the start of any block.
 
 Fires at the start of a specific block.
 
+`$slug` The block slug dynamically set.
+
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $fields | `array` | The block fields. |
 | $attributes | `array` | The block attributes. |
-| $slug | `string` | The block slug dynamically set. |
 
 </div>
 
@@ -131,13 +159,14 @@ Fires at the end of any block.
 
 Fires at the end of a specific block.
 
+`$slug` The block slug dynamically set.
+
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $fields | `array` | The block fields. |
 | $attributes | `array` | The block attributes. |
-| $slug | `string` | The block slug dynamically set. |
 
 </div>
 
@@ -158,13 +187,14 @@ Fires after any block renders.
 
 Fires after a specific block renders.
 
+`$slug` The block slug dynamically set.
+
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
 | $fields | `array` | The block fields. |
 | $attributes | `array` | The block attributes. |
-| $slug | `string` | The block slug dynamically set. |
 
 </div>
 
@@ -172,49 +202,25 @@ Fires after a specific block renders.
 
 Fires before a card of a specific type renders.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $card_type | `string` | The card type dynamically set. |
-
-</div>
+`$card_type` The card type dynamically set.
 
 ## wp-lemon/action/card/{$card\_type}/after
 
 Fires after a card of a specific type renders.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $card_type | `string` | The card type dynamically set. |
-
-</div>
+`$card_type` The card type dynamically set.
 
 ## wp-lemon/action/block/node-overview/{$card\_type}/loop/before
 
 Fires before the node-overview loop for a specific card type.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $card_type | `string` | The card type dynamically set in the block. |
-
-</div>
+`$card_type` The card type dynamically set.
 
 ## wp-lemon/action/block/node-overview/{$card\_type}/loop/after
 
 Fires after the node-overview loop for a specific card type.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $card_type | `string` | The card type dynamically set in the block. |
-
-</div>
+`$card_type` The card type dynamically set in the block.
 
 ## wp-lemon/action/cookiebar/text/before
 
@@ -292,49 +298,25 @@ Fires after the footer inside content.
 
 Fires before the entry header title for a specific post type.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $post_type | `string` | The post type dynamically set. |
-
-</div>
+`$post_type` The post type dynamically set.
 
 ## wp-lemon/action/entry-header/{$post\_type}/title/after
 
 Fires after the entry header title for a specific post type.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $post_type | `string` | The post type dynamically set. |
-
-</div>
+`$post_type` The post type dynamically set.
 
 ## wp-lemon/action/entry-header/{$post\_type}/tags/after
 
 Fires after the entry header tags for a specific post type.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $post_type | `string` | The post type dynamically set. |
-
-</div>
+`$post_type` The post type dynamically set.
 
 ## wp-lemon/action/entry-header/{$post\_type}/picture/after
 
 Fires after the entry header picture for a specific post type.
 
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $post_type | `string` | The post type dynamically set. |
-
-</div>
+`$post_type` The post type dynamically set.
 
 ## wp-lemon/action/entry/before
 
