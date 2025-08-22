@@ -12,8 +12,8 @@ Fires in the head for custom meta tags.
 
 | Name | Priority | Description |
 | --- | --- | --- |
-| <span class="hook-name"><code>WP_Lemon\Controllers\Analytics\head_statistics</code></span> | <span class="hook-priority">10</span> | <span class="hook-description">No description provided</span> |
-| <span class="hook-name"><code>WP_Lemon\Controllers\Analytics\head_analytics</code></span> | <span class="hook-priority">11</span> | <span class="hook-description">No description provided</span> |
+| <span class="hook-name"><code>WP_Lemon\Controllers\Analytics\head_statistics</code></span> | <span class="hook-priority">10</span> | <span class="hook-description">Outputs the statistics code, if enabled</span> |
+| <span class="hook-name"><code>WP_Lemon\Controllers\Analytics\head_analytics</code></span> | <span class="hook-priority">10</span> | <span class="hook-description">Outputs the analytics meta tags, if enabled</span> |
 | <span class="hook-name"><code>WP_Lemon\Controllers\A11y\skip_links</code></span> | <span class="hook-priority">10</span> | <span class="hook-description">Outputs the skip links</span> |
 
 
@@ -254,6 +254,7 @@ function render_hero_banner($fields)
 
 }
 add_action('wp-lemon/action/block/hero-image/after', __NAMESPACE__ . '\render_hero_banner', 10, 1);
+```
 
 ## wp-lemon/action/card/{$card\_type}/before
 
