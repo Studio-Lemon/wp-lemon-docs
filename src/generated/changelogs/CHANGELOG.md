@@ -1,3 +1,28 @@
+## 5.44.3 - 22 August 2025
+
+### ⛰️ Features
+
+- Carousel block, create option to start at the first slide.
+- Add support for additional social media platforms
+
+### 🐛 Bug Fixes
+
+- Add documentation for various actions and remove TODO comments
+
+### 📚 Documentation
+
+- Update docs
+
+### ⚙️ Miscellaneous Tasks
+
+- Lint files
+- Lint twig files
+- Update action
+
+### Language
+
+- Update translations
+
 ## 5.44.2 - 21 August 2025
 
 ### 📚 Documentation

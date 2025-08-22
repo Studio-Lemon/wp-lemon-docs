@@ -63,6 +63,20 @@ Filters the loaded card type for the node-latest block.
 
 </div>
 
+## wp-lemon/filter/social-platforms
+
+Filters the social platforms available.
+
+Use this filter to create additional social platform as well in the Customizer.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $platforms | `array<string,string>` | An array of social platforms where the key is the platform slug and the value is the platform name. |
+
+</div>
+
 ## wp-lemon/filter/socials-context
 
 Filters the socials context.

@@ -251,7 +251,7 @@ Builds the social context.
 
 This sets up the social content that is being used in the social buttons macro.
 
-`get_socials( array<string,mixed> $platforms )`
+`get_socials( array<string,mixed> $platform_order )`
 
 **Returns:** `array` Array of platforms that can be addressed by the share macro.
 
@@ -259,7 +259,7 @@ This sets up the social content that is being used in the social buttons macro.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $platforms | `array<string,mixed>` | platforms in an order we want to output the socials. |
+| $platform_order | `array<string,mixed>` | platforms in an order we want to output the socials. |
 
 </div>
 
