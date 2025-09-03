@@ -1,3 +1,25 @@
+## 5.45.0 - 03 September 2025
+
+### ⛰️ Features
+
+- Update filter arguments for node-overview block and add load more action filter
+- Add post type tag to search result badges for better styling possibilities
+- Add support for be media from production new version
+
+### 🐛 Bug Fixes
+
+- Less class lookup calls
+- Adjust extra_args handling in Generic_Ajax_Query for improved filter compatibility
+- Replace direct property manipulation with set_disabled method in Carousel_Block
+- Update class modifier for image presence in ImageCard_Block
+- Fix error on licence page
+- Better .section class alignment in backend
+
+### 📚 Documentation
+
+- Update filter docs
+- Fix code comment formatting in twig-actions.php
+
 ## 5.44.3 - 22 August 2025
 
 ### ⛰️ Features

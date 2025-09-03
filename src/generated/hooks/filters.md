@@ -69,6 +69,8 @@ Filters the social platforms available.
 
 Use this filter to create additional social platform as well in the Customizer.
 
+**since** 5.44.3
+
 <div class="table-responsive">
 
 | Name | Type | Description |
@@ -1406,7 +1408,6 @@ Filters the additional arguments for the initial query in the node-overview bloc
 | Name | Type | Description |
 | --- | --- | --- |
 | $args | `null` or `array` | The arguments for the query. |
-| $post_id | `int` | The post ID of the block. |
 | $fields | `array` | The fields of the block. |
 
 </div>
@@ -1554,6 +1555,24 @@ You can use this filter to change the text for the no more items message for a s
 | Name | Type | Description |
 | --- | --- | --- |
 | $no_more_items_text | `string` | The text for the no more items message. |
+
+</div>
+
+## wp-lemon/filter/block/node-overview/{$post\_type}/load-more-action
+
+Filters the Ajax Action for a specific post type in the node-overview block.
+
+You can use this filter to change the action for the load more button for a specific post type.
+
+`$post_type` the post type dynamically set in the block.
+
+**since** 5.45.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $action | `string` | The action for the load more button. |
 
 </div>
 
