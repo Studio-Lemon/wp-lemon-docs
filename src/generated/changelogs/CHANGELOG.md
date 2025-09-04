@@ -1,3 +1,10 @@
+
+## 5.45.1 - 04 September 2025
+
+### 🐛 Bug Fixes
+
+- Remove add_theme_support for wp-lemon-faq
+
 ## 5.45.0 - 03 September 2025
 
 ### ⛰️ Features
