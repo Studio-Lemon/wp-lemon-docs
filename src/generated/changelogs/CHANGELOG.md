@@ -1,3 +1,9 @@
+## 5.45.2 - 10 September 2025
+
+### 🐛 Bug Fixes
+
+- Fix editor in import in parent theme editor.scss stylesheet
+- Fix class existence check for Bulldozer
 
 ## 5.45.1 - 04 September 2025
 
