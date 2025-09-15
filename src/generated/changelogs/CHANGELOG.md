@@ -1,3 +1,22 @@
+## 5.45.3 - 15 September 2025
+
+### ⛰️ Features
+
+- Filterable palette.json file
+
+### 🐛 Bug Fixes
+
+- Fixed a bug where a disabled blocks would still output the closing div
+- Change heading from h2 to h3 for no content message
+
+### 📚 Documentation
+
+- Fix docblocks
+
+### ⚙️ Miscellaneous Tasks
+
+- Package updates
+
 ## 5.45.2 - 10 September 2025
 
 ### 🐛 Bug Fixes

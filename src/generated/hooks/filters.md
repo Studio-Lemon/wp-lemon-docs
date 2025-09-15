@@ -1885,6 +1885,41 @@ add_filter('wp-lemon/filter/a11y/skip-links', function ($skip_links) {
 }, 10, 1);
 ```
 
+## wp-lemon/filter/palette
+
+Filters the used palette JSON file.
+
+Use this filter to load a different palette JSON file from your child theme.
+
+**since** 5.46.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $palette_json | `string` | The palette JSON file name. |
+
+</div>
+
+To use a custom palette JSON file, add the following code to your child theme's hooks.php:
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/palette', function($palette_json) {
+
+  if ('custom-variant' == get_constant('WEBSITE_VARIANT')) {
+    return 'palette-custom.json';
+  }
+
+  return $palette_json;
+});
+```
+
+In your config.json, you can set a custom palette like this:
+```json
+ "themeJsonFile": "palette-custom.json",
+```
+
 ## wp-lemon/filter/webp-quality
 
 Filters the quality of the webp image.
@@ -1904,6 +1939,14 @@ Filters the quality of the webp image.
 Filters the blocks to load.
 
 With this filter you can remove blocks from the parent theme.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $blocks | `array<string,mixed>` | array of blocks to load. |
+
+</div>
 
 **PHP**
 
@@ -1998,6 +2041,7 @@ We have a list of blocks that we do not want to show in the editor, this filter 
 
 | Name | Type | Description |
 | --- | --- | --- |
+| $blocks_to_remove | `array<string,mixed>` | array of blocks that we do not want to show in the editor. |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
@@ -2012,6 +2056,7 @@ We have a list of blocks that we do not want to show in the editor, this filter 
 
 | Name | Type | Description |
 | --- | --- | --- |
+| $blocks_to_remove | `array<string,mixed>` | array of blocks that we do not want to show in the editor. |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
