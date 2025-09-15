@@ -1,3 +1,10 @@
+
+## 5.45.4 - 15 September 2025
+
+### 🐛 Bug Fixes
+
+- Correct index for CopyWebpackPlugin patterns in webpack config
+
 ## 5.45.3 - 15 September 2025
 
 ### ⛰️ Features
