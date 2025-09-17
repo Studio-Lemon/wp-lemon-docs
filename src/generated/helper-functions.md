@@ -20,6 +20,7 @@
 | <span class="method-name">[log_message()](#log_message)</span> | <span class="method-type">`void`</span> | <span class="method-description">Adds a log message to a specific log file in the website base folder.</span> |
 | <span class="method-name">[post_type_name()](#post_type_name)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get singular name of a posttype.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The post type label, defaults to the singular name.</span></span> |
 | <span class="method-name">[textarea_to_array()](#textarea_to_array)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Text helper to convert a textarea to an array.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The array of text or false if empty.</span></span> |
+| <span class="method-name">[url_to_website_name()](#url_to_website_name)</span> | <span class="method-type">`string`</span> | <span class="method-description">Convert a URL to a website name.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The website name.</span></span> |
 
 </div>
 
@@ -59,6 +60,12 @@ Get singular name of a posttype.
 | $type | `string` | The type of name to return, either 'plural' or 'singular'. |
 
 </div>
+
+**Twig**
+
+```twig
+{{ post_type_name('job', 'plural') }} {# Outputs "Jobs" #
+```
 
 ---
 
@@ -135,6 +142,8 @@ This array contains the following information:
 - combined: The combined format of the phone number resulting in a format like +31 (0) 6 12345678.
 - localized: The localized format of the phone number. This is only used if WPML is active and the current language is not the default language.
 
+Also available in Twig files via the `phonenumber` function.
+
 **since** 3.17.0
 
 `format_phone_number( string|int $number )`
@@ -148,6 +157,23 @@ This array contains the following information:
 | $number | `string` or `int` | The actual phone number. |
 
 </div>
+
+**PHP**
+
+```php
+$phone = format_phone_number('+31612345678');
+if ($phone) {
+  echo '<a href="' . $phone['uri'] . '">' . $phone['localized'] . '</a>';
+}
+```
+Or in Twig:
+**Twig**
+
+```twig
+{% set phone = phonenumber('+31612345678') %}
+{% if phone %}
+ <a href="{{ phone.uri }}">{{ phone.localized }}</a>
+{% endif %}
 
 ---
 
@@ -187,6 +213,8 @@ Collects all languages and returns them as an array for twig language switcher.
 ### get\_svg\_image()
 
 Get SVG image contents.
+
+Also available in Twig files via the `get_svg_image` function.
 
 `get_svg_image( int $attachment_id )`
 
@@ -328,6 +356,8 @@ This function will return the following information:
 - extension: The file extension.
 - filesize: The size of the file in KB, MB or GB depending on the size.
 
+Also available in Twig files via the `get_attachment_info` function.
+
 **since** 5.4.0
 
 `get_attachment_info( int|null $attachment_id )`
@@ -430,6 +460,35 @@ Convert a textarea ACF field with line breaks to an array.
    {% endfor %}
  </ul>
 {% endif %}
+```
+
+---
+
+### url\_to\_website\_name()
+
+Convert a URL to a website name.
+
+This function will remove the protocol and trailing slash from a URL.
+
+**since** 5.55.0
+
+`url_to_website_name( string $url )`
+
+**Returns:** `string` The website name.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $url | `string` | The URL to convert. |
+
+</div>
+
+**PHP**
+
+```php
+$website_name = url_to_website_name('https://www.example.com/');
+// $website_name will be 'www.example.com'
 ```
 
 ---

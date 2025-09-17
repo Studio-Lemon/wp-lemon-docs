@@ -1,3 +1,25 @@
+
+## 5.46.0 - 17 September 2025
+
+### ⛰️  Features
+
+- Add more variables for ghost buttons
+- Add new helper function url_to_website_name
+
+### 🐛 Bug Fixes
+
+- Fix max width regression
+
+### 📚 Documentation
+
+- Update docblocks of helper functions
+
+### ⚙️ Miscellaneous Tasks
+
+- Update packages
+- Update rsync deployment switches to exclude additional twig-action.php file
+- Add inline-flex utilities
+
 ## 5.45.5 - 17 September 2025
 
 ### 🐛 Bug Fixes
