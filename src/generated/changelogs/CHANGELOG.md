@@ -1,3 +1,9 @@
+## 5.45.5 - 17 September 2025
+
+### 🐛 Bug Fixes
+
+- Fix archive nav color in dropdown
+- Fix media query ordering issue, fixes websites going full width
 
 ## 5.45.4 - 15 September 2025
 
