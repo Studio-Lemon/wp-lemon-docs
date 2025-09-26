@@ -1,7 +1,27 @@
+## 5.47.0 - 26 September 2025
+
+### ⛰️ Features
+
+- Add multisite support for wp-lemon licence and diagnostics class
+- New filter
+
+### 🐛 Bug Fixes
+
+- Update Prettier configuration to remove twigPrintWidth and adjust overrides
+- Fix button border regression
+
+### 📚 Documentation
+
+- Add example filters in documentation
+
+### ⚙️ Miscellaneous Tasks
+
+- Add class assignment for opening hours slot div
+- Build fix
 
 ## 5.46.0 - 17 September 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add more variables for ghost buttons
 - Add new helper function url_to_website_name
