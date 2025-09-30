@@ -1,0 +1,135 @@
+---
+title: Block style
+description: Documentation on writing SCSS for custom blocks.
+---
+
+When creating a custom block, a SCSS file is automatically generated alongside your block files. 
+This SCSS file is automatically imported into the main `app.scss` file, so your styles will be compiled and included in the final CSS output.
+
+## SCSS file structure
+
+Each block gets its own SCSS file located in the same directory as your block files. 
+For example, if you have a block called `hero`, you'll find a `_hero.scss` file in the `blocks/hero/` directory.
+
+The SCSS file follows the same naming convention as your block: if your block is called `hero`, your SCSS file will be `_hero.scss`.
+
+## Using variables
+
+wp-lemon provides a comprehensive set of SCSS variables that you can use in your block styles. 
+These variables ensure consistency across your theme and make it easy to maintain your styles.
+
+```scss
+.hero {
+  padding: $spacer-4 0;
+  background-color: $primary;
+  color: $white;
+  
+  &__title {
+    font-size: $h1-font-size;
+    margin-bottom: $spacer-3;
+  }
+  
+  &__description {
+    font-size: $font-size-lg;
+    opacity: 0.9;
+  }
+}
+```
+
+## BEM methodology
+
+We strongly recommend using the BEM (Block Element Modifier) methodology when writing your SCSS. 
+BEM helps create maintainable and scalable CSS by providing a clear naming convention.
+
+### BEM structure
+- **Block**: The main component (e.g., `.hero`)
+- **Element**: A part of the block (e.g., `.hero__title`, `.hero__description`)
+- **Modifier**: A variation of the block or element (e.g., `.hero--dark`, `.hero__title--large`)
+
+```scss
+// Block
+.hero {
+  padding: $spacer-4 0;
+  
+  // Element
+  &__title {
+    font-size: $h1-font-size;
+    margin-bottom: $spacer-3;
+    
+    // Modifier
+    &--large {
+      font-size: $h1-font-size * 1.25;
+    }
+  }
+  
+  &__description {
+    font-size: $font-size-base;
+    line-height: 1.6;
+  }
+  
+  &__button {
+    margin-top: $spacer-3;
+  }
+  
+  // Block modifier
+  &--dark {
+    background-color: $dark;
+    color: $white;
+  }
+  
+  &--centered {
+    text-align: center;
+  }
+}
+```
+
+## Responsive design
+
+Use Bootstrap's responsive breakpoint mixins to create responsive designs:
+
+```scss
+.hero {
+  padding: $spacer-3 0;
+  
+  @include media-breakpoint-up(md) {
+    padding: $spacer-5 0;
+  }
+  
+  &__title {
+    font-size: $h2-font-size;
+    
+    @include media-breakpoint-up(lg) {
+      font-size: $h1-font-size;
+    }
+  }
+}
+```
+
+## Best practices
+
+1. **Use semantic class names**: Make your class names descriptive and meaningful
+2. **Keep specificity low**: Avoid deep nesting and overly specific selectors
+3. **Use variables**: Leverage wp-lemon's SCSS variables for consistency
+4. **Follow BEM**: Use BEM methodology for clear, maintainable code
+5. **Mobile first**: Write your base styles for mobile, then enhance for larger screens
+
+```scss
+// Good
+.testimonial {
+  &__quote {
+    font-style: italic;
+    color: $text-muted;
+  }
+  
+  &__author {
+    font-weight: $font-weight-bold;
+    margin-top: $spacer-2;
+  }
+}
+
+// Avoid
+.testimonial blockquote p {
+  font-style: italic;
+  color: #666;
+}
+```
