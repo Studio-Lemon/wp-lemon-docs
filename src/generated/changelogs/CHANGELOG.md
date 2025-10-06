@@ -1,3 +1,10 @@
+
+## 5.47.2 - 06 October 2025
+
+### 🐛 Bug Fixes
+
+- Fix docblocks
+
 ## 5.47.1 - 06 October 2025
 
 ### ⛰️ Features

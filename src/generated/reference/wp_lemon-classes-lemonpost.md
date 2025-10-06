@@ -87,7 +87,7 @@ Method to get other post items.
        classes: ['section'],
        button: false
   },
- card_type: 'news',
+ card_type: 'job',
  link: true
 } %}
 ```
