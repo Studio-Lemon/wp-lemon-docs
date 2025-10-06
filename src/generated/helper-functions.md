@@ -94,10 +94,17 @@ Use this field in your ACF field group:
 
 ```php
 ->addField('form', 'fluentforms', [
-         'label' => __('Form', 'wp-lemon'),
-         'instructions' => __('Select the form you want to display.', 'wp-lemon'),
-         'return_format' => 'id',
-     ]);
+   'label' => __('Form', 'wp-lemon'),
+   'instructions' => __('Select the form you want to display.', 'wp-lemon'),
+   'return_format' => 'id',
+]);
+```
+
+Then use it in your twig file like this:
+**Twig**
+
+```twig
+{{ get_fluent_form(post.meta('form'), 'ffs_inherit_theme', 'classic') }}
 ```
 
 ---
@@ -124,6 +131,29 @@ You can use this function in your classes and functions to log errors and other 
 | $special | `string` or `bool` | Special log message, can be 'first' or 'last' to add a special message. |
 
 </div>
+
+**PHP**
+
+```php
+log_message('Diagnostics cron', 'Starting diagnostics', special: 'first');
+if (is_wp_error($response)) {
+	log_message('Diagnostic error', 'wp-error' . $response->get_error_message(), 'special': 'last');
+	return;
+}
+
+log_message('Diagnostics cron', 'Diagnostics completed', special: 'last');
+```
+
+Output in application.log:
+```bash
+/**
+* Start new logging entry at 01-10-2025 13:32
+* Initiated by /libary/my-cool-cron-file.php
+*/
+[01-10-2025 13:32] Diagnostics cron 🡆 Starting diagnostics
+[01-10-2025 13:32] Diagnostics cron 🡆 Diagnostics completed
+----------------------------------------
+```
 
 ---
 
@@ -174,6 +204,7 @@ Or in Twig:
 {% if phone %}
  <a href="{{ phone.uri }}">{{ phone.localized }}</a>
 {% endif %}
+```
 
 ---
 
@@ -197,6 +228,28 @@ The page id can be set in the customizer. If WPML is active, the function will r
 | $posttype | `string` | the posttype we are checking. |
 
 </div>
+
+You can use this function to get the archive page for a specific post type.
+**PHP**
+
+```php
+$archive_id = get_archive_page('job');
+if ($archive_id) {
+  $archive = Timber::get_post($archive_id);
+  echo '<a href="' . $archive->link() . '">' . $archive->title() . '</a>';
+}
+```
+
+Or even easier by using the `WP_Lemon_Site::get_archive_page()` method like this:
+
+**PHP**
+
+```php
+$archive = WP_Lemon_Site::get_archive_page('job');
+if ($archive) {
+  echo '<a href="' . $archive['link'] . '">' . $archive['title'] . '</a>';
+}
+```
 
 ---
 
@@ -250,6 +303,22 @@ This function can be used to add a specific pattern of spaces to a phone number.
 | $pattern | `int[]` | the spacing pattern. You can input an array of numbers to add spaces after a specific amount of characters. |
 
 </div>
+
+**PHP**
+
+```php
+function filter_phone_numbers(array $result, int $countrycode): array
+{
+
+ if (31 === $countrycode && str_starts_with($result['national'], '0180')) {
+		// add spaces after 3, 6, 2, 2 characters, so we have +31 (0)180 12 34 56.
+     $result['combined'] = add_spaces_to_phonenumber($result['combined'], [3, 6, 2, 2]);
+  }
+
+  return $result;
+}
+add_filter('wp-lemon/filter/phone-number/result', __NAMESPACE__ . '\\filter_phone_numbers', 11, 2);
+```
 
 ---
 

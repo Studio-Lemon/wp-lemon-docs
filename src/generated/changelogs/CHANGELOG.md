@@ -1,3 +1,24 @@
+## 5.47.1 - 06 October 2025
+
+### ⛰️ Features
+
+- Update get_other_items method to include taxonomy and terms parameters
+
+### 🐛 Bug Fixes
+
+- Fixed a bug where you were not able to click on a link that was inside the editor fields view.
+- Make excerpt length filterable again for news cards
+- Better editor alignment
+
+### 📚 Documentation
+
+- Update documentation
+- Add docblocks to wp-lemon-post class
+
+### ⚙️ Miscellaneous Tasks
+
+- _(js)_ Rename scrollNext to scrollNextSectionListener
+
 ## 5.47.0 - 26 September 2025
 
 ### ⛰️ Features

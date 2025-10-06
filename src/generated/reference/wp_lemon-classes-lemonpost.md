@@ -1,16 +1,10 @@
 # LemonPost
 
-This class is used to extend the Timber Post class to add custom methods and properties.
+All custom post types will use this class as a base class unless you specifically create a new class that does not extend this class.
+
+This class is used to extend the Timber Post class to add supporting methods for your post types.
 
 <!--more-->
-
-Here we will add an example
-
-**PHP**
-
-```php
-my_method( 'example', false );
-```
 
 ## Overview
 
@@ -69,7 +63,7 @@ TODO:  Use this function inside our twig templates and deprecated the lemon_exce
 
 Method to get other post items.
 
-`get_other_items( int $number )`
+`get_other_items( int $number, string $taxonomy = null, array $terms = [] )`
 
 **Returns:** `\Timber\PostCollectionInterface|array` The other items.
 
@@ -78,8 +72,25 @@ Method to get other post items.
 | Name | Type | Description |
 | --- | --- | --- |
 | $number | `int` | The number of items to get. |
+| $taxonomy | `string` | Name of the taxonomy to query. |
+| $terms | `array` | ID of the term to query inside $taxonomy. |
 
 </div>
+
+**Twig**
+
+```twig
+{% include 'components/other-items.twig' with {
+  more: {
+       title: __('Bekijk gerelateerde vacatures', 'wp-lemon-child'),
+       items: post.get_other_items(2, 'category', [12,34]),
+       classes: ['section'],
+       button: false
+  },
+ card_type: 'news',
+ link: true
+} %}
+```
 
 ---
 
