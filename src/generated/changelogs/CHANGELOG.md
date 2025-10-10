@@ -1,3 +1,24 @@
+## 5.48.0 - 10 October 2025
+
+### ⛰️ Features
+
+- _(blocks)_ Add option to open first accordion item
+- _(blocks)_ Update block.json files to include blockVersion 3 for all blocks
+- Deprecated class-FAQ in favor of feature plugin
+
+### 🐛 Bug Fixes
+
+- Fix footer alignment
+- Adjust alignment for centered images in entry blocks
+- Update max-width-default calculation to use block-side-gutter-side
+
+### 🚜 Refactor
+
+- _(accordion)_ Complete accordion refactor
+
+### 🎨 Styling
+
+- Lint scss
 
 ## 5.47.2 - 06 October 2025
 
