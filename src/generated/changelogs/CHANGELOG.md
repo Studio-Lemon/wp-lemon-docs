@@ -1,3 +1,18 @@
+
+## 5.48.1 - 13 October 2025
+
+### ⛰️  Features
+
+- *(Site class)* Add new is_archive_page method
+
+### 🐛 Bug Fixes
+
+- Update accordion item label default to use translation function
+
+### 📚 Documentation
+
+- Update docs
+
 ## 5.48.0 - 10 October 2025
 
 ### ⛰️ Features
