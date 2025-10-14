@@ -68,7 +68,8 @@
       link: "/extend/cards"
     - label: "Internationalization"
       link: "/extend/internationalization"
-
+    - label: "Lemon Plugins"
+      link: "/extend/plugins"
 - label: Overwrite
   items:
     - label: "Overwrite twig files"
