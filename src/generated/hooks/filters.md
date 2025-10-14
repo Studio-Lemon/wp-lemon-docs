@@ -1317,6 +1317,24 @@ You can use this filter to change the button text on a per post type basis.
 
 </div>
 
+## wp-lemon/filter/block/node-latest/{$post\_type}/overview-button
+
+Filters the overview button for the node-latest block.
+
+You can use this filter to change the button on a per post type basis.
+
+`$post_type` the post type dynamically set in the block.
+
+**since** 5.46.1
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $overview_button | `array` | the button array with link and text |
+
+</div>
+
 ## wp-lemon/filter/block/node-latest/{$post\_type}/args
 
 Filters the query args for the node-latest block.
@@ -1411,6 +1429,20 @@ Filters the additional arguments for the initial query in the node-overview bloc
 | $fields | `array` | The fields of the block. |
 
 </div>
+
+This example shows how to order the posts alphabetically in ascending order.
+**PHP**
+
+```php
+function alphabatic_order($args)
+{
+  $args['orderby'] = 'title';
+  $args['order']   = 'ASC';
+  return $args;
+}
+
+add_filter('wp-lemon/filter/block/node-overview/person/args', __NAMESPACE__ . '\\alphabatic_order');
+```
 
 ## wp-lemon/filter/block/node-overview/{$post\_type}/select-all-text
 

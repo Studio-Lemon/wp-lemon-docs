@@ -134,6 +134,14 @@ Context function that queries specific ID's from a specific posttype
 
 </div>
 
+**PHP**
+
+```php
+use function WP_Lemon\API\specific_items_query;
+$value = [12,34,56]; // Array with post ID's
+$specific_items = specific_items_query('person', 3, $value);
+```
+
 ---
 
 ### archive\_query()
@@ -159,6 +167,25 @@ Uses archive-ajax.php to output the new items.
 | $extra_args | `array` | Extra arguments we want to mix in. |
 
 </div>
+
+Querying the all jobs in a custom block context:
+**PHP**
+
+```php
+use function WP_Lemon\API\archive_query;
+
+ public function block_context($context): array
+ {
+
+    $args = [
+       'jobs' => archive_query('job', -1),
+       'link' => true,
+       'holder_classes' => 'col-md-6',
+     ];
+
+     return array_merge($context, $args);
+  }
+```
 
 ---
 
@@ -222,6 +249,18 @@ Get next post when available, otherwise get the first post.
 
 </div>
 
+**PHP**
+
+```php
+use function WP_Lemon\API\next_post_info;
+$context = Timber::context(
+ [
+   'next'            => next_post_info(),
+   'prev'            => previous_post_info(),
+ ]
+);
+```
+
 ---
 
 ### previous\_post\_info()
@@ -241,6 +280,18 @@ Get previous post when available, otherwise get the last post.
 | $orderby | `string` or `null` | Orderby parameter for the query. |
 
 </div>
+
+**PHP**
+
+```php
+use function WP_Lemon\API\next_post_info;
+$context = Timber::context(
+ [
+   'next'            => next_post_info(),
+   'prev'            => previous_post_info(),
+ ]
+);
+```
 
 ---
 

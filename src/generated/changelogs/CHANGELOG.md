@@ -1,4 +1,116 @@
 
+## 5.48.1 - 13 October 2025
+
+### ⛰️  Features
+
+- *(Site class)* Add new is_archive_page method
+
+### 🐛 Bug Fixes
+
+- Update accordion item label default to use translation function
+
+### 📚 Documentation
+
+- Update docs
+
+## 5.48.0 - 10 October 2025
+
+### ⛰️ Features
+
+- _(blocks)_ Add option to open first accordion item
+- _(blocks)_ Update block.json files to include blockVersion 3 for all blocks
+- Deprecated class-FAQ in favor of feature plugin
+
+### 🐛 Bug Fixes
+
+- Fix footer alignment
+- Adjust alignment for centered images in entry blocks
+- Update max-width-default calculation to use block-side-gutter-side
+
+### 🚜 Refactor
+
+- _(accordion)_ Complete accordion refactor
+
+### 🎨 Styling
+
+- Lint scss
+
+## 5.47.2 - 06 October 2025
+
+### 🐛 Bug Fixes
+
+- Fix docblocks
+
+## 5.47.1 - 06 October 2025
+
+### ⛰️ Features
+
+- Update get_other_items method to include taxonomy and terms parameters
+
+### 🐛 Bug Fixes
+
+- Fixed a bug where you were not able to click on a link that was inside the editor fields view.
+- Make excerpt length filterable again for news cards
+- Better editor alignment
+
+### 📚 Documentation
+
+- Update documentation
+- Add docblocks to wp-lemon-post class
+
+### ⚙️ Miscellaneous Tasks
+
+- _(js)_ Rename scrollNext to scrollNextSectionListener
+
+## 5.47.0 - 26 September 2025
+
+### ⛰️ Features
+
+- Add multisite support for wp-lemon licence and diagnostics class
+- New filter
+
+### 🐛 Bug Fixes
+
+- Update Prettier configuration to remove twigPrintWidth and adjust overrides
+- Fix button border regression
+
+### 📚 Documentation
+
+- Add example filters in documentation
+
+### ⚙️ Miscellaneous Tasks
+
+- Add class assignment for opening hours slot div
+- Build fix
+
+## 5.46.0 - 17 September 2025
+
+### ⛰️ Features
+
+- Add more variables for ghost buttons
+- Add new helper function url_to_website_name
+
+### 🐛 Bug Fixes
+
+- Fix max width regression
+
+### 📚 Documentation
+
+- Update docblocks of helper functions
+
+### ⚙️ Miscellaneous Tasks
+
+- Update packages
+- Update rsync deployment switches to exclude additional twig-action.php file
+- Add inline-flex utilities
+
+## 5.45.5 - 17 September 2025
+
+### 🐛 Bug Fixes
+
+- Fix archive nav color in dropdown
+- Fix media query ordering issue, fixes websites going full width
+
 ## 5.45.4 - 15 September 2025
 
 ### 🐛 Bug Fixes

@@ -20,6 +20,7 @@
 | <span class="method-name">[log_message()](#log_message)</span> | <span class="method-type">`void`</span> | <span class="method-description">Adds a log message to a specific log file in the website base folder.</span> |
 | <span class="method-name">[post_type_name()](#post_type_name)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get singular name of a posttype.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The post type label, defaults to the singular name.</span></span> |
 | <span class="method-name">[textarea_to_array()](#textarea_to_array)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Text helper to convert a textarea to an array.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The array of text or false if empty.</span></span> |
+| <span class="method-name">[url_to_website_name()](#url_to_website_name)</span> | <span class="method-type">`string`</span> | <span class="method-description">Convert a URL to a website name.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The website name.</span></span> |
 
 </div>
 
@@ -60,6 +61,12 @@ Get singular name of a posttype.
 
 </div>
 
+**Twig**
+
+```twig
+{{ post_type_name('job', 'plural') }} {# Outputs "Jobs" #
+```
+
 ---
 
 ### get\_fluent\_form()
@@ -87,10 +94,17 @@ Use this field in your ACF field group:
 
 ```php
 ->addField('form', 'fluentforms', [
-         'label' => __('Form', 'wp-lemon'),
-         'instructions' => __('Select the form you want to display.', 'wp-lemon'),
-         'return_format' => 'id',
-     ]);
+   'label' => __('Form', 'wp-lemon'),
+   'instructions' => __('Select the form you want to display.', 'wp-lemon'),
+   'return_format' => 'id',
+]);
+```
+
+Then use it in your twig file like this:
+**Twig**
+
+```twig
+{{ get_fluent_form(post.meta('form'), 'ffs_inherit_theme', 'classic') }}
 ```
 
 ---
@@ -118,6 +132,29 @@ You can use this function in your classes and functions to log errors and other 
 
 </div>
 
+**PHP**
+
+```php
+log_message('Diagnostics cron', 'Starting diagnostics', special: 'first');
+if (is_wp_error($response)) {
+	log_message('Diagnostic error', 'wp-error' . $response->get_error_message(), 'special': 'last');
+	return;
+}
+
+log_message('Diagnostics cron', 'Diagnostics completed', special: 'last');
+```
+
+Output in application.log:
+```bash
+/**
+* Start new logging entry at 01-10-2025 13:32
+* Initiated by /libary/my-cool-cron-file.php
+*/
+[01-10-2025 13:32] Diagnostics cron 🡆 Starting diagnostics
+[01-10-2025 13:32] Diagnostics cron 🡆 Diagnostics completed
+----------------------------------------
+```
+
 ---
 
 ### format\_phone\_number()
@@ -135,6 +172,8 @@ This array contains the following information:
 - combined: The combined format of the phone number resulting in a format like +31 (0) 6 12345678.
 - localized: The localized format of the phone number. This is only used if WPML is active and the current language is not the default language.
 
+Also available in Twig files via the `phonenumber` function.
+
 **since** 3.17.0
 
 `format_phone_number( string|int $number )`
@@ -148,6 +187,24 @@ This array contains the following information:
 | $number | `string` or `int` | The actual phone number. |
 
 </div>
+
+**PHP**
+
+```php
+$phone = format_phone_number('+31612345678');
+if ($phone) {
+  echo '<a href="' . $phone['uri'] . '">' . $phone['localized'] . '</a>';
+}
+```
+Or in Twig:
+**Twig**
+
+```twig
+{% set phone = phonenumber('+31612345678') %}
+{% if phone %}
+ <a href="{{ phone.uri }}">{{ phone.localized }}</a>
+{% endif %}
+```
 
 ---
 
@@ -172,6 +229,28 @@ The page id can be set in the customizer. If WPML is active, the function will r
 
 </div>
 
+You can use this function to get the archive page for a specific post type.
+**PHP**
+
+```php
+$archive_id = get_archive_page('job');
+if ($archive_id) {
+  $archive = Timber::get_post($archive_id);
+  echo '<a href="' . $archive->link() . '">' . $archive->title() . '</a>';
+}
+```
+
+Or even easier by using the `WP_Lemon_Site::get_archive_page()` method like this:
+
+**PHP**
+
+```php
+$archive = WP_Lemon_Site::get_archive_page('job');
+if ($archive) {
+  echo '<a href="' . $archive['link'] . '">' . $archive['title'] . '</a>';
+}
+```
+
 ---
 
 ### get\_language\_switcher()
@@ -187,6 +266,8 @@ Collects all languages and returns them as an array for twig language switcher.
 ### get\_svg\_image()
 
 Get SVG image contents.
+
+Also available in Twig files via the `get_svg_image` function.
 
 `get_svg_image( int $attachment_id )`
 
@@ -222,6 +303,22 @@ This function can be used to add a specific pattern of spaces to a phone number.
 | $pattern | `int[]` | the spacing pattern. You can input an array of numbers to add spaces after a specific amount of characters. |
 
 </div>
+
+**PHP**
+
+```php
+function filter_phone_numbers(array $result, int $countrycode): array
+{
+
+ if (31 === $countrycode && str_starts_with($result['national'], '0180')) {
+		// add spaces after 3, 6, 2, 2 characters, so we have +31 (0)180 12 34 56.
+     $result['combined'] = add_spaces_to_phonenumber($result['combined'], [3, 6, 2, 2]);
+  }
+
+  return $result;
+}
+add_filter('wp-lemon/filter/phone-number/result', __NAMESPACE__ . '\\filter_phone_numbers', 11, 2);
+```
 
 ---
 
@@ -328,6 +425,8 @@ This function will return the following information:
 - extension: The file extension.
 - filesize: The size of the file in KB, MB or GB depending on the size.
 
+Also available in Twig files via the `get_attachment_info` function.
+
 **since** 5.4.0
 
 `get_attachment_info( int|null $attachment_id )`
@@ -430,6 +529,35 @@ Convert a textarea ACF field with line breaks to an array.
    {% endfor %}
  </ul>
 {% endif %}
+```
+
+---
+
+### url\_to\_website\_name()
+
+Convert a URL to a website name.
+
+This function will remove the protocol and trailing slash from a URL.
+
+**since** 5.55.0
+
+`url_to_website_name( string $url )`
+
+**Returns:** `string` The website name.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $url | `string` | The URL to convert. |
+
+</div>
+
+**PHP**
+
+```php
+$website_name = url_to_website_name('https://www.example.com/');
+// $website_name will be 'www.example.com'
 ```
 
 ---
