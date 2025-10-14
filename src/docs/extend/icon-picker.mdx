@@ -82,11 +82,11 @@ You can prepare the icon field in a custom method and then use the icons in mult
 
 namespace WP_Lemon\Child\Classes;
 
-use Timber\Post;
-
+use WP_Lemon\Classes\LemonPost;
+use Timber\Timber;
 use function WP_Lemon\API\get_svg_icon;
 
-class Service extends Post
+class Service extends LemonPost
 {
    private mixed $_icon = null;
 

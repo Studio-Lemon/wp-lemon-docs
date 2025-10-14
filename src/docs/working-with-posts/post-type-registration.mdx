@@ -14,7 +14,6 @@ To create your own custom post type you'll need to create a new file in the `/li
 In this file you'll find a example file that looks like this:
     
 ```php
-
 <?php
 
 /**
@@ -58,7 +57,7 @@ function cpt_example()
 		'show_in_menu'           => true,
 		'menu_position'          => 5,
 		'rewrite'                => ['slug' => 'example'],
-		'menu_icon'              => 'dashicons-businessman',
+		'menu_icon'              => 'dashicons-businessperson',
 		'show_in_admin_bar'      => true,
 		'show_in_nav_menus'      => true,
 		'show_in_rest'           => true,
@@ -74,8 +73,6 @@ function cpt_example()
 	register_post_type('example', $args); // unique singular post type name.
 }
 add_action('init', __NAMESPACE__ . '\\cpt_example', 0);
-
-
 ```
 
 You can copy this file and rename it to your own custom post type. Make sure to change the single and plural name variables.
@@ -89,16 +86,14 @@ Once you've created your archive page you can use the WordPress customizer to li
 If for whatever reason you don't want your post type to have a archive-page you can change the following arguments in your custom post type file:
     
 ```php
-
-	$args = [
-		'maybe_has_archive_page' => true, // change to false if you don't want an archive page
-		'enable_overview_block'  => true, // change to false if you don't want an overview block
-		'enable_latest_block'    => true, // change to false if you don't want a latest block
-	];
-
+$args = [
+	'maybe_has_archive_page' => true, // change to false if you don't want an archive page
+	'enable_overview_block'  => true, // change to false if you don't want an overview block
+	'enable_latest_block'    => true, // change to false if you don't want a latest block
+];
 ```
 
-### single page
+### Single page
 Your custom post type will also have a single page by default. This single page is default in wp-lemon. 
 But if you want to overwrite and customize the single page that's possible as well. 
 You can do this by navigating to `resources/views/templates`, here you can create a new file: `single-post_type_name.twig`.
@@ -106,9 +101,7 @@ You can do this by navigating to `resources/views/templates`, here you can creat
 If for whatever reason you don't want your post type to have a single-page you can change the following argument in your custom post type file:
 
 ```php
-
-	$args = [
-		'publicly_queryable'     => true, // change to false if you don't want a single page
-	];
-
+$args = [
+	'publicly_queryable'     => true, // change to false if you don't want a single page
+];
 ```

@@ -10,12 +10,12 @@ Later on in this chapter we'll show you a couple of examples of how you can use 
 
 ## Setting up 
 For the set-up you'll need to do the following:
-1. Create a new file in the `/library/controllers/` directory.
+1. Create a new file in the `/library/classes/` directory with the pattern `class-object-<post_type_name>.php` where `post_type_name` is the name of your post type.
 2. Add the new class to the classmap.
 3. Include the file in your functions file.
 
 ### Create new file
-Navigate to the `/library/controllers/` directory.
+Navigate to the `/library/classes/` directory.
 Here you can create a new file that extends the `LemonPost` class. This will look something like this:
     
 ```php
@@ -94,8 +94,8 @@ function parent_loaded()
 
 	$includes = [
 		'library/classes/class-child-site.php',
-		'library/classes/class-news-object.php',
-		'library/classes/YOUR-NEW-CLASS-FILE.php',
+		'library/classes/class-object-news.php',
+		'library/classes/class-object-<post_type_name>.php',
 		'library/child-setup.php',
 		'library/hooks.php',
 	];
@@ -171,30 +171,28 @@ In this example the name of a person needed to be formatted in a certain way, of
 but we believe that it's best to let the back-end handle most of the logic.
 
 ```php	
-
-	/**
-	 * Fetch the full name of the person, including title.
-	 *
-	 * @return string
-	 */
-	public function get_full_name(): string
-	{
-		if (!is_null($this->_full_name)) {
-			return $this->_full_name;
-		}
-		$name = null;
-
-		$names_group = $this->meta('names');
-
-		$name .= $names_group['title'] ? $names_group['title'] . ' ' : '';
-		$name .= $names_group['first_name'] ? $names_group['first_name'] . ' ' : '';
-		$name .= $names_group['last_name'] ? $names_group['last_name'] : '';
-
-		$this->_full_name = $name;
-
+/**
+ * Fetch the full name of the person, including title.
+ *
+ * @return string
+ */
+public function get_full_name(): string
+{
+	if (!is_null($this->_full_name)) {
 		return $this->_full_name;
 	}
+	$name = null;
 
+	$names_group = $this->meta('names');
+
+	$name .= $names_group['title'] ? $names_group['title'] . ' ' : '';
+	$name .= $names_group['first_name'] ? $names_group['first_name'] . ' ' : '';
+	$name .= $names_group['last_name'] ? $names_group['last_name'] : '';
+
+	$this->_full_name = $name;
+
+	return $this->_full_name;
+}
 ```
 
 ## Wp-lemon queries
