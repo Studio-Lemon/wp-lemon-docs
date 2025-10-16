@@ -15,6 +15,20 @@ Use this filter to modify the phone number result.
 
 </div>
 
+**PHP**
+
+```php
+function filter_phone_numbers(array $result, int $countrycode): array
+{
+    if (31 === $countrycode && str_starts_with($result['national'], '0180')) {
+        $result['combined'] = add_spaces_to_phonenumber($result['combined'], [3, 6, 2, 2]);
+    }
+
+    return $result;
+}
+add_filter('wp-lemon/filter/phone-number/result', __NAMESPACE__ . '\\filter_phone_numbers', 11, 2);
+```
+
 ## wp-lemon/filter/phone-number/default-format
 
 - `wp-lemon/filter/phone-number/default-format`
@@ -1128,12 +1142,79 @@ Filters whether or not to show the share platforms labels in the entry footer.
 add_filter('wp-lemon/filter/entry-footer/share-platforms/hide-labels', '__return_false');
 ```
 
+## wp-lemon/filter/macro/picture/default-args
+
+Filters the default arguments for the picture macro.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $args | `array` | The default arguments. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/macro/picture/default-args', function($args) {
+   $args['focalpoint'] = 'true';
+   return $args;
+});
+```
+
 ## wp-lemon/filter/translations/frontend
 
 Filters the front-end translations.
 
 This filter is used to add or modify the translations array.
 The translations is used in javascript to translate strings.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $ | `array<string,mixed>` | An array of translations. |
+
+</div>
+
+**PHP**
+
+```php
+function add_translations($translations)
+{
+  return array_merge($translations, [
+     'name'                    => __('Name', 'wp-lemon-child'),
+     'apply'                   => __('Apply', 'wp-lemon-child'),
+     'sending'                 => __('Sending', 'wp-lemon-child'),
+  ]);
+}
+add_filter('wp-lemon/filter/translations/frontend', __NAMESPACE__ . '\\add_translations');
+
+## wp-lemon/filter/header/scroll-settings
+
+Filters default scroll values for the navigation bar.
+
+This filter is used to add or modify the default scroll values.
+
+**since** 5.49.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $ | `array<string,mixed>` | An array of scroll values. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/scroll-settings', function ($settings) {
+    $settings['disabled'] = true;
+    return $settings;
+});
+```
 
 ## wp-lemon/filter/block/accordion-item/allowed-blocks
 

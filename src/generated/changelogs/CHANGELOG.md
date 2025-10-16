@@ -1,9 +1,28 @@
+## 5.49.0 - 16 October 2025
+
+### ⛰️ Features
+
+- _(macro)_ Add filter for default arguments in picture macro
+- _(navbar)_ Add scroll settings filter and update navbar behavior based on scroll values
+
+### 🐛 Bug Fixes
+
+- Replace nth-child with nth-of-type for consistent styling in card and timeline components
+
+### 📚 Documentation
+
+- Add example for phone number filtering in format_phone_number function
+
+### 🎨 Styling
+
+- Add text alignment support for card component
+- Add background color variable for image card overlay
 
 ## 5.48.1 - 13 October 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
-- *(Site class)* Add new is_archive_page method
+- _(Site class)_ Add new is_archive_page method
 
 ### 🐛 Bug Fixes
 

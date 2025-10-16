@@ -4,14 +4,6 @@ You will be able to retrieve this information from the context in your twig file
 
 <!--more-->
 
-Here we will add an example
-
-**PHP**
-
-```php
-my_method( 'example', false );
-```
-
 ## Overview
 
 ### Methods
