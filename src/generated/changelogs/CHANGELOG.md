@@ -1,3 +1,12 @@
+
+## 5.49.1 - 21 October 2025
+
+### 🐛 Bug Fixes
+
+- *(navbar)* Update scroll position checks for navbar visibility
+- *(timber)* Reorder add_spaces_to_phonenumber filter registration
+- Fix footer visibility
+
 ## 5.49.0 - 16 October 2025
 
 ### ⛰️ Features
