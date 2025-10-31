@@ -1,10 +1,37 @@
+## 5.50.0 - 31 October 2025
+
+### ⛰️ Features
+
+- _(accordion)_ Add margin-top for adjacent elements not using acf-block
+- _(card)_ Add picture-args filter for enhanced picture element rendering
+- _(carousel)_ Add per-view option for slides and update styles
+- _(header.twig)_ Add two additional filters to the header.twig file
+
+### 🐛 Bug Fixes
+
+- _(header)_ Remove unnecessary top offset for admin bar
+- _(node-overview)_ Update example function to return array for post ordering
+- _(single.php)_ Update parameter description for post type in template filter documentation
+
+### 🚜 Refactor
+
+- _(styles)_ Adjust margins for search section and entry header
+- [**breaking**] Renamed header actions to follow the same consistent pattern as all other actions inside wp-lemon, old actions are now marked deprecated
+
+### 📚 Documentation
+
+- Update docs
+
+### ⚙️ Miscellaneous Tasks
+
+- Run rector php83
 
 ## 5.49.1 - 21 October 2025
 
 ### 🐛 Bug Fixes
 
-- *(navbar)* Update scroll position checks for navbar visibility
-- *(timber)* Reorder add_spaces_to_phonenumber filter registration
+- _(navbar)_ Update scroll position checks for navbar visibility
+- _(timber)_ Reorder add_spaces_to_phonenumber filter registration
 - Fix footer visibility
 
 ## 5.49.0 - 16 October 2025

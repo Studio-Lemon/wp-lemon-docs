@@ -357,6 +357,19 @@ function overwrite_news_card_media($content, $id)
 add_filter('wp-lemon/filter/card/case/picture-el', __NAMESPACE__ . '\\overwrite_news_card_media', 10, 2); description
 ```
 
+## wp-lemon/filter/card/picture-args"
+
+Filters the picture arguments to render the picture element in the card.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $args | `array` | the arguments used by the picture macro to render the picture element.<br/><br/><ul><li>**$**<br/>`string` picture_class the picture classes.</li><li>**$**<br/>`string` image_size the image size.</li><li>**$**<br/>`\image_sizes` the image sizes attribute.</li><li>**$**<br/>`bool` focalpoint whether or not to use the focal point.</li></ul> |
+| $attachment_id | `int` | The attachment ID. |
+
+</div>
+
 ## wp-lemon/filter/card/{$card\_type}/picture-args
 
 Filters the picture arguments to render the picture element in the card.
@@ -714,7 +727,7 @@ add_filter('wp-lemon/filter/header/breakpoint', function () {
 });
 ```
 
-## wp-lemon/filter/offcanvas/bootstrap-offcanvas-scroll
+## wp-lemon/filter/header/offcanvas/enable-onepager
 
 Filters the boolean value to active the scroll listener for the offcanvas menu.
 
@@ -732,7 +745,7 @@ This way, the offcanvas menu will scroll to the desired section when the menu it
 **PHP**
 
 ```php
-add_filter('wp-lemon/filter/offcanvas/bootstrap-offcanvas-scroll', '__return_true');
+add_filter('wp-lemon/filter/header/offcanvas/enable-onepager', '__return_true');
 ```
 
 ## wp-lemon/filter/footer/render
@@ -1433,6 +1446,29 @@ You can use this filter to change the query args on a per post type basis.
 
 </div>
 
+**PHP**
+
+```php
+function ignore_noindexed_posts( $args ) {
+    $args['meta_query'] = [
+        'relation' => 'OR',
+        [
+            'key'     => 'rank_math_robots',
+            'value'   => 'noindex',
+            'compare' => 'NOT LIKE',
+        ],
+        [
+            'key'     => 'rank_math_robots',
+            'compare' => 'NOT EXISTS',
+        ],
+    ];
+
+    return $args;
+}
+
+add_filter( 'wp-lemon/filter/block/node-latest/case/args', __NAMESPACE__ . '\\ignore_noindexed_posts' );
+```
+
 ## wp-lemon/filter/block/node-latest/{$post\_type}/no-items-message
 
 Filters the no items message for the node-latest block.
@@ -1515,11 +1551,12 @@ This example shows how to order the posts alphabetically in ascending order.
 **PHP**
 
 ```php
-function alphabatic_order($args)
+function alphabatic_order()
 {
-  $args['orderby'] = 'title';
-  $args['order']   = 'ASC';
-  return $args;
+  return [
+	'orderby' => 'title',
+	'order'   => 'ASC',
+  ];
 }
 
 add_filter('wp-lemon/filter/block/node-overview/person/args', __NAMESPACE__ . '\\alphabatic_order');

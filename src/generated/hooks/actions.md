@@ -45,6 +45,54 @@ Fires before the header is rendered.
 
 **see** layouts/app.twig
 
+## wp-lemon/action/header/inside/before
+
+Fires before the navbar renders.
+
+**see** partials/header.twig
+
+## wp-lemon/action/header/menu-toggle/before
+
+Fires before the menu toggle button.
+
+**see** partials/header.twig
+
+## wp-lemon/action/header/menu-toggle/after
+
+Fires after the menu toggle button.
+
+**see** partials/header.twig
+
+## wp-lemon/action/header/main-menu/before
+
+Fires before the main menu renders.
+
+**see** partials/header.twig
+
+## wp-lemon/action/header/main-menu/after
+
+Fires after the main menu renders in the navbar.
+
+**see** partials/header.twig
+
+## wp-lemon/action/header/lang-menu/before
+
+Fires before the language menu renders inside the navbar.
+
+**see** partials/header.twig
+
+## wp-lemon/action/header/lang-menu/after
+
+Fires after the language menu renders.
+
+**see** partials/header.twig
+
+## wp-lemon/action/header/inside/after
+
+Fires after the navbar renders.
+
+**see** partials/header.twig
+
 ## wp-lemon/action/header/after
 
 Fires after the header renders.
@@ -311,54 +359,6 @@ Fires before the floating buttons render.
 Fires after the floating buttons render.
 
 **see** partials/contact-buttons.twig
-
-## wp-lemon/action/navbar/before
-
-Fires before the navbar renders.
-
-**see** partials/header.twig
-
-## wp-lemon/action/menu-toggle/before
-
-Fires before the menu toggle button.
-
-**see** partials/header.twig
-
-## wp-lemon/action/menu-toggle/after
-
-Fires after the menu toggle button.
-
-**see** partials/header.twig
-
-## wp-lemon/action/main-menu/before
-
-Fires before the main menu renders.
-
-**see** partials/header.twig
-
-## wp-lemon/action/main-menu/after
-
-Fires after the main menu renders in the navbar.
-
-**see** partials/header.twig
-
-## wp-lemon/action/lang-menu/before
-
-Fires before the language menu renders inside the navbar.
-
-**see** partials/header.twig
-
-## wp-lemon/action/lang-menu/after
-
-Fires after the language menu renders.
-
-**see** partials/header.twig
-
-## wp-lemon/action/navbar/after
-
-Fires after the navbar renders.
-
-**see** partials/header.twig
 
 ## wp-lemon/action/footer/inside/before
 
