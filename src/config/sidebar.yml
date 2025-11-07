@@ -44,6 +44,10 @@
       link: "/blocks/block-controller"
     - label: "View (twig)"
       link: "/blocks/block-view"
+    - label: "Style (scss)"
+      link: "/blocks/block-style"
+    - label: "JavaScript (js)"
+      link: "/blocks/block-js"
     - label: "Innerblocks"
       link: "/blocks/innerblocks"
     - label: "Disabling blocks"
@@ -72,24 +76,28 @@
       link: "/extend/customizer-fields"
     - label: "Cards"
       link: "/extend/cards"
-
+    - label: "Internationalization"
+      link: "/extend/internationalization"
+    - label: "Lemon Plugins"
+      link: "/extend/plugins"
 - label: Overwrite
   items:
     - label: "Overwrite twig files"
       link: "/overwrite/twig-files"
     - label: "Overwrite styles"
       link: "/overwrite/styles"
-- label: Functions & hooks
+- label: API function
   items:
     - label: "Helper functions"
       link: "/reference/api-functions"
     - label: "Query functions"
       link: "/reference/query-functions"
+- label: Hooks
+  items:
     - label: "Filter Hooks"
       link: "/reference/hooks/filters"
     - label: "Action Hooks"
       link: "/reference/hooks/actions"
-
 - label: Classes
   items:
     - label: "Generic Ajax Query"

@@ -15,6 +15,20 @@ Use this filter to modify the phone number result.
 
 </div>
 
+**PHP**
+
+```php
+function filter_phone_numbers(array $result, int $countrycode): array
+{
+    if (31 === $countrycode && str_starts_with($result['national'], '0180')) {
+        $result['combined'] = add_spaces_to_phonenumber($result['combined'], [3, 6, 2, 2]);
+    }
+
+    return $result;
+}
+add_filter('wp-lemon/filter/phone-number/result', __NAMESPACE__ . '\\filter_phone_numbers', 11, 2);
+```
+
 ## wp-lemon/filter/phone-number/default-format
 
 - `wp-lemon/filter/phone-number/default-format`
@@ -33,7 +47,7 @@ Can be one of the following:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $default_format | `string` | See above. |
+| $default_format | `string` | Default phone number format, defaults to 'national'. |
 
 </div>
 
@@ -60,6 +74,22 @@ Filters the loaded card type for the node-latest block.
 | Name | Type | Description |
 | --- | --- | --- |
 | $shares | `array<string,mixed>` | an array of shares that can be addressed by the share partial.  Array format: 'name' 'icon_class' 'share_url' |
+
+</div>
+
+## wp-lemon/filter/social-platforms
+
+Filters the social platforms available.
+
+Use this filter to create additional social platform as well in the Customizer.
+
+**since** 5.44.3
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $platforms | `array<string,string>` | An array of social platforms where the key is the platform slug and the value is the platform name. |
 
 </div>
 
@@ -118,6 +148,14 @@ This filter is used in search results, news cards and the entry header.
 | $date_notation | `string` | The date notation. |
 
 </div>
+
+**PHP**
+
+```php
+  add_filter('wp-lemon/filter/date-notation', function($date_notation) {
+     return 'F j, Y';
+  });
+```
 
 ## wp-lemon/filter/card/person/phonenumber
 
@@ -296,7 +334,7 @@ Filters the picture element for the card.
 | Name | Type | Description |
 | --- | --- | --- |
 | $picture_el | `string` | The picture element. |
-| $args | `array` | additional arguments to help you filter the picture element.<br/><br/> |
+| $args | `array` | additional arguments to help you filter the picture element.<br/><br/><ul><li>**$**<br/>`object` post the post object.</li><li>**$**<br/>`object` loop the loop object.</li><li>**$**<br/>`string` card_type the card type.</li><li>**$**<br/>`int` attachment_id the attachment ID.</li><li>**$**<br/>`string` picture_classes the picture classes.</li><li>**$**<br/>`string` image_size the image size.</li><li>**$**<br/>`\image_sizes` the image sizes attribute.</li><li>**$**<br/>`bool` focalpoint whether or not to use the focal point.</li></ul> |
 
 </div>
 
@@ -319,6 +357,19 @@ function overwrite_news_card_media($content, $id)
 add_filter('wp-lemon/filter/card/case/picture-el', __NAMESPACE__ . '\\overwrite_news_card_media', 10, 2); description
 ```
 
+## wp-lemon/filter/card/picture-args"
+
+Filters the picture arguments to render the picture element in the card.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $args | `array` | the arguments used by the picture macro to render the picture element.<br/><br/><ul><li>**$**<br/>`string` picture_class the picture classes.</li><li>**$**<br/>`string` image_size the image size.</li><li>**$**<br/>`\image_sizes` the image sizes attribute.</li><li>**$**<br/>`bool` focalpoint whether or not to use the focal point.</li></ul> |
+| $attachment_id | `int` | The attachment ID. |
+
+</div>
+
 ## wp-lemon/filter/card/{$card\_type}/picture-args
 
 Filters the picture arguments to render the picture element in the card.
@@ -329,7 +380,7 @@ Filters the picture arguments to render the picture element in the card.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $args | `array` | the arguments used by the picture macro to render the picture element.<br/><br/> |
+| $args | `array` | the arguments used by the picture macro to render the picture element.<br/><br/><ul><li>**$**<br/>`string` picture_class the picture classes.</li><li>**$**<br/>`string` image_size the image size.</li><li>**$**<br/>`\image_sizes` the image sizes attribute.</li><li>**$**<br/>`bool` focalpoint whether or not to use the focal point.</li></ul> |
 | $attachment_id | `int` | The attachment ID. |
 
 </div>
@@ -374,11 +425,19 @@ Filters the load more text in the node overview block for a specific post type.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/node-overview/story/load-more-text', function ($text) {
+    return 'Meer verhalen';
+}, 10, 1);
+```
+
 ## wp-lemon/filter/block/node-overview/load-more-delay
 
 Filters the load more delay in the node overview block.
 
-Use this to slow down the fade in effect when loading more cards.
+Set a delay in milliseconds between the fade-ins of the different cards when they get loaded.
 
 <div class="table-responsive">
 
@@ -392,7 +451,7 @@ Use this to slow down the fade in effect when loading more cards.
 
 Filters the load more delay in the node overview block for a specific post type.
 
-Use this to slow down the fade in effect when loading more cards.
+Set a delay in milliseconds between the fade-ins of the different cards when they get loaded.
 
 `$card_type` the post type dynamically set in the block.
 
@@ -403,6 +462,14 @@ Use this to slow down the fade in effect when loading more cards.
 | $delay | `int` | The delay in milliseconds. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/node-overview/load-more-delay', function () {
+  return 200;
+});
+```
 
 ## wp-lemon/filter/cookiebar/show-analytics-checkbox
 
@@ -418,6 +485,12 @@ Default is true.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/show-analytics-checkbox', '__return_true');
+```
+
 ## wp-lemon/filter/cookiebar/show-marketing-checkbox
 
 Filters whether or not to show the marketing checkbox in the cookie bar.
@@ -431,6 +504,12 @@ Default is false.
 | $show_checkbox | `string` | True if the checkbox should be shown, false if it should be hidden. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/show-marketing-checkbox', '__return_true');
+```
 
 ## wp-lemon/filter/cookiebar/show-preferences-checkbox
 
@@ -446,6 +525,12 @@ Default is false.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/show-preferences-checkbox', '__return_true');
+```
+
 ## wp-lemon/filter/cookiebar/text
 
 Filters the complementary text for the cookie bar.
@@ -458,6 +543,14 @@ Filters the complementary text for the cookie bar.
 | $site_name | `string` | The site name. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/text', function ($text) {
+  return 'Text shown in the cookie bar.';
+});
+```
 
 ## wp-lemon/filter/cookiebar/functional
 
@@ -483,6 +576,14 @@ Filters the explanation text for the analytics cookies in the cookie bar.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/analytics', function ($text) {
+  return 'Text shown in the cookie bar.';
+});
+```
+
 ## wp-lemon/filter/cookiebar/marketing
 
 Filters the explanation text for the marketing cookies in the cookie bar.
@@ -494,6 +595,14 @@ Filters the explanation text for the marketing cookies in the cookie bar.
 | $text | `string` | The text for the marketing cookies. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/marketing', function ($type) {
+  return 'Text shown in the cookie bar';
+});
+```
 
 ## wp-lemon/filter/cookiebar/preferences
 
@@ -507,6 +616,14 @@ Filters the explanation text for the preference cookies in the cookie bar.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/preferences', function ($type) {
+  return 'Text shown in the cookie bar';
+});
+```
+
 ## wp-lemon/filter/cookiebar/reject
 
 Filters the text for the reject button in the cookie bar.
@@ -519,6 +636,14 @@ Filters the text for the reject button in the cookie bar.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/reject', function ($type) {
+  return 'Text shown in the cookie bar';
+});
+```
+
 ## wp-lemon/filter/cookiebar/accept
 
 Filters the text for the accept button in the cookie bar.
@@ -530,6 +655,14 @@ Filters the text for the accept button in the cookie bar.
 | $accept | `string` | default: 'Accept' |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/accept', function ($type) {
+  return 'Text shown in the cookie bar';
+});
+```
 
 ## wp-lemon/filter/header/render
 
@@ -545,6 +678,12 @@ This is intended to be used on custom landing pages where you want to hide the h
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/render', '__return_false');
+```
+
 ## wp-lemon/filter/header/logo
 
 Filters the logo HTML for the header.
@@ -557,6 +696,14 @@ Filters the logo HTML for the header.
 | $logo | `array` | The array containing the logo data. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/logo', function () {
+   return Timber::compile('partials/header-logo.twig');
+});
+```
 
 ## wp-lemon/filter/header/breakpoint
 
@@ -572,7 +719,15 @@ This filter is used to determine the breakpoint at which the header will change 
 
 </div>
 
-## wp-lemon/filter/offcanvas/bootstrap-offcanvas-scroll
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/breakpoint', function () {
+   return 'xl';
+});
+```
+
+## wp-lemon/filter/header/offcanvas/enable-onepager
 
 Filters the boolean value to active the scroll listener for the offcanvas menu.
 
@@ -586,6 +741,12 @@ This way, the offcanvas menu will scroll to the desired section when the menu it
 | $activate_scroll_listener | `bool` |  |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/offcanvas/enable-onepager', '__return_true');
+```
 
 ## wp-lemon/filter/footer/render
 
@@ -601,6 +762,12 @@ This is intended to be used on custom landing pages where you want to hide the h
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/footer/render', '__return_false');
+```
+
 ## wp-lemon/filter/footer/show-logo
 
 Filters if the logo should be shown in the footer.
@@ -612,6 +779,12 @@ Filters if the logo should be shown in the footer.
 | $show_logo | `bool` | defaults to true. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/footer/show-logo', '__return_false');
+```
 
 ## wp-lemon/filter/footer/show-bottombar
 
@@ -626,6 +799,12 @@ The bottombar is the bar in the footer containing the copyright message and foot
 | $show_bottombar | `bool` | defaults to true. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/footer/show-bottombar', '__return_false');
+```
 
 ## wp-lemon/filter/footer/logo
 
@@ -653,6 +832,16 @@ Filters the copyright message for the footer.
 
 </div>
 
+**PHP**
+
+```php
+function filter_copyright_message($message)
+{
+   return 'Copyright ' . date('Y') . ' - ' . get_bloginfo('name');
+}
+add_filter('wp-lemon/filter/copyright-message', __NAMESPACE__ . '\\filter_copyright_message');
+```
+
 ## wp-lemon/filter/entry-header/{$post\_type}/tags
 
 Filters the tags/categories in the entry header.
@@ -664,6 +853,14 @@ Filters the tags/categories in the entry header.
 | $ | `array` | An array of taxonomies. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter("wp-lemon/filter/entry-header/news/tags", function ($tag) {
+   return get_the_date() . " | " . $tag;
+});
+```
 
 ## wp-lemon/filter/entry-header/{$post\_type}/archive-page
 
@@ -691,6 +888,14 @@ This is shown above the title to indicate the post type.
 
 </div>
 
+**PHP**
+
+```php
+add_filter("wp-lemon/filter/entry-header/news/type", function ($type) {
+   return "News type text";
+});
+```
+
 ## wp-lemon/filter/entry-header/{$post\_type}/date
 
 Filters the date html for the entry header.
@@ -706,6 +911,12 @@ Use this filter to change the date completely.
 | $date | `string` | The date HTML. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter("wp-lemon/filter/entry-header/news/date", "__return_false");
+```
 
 ## wp-lemon/filter/entry-header/{$post\_type}/title
 
@@ -787,6 +998,19 @@ Filters the full picture element for the entry header.
 
 </div>
 
+**PHP**
+
+```php
+function overwrite_news_card_media($content, $id){
+
+ if (get_field('oembed',$id)){
+     return get_field('oembed',$id);
+ }
+ return $content;
+}
+add_filter('wp-lemon/filter/entry-header/news/picture-el', __NAMESPACE__ . '\\overwrite_news_card_media',10,2);
+```
+
 ## wp-lemon/filter/entry-header/person/archive-page
 
 Filters the back button information that leads back to the archive page.
@@ -811,6 +1035,12 @@ Filters whether or not to show the share buttons in the entry footer.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/share-buttons/show', '__return_false');
+```
+
 ## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/show
 
 Filters whether or not to show the share buttons in the entry footer for a specific post type.
@@ -824,6 +1054,12 @@ Filters whether or not to show the share buttons in the entry footer for a speci
 | $show_share_buttons | `bool` | Whether or not to show the share buttons, default: true. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/faq/show-share-buttons', '__return_false');
+```
 
 ## wp-lemon/filter/entry-footer/share-buttons/platforms
 
@@ -841,6 +1077,14 @@ You can change the order of the share buttons as well via this filter.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/share-buttons/platforms', function ($platforms) {
+    return array_diff($platforms, ['x', 'facebook']);
+});
+```
+
 ## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/platforms
 
 Filters the share platforms in the entry footer for a specific post type.
@@ -856,6 +1100,14 @@ Contains 'linkedin', 'x', 'facebook', 'e-mail', 'whatsapp'
 | $share_buttons | `array` | The share buttons array. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/job/share-buttons/platforms', function ($platforms) {
+    return array_diff($platforms, ['x', 'facebook']);
+});
+```
 
 ## wp-lemon/filter/entry-footer/{$post\_type}/share-buttons/post-type-name
 
@@ -897,12 +1149,85 @@ Filters whether or not to show the share platforms labels in the entry footer.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/entry-footer/share-platforms/hide-labels', '__return_false');
+```
+
+## wp-lemon/filter/macro/picture/default-args
+
+Filters the default arguments for the picture macro.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $args | `array` | The default arguments. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/macro/picture/default-args', function($args) {
+   $args['focalpoint'] = 'true';
+   return $args;
+});
+```
+
 ## wp-lemon/filter/translations/frontend
 
 Filters the front-end translations.
 
 This filter is used to add or modify the translations array.
 The translations is used in javascript to translate strings.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $ | `array<string,mixed>` | An array of translations. |
+
+</div>
+
+**PHP**
+
+```php
+function add_translations($translations)
+{
+  return array_merge($translations, [
+     'name'                    => __('Name', 'wp-lemon-child'),
+     'apply'                   => __('Apply', 'wp-lemon-child'),
+     'sending'                 => __('Sending', 'wp-lemon-child'),
+  ]);
+}
+add_filter('wp-lemon/filter/translations/frontend', __NAMESPACE__ . '\\add_translations');
+
+## wp-lemon/filter/header/scroll-settings
+
+Filters default scroll values for the navigation bar.
+
+This filter is used to add or modify the default scroll values.
+
+**since** 5.49.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $ | `array<string,mixed>` | An array of scroll values. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/scroll-settings', function ($settings) {
+    $settings['disabled'] = true;
+    return $settings;
+});
+```
 
 ## wp-lemon/filter/block/accordion-item/allowed-blocks
 
@@ -940,7 +1265,7 @@ Filters the allowed blocks for the card grid block.
 
 </div>
 
-## wp-lemon/filter/block/carousel/allowed-blocks"
+## wp-lemon/filter/block/carousel/allowed-blocks
 
 Filters the allowed blocks for the carousel block.
 
@@ -951,6 +1276,15 @@ Filters the allowed blocks for the carousel block.
 | $blocks | `array` | the allowed blocks. |
 
 </div>
+
+**PHP**
+
+```php
+  add_filter('wp-lemon/filter/block/carousel/allowed-blocks', function($blocks) {
+     $blocks[] = 'acf/icon-card';
+     return $blocks;
+  });
+```
 
 ## wp-lemon/filter/block/color-block/allowed-blocks
 
@@ -1077,6 +1411,24 @@ You can use this filter to change the button text on a per post type basis.
 
 </div>
 
+## wp-lemon/filter/block/node-latest/{$post\_type}/overview-button
+
+Filters the overview button for the node-latest block.
+
+You can use this filter to change the button on a per post type basis.
+
+`$post_type` the post type dynamically set in the block.
+
+**since** 5.46.1
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $overview_button | `array` | the button array with link and text |
+
+</div>
+
 ## wp-lemon/filter/block/node-latest/{$post\_type}/args
 
 Filters the query args for the node-latest block.
@@ -1093,6 +1445,29 @@ You can use this filter to change the query args on a per post type basis.
 | $post_id | `int` | the post id |
 
 </div>
+
+**PHP**
+
+```php
+function ignore_noindexed_posts( $args ) {
+    $args['meta_query'] = [
+        'relation' => 'OR',
+        [
+            'key'     => 'rank_math_robots',
+            'value'   => 'noindex',
+            'compare' => 'NOT LIKE',
+        ],
+        [
+            'key'     => 'rank_math_robots',
+            'compare' => 'NOT EXISTS',
+        ],
+    ];
+
+    return $args;
+}
+
+add_filter( 'wp-lemon/filter/block/node-latest/case/args', __NAMESPACE__ . '\\ignore_noindexed_posts' );
+```
 
 ## wp-lemon/filter/block/node-latest/{$post\_type}/no-items-message
 
@@ -1168,10 +1543,24 @@ Filters the additional arguments for the initial query in the node-overview bloc
 | Name | Type | Description |
 | --- | --- | --- |
 | $args | `null` or `array` | The arguments for the query. |
-| $post_id | `int` | The post ID of the block. |
 | $fields | `array` | The fields of the block. |
 
 </div>
+
+This example shows how to order the posts alphabetically in ascending order.
+**PHP**
+
+```php
+function alphabatic_order()
+{
+  return [
+	'orderby' => 'title',
+	'order'   => 'ASC',
+  ];
+}
+
+add_filter('wp-lemon/filter/block/node-overview/person/args', __NAMESPACE__ . '\\alphabatic_order');
+```
 
 ## wp-lemon/filter/block/node-overview/{$post\_type}/select-all-text
 
@@ -1319,6 +1708,24 @@ You can use this filter to change the text for the no more items message for a s
 
 </div>
 
+## wp-lemon/filter/block/node-overview/{$post\_type}/load-more-action
+
+Filters the Ajax Action for a specific post type in the node-overview block.
+
+You can use this filter to change the action for the load more button for a specific post type.
+
+`$post_type` the post type dynamically set in the block.
+
+**since** 5.45.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $action | `string` | The action for the load more button. |
+
+</div>
+
 ## wp-lemon/filter/block/timeline-item/allowed-blocks
 
 Filters the allowed blocks for the timeline-item block.
@@ -1430,9 +1837,11 @@ Filters the output for the end of a menu level just before the closing ul tag.
 
 </div>
 
-## wp-lemon/filter/navwalker/{$page}/link-attributes
+## wp-lemon/filter/navwalker/{$archive\_page\_post\_type}/link-attributes
 
 Filters the link attributes for a wp-lemon archive page.
+
+`$archive_page_post_type` is the post type of the archive page.
 
 <div class="table-responsive">
 
@@ -1441,7 +1850,7 @@ Filters the link attributes for a wp-lemon archive page.
 | $atts | `array` | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
 | $menu_item | `\WP_Post` | The current menu item. |
 | $args | `\stdClass` | An object of wp_nav_menu() arguments. |
-| $depth | `int` | Depth of menu ite |
+| $depth | `int` | Depth of menu item. |
 
 </div>
 
@@ -1482,9 +1891,36 @@ Filters the link attributes for a menu item based on the menu item ID.
 | $atts | `array` | The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored. |
 | $menu_item | `\WP_Post` | The current menu item. |
 | $args | `\stdClass` | An object of wp_nav_menu() arguments. |
-| $depth | `int` | Depth of menu ite  Example usage:  ```php function link_attributes_job($atts, $item, $args, $depth) {  $args = [    'post_type'      => 'job',    'posts_per_page' => -1,    'status'         => 'publish',  ];  $posts = \Timber\Timber::get_posts($args);  $count = count($posts);  if ($count > 0) {     $atts['data-jobs'] = $count; }    return $atts; }  add_filter('10/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4); ``` |
+| $depth | `int` | Depth of menu item. |
 
 </div>
+
+Example usage:
+
+**PHP**
+
+```php
+function link_attributes_job($atts, $item, $args, $depth)
+{
+
+$args = [
+   'post_type'      => 'job',
+   'posts_per_page' => -1,
+   'status'         => 'publish',
+ ];
+
+$posts = \Timber\Timber::get_posts($args);
+ $count = count($posts);
+
+if ($count > 0) {
+    $atts['data-jobs'] = $count;
+}
+
+  return $atts;
+}
+
+add_filter('wp-lemon/filter/navwalker/10/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
+```
 
 ## wp-lemon/filter/model/faq-slug
 
@@ -1562,6 +1998,17 @@ We use this filter to change the order of social media platforms in the footer.
 
 </div>
 
+**PHP**
+
+```php
+add_filter(
+'wp-lemon/filter/socials-order',
+function () {
+   return ['linkedin', 'x', 'facebook', 'instagram', 'youtube'];
+}
+);
+```
+
 ## wp-lemon/filter/a11y/skip-links
 
 Filters the array of skip links.
@@ -1577,6 +2024,51 @@ This allows developers to add or remove skip links.
 | $links | `array` | Original array of skip links. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/a11y/skip-links', function ($skip_links) {
+    unset($skip_links['navbar']);
+    $skip_links['menu'] = __('Skip to primary navigation', 'wp-lemon');
+    return $skip_links;
+}, 10, 1);
+```
+
+## wp-lemon/filter/palette
+
+Filters the used palette JSON file.
+
+Use this filter to load a different palette JSON file from your child theme.
+
+**since** 5.46.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $palette_json | `string` | The palette JSON file name. |
+
+</div>
+
+To use a custom palette JSON file, add the following code to your child theme's hooks.php:
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/palette', function($palette_json) {
+
+  if ('custom-variant' == get_constant('WEBSITE_VARIANT')) {
+    return 'palette-custom.json';
+  }
+
+  return $palette_json;
+});
+```
+
+In your config.json, you can set a custom palette like this:
+```json
+ "themeJsonFile": "palette-custom.json",
+```
 
 ## wp-lemon/filter/webp-quality
 
@@ -1598,6 +2090,35 @@ Filters the blocks to load.
 
 With this filter you can remove blocks from the parent theme.
 
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $blocks | `array<string,mixed>` | array of blocks to load. |
+
+</div>
+
+**PHP**
+
+```php
+function allowed_vanilla_lemon_blocks($blocks)
+{
+  return [
+     'accordion',
+     'accordion-item',
+     'card-grid',
+     'content-card',
+     'node-latest',
+     'node-overview',
+     'section',
+     'todo',
+     'widgets',
+     'widget',
+  ];
+}
+add_filter('wp-lemon/filter/blocks', __NAMESPACE__ . '\\allowed_vanilla_lemon_blocks', 10, 1);
+```
+
 ## wp-lemon/filter/blocks-to-allow
 
 Filters the allowlist of blocks that will be allowed in the editor.
@@ -1614,6 +2135,34 @@ This will override the block removal list and short-circuit the function.
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
+
+**PHP**
+
+```php
+function core_blocks_to_allow($blocks, $post_type)
+{
+   // Add the core block 'core/quote' to the allowed blocks for the post type 'faq'.
+   switch ($post_type) {
+      case 'partner':
+         $blocks = [];
+         $blocks[] = 'core/paragraph';
+         $blocks[] = 'core/list';
+         $blocks[] = 'core/embed';
+         $blocks[] = 'core/heading';
+         $blocks[] = 'core/image';
+         $blocks[] = 'core/gallery';
+
+         // Add more cases if needed
+
+      default:
+         // Optional: handle other post types
+         break;
+  }
+
+  return $blocks;
+}
+add_filter('wp-lemon/filter/blocks-to-allow', __NAMESPACE__ . '\\core_blocks_to_allow', 10, 2);
+```
 
 ## wp-lemon/filter/core-blocks-to-allow
 
@@ -1642,6 +2191,7 @@ We have a list of blocks that we do not want to show in the editor, this filter 
 
 | Name | Type | Description |
 | --- | --- | --- |
+| $blocks_to_remove | `array<string,mixed>` | array of blocks that we do not want to show in the editor. |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
@@ -1656,9 +2206,44 @@ We have a list of blocks that we do not want to show in the editor, this filter 
 
 | Name | Type | Description |
 | --- | --- | --- |
+| $blocks_to_remove | `array<string,mixed>` | array of blocks that we do not want to show in the editor. |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
+
+**PHP**
+
+```php
+ add_filter(
+'wp-lemon/filter/blocks-to-remove',
+function ($blocks) {
+   $core_blocks_to_remove = [
+      'core/details',
+      'core/code',
+      'core/preformatted',
+      'core/group',
+      'core/cover',
+      'core/audio',
+      'core/video',
+      'core/media-text',
+      'core/nextpage',
+      'core/quote',
+      'core/spacer',
+      'core/social-links',
+      'core/post-title',
+      'core/navigation',
+      'core/shortcode',
+      'searchwp/results-template',
+      'searchwp/search-form',
+      'rank-math/rich-snippet',
+      'rank-math/howto-block',
+      'rank-math/faq-block',
+      'rank-math/command',
+      'rank-math/toc-block',
+  ];
+    return array_merge($blocks, $core_blocks_to_remove);
+},10,1);
+```
 
 ## wp-lemon/filter/model/acf-fields/job
 

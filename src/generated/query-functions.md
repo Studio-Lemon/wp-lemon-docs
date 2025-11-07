@@ -39,6 +39,32 @@ This is useful for creating a dropdown or select field in a form where the user 
 
 </div>
 
+**PHP**
+
+```php
+use function WP_Lemon\API\get_post_type_options;
+$choices = get_post_type_options('person');
+
+... additional customizer code ...
+$wp_customize->add_setting(
+   'job_contact',
+   [
+       'sanitize_callback' => 'absint',
+   ]
+);
+$wp_customize->add_control(
+       'job_contact',
+       [
+        'label'          => esc_html_x('Job contact', 'Backend - Customizer field label', 'wp-lemon'),
+        'section'        => 'project',
+        'allow_addition' => true,
+        'type'           => 'select',
+        'settings'       => 'job_contact',
+        'choices'        => $choices
+      ]
+    );
+ ```
+
 ---
 
 ### latest\_items\_query()
@@ -108,6 +134,14 @@ Context function that queries specific ID's from a specific posttype
 
 </div>
 
+**PHP**
+
+```php
+use function WP_Lemon\API\specific_items_query;
+$value = [12,34,56]; // Array with post ID's
+$specific_items = specific_items_query('person', 3, $value);
+```
+
 ---
 
 ### archive\_query()
@@ -133,6 +167,25 @@ Uses archive-ajax.php to output the new items.
 | $extra_args | `array` | Extra arguments we want to mix in. |
 
 </div>
+
+Querying the all jobs in a custom block context:
+**PHP**
+
+```php
+use function WP_Lemon\API\archive_query;
+
+ public function block_context($context): array
+ {
+
+    $args = [
+       'jobs' => archive_query('job', -1),
+       'link' => true,
+       'holder_classes' => 'col-md-6',
+     ];
+
+     return array_merge($context, $args);
+  }
+```
 
 ---
 
@@ -196,6 +249,18 @@ Get next post when available, otherwise get the first post.
 
 </div>
 
+**PHP**
+
+```php
+use function WP_Lemon\API\next_post_info;
+$context = Timber::context(
+ [
+   'next'            => next_post_info(),
+   'prev'            => previous_post_info(),
+ ]
+);
+```
+
 ---
 
 ### previous\_post\_info()
@@ -216,6 +281,18 @@ Get previous post when available, otherwise get the last post.
 
 </div>
 
+**PHP**
+
+```php
+use function WP_Lemon\API\next_post_info;
+$context = Timber::context(
+ [
+   'next'            => next_post_info(),
+   'prev'            => previous_post_info(),
+ ]
+);
+```
+
 ---
 
 ### taxonomy\_post\_collection()
@@ -224,6 +301,23 @@ Returns a collection of posts based on a taxonomy and post type.
 
 Use the 'collection' key to first loop through the main categories which holds
 name, slug, id, description and posts and then run a nested loop through the posts.
+
+**since** 4.9.0
+
+`taxonomy_post_collection( string $taxonomy, string $post_type )`
+
+**Returns:** `array` Returns an array with (bool) categories, (nested-array) collection, (int) amount and (string) debug.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $taxonomy | `string` | The taxonomy to query. |
+| $post_type | `string` | The post type to query. |
+
+</div>
+
+**Twig**
 
 ```twig
   <nav class="post-overview__nav">
@@ -251,21 +345,6 @@ name, slug, id, description and posts and then run a nested loop through the pos
   </div>
 
 ```
-
-**since** 4.9.0
-
-`taxonomy_post_collection( string $taxonomy, string $post_type )`
-
-**Returns:** `array` Returns an array with (bool) categories, (nested-array) collection, (int) amount and (string) debug.
-
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $taxonomy | `string` | The taxonomy to query. |
-| $post_type | `string` | The post type to query. |
-
-</div>
 
 ---
 

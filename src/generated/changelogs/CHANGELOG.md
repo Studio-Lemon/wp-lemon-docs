@@ -1,3 +1,343 @@
+## 5.50.0 - 31 October 2025
+
+### ⛰️ Features
+
+- _(accordion)_ Add margin-top for adjacent elements not using acf-block
+- _(card)_ Add picture-args filter for enhanced picture element rendering
+- _(carousel)_ Add per-view option for slides and update styles
+- _(header.twig)_ Add two additional filters to the header.twig file
+
+### 🐛 Bug Fixes
+
+- _(header)_ Remove unnecessary top offset for admin bar
+- _(node-overview)_ Update example function to return array for post ordering
+- _(single.php)_ Update parameter description for post type in template filter documentation
+
+### 🚜 Refactor
+
+- _(styles)_ Adjust margins for search section and entry header
+- [**breaking**] Renamed header actions to follow the same consistent pattern as all other actions inside wp-lemon, old actions are now marked deprecated
+
+### 📚 Documentation
+
+- Update docs
+
+### ⚙️ Miscellaneous Tasks
+
+- Run rector php83
+
+## 5.49.1 - 21 October 2025
+
+### 🐛 Bug Fixes
+
+- _(navbar)_ Update scroll position checks for navbar visibility
+- _(timber)_ Reorder add_spaces_to_phonenumber filter registration
+- Fix footer visibility
+
+## 5.49.0 - 16 October 2025
+
+### ⛰️ Features
+
+- _(macro)_ Add filter for default arguments in picture macro
+- _(navbar)_ Add scroll settings filter and update navbar behavior based on scroll values
+
+### 🐛 Bug Fixes
+
+- Replace nth-child with nth-of-type for consistent styling in card and timeline components
+
+### 📚 Documentation
+
+- Add example for phone number filtering in format_phone_number function
+
+### 🎨 Styling
+
+- Add text alignment support for card component
+- Add background color variable for image card overlay
+
+## 5.48.1 - 13 October 2025
+
+### ⛰️ Features
+
+- _(Site class)_ Add new is_archive_page method
+
+### 🐛 Bug Fixes
+
+- Update accordion item label default to use translation function
+
+### 📚 Documentation
+
+- Update docs
+
+## 5.48.0 - 10 October 2025
+
+### ⛰️ Features
+
+- _(blocks)_ Add option to open first accordion item
+- _(blocks)_ Update block.json files to include blockVersion 3 for all blocks
+- Deprecated class-FAQ in favor of feature plugin
+
+### 🐛 Bug Fixes
+
+- Fix footer alignment
+- Adjust alignment for centered images in entry blocks
+- Update max-width-default calculation to use block-side-gutter-side
+
+### 🚜 Refactor
+
+- _(accordion)_ Complete accordion refactor
+
+### 🎨 Styling
+
+- Lint scss
+
+## 5.47.2 - 06 October 2025
+
+### 🐛 Bug Fixes
+
+- Fix docblocks
+
+## 5.47.1 - 06 October 2025
+
+### ⛰️ Features
+
+- Update get_other_items method to include taxonomy and terms parameters
+
+### 🐛 Bug Fixes
+
+- Fixed a bug where you were not able to click on a link that was inside the editor fields view.
+- Make excerpt length filterable again for news cards
+- Better editor alignment
+
+### 📚 Documentation
+
+- Update documentation
+- Add docblocks to wp-lemon-post class
+
+### ⚙️ Miscellaneous Tasks
+
+- _(js)_ Rename scrollNext to scrollNextSectionListener
+
+## 5.47.0 - 26 September 2025
+
+### ⛰️ Features
+
+- Add multisite support for wp-lemon licence and diagnostics class
+- New filter
+
+### 🐛 Bug Fixes
+
+- Update Prettier configuration to remove twigPrintWidth and adjust overrides
+- Fix button border regression
+
+### 📚 Documentation
+
+- Add example filters in documentation
+
+### ⚙️ Miscellaneous Tasks
+
+- Add class assignment for opening hours slot div
+- Build fix
+
+## 5.46.0 - 17 September 2025
+
+### ⛰️ Features
+
+- Add more variables for ghost buttons
+- Add new helper function url_to_website_name
+
+### 🐛 Bug Fixes
+
+- Fix max width regression
+
+### 📚 Documentation
+
+- Update docblocks of helper functions
+
+### ⚙️ Miscellaneous Tasks
+
+- Update packages
+- Update rsync deployment switches to exclude additional twig-action.php file
+- Add inline-flex utilities
+
+## 5.45.5 - 17 September 2025
+
+### 🐛 Bug Fixes
+
+- Fix archive nav color in dropdown
+- Fix media query ordering issue, fixes websites going full width
+
+## 5.45.4 - 15 September 2025
+
+### 🐛 Bug Fixes
+
+- Correct index for CopyWebpackPlugin patterns in webpack config
+
+## 5.45.3 - 15 September 2025
+
+### ⛰️ Features
+
+- Filterable palette.json file
+
+### 🐛 Bug Fixes
+
+- Fixed a bug where a disabled blocks would still output the closing div
+- Change heading from h2 to h3 for no content message
+
+### 📚 Documentation
+
+- Fix docblocks
+
+### ⚙️ Miscellaneous Tasks
+
+- Package updates
+
+## 5.45.2 - 10 September 2025
+
+### 🐛 Bug Fixes
+
+- Fix editor in import in parent theme editor.scss stylesheet
+- Fix class existence check for Bulldozer
+
+## 5.45.1 - 04 September 2025
+
+### 🐛 Bug Fixes
+
+- Remove add_theme_support for wp-lemon-faq
+
+## 5.45.0 - 03 September 2025
+
+### ⛰️ Features
+
+- Update filter arguments for node-overview block and add load more action filter
+- Add post type tag to search result badges for better styling possibilities
+- Add support for be media from production new version
+
+### 🐛 Bug Fixes
+
+- Less class lookup calls
+- Adjust extra_args handling in Generic_Ajax_Query for improved filter compatibility
+- Replace direct property manipulation with set_disabled method in Carousel_Block
+- Update class modifier for image presence in ImageCard_Block
+- Fix error on licence page
+- Better .section class alignment in backend
+
+### 📚 Documentation
+
+- Update filter docs
+- Fix code comment formatting in twig-actions.php
+
+## 5.44.3 - 22 August 2025
+
+### ⛰️ Features
+
+- Carousel block, create option to start at the first slide.
+- Add support for additional social media platforms
+
+### 🐛 Bug Fixes
+
+- Add documentation for various actions and remove TODO comments
+
+### 📚 Documentation
+
+- Update docs
+
+### ⚙️ Miscellaneous Tasks
+
+- Lint files
+- Lint twig files
+- Update action
+
+### Language
+
+- Update translations
+
+## 5.44.2 - 21 August 2025
+
+### 📚 Documentation
+
+- Update documentation of helper functions
+- Update action docblocks
+- Fix docblocks in navwalker
+
+### 🎨 Styling
+
+- Update wp-lemon icon font
+
+### ⚙️ Miscellaneous Tasks
+
+- PHPStan level 8
+- Run rector & lint files
+- Speed up wp-lemon by disabling some ACF functions
+
+## 5.44.1 - 19 August 2025
+
+### 🐛 Bug Fixes
+
+- Fix focal point check in Image class
+
+### 📚 Documentation
+
+- Add PHP code examples for various filter hooks
+
+## 5.44.0 - 14 August 2025
+
+### ⛰️ Features
+
+- Add reserved keys for site information and enforce validation in context addition
+- Move attributes to new methods
+
+### 🐛 Bug Fixes
+
+- Speed up loading of wp-lemon by 10% by better class_exist calls.
+- Increase default excerpt length in search result component
+- Correct boolean casting for maybe_hide_animation in Section_Block
+- Adjust aspect ratio handling for entry header picture
+- Contact bar fixes
+
+### 📚 Documentation
+
+- Update generated docs
+- Add examples in codebase
+- Better docblock
+- Change order of actions
+- Update documentation for previous_post_info and taxonomy_post_collection functions
+
+### 🎨 Styling
+
+- Adjust width calculation for icons-list items
+
+### ⚙️ Miscellaneous Tasks
+
+- Ignore error
+- Bump minimal Bulldozer version
+- Update dependencies
+
+## 5.43.1 - 28 July 2025
+
+### 🐛 Bug Fixes
+
+- Correct conditional check for parent block ID in Accordion_Item_Block
+- Add missing body background variable to Bootstrap root styles
+
+### 📚 Documentation
+
+- Better docblocks
+- Add missing parameter description for picture arguments filter
+- Add closing code block to get_post_type_options function documentation
+- Add closing code block to documentation for get_attachment_info function
+- Add examples for various filters in twig-filters.php
+- Add examples in queries and filter docs
+- Enhance docs for get_post_type_options function
+
+### 🎨 Styling
+
+- Exclude theme-button from inheriting color in img-container
+
+### ⚙️ Miscellaneous Tasks
+
+- Phpstan
+- Linting
+
 ## 5.43.0 - 24 July 2025
 
 ### ⛰️ Features

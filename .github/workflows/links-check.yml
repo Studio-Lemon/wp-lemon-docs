@@ -1,0 +1,25 @@
+name: Docs links checker
+
+on: [workflow_dispatch]
+
+jobs:
+  links-check:
+    name: Link Checker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: lycheeverse/lychee-action@v2.6.1
+        id: lychee
+        with:
+            args: --verbose './src/docs/**/*.mdx' --max-concurrency 1 --max-retries 0 --accept 200,429 --cache
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Issue From File
+        if: env.lychee_exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: docs

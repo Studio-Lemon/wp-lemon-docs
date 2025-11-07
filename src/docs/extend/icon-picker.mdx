@@ -56,16 +56,14 @@ If you want to use your icons in your twig file you can do so by using our build
 Please note that the icon field will return a list of icons. 
 To use it in your Twig file, you'll need to loop through it as follows:
 
-``` php
-
+```twig
 {% for item in fields.icons %}
 	<div class="icons">
 		<div class="icons__icon">{{ get_svg_icon(item.icon) }}</div>
 	</div>
 {% endfor %}
-
-
 ```
+
 You can also place your icons in PHP using the function `WP_Lemon\API\get_svg_icon('icon-name')`.
 
 We recommend the PHP function when you are dealing with a big site where you want to access the icons in multiple places.
@@ -84,11 +82,11 @@ You can prepare the icon field in a custom method and then use the icons in mult
 
 namespace WP_Lemon\Child\Classes;
 
-use Timber\Post;
-
+use WP_Lemon\Classes\LemonPost;
+use Timber\Timber;
 use function WP_Lemon\API\get_svg_icon;
 
-class Service extends Post
+class Service extends LemonPost
 {
    private mixed $_icon = null;
 
@@ -106,7 +104,7 @@ class Service extends Post
 ```
 And then use in your Twig file like this:
 
-```html
+```twig
 {% for service in services %}
 	<div class="service">
 		<div class="service__icon">{{ service.get_service_icon() }}</div>
