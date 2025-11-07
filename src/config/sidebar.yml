@@ -4,20 +4,14 @@
   link: "/"
 - label: "Requirements"
   link: "/requirements"
-- label: "Setup new project"
-  link: "/setup"
-- label: "Getting started"
-  link: "/getting-started"
 - label: Getting started
   items:
-    - label: "The Analysis Phase"
+    - label: "The analysis phase"
       link: "/getting-started/analysis-phase"
-    - label: "Set up"
-      link: "/getting-started/set-up"
-    - label: "Basic styling"
-      link: "/basics/basic-styling"
-    - label: "Basic javascript"
-      link: "/basics/basic-javascript"
+    - label: "Setup new project"
+      link: "/getting-started/setup"
+    - label: "First steps"
+      link: "/getting-started/first-steps"
 - label: Basics
   items:
     - label: "Customizer settings"
