@@ -1,3 +1,262 @@
+## 5.43.0 - 24 July 2025
+
+### ⛰️ Features
+
+- Add font-weight variable for strong text elements
+- Add is_special_page method to check for special pages in the site class
+- Implement unique ID generation for ACF accordion blocks and update related templates
+- Add documentation for action hooks in twig-actions.php
+
+### 🐛 Bug Fixes
+
+- Ensure full width for non-aligned entries in frontend alignment styles
+- Add usage examples for card icon and footer filters
+
+### ⚙️ Miscellaneous Tasks
+
+- Add GitHub Action to check for undocumented WordPress hooks
+
+## 5.42.2 - 11 July 2025
+
+### ⛰️ Features
+
+- Add card_type class to archive holder div. This makes it possible to target specific archive divs
+
+### 🐛 Bug Fixes
+
+- Fix core/file rendering
+- Disable pointer events on links within acf-block to prevent interaction in the backend
+- Wrap pagination include in conditional to prevent rendering when hidden
+- Change class selector to figure for wp-block-embed styles
+
+### ⚙️ Miscellaneous Tasks
+
+- Update max-width to use CSS variable for entry header picture holder
+
+## 5.42.1 - 04 July 2025
+
+### 🐛 Bug Fixes
+
+- [**breaking**] Fix function imports after update of sass
+
+    to fix this in your child theme, search replace the following:
+
+    Search for: @use "~parentThemeStyles/02-tools/functions" as \*;
+    Replace with: @import "~parentThemeStyles/02-tools/functions";
+
+## 5.42.0 - 03 July 2025
+
+### 🚜 Refactor
+
+- Run cache function also on delete post and make the logic behind cache clearing faster.
+
+### ⚙️ Miscellaneous Tasks
+
+- Update basebuilder to 6.0
+
+## 5.41.1 - 30 June 2025
+
+### 🐛 Bug Fixes
+
+- Update class name check for button block in theme button class function
+
+## 5.41.0 - 30 June 2025
+
+### ⛰️ Features
+
+- Add 'ucfirst' filter to Timber Twig functionality
+
+### 🐛 Bug Fixes
+
+- Correct link reference for archive page in single-person template
+- Correct archive page link reference in entry header
+- Correct filter hook syntax in Node_Overview_Block
+- Remove 'wp-block-button\_\_link' class from theme button
+- Add 'author' support to news post type
+- Fix Mollie payment in Woocommerce
+
+### ⚙️ Miscellaneous Tasks
+
+- Update block categories from dynamic to overview for consistency
+
+## 5.40.4 - 22 May 2025
+
+### 🐛 Bug Fixes
+
+- Update max-width calculations to use block-side-gutter for consistency
+
+## 5.40.3 - 16 May 2025
+
+### ⛰️ Features
+
+- Add modal styles with background, input, and border radius variables
+
+### 🐛 Bug Fixes
+
+- Remove !important from dropdown background padding for better specificity
+- Update max-width calculations to use block-side-gutter-side variable
+
+### 📚 Documentation
+
+- Enhance documentation for get_attachment_info and get_svg_icon functions with Twig examples
+
+## 5.40.2 - 12 May 2025
+
+### 🐛 Bug Fixes
+
+- Update max-width calculation to use block-side-gutter variable
+
+## 5.40.1 - 10 May 2025
+
+### 🐛 Bug Fixes
+
+- Remove admin check from get_archive_page function
+
+### 📚 Documentation
+
+- Document remaining twig filters
+
+### ⚙️ Miscellaneous Tasks
+
+- Cleanup filters and twig files
+
+## 5.40.0 - 09 May 2025
+
+### 🐛 Bug Fixes
+
+- Fixes an issue where the cache clearing process would block the saving speed of a post. This process now runs async.
+- Invert condition in get_archive_page to return false for admin context
+
+## 5.39.0 - 09 May 2025
+
+### ⛰️ Features
+
+- Add get_posty_type_options function to retrieve post type options
+
+### 🐛 Bug Fixes
+
+- Correct function name in changelog and update get_archive_page logic
+- Correct function name from get_posty_type_options to get_post_type_options
+- Update get_archive_page logic to check for singular posts
+- Correct button background color hover variable assignment
+- Fix query
+- Fix docs
+
+### 📚 Documentation
+
+- Add function to overwrite Fluent Forms payment URL
+
+### ⚙️ Miscellaneous Tasks
+
+- Linting
+
+## 5.38.3 - 30 April 2025
+
+### 🐛 Bug Fixes
+
+- Correct JavaScript syntax in search-list.twig. Fixes #299
+
+### 📚 Documentation
+
+- Enhance documentation for phone number and attachment functions
+- Improve documentation for filters
+- Enhance documentation for get_attachment_info function
+- Update filter documentation for clarity and consistency
+- Enhance documentation for phone number formatting function
+
+### ⚙️ Miscellaneous Tasks
+
+- Update animation handling in various Twig templates and PHP files for improved consistency
+- Update copyright year variable in footer template
+
+## 5.38.2 - 29 April 2025
+
+### ⛰️ Features
+
+- Add filter for logo in footer
+
+### 🐛 Bug Fixes
+
+- Ensure type consistency in apply_filters arguments
+
+### 📚 Documentation
+
+- Document all the things
+- Continue documentation
+- Make a start with twig filter documentation
+
+### ⚙️ Miscellaneous Tasks
+
+- Exclude lib/api/twig-filters.php from rsync deployments
+
+## 5.38.1 - 23 April 2025
+
+### 🐛 Bug Fixes
+
+- Add padding to body for consistent layout
+
+## 5.38.0 - 23 April 2025
+
+### ⛰️ Features
+
+- Overwrite Fluent Forms email attachments with media attachments from form data
+- Add button to view all frequently asked questions in related questions section
+
+### 🐛 Bug Fixes
+
+- Update alignment settings for block styles and adjust theme.json configuration fixes #297
+
+### ⚙️ Miscellaneous Tasks
+
+- Tested to 6.8
+
+## 5.37.0 - 16 April 2025
+
+### ⛰️ Features
+
+- Core/file block now gets theme-button class as well
+
+### 🐛 Bug Fixes
+
+- Fix load just in time translation errors introduced in WordPress 6.8
+- Rename focal argument to focalpoint for consistency in card filters
+- Update card shadow color to use rgba for better transparency
+- Improve focal point check in Image class
+- Correct filter namespace for load more text in node overview block
+- Correct formatting in changelog replacement step
+- Refine comments and improve code readability in multiple files
+
+### 📚 Documentation
+
+- Enhance documentation for get_special_page method with usage details and link
+- Update documentation for link attributes filter in Bootstrap_Navwalker
+- Improve class documentation for ACF_Field_Fluentforms
+- Rewrite hooks for better display in documentation
+- Add usage example for ACF field fluentforms
+
+### ⚙️ Miscellaneous Tasks
+
+- Add find and replace step for changelog formatting in workflow
+- Update composer dependencies
+- Lint files
+
+## 5.36.1 - 09 April 2025
+
+### 🐛 Bug Fixes
+
+- _(acf-field-fluentforms)_ Set default choices to an empty array, this prevents a query on page load
+- _(node-overview)_ Add load more and no more items text filters for better localization on a per posttype basis.
+- _(styles)_ Add custom root file to make sure the variables that are needed by the bootstrap css are available
+
+### 📚 Documentation
+
+- _(node-overview)_ Add filters for query arguments, load more text, and no more items message for better customization
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies
+- _(node-overview)_ Update parameter types in docblock for clarity and consistency
+
 ## 5.36.0 - 02 April 2025
 
 ### ⛰️ Features
@@ -1216,7 +1475,6 @@ _Release Date - 10 november 2023_
     - Timber 2.0 introduces breaking changes. Most of them are handled by wp-lemon but please check your child theme `Timber` calls to see if they are still valid. Also check your debug.log for any errors or deprecation notices.
     - Swiper is updated to 11.x
 - 💡 **Newly added**
-
     - wp-lemon now uses Timber 2.0 which is way more modern then Timber 1. See [upgrade guide](https://timber.github.io/docs/v2/upgrade-guides/2.0/). We updated wp-lemon to be fully compatible with Timber 2.0
 
 - ✨ **Enhanced**

@@ -26,6 +26,7 @@ my_method( 'example', false );
 | <span class="method-name">[get_site_information()](#get_site_information)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get specific site information.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> $value     The value retrieved from the site information.</span></span> |
 | <span class="method-name">[get_special_page()](#get_special_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get special page information.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['id', 'title', 'url/link'] or false if key does not exist.</span></span> |
 | <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type"></span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
+| <span class="method-name">[is_special_page()](#is_special_page)</span> | <span class="method-type">`bool`</span> | <span class="method-description">Check if the current page is a special page.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> True if the current page is a special page, false otherwise.</span></span> |
 
 </div>
 
@@ -145,6 +146,10 @@ Get specific site information.
 
 Get special page information.
 
+Use in conjunction with the special pages filter to setup special pages and then retrieve them via this method.
+
+**link** <https://studio-lemon.github.io/wp-lemon-docs/extend/special-pages>
+
 **since** 5.36.0
 
 `get_special_page( string $key )`
@@ -195,6 +200,39 @@ Example usage:
 if (self::is_post_type(['example', 'example2'])) {
 // do something
 }
+```
+
+---
+
+### is\_special\_page()
+
+Check if the current page is a special page.
+
+**since** 5.36.0
+
+`is_special_page( string $key, bool $or_is_child_of = false )`
+
+**Returns:** `bool` True if the current page is a special page, false otherwise.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $key | `string` | The key of the special page. |
+| $or_is_child_of | `bool` | If true, it will also check if the current page is a child of the special page. |
+
+</div>
+
+Example usage:
+
+**PHP**
+
+```php
+if (!WP_Lemon_Child_Site::is_special_page('contact')) {
+ return;
+}
+// Do something on the contact page.
+Timber::render('partials/contact-form.twig', $context);
 ```
 
 ---

@@ -326,6 +326,20 @@ export default function GlobalStyle() {
         content: 'scss';
         background: #bf4080;
       }
+
+      h2[id^=wp-lemon] {
+        margin-top: 60px;
+        position: relative;
+       &::after {
+          border-bottom:
+          2px solid #e8bd36;
+          content: "";
+          display: block;
+          height: 2px;
+          margin-top: .25em;
+          width: 100%;
+       }
+      }
       `}
     />
   );

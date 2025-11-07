@@ -14,7 +14,7 @@
 | <span class="method-name">[get_language_switcher()](#get_language_switcher)</span> | <span class="method-type">`false` or `array`</span> | <span class="method-description">Collects all languages and returns them as an array for twig language switcher.</span> |
 | <span class="method-name">[get_shares()](#get_shares)</span> | <span class="method-type">`array`</span> | <span class="method-description">Builds the sharing links.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array of shares that can be addressed by the share macro.</span></span> |
 | <span class="method-name">[get_socials()](#get_socials)</span> | <span class="method-type">`array`</span> | <span class="method-description">Builds the social context.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array of platforms that can be addressed by the share macro.</span></span> |
-| <span class="method-name">[get_svg_icon()](#get_svg_icon)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Retrieve a SVG icon.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The svg icon or false if not found.</span></span> |
+| <span class="method-name">[get_svg_icon()](#get_svg_icon)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Retrieve a SVG icon from the acf-svg-icon-picker plugin.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The svg icon or false if not found.</span></span> |
 | <span class="method-name">[get_svg_image()](#get_svg_image)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get SVG image contents.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> the attachment image svg data or false if not found.</span></span> |
 | <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type"></span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
 | <span class="method-name">[log_message()](#log_message)</span> | <span class="method-type">`void`</span> | <span class="method-description">Adds a log message to a specific log file in the website base folder.</span> |
@@ -82,6 +82,17 @@ Return a fluent form.
 
 </div>
 
+Use this field in your ACF field group:
+**PHP**
+
+```php
+->addField('form', 'fluentforms', [
+         'label' => __('Form', 'wp-lemon'),
+         'instructions' => __('Select the form you want to display.', 'wp-lemon'),
+         'return_format' => 'id',
+     ]);
+```
+
 ---
 
 ### log\_message()
@@ -112,6 +123,17 @@ You can use this function in your classes and functions to log errors and other 
 ### format\_phone\_number()
 
 Function to format phone numbers throughout our template.
+
+This array contains the following information:
+
+- uri: The uri of the phone number. Used in the tel link.
+- whatsapp: The whatsapp link of the phone number. Used to create a whatsapp link.
+- timezone: The timezone of the phone number.
+- countrycode: The country code of the phone number.
+- national: The national format of the phone number without the country code.
+- international: The international format of the phone number with the country code.
+- combined: The combined format of the phone number resulting in a format like +31 (0) 6 12345678.
+- localized: The localized format of the phone number. This is only used if WPML is active and the current language is not the default language.
 
 **since** 3.17.0
 
@@ -297,6 +319,15 @@ This function will clear the cache for the current post or the entire site.
 
 Get the attachment file info.
 
+This function is also available in Twig files. See the example below.
+
+This function will return the following information:
+
+- filename: The name of the file.
+- link: The link to the file.
+- extension: The file extension.
+- filesize: The size of the file in KB, MB or GB depending on the size.
+
 **since** 5.4.0
 
 `get_attachment_info( int|null $attachment_id )`
@@ -311,11 +342,30 @@ Get the attachment file info.
 
 </div>
 
+**Twig**
+
+```twig
+{% set attachment = get_attachment_info(attachment_id) %}
+{% if attachment %}
+  <div class="attachment-info">
+  <h3>{{ attachment.filename }}</h3>
+  <p>({{ file_info.filesize }} / {{ file_info.extension }})</p>
+  <p>{{ attachment.extension }}</p>
+  <a href="{{ attachment.link }}">{{ attachment.link }}</a>
+ </div>
+{% endif %}
+
 ---
 
 ### get\_svg\_icon()
 
-Retrieve a SVG icon.
+Retrieve a SVG icon from the acf-svg-icon-picker plugin.
+
+This function will return the SVG icon from the resources/icons folder.
+
+This function also works in Twig files. See the example below.
+
+**link** <Uses the following plugin: https://github.com/smithfield-studio/acf-svg-icon-picker>
 
 **since** 5.7.0
 
@@ -331,6 +381,19 @@ Retrieve a SVG icon.
 
 </div>
 
+**Twig**
+
+```twig
+<div class="row">
+{% for item in fields.repeater %}
+   <div class="icons-block__item col-md-4">
+      <div class="icons-block__icon">{{ get_svg_icon(item.icon) }}</div>
+         {{ item.text }}
+      </div>
+ {% endfor %}
+</div>
+```
+
 ---
 
 ### textarea\_to\_array()
@@ -338,7 +401,7 @@ Retrieve a SVG icon.
 Text helper to convert a textarea to an array.
 
 This can be used to convert a textarea ACF field with line breaks to an array.
-So you don't have to create a repeater field.
+So you don't have to create a repeater field. This function can also be used as a filter inside your TWIG files.
 
 **since** 5.12.3
 
@@ -353,6 +416,20 @@ So you don't have to create a repeater field.
 | $text | `string` | The text to convert. |
 
 </div>
+
+Convert a textarea ACF field with line breaks to an array.
+**Twig**
+
+```twig
+{% set usps = fields.usps|textarea_to_array %}
+ {% if usps %}
+   <ul>
+   {% for item in usps %}
+     <li>{{ item }}</li>
+   {% endfor %}
+ </ul>
+{% endif %}
+```
 
 ---
 
