@@ -1,26 +1,151 @@
 ---
-title: "Set up"
+title: "Set up phase"
 description: Learn what the first things are you need to set up in your project
 ---
 
-## Set up phase
+Once you’ve completed the design analysis and have a clear overview of the project’s structure, 
+you can move on to the setup phase. This phase focuses on establishing your technical foundation — 
+setting up post types, blocks, branding elements, and configuring the CMS so you can begin implementing 
+your design efficiently.
 
-Posttypes/taxonomies aanmaken
-Custom blocken
-First branding
-logo's en favicons
-kleuren
-fonts
-Pagina's aanmaken
-Inrichten met zoveel mogelijk content
-Menu's aanmaken
-header
-footer inrichten
-Customizer
-archiefpagina's en single pages instellen
-Socials
+## Posttypes/taxonomies aanmaken
+Since WordPress began as a blogging platform, post objects have always been an inherent part of its ecosystem. 
+In WP-Lemon, we’ve expanded the default post type functionality to make it more flexible, intuitive, 
+and aligned with modern development workflows.
 
-## Customizer settings
+By default, WP-Lemon hides the native Posts post type and introduces its own custom post types — 
+News, Team, and Jobs. These serve as examples of how structured content can be implemented using WP-Lemon’s 
+extended post object.
+
+Of course, you can easily create your own post types and taxonomies to fit your project’s needs. 
+To see how to do this, check out the [Custom Post Types](/working-with-posts/post-type-registration) documentation.
+
+## Custom blocks
+Custom ACF blocks are one of WP-Lemon’s core features.
+Once you have identified which content blocks you’ll need during the design analysis, 
+you can start creating them. To learn how to create custom ACF blocks, please take a look at our 
+[documentation on blocks](/blocks/key-concepts).
+
+## First branding
+
+### logo's en favicons
+#### Logo's
+WP Lemon comes with default logo's that you can overwrite. You can create a `images/logo.svg` and a `images/logo-footer.svg` file in `resources/assets/images/`. After running one of the webpack commands your new files will be loaded.
+
+We recommend running the following checks on your logo's:
+
+- Check if there are no bloated elements in your SVG
+- Are there unnneeded transforms? Remove them via a tool like Affinity Designer
+- Is your logo minified? If not, use a tool like https://jakearchibald.github.io/svgomg/ to minify the source file.
+
+If you want to use other formats or you want to inject a svg file directly, please see [global context](/extend/add-context)
+
+#### Favicons
+wp-lemon comes with a class that automatically checks for the right icons and then pass them to WordPress. This way the favicon get's displayed on all theme pages. It also handles the generation of a  `site.webmanifest`.
+
+wp-Lemon comes with a very obvious set of default favicons. This is to force you to create your own. Luckily it is very easy to create your own set. [Real Favicon Generator](https://realfavicongenerator.net/) you can create your own set of favicons.
+
+After generating your own set please place them in `/web/app/themes/YOURCHILDTHEME/resources/favicons`.
+
+The following method checks if `android-chrome-512x512.png` is present in your new favicon folder. If so, your new generated files will be loaded instead of the default ones provided by the parent theme.
+
+```php
+HighGround\Bulldozer\Site_Icons::filter_favicon_path
+```
+
+### Colors
+#### Create color variables
+The first things you'll want to do is to define your brand colors. 
+Extract your theme/brand colors from the design document or handoff file and convert them to scss variables. 
+I recommend using a tool like [Name that color (website)](https://chir.ag/projects/name-that-color/#6195ED) or [Name that color (vs code extension)](https://marketplace.visualstudio.com/items?itemName=guillaumedoutriaux.name-that-color) to 
+transform colors into distinguishable names.
+
+```scss
+$color-viridian: #588068ff;
+$color-dark-sea-green: #85b498ff;
+$color-antique-brass: #c88e65ff;
+$color-dark-salmon: #e19782ff;
+$color-peach-puff: #e9cfb4ff;
+```
+
+#### Create $brand-colors
+You can now create your brand colors. 
+These are the colors that will be available in the color palette inside the WordPress editor.
+
+```scss
+$brand-colors: (
+  "white": $white,
+  "black": $black,
+  "gray": #e9e9e9,
+  "dark-green": $color-viridian,
+  "green": $color-dark-sea-green,
+  "orange": $color-antique-brass,
+  "pink": $color-dark-salmon,
+  "peach": $color-peach-puff,
+);
+```
+The name on the left side is used to create matching class names that will be utilized by the editor.
+
+> ⚠️
+> You need to restart your watch process before the new colors will be available inside your editor.
+
+#### Overwrite default variables
+wp-lemon comes with a set of default SCSS variables that provides the default look. 
+These colors can be overwritten to your liking too define your own look and feel. 
+When taking a look at `wp-lemon/resources/assets/styles/01-settings/_variables.scss` you will find all 
+variables that are at your disposal. By simply copying the variables that you want to overwrite to 
+your `_variables.scss` and change their value you can overwrite things like colors, font sizes, 
+background colors, logo-widths, etc.
+
+For example, when you want to overwrite the default navigation colors:
+
+```scss
+$nav-text: (
+  "font-weight": 400,
+  "font-size": 16px,
+  "transform": "uppercase",
+  "color": $base-color,
+  "hover": darken($highlight2, 20%),
+  "active": $highlight1,
+);
+```
+
+You can copy over as much variables as you want to overwrite.
+
+
+### Fonts
+When creating a new website you'll probably want to add your own fonts as well. You can do this in two ways.
+
+#### Using an enqueue hook (external hosting)
+
+The first is to enqueue an external stylesheet by using the `wp_enqueue_scripts` and `enqueue_block_editor_assets` hooks in your child theme.
+
+#### Add them to your assets (provide fonts locally).
+
+You might want to host the fonts locally for several reasons. One of them is that you are not dependent on external CDN's. If the design requires a Google font you can [download it locally](https://gwfh.mranftl.com/fonts) via this tool.
+
+Once downloaded you can add the fonts to the resources/fonts/FONTNAME folder and include the generated stylesheet to `resources/style/01-settings/_fonts.scss`
+
+> ⚠️
+> Make sure to update the filepath when generating the font when using the above tool.
+
+#### Add font-family value to variables
+
+When you've added your font you will now have to add the font variables in your `_variables.scss`. Read [basic styling](/basics/basic-styling) for more information about overwriting variables.
+
+```scss
+$base-font: "Lato", sans-serif;
+$secondary-font: "Noto Serif", serif;
+```
+
+## CMS inrichten
+
+### Pagina's & menu's aanmaken
+Create the core pages (Home, About, Contact, etc.).
+Add placeholder or draft content to ensure layouts display correctly.
+Create your primary and secondary navigation menus via the WordPress menu editor.
+
+### Customizer settings
 We tried to strike a good balance between managing settings via the customizer and WordPress filters.
 The settings that you can manage via the customizer are:
 
@@ -36,56 +161,7 @@ The settings that you can manage via the customizer are:
 It is recommended to create your menu structure, add your custom post types and after that set your archive pages.
 
 
-## Logo's
-WP Lemon comes with default logo's that you can overwrite. You can create a `images/logo.svg` and a `images/logo-footer.svg` file in `resources/assets/images/`. After running one of the webpack commands your new files will be loaded.
 
-We recommend running the following checks on your logo's:
-
-- Check if there are no bloated elements in your SVG
-- Are there unnneeded transforms? Remove them via a tool like Affinity Designer
-- Is your logo minified? If not, use a tool like https://jakearchibald.github.io/svgomg/ to minify the source file.
-
-If you want to use other formats or you want to inject a svg file directly, please see [global context](/extend/add-context)
-
-## Fonts
-When creating a new website you'll probably want to add your own fonts as well. You can do this in two ways.
-
-### Using an enqueue hook (external hosting)
-
-The first is to enqueue an external stylesheet by using the `wp_enqueue_scripts` and `enqueue_block_editor_assets` hooks in your child theme.
-
-### Add them to your assets (provide fonts locally).
-
-You might want to host the fonts locally for several reasons. One of them is that you are not dependent on external CDN's. If the design requires a Google font you can [download it locally](https://gwfh.mranftl.com/fonts) via this tool.
-
-Once downloaded you can add the fonts to the resources/fonts/FONTNAME folder and include the generated stylesheet to `resources/style/01-settings/_fonts.scss`
-
-> ⚠️
-> Make sure to update the filepath when generating the font when using the above tool.
-
-### Add font-family value to variables
-
-When you've added your font you will now have to add the font variables in your `_variables.scss`. Read [basic styling](/basics/basic-styling) for more information about overwriting variables.
-
-```scss
-$base-font: "Lato", sans-serif;
-$secondary-font: "Noto Serif", serif;
-```
-
-
-
-## Favicons
-wp-lemon comes with a class that automatically checks for the right icons and then pass them to WordPress. This way the favicon get's displayed on all theme pages. It also handles the generation of a  `site.webmanifest`.
-
-wp-Lemon comes with a very obvious set of default favicons. This is to force you to create your own. Luckily it is very easy to create your own set. [Real Favicon Generator](https://realfavicongenerator.net/) you can create your own set of favicons.
-
-After generating your own set please place them in `/web/app/themes/YOURCHILDTHEME/resources/favicons`.
-
-The following method checks if `android-chrome-512x512.png` is present in your new favicon folder. If so, your new generated files will be loaded instead of the default ones provided by the parent theme.
-
-```php
-HighGround\Bulldozer\Site_Icons::filter_favicon_path
-```
 
 ## Manifest
 The manifest is also handled by wp-lemon. `Site_Icons` creates a virtual `site.webmanifest` file in your site root and adds it to the head of your site as well. This way you do not have to worry about setting the proper URLs etc. It comes with sane default that you can overwrite.
@@ -96,8 +172,8 @@ If you're coming from version < 2.3 please add the following to your child theme
 use HighGround\Bulldozer\Site_Icons;
 ...
 ...
-
 /**
+
  * Setup Site icons and manifest.
  */
 $icons                   = new Site_Icons;
