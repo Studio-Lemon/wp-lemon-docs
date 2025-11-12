@@ -748,6 +748,42 @@ This way, the offcanvas menu will scroll to the desired section when the menu it
 add_filter('wp-lemon/filter/header/offcanvas/enable-onepager', '__return_true');
 ```
 
+## wp-lemon/filter/header/offcanvas/title
+
+Filters the title of the offcanvas menu.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $title | `string` | The title of the offcanvas menu. |
+
+</div>
+
+## wp-lemon/filter/header/offcanvas/open
+
+Filters the svg icon HTML for the open icon of the offcanvas menu.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $open | `string` | The svg icon HTML for the open icon. |
+
+</div>
+
+## wp-lemon/filter/header/offcanvas/close
+
+Filters the svg icon HTML for the close icon of the offcanvas menu.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $close | `string` | The svg icon HTML for the close icon. |
+
+</div>
+
 ## wp-lemon/filter/footer/render
 
 Filters whether or not to render the footer.
@@ -1441,7 +1477,7 @@ You can use this filter to change the query args on a per post type basis.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $args | `null` or `array` | the original query args |
+| $args | `array` | the original query args |
 | $post_id | `int` | the post id |
 
 </div>
@@ -2139,7 +2175,7 @@ This will override the block removal list and short-circuit the function.
 **PHP**
 
 ```php
-function core_blocks_to_allow($blocks, $post_type)
+function blocks_to_allow($blocks, $post_type)
 {
    // Add the core block 'core/quote' to the allowed blocks for the post type 'faq'.
    switch ($post_type) {
@@ -2147,6 +2183,7 @@ function core_blocks_to_allow($blocks, $post_type)
          $blocks = [];
          $blocks[] = 'core/paragraph';
          $blocks[] = 'core/list';
+         $blocks[] = 'core/list-item';
          $blocks[] = 'core/embed';
          $blocks[] = 'core/heading';
          $blocks[] = 'core/image';
@@ -2161,7 +2198,7 @@ function core_blocks_to_allow($blocks, $post_type)
 
   return $blocks;
 }
-add_filter('wp-lemon/filter/blocks-to-allow', __NAMESPACE__ . '\\core_blocks_to_allow', 10, 2);
+add_filter('wp-lemon/filter/blocks-to-allow', __NAMESPACE__ . '\\blocks_to_allow', 10, 2);
 ```
 
 ## wp-lemon/filter/core-blocks-to-allow
@@ -2176,6 +2213,7 @@ Filters the list of core blocks that will be allowed in the editor.
 | --- | --- | --- |
 | $blocks | `array<string,mixed>` | to allow array of core blocks that we only want to show in the editor. |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
+| $registered_blocks | `string[]` | Array of all registered blocks. |
 
 </div>
 

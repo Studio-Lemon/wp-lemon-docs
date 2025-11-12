@@ -1,3 +1,25 @@
+
+## 5.51.0 - 12 November 2025
+
+### ⛰️  Features
+
+- Add possebility to add an anchor ID to other-items.twig
+- Add filters for offcanvas menu title and icons in twig files
+
+### 🐛 Bug Fixes
+
+- Sanitize phone URI in card component to enhance security
+- Reorder deprecated action calls for menu toggle in header
+- Improve nav scroll handling by using local variables for min distance and scroll values
+- Specify selector for dropdowns to to make sure we only target dropdowns inside the navbar
+- Update argument handling in queries and node-latest block for better compatibility
+- Adjust margin for header elements in card component
+
+### 📚 Documentation
+
+- Add filters for offcanvas menu title and SVG icons
+- Update docs for loading blocks
+
 ## 5.50.0 - 31 October 2025
 
 ### ⛰️ Features
