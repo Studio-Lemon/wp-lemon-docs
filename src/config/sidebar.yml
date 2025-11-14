@@ -4,10 +4,14 @@
   link: "/"
 - label: "Requirements"
   link: "/requirements"
-- label: "Setup new project"
-  link: "/setup"
-- label: "Getting started"
-  link: "/getting-started"
+- label: Getting started
+  items:
+    - label: "The analysis phase"
+      link: "/getting-started/analysis-phase"
+    - label: "Setup new project"
+      link: "/getting-started/setup"
+    - label: "First steps"
+      link: "/getting-started/first-steps"
 - label: Basics
   items:
     - label: "Customizer settings"
