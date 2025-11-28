@@ -1,5 +1,5 @@
 ---
-title: Filters & Actions
+title: Working with hooks
 description: How to use actions and filters in wp-lemon
 ---
 
@@ -22,7 +22,13 @@ We use filters in wp-lemon to change specific output that is already baked into 
 
 You can find a full list of filters in the [wp-lemon filter reference](/reference/hooks/filters).
 
-**Action examples**
+## Action examples
+
+### Example: Adding a static block after the content and utiilizing default WordPress classes
+
+The following example shows how to add a static contact bar after the content of every page. We use the action `wp-lemon/action/content/after` to hook into the content area after the main content is rendered. 
+
+We reuse default WordPress classes like `has-background` and `has-text-color` to make sure the block inherits the correct colors from the customizer. We use the `section` in combination with `alignfull` to make sure the block spans the full width of the viewport and received proper padding/margins.
 
 ```php title=library/hooks.php lineNumbers=true
 namespace WP_Lemon\Child\Controllers;
@@ -37,13 +43,24 @@ use function HighGround\Bulldozer\helpers\asset;
  */
 function add_contact_bar()
 {
-   $context = Timber::context();
-   $context['classes'] = array('acf-block', 'contact-bar', 'alignfull', 'has-background', 'has-blue-background-color', 'has-text-color', 'has-black-color');
+   $context = Timber::context([
+      'classes' => ['acf-block', 'contact-bar', 'alignfull', 'has-background', 'has-blue-background-color', 'has-text-color', 'has-black-color']
+   ]);
 
-   Timber::render('blocks/contact-bar.twig', $context);
+
+   Timber::render('@blocks/contact-bar/contact-bar.twig', $context);
 }
 
 add_action('wp-lemon/action/content/after', __NAMESPACE__ . '\\add_contact_bar');
+```
+### Example: Adding footer logos after the footer widgets
+The following example shows how to add a set of logos directly after the footer widgets. We use the action `wp-lemon/action/footer-widgets/after` to hook into the footer area after the footer widgets are rendered.
+
+```php title=library/hooks.php lineNumbers=true
+namespace WP_Lemon\Child\Controllers;
+
+use Timber\Timber;
+use function HighGround\Bulldozer\helpers\asset;
 
 /**
  * Insert logo's of certificates directly after the footer widgets.
@@ -70,7 +87,94 @@ add_action('wp-lemon/action/footer-widgets/after', __NAMESPACE__ . '\\footer_log
 ```
 
 
-**Filter examples**
+### Example: Adding a scroll-to-top button before the footer widgets
+The following example shows how to render a scroll-to-top component directly before the footer widgets. We use the action `wp-lemon/action/footer-widgets/before` to hook into the area just before footer widgets are rendered.
+
+```php title=library/hooks.php lineNumbers=true
+namespace WP_Lemon\Child\Controllers;
+
+use Timber\Timber;
+
+/**
+ * Render scroll-to-top component before footer widgets.
+ *
+ * @return void
+ */
+function footer_scrolltop()
+{
+   $context = Timber::context();
+   Timber::render('components/scroll-top.twig', $context);
+}
+
+add_action('wp-lemon/action/footer-widgets/before', __NAMESPACE__ . '\\footer_scrolltop');
+```
+
+### Example: Rendering a home hero on the front page
+The example below shows how to render a full-width home hero only on the front page. We use the action `wp-lemon/action/entry/before` to insert the hero before the entry content is rendered.
+
+```php title=library/hooks.php lineNumbers=true
+namespace WP_Lemon\Child\Controllers;
+
+use Timber\Timber;
+
+/**
+ * Render a home hero on the front page only.
+ *
+ * @return void
+ */
+function render_home_hero()
+{
+   if (!is_front_page()) {
+     return;
+   }
+
+   $context = Timber::context([
+     'video' => get_field('video'),
+   ]);
+
+   Timber::render('partials/home-hero.twig', $context);
+}
+
+add_action('wp-lemon/action/entry/before', __NAMESPACE__ . '\\render_home_hero');
+```
+
+Below is an example of the `partials/home-hero.twig` template used by the PHP example. Note how the `section` element uses the `alignfull` class to make sure it spans the full width of the viewport.
+
+```twig title=resources/views/partials/home-hero.twig lineNumbers=true
+{% import 'macros/media.twig' as media %}
+<section class="section alignfull has-background home-hero">
+   {{
+      media.video(
+      video, 'home-hero__video ratio',
+      )
+   }}
+   <div class="wp-block__inner-container section__container home-hero__container">
+      <div class="home-hero__content">
+         <h1>
+            {{ post.title }}
+         </h1>
+      </div>
+   </div>
+</section>
+```
+
+### Example: Injecting font markup into head meta
+You can also hook into the head meta area to inject font-related markup. The example below uses an anonymous function to render a `components/font.twig` template when the `wp-lemon/action/head/meta` action runs.
+
+```php title=library/hooks.php lineNumbers=true
+namespace WP_Lemon\Child\Controllers;
+
+use Timber\Timber;
+
+add_action('wp-lemon/action/head/meta', function () {
+   $context = Timber::context();
+   Timber::render('components/font.twig', $context);
+});
+```
+
+
+
+## Filter examples
 
 ```php title=library/controllers/filters.php lineNumbers=true
 namespace WP_Lemon\Child\Controllers;
@@ -94,3 +198,4 @@ add_filter('wp-lemon/filter/card/news/picture-el', function ($el, $post_id) {
 
 
 ```
+

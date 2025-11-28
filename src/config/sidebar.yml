@@ -56,7 +56,7 @@
       link: "/extend/add-context"
     - label: "ACF fields"
       link: "/extend/acf-fields"
-    - label: "Filters & Actions"
+    - label: "Working with hooks"
       link: "/extend/hooks"
     - label: "Icon picker"
       link: "/extend/icon-picker"
