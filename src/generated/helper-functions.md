@@ -137,8 +137,8 @@ You can use this function in your classes and functions to log errors and other 
 ```php
 log_message('Diagnostics cron', 'Starting diagnostics', special: 'first');
 if (is_wp_error($response)) {
-	log_message('Diagnostic error', 'wp-error' . $response->get_error_message(), 'special': 'last');
-	return;
+     log_message('Diagnostic error', 'wp-error' . $response->get_error_message(), 'special': 'last');
+     return;
 }
 
 log_message('Diagnostics cron', 'Diagnostics completed', special: 'last');
@@ -311,7 +311,7 @@ function filter_phone_numbers(array $result, int $countrycode): array
 {
 
  if (31 === $countrycode && str_starts_with($result['national'], '0180')) {
-		// add spaces after 3, 6, 2, 2 characters, so we have +31 (0)180 12 34 56.
+     // add spaces after 3, 6, 2, 2 characters, so we have +31 (0)180 12 34 56.
      $result['combined'] = add_spaces_to_phonenumber($result['combined'], [3, 6, 2, 2]);
   }
 

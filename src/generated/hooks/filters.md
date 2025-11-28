@@ -357,7 +357,7 @@ function overwrite_news_card_media($content, $id)
 add_filter('wp-lemon/filter/card/case/picture-el', __NAMESPACE__ . '\\overwrite_news_card_media', 10, 2); description
 ```
 
-## wp-lemon/filter/card/picture-args"
+## wp-lemon/filter/card/picture-args
 
 Filters the picture arguments to render the picture element in the card.
 

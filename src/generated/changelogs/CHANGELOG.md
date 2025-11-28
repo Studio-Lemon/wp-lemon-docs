@@ -1,7 +1,33 @@
+## 5.52.0 - 28 November 2025
+
+### ⛰️ Features
+
+- Add FAQ schema support for ACF Accordion blocks in combination with the RankMath SEO plugin
+- (js) Enhance dropdown functionality with extendable parent selectors and submenu handling
+- Add search link to pages and include pagination in search template
+
+### 🐛 Bug Fixes
+
+- Add null checks for rejectButton and customize in cookiebar setup
+- (theme.json) Add border settings for core/pullquote block
+- Correct mailto share URL to use the correct and do not open share popup when mailto link
+- Pass null argument to get_footer and get_header actions for consistency with hook callers
+- Update Bulldozer version requirement and improve Site_Icons initialization
+- Adjust smooth scroll behavior and add scroll padding for elements with IDs
+- Add styles for rank math schema item to control layout properties
+- Fix 3th level dropdown menu's
+- Ensure cache is cleared when menu order tags are updated
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove unused variable
+- Codestyle
+- Update dev packages
+- Add additional arguments to block wrap
 
 ## 5.51.0 - 12 November 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add possebility to add an anchor ID to other-items.twig
 - Add filters for offcanvas menu title and icons in twig files
