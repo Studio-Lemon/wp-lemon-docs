@@ -1239,6 +1239,7 @@ function add_translations($translations)
   ]);
 }
 add_filter('wp-lemon/filter/translations/frontend', __NAMESPACE__ . '\\add_translations');
+```
 
 ## wp-lemon/filter/header/scroll-settings
 
