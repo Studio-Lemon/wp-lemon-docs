@@ -1,3 +1,15 @@
+
+## 5.53.0 - 02 December 2025
+
+### ⛰️  Features
+
+- *(docs)* Add scripts for generating JavaScript and PHP documentation
+- *(js)* Add new helper functions
+
+### 📚 Documentation
+
+- *(js)* Add examples for JavaScript helper functions in documentation
+
 ## 5.52.0 - 28 November 2025
 
 ### ⛰️ Features
