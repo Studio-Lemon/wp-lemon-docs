@@ -1,31 +1,48 @@
 ## Functions
 
-<dl>
-<dt><a href="#scrollNextSectionListener">scrollNextSectionListener(el, parentSelector)</a> ⇒</dt>
-<dd><p>Bind this function to an element to scroll to the next sibling element by defining your desired parent element.</p>
-</dd>
-<dt><a href="#findParentBlock">findParentBlock(el, parent)</a> ⇒ <code>Element</code></dt>
-<dd></dd>
-<dt><a href="#trigger">trigger(eventName, module, details)</a></dt>
-<dd><p>Function to fire custom events</p>
-<p>You can listen for events triggered by this function by using the following syntax:</p>
-<p>document.addEventListener(&#39;wp-lemon/$module/$eventName&#39;, function(e) {
-   console.log(e.detail);
-});</p>
-</dd>
-<dt><a href="#hasCookie">hasCookie(name)</a> ⇒ <code>boolean</code></dt>
-<dd><p>Check if a cookie exists</p>
-</dd>
-<dt><a href="#getCookie">getCookie(name)</a> ⇒ <code>string</code> | <code>null</code></dt>
-<dd><p>Get the value of a cookie by name</p>
-</dd>
-<dt><a href="#setCookie">setCookie(name, duration, [value])</a> ⇒ <code>void</code></dt>
-<dd><p>Set a cookie with a specified expiration time</p>
-</dd>
-<dt><a href="#parseDuration">parseDuration(duration)</a> ⇒ <code>number</code></dt>
-<dd><p>Parse a duration string into milliseconds</p>
-</dd>
-</dl>
+<table>
+  <thead>
+    <tr>
+      <th>Global</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td><a href="#scrollNextSectionListener">scrollNextSectionListener(el, parentSelector)</a> ⇒</td>
+    <td><p>Bind this function to an element to scroll to the next sibling element by defining your desired parent element.</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#findParentBlock">findParentBlock(el, parent)</a> ⇒ <code>Element</code></td>
+    <td></td>
+    </tr>
+<tr>
+    <td><a href="#trigger">trigger(eventName, module, details)</a></td>
+    <td><p>Function to fire custom events</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#hasCookie">hasCookie(name)</a> ⇒ <code>boolean</code></td>
+    <td><p>Check if a cookie exists</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#getCookie">getCookie(name)</a> ⇒ <code>string</code> | <code>null</code></td>
+    <td><p>Get the value of a cookie by name</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#setCookie">setCookie(name, duration, [value])</a> ⇒ <code>void</code></td>
+    <td><p>Set a cookie with a specified expiration time</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#parseDuration">parseDuration(duration)</a> ⇒ <code>number</code></td>
+    <td><p>Parse a duration string into milliseconds</p>
+</td>
+    </tr>
+</tbody>
+</table>
 
 <a name="scrollNextSectionListener"></a>
 
@@ -67,12 +84,6 @@ if (!nextButton) return;
 ## trigger(eventName, module, details)
 Function to fire custom events
 
-You can listen for events triggered by this function by using the following syntax:
-
-document.addEventListener('wp-lemon/$module/$eventName', function(e) {
-   console.log(e.detail);
-});
-
 **Kind**: global function  
 
 | Param | Type | Default | Description |
@@ -82,6 +93,7 @@ document.addEventListener('wp-lemon/$module/$eventName', function(e) {
 | details | <code>object</code> | <code>false</code> | data to pass to event |
 
 **Example**  
+You can listen for events triggered by this function by using the following syntax:
 ```js
 import { trigger } from 'parentThemeScripts/api/helpers';
 trigger('my_event', 'my_module', { foo: 'bar' });

@@ -82,6 +82,8 @@
       link: "/reference/api-functions"
     - label: "Query functions"
       link: "/reference/query-functions"
+    - label: "JavaScript functions"
+      link: "/reference/javascript-functions"
 - label: Hooks
   items:
     - label: "Filter Hooks"
