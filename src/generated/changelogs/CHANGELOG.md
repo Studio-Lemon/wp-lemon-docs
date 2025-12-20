@@ -1,4 +1,27 @@
 
+## 5.54.0 - 20 December 2025
+
+### 🐛 Bug Fixes
+
+- Improve type hints and parameter descriptions in various functions
+- Remove unnecessary blank line in hooks.php
+- Update scroll-margin-top to use a CSS variable for better flexibility
+- Update rsync deployment switches to include missing composer.lock exclusion
+- Handle case where post is not found in filter
+- Update context key for heading level in Accordion_Item_Block
+
+### 🚜 Refactor
+
+- Remove SmoothScroll function and update styles for scroll padding
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies
+- Rector
+- Update ci
+- Add GitHub Actions workflow for creating release zip
+
+
 ## 5.53.0 - 02 December 2025
 
 ### ⛰️  Features

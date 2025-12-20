@@ -1223,7 +1223,7 @@ The translations is used in javascript to translate strings.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $ | `array<string,mixed>` | An array of translations. |
+| $translations | `string[]` | An array of translations. |
 
 </div>
 
@@ -1253,7 +1253,7 @@ This filter is used to add or modify the default scroll values.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $ | `array<string,mixed>` | An array of scroll values. |
+| $settings | `array{disabled: bool, min_distance_to_top: int, min_scroll: int}` | An array of scroll values. |
 
 </div>
 
@@ -1760,6 +1760,7 @@ You can use this filter to change the action for the load more button for a spec
 | Name | Type | Description |
 | --- | --- | --- |
 | $action | `string` | The action for the load more button. |
+| $fields | `array` | The fields of the block. |
 
 </div>
 
@@ -2131,7 +2132,7 @@ With this filter you can remove blocks from the parent theme.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $blocks | `array<string,mixed>` | array of blocks to load. |
+| $blocks | `string[]` | array of blocks to load. |
 
 </div>
 
