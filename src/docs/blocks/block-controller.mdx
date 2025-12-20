@@ -62,7 +62,7 @@ To learn how to use these fields in your block view, take a look at the [block v
 
 ## Extending the block context
 
-Every block is different but we will give some common examples on how to expand your block.
+Every block is different but we will give some common examples on how to expand your block. Please also take a look at the [BlockRenderer documentation](https://levdbas.github.io/Bulldozer/#/reference/highground-bulldozer-blockrendererv2) for more functions you can use in your block context.
 
 ### Block that displays an x amount of (custom)posts
 
@@ -106,7 +106,7 @@ public function block_context($context): array
    $show_filter = false;
    $terms = [];
 
-   if (isset($this->fields['show_filter']) && $this->fields['show_filter'] == true) {
+   if ($this->get_field('show_filter') == true) {
       $show_filter = true;
       $terms = get_terms('category', array('hide_empty' => true));
    }
@@ -176,7 +176,7 @@ This method adds a BEM modifier class to your block. An example:
 public function block_context($context): array
 {
    
-   if (isset($this->fields['show_pagination']) && true == $this->fields['show_pagination']) {
+   if (true == $this->get_field('show_pagination')) {
          $context['show_pagination'] = true;
          $this->add_modifier_class('has-pagination');
    }
