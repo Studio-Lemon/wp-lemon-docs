@@ -10,7 +10,7 @@ it is also possible to create your block manually.
 Below we've laid out the steps to take when taking either route.
 
 ## Creating a block automatically
-Navigate to your block folder in the terminal and run `npx bp-create-block`. 
+Navigate to your block folder in the terminal and run `npx wp-lemon block create`. 
 This will run a cli tool that will scaffold a new block for you based on the example block in your child theme. Nice and easy!
 
 ## Creating a block manually
@@ -80,9 +80,9 @@ class Example_Block extends BlockRenderer
 	 * Register fields to the block.
 	 *
 	 * @link https://github.com/StoutLogic/acf-builder
-	 * @return StoutLogic\AcfBuilder\FieldsBuilder
+	 * @return FieldsBuilder
 	 */
-	public function add_fields(): object
+	public function add_fields(): FieldsBuilder
 	{
 		return $this->registered_fields;
 	}
