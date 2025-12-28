@@ -10,7 +10,7 @@ extend-ignore-re = [
     "wordpress-"
 ]
 
-
+[default.extend-identifiers]
 # Typos
 "Github" = "GitHub"
 "Wordpress" = "WordPress"
