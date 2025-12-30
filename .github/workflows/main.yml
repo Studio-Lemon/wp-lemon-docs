@@ -15,7 +15,10 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
+      
       - run: npm run build-cli
+      - name: Sync documentation files
+        run: npm run sync-docs  
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

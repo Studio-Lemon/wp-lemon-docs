@@ -34,6 +34,8 @@
     "gatsby-starter"
   ],
   "scripts": {
+    "sync-docs": "node sync-helper-functions.js",
+    "prebuild": "npm run sync-docs",
     "build": "gatsby build",
     "build-cli": "gatsby build --prefix-paths",
     "start": "gatsby develop",

@@ -36,11 +36,13 @@ export const Main = styled.main`
   }
 `;
 
+
+
 export const Children = styled.div`
   width: 100%;
   padding-right: 64px;
 
-  ${props => props.disableTOC ? 'max-width: 90%;' : ' max-width: calc(75% - 64px);'}
+  ${props => props.disableTOC ? 'max-width: 90%;' : ' max-width: calc(85% - 64px);'}
 
    @media(max-width: 1200px) {
       max-width: 100%;
