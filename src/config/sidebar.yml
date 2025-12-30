@@ -76,6 +76,14 @@
       link: "/overwrite/twig-files"
     - label: "Overwrite styles"
       link: "/overwrite/styles"
+- label: Twig
+  items:
+    - label: "Twig functions"
+      link: "/reference/twig-functions"
+    - label: "Twig filters"
+      link: "/reference/twig-filters"
+    - label: "Twig macros"
+      link: "/reference/twig-macros"
 - label: API function
   items:
     - label: "Helper functions"

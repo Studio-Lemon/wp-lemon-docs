@@ -89,6 +89,33 @@ const FILE_MAPPINGS = [
          description: 'WP_Lemon_Site class'
       },
       introText: null
+   },
+   {
+      source: 'src/generated/twig-macros.md',
+      dest: 'src/docs/reference/twig-macros.mdx',
+      frontmatter: {
+         title: 'Twig Macros',
+         description: 'Twig macros reference'
+      },
+      introText: 'The following Twig macros documentation is automatically generated.'
+   },
+   {
+      source: 'src/generated/twig-functions.md',
+      dest: 'src/docs/reference/twig-functions.mdx',
+      frontmatter: {
+         title: 'Twig Functions',
+         description: 'Twig functions reference'
+      },
+      introText: 'The following Twig functions documentation is automatically generated.'
+   },
+   {
+      source: 'src/generated/twig-filters.md',
+      dest: 'src/docs/reference/twig-filters.mdx',
+      frontmatter: {
+         title: 'Twig Filters',
+         description: 'Twig filters reference'
+      },
+      introText: 'The following Twig filters documentation is automatically generated.'
    }
 ];
 

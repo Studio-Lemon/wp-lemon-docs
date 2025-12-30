@@ -1,0 +1,795 @@
+---
+title: Twig Macros
+description: Twig macros reference
+---
+
+The following Twig macros documentation is automatically generated.
+
+# Twig Macros
+
+This document provides comprehensive documentation for all Twig macros available in the WP Lemon theme. Macros are reusable template functions that help maintain consistency and reduce code duplication across your templates.
+
+## What are Macros?
+
+Twig macros are similar to functions in other programming languages. They allow you to define reusable pieces of template code that can be called with different parameters throughout your templates.
+
+## Importing Macros
+
+Before using any macro, you must import it at the top of your Twig file:
+
+```twig
+{# Import a single macro file #}
+{% import 'macros/helpers.twig' as helpers %}
+
+{# Import multiple macro files #}
+{% import 'macros/elements.twig' as elements %}
+{% import 'macros/media.twig' as media %}
+{% import 'macros/socials.twig' as socials %}
+```
+
+## Available Macro Files
+
+- [elements.twig](#elements-macros) - UI elements like headings and buttons
+- [helpers.twig](#helpers-macros) - Helper utilities like animations and notifications
+- [media.twig](#media-macros) - Media rendering including pictures and videos
+- [socials.twig](#socials-macros) - Social media and contact icons
+
+---
+
+## Elements Macros
+
+Import: `{% import 'macros/elements.twig' as elements %}`
+
+### heading()
+
+Renders a heading element with optional link wrapper.
+
+**Parameters:**
+- `heading` (object) - The heading configuration
+  - `title` (string) - The heading text content
+  - `level` (string) - The heading level (1-6), defaults to '2'
+  - `classes` (string) - CSS classes to apply
+  - `url` (string, optional) - URL for wrapping in an anchor tag
+
+**Returns:** `string` - Rendered heading HTML
+
+#### Usage
+
+```twig
+{% import 'macros/elements.twig' as elements %}
+
+{# Basic heading #}
+{{ elements.heading({
+    title: 'My Heading',
+    level: '2',
+    classes: 'section-title'
+}) }}
+
+{# Heading with link #}
+{{ elements.heading({
+    title: 'Click here',
+    level: '3',
+    classes: 'heading heading--linked',
+    url: 'https://example.com'
+}) }}
+
+{# H1 with multiple classes #}
+{{ elements.heading({
+    title: post.title,
+    level: '1',
+    classes: 'page-title text-center'
+}) }}
+
+{# Dynamic heading level #}
+{% set heading_level = loop.first ? '2' : '3' %}
+{{ elements.heading({
+    title: item.title,
+    level: heading_level,
+    classes: 'item-title'
+}) }}
+```
+
+---
+
+### button()
+
+Renders an HTML anchor element styled as a button with optional color variant.
+
+**Parameters:**
+- `link` (array) - Link object containing:
+  - `url` (string) - The href destination
+  - `title` (string) - The link text and title attribute
+  - `target` (string, optional) - The target attribute (e.g., '_blank')
+- `color` (string, optional) - Color variant class name
+
+**Returns:** `string` - HTML anchor element with button styling, or empty if link is empty
+
+#### Usage
+
+```twig
+{% import 'macros/elements.twig' as elements %}
+
+{# Basic button #}
+{{ elements.button(fields.button_link) }}
+
+{# Button with color variant #}
+{{ elements.button(fields.cta_button, 'primary') }}
+{{ elements.button(fields.cta_button, 'secondary') }}
+
+{# Button with external link #}
+{{ elements.button({
+    url: 'https://example.com',
+    title: 'Visit Website',
+    target: '_blank'
+}, 'outline') }}
+
+{# Multiple buttons #}
+<div class="button-group">
+    {{ elements.button(fields.primary_button, 'primary') }}
+    {{ elements.button(fields.secondary_button, 'ghost') }}
+</div>
+
+{# Conditional button #}
+{% if fields.show_cta %}
+    {{ elements.button(fields.cta_link, 'accent') }}
+{% endif %}
+```
+
+---
+
+## Helpers Macros
+
+Import: `{% import 'macros/helpers.twig' as helpers %}`
+
+### animation()
+
+Generates AOS (Animate On Scroll) data attributes for elements.
+
+**Parameters:**
+- `no_animation` (bool) - Flag to disable animation
+- `animation_name` (string) - Name of the animation (e.g., 'fade', 'slide-up', 'zoom-in'). Use 'none' to disable
+- `timeout` (int|null) - Optional delay in milliseconds before animation starts
+- `anchor` (string|null) - Optional element selector to use as animation anchor point
+
+**Returns:** `string` - HTML data attributes for AOS configuration
+
+#### Usage
+
+```twig
+{% import 'macros/helpers.twig' as helpers %}
+
+{# Basic animation #}
+<div {{ helpers.animation(false, 'fade-up', 200) }}>
+    Content here
+</div>
+
+{# Animation with anchor #}
+<div {{ helpers.animation(false, 'slide-left', 300, '#trigger-element') }}>
+    This animates when #trigger-element enters viewport
+</div>
+
+{# Conditional animation (disabled in preview) #}
+<div {{ helpers.animation(is_preview, 'zoom-in', 100) }}>
+    Content
+</div>
+
+{# No animation #}
+<div {{ helpers.animation(true, 'fade-up', 0) }}>
+    Static content
+</div>
+
+{# Staggered animations in a loop #}
+{% for item in items %}
+    {% set delay = 100 * loop.index %}
+    <div {{ helpers.animation(false, 'fade-up', delay) }}>
+        {{ item.content }}
+    </div>
+{% endfor %}
+
+{# Common animation types #}
+{# fade, fade-up, fade-down, fade-left, fade-right #}
+{# slide-up, slide-down, slide-left, slide-right #}
+{# zoom-in, zoom-out, flip-left, flip-right #}
+```
+
+---
+
+### backend_notification()
+
+Renders backend notification messages in the block editor.
+
+**Parameters:**
+- `notification` (object)
+  - `title` (string) - Notification title
+  - `message` (string) - Notification message
+  - `type` (string) - Type: 'info', 'notice', 'warning', or 'error'
+  - `type_name` (string) - Display name: 'Info', 'Notice', 'Warning', or 'Error'
+
+**Returns:** `string` - HTML for the notification
+
+#### Usage
+
+```twig
+{% import 'macros/helpers.twig' as helpers %}
+
+{# Info notification #}
+{{ helpers.backend_notification({
+    title: 'Configuration Required',
+    message: 'Please configure the block settings in the sidebar.',
+    type: 'info',
+    type_name: 'Info'
+}) }}
+
+{# Warning notification #}
+{{ helpers.backend_notification({
+    title: 'Missing Content',
+    message: 'Add at least one item to display this block.',
+    type: 'warning',
+    type_name: 'Warning'
+}) }}
+
+{# Error notification #}
+{{ helpers.backend_notification({
+    title: 'Invalid Configuration',
+    message: 'The selected post type does not exist.',
+    type: 'error',
+    type_name: 'Error'
+}) }}
+
+{# In block preview with multiple notifications #}
+{% if is_preview and (notifications|length) %}
+    <div class="container components-notice-container">
+        {% for notification in notifications %}
+            {{ helpers.backend_notification(notification) }}
+        {% endfor %}
+    </div>
+{% endif %}
+```
+
+---
+
+### todo()
+
+Renders a TODO item which links to a project board. Used for development purposes.
+
+**Parameters:**
+- `link` (string) - The URL to the task in the project board
+- `description` (string) - Description of the TODO item
+
+**Returns:** `string` - HTML for the TODO item
+
+#### Usage
+
+```twig
+{% import 'macros/helpers.twig' as helpers %}
+
+{# Basic TODO #}
+{{ helpers.todo('https://github.com/org/repo/issues/123', 'Implement feature X') }}
+
+{# TODO in development block #}
+{% if is_preview %}
+    {{ helpers.todo(
+        'https://linear.app/team/issue/ABC-123',
+        'Add responsive styles for mobile devices'
+    ) }}
+{% endif %}
+
+{# Conditional TODO based on incomplete work #}
+{% if not fields.completed %}
+    {{ helpers.todo(
+        fields.task_url,
+        'Complete block configuration'
+    ) }}
+{% endif %}
+```
+
+---
+
+## Media Macros
+
+Import: `{% import 'macros/media.twig' as media %}`
+
+### picture()
+
+Renders a responsive picture element with WebP support, focal point positioning, and lazy loading.
+
+**Parameters:**
+- `image` (int|object) - Image ID or image object
+- `args` (object) - Configuration arguments:
+  - `picture_class` (string) - CSS class(es) for the picture wrapper
+  - `image_class` (string) - CSS class(es) for the img element
+  - `image_size` (string) - WordPress image size key (default: 'large')
+  - `image_sizes` (string) - Responsive image sizes attribute
+  - `loading` (string) - Loading strategy (default: 'lazy', or 'eager')
+  - `show_title` (bool) - Whether to render the title attribute (default: false)
+  - `focalpoint` (bool) - Whether to apply focal point positioning (default: false)
+
+**Returns:** `string` - HTML picture element with source and img tags
+
+#### Usage
+
+```twig
+{% import 'macros/media.twig' as media %}
+
+{# Basic usage with image ID #}
+{{ media.picture(post.thumbnail.id, {
+    image_class: 'card-image',
+    image_size: 'large'
+}) }}
+
+{# Full configuration #}
+{{ media.picture(fields.hero_image, {
+    picture_class: 'hero-picture',
+    image_class: 'hero-image img-responsive',
+    image_size: 'full',
+    image_sizes: '(max-width: 768px) 100vw, 1200px',
+    loading: 'eager',
+    show_title: true,
+    focalpoint: true
+}) }}
+
+{# With Image object #}
+{% set image = get_image(fields.background_image) %}
+{{ media.picture(image, {
+    image_class: 'background',
+    loading: 'lazy'
+}) }}
+
+{# Responsive image sizes examples #}
+{{ media.picture(image_id, {
+    image_sizes: '100vw'  {# Full width #}
+}) }}
+
+{{ media.picture(image_id, {
+    image_sizes: '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px'
+}) }}
+
+{# Hero image - load immediately #}
+{{ media.picture(fields.hero, {
+    image_size: 'full',
+    loading: 'eager',
+    image_sizes: '100vw'
+}) }}
+
+{# Gallery with lazy loading #}
+{% for image in fields.gallery %}
+    {{ media.picture(image, {
+        image_class: 'gallery-item',
+        image_size: 'medium_large',
+        loading: 'lazy'
+    }) }}
+{% endfor %}
+
+{# With focal point for cropped images #}
+{{ media.picture(fields.featured_image, {
+    image_class: 'cropped-image',
+    focalpoint: true  {# Uses ACF focal point picker #}
+}) }}
+```
+
+---
+
+### video()
+
+Renders an HTML5 video element with configurable attributes.
+
+**Parameters:**
+- `src` (string) - The source URL of the video file
+- `class` (string) - CSS classes to apply to the video element
+- `poster_id` (int) - WordPress attachment ID for the poster/thumbnail image
+- `loading` (string) - Loading strategy ('lazy' or 'eager'). Defaults to 'lazy'
+
+**Returns:** `string` - Rendered HTML5 video element
+
+#### Usage
+
+```twig
+{% import 'macros/media.twig' as media %}
+
+{# Basic video #}
+{{ media.video(
+    fields.video_url,
+    'video-player',
+    fields.video_poster,
+    'lazy'
+) }}
+
+{# Hero video with eager loading #}
+{{ media.video(
+    fields.hero_video,
+    'hero-video',
+    fields.hero_poster,
+    'eager'
+) }}
+
+{# Background video #}
+<div class="video-background">
+    {{ media.video(
+        fields.background_video,
+        'bg-video',
+        fields.bg_poster,
+        'lazy'
+    ) }}
+</div>
+
+{# Multiple videos #}
+{% for video_item in fields.videos %}
+    <div class="video-container">
+        {{ media.video(
+            video_item.video_file,
+            'content-video',
+            video_item.poster_image,
+            'lazy'
+        ) }}
+    </div>
+{% endfor %}
+```
+
+**Note:** The video element includes:
+- `autoPlay` - Automatically starts playing
+- `muted` - Video is muted by default
+- `playsInline` - Plays inline on mobile devices
+- `disablePictureInPicture` - Disables picture-in-picture mode
+- `preload="auto"` - Preloads the video
+- `loop` - Video loops continuously
+
+---
+
+## Socials Macros
+
+Import: `{% import 'macros/socials.twig' as socials %}`
+
+### share()
+
+Renders a set of share buttons for various social media platforms.
+
+**Parameters:**
+- `share_title` (string) - Optional title for the share buttons section
+- `platforms` (array) - Array of platform keys to include (e.g., `['facebook', 'twitter', 'linkedin']`)
+- `share_context` (object) - Object containing share URL and metadata for each platform
+- `hide_platform_labels` (bool) - Whether to hide platform labels next to icons
+
+**Returns:** `string` - HTML markup for share buttons
+
+#### Usage
+
+```twig
+{% import 'macros/socials.twig' as socials %}
+
+{# Basic share buttons #}
+{{ socials.share(
+    'Share this post',
+    ['facebook', 'twitter', 'linkedin'],
+    site.share_context,
+    false
+) }}
+
+{# Share buttons without labels (icons only) #}
+{{ socials.share(
+    null,
+    ['facebook', 'twitter', 'linkedin', 'email'],
+    post.share_context,
+    true
+) }}
+
+{# Custom title #}
+{{ socials.share(
+    'Spread the word',
+    ['facebook', 'twitter'],
+    share_context,
+    false
+) }}
+
+{# All available platforms #}
+{{ socials.share(
+    'Share',
+    ['facebook', 'twitter', 'linkedin', 'pinterest', 'email', 'whatsapp'],
+    post.share_context,
+    false
+) }}
+
+{# Conditional share buttons #}
+{% if fields.enable_sharing %}
+    {{ socials.share(
+        fields.share_title,
+        fields.selected_platforms,
+        post.share_context,
+        fields.hide_labels
+    ) }}
+{% endif %}
+```
+
+---
+
+### social_icons()
+
+Renders a list of social media icons with links.
+
+**Parameters:**
+- `socials` (array) - Array of social media objects:
+  - `url` (string) - URL to the social media profile
+  - `label` (string) - Label for the social media platform
+  - `icon` (string, optional) - Optional SVG icon markup
+  - `icon_class` (string, optional) - CSS class for icon if no SVG provided
+- `title` (string) - Title attribute for links (typically the site or person name)
+
+**Returns:** `string` - HTML markup for social icons list
+
+#### Usage
+
+```twig
+{% import 'macros/socials.twig' as socials %}
+
+{# Basic social icons #}
+{{ socials.social_icons(site.socials, site.name) }}
+
+{# Person's social profiles #}
+{{ socials.social_icons(post.meta('social_profiles'), post.title) }}
+
+{# Custom social links #}
+{% set custom_socials = [
+    {
+        url: 'https://facebook.com/example',
+        label: 'Facebook',
+        icon_class: 'wp-lemon-icon-facebook'
+    },
+    {
+        url: 'https://twitter.com/example',
+        label: 'Twitter',
+        icon_class: 'wp-lemon-icon-twitter'
+    },
+    {
+        url: 'https://linkedin.com/company/example',
+        label: 'LinkedIn',
+        icon_class: 'wp-lemon-icon-linkedin'
+    }
+] %}
+{{ socials.social_icons(custom_socials, 'My Company') }}
+
+{# In footer #}
+<footer class="site-footer">
+    <div class="footer-socials">
+        {{ socials.social_icons(site.socials, site.name) }}
+    </div>
+</footer>
+
+{# Team member card #}
+<div class="team-card">
+    <h3>{{ person.title }}</h3>
+    {{ socials.social_icons(person.social_links, person.title) }}
+</div>
+```
+
+---
+
+### contact_icons()
+
+Renders a list of social/contact icons with optional labels. Supports email, phone, and WhatsApp contact methods.
+
+**Parameters:**
+- `contact` (object) - Contact information object:
+  - `email` (string) - Email address
+  - `phone` (object) - Phone object (from `phonenumber()` function)
+  - `whatsapp` (object) - WhatsApp object (from `phonenumber()` function)
+- `title` (string) - Contact person/entity name for title attributes
+- `with_labels` (bool) - Whether to display contact information labels below icons
+
+**Returns:** `string` - HTML markup for contact icons list
+
+#### Usage
+
+```twig
+{% import 'macros/socials.twig' as socials %}
+
+{# Basic contact icons without labels #}
+{{ socials.contact_icons(site.contact, site.name, false) }}
+
+{# Contact icons with labels #}
+{{ socials.contact_icons(site.contact, site.name, true) }}
+
+{# Person contact card #}
+{% set contact = {
+    email: post.meta('email'),
+    phone: phonenumber(post.meta('phone')),
+    whatsapp: phonenumber(post.meta('whatsapp'))
+} %}
+{{ socials.contact_icons(contact, post.title, true) }}
+
+{# Company contact info #}
+{% set company_contact = {
+    email: get_theme_mod('email_address'),
+    phone: phonenumber(get_theme_mod('phone_number')),
+    whatsapp: phonenumber(get_theme_mod('whatsapp_number'))
+} %}
+{{ socials.contact_icons(company_contact, site.name, false) }}
+
+{# In footer with labels #}
+<div class="footer-contact">
+    <h4>Contact Us</h4>
+    {{ socials.contact_icons(site.contact, site.name, true) }}
+</div>
+
+{# Contact bar #}
+<div class="contact-bar">
+    {{ socials.contact_icons(contact, 'Customer Service', false) }}
+</div>
+
+{# Only email and phone (no WhatsApp) #}
+{% set limited_contact = {
+    email: 'info@example.com',
+    phone: phonenumber('+31612345678'),
+    whatsapp: false
+} %}
+{{ socials.contact_icons(limited_contact, 'Support Team', true) }}
+```
+
+---
+
+## Common Macro Patterns
+
+### Combining Macros
+
+```twig
+{% import 'macros/elements.twig' as elements %}
+{% import 'macros/media.twig' as media %}
+{% import 'macros/helpers.twig' as helpers %}
+
+{# Hero section with animated content #}
+<section class="hero">
+    <div {{ helpers.animation(false, 'fade-up', 200) }}>
+        {{ elements.heading({
+            title: fields.hero_title,
+            level: '1',
+            classes: 'hero__title'
+        }) }}
+        {{ elements.button(fields.hero_cta, 'primary') }}
+    </div>
+    {{ media.picture(fields.hero_image, {
+        image_class: 'hero__image',
+        loading: 'eager',
+        focalpoint: true
+    }) }}
+</section>
+```
+
+### Card Component
+
+```twig
+{% import 'macros/elements.twig' as elements %}
+{% import 'macros/media.twig' as media %}
+{% import 'macros/helpers.twig' as helpers %}
+
+{% for post in posts %}
+    {% set delay = 100 * loop.index %}
+    <article class="card" {{ helpers.animation(false, 'fade-up', delay) }}>
+        {{ media.picture(post.thumbnail.id, {
+            image_class: 'card__image',
+            image_size: 'medium'
+        }) }}
+        <div class="card__content">
+            {{ elements.heading({
+                title: post.title,
+                level: '3',
+                classes: 'card__title'
+            }) }}
+            <p>{{ lemon_excerpt(post, 100) }}</p>
+            {{ elements.button({
+                url: post.link,
+                title: 'Read more',
+                target: ''
+            }, 'secondary') }}
+        </div>
+    </article>
+{% endfor %}
+```
+
+### Social Footer
+
+```twig
+{% import 'macros/socials.twig' as socials %}
+
+<footer class="site-footer">
+    <div class="footer__social">
+        {{ socials.social_icons(site.socials, site.name) }}
+    </div>
+    <div class="footer__contact">
+        {{ socials.contact_icons(site.contact, site.name, true) }}
+    </div>
+</footer>
+```
+
+### Team Member Profile
+
+```twig
+{% import 'macros/media.twig' as media %}
+{% import 'macros/socials.twig' as socials %}
+{% import 'macros/helpers.twig' as helpers %}
+
+<div class="team-member" {{ helpers.animation(false, 'fade-up', 200) }}>
+    {{ media.picture(post.thumbnail.id, {
+        image_class: 'team-member__photo',
+        focalpoint: true
+    }) }}
+    <h3>{{ post.title }}</h3>
+    <p class="team-member__role">{{ post.meta('role') }}</p>
+    
+    {% set contact = {
+        email: post.meta('email'),
+        phone: phonenumber(post.meta('phone'))
+    } %}
+    {{ socials.contact_icons(contact, post.title, false) }}
+    {{ socials.social_icons(post.meta('social_profiles'), post.title) }}
+</div>
+```
+
+---
+
+## Best Practices
+
+### 1. Always Import Before Use
+
+```twig
+{# ✅ Correct #}
+{% import 'macros/elements.twig' as elements %}
+{{ elements.button(link) }}
+
+{# ❌ Incorrect #}
+{{ elements.button(link) }} {# Will not render #}
+```
+
+### 2. Use Consistent Naming
+
+```twig
+{# ✅ Consistent naming #}
+{% import 'macros/elements.twig' as elements %}
+{% import 'macros/helpers.twig' as helpers %}
+{% import 'macros/media.twig' as media %}
+```
+
+### 3. Check for Empty Values
+
+```twig
+{# ✅ Safe usage #}
+{% if fields.button %}
+    {{ elements.button(fields.button, 'primary') }}
+{% endif %}
+
+{# Also safe - button macro handles empty values #}
+{{ elements.button(fields.button, 'primary') }}
+```
+
+### 4. Use Object Syntax for Clarity
+
+```twig
+{# ✅ Clear and maintainable #}
+{{ media.picture(image_id, {
+    image_class: 'hero-image',
+    loading: 'eager',
+    focalpoint: true
+}) }}
+
+{# Less clear #}
+{{ media.picture(image_id, '', 'hero-image', 'large', '100vw', 'eager') }}
+```
+
+### 5. Reuse in Loops
+
+```twig
+{# ✅ Efficient - import once, use many times #}
+{% import 'macros/helpers.twig' as helpers %}
+{% for item in items %}
+    <div {{ helpers.animation(false, 'fade-up', loop.index * 100) }}>
+        {{ item.content }}
+    </div>
+{% endfor %}
+```
+
+---
+
+## See Also
+
+- [Twig Functions](twig-functions.md) - Custom Twig functions
+- [Twig Filters](twig-filters.md) - Custom Twig filters
+- [Helper Functions](helper-functions.md) - PHP helper functions
+- [Action Hooks](hooks/actions.md) - Available action hooks
+- [Filter Hooks](hooks/filters.md) - Available filter hooks

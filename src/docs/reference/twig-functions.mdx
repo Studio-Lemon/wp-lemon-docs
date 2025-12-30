@@ -1,0 +1,470 @@
+---
+title: Twig Functions
+description: Twig functions reference
+---
+
+The following Twig functions documentation is automatically generated.
+
+# Twig Functions
+
+This document lists all custom Twig functions available in the WP Lemon theme. These functions extend Timber's functionality and provide convenient access to WordPress and theme-specific features.
+
+## Available Functions
+
+- [get_theme_mod](#get_theme_mod)
+- [get_fluent_form](#get_fluent_form)
+- [phonenumber](#phonenumber)
+- [post_type_name](#post_type_name)
+- [get_svg_image](#get_svg_image)
+- [get_svg_icon](#get_svg_icon)
+- [get_attachment_info](#get_attachment_info)
+- [block_template_part](#block_template_part)
+- [asset](#asset)
+- [lemon_excerpt](#lemon_excerpt)
+- [action_deprecated](#action_deprecated)
+- [is_preview](#is_preview)
+
+---
+
+## get_theme_mod
+
+Get a theme modification value from the WordPress Customizer.
+
+This function provides direct access to WordPress theme modifications within Twig templates.
+
+**Parameters:**
+- `mod_name` (string) - The name of the theme modification
+- `default` (mixed, optional) - Default value to return if the theme mod doesn't exist
+
+**Returns:** `mixed` - The theme modification value
+
+### Usage
+
+```twig
+{# Get a simple theme mod #}
+{% set phone = get_theme_mod('phone_number') %}
+
+{# Get theme mod with default value #}
+{% set site_logo = get_theme_mod('custom_logo', false) %}
+
+{# Use in conditionals #}
+{% if get_theme_mod('show_call_button') %}
+    <a href="tel:{{ get_theme_mod('phone_number') }}">Call us</a>
+{% endif %}
+```
+
+---
+
+## get_fluent_form
+
+Return a Fluent Form by its ID.
+
+This function renders a Fluent Forms form with optional theme styling.
+
+**Since:** 3.17.0
+
+**Parameters:**
+- `id` (string|int) - The ID of the form
+- `theme` (string, optional) - The theme of the form, use `'ffs_inherit_theme'` to inherit wp-lemon theme styling
+- `type` (string, optional) - The type of the form, can be `'classic'` or `'conversational'`. Default: `'classic'`
+
+**Returns:** `string|false` - The HTML of the form or false if Fluent Forms is not active
+
+### Usage
+
+```twig
+{# Basic form #}
+{{ get_fluent_form(123) }}
+
+{# Form with wp-lemon theme styling #}
+{{ get_fluent_form(post.meta('form'), 'ffs_inherit_theme', 'classic') }}
+
+{# Conversational form #}
+{{ get_fluent_form(456, 'ffs_inherit_theme', 'conversational') }}
+```
+
+---
+
+## phonenumber
+
+Format a phone number with various output formats.
+
+This function formats phone numbers into different formats including URI, WhatsApp link, timezone, country code, and localized formats.
+
+**Since:** 3.17.0
+
+**Parameters:**
+- `number` (string|int) - The phone number to format
+
+**Returns:** `array|false` - Array with phone number information or false if invalid
+
+**Array contains:**
+- `uri` - The tel: URI for links
+- `whatsapp` - WhatsApp link
+- `timezone` - Phone number timezone
+- `countrycode` - Country code
+- `national` - National format without country code
+- `international` - International format with country code
+- `combined` - Combined format like +31 (0) 6 12345678
+- `localized` - Localized format (used with WPML)
+
+### Usage
+
+```twig
+{# Basic usage #}
+{% set phone = phonenumber('+31612345678') %}
+{% if phone %}
+    <a href="{{ phone.uri }}">{{ phone.localized }}</a>
+{% endif %}
+
+{# WhatsApp link #}
+{% set phone = phonenumber(post.meta('phone')) %}
+{% if phone %}
+    <a href="{{ phone.whatsapp }}" target="_blank">
+        Contact via WhatsApp
+    </a>
+{% endif %}
+
+{# Display international format #}
+{% set phone = phonenumber(site.contact.phone) %}
+{{ phone.international }}
+```
+
+---
+
+## post_type_name
+
+Get the singular or plural name of a post type.
+
+This function retrieves the label for a post type as registered in WordPress.
+
+**Parameters:**
+- `post_type` (string) - The post type slug
+- `type` (string, optional) - Either `'plural'` or `'singular'`. Default: `'singular'`
+
+**Returns:** `string|false` - The post type label or false if not found
+
+### Usage
+
+```twig
+{# Get singular name #}
+{{ post_type_name('job') }}
+{# Output: "Job" #}
+
+{# Get plural name #}
+{{ post_type_name('job', 'plural') }}
+{# Output: "Jobs" #}
+
+{# Use in templates #}
+<h1>All {{ post_type_name(post.type, 'plural') }}</h1>
+
+{# Archive title #}
+<span class="badge">{{ post_type_name(post.type) }}</span>
+```
+
+---
+
+## get_svg_image
+
+Get SVG image contents from a media attachment.
+
+This function retrieves the raw SVG content from a WordPress media attachment.
+
+**Parameters:**
+- `attachment_id` (int) - The attachment ID
+
+**Returns:** `string|false` - The SVG image data or false if not found
+
+### Usage
+
+```twig
+{# Basic usage #}
+{{ get_svg_image(post.meta('icon_image')) }}
+
+{# With conditional #}
+{% set svg = get_svg_image(fields.logo) %}
+{% if svg %}
+    <div class="logo">
+        {{ svg|raw }}
+    </div>
+{% endif %}
+
+{# In a repeater #}
+{% for item in fields.features %}
+    <div class="feature">
+        {{ get_svg_image(item.icon) }}
+        <h3>{{ item.title }}</h3>
+    </div>
+{% endfor %}
+```
+
+---
+
+## get_svg_icon
+
+Retrieve an SVG icon from the ACF SVG Icon Picker plugin.
+
+This function returns SVG icons from the `resources/icons/` folder.
+
+**Since:** 5.7.0
+
+**Parameters:**
+- `filename` (string|null) - The filename of the icon (without .svg extension)
+
+**Returns:** `string|false` - The SVG icon or false if not found
+
+### Usage
+
+```twig
+{# Basic usage #}
+{{ get_svg_icon('arrow-right') }}
+
+{# In a loop #}
+<div class="row">
+    {% for item in fields.repeater %}
+        <div class="icons-block__item col-md-4">
+            <div class="icons-block__icon">
+                {{ get_svg_icon(item.icon) }}
+            </div>
+            {{ item.text }}
+        </div>
+    {% endfor %}
+</div>
+
+{# With conditional #}
+{% if item.icon %}
+    <span class="icon">{{ get_svg_icon(item.icon) }}</span>
+{% endif %}
+```
+
+---
+
+## get_attachment_info
+
+Get comprehensive information about a file attachment.
+
+This function returns metadata about a file attachment including filename, link, extension, and formatted file size.
+
+**Since:** 5.4.0
+
+**Parameters:**
+- `attachment_id` (int|null) - The attachment ID
+
+**Returns:** `array|false` - The attachment file info or false if not found
+
+**Array contains:**
+- `filename` - The name of the file
+- `link` - The link to the file
+- `extension` - The file extension
+- `filesize` - The size of the file in KB, MB or GB
+
+### Usage
+
+```twig
+{# Basic usage #}
+{% set attachment = get_attachment_info(attachment_id) %}
+{% if attachment %}
+    <div class="attachment-info">
+        <h3>{{ attachment.filename }}</h3>
+        <a href="{{ attachment.link }}" download>
+            Download {{ attachment.extension|upper }} ({{ attachment.filesize }})
+        </a>
+    </div>
+{% endif %}
+
+{# Document list #}
+{% for doc in fields.documents %}
+    {% set file = get_attachment_info(doc.file) %}
+    {% if file %}
+        <li>
+            <a href="{{ file.link }}">
+                {{ file.filename }} - {{ file.filesize }}
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}
+```
+
+---
+
+## block_template_part
+
+Load and render a WordPress block template part.
+
+This function loads a template part from the theme's block templates and renders it with blocks parsed.
+
+**Since:** 4.6.1
+
+**Parameters:**
+- `part` (string) - The template part slug to load
+
+**Returns:** `string|false` - The rendered content or false if not found
+
+### Usage
+
+```twig
+{# Load a template part #}
+{{ block_template_part('banner') }}
+
+{# Load header template part #}
+{{ block_template_part('header') }}
+
+{# Use in an action hook (PHP) #}
+{% do action('wp-lemon/action/entry/content/before') %}
+
+{# Conditional template part #}
+{% if post.meta('show_banner') %}
+    {{ block_template_part('custom-banner') }}
+{% endif %}
+```
+
+---
+
+## asset
+
+Get asset URI, contents, or JSON data from the theme's asset manifest.
+
+This function provides access to theme assets managed by the build system, with support for cache-busting and different output formats.
+
+**Parameters:**
+- `key` (string) - The asset key name
+- `type` (string, optional) - Type of output: `'uri'` (default), `'contents'`, or `'json'`
+
+**Returns:** `string|array|false` - The asset URI, contents, or JSON data depending on type
+
+### Usage
+
+```twig
+{# Get asset URI (default) #}
+<script src="{{ asset('app.js') }}"></script>
+
+{# Get asset contents #}
+<style>
+    {{ asset('critical.css', 'contents') }}
+</style>
+
+{# Get JSON data #}
+{% set config = asset('config.json', 'json') %}
+{{ config.version }}
+
+{# Images #}
+<img src="{{ asset('images/logo.svg') }}" alt="Logo">
+
+{# Inline SVG #}
+{{ asset('icons/menu.svg', 'contents')|raw }}
+```
+
+---
+
+## lemon_excerpt
+
+Generate a custom excerpt for a post.
+
+This function creates an excerpt with a specified character length, stripping HTML and adding ellipsis when truncated.
+
+**Since:** 2.9.1
+
+**Parameters:**
+- `post` (Timber\Post) - The post object
+- `length` (int) - Number of characters (use `-1` for full content)
+
+**Returns:** `string` - The excerpt text
+
+### Usage
+
+```twig
+{# Basic excerpt #}
+<p>{{ lemon_excerpt(post, 150) }}</p>
+
+{# Short excerpt #}
+<div class="card__excerpt">
+    {{ lemon_excerpt(post, 100) }}
+</div>
+
+{# Full content #}
+{{ lemon_excerpt(post, -1) }}
+
+{# In a card loop #}
+{% for item in posts %}
+    <div class="card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ lemon_excerpt(item, 120) }}</p>
+    </div>
+{% endfor %}
+
+{# With conditional length #}
+{% set excerpt_length = show_full ? -1 : 100 %}
+{{ lemon_excerpt(post, excerpt_length) }}
+```
+
+---
+
+## action_deprecated
+
+Call a deprecated action hook with proper deprecation notice.
+
+This function allows you to call deprecated action hooks while properly logging deprecation notices for developers.
+
+**Since:** 5.0.0
+
+**Parameters:**
+- Variable arguments passed to the deprecated action
+
+**Returns:** `void`
+
+### Usage
+
+```twig
+{# Trigger deprecated action with notice #}
+{% do action_deprecated('old_action_name', args, '5.0.0', 'new_action_name') %}
+
+{# With multiple arguments #}
+{% do action_deprecated('wp-lemon/deprecated/hook', post.ID, post, '4.5.0', 'wp-lemon/action/entry/before') %}
+```
+
+---
+
+## is_preview
+
+Check if currently in preview/admin mode.
+
+This function determines whether the current context is the WordPress admin/block editor, useful for conditional rendering in blocks and templates.
+
+**Since:** 5.6.0
+
+**Returns:** `bool` - True if in preview mode, false otherwise
+
+### Usage
+
+```twig
+{# Conditional rendering based on preview mode #}
+{% if is_preview %}
+    <div class="editor-notice">
+        This is how the block will look on the frontend.
+    </div>
+{% endif %}
+
+{# Disable animations in preview #}
+{% set maybe_hide_animation = is_preview %}
+
+{# Different output for editor vs frontend #}
+{% if is_preview %}
+    <div class="placeholder">
+        Configure this block in the sidebar
+    </div>
+{% else %}
+    {{ actual_content }}
+{% endif %}
+
+{# Use with filters #}
+{% set hide_animation = is_preview|apply_filters('wp-lemon/filter/block/animation/hide') %}
+```
+
+---
+
+## See Also
+
+- [Helper Functions](helper-functions.md) - PHP helper functions
+- [Twig Filters](twig-filters.md) - Custom Twig filters
+- [Action Hooks](hooks/actions.md) - Available action hooks
+- [Filter Hooks](hooks/filters.md) - Available filter hooks
