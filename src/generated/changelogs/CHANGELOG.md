@@ -1,4 +1,24 @@
 
+## 5.54.1 - 30 December 2025
+
+### 🐛 Bug Fixes
+
+- Update typos.toml and add spellcheck script to package.json
+- Update .gitattributes to include additional export-ignore entries
+- Remove push trigger from release-zip workflow
+
+### 📚 Documentation
+
+- Fix several docblocks
+- Add documentation for TWIG marco's
+
+### ⚙️ Miscellaneous Tasks
+
+- Deregister additional block variations for paragraph and heading
+- Remove blocks from editor
+- Add .gitattributes
+
+
 ## 5.54.0 - 20 December 2025
 
 ### 🐛 Bug Fixes
