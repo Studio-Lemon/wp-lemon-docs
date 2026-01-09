@@ -1,4 +1,22 @@
 
+## 5.54.2 - 09 January 2026
+
+### ⛰️  Features
+
+- Add filter for accordion item icon HTML in twig template
+
+### 🐛 Bug Fixes
+
+- Remove unnecessary blank line in elements.twig
+- Simplify instantiation of Site_Icons in functions.php
+- Update .gitattributes to include additional Twig API files for export-ignore
+- Update .gitattributes to include lib/blocks and build directories for export-ignore
+
+### ⚙️ Miscellaneous Tasks
+
+- Rename LemonPost class file
+
+
 ## 5.54.1 - 30 December 2025
 
 ### 🐛 Bug Fixes
