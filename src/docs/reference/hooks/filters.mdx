@@ -478,6 +478,26 @@ add_filter('wp-lemon/filter/block/node-overview/load-more-delay', function () {
 });
 ```
 
+## wp-lemon/filter/block/accordion-item/icon"
+
+Filters the icon HTML for the accordion item block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $html | `string` | The icon HTML. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter("wp-lemon/filter/block/accordion-item/icon", function ($html) {
+  return '<svg>...</svg>';
+});
+```
+
 ## wp-lemon/filter/cookiebar/show-analytics-checkbox
 
 Filters whether or not to show the analytics checkbox in the cookie bar.
