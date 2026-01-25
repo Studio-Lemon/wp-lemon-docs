@@ -370,6 +370,18 @@ Filters the picture arguments to render the picture element in the card.
 
 </div>
 
+**PHP**
+
+```php
+function overwrite_person_card_media($args)
+{
+  $args['focalpoint'] = true;
+
+  return $args;
+}
+add_filter('wp-lemon/filter/card/{$card_type}/picture-args', __NAMESPACE__ . '\\overwrite_person_card_media', 10, 2);
+```
+
 ## wp-lemon/filter/card/{$card\_type}/picture-args
 
 Filters the picture arguments to render the picture element in the card.

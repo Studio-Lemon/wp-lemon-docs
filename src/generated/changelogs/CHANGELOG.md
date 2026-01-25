@@ -1,7 +1,28 @@
+## 5.55.0 - 25 January 2026
+
+### ⛰️ Features
+
+- Add Person Post Object for handling phone number retrieval and update card template to use it
+
+### 🐛 Bug Fixes
+
+- Fix overwritten styles for .crd.crd--price class in acf-price-card.scss
+- Correct calculation for --max-width-smaller variable in \_global.scss
+- Replace is_null checks with isset for better clarity in image and post classes
+- Simplify previous pagination item condition in pagination.twig
+
+### 📚 Documentation
+
+- Update return type documentation for format_phone_number function to include detailed structure
+- Add example usage for picture-args filter in twig-filters.php
+
+### ⚙️ Miscellaneous Tasks
+
+- !fix: remove unused social media URL fields from person fields
 
 ## 5.54.2 - 09 January 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add filter for accordion item icon HTML in twig template
 
@@ -15,7 +36,6 @@
 ### ⚙️ Miscellaneous Tasks
 
 - Rename LemonPost class file
-
 
 ## 5.54.1 - 30 December 2025
 
@@ -35,7 +55,6 @@
 - Deregister additional block variations for paragraph and heading
 - Remove blocks from editor
 - Add .gitattributes
-
 
 ## 5.54.0 - 20 December 2025
 
@@ -59,17 +78,16 @@
 - Update ci
 - Add GitHub Actions workflow for creating release zip
 
-
 ## 5.53.0 - 02 December 2025
 
-### ⛰️  Features
+### ⛰️ Features
 
-- *(docs)* Add scripts for generating JavaScript and PHP documentation
-- *(js)* Add new helper functions
+- _(docs)_ Add scripts for generating JavaScript and PHP documentation
+- _(js)_ Add new helper functions
 
 ### 📚 Documentation
 
-- *(js)* Add examples for JavaScript helper functions in documentation
+- _(js)_ Add examples for JavaScript helper functions in documentation
 
 ## 5.52.0 - 28 November 2025
 
