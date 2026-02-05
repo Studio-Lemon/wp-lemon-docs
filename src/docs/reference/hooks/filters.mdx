@@ -114,6 +114,15 @@ This filter can be used to change the socials that are being outputted.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/socials-context', function ($context) {
+ $context['linkedin']['icon_class'] = 'wp-lemon-icon-logo-linkedin-solid';
+ return $context;
+});
+```
+
 ## wp-lemon/filter/block/animation/hide
 
 Filters whether or not to add an animation to the block.
