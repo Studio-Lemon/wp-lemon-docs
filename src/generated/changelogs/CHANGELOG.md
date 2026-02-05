@@ -1,3 +1,11 @@
+
+## 5.55.2 - 05 February 2026
+
+### 🐛 Bug Fixes
+
+- Remove unneeded global style. Fixes #323
+- Remove top padding from contact-cta styles for improved layout
+
 ## 5.55.1 - 05 February 2026
 
 ### ⛰️ Features
