@@ -1,3 +1,24 @@
+## 5.55.1 - 05 February 2026
+
+### ⛰️ Features
+
+- (js) Add isAdmin function to check for WordPress admin area and update block-carousel to use it
+
+### 🐛 Bug Fixes
+
+- Refine post class assignment for 'person' post type in add_wp_lemon_post_classes function
+- Ensure proper escaping of phone URI in crd-person.twig
+- Correct syntax for LinkedIn social entry and update email icon class
+- Update return type for get_phonenumber method in class Person
+
+### 🚜 Refactor
+
+- Remove backwards-compatible alias for extendDropDownAreas function
+
+### 📚 Documentation
+
+- Add filter example for wp-lemon/filter/socials-context
+
 ## 5.55.0 - 25 January 2026
 
 ### ⛰️ Features
