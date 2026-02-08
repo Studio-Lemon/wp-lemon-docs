@@ -29,13 +29,14 @@ use HighGround\Bulldozer\Site_Icons;
 /**
  * Setup Site icons and manifest.
  */
-$icons                   = new Site_Icons;
-$icons->name             = 'Name';             //defaults to site name
-$icons->short_name       = 'Short name';       //defaults to '' https://developer.mozilla.org/en-US/docs/Web/Manifest/short_name
-$icons->display          = 'standalone';       // can be fullscreen, standalone, minimal-ui, browser
-$icons->orientation      = 'portrait';         // can be portrait, landscape, any
-$icons->background_color = '#f7d600';          // must be hex color
-$icons->theme_color      = '#f7d600';          // must be hex color
+new Site_Icons([
+	'short_name'       => 'WP Lemon Child',
+	'background_color' => '#f9f9f9',
+	'theme_color'      => '#f7d600',
+	'display'          => '#standalone',
+  'orientation'      => 'portrait',
+]);
+
 ```
 
 This way you can overwrite the short name, background color and theme color. See [Mozilla docs for more info](https://developer.mozilla.org/en-US/docs/Web/Manifest).
