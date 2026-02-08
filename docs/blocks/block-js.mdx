@@ -1,0 +1,208 @@
+---
+title: Block JavaScript
+description: Documentation on writing JavaScript for custom blocks.
+---
+
+When creating a custom block, a JavaScript file is automatically created alongside your other block files. 
+This JS file allows you to add interactive functionality to your blocks and can be used both on the frontend and in the WordPress editor.
+
+## JavaScript file structure
+
+Each block gets its own JavaScript file located in the same directory as your block files. 
+For example, if you have a block called `hero`, you'll find a `index.js` file in the `blocks/hero/` directory.
+
+The JavaScript file that is generated is always called `index.js`
+
+## Exporting functions
+
+The recommended pattern is to export a default function from your block's JavaScript file. 
+This function can then be imported and used in both `app.js` (for frontend functionality) and `editor.js` (for backend/editor functionality).
+
+```js
+// blocks/hero/hero.js
+import Swiper from 'swiper';
+import { Pagination, Autoplay, EffectFade, Parallax } from 'swiper/modules';
+
+export default function heroSlider() {
+   const heroSliders = document.querySelectorAll('.js-hero');
+
+   if (!heroSliders.length) {
+      return;
+   }
+
+   heroSliders.forEach((slider) => {
+      console.log('slider', slider);
+      const swiper = new Swiper(slider, {
+         loop: true,
+         modules: [Pagination, Autoplay, EffectFade, Parallax],
+         speed: 1000,
+         autoplay: {
+            delay: 5000,
+            enabled: true,
+         },
+         pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+         },
+         parallax: true,
+         effect: 'fade',
+         fadeEffect: {
+            crossFade: true,
+         },
+      });
+   });
+}
+```
+
+## Using in app.js (Frontend)
+
+Import and call your block's function within the `domReady` callback in `app.js`. 
+This ensures your JavaScript runs after the DOM is fully loaded.
+
+```js
+// app.js
+import heroSlider from '../../../blocks/hero';
+
+domReady(() => {
+   frontend();
+   heroSlider();
+});
+```
+
+## Using in editor.js (Backend)
+
+For editor functionality, import your function in `editor.js` and call it within the appropriate ACF hooks. 
+This is particularly useful for blocks that need JavaScript functionality in the WordPress editor preview.
+
+```js
+// editor.js
+import heroSlider from '../../../blocks/hero';
+
+backend();
+domReady(() => {
+    acf.addAction('render_block_preview', function (el, block) {
+        heroSlider();
+    });
+});
+```
+
+## Best practices
+
+### 1. Check for elements before initializing
+Always check if the required elements exist before running your code:
+
+```js
+export default function myBlock() {
+   const elements = document.querySelectorAll('.js-my-block');
+   
+   if (!elements.length) {
+      return;
+   }
+   
+   // Your code here
+}
+```
+
+### 2. Use semantic selectors
+Use `js-` prefixed classes for JavaScript selectors to separate behavior from styling:
+
+```js
+// Good
+const sliders = document.querySelectorAll('.js-hero-slider');
+
+// Avoid
+const sliders = document.querySelectorAll('.hero-slider');
+```
+
+### 3. Handle multiple instances
+When your block might appear multiple times on a page, use `forEach` to handle each instance:
+
+```js
+export default function accordionBlock() {
+   const accordions = document.querySelectorAll('.js-accordion');
+   
+   accordions.forEach((accordion) => {
+      const triggers = accordion.querySelectorAll('.js-accordion-trigger');
+      
+      triggers.forEach((trigger) => {
+         trigger.addEventListener('click', () => {
+            // Handle click
+         });
+      });
+   });
+}
+```
+
+### 4. Clean up event listeners
+For more complex interactions, consider cleanup:
+
+```js
+export default function myBlock() {
+   const elements = document.querySelectorAll('.js-my-block');
+   
+   elements.forEach((element) => {
+      const handleClick = (e) => {
+         // Handle click
+      };
+      
+      element.addEventListener('click', handleClick);
+      
+      // Store reference for potential cleanup
+      element._clickHandler = handleClick;
+   });
+}
+```
+
+## Available javaScript helpers
+wp-lemon provides several JavaScript helper functions that you can use in your blocks.
+You can find the full documentation for these functions in the [JavaScript Functions Reference](/reference/javascript-functions).
+
+## Available libraries
+
+wp-lemon comes with several JavaScript libraries that you can use in your blocks:
+
+- **Bootstrap**: For UI components and utilities
+- **Swiper**: For sliders and carousels
+- **AOS**: For scroll animations
+- **Lodash throttle**: For performance optimization
+
+```js
+// Example using multiple libraries
+import Swiper from 'swiper';
+import AOS from 'aos';
+import throttle from 'lodash.throttle';
+
+export default function myBlock() {
+   // Initialize Swiper
+   const swiper = new Swiper('.js-my-slider', {
+      // Swiper options
+   });
+   
+   // Initialize AOS
+   AOS.init();
+   
+   // Use throttle for scroll events
+   const handleScroll = throttle(() => {
+      // Handle scroll
+   }, 100);
+   
+   window.addEventListener('scroll', handleScroll);
+}
+```
+
+## Debugging
+
+Use `console.log()` statements to debug your JavaScript:
+
+```js
+export default function myBlock() {
+   const elements = document.querySelectorAll('.js-my-block');
+   
+   console.log('Found elements:', elements.length);
+   
+   elements.forEach((element, index) => {
+      console.log(`Initializing element ${index}:`, element);
+      // Your code here
+   });
+}
+```

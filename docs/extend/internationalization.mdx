@@ -1,0 +1,360 @@
+---
+title: "Internationalization"
+description: Learn how to implement string translations in wp-lemon projects using WordPress native translation functions
+---
+
+# Internationalization in wp-lemon Projects
+
+This guide covers how to implement internationalization (i18n) in wp-lemon projects, allowing your themes to be translated into multiple languages. We use WordPress native translation functions with the `wp-lemon-child` text domain for all translatable strings.
+
+## Overview
+
+wp-lemon projects support translation in both PHP and Twig template files using:
+- WordPress native translation functions
+- Consistent `wp-lemon-child` text domain
+- Automated string extraction using `translate:pot` command
+- Translation management through Poedit
+
+## Text Domain
+
+All wp-lemon-child projects use the standardized text domain: **`wp-lemon-child`**
+
+This ensures consistency across all projects and makes it easier to manage translations.
+
+## Translation Functions in PHP Files
+
+### Basic Translation Functions
+
+Use these WordPress native functions in your PHP files:
+
+#### `__()`
+Returns the translated string without echoing it.
+
+**PHP Example:**
+```php
+$translated_text = __('Hello World', 'wp-lemon-child');
+```
+
+#### `_e()`
+Echoes the translated string directly.
+
+**PHP Example:**
+```php
+_e('Welcome to our website', 'wp-lemon-child');
+```
+
+#### `_x()`
+Provides context for translators when the same word might have different meanings.
+
+**PHP Example:**
+```php
+$post_context = _x('Post', 'noun: a blog post', 'wp-lemon-child');
+$submit_context = _x('Post', 'verb: to submit', 'wp-lemon-child');
+```
+
+#### `_n()`
+Handles pluralization for different quantities.
+
+**PHP Example:**
+```php
+$message = sprintf(
+    _n('You have %d item', 'You have %d items', $count, 'wp-lemon-child'),
+    $count
+);
+```
+
+#### `_nx()`
+Combines pluralization with context.
+
+**PHP Example:**
+```php
+$message = sprintf(
+    _nx('One comment', '%d comments', $count, 'number of comments', 'wp-lemon-child'),
+    $count
+);
+```
+
+### Example PHP Implementation
+
+```php
+<?php
+// Simple translation
+echo '<h1>' . __('Welcome', 'wp-lemon-child') . '</h1>';
+
+// Translation with context
+echo '<p>' . _x('Read more', 'link text', 'wp-lemon-child') . '</p>';
+
+// Pluralization
+$post_count = get_post_count();
+$posts_text = sprintf(
+    _n('Found %d post', 'Found %d posts', $post_count, 'wp-lemon-child'),
+    $post_count
+);
+
+// Using variables in translations
+$user_name = get_current_user_name();
+$greeting = sprintf(
+    __('Hello, %s! Welcome back.', 'wp-lemon-child'),
+    $user_name
+);
+```
+
+## Translation Functions in Twig Files
+
+Timber provides full support for WordPress translation functions in Twig templates. You can use the same functions as in PHP, but with Twig syntax.
+
+### Basic Twig Translation Examples
+
+#### Simple Translation
+```twig
+<h1>{{ __('Welcome', 'wp-lemon-child') }}</h1>
+<p>{{ __('This is our homepage', 'wp-lemon-child') }}</p>
+```
+
+#### Translation with Context
+```twig
+<a href="{{ post.link }}">
+    {{ _x('Read more', 'link text', 'wp-lemon-child') }}
+</a>
+```
+
+#### Using Variables with sprintf notation
+```twig
+<p class="entry-meta">
+    {# Translators: The placeholder will be replaced with the localized post date #}
+    {{ __('Posted on %s', 'wp-lemon-child')|format(post.date) }}
+</p>
+
+<h2>
+    {# Translators: %s will be replaced with the user's name #}
+    {{ __('Welcome back, %s!', 'wp-lemon-child')|format(user.display_name) }}
+</h2>
+```
+
+#### Pluralization in Twig
+```twig
+{% set comment_count = post.comment_count %}
+<p>
+    {{ _n('One comment', '%d comments', comment_count, 'wp-lemon-child')|format(comment_count) }}
+</p>
+
+{% set item_count = items|length %}
+<span class="count">
+    {{ _x('You have %d item in your cart', 'You have %d items in your cart', count, 'wp-lemon-child')|format(count) }}
+</span>
+```
+
+#### Contextual Pluralization
+```twig
+{% set product_count = products|length %}
+<div class="product-count">
+    {{ sprintf(_nx('One product', '%d products', product_count, 'number of products', 'wp-lemon-child'), product_count) }}
+</div>
+```
+
+### Advanced Twig Examples
+
+#### Conditional Translation
+```twig
+{% if user.is_logged_in %}
+    <p>{{ __('You are currently logged in', 'wp-lemon-child') }}</p>
+{% else %}
+    <p>{{ __('Please log in to continue', 'wp-lemon-child') }}</p>
+{% endif %}
+```
+
+## String Extraction Process
+
+**1. Add the translate:pot Command**
+
+In your wp-lemon-child project's `package.json`, you'll find the translation extraction command:
+
+
+```json
+{
+  "scripts": {
+     "translate:pot": "wp i18n make-pot . resources/languages/wp-lemon-child.pot --slug=wp-lemon-child --exclude=node_modules,vendor",
+  }
+}
+```
+
+**2. Install Required Dependencies**
+
+Make sure you have the WP-CLI i18n command and the Twig extension installed:
+
+```bash
+# Install WP-CLI (if not already installed)
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+# Install the Twig i18n package for WP-CLI
+wp package install timber/wp-i18n-twig
+```
+
+**3. Extract Translatable Strings**
+
+Run the extraction command from your theme's root directory:
+
+```bash
+yarn translate:pot
+```
+
+This command will:
+- Scan all PHP and Twig files for translatable strings
+- Extract strings using the `wp-lemon-child` text domain
+- Generate a `.pot` (Portable Object Template) file in the `languages/` directory
+- Include translator comments for context
+
+
+## Creating Translations with Poedit
+
+**1. Installing Poedit**
+
+Download and install [Poedit](https://poedit.net/) - a powerful translation editor for .po files.
+
+**2. Creating a New Translation**
+
+1. Open Poedit
+2. Click "Create new translation"
+3. Select your `wp-lemon-child.pot` file from the `languages/` directory
+4. Choose the target language (e.g., Dutch, French, German)
+5. Save the file with the proper locale code (e.g., `nl_NL.po`)
+
+**3. Translating Strings**
+
+1. Poedit will display all extractable strings from your theme
+2. Select each string and provide the translation in the target language
+3. Use the context and translator comments to understand the string's purpose
+4. Pay attention to placeholders (like `%s`, `%d`) and maintain them in translations
+
+**4. Compiling Translations**
+
+Poedit automatically generates the compiled `.mo` files when you save. These binary files are what WordPress uses at runtime.
+
+## Best Practices
+
+**1. Translator Comments**
+
+Always add translator comments for context:
+
+```php
+// PHP
+/* translators: %s is the user's first name */
+$greeting = sprintf(__('Hello, %s!', 'wp-lemon-child'), $first_name);
+```
+
+```twig
+{# Twig #}
+{# Translators: %s will be replaced with the product name #}
+{{ __('Add %s to cart', 'wp-lemon-child')|format(product.name) }}
+```
+
+**2. String Consistency**
+
+Use consistent terminology throughout your theme:
+- Don't translate the same concept differently in different places
+- Create a glossary for common terms
+- Use the context parameter `_x()` when the same word has different meanings
+
+**3. Avoid Concatenation**
+
+Don't concatenate translations - it breaks in languages with different word order:
+
+```php
+// ❌ Wrong
+echo __('Hello', 'wp-lemon-child') . ' ' . $name . '!';
+
+// ✅ Correct
+echo sprintf(__('Hello %s!', 'wp-lemon-child'), $name);
+```
+
+**4. Handle Empty States**
+
+Provide translations for empty states and error messages:
+
+```twig
+{% if posts|length > 0 %}
+    {% for post in posts %}
+        {# Display posts #}
+    {% endfor %}
+{% else %}
+    <p>{{ __('No posts found.', 'wp-lemon-child') }}</p>
+{% endif %}
+```
+
+**5. Form Labels and Placeholders**
+
+Translate all form elements:
+
+```twig
+<form>
+    <label for="email">{{ __('Email Address', 'wp-lemon-child') }}</label>
+    <input 
+        type="email" 
+        id="email" 
+        placeholder="{{ __('Enter your email address', 'wp-lemon-child') }}"
+        required
+    >
+    <button type="submit">{{ __('Subscribe', 'wp-lemon-child') }}</button>
+</form>
+```
+
+## Loading Text Domain
+
+Ensure your theme loads the text domain properly in your `library/child-setup.php`:
+
+```php
+function theme_initialize()
+{
+	load_child_theme_textdomain('wp-lemon-child', get_stylesheet_directory() . '/resources/languages/');
+}
+add_action('after_setup_theme', __NAMESPACE__ . '\\theme_initialize');
+```
+
+## Testing Translations
+
+**1. Switch WordPress Language**
+
+1. Go to **Settings > General** in WordPress admin
+2. Change **Site Language** to your target language
+3. Save changes and test your theme
+
+**2. Use Translation Plugins**
+
+Install plugins like **WPML** for easier translation management in development.
+
+**3. Test with Pseudo-Locales**
+
+Use pseudo-locales to test that all strings are properly wrapped in translation functions:
+
+```php
+// Add to wp-config.php for testing
+define('WP_DEBUG', true);
+define('WPLANG', 'en_US');
+```
+
+## Troubleshooting
+
+1. **Strings not appearing in .pot file**
+   - Check that you're using the correct text domain (`wp-lemon-child`)
+   - Ensure the extraction command includes the right file types
+   - Verify that WP-CLI and the Twig i18n package are properly installed
+
+2. **Translations not loading**
+   - Check that the text domain is loaded in `functions.php`
+   - Verify `.mo` files are in the correct `languages/` directory
+   - Ensure file permissions allow WordPress to read the translation files
+
+3. **Plurals not working**
+   - Check that you're using `_n()` or `_nx()` functions correctly
+   - Verify the plural forms in your .po file are correct for the target language
+
+
+## Summary
+
+1. **Use consistent text domain**: Always use `wp-lemon-child` across all translation functions
+2. **Extract strings regularly**: Run `yarn translate:pot` whenever you add new translatable strings
+3. **Provide context**: Use translator comments and context parameters for clarity
+4. **Test thoroughly**: Switch languages in WordPress and test all functionality
+5. **Follow best practices**: Avoid concatenation, handle plurals properly, and maintain consistency
+
+By following this guide, you'll create wp-lemon themes that are fully prepared for international audiences and can be easily translated into multiple languages.

@@ -1,0 +1,45 @@
+---
+title: Overwrite styles
+description: Learn how to overwrite styles from the parent theme.
+---
+
+You might be in the situation where you need to overwrite some css. Your scss will be added to the app.css file **after** the css of the parent theme and thus will be overrule earlier styles with the same selector(s).
+
+You can make tiny changes inside your `_styleguide.scss` file but if you have to do larger changes it is better to create a scss partial in correct folder. See example.
+
+**Example**
+
+```scss title=resources/styles/04-components/_card-overwrites.scss
+.crd--job {
+
+	.job-meta {
+		margin-top: 10px;
+		font-size: 0.6em;
+	}
+}
+
+.crd {
+
+	a.crd__inner {
+		transition: all 0.3s ease;
+
+		& * {
+			color: inherit;
+			transition: all 0s ease;
+		}
+
+		&:hover {
+			color: $white;
+			background-color: $color-azure-radiance;
+		}
+	}
+
+	&__header {
+
+		span {
+			font-size: 16px;
+		}
+	}
+}
+
+```

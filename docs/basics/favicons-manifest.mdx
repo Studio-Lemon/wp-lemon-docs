@@ -1,0 +1,41 @@
+---
+title: Favicons
+description: Learn how to create custom favicons.
+---
+wp-lemon comes with a class that automatically checks for the right icons and then pass them to WordPress. This way the favicon get's displayed on all theme pages. It also handles the generation of a  `site.webmanifest`.
+
+## Favicons
+
+WP Lemon comes with a very obvious set of default favicons. This is to force you to create your own. Luckily it is very easy to create your own set. [Real Favicon Generator](https://realfavicongenerator.net/) you can create your own set of favicons.
+
+After generating your own set please place them in `/web/app/themes/YOURCHILDTHEME/resources/favicons`.
+
+The following method checks if `android-chrome-512x512.png` is present in your new favicon folder. If so, your new generated files will be loaded instead of the default ones provided by the parent theme.
+
+```php
+HighGround\Bulldozer\Site_Icons::filter_favicon_path
+```
+
+## Manifest
+The manifest is also handled by wp-lemon. `Site_Icons` creates a virtual `site.webmanifest` file in your site root and adds it to the head of your site as well. This way you do not have to worry about setting the proper URLs etc. It comes with sane default that you can overwrite.
+
+If you're coming from version < 2.3 please add the following to your child theme.
+
+```php title=library/child-setup.php lineNumbers=true
+use HighGround\Bulldozer\Site_Icons;
+...
+...
+
+/**
+ * Setup Site icons and manifest.
+ */
+$icons                   = new Site_Icons;
+$icons->name             = 'Name';             //defaults to site name
+$icons->short_name       = 'Short name';       //defaults to '' https://developer.mozilla.org/en-US/docs/Web/Manifest/short_name
+$icons->display          = 'standalone';       // can be fullscreen, standalone, minimal-ui, browser
+$icons->orientation      = 'portrait';         // can be portrait, landscape, any
+$icons->background_color = '#f7d600';          // must be hex color
+$icons->theme_color      = '#f7d600';          // must be hex color
+```
+
+This way you can overwrite the short name, background color and theme color. See [Mozilla docs for more info](https://developer.mozilla.org/en-US/docs/Web/Manifest).

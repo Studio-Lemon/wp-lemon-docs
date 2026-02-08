@@ -1,0 +1,14 @@
+---
+title: Logo's
+description: How to overwrite the default logo's
+---
+
+WP Lemon comes with default logo's that you can overwrite. You can create a `images/logo.svg` and a `images/logo-footer.svg` file in `resources/assets/images/`. After running one of the webpack commands your new files will be loaded.
+
+We recommend running the following checks on your logo's:
+
+- Check if there are no bloated elements in your SVG
+- Are there unnneeded transforms? Remove them via a tool like Affinity Designer
+- Is your logo minified? If not, use a tool like https://jakearchibald.github.io/svgomg/ to minify the source file.
+
+If you want to use other formats or you want to inject a svg file directly, please see [global context](/extend/add-context)

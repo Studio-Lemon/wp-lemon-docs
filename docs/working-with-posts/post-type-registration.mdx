@@ -1,0 +1,107 @@
+---
+title: "Post type registration"
+description: How to register your posts and taxonomies
+---
+
+Since WordPress started as a blogging platform post objects are an inherent part of the WordPress ecosystem. 
+In wp-lemon we've extended the default post object to make it more flexible and easier to use.
+We've hidden the default post type `post` and added our own custom post types; `news`, `team` and `jobs`.
+Besides that, you can easily create your own custom post types. In this chapter we'll first explain how to create a custom post type 
+and then how to use it in your site.
+
+## Creating a custom post type
+To create your own custom post type you'll need to create a new file in the `/library/models/post-types/` directory.
+In this file you'll find a example file that looks like this:
+    
+```php
+<?php
+
+/**
+ * Custom post type file
+ *
+ * @package WordPress
+ * @subpackage WP_Lemon\Child
+ */
+
+namespace WP_Lemon\Child\Models;
+
+/**
+ * Example post type
+ *
+ * @return void
+ */
+function cpt_example()
+{
+	$single_name = _x('Example', 'Post Type General Name', 'wp-lemon-child');
+	$plural_name = _x('Examples', 'Post Type Singular Name', 'wp-lemon-child');
+
+	$labels = [
+		'name'                  => $plural_name,
+		'singular_name'         => $single_name,
+		'all_items'             => sprintf(__('All %s', 'wp-lemon'), strtolower($plural_name)),
+		'add_new_item'          => sprintf(__('Add new %s', 'wp-lemon'), strtolower($single_name)),
+		'add_new'               => sprintf(__('Add new %s', 'wp-lemon'), strtolower($single_name)),
+		'new_item'              => sprintf(__('New %s', 'wp-lemon'), strtolower($single_name)),
+		'edit_item'             => sprintf(__('Edit %s', 'wp-lemon'), strtolower($single_name)),
+		'update_item'           => sprintf(__('Update %s', 'wp-lemon'), strtolower($single_name)),
+		'view_item'             => sprintf(__('View %s', 'wp-lemon'), strtolower($single_name)),
+	];
+
+	$args = [
+		'labels'                 => $labels,
+		'supports'               => ['title', 'editor', 'thumbnail'],
+		'taxonomies'             => ['category'],
+		'hierarchical'           => false,
+		'public'                 => true,
+		'show_ui'                => true,
+		'show_in_menu'           => true,
+		'menu_position'          => 5,
+		'rewrite'                => ['slug' => 'example'],
+		'menu_icon'              => 'dashicons-businessperson',
+		'show_in_admin_bar'      => true,
+		'show_in_nav_menus'      => true,
+		'show_in_rest'           => true,
+		'can_export'             => true,
+		'has_archive'            => false,
+		'exclude_from_search'    => false,
+		'publicly_queryable'     => true,
+		'capability_type'        => 'page',
+		'maybe_has_archive_page' => true,
+		'enable_overview_block'  => true,
+		'enable_latest_block'    => true,
+	];
+	register_post_type('example', $args); // unique singular post type name.
+}
+add_action('init', __NAMESPACE__ . '\\cpt_example', 0);
+```
+
+You can copy this file and rename it to your own custom post type. Make sure to change the single and plural name variables.
+After you've created your custom post type you can go to the WordPress backend and create a new post of your custom post type.
+Don't forget to save your permalinks after you've created your custom post type.
+
+### Archive page
+Now you can create a custom archive page for your custom post type. 
+On this archive page you can display all the posts of your custom post type using the overview block.
+Once you've created your archive page you can use the WordPress customizer to link your archive page to your custom post type.
+If for whatever reason you don't want your post type to have a archive-page you can change the following arguments in your custom post type file:
+    
+```php
+$args = [
+	'maybe_has_archive_page' => true, // change to false if you don't want an archive page
+	'enable_overview_block'  => true, // change to false if you don't want an overview block
+	'enable_latest_block'    => true, // change to false if you don't want a latest block
+];
+```
+
+### Single page
+Your custom post type will also have a single page by default. This single page is default in wp-lemon. 
+But if you want to overwrite and customize the single page that's possible as well. 
+You can do this by navigating to `resources/views/templates`, here you can create a new file: `single-post_type_name.twig`.
+
+If for whatever reason you don't want your post type to have a single-page you can change the following argument in your custom post type file:
+
+```php
+$args = [
+	'publicly_queryable'     => true, // change to false if you don't want a single page
+];
+```

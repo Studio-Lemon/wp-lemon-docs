@@ -1,0 +1,49 @@
+---
+title: Migrate to wp-lemon 5
+description: How to update to the newest version of wp-lemon
+disableTableOfContents: true
+---
+
+Welcome to version 5.0 of wp-lemon. In this guide we will go over the details to upgrade your current 4.x website to the 5.x.
+
+## Before we get started
+Please make sure you have the latest version of your project checked out and have a recent database and media files to check your website locally.
+
+## Upgrade steps
+Follow the next steps to upgrade your project to use wp-lemon 4.
+
+### Step 1. Set new major version of wp-lemon, Timber and Bulldozer
+Navigate to your composer.json file in the project root and update it as follows.
+
+```json
+-    "satispress/wp-lemon": "^4.0",
++    "satispress/wp-lemon": "^5.0",
+-    "timber/timber": "^1.x",
++    "timber/timber": "^2.0",
+-    "highground/bulldozer": "^3.x",
++    "highground/bulldozer": "^4.0",
+```
+
+### Step 2. Update child-theme dependencies
+Navigate to your child theme and open package.json and update the following dependencies to at least these versions. 
+
+
+```json
+-  "swiper": "^10.0",
++  "swiper": "^11.0",
+```
+### Step 3. Run update-parent command
+Open a new console in your child theme and run the following command: `yarn run update-parent`
+
+This will update both PHP and node dependencies to their latest versions.
+
+### Step 4. Run production build
+Open a new console in your child theme and run the following command: `yarn run production`
+This will create a fresh build with the new dependencies. If the build fails, please try to debug the error or open a new ticket.
+
+### Step 5. Read the Timber 2.0 migration guide and update/test your child theme
+
+Since this release is mostly focussed on the Timber 2.0 update, please read the [Timber 2.0 migration guide](https://timber.github.io/docs/v2/upgrade-guides/2.0/) and update your child theme accordingly.
+
+## Deploy
+Please follow the following guide to deploy the update to the production server. [Deploy update!](/deployment/updates#deploy-update)

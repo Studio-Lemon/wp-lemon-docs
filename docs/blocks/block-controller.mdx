@@ -1,0 +1,210 @@
+---
+title: Block controller
+description: Documentation on the block controller layer.
+---
+
+The block controller is where you'll probably spend most time while developing a custom block. 
+This is where you process any dynamic data and control how your block behaves based on input from the editor. 
+The idea is to put all of our logic in here, so that when you're working in the view layer, you only have to focus on creating a beautiful front end.
+
+## Anatomy of a block controller
+In the block controller you will find 2 methods you can use to expand your block:
+- `block_context()`
+- `add_fields()`
+
+The block_context() function is used to query the data from the database and add it to the block context.
+
+## Block content
+There are two main ways to add content to your block. 
+- InnerBlocks
+- ACF fields
+
+We prefer InnerBlocks over ACF fields because it uses native WordPress functionality. 
+The reason you might want to use ACF fields is for repeater fields like slides or testimonials. 
+Below we'll show you how to use both methods.
+
+### InnerBlocks
+InnerBlocks are blocks within blocks. This way you can create complex blocks with multiple child blocks.
+This gives the user a lot of control over the layout of the block.
+To learn how to use InnerBlocks, take a look at the [InnerBlocks documentation](/blocks/innerblocks).
+
+### Adding ACF fields to the block
+You can add any type of ACF field to the block. To find out all the possibilities take a look at the [ACF documentation](https://github.com/StoutLogic/acf-builder/wiki/field-types).
+Here you'll find all the different field types and how to use them.
+Below is a simple example of what your add_fields() function could look like. 
+
+```php
+public function add_fields(): object
+{
+   $this->registered_fields
+      ->addRepeater(
+         'slides',
+         [
+            'layout' => 'block',
+            'min'    => 1,
+            'max'    => 4,
+         ]
+      )
+      ->addImage('image', [
+         'label' => 'Image',
+         'return_format' => 'id',
+         'preview_size' => 'medium',
+      ])
+      ->addText('caption', [
+         'label'     => 'Bijschrift',
+      ])
+      ->endRepeater();
+   return $this->registered_fields;
+}
+```
+
+To learn how to use these fields in your block view, take a look at the [block view documentation](/blocks/block-view).
+
+## Extending the block context
+
+Every block is different but we will give some common examples on how to expand your block. Please also take a look at the [BlockRenderer documentation](https://levdbas.github.io/Bulldozer/#/reference/highground-bulldozer-blockrendererv2) for more functions you can use in your block context.
+
+### Block that displays an x amount of (custom)posts
+
+Take a look at the `news-recent.php` block in the parent theme. You will find a method block_context().
+When going through these lines you will find several notable things.
+
+```php lineNumbers=true
+public function block_context($context): array
+{
+   $amount = $this->get_field('amount') ? $this->get_field('amount') : 3;
+   $items = latest_items_query('news', $amount);
+
+      if ($items->found_posts == 0) {
+         self::add_notification(__("You haven't added any news yet, so this block will be empty.", "wp-lemon"), 'warning');
+      }
+
+      $args = [
+         'items'            => $items,
+         'card_type'        => 'news',
+         'holder_classes'   => 'col-12 col-md-6 col-lg-4',
+         'InnerBlocks'      => self::create_inner_blocks(false, $template, 'crd__content'),
+      ];
+
+      return array_merge($context, $args);
+}
+```
+
+- wp-lemon comes with a set of predefined queries. Here we use latest_items_query() to get the latest posts of a specific posttype
+- We have a card_type variable that defines what card type will be loaded.
+- We have a add_notification method that will setup a notification inside the block when previewed in the backend.
+
+### Block that displays a post archive with load more button
+
+Take a look at the `news-overview.php` block in the parent theme. You will again find a method block_context() that will query the data from the database and add it to the block context.
+
+```php lineNumbers=true
+public function block_context($context): array
+{
+   $items = archive_query('news', 6); // query the news posttype
+   $count = get_total_posts('news', count($items)); // get a count array that feeds information to the postholder.
+   $show_filter = false;
+   $terms = [];
+
+   if ($this->get_field('show_filter') == true) {
+      $show_filter = true;
+      $terms = get_terms('category', array('hide_empty' => true));
+   }
+
+   // add notification when no posts are found.
+   if ($items->found_posts == 0) {
+      self::add_notification(__('You haven\'t added any news yet, so this block will be empty.', 'wp-lemon'), 'warning');
+   }
+
+   $args = [
+      'items'          => $items,
+      'nav'            => true,
+      'count'          => $count,
+      'post_type'      => 'news',
+      'card_type'      => 'news',
+      'show_filter'    => $show_filter,
+      'terms'          => $terms,
+      'holder_classes' => 'col-12 col-md-6 col-lg-4',
+      'InnerBlocks'    => self::create_inner_blocks(false, $template, 'crd__content'),
+   ];
+
+   return array_merge($context, $args);
+}
+```
+
+The linked `blocks/news-overview.twig` file will include `components/archive-loop.twig` that will display the initial posts and setup everything for receiving new posts via an ajax call.
+
+When reusing above code make sure to:
+
+- set the post type correctly
+- create a new card twig file
+- include the `components/archive-loop.twig` inside your twig file that is linked to your block.
+- Update the notice to inform the administrator/editors of the website when no posts are found of the posttype you want to query.
+- include the right functions in your file like so
+
+```php lineNumbers=true
+namespace WP_Lemon\Child\Blocks;
+
+use HighGround\Bulldozer\BlockRenderer;
+
+++ use function WP_Lemon\API\archive_query;
+++ use function WP_Lemon\API\get_total_posts;
+```
+
+### Block with custom assets
+
+You might want to add a specific asset to the blocks context as it is only used by this specific block. You can use the `asset()` helper function for that.
+
+```php lineNumbers=true
+public function block_context($context): array
+{
+      $args = [
+         'sphere'     => asset('images/sphere.svg')->contents(),
+         'banner_uri' => asset('images/banner.png')->exists() ? asset('images/banner.png')->uri() : false,
+      ];
+
+      return array_merge($context, $args);
+}
+```
+
+### Block that needs conditional modifier classes
+
+You might want to add conditional classes based on a field setting. This is where `$this->add_modifier_class('yourmodifier');` comes in.
+This method adds a BEM modifier class to your block. An example:
+
+```php lineNumbers=true
+public function block_context($context): array
+{
+   
+   if (true == $this->get_field('show_pagination')) {
+         $context['show_pagination'] = true;
+         $this->add_modifier_class('has-pagination');
+   }
+   
+   return $context;
+}
+```
+
+will result in
+
+```twig lineNumbers=true
+<div class="acf-block slider slider--has-pagination" id="block_5f8ffdc0349e1">
+...
+</div>
+```
+
+## Wp-lemon queries
+When you want to use post objects within your custom block you can use the following queries in your block context:
+
+| Function                    | Description                                                                                  |
+|-----------------------------|----------------------------------------------------------------------------------------------|
+| `latest_items_query`        | Retrieves the latest posts of a specific type, optionally filtered by taxonomy and terms.    |
+| `other_items_query`         | Fetches posts of a specific type, excluding a given post, optionally filtered by taxonomy and terms. |
+| `specific_items_query`      | Retrieves specific posts by their IDs and type.                                              |
+| `archive_query`             | Fetches a set of posts of a specific type for archive display, supporting pagination.        |
+| `get_total_posts`           | Calculates the total number of posts available for an AJAX "load more" functionality.        |
+| `adjacent_post_info`        | Gets information about the next or previous post, or returns the first/last post if unavailable. |
+| `next_post_info`            | Returns information about the next post or the first post if no next post exists.            |
+| `previous_post_info`        | Returns information about the previous post or the last post if no previous post exists.     |
+| `taxonomy_post_collection`  | Retrieves a collection of posts organized by category, based on a taxonomy and post type.    |
+

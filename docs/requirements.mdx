@@ -1,0 +1,28 @@
+---
+title: "Requirements"
+description: Learn what you need before starting a new project
+---
+
+Let's get the basics in order first. We need a development setup with several pieces of software in place as well as a capable development server.
+
+## What you'll need locally
+
+- PHP >= 8.2.0
+- Composer ([Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos))
+- Latest LTS of Node.js.
+- A capable editor like [Visual Studio Code](https://code.visualstudio.com/)
+
+|Extension name  |Description  |
+|---------|---------|
+|[Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)     |   Handles style linting on save      |
+|[PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)     |     Helps you to import namespaces and functions.    |
+|[Twig Language 2](https://marketplace.visualstudio.com/items?itemName=mblode.twig-language-2)     |    Will get you some twig shorthands in code like for.. if.. import.. etc.     |
+|[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)     |       Lints Twig files on the fly.  |
+|[wp-lemon snippets](https://marketplace.visualstudio.com/items?itemName=StudioLemon.wp-lemon-snippets)     |      Code snippet plugin for wp-lemon projects  |
+
+## What you'll need on your staging/production server
+
+- Ability to set the document root to /web
+- PHP >= 8.2.0 With APCU/OPcache/Imagick
+
+We recommend using Spinup WP for your production servers.

@@ -1,0 +1,243 @@
+---
+title: ACF fields
+description: This page will describe the recommended process of adding additional field groups using ACF builder.
+---
+
+Although it's possible to add or modify ACF fields using the build in UI method, we highly recommend adding the fields using PHP configurations. We find this method more robust, especially in larger websites.
+If you want to see all the different field types that exist and their default attributes you can take a look right [here](https://github.com/StoutLogic/acf-builder/wiki/field-types).
+
+To add or modify ACF fields using PHP configurations you need a field group. Within wp-lemon some post types will already have an existing field group. 
+In the following documentation we will explain both how to modify/remove existing field groups and how to create new groups from scratch.
+
+## Field Groups
+This section will explain how to modify existing field groups and how to create new ones.
+
+### Modifying existing fieldgroups
+Because these post types will have a fieldgroup by default you don't have to create it yourself. 
+By navigating to the `library/hooks.php` file in your child theme, you can use filters to add, modify or remove fields in an existing fieldgroup.
+
+below we've listed all the existing fieldgroups with the filter name you can use.
+
+| **Fieldgroups**          | **Fieldgroups filter name**    |
+|------------------------|------------------------|
+| Job                    | wp-lemon/filter/model/acf-fields/job  |
+| Person                 | wp-lemon/filter/model/acf-fields/person  |
+| Menu                   | wp-lemon/filter/model/acf-fields/menu  |
+
+
+#### Adding ACF fields
+```php 
+/**
+ * Fields
+ *
+ * @package WordPress
+ * @subpackage WP_Lemon\Child
+ */
+
+namespace WP_Lemon\Child\Models;
+
+use StoutLogic\AcfBuilder\FieldsBuilder;
+add_filter(
+   'wp-lemon/filter/model/acf-fields/job',
+   function (FieldsBuilder $job) {
+      $job
+         ->addText('job_location');
+      return $job;
+   },
+);
+```
+
+#### Remove ACF Fields
+In the same way we can remove an existing ACF field by using the build-in function that ACF provides like so:
+```php
+/**
+ * Fields
+ *
+ * @package WordPress
+ * @subpackage WP_Lemon\Child
+ */
+
+namespace WP_Lemon\Child\Models;
+
+add_filter(
+   'wp-lemon/filter/model/acf-fields/job',
+   function (FieldsBuilder $job) {
+      $job
+         ->removeField('salary');
+      return $job;
+   },
+);
+```
+
+#### Remove all ACF Fields at once
+In case you want to remove the whole specific field group. you can return `false` in the filter.
+You can use this option to completely build a field group from the ground up.
+
+```php
+add_filter(
+   'wp-lemon/filter/model/acf-fields/job',
+   function ($job) {
+      return false;
+   },
+);
+```
+
+
+In the examples above we showed you the different options separately, but when you're modifying a field group you can remove and add multiple ACF fields all within the same filter. You do this by chaining the methods together like so:
+```php 
+/**
+ * Fields
+ *
+ * @package WordPress
+ * @subpackage WP_Lemon\Child
+ */
+
+namespace WP_Lemon\Child\Models;
+
+use StoutLogic\AcfBuilder\FieldsBuilder;
+
+add_filter(
+   'wp-lemon/filter/model/acf-fields/job',
+   function (FieldsBuilder $job) {
+      $job
+         ->removeField('salary')
+         ->addText('job_location');
+      return $job;
+   },
+);
+```
+
+### Creating new fieldgroups
+When adding ACF fields to a post type that doesn't already have a fieldgroup you can start by creating a file in `library/models` folder of your child theme.
+For example `fields-news.php`. Inside this file:
+
+```php 
+<?php
+
+/**
+ * Adds extra fields to news.
+ *
+ * @package WordPress
+ * @subpackage WP_Lemon
+ */
+
+namespace WP_Lemon\Child\Models;
+
+use StoutLogic\AcfBuilder\FieldsBuilder;
+
+$news = new FieldsBuilder(
+   'news',
+   [
+      'title' => __('Additional news fields', 'wp-lemon-child'),
+      'style' => 'seamless',
+   ]
+);
+
+add_action('acf/init', function () use ($news) {
+   $news
+   ->addText('label', [
+      'label'    => __('Label', 'wp-lemon-child'),
+      'required' => 1,
+   ])
+   ->setLocation('post_type', '==', 'news');
+
+   acf_add_local_field_group($news->build());
+});
+```
+
+### Fields for ACF blocks
+When you've build your own ACF block and want to add ACF fields to it, you'll have to go trough a similar process. you can find more information on this  [here](/blocks/add-blocks#block-with-custom-acf-fields).
+
+## Custom ACF fields
+wp-lemon comes with a couple of custom ACF fields that you can use in your field groups.
+
+| **Field Type**          | **Description**    |
+|------------------------|------------------------|
+| FluentForms field          | A select field that allows you to select a FluentForm.  |
+| Gravity Forms field          | A select field that allows you to select a Gravity Form.  |
+| Menu field          | A select field that allows you to select a menu.  |
+
+### FluentForms field
+The FluentForms field allows you to select a form from FluentForms in your ACF field.
+
+```php
+->addField('form', 'fluentforms', [
+   'label' => __('Form', 'wp-lemon'),
+   'instructions' => __('Select the form you want to display.', 'wp-lemon'),
+   'return_format' => 'id', // can be 'id' or 'form'
+]);
+```
+
+You can use this field in combination with the `get_fluent_form()` function to render the form on the front end. More info [here](/wp-lemon-docs/reference/api-functions#get_fluent_form).
+
+### Gravity Forms field
+
+The Gravity Forms field allows you to select a form from Gravity Forms in your ACF field.
+
+```php
+->addField('form', 'gravityforms', [
+   'label' => __('Form', 'wp-lemon'),
+   'instructions' => __('Select the form you want to display.', 'wp-lemon'),
+   'return_format' => 'id', // can be 'id' or 'form'
+]);
+```
+
+### Menu field
+The Menu field allows you to select a menu in your ACF field.
+
+```php
+->addField('menu', 'menu', [
+      'label'               => _x('Show navigation', 'Block field label', 'wp-lemon'),
+      'allow_null'          => true,
+      'wpml_cf_preferences' => 1,
+   ]
+);
+```
+
+You can then use the value of this field like this
+
+```php
+$nav_args = [
+   'menu'       => get_field('menu'),
+   'container'  => '',
+   'menu_class' => 'my-custom-menu-class',
+   'echo'       => false,
+];
+
+$nav = wp_nav_menu($nav_args);
+``` 
+
+## Custom field locations
+wp-lemon ships one additional custom location that you can use when creating your own field groups.
+
+| **Location Type**          | **Description**    |
+|------------------------|------------------------|
+| Menu depth          | Select a menu depth.  |
+
+### Menu depth
+This location allows you to show or hide a field group based on the depth of the menu item
+
+The following example will add a background color field to the top level menu items of the primary navigation.
+```php
+$menu_fields = new FieldsBuilder(
+   'menu',
+   [
+      'title' => _x('Menu', 'Backend - Field groep name for menus', 'wp-lemon'),
+      'style' => 'seamless',
+   ]
+);
+$menu_fields
+   ->addField(
+   'background_color',
+   'editor_palette',
+      [
+         'label'               => _x('Background color', 'Backend - ACF field label', 'wp-lemon'),
+         'return_format'       => 'slug',
+         'wpml_cf_preferences' => 1,
+      ]
+   )
+   ->setLocation('nav_menu_item', '==', 'location/primary_navigation')
+   ->and('menu_depth', '==', '0');
+acf_add_local_field_group($menu_fields->build());
+```
+

@@ -1,0 +1,42 @@
+---
+title: "Create new project"
+description: Learn how to create a new wp-lemon project
+---
+
+This is the setup guide for wp-lemon. We will go through the requirements and how to get a new project started.
+
+## How to start a new project by using wp-lemon cli tool
+
+wp-lemon is a [npx package](https://www.npmjs.com/package/wp-lemon) hosted on npm.com to do all the heavy lifting for you. Just run the package, fill in some variables and get yourself a cup of coffee and voilla!
+
+### What you'll need beforehand
+
+- Yarn installed ([How to install](https://classic.yarnpkg.com/en/docs/install#windows-stable))
+- Git installed ([How to install](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
+- Composer installed ([How to install](https://getcomposer.org/download/))
+- WP-cli installed ([How to install](https://make.wordpress.org/cli/handbook/guides/installing/))
+- wp-cli dotenv package installed ([How to install](https://github.com/aaemnnosttv/wp-cli-dotenv-command))
+
+The CLI tool will check all the requirements before starting a new project.
+
+### Running the package
+
+To start a new project you'll first want to create a new folder in your projects folder. When using Laravel Valet as your webserver you'll have to add it in the following format: `your-project-name`.
+
+After adding this folder you can open a new terminal inside this folder and run the following command `npx wp-lemon` to run the cli-tool. This will automatically download the latest version of this package and starts the installation process. You will now want to follow the instructions given by the cli-tool itself.
+
+> 💡
+> Accept default values by pressing enter.
+
+Feedback? Create a ticket at [GitHub](https://github.com/Studio-Lemon/wp-lemon/issues).
+
+
+## Webpack commands / start development
+
+To start developing you can run some commands that will compile the assets. You will have to run these commands from your child theme folder.
+
+| command             | Description                                                                                          |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| yarn run dev        | Runs the development build process once.                                                             |
+| yarn run watch      | Start a browsersync session that automatically reloads your browser on file changes and injects css. |
+| yarn run production | Creates a build optimized for production. This build will be minimized and images will be optimized. |

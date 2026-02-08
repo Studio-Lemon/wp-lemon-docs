@@ -1,46 +1,50 @@
 {
-  "name": "gatsby-starter-rocket-docs",
-  "private": true,
+  "name": "wp-lemon-docs",
   "version": "1.0.0",
-  "description": "Out of the box Gatsby Starter for creating documentation websites easily and quickly. With support for MDX, code highlight, Analytics, SEO and more",
-  "author": "João Pedro Schmitz <oi@joaopedro.cc> (@jpedroschmitz)",
-  "license": "MIT",
-  "starter-name": "gatsby-starter-rocket-docs",
+  "private": true,
+  "description": "wp-lemon documentation built with Docusaurus",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "sync-docs": "node sync-helper-functions.js",
+    "prebuild": "npm run sync-docs"
+  },
   "dependencies": {
-    "@emotion/react": "^11.10.8",
-    "@emotion/styled": "^11.10.8",
-    "@rocketseat/gatsby-theme-docs": "^3.2.0",
-    "emotion-theming": "^11.0.0",
-    "gatsby": "^4.25.6",
-    "gatsby-plugin-canonical-urls": "^4.25.0",
-    "gatsby-plugin-google-analytics": "^4.25.0",
-    "gatsby-plugin-manifest": "^4.25.0",
-    "gatsby-plugin-offline": "^5.25.0",
-    "gatsby-plugin-sharp": "4.25.1",
-    "gatsby-plugin-remove-trailing-slashes": "^4.15.0",
-    "gatsby-plugin-sitemap": "^5.25.0",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sharp": "0.32.6"
+    "@docusaurus/core": "^3.6.3",
+    "@docusaurus/preset-classic": "^3.6.3",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.6.3",
+    "@docusaurus/tsconfig": "^3.6.3",
+    "@docusaurus/types": "^3.6.3",
     "gh-pages": "^5.0.0",
-    "prismjs": "^1.29.0"
+    "typescript": "~5.2.0"
   },
-  "keywords": [
-    "gatsby",
-    "rocketseat",
-    "gatsby-starter"
-  ],
-  "scripts": {
-    "sync-docs": "node sync-helper-functions.js",
-    "prebuild": "npm run sync-docs",
-    "build": "gatsby build",
-    "build-cli": "gatsby build --prefix-paths",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
   }
 }
