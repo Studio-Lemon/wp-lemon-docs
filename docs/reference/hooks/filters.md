@@ -242,7 +242,7 @@ Return true to hide the animation.
 
 </div>
 
-## wp-lemon/filter/card/{card_type}/animation
+## wp-lemon/filter/card/\{card_type\}/animation
 
 Filters what animation to use for the card.
 
@@ -1148,7 +1148,7 @@ add_filter('wp-lemon/filter/entry-footer/share-buttons/platforms', function ($pl
 });
 ```
 
-## wp-lemon/filter/entry-footer/{post_type}/share-buttons/platforms
+## wp-lemon/filter/entry-footer/\{post_type\}/share-buttons/platforms
 
 Filters the share platforms in the entry footer for a specific post type.
 
@@ -1172,7 +1172,7 @@ add_filter('wp-lemon/filter/entry-footer/job/share-buttons/platforms', function 
 });
 ```
 
-## wp-lemon/filter/entry-footer/{post_type}/share-buttons/post-type-name
+## wp-lemon/filter/entry-footer/\{post_type\}/share-buttons/post-type-name
 
 Filters the post type name for the entry footer.
 
@@ -1186,7 +1186,7 @@ Use this if the share button sentence is vague.
 
 </div>
 
-## wp-lemon/filter/entry-footer/{post_type}/share-buttons/title
+## wp-lemon/filter/entry-footer/\{post_type\}/share-buttons/title
 
 Filters the title for the share buttons in the entry footer for a specific post type.
 
@@ -1458,7 +1458,7 @@ Filters the allowed blocks for the image-card block.
 
 </div>
 
-## wp-lemon/filter/block/node-latest/{post_type}/overview-button-text
+## wp-lemon/filter/block/node-latest/\{post_type\}/overview-button-text
 
 Filters the overview button text for the node-latest block.
 
@@ -1475,7 +1475,7 @@ You can use this filter to change the button text on a per post type basis.
 
 </div>
 
-## wp-lemon/filter/block/node-latest/{post_type}/overview-button
+## wp-lemon/filter/block/node-latest/\{post_type\}/overview-button
 
 Filters the overview button for the node-latest block.
 
@@ -1493,7 +1493,7 @@ You can use this filter to change the button on a per post type basis.
 
 </div>
 
-## wp-lemon/filter/block/node-latest/{post_type}/args
+## wp-lemon/filter/block/node-latest/\{post_type\}/args
 
 Filters the query args for the node-latest block.
 
@@ -1533,7 +1533,7 @@ function ignore_noindexed_posts( $args ) {
 add_filter( 'wp-lemon/filter/block/node-latest/case/args', __NAMESPACE__ . '\\ignore_noindexed_posts' );
 ```
 
-## wp-lemon/filter/block/node-latest/{post_type}/no-items-message
+## wp-lemon/filter/block/node-latest/\{post_type\}/no-items-message
 
 Filters the no items message for the node-latest block.
 
@@ -1552,7 +1552,7 @@ You can use this filter to change the message on a per post type basis.
 
 </div>
 
-## wp-lemon/filter/block/node-latest/{post_type}/holder-classes
+## wp-lemon/filter/block/node-latest/\{post_type\}/holder-classes
 
 Filters the number of columns on lg format for the node-latest block.
 
@@ -1580,7 +1580,7 @@ Filters the default card type for the node-latest block.
 
 </div>
 
-## wp-lemon/filter/block/node-latest/{post_type}/card-type
+## wp-lemon/filter/block/node-latest/\{post_type\}/card-type
 
 Filters the card type for the specific post type of the node-latest block.
 
@@ -1596,7 +1596,7 @@ You can use this filter to change the card type on a per post type basis.
 
 </div>
 
-## wp-lemon/filter/block/node-overview/{post_type}/args
+## wp-lemon/filter/block/node-overview/\{post_type\}/args
 
 Filters the additional arguments for the initial query in the node-overview block.
 
@@ -1626,7 +1626,7 @@ function alphabatic_order()
 add_filter('wp-lemon/filter/block/node-overview/person/args', __NAMESPACE__ . '\\alphabatic_order');
 ```
 
-## wp-lemon/filter/block/node-overview/{post_type}/select-all-text
+## wp-lemon/filter/block/node-overview/\{post_type\}/select-all-text
 
 Filters the text for the "all" option in the filter of the node-overview block.
 
@@ -1640,7 +1640,7 @@ Filters the text for the "all" option in the filter of the node-overview block.
 
 </div>
 
-## wp-lemon/filter/block/node-overview/{post_type}/holder-classes
+## wp-lemon/filter/block/node-overview/\{post_type\}/holder-classes
 
 Filters the holder classes for the cards in the node overview block.
 
@@ -1678,7 +1678,7 @@ Filters the image sizes for the node overview block.
 
 </div>
 
-## wp-lemon/filter/block/node-overview/{post_type}/image-sizes
+## wp-lemon/filter/block/node-overview/\{post_type\}/image-sizes
 
 Filters the image sizes for the node-overview block.
 
@@ -1692,7 +1692,7 @@ Filters the image sizes for the node-overview block.
 
 </div>
 
-## wp-lemon/filter/block/node-overview/{post_type}/card-type
+## wp-lemon/filter/block/node-overview/\{post_type\}/card-type
 
 Filters the card_type for a specific post type used inside the node-overview block
 
@@ -1708,7 +1708,7 @@ You can use this filter to change the card type for a specific post type.
 
 </div>
 
-## wp-lemon/filter/block/node-overview/{post_type}/items
+## wp-lemon/filter/block/node-overview/\{post_type\}/items
 
 Filters the posts that are going to be displayed in the initial load of the node-overview block.
 
@@ -1724,7 +1724,7 @@ You can use this filter to add additional posts to the initial load or add an ad
 
 </div>
 
-## wp-lemon/filter/block/node-overview/{post_type}/posts-per-page
+## wp-lemon/filter/block/node-overview/\{post_type\}/posts-per-page
 
 Filters the amount of posts that are are being queried for the node-overview block.
 
@@ -1740,7 +1740,7 @@ This number is used for loads after the initial load.
 
 </div>
 
-## wp-lemon/filter/block/node-overview/{post_type}/load-more-text
+## wp-lemon/filter/block/node-overview/\{post_type\}/load-more-text
 
 Filters the text for the load more button in the node-overview block.
 
@@ -1756,7 +1756,7 @@ You can use this filter to change the text for the load more button for a specif
 
 </div>
 
-## wp-lemon/filter/block/node-overview/{post_type}/no-more-items-text
+## wp-lemon/filter/block/node-overview/\{post_type\}/no-more-items-text
 
 Filters the text for the "no more items" message in the node-overview block.
 
@@ -1772,7 +1772,7 @@ You can use this filter to change the text for the no more items message for a s
 
 </div>
 
-## wp-lemon/filter/block/node-overview/{post_type}/load-more-action
+## wp-lemon/filter/block/node-overview/\{post_type\}/load-more-action
 
 Filters the Ajax Action for a specific post type in the node-overview block.
 
@@ -1902,7 +1902,7 @@ Filters the output for the end of a menu level just before the closing ul tag.
 
 </div>
 
-## wp-lemon/filter/navwalker/{archive_page_post_type}/link-attributes
+## wp-lemon/filter/navwalker/\{archive_page_post_type\}/link-attributes
 
 Filters the link attributes for a wp-lemon archive page.
 
@@ -1943,7 +1943,7 @@ if ($count > 0) {
 add_filter('wp-lemon/filter/navwalker/job/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
 ```
 
-## wp-lemon/filter/navwalker/{menu_item_id}/link-attributes
+## wp-lemon/filter/navwalker/\{menu_item_id\}/link-attributes
 
 Filters the link attributes for a menu item based on the menu item ID.
 
