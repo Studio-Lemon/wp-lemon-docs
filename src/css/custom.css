@@ -6,19 +6,28 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #f7d600;
+  --active-bg: #fff9d4;
+  --active-color: rgb(34, 34, 34);
+
+  --ifm-color-primary: var(--active-color);
   --ifm-color-primary-dark: #dec100;
   --ifm-color-primary-darker: #d1b700;
   --ifm-color-primary-darkest: #ac9600;
   --ifm-color-primary-light: #ffde33;
   --ifm-color-primary-lighter: #ffe147;
   --ifm-color-primary-lightest: #ffeb75;
+
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-menu-color-background-active: var(--active-bg);
+  --ifm-breadcrumb-item-background-active: var(--active-bg);
+  --ifm-menu-color-active: var(--active-color);
+  --ifm-breadcrumb-color-active: var(--active-color);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #f7d600;
   --ifm-color-primary-dark: #dec100;
   --ifm-color-primary-darker: #d1b700;
@@ -27,4 +36,20 @@
   --ifm-color-primary-lighter: #ffe147;
   --ifm-color-primary-lightest: #ffeb75;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+article a {
+  font-weight: 700;
+}
+
+blockquote {
+  padding-left: 0;
+  border-left: 0;
+}
+
+blockquote p {
+  padding: 1rem;
+  border-radius: 5px;
+  background: #feebc8;
+  color: #2d3748;
+  margin: 0;
 }
