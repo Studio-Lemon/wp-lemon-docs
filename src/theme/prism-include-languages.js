@@ -18,17 +18,18 @@ export default function prismIncludeLanguages(PrismObject) {
       require('prismjs/components/prism-markup-templating.js');
     }
 
-    if (lang === 'php') {
-      require('../prism-twig.js');
-      return;
-    }
+
 
     // eslint-disable-next-line global-require, import/no-dynamic-require
     require(`prismjs/components/prism-${lang}`);
   });
+
+  require(`prismjs/components/prism-scss.js`);
+  require('prismjs/components/prism-twig.js');
+
   // Clean up and eventually restore former globalThis.Prism object (if any)
-  delete globalThis.Prism;
-  if (typeof PrismBefore !== 'undefined') {
-    globalThis.Prism = PrismObject;
-  }
+  // delete globalThis.Prism;
+  // if (typeof PrismBefore !== 'undefined') {
+  //   globalThis.Prism = PrismObject;
+  // }
 }
