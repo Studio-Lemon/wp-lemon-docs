@@ -88,7 +88,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'API function',
       items: [
-        'reference/api-functions',
+        'reference/helper-functions',
         'reference/query-functions',
         'reference/javascript-functions',
       ],
