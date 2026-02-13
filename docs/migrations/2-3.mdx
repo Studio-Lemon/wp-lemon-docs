@@ -7,12 +7,15 @@ disableTableOfContents: true
 Welcome to version 3.0 of wp-lemon. In this guide we will go over the details to upgrade your current 2.x website to the 3.x version.
 
 ## Before we get started
+
 Please make sure you have the latest version of your project checked out and have a recent database and media files to check your website locally.
 
 ## Upgrade steps
+
 Follow the next steps to upgrade your project to the 3.x branch.
 
 ### Step 1. Set new major version of wp-lemon
+
 Navigate to your composer.json file in the project root and update it as follows.
 
 ```json
@@ -21,7 +24,8 @@ Navigate to your composer.json file in the project root and update it as follows
 ```
 
 ### Step 2. Update child-theme dependencies
-Navigate to your child theme and open package.json and update the following dependencies to at least these versions. 
+
+Navigate to your child theme and open package.json and update the following dependencies to at least these versions.
 
 > ⚠️
 > Make sure not to delete/overwrite extra dependencies that you may have included.
@@ -44,6 +48,7 @@ Navigate to your child theme and open package.json and update the following depe
 ```
 
 ### Step 3. Update child-theme script
+
 Navigate to your child theme and open package.json and replace the scripts section with the following code.
 
 ```json
@@ -64,9 +69,11 @@ Navigate to your child theme and open package.json and replace the scripts secti
 ```
 
 ### Step 4. Remove iconfont and lato folders
-Navigate to `resources/assets/fonts` and remove the `iconfont` and `lato` folders.  
+
+Navigate to `resources/assets/fonts` and remove the `iconfont` and `lato` folders.
 
 ### Step 5. import new dependencies in app.js
+
 Navigate to resources/assets/scripts/app.js and locate the bootstrap imports at te top. Remove the util import and add the offcanvas import as shown in this code example.
 
 ```js
@@ -76,20 +83,23 @@ Navigate to resources/assets/scripts/app.js and locate the bootstrap imports at 
 + import 'bootstrap/js/dist/offcanvas';
 ```
 
-
 ### Step 6. Run update-parent command
+
 Open a new console in your child theme and run the following command: `yarn run update-parent`
 
 This will update both PHP and node dependencies to their latest versions.
 
 ### Step 7. Run production build
+
 Open a new console in your child theme and run the following command: `yarn run production`
 This will create a fresh build with the new dependencies. If the build fails, please try to debug the error or open a new ticket.
 
 ### Step 8. Check child theme on hooks and actions usage.
-The naming of filters got a massive overhaul. Please double check our [filters chapter](/extend/hooks#filters-inside-wp-lemon) and triple-check if your filters need to be updated and work as intended.
+
+The naming of filters got a massive overhaul. Please double check our [filters chapter](/extend/hooks#filter-examples) and triple-check if your filters need to be updated and work as intended.
 
 ## Visual/Code check
+
 Since this is a new major version please check the build locally with the latest database and media files. Check for any visual differences. If you find a major difference please try to debug or open a ticket.
 
 If you've written custom code based on Swiper or Bootstrap, for example created a new block or a slider that involves on of these libraries, please check out the following migration guides.
@@ -98,4 +108,5 @@ If you've written custom code based on Swiper or Bootstrap, for example created 
 - Please update custom Swipers against https://swiperjs.com/migration-guide
 
 ## Deploy
+
 Please follow the following guide to deploy the update to the production server. [Deploy update!](/deployment/updates#deploy-update)

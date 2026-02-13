@@ -41,6 +41,16 @@ const SEARCH_REPLACE_PATTERNS = [
       search: '\\}/',
       replace: '\\}/',
       description: 'escape curly braces in code blocks'
+   },
+   {
+      search: '\\]\\(([^)]+)\\.md\\)',
+      replace: ']($1)',
+      description: 'Remove .md extension from markdown links'
+   },
+   {
+      search: '\\]\\(migrations/',
+      replace: '](/migrations/',
+      description: 'Fix relative migrations links to absolute paths'
    }
 ];
 
