@@ -41,6 +41,11 @@
     <td><p>Parse a duration string into milliseconds</p>
 </td>
     </tr>
+<tr>
+    <td><a href="#isAdmin">isAdmin()</a> ⇒ <code>boolean</code></td>
+    <td><p>Check if the current page is in the WordPress admin area</p>
+</td>
+    </tr>
 </tbody>
 </table>
 
@@ -200,4 +205,20 @@ Parse a duration string into milliseconds
 ```js
 const durationMs = parseDuration('2 hours');
 console.log(durationMs); // 7200000
+```
+<a name="isAdmin"></a>
+
+## isAdmin() ⇒ <code>boolean</code>
+Check if the current page is in the WordPress admin area
+
+**Kind**: global function  
+**Returns**: <code>boolean</code> - True if in WordPress admin, false otherwise  
+**Api**: <code>function</code>  
+**Example**  
+```js
+import { isAdmin } from 'parentThemeScripts/api/helpers';
+if (isAdmin()) {
+   // Disable certain interactions in admin
+   config.preventClicks = false;
+}
 ```

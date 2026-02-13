@@ -13,13 +13,13 @@ You will be able to retrieve this information from the context in your twig file
 | Name | Return Type | Summary/Returns |
 | --- | --- | --- |
 | <span class="method-name">[add_site_information()](#add_site_information)</span> | <span class="method-type"></span> | <span class="method-description">Static method to add site information from wherever you want.</span> |
-| <span class="method-name">[extend_site_information()](#extend_site_information)</span> | <span class="method-type">`array`</span> | <span class="method-description">This is the main method that is overridden by the child-site class.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> $context The updated Timber context.</span></span> |
-| <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get archive information of singular item.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['id', 'title', 'url/link', 'status']</span></span> |
-| <span class="method-name">[get_site_information()](#get_site_information)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get specific site information.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> $value     The value retrieved from the site information.</span></span> |
-| <span class="method-name">[get_special_page()](#get_special_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get special page information.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['id', 'title', 'url/link'] or false if key does not exist.</span></span> |
-| <span class="method-name">[is_archive_page()](#is_archive_page)</span> | <span class="method-type">`bool`</span> | <span class="method-description">Check if the current page is an archive page for a specific post type.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> True if the current page is an archive page for the specified post type, false otherwise.</span></span> |
+| <span class="method-name">[extend_site_information()](#extend_site_information)</span> | <span class="method-type">`array`</span> | <span class="method-description">This is the main method that is overridden by the child-site class.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> $context The updated Timber context.</span></span> |
+| <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get archive information of singular item.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['id', 'title', 'url/link', 'status']</span></span> |
+| <span class="method-name">[get_site_information()](#get_site_information)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get specific site information.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> $value     The value retrieved from the site information.</span></span> |
+| <span class="method-name">[get_special_page()](#get_special_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get special page information.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['id', 'title', 'url/link'] or false if key does not exist.</span></span> |
+| <span class="method-name">[is_archive_page()](#is_archive_page)</span> | <span class="method-type">`bool`</span> | <span class="method-description">Check if the current page is an archive page for a specific post type.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> True if the current page is an archive page for the specified post type, false otherwise.</span></span> |
 | <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type"></span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
-| <span class="method-name">[is_special_page()](#is_special_page)</span> | <span class="method-type">`bool`</span> | <span class="method-description">Check if the current page is a special page.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> True if the current page is a special page, false otherwise.</span></span> |
+| <span class="method-name">[is_special_page()](#is_special_page)</span> | <span class="method-type">`bool`</span> | <span class="method-description">Check if the current page is a special page.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> True if the current page is a special page, false otherwise.</span></span> |
 
 </div>
 
@@ -141,7 +141,7 @@ Get special page information.
 
 Use in conjunction with the special pages filter to setup special pages and then retrieve them via this method.
 
-**link** <https://studio-lemon.github.io/wp-lemon-docs/extend/special-pages>
+**see** [](https://studio-lemon.github.io/wp-lemon-docs/extend/special-pages)
 
 **since** 5.36.0
 

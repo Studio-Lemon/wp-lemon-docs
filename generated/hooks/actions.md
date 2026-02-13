@@ -144,7 +144,7 @@ Fires before the body tag closes.
 
 **see** layouts/app.twig
 
-## wp-lemon/action/block/node-latest/{$card\_type}/loop/before
+## "wp-lemon/action/block/node-latest/{$card\_type}/loop/before
 
 Fires before the node-latest loop for a specific card type.
 
@@ -152,7 +152,7 @@ Fires before the node-latest loop for a specific card type.
 
 **see** blocks/node-latest/node-latest.twig
 
-## wp-lemon/action/block/node-latest/{$card\_type}/loop/after
+## "wp-lemon/action/block/node-latest/{$card\_type}/loop/after
 
 Fires after the node-latest loop for a specific card type.
 
@@ -175,7 +175,7 @@ Fires before any block renders.
 
 </div>
 
-## wp-lemon/action/block/{$slug}/before
+## "wp-lemon/action/block/{$slug}/before
 
 Fires before a specific block renders.
 
@@ -207,7 +207,7 @@ Fires at the start of any block, right after the opening div.
 
 </div>
 
-## wp-lemon/action/block/{$slug}/start
+## "wp-lemon/action/block/{$slug}/start
 
 Fires at the start of a specific block, right after the opening div.
 
@@ -239,7 +239,7 @@ Fires at the end of any block, just before the closing tag.
 
 </div>
 
-## wp-lemon/action/block/{$slug}/end
+## "wp-lemon/action/block/{$slug}/end
 
 Fires at the end of a specific block just before the closing tag.
 
@@ -271,7 +271,7 @@ Fires after any block renders.
 
 </div>
 
-## wp-lemon/action/block/{$slug}/after
+## "wp-lemon/action/block/{$slug}/after
 
 Fires after a specific block renders.
 
@@ -304,7 +304,7 @@ function render_hero_banner($fields)
 add_action('wp-lemon/action/block/hero-image/after', __NAMESPACE__ . '\render_hero_banner', 10, 1);
 ```
 
-## wp-lemon/action/card/{$card\_type}/before
+## "wp-lemon/action/card/{$card\_type}/before
 
 Fires before a card of a specific type renders.
 
@@ -312,7 +312,7 @@ Fires before a card of a specific type renders.
 
 **see** components/cards/crd-wrap.twig
 
-## wp-lemon/action/card/{$card\_type}/after
+## "wp-lemon/action/card/{$card\_type}/after
 
 Fires after a card of a specific type renders.
 
@@ -320,7 +320,7 @@ Fires after a card of a specific type renders.
 
 **see** components/cards/crd-wrap.twig
 
-## wp-lemon/action/block/node-overview/{$card\_type}/loop/before
+## "wp-lemon/action/block/node-overview/{$card\_type}/loop/before
 
 Fires before the node-overview loop for a specific card type.
 
@@ -328,7 +328,7 @@ Fires before the node-overview loop for a specific card type.
 
 **see** components/archive-loop.twig
 
-## wp-lemon/action/block/node-overview/{$card\_type}/loop/after
+## "wp-lemon/action/block/node-overview/{$card\_type}/loop/after
 
 Fires after the node-overview loop for a specific card type.
 
@@ -400,7 +400,7 @@ Fires after the footer inside content.
 
 **see** partials/footer.twig
 
-## wp-lemon/action/entry-header/{$post\_type}/title/before
+## "wp-lemon/action/entry-header/{$post\_type}/title/before
 
 Fires before the entry header title for a specific post type.
 
@@ -408,7 +408,7 @@ Fires before the entry header title for a specific post type.
 
 **see** partials/entry-header.twig
 
-## wp-lemon/action/entry-header/{$post\_type}/title/after
+## "wp-lemon/action/entry-header/{$post\_type}/title/after
 
 Fires after the entry header title for a specific post type.
 
@@ -416,7 +416,7 @@ Fires after the entry header title for a specific post type.
 
 **see** partials/entry-header.twig
 
-## wp-lemon/action/entry-header/{$post\_type}/tags/after
+## "wp-lemon/action/entry-header/{$post\_type}/tags/after
 
 Fires after the entry header tags for a specific post type.
 
@@ -424,7 +424,7 @@ Fires after the entry header tags for a specific post type.
 
 **see** partials/entry-header.twig
 
-## wp-lemon/action/entry-header/{$post\_type}/picture/after
+## "wp-lemon/action/entry-header/{$post\_type}/picture/after
 
 Fires after the entry header picture for a specific post type.
 
