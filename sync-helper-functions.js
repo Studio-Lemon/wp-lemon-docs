@@ -13,6 +13,38 @@ const fs = require('fs');
 const path = require('path');
 
 /**
+ * Search and replace patterns to apply to all content
+ * Add new patterns here - they will be applied in order
+ */
+const SEARCH_REPLACE_PATTERNS = [
+   {
+      search: '</p>\n</td>',
+      replace: '</p></td>',
+      description: 'Remove newline between </p> and </td>'
+   },
+   {
+      search: '<br>',
+      replace: '<br/>',
+      description: 'Replace <br> with self-closing <br/>'
+   },
+   {
+      search: '## "wp-lemon',
+      replace: '## wp-lemon',
+      description: 'Remove quote and trailing space from wp-lemon headings'
+   },
+   {
+      search: '\\{\\$',
+      replace: '\\{$',
+      description: 'escape curly braces in code blocks'
+   },
+   {
+      search: '\\}/',
+      replace: '\\}/',
+      description: 'escape curly braces in code blocks'
+   }
+];
+
+/**
  * Configuration mapping source files to their destination
  * Each entry contains:
  * - source: path to the generated markdown file
@@ -22,32 +54,32 @@ const path = require('path');
  */
 const FILE_MAPPINGS = [
    {
-      source: 'src/generated/helper-functions.md',
-      dest: 'src/docs/reference/helper-functions.mdx',
+      source: 'generated/helper-functions.md',
+      dest: 'docs/reference/helper-functions.mdx',
       frontmatter: {
          title: 'Helper Functions'
       },
       introText: 'The following function documentation is automatically generated.'
    },
    {
-      source: 'src/generated/query-functions.md',
-      dest: 'src/docs/reference/query-functions.mdx',
+      source: 'generated/query-functions.md',
+      dest: 'docs/reference/query-functions.mdx',
       frontmatter: {
          title: 'Query Functions'
       },
       introText: 'The following function documentation is automatically generated.'
    },
    {
-      source: 'src/generated/javascript.md',
-      dest: 'src/docs/reference/javascript-functions.mdx',
+      source: 'generated/javascript.md',
+      dest: 'docs/reference/javascript-functions.mdx',
       frontmatter: {
          title: 'JavaScript Functions'
       },
       introText: 'The following function documentation is automatically generated.'
    },
    {
-      source: 'src/generated/hooks/filters.md',
-      dest: 'src/docs/reference/hooks/filters.mdx',
+      source: 'generated/hooks/filters.md',
+      dest: 'docs/reference/hooks/filters.mdx',
       frontmatter: {
          title: 'Filter hooks reference',
          description: 'PHP Filters of wp-lemon'
@@ -55,8 +87,8 @@ const FILE_MAPPINGS = [
       introText: 'The following filter documentation is automatically generated.'
    },
    {
-      source: 'src/generated/hooks/actions.md',
-      dest: 'src/docs/reference/hooks/actions.mdx',
+      source: 'generated/hooks/actions.md',
+      dest: 'docs/reference/hooks/actions.mdx',
       frontmatter: {
          title: 'Action hooks reference',
          description: 'PHP Actions of wp-lemon'
@@ -64,8 +96,8 @@ const FILE_MAPPINGS = [
       introText: 'The following filter documentation is automatically generated.'
    },
    {
-      source: 'src/generated/reference/wp_lemon-classes-lemonpost.md',
-      dest: 'src/docs/reference/classes/lemon-post.mdx',
+      source: 'generated/reference/wp_lemon-classes-lemonpost.md',
+      dest: 'docs/reference/classes/lemon-post.mdx',
       frontmatter: {
          title: 'LemonPost',
          description: 'LemonPost class'
@@ -73,8 +105,8 @@ const FILE_MAPPINGS = [
       introText: null
    },
    {
-      source: 'src/generated/reference/wp_lemon-classes-generic_ajax_query.md',
-      dest: 'src/docs/reference/classes/generic-ajax-query.mdx',
+      source: 'generated/reference/wp_lemon-classes-generic_ajax_query.md',
+      dest: 'docs/reference/classes/generic-ajax-query.mdx',
       frontmatter: {
          title: 'Generic_Ajax_Query',
          description: 'Generic_Ajax_Query class'
@@ -82,8 +114,8 @@ const FILE_MAPPINGS = [
       introText: null
    },
    {
-      source: 'src/generated/reference/wp_lemon-classes-wp_lemon_site.md',
-      dest: 'src/docs/reference/classes/wp-lemon-site.mdx',
+      source: 'generated/reference/wp_lemon-classes-wp_lemon_site.md',
+      dest: 'docs/reference/classes/wp-lemon-site.mdx',
       frontmatter: {
          title: 'WP_Lemon_Site',
          description: 'WP_Lemon_Site class'
@@ -91,8 +123,8 @@ const FILE_MAPPINGS = [
       introText: null
    },
    {
-      source: 'src/generated/twig-macros.md',
-      dest: 'src/docs/reference/twig-macros.mdx',
+      source: 'generated/twig-macros.md',
+      dest: 'docs/reference/twig-macros.mdx',
       frontmatter: {
          title: 'Twig Macros',
          description: 'Twig macros reference'
@@ -100,8 +132,8 @@ const FILE_MAPPINGS = [
       introText: 'The following Twig macros documentation is automatically generated.'
    },
    {
-      source: 'src/generated/twig-functions.md',
-      dest: 'src/docs/reference/twig-functions.mdx',
+      source: 'generated/twig-functions.md',
+      dest: 'docs/reference/twig-functions.mdx',
       frontmatter: {
          title: 'Twig Functions',
          description: 'Twig functions reference'
@@ -109,8 +141,8 @@ const FILE_MAPPINGS = [
       introText: 'The following Twig functions documentation is automatically generated.'
    },
    {
-      source: 'src/generated/twig-filters.md',
-      dest: 'src/docs/reference/twig-filters.mdx',
+      source: 'generated/twig-filters.md',
+      dest: 'docs/reference/twig-filters.mdx',
       frontmatter: {
          title: 'Twig Filters',
          description: 'Twig filters reference'
@@ -118,6 +150,25 @@ const FILE_MAPPINGS = [
       introText: 'The following Twig filters documentation is automatically generated.'
    }
 ];
+
+/**
+ * Apply all search/replace patterns to content
+ */
+function applySearchReplace(content) {
+   let processedContent = content;
+
+   for (const pattern of SEARCH_REPLACE_PATTERNS) {
+      const regex = new RegExp(pattern.search, 'g');
+      const beforeCount = (processedContent.match(regex) || []).length;
+      processedContent = processedContent.replace(regex, pattern.replace);
+
+      if (beforeCount > 0) {
+         console.log(`   🔧 Applied: ${pattern.description} (${beforeCount} occurrence(s))`);
+      }
+   }
+
+   return processedContent;
+}
 
 /**
  * Generate YAML frontmatter from an object
@@ -145,7 +196,10 @@ function processFile(mapping) {
    }
 
    // Read the source content
-   const sourceContent = fs.readFileSync(sourcePath, 'utf8');
+   let sourceContent = fs.readFileSync(sourcePath, 'utf8');
+
+   // Apply search/replace patterns
+   sourceContent = applySearchReplace(sourceContent);
 
    // Build the destination content
    const parts = [generateFrontmatter(mapping.frontmatter)];
