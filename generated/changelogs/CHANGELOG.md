@@ -1,4 +1,3 @@
-
 ## 5.55.2 - 05 February 2026
 
 ### 🐛 Bug Fixes
@@ -547,10 +546,10 @@
 
 - [**breaking**] Fix function imports after update of sass
 
-    to fix this in your child theme, search replace the following:
+  to fix this in your child theme, search replace the following:
 
-    Search for: @use "~parentThemeStyles/02-tools/functions" as \*;
-    Replace with: @import "~parentThemeStyles/02-tools/functions";
+  Search for: @use "~parentThemeStyles/02-tools/functions" as \*;
+  Replace with: @import "~parentThemeStyles/02-tools/functions";
 
 ## 5.42.0 - 03 July 2025
 
@@ -1053,7 +1052,7 @@
 ### 🚜 Refactor
 
 - [**breaking**] Deprecate get_share_platforms in favor of get_shares to prevent mixing up functionality. When using wp-lemon/filter/share-context or wp-lemon/filter/socials-context its no longer recommended to change the icons via the 'icon' key but by setting only the class via 'icon_class'.
-- [**breaking**] Move button macro from helpers to elements, search for '.button(' in your codebase and add a import path called '{% import 'macros/elements.twig' as elements %}' to the top of the file. and change the prefix of .button to elements.button
+- [**breaking**] Move button macro from helpers to elements, search for '.button(' in your codebase and add a import path called `` `{% import 'macros/elements.twig' as elements %}` `` to the top of the file. and change the prefix of .button to elements.button
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -1720,7 +1719,7 @@ This reverts commit 2e9a3a3b48bebf29df7b044cea08288bbb2cf183.
 
 - _(php/css)_ [**breaking**] More consistent archive classes in menu:
   current-active-archive renamed to is-archive--active
-  archive-{{name}} renamed to is-archive--{{name}}
+  `archive-{{name}}` renamed to `is-archive--{{name}}`
   additional class is-archive added
 
 BREAKING CHANGE: classes have been changed, please check your codebase if you rely on these classes and if so, change accordingly.
@@ -1957,36 +1956,36 @@ BREAKING CHANGE: classes have been changed, please check your codebase if you re
 _Release Date - 13 november 2023_
 
 - 🐛 **Bugs Fixed**
-    - PHP - Temporary fix added for Timber 2.0.0 bug where the wrong twig files would be loaded when you want to overwrite a twig file from the parent theme.
-    - SCSS - Fix section background color in contrast mode.
+  - PHP - Temporary fix added for Timber 2.0.0 bug where the wrong twig files would be loaded when you want to overwrite a twig file from the parent theme.
+  - SCSS - Fix section background color in contrast mode.
 
 ## 5.0.1:
 
 _Release Date - 13 november 2023_
 
 - ✨ **Enhanced**
-    - Workflow - run changelog sync separately from build
+  - Workflow - run changelog sync separately from build
 - 🐛 **Bugs Fixed**
-    - PHP - Update return type of query API functions to be more specific
-    - PHP - load correct dependencies for lock-reusable-block.js
-    - PHP - Fix array_map function in faq-highlight.php block
-    - PHP - Merge in full color settings from palette.json
-    - Twig - fix deprecated Image call in media.twig
+  - PHP - Update return type of query API functions to be more specific
+  - PHP - load correct dependencies for lock-reusable-block.js
+  - PHP - Fix array_map function in faq-highlight.php block
+  - PHP - Merge in full color settings from palette.json
+  - Twig - fix deprecated Image call in media.twig
 
 ## 5.0.0:
 
 _Release Date - 10 november 2023_
 
 - ⛏️ **Breaking**
-    - JS `bp_site` is renamed to `wpLemon` to be more consistent with the rest of the codebase. Please update your own javascript functions accordingly.
-    - Minimal PHP version is now 8.1
-    - Timber 2.0 introduces breaking changes. Most of them are handled by wp-lemon but please check your child theme `Timber` calls to see if they are still valid. Also check your debug.log for any errors or deprecation notices.
-    - Swiper is updated to 11.x
+  - JS `bp_site` is renamed to `wpLemon` to be more consistent with the rest of the codebase. Please update your own javascript functions accordingly.
+  - Minimal PHP version is now 8.1
+  - Timber 2.0 introduces breaking changes. Most of them are handled by wp-lemon but please check your child theme `Timber` calls to see if they are still valid. Also check your debug.log for any errors or deprecation notices.
+  - Swiper is updated to 11.x
 - 💡 **Newly added**
-    - wp-lemon now uses Timber 2.0 which is way more modern then Timber 1. See [upgrade guide](https://timber.github.io/docs/v2/upgrade-guides/2.0/). We updated wp-lemon to be fully compatible with Timber 2.0
+  - wp-lemon now uses Timber 2.0 which is way more modern then Timber 1. See [upgrade guide](https://timber.github.io/docs/v2/upgrade-guides/2.0/). We updated wp-lemon to be fully compatible with Timber 2.0
 
 - ✨ **Enhanced**
-    - Frontend translations are now handles via wp_localize_script instead of i18n.js. This leads to ~600kb less files loaded on the frontend.
+  - Frontend translations are now handles via wp_localize_script instead of i18n.js. This leads to ~600kb less files loaded on the frontend.
 - 📋 **Docs**
-    - Documentation is updated
-    - Changelogs are now generated automatically for all major versions. See [changelog](https://studio-lemon.github.io/wp-lemon-docs/changelog)
+  - Documentation is updated
+  - Changelogs are now generated automatically for all major versions. See [changelog](https://studio-lemon.github.io/wp-lemon-docs/changelog)
