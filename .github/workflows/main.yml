@@ -12,10 +12,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
       - run: npm ci
-      
+
       - run: npm run build-cli
       - name: Sync documentation files
         run: npm run sync-docs
@@ -24,7 +24,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/docs/reference
+          git add docs/reference
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
