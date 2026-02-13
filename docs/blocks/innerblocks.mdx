@@ -1,0 +1,133 @@
+---
+title: Innerblocks
+description: How to use InnerBlocks in wp-lemon
+---
+
+By using `InnerBlocks`, you can nest blocks within other blocks.
+This allows you to create more complex and flexible layouts by placing blocks inside parent blocks.
+
+> **Note:**
+> A single block can only contain one `InnerBlocks` component.
+
+## Building your template
+
+When using `InnerBlocks` it's common to create a template for the `InnerBlocks`.
+This will prefill the `InnerBlocks `component with blocks within the template when inserted and will make it easier to use for you and your clients.
+In wp-lemon we do this inside the `HighGround\Bulldozer\AbstractBlockRenderer::block_context` method.
+
+```php
+public function block_context($context): array
+{
+	$template = [
+		[
+			'core/heading',
+			[
+				'placeholder' => __('Add a title', 'wp-lemon-child'),
+				'level'       => 3,
+			],
+		],
+		[
+			'core/paragraph',
+			[
+				'placeholder' => __('Add some text', 'wp-lemon-child'),
+			],
+		],
+	];
+
+	$args = [
+		'InnerBlocks' => self::create_inner_blocks(template: $template),
+	];
+
+	return array_merge($context, $args);
+}
+```
+
+In the example above we've used a heading and a paragraph block.
+Ofcourse, you can add other core blocks or even wp-lemon blocks. You can do this like so:
+
+```php
+$template = [
+	['acf/content-card'],
+];
+```
+
+## Displaying your template
+
+Now place the `{{ InnerBlocks }}` tag in your twig block to see the block inserter in the backend and display the innercontent in the frontend.
+
+```twig
+{% extends 'layouts/block-wrap.twig' %}
+
+{% block block__inner %}
+    {{ InnerBlocks }}
+{% endblock %}
+```
+
+## Template properties
+
+By adding extra parameters in the `create_inner_blocks` function we can add some extra functionality.
+In the list below you can see each parameter with it's functionality in the right order.
+
+| Parameter       | Function                                                                                                                                                                                |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| $allowed_blocks | This parameter allows you to make a selection of blocks that are allowed in the `InnerBlocks`                                                                                           |
+| $template       | This parameter refers to your innerblocks template                                                                                                                                      |
+| $classes        | This parameter can be used to give custom classnames to your innerblocks container                                                                                                      |
+| $orientation    | Use this parameters to change the orientation of the arrow to move the child blocks left/right or up down. This is useful in column layouts. Can be `horizontal`, `vertical` or `false` |
+| $templatelock   | This parameter gives the ability to lock down the template so no changes can be made                                                                                                    |
+
+> **Note:**
+> If a parameter is not given it will default to false.
+
+### Allowed blocks
+
+The `$allowed_blocks` parameter allows you to make a selection of blocks that are allowed in the innerblocks.
+We used the `card-grid` block from wp-lemon as an example.
+In this case the we only wanted to allow specific cards we've made.
+We did this like so:
+
+```php
+public function block_context($context): array
+{
+	$template = [
+		['acf/content-card'],
+	];
+
+	$allowed_blocks = ['acf/content-card', 'acf/image-card', 'acf/price-card'];
+
+	$args = [
+		'InnerBlocks' => self::create_inner_blocks(allowed_blocks: $allowed_blocks, template: $template),
+	];
+
+	return array_merge($context, $args);
+}
+```
+
+In the example above we've added it as a parameter in the `create_inner_blocks` function. Note: all wp-lemon blocks that use `InnerBlocks` have a filter to expand/tighten the child blocks allowed.
+You can find more documentation on this right [here](/extend/hooks#filter-examples).
+
+### Classes
+
+To add custom classes to your innerblocks use the third parameter. You can put all the classnames in a string separated by a space like so:
+
+```php
+$args = [
+    'InnerBlocks' => self::create_inner_blocks(template: $template, classes: 'classname classname'),
+];
+```
+
+### Orientation
+
+Orientation can be used to display the move icons for the child blocks in a left/right or a top/down orientation. This is useful for block layouts were child blocks are next to each other. In that case you would use `horizontal`
+
+### Templatelock
+
+The fifth and last parameter gives the ability to lock down the template. By default this parameter is false,
+meaning the template will show in your WordPress editor, but you don't have to stick to it.
+By setting it on true you'll lock down the template so no changes can be made. This will look like this:
+
+```php
+$args = [
+    'InnerBlocks' => self::create_inner_blocks(template: $template, classes: 'classname classname', templatelock: true),
+];
+```

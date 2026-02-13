@@ -1,0 +1,223 @@
+---
+title: JavaScript Functions
+---
+
+The following function documentation is automatically generated.
+
+## Functions
+
+<table>
+  <thead>
+    <tr>
+      <th>Global</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td><a href="#scrollNextSectionListener">scrollNextSectionListener(el, parentSelector)</a> ⇒</td>
+    <td><p>Bind this function to an element to scroll to the next sibling element by defining your desired parent element.</p></td>
+    </tr>
+<tr>
+    <td><a href="#findParentBlock">findParentBlock(el, parent)</a> ⇒ <code>Element</code></td>
+    <td></td>
+    </tr>
+<tr>
+    <td><a href="#trigger">trigger(eventName, module, details)</a></td>
+    <td><p>Function to fire custom events</p></td>
+    </tr>
+<tr>
+    <td><a href="#hasCookie">hasCookie(name)</a> ⇒ <code>boolean</code></td>
+    <td><p>Check if a cookie exists</p></td>
+    </tr>
+<tr>
+    <td><a href="#getCookie">getCookie(name)</a> ⇒ <code>string</code> | <code>null</code></td>
+    <td><p>Get the value of a cookie by name</p></td>
+    </tr>
+<tr>
+    <td><a href="#setCookie">setCookie(name, duration, [value])</a> ⇒ <code>void</code></td>
+    <td><p>Set a cookie with a specified expiration time</p></td>
+    </tr>
+<tr>
+    <td><a href="#parseDuration">parseDuration(duration)</a> ⇒ <code>number</code></td>
+    <td><p>Parse a duration string into milliseconds</p></td>
+    </tr>
+<tr>
+    <td><a href="#isAdmin">isAdmin()</a> ⇒ <code>boolean</code></td>
+    <td><p>Check if the current page is in the WordPress admin area</p></td>
+    </tr>
+</tbody>
+</table>
+
+<a name="scrollNextSectionListener"></a>
+
+## scrollNextSectionListener(el, parentSelector) ⇒
+Bind this function to an element to scroll to the next sibling element by defining your desired parent element.
+
+**Kind**: global function  
+**Returns**: void  
+**Api**: <code>function</code>  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| el | <code>Element</code> |  | The element that fired the event |
+| parentSelector | <code>string</code> | <code>&quot;acf-block&quot;</code> | The class of the parent element to find, default is 'acf-block' |
+
+**Example**  
+```js
+import { scrollNextSectionListener } from 'parentThemeScripts/api/helpers';
+const nextButton = document.querySelectorAll('.js-scroll-next');
+if (!nextButton) return;
+  nextButton.forEach((button) => {
+  scrollNextSectionListener(button, 'custom-parent-class');
+ });
+```
+<a name="findParentBlock"></a>
+
+## findParentBlock(el, parent) ⇒ <code>Element</code>
+**Kind**: global function  
+**Returns**: <code>Element</code> - the parent element with the class .acf-block  
+**Api**: <code>function</code> findParentBlock(el) findParentBlock  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| el | <code>Element</code> |  | the element that fired the event |
+| parent | <code>string</code> | <code>&quot;acf-block&quot;</code> | the class of the parent element to find, default is 'acf-block' |
+
+<a name="trigger"></a>
+
+## trigger(eventName, module, details)
+Function to fire custom events
+
+**Kind**: global function  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| eventName | <code>string</code> |  | event name prefixed with namespace |
+| module | <code>string</code> |  | module name |
+| details | <code>object</code> | <code>false</code> | data to pass to event |
+
+**Example**  
+You can listen for events triggered by this function by using the following syntax:
+```js
+import { trigger } from 'parentThemeScripts/api/helpers';
+trigger('my_event', 'my_module', { foo: 'bar' });
+```
+**Example**  
+```js
+// Listening for the event
+document.addEventListener('wp-lemon/my_module/my_event', function(e) {
+  console.log(e.detail); // { foo: 'bar' }
+});
+```
+<a name="hasCookie"></a>
+
+## hasCookie(name) ⇒ <code>boolean</code>
+Check if a cookie exists
+
+**Kind**: global function  
+**Returns**: <code>boolean</code> - True if the cookie exists, false otherwise  
+**Api**: <code>function</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The name of the cookie to check |
+
+**Example**  
+```js
+import { hasCookie } from 'parentThemeScripts/api/helpers';
+if (hasCookie('my_cookie')) {
+   // Cookie exists
+}
+```
+<a name="getCookie"></a>
+
+## getCookie(name) ⇒ <code>string</code> \| <code>null</code>
+Get the value of a cookie by name
+
+**Kind**: global function  
+**Returns**: <code>string</code> \| <code>null</code> - The cookie value, or null if the cookie does not exist  
+**Api**: <code>function</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The name of the cookie to retrieve |
+
+**Example**  
+```js
+import { getCookie } from 'parentThemeScripts/api/helpers';
+const value = getCookie('user_preference');
+if (value) {
+   console.log(value); // e.g., 'dark-mode'
+}
+```
+**Example**  
+```js
+import { getCookie } from 'parentThemeScripts/api/helpers';
+// Use with a default value
+const theme = getCookie('theme') || 'light';
+```
+<a name="setCookie"></a>
+
+## setCookie(name, duration, [value]) ⇒ <code>void</code>
+Set a cookie with a specified expiration time
+
+**Kind**: global function  
+**Api**: <code>function</code>  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| name | <code>string</code> |  | The name of the cookie |
+| duration | <code>string</code> |  | The duration string (e.g., '2 hours', '1 day', '3 months') |
+| [value] | <code>string</code> | <code>&quot;&#x27;1&#x27;&quot;</code> | The value to store in the cookie |
+
+**Example**  
+```js
+// Set a cookie for 2 hours
+import { setCookie } from 'parentThemeScripts/api/helpers';
+setCookie('my_cookie', '2 hours');
+```
+**Example**  
+```js
+import { setCookie } from 'parentThemeScripts/api/helpers';
+// Set a cookie for 1 day with custom value
+setCookie('user_preference', '1 day', 'dark-mode');
+```
+**Example**  
+```js
+import { setCookie } from 'parentThemeScripts/api/helpers';
+// Set a cookie for 3 months
+setCookie('consent', '3 months', 'accepted');
+```
+<a name="parseDuration"></a>
+
+## parseDuration(duration) ⇒ <code>number</code>
+Parse a duration string into milliseconds
+
+**Kind**: global function  
+**Returns**: <code>number</code> - The duration in milliseconds  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| duration | <code>string</code> | The duration string (e.g., '2 hours', '1 day', '3 months') |
+
+**Example**  
+```js
+const durationMs = parseDuration('2 hours');
+console.log(durationMs); // 7200000
+```
+<a name="isAdmin"></a>
+
+## isAdmin() ⇒ <code>boolean</code>
+Check if the current page is in the WordPress admin area
+
+**Kind**: global function  
+**Returns**: <code>boolean</code> - True if in WordPress admin, false otherwise  
+**Api**: <code>function</code>  
+**Example**  
+```js
+import { isAdmin } from 'parentThemeScripts/api/helpers';
+if (isAdmin()) {
+   // Disable certain interactions in admin
+   config.preventClicks = false;
+}
+```
