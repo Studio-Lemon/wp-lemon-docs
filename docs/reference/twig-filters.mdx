@@ -28,7 +28,6 @@ Converts email addresses to HTML entities to help prevent email address harvesti
 This filter wraps the WordPress `antispambot()` function for use in Twig templates.
 
 **Parameters:**
-
 - `text` (string) - The email address to encode
 
 **Returns:** `string|false` - The encoded email address, or false if empty
@@ -75,7 +74,6 @@ This filter creates a srcset attribute value with WebP versions of images at dif
 **Since:** 4.9.2
 
 **Parameters:**
-
 - `img` (Timber\Image) - The image object
 
 **Returns:** `string|false` - The srcset string with WebP images, or false if unavailable
@@ -84,15 +82,15 @@ This filter creates a srcset attribute value with WebP versions of images at dif
 
 ```twig
 {# Basic usage #}
-<img
-    src="{{ image.src }}"
+<img 
+    src="{{ image.src }}" 
     srcset="{{ image|towebpSrcset }}"
     sizes="(max-width: 768px) 100vw, 50vw"
     alt="{{ image.alt }}">
 
 {# With picture element for better control #}
 <picture>
-    <source
+    <source 
         type="image/webp"
         srcset="{{ image|towebpSrcset }}"
         sizes="(max-width: 768px) 100vw, 50vw">
@@ -102,7 +100,7 @@ This filter creates a srcset attribute value with WebP versions of images at dif
 {# In a card loop #}
 {% for post in posts %}
     {% if post.thumbnail %}
-        <img
+        <img 
             src="{{ post.thumbnail.src('medium') }}"
             srcset="{{ post.thumbnail|towebpSrcset }}"
             alt="{{ post.title }}">
@@ -112,7 +110,7 @@ This filter creates a srcset attribute value with WebP versions of images at dif
 {# Hero image with WebP #}
 {% set hero = Image(fields.hero_image) %}
 <div class="hero" style="background-image: url({{ hero.src('large') }})">
-    <img
+    <img 
         srcset="{{ hero|towebpSrcset }}"
         sizes="100vw"
         alt="{{ fields.hero_alt_text }}">
@@ -132,7 +130,6 @@ This filter allows you to use deprecated filters while properly logging deprecat
 **Since:** 5.3.0
 
 **Parameters:**
-
 - `value` (mixed) - The value to be filtered
 - `filter_name` (string) - The name of the deprecated filter
 - `args` (array) - Arguments to pass to the filter
@@ -149,9 +146,9 @@ This filter allows you to use deprecated filters while properly logging deprecat
 
 {# With multiple arguments #}
 {% set content = post.content|apply_filters_deprecated(
-    'wp-lemon/deprecated/content',
-    [post.ID, post.type],
-    '4.5.0',
+    'wp-lemon/deprecated/content', 
+    [post.ID, post.type], 
+    '4.5.0', 
     'wp-lemon/filter/content'
 ) %}
 
@@ -175,7 +172,6 @@ This filter formats phone numbers by adding spaces at specific positions, useful
 **Since:** 3.33.1
 
 **Parameters:**
-
 - `phone` (string) - The phone number to format
 - `pattern` (array) - Array of integers defining where to add spaces. Default: `[2, 2, 2, 2]`
 
@@ -209,7 +205,6 @@ This filter formats phone numbers by adding spaces at specific positions, useful
 ```
 
 **Common Patterns:**
-
 - `[2, 2, 2, 2]` - Default: "06 12 34 56 78"
 - `[2, 3, 3]` - Mobile: "06 123 456 78"
 - `[3, 2, 3, 3]` - International mobile: "+31 61 234 5678"
@@ -227,7 +222,6 @@ This filter is particularly useful for converting ACF textarea fields into array
 **Since:** 5.12.3
 
 **Parameters:**
-
 - `text` (string) - The textarea content with line breaks
 
 **Returns:** `array|false` - Array of lines, or false if empty
@@ -307,7 +301,6 @@ This filter is useful for displaying clean website names in links or references.
 **Since:** 5.55.0
 
 **Parameters:**
-
 - `url` (string) - The URL to convert
 
 **Returns:** `string` - The website name without protocol and trailing slash
@@ -363,7 +356,6 @@ Capitalize the first character of a string.
 This filter wraps PHP's `ucfirst()` function for use in Twig templates.
 
 **Parameters:**
-
 - `text` (string) - The string to capitalize
 
 **Returns:** `string` - The string with the first character capitalized
@@ -408,7 +400,7 @@ This filter wraps PHP's `ucfirst()` function for use in Twig templates.
 
 ## See Also
 
-- [Twig Functions](twig-functions.mdx) - Custom Twig functions
-- [Helper Functions](api-functions.mdx) - PHP helper functions
-- [Action Hooks](hooks/actions.mdx) - Available action hooks
-- [Filter Hooks](hooks/filters.mdx) - Available filter hooks
+- [Twig Functions](twig-functions.md) - Custom Twig functions
+- [Helper Functions](helper-functions.md) - PHP helper functions
+- [Action Hooks](hooks/actions.md) - Available action hooks
+- [Filter Hooks](hooks/filters.md) - Available filter hooks

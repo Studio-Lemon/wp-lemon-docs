@@ -45,7 +45,6 @@ Import: `{% import 'macros/elements.twig' as elements %}`
 Renders a heading element with optional link wrapper.
 
 **Parameters:**
-
 - `heading` (object) - The heading configuration
   - `title` (string) - The heading text content
   - `level` (string) - The heading level (1-6), defaults to '2'
@@ -97,11 +96,10 @@ Renders a heading element with optional link wrapper.
 Renders an HTML anchor element styled as a button with optional color variant.
 
 **Parameters:**
-
 - `link` (array) - Link object containing:
   - `url` (string) - The href destination
   - `title` (string) - The link text and title attribute
-  - `target` (string, optional) - The target attribute (e.g., '\_blank')
+  - `target` (string, optional) - The target attribute (e.g., '_blank')
 - `color` (string, optional) - Color variant class name
 
 **Returns:** `string` - HTML anchor element with button styling, or empty if link is empty
@@ -148,7 +146,6 @@ Import: `{% import 'macros/helpers.twig' as helpers %}`
 Generates AOS (Animate On Scroll) data attributes for elements.
 
 **Parameters:**
-
 - `no_animation` (bool) - Flag to disable animation
 - `animation_name` (string) - Name of the animation (e.g., 'fade', 'slide-up', 'zoom-in'). Use 'none' to disable
 - `timeout` (int|null) - Optional delay in milliseconds before animation starts
@@ -202,7 +199,6 @@ Generates AOS (Animate On Scroll) data attributes for elements.
 Renders backend notification messages in the block editor.
 
 **Parameters:**
-
 - `notification` (object)
   - `title` (string) - Notification title
   - `message` (string) - Notification message
@@ -257,7 +253,6 @@ Renders backend notification messages in the block editor.
 Renders a TODO item which links to a project board. Used for development purposes.
 
 **Parameters:**
-
 - `link` (string) - The URL to the task in the project board
 - `description` (string) - Description of the TODO item
 
@@ -299,7 +294,6 @@ Import: `{% import 'macros/media.twig' as media %}`
 Renders a responsive picture element with WebP support, focal point positioning, and lazy loading.
 
 **Parameters:**
-
 - `image` (int|object) - Image ID or image object
 - `args` (object) - Configuration arguments:
   - `picture_class` (string) - CSS class(es) for the picture wrapper
@@ -380,7 +374,6 @@ Renders a responsive picture element with WebP support, focal point positioning,
 Renders an HTML5 video element with configurable attributes.
 
 **Parameters:**
-
 - `src` (string) - The source URL of the video file
 - `class` (string) - CSS classes to apply to the video element
 - `poster_id` (int) - WordPress attachment ID for the poster/thumbnail image
@@ -433,7 +426,6 @@ Renders an HTML5 video element with configurable attributes.
 ```
 
 **Note:** The video element includes:
-
 - `autoPlay` - Automatically starts playing
 - `muted` - Video is muted by default
 - `playsInline` - Plays inline on mobile devices
@@ -452,7 +444,6 @@ Import: `{% import 'macros/socials.twig' as socials %}`
 Renders a set of share buttons for various social media platforms.
 
 **Parameters:**
-
 - `share_title` (string) - Optional title for the share buttons section
 - `platforms` (array) - Array of platform keys to include (e.g., `['facebook', 'twitter', 'linkedin']`)
 - `share_context` (object) - Object containing share URL and metadata for each platform
@@ -515,7 +506,6 @@ Renders a set of share buttons for various social media platforms.
 Renders a list of social media icons with links.
 
 **Parameters:**
-
 - `socials` (array) - Array of social media objects:
   - `url` (string) - URL to the social media profile
   - `label` (string) - Label for the social media platform
@@ -577,7 +567,6 @@ Renders a list of social media icons with links.
 Renders a list of social/contact icons with optional labels. Supports email, phone, and WhatsApp contact methods.
 
 **Parameters:**
-
 - `contact` (object) - Contact information object:
   - `email` (string) - Email address
   - `phone` (object) - Phone object (from `phonenumber()` function)
@@ -723,7 +712,7 @@ Renders a list of social/contact icons with optional labels. Supports email, pho
     }) }}
     <h3>{{ post.title }}</h3>
     <p class="team-member__role">{{ post.meta('role') }}</p>
-
+    
     {% set contact = {
         email: post.meta('email'),
         phone: phonenumber(post.meta('phone'))
@@ -799,8 +788,8 @@ Renders a list of social/contact icons with optional labels. Supports email, pho
 
 ## See Also
 
-- [Twig Functions](twig-functions.mdx) - Custom Twig functions
-- [Twig Filters](twig-filters.mdx) - Custom Twig filters
-- [Helper Functions](api-functions.mdx) - PHP helper functions
-- [Action Hooks](hooks/actions.mdx) - Available action hooks
-- [Filter Hooks](hooks/filters.mdx) - Available filter hooks
+- [Twig Functions](twig-functions.md) - Custom Twig functions
+- [Twig Filters](twig-filters.md) - Custom Twig filters
+- [Helper Functions](helper-functions.md) - PHP helper functions
+- [Action Hooks](hooks/actions.md) - Available action hooks
+- [Filter Hooks](hooks/filters.md) - Available filter hooks
