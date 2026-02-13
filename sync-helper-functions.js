@@ -214,10 +214,24 @@ function processFile(mapping) {
 
    const newContent = parts.join('\n');
 
+   // Ensure destination directory exists
+   const destDir = path.dirname(destPath);
+   if (!fs.existsSync(destDir)) {
+      fs.mkdirSync(destDir, { recursive: true });
+      console.log(`   📁 Created directory: ${destDir}`);
+   }
+
+   // Check if file exists to provide appropriate feedback
+   const fileExists = fs.existsSync(destPath);
+
    // Write to destination
    fs.writeFileSync(destPath, newContent);
 
-   console.log(`✅ Synced ${mapping.source} → ${mapping.dest}`);
+   if (fileExists) {
+      console.log(`✅ Synced ${mapping.source} → ${mapping.dest}`);
+   } else {
+      console.log(`✅ Created ${mapping.dest} from ${mapping.source}`);
+   }
    return true;
 }
 
