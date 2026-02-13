@@ -1,9 +1,3 @@
----
-title: Helper Functions
----
-
-The following function documentation is automatically generated.
-
 # Functions
 
 <div class="table-methods table-responsive">

@@ -1,9 +1,3 @@
----
-title: JavaScript Functions
----
-
-The following function documentation is automatically generated.
-
 ## Functions
 
 <table>

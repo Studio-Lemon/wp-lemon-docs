@@ -23,7 +23,7 @@ const path = require('path');
 const FILE_MAPPINGS = [
    {
       source: 'src/generated/helper-functions.md',
-      dest: 'src/docs/reference/api-functions.mdx',
+      dest: 'src/docs/reference/helper-functions.mdx',
       frontmatter: {
          title: 'Helper Functions'
       },

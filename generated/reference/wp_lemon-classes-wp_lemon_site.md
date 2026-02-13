@@ -1,8 +1,3 @@
----
-title: WP_Lemon_Site
-description: WP_Lemon_Site class
----
-
 # WP\_Lemon\_Site
 
 You will be able to retrieve this information from the context in your twig files or in your php files under the global $context variable.

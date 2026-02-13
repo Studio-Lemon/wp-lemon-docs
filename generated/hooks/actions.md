@@ -1,10 +1,3 @@
----
-title: Action hooks reference
-description: PHP Actions of wp-lemon
----
-
-The following filter documentation is automatically generated.
-
 # Action Hooks
 
 ## wp-lemon/action/head/meta
