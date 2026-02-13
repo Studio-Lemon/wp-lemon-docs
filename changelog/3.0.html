@@ -1,0 +1,2123 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-changelog/3.0" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Changelogs 3.x | wp-lemon Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://studio-lemon.github.io/wp-lemon-docs/img/banner.png"><meta data-rh="true" name="twitter:image" content="https://studio-lemon.github.io/wp-lemon-docs/img/banner.png"><meta data-rh="true" property="og:url" content="https://studio-lemon.github.io/wp-lemon-docs/changelog/3.0"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Changelogs 3.x | wp-lemon Docs"><meta data-rh="true" name="description" content="Changelogs of 3.x"><meta data-rh="true" property="og:description" content="Changelogs of 3.x"><link data-rh="true" rel="icon" href="/wp-lemon-docs/img/favicon.png"><link data-rh="true" rel="canonical" href="https://studio-lemon.github.io/wp-lemon-docs/changelog/3.0"><link data-rh="true" rel="alternate" href="https://studio-lemon.github.io/wp-lemon-docs/changelog/3.0" hreflang="en"><link data-rh="true" rel="alternate" href="https://studio-lemon.github.io/wp-lemon-docs/changelog/3.0" hreflang="x-default"><link rel="stylesheet" href="/wp-lemon-docs/assets/css/styles.abd5626c.css">
+<script src="/wp-lemon-docs/assets/js/runtime~main.04898d94.js" defer="defer"></script>
+<script src="/wp-lemon-docs/assets/js/main.f72733ba.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/wp-lemon-docs/"><div class="navbar__logo"><img src="/wp-lemon-docs/img/favicon.png" alt="wp-lemon Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/wp-lemon-docs/img/favicon.png" alt="wp-lemon Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">wp-lemon Docs</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/Studio-Lemon/wp-lemon-docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Changelogs 3.x</h1></header><p>Back to <a class="" href="/wp-lemon-docs/changelog">current major version</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3360">3.36.0:<a href="#3360" class="hash-link" aria-label="Direct link to 3.36.0:" title="Direct link to 3.36.0:" translate="no">​</a></h2>
+<p><em>Release Date - 02 march 2023</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Add action_deprecated() to be used inside twig.</li>
+<li class="">New filter added wp-lemon/action/entry/content/before and wp-lemon/action/entry/content/after</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Full rework of class-site.php after some tests.</li>
+<li class="">Check added if fields with name &quot;name&quot; are not added. This field name conflicts with timber.</li>
+<li class="">deprecated wp-lemon/action/entry-footer/before in favor of wp-lemon/action/entry/content/after</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3353-5">3.35.[3-5]:<a href="#3353-5" class="hash-link" aria-label="Direct link to 3.35.[3-5]:" title="Direct link to 3.35.[3-5]:" translate="no">​</a></h2>
+<p><em>Release Date - 02 march 2023</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Class site bug fixed</li>
+<li class="">section css bug fixed.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3352">3.35.2:<a href="#3352" class="hash-link" aria-label="Direct link to 3.35.2:" title="Direct link to 3.35.2:" translate="no">​</a></h3>
+<p><em>Release Date - 27 february 2023</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New filter for adjacent_post_info added.</li>
+<li class="">Font weight can now be changed inside the editor.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">section now always loads the largest image.</li>
+<li class="">Better default fonts sizes for headings and custom sizes.</li>
+<li class="">Some improvements to diagnostics class.</li>
+<li class="">Started with enhancing the site class, this is still a work in progress.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed lazyload bugs</li>
+<li class="">Fixed footer widget width in single widget layouts. #211</li>
+<li class="">get_archive_page() method fixed in backend.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3351">3.35.1:<a href="#3351" class="hash-link" aria-label="Direct link to 3.35.1:" title="Direct link to 3.35.1:" translate="no">​</a></h3>
+<p><em>Release Date - 24 february 2023</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Disable auto activation of FluentForms plugin via theme activation. This is now handles by the CLI tool.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed lazyload bugs</li>
+<li class="">Fixed footer widget width in single widget layouts. #211</li>
+<li class="">get_archive_page() method fixed in backend.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3350">3.35.0:<a href="#3350" class="hash-link" aria-label="Direct link to 3.35.0:" title="Direct link to 3.35.0:" translate="no">​</a></h3>
+<p><em>Release Date - 23 february 2023</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Removed most of the vanilla-lazyload.js usage as a test in favor of native lazyloading.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Removed WordPress version from enques</li>
+<li class="">Slider block now has proper margin when aligned fully.</li>
+<li class="">Minor fix in diagnostics class.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3341">3.34.1<a href="#3341" class="hash-link" aria-label="Direct link to 3.34.1" title="Direct link to 3.34.1" translate="no">​</a></h3>
+<p><em>Release Date - 20 february 2023</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">navbar css fix</li>
+<li class="">Cookiebar fix</li>
+<li class="">Two footer fixes.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3340">3.34.0:<a href="#3340" class="hash-link" aria-label="Direct link to 3.34.0:" title="Direct link to 3.34.0:" translate="no">​</a></h3>
+<p><em>Release Date - 14 february 2023</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please update bulldozer to 3.0.0</li>
+<li class="">Please run the following search/replace in your library/blocks folder. wp-lemon 4.0 will feature the new ACF6.0 way to register blocks which will use the BlockRendererV2 in the future.<!-- -->
+<ul>
+<li class="">Search: <code>use HighGround\Bulldozer\BlockRenderer;</code></li>
+<li class="">Replace: <code>use HighGround\Bulldozer\BlockRendererV1 as BlockRenderer;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New diagnostics class added.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Add preparations in Bulldozer for wp-lemon 4.0.</li>
+<li class="">Added deprecation for the old widgets and set new theme partials as default in the customizer. It&#x27;s recommended to switch existing sites to the new widgets.</li>
+<li class="">New cache buster added for simple post type plugin.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Lazyload bug fixed on Safari by disableing native_lazyloading</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3333">3.33.3<a href="#3333" class="hash-link" aria-label="Direct link to 3.33.3" title="Direct link to 3.33.3" translate="no">​</a></h3>
+<p><em>Release Date - 13 february 2023</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Add two new filters to disable the header/footer</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed two deprecations.</li>
+<li class="">Removed default margin from logo block.</li>
+<li class="">Removed left border from block-quote inside circle-text</li>
+<li class="">price card render fixes.</li>
+<li class="">Fixed not properly rendered google maps cards when there are url entities in the name.</li>
+<li class="">get_total_posts() fix when there are no terms.</li>
+<li class="">Added classes to widget block for centered text to work.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">WCAG 1.3.2 (NIVEAU A) fix in new cards.</li>
+<li class="">Faq setup improvements.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3332">3.33.2<a href="#3332" class="hash-link" aria-label="Direct link to 3.33.2" title="Direct link to 3.33.2" translate="no">​</a></h3>
+<p><em>Release Date - 06 february 2023</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Cookie bar fix</li>
+<li class="">icon block fixed</li>
+<li class="">contact cta buttons now have correct font size</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Price card improved</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3331">3.33.1<a href="#3331" class="hash-link" aria-label="Direct link to 3.33.1" title="Direct link to 3.33.1" translate="no">​</a></h3>
+<p><em>Release Date - 03 february 2023</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">add_spaces_to_phonenumber() function and twig filter.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Enhanced price cards css.</li>
+<li class="">entry-header smaller margin by default.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">header flex bug fixed from Clearwell</li>
+<li class="">several section bugs fixed.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3330">3.33.0<a href="#3330" class="hash-link" aria-label="Direct link to 3.33.0" title="Direct link to 3.33.0" translate="no">​</a></h3>
+<p><em>Release Date - 01 february 2023</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New block: pricing cards.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Continued work on FAQ function</li>
+<li class="">Renamed FAQ to Accordion to differentiate between the new FAQ and collapse.
+🐛 <strong>Bugs Fixed</strong></li>
+<li class="">Hide contact button div when no button is visible.</li>
+<li class="">Offcanvas js fix.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3321">3.32.1<a href="#3321" class="hash-link" aria-label="Direct link to 3.32.1" title="Direct link to 3.32.1" translate="no">​</a></h3>
+<p><em>Release Date - 27 january 2023</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong></li>
+<li class="">Disabled blocks are now visibility<!-- -->:hidden<!-- -->, for better block flow.</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Translations in Twig files now work once more.</li>
+<li class="">node-overview and node overview excerpt toggle field now works as intended.</li>
+<li class="">Related FAQs question fix.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3320">3.32.0<a href="#3320" class="hash-link" aria-label="Direct link to 3.32.0" title="Direct link to 3.32.0" translate="no">​</a></h3>
+<p><em>Release Date - 24 january 2023</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Make sure Advanced Custom Fields: Editor Palette Field plugin is version 1.1.6, if not upload manually.</li>
+<li class="">Bundled all PHP functions that we encourage to use in child themes in the API folder. All functions/queries are being redirected to the new location and throw a deprecated notice in the log. Please update your function calls accordingly.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Better reusable blocks</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Continued work on FAQ function</li>
+<li class="">Renamed FAQ to Accordion to differentiate between the new FAQ and collapse.</li>
+</ul>
+</li>
+<li class="">📦 <strong>updated packages</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3313">3.31.3<a href="#3313" class="hash-link" aria-label="Direct link to 3.31.3" title="Direct link to 3.31.3" translate="no">​</a></h3>
+<p><em>Release Date - 18 january 2023</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Added missing property for generic-ajax-query to prepare for PHP8.2</li>
+<li class="">Better labels for post types</li>
+<li class="">get_archive_page method rewritten.</li>
+<li class="">next_post() deprecated in favor of next_post_info() and previous_post_info()</li>
+<li class="">Filters added to change the date notion in several post types.</li>
+<li class="">Two icons added</li>
+<li class="">Proposed fix for offcanvas overflow.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Contact cta final fixes</li>
+<li class="">Added missing allowed_block in slide.php</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3312">3.31.2<a href="#3312" class="hash-link" aria-label="Direct link to 3.31.2" title="Direct link to 3.31.2" translate="no">​</a></h3>
+<p><em>Release Date - 13 january 2023</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Continued on FAQ feature.</li>
+<li class="">Contact cta improvements</li>
+<li class="">filter added to change navbar breakpoint</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Proper image slider name</li>
+<li class="">Removed default wp-lemon-faq support</li>
+<li class="">archive.js bug fixed</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3311">3.31.1<a href="#3311" class="hash-link" aria-label="Direct link to 3.31.1" title="Direct link to 3.31.1" translate="no">​</a></h3>
+<p><em>Release Date - 10 january 2023</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Continued on FAQ.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed FAQ js bug.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3310">3.31.0<a href="#3310" class="hash-link" aria-label="Direct link to 3.31.0" title="Direct link to 3.31.0" translate="no">​</a></h3>
+<p><em>Release Date - 05 january 2023</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Rework of cards. (check your custom cards twig files and scss)<!-- -->
+<ul>
+<li class=""><code>.crd__inner</code> a/div element is removed. The <code>.crd</code> element is now the link if the link is active. This reduces the amount of elements in the DOM.</li>
+<li class=""><code>.crd__bottom</code> is renamed to <code>.crd__content</code>. It&#x27;s recommended to also rename these classes in your custom cards.</li>
+<li class=""><code>.crd__text</code> is removed from .<code>crd__bottom/.crd__content</code> and <code>.crd__footer</code> elements. Check your padding!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New block carousel added. This is a nice image slider.</li>
+<li class="">New infrastructure added for pluggable functions which you can active via add_theme_support().</li>
+<li class="">First new pluggable function added: FAQ - This is still in active development.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better default padding for small aligned sections with a background.</li>
+<li class="">Remove block suggestions from the editor.</li>
+<li class="">Removed old palette function.</li>
+<li class="">Faster file inclusion in function.php by not using locate_template() since we only want the parent theme files to load here anyway.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">JS: Fixed a bug where in smoothscroll.js when there is not navbar present.</li>
+<li class="">Twig: Fixed missing icons on person card.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3302">3.30.2<a href="#3302" class="hash-link" aria-label="Direct link to 3.30.2" title="Direct link to 3.30.2" translate="no">​</a></h3>
+<p><em>Release Date - 03 january 2023</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Add escapers to twig files for hrefs and title attributes</li>
+<li class="">Share and social icons can now be fully modified without overwrting the socials.twig macro.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Smoothscroll.js bug fixed where clicking a hash button could lead to jumping around the page.</li>
+<li class="">fixed a bug in the animation macro where an animation code would still be loaded when the value was &#x27;none&#x27;</li>
+<li class="">Undo the code introduced to fix a WP issue regarding the nav menus in WP6.1</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3301">3.30.1<a href="#3301" class="hash-link" aria-label="Direct link to 3.30.1" title="Direct link to 3.30.1" translate="no">​</a></h3>
+<p><em>Release Date - 27 december 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">sections not aligning properly</li>
+<li class="">Fixed section wrap being wrong</li>
+<li class="">fixed naming of css custom property --max-width-default</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3300">3.30.0<a href="#3300" class="hash-link" aria-label="Direct link to 3.30.0" title="Direct link to 3.30.0" translate="no">​</a></h3>
+<p><em>Release Date - 23 december 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">You can now beta test the new partials instead of widgets</li>
+<li class="">New widgets and widget block added.<!-- -->
+<ul>
+<li class="">Widget block support both innerblocks and nav menus.</li>
+</ul>
+</li>
+<li class="">Container is now out of beta</li>
+<li class="">You can now set $smaller-width-percentage to manually set the small size for container blocks</li>
+<li class="">new $animation-settings added for more control over animation in your child theme</li>
+<li class="">configurable link_markup for twig cards.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Section min height in de editor fixed</li>
+<li class="">Fixed margins for figcaptions in embeds and images.</li>
+<li class="">remove margin form last widget on mobile</li>
+<li class="">Removed last margin left from footer menu</li>
+<li class="">Fix for logo gallery missing flex wrap</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3296">3.29.6<a href="#3296" class="hash-link" aria-label="Direct link to 3.29.6" title="Direct link to 3.29.6" translate="no">​</a></h3>
+<p><em>Release Date - 1 december 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Filter default phone format.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fix wide alignment</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3295">3.29.5<a href="#3295" class="hash-link" aria-label="Direct link to 3.29.5" title="Direct link to 3.29.5" translate="no">​</a></h3>
+<p><em>Release Date - 29 november 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added a way to deprecate scss variables</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed missing widgets</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3294">3.29.4<a href="#3294" class="hash-link" aria-label="Direct link to 3.29.4" title="Direct link to 3.29.4" translate="no">​</a></h3>
+<p><em>Release Date - 29 november 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed alignment of wide blocks inside other blocks</li>
+<li class="">Fixed card styles being overwritten after 3.28.0 release</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3292">3.29.2<a href="#3292" class="hash-link" aria-label="Direct link to 3.29.2" title="Direct link to 3.29.2" translate="no">​</a></h3>
+<p><em>Release Date - 26 november 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better iconfont</li>
+<li class="">Better A11y css resulting in less css.</li>
+<li class="">Reduced utility classes from bootstrap resulting in less css.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">removed default letter spacing from buttons</li>
+<li class="">Fixed two variables that were not overwriteble</li>
+<li class="">Fixed wrong namespace in contact-cta.php</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3291">3.29.1<a href="#3291" class="hash-link" aria-label="Direct link to 3.29.1" title="Direct link to 3.29.1" translate="no">​</a></h3>
+<p><em>Release Date - 24 november 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">added scss variables for first and last block margins.</li>
+<li class="">Better default styling for nav togglers</li>
+<li class="">Better styling for circle-text block on mobile phones</li>
+<li class="">IMG container is now aligned correctly once more in wide align mode</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">removed templatelock from circle-text</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3290">3.29.0<a href="#3290" class="hash-link" aria-label="Direct link to 3.29.0" title="Direct link to 3.29.0" translate="no">​</a></h3>
+<p><em>Release Date - 23 november 2022</em></p>
+<ul>
+<li class="">
+<p>⛏️ <strong>Breaking</strong></p>
+<ul>
+<li class="">Testimonial block is now reworked to circle-text block for more utility.</li>
+<li class="">slide-banner block is now also marked as deprecated</li>
+<li class="">Reworked a lot of css for easier overwriting in child theme, see <a href="https://github.com/Studio-Lemon/wp-lemon/issues/184" target="_blank" rel="noopener noreferrer" class="">this ticket</a> for the ongoing process.</li>
+</ul>
+</li>
+<li class="">
+<p>💡 <strong>Newly added</strong></p>
+<ul>
+<li class="">New animations added for node-overview and node-latest cards</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Enhanced the order of categories inside the block editor to highlight wp-lemon blocks</li>
+<li class="">Removed new full site editor blocks</li>
+<li class="">Added --max-width--default</li>
+<li class="">picture macro yet again improved</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Fixed missing hover color on regular links</li>
+</ul>
+</li>
+<li class="">
+<p>🗑️ <strong>Removed</strong></p>
+<ul>
+<li class="">Removed linktree template</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3281">3.28.1<a href="#3281" class="hash-link" aria-label="Direct link to 3.28.1" title="Direct link to 3.28.1" translate="no">​</a></h3>
+<p><em>Release Date - 16 november 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">card grid can now be 5 columns.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">removed animation from a element inside a widget</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3280">3.28.0<a href="#3280" class="hash-link" aria-label="Direct link to 3.28.0" title="Direct link to 3.28.0" translate="no">​</a></h3>
+<p><em>Release Date - 16 november 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Changed a lot within the css of the share buttons. Please double check your child theme if you custom styled the share buttons.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Cookiebar added.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Removed first large margin before media text block.</li>
+<li class="">card padding is now a css var</li>
+<li class="">Overhoul in share button css</li>
+<li class="">Added section class to more-items twig file for better default spacing</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed two aria bugs in the search form and header</li>
+<li class="">Search query is now done in the correct language</li>
+<li class="">Change order of styles. Fixes #181</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3270">3.27.0<a href="#3270" class="hash-link" aria-label="Direct link to 3.27.0" title="Direct link to 3.27.0" translate="no">​</a></h3>
+<p><em>Release Date - 8 november 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Due to bug in Timber 1.22 where Twig is updated to 3.x branch we have this version. Please update your full vendor folder after twig update.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Removed first large margin before media text block.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3261">3.26.1<a href="#3261" class="hash-link" aria-label="Direct link to 3.26.1" title="Direct link to 3.26.1" translate="no">​</a></h3>
+<p><em>Release Date - 7 november 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Load more button is now unfocussed after successful load.</li>
+<li class="">Some style improvements that leads to less css.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed animation being wrong in node-overview block</li>
+<li class="">Fixed incorrect lang domain</li>
+<li class="">Fixed a edge case bug in the editor when removing a specific block.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3260">3.26.0<a href="#3260" class="hash-link" aria-label="Direct link to 3.26.0" title="Direct link to 3.26.0" translate="no">​</a></h3>
+<p><em>Release Date - 3 november 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Compat fix with WordPress 6.1</li>
+<li class="">using new style.css labels to disable accidental updates when there is a theme with the same name.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed a bug where custom sizes for media/text would be overwritten</li>
+<li class="">Added missing rel and target attributes to external links in socials.twig</li>
+<li class="">Temp fix for regression in WordPress 6.1 regarding the navwalker, see <a href="https://core.trac.wordpress.org/ticket/5694" target="_blank" rel="noopener noreferrer" class="">https://core.trac.wordpress.org/ticket/5694</a></li>
+<li class="">Fixed an issue where wide aligned elements inside full containers woulds still be wide aligned.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3251-tm-3255">3.25.1 t/m 3.25.5:<a href="#3251-tm-3255" class="hash-link" aria-label="Direct link to 3.25.1 t/m 3.25.5:" title="Direct link to 3.25.1 t/m 3.25.5:" translate="no">​</a></h3>
+<p><em>Release Date - 1 november 2022</em></p>
+<ul>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">image card image sizes are now full size.</li>
+<li class="">Navwalker background color is not added anymore when no color is set.</li>
+<li class="">Dropdown active and hover states fixed</li>
+<li class="">Fixed wrong default aria state in faq-item</li>
+<li class="">Fixed a bug where tablet/mobile display would display wrong css.</li>
+<li class="">Fixed a excerpt bug</li>
+<li class="">Fixed regression in custom archives.</li>
+<li class="">Custom orders weren&#x27;t obeyed in class-generic-ajax-call.php ajax calls.</li>
+<li class="">Some blocks wouldn&#x27;t properly lazyload in tablet/mobile preview mode.</li>
+<li class="">Fix to map block having a too large margin when not used fully aligned.</li>
+<li class="">Fixed a bug where large amount of posts inside the ajax call would result in weird animations.</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">node latest and node overview can now also query builtin post types.</li>
+<li class="">archive filter now has better styling</li>
+<li class="">improved disabled state of block</li>
+<li class="">archive filters are now more opinionated</li>
+<li class="">Custom order plugin extra css added for better interface in backend</li>
+<li class="">team pages are now searchable when detail page is active.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3250">3.25.0:<a href="#3250" class="hash-link" aria-label="Direct link to 3.25.0:" title="Direct link to 3.25.0:" translate="no">​</a></h3>
+<p><em>Release Date - 23 october 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please update bulldozer to 2.1.0</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Added &#x27;combined&#x27; to phone number utility. it will output phone number as +31 (6) 12345678</li>
+<li class="">Less html/css for img-container block. This is a total rework, so if you encounter any bugs, let us know</li>
+<li class="">Complete rework of the section (beta) block. The container does not have a .section__inner container anymore and elements inherit the --max-width css variable. If you encounter any bugs, let us know!</li>
+<li class="">Map block now support setting your own ratio via a field. You can make the card 16x9, 4x3 and square. Gets overwritten when fully aligned.</li>
+<li class="">Added instructions if there is a WPML field that has the copy setting.</li>
+<li class="">img card now supports<!-- -->
+<ul>
+<li class="">Background color</li>
+<li class="">vertical alignment</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3241">3.24.1:<a href="#3241" class="hash-link" aria-label="Direct link to 3.24.1:" title="Direct link to 3.24.1:" translate="no">​</a></h3>
+<p><em>Release Date - 20 october 2022</em></p>
+<ul>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Fix dropdowns not working when importing the bootstrap dropdown module</li>
+<li class="">Removed margin underneath last element inside an image card.</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Filter added for card type</li>
+<li class="">Swiper pagination color is now a scss var</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3240">3.24.0:<a href="#3240" class="hash-link" aria-label="Direct link to 3.24.0:" title="Direct link to 3.24.0:" translate="no">​</a></h3>
+<p><em>Release Date - 17 october 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New block image-card added that can be used inside the card grid.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Bumped PHP version to 8.0.2 minimum</li>
+<li class="">Further enhance search bar experience</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3233">3.23.3:<a href="#3233" class="hash-link" aria-label="Direct link to 3.23.3:" title="Direct link to 3.23.3:" translate="no">​</a></h3>
+<p><em>Release Date - 14 october 2022</em></p>
+<ul>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Larger pagination buttons for swiper</li>
+<li class="">more css vars introduced</li>
+<li class="">Enhanced search page display</li>
+<li class="">Enhanced search bar experience<!-- -->
+<ul>
+<li class="">Auto focussing when opening the search bar</li>
+<li class="">Exit search bar when clicking outside the bar or search results</li>
+<li class="">Exit search bar when pressing escape</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Removed default letter spacing in navigation items</li>
+<li class="">Fixed a bug where max widths couldn&#x27;t be overwritten due to a specificity issue in the css.</li>
+<li class="">Possible fix for issue where too large images would crash the server on resizing or moving to webp</li>
+<li class="">Fixed an issue where lemon_excerpt() would return too little text when the content was not that long.</li>
+<li class="">Fixed a bug when searching for content and a password protected page would come up the password template would be loaded.</li>
+<li class="">Removed default order of team post type introduced in 3.23.0, this caused custom orders to not work.</li>
+</ul>
+</li>
+<li class="">
+<p>🗑️ <strong>Removed</strong></p>
+<ul>
+<li class="">Removed small cols and no-ml styles from core/columns</li>
+</ul>
+</li>
+<li class="">
+<p>🌐 <strong>Updated Dutch translation</strong></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3232">3.23.2:<a href="#3232" class="hash-link" aria-label="Direct link to 3.23.2:" title="Direct link to 3.23.2:" translate="no">​</a></h3>
+<p><em>Release Date - 12 october 2022</em></p>
+<ul>
+<li class="">📖 <strong>Documented new filters</strong></li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fix animation bug in archives where too many items would lead to weird fade in animations.</li>
+<li class="">Fixed a bug where small excerpts would not be shown completely inside cards.</li>
+<li class="">Fixed a bug where a person card would always show a link to the detail page, even if the detail page feature was not activated.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3231">3.23.1:<a href="#3231" class="hash-link" aria-label="Direct link to 3.23.1:" title="Direct link to 3.23.1:" translate="no">​</a></h3>
+<p><em>Release Date - 30 september 2022</em></p>
+<ul>
+<li class="">
+<p>💡 <strong>Newly added</strong></p>
+<ul>
+<li class="">Added hook for overwriting card classes</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Already activated licenses on websites can now be reactivated.</li>
+<li class="">Full height sections in backend are properly displayed</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Font sizes are not overwritten in footer by force anymore</li>
+<li class="">Add body class when search is active</li>
+<li class="">Its now easier to overwrite css of the footer</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3230">3.23.0:<a href="#3230" class="hash-link" aria-label="Direct link to 3.23.0:" title="Direct link to 3.23.0:" translate="no">​</a></h3>
+<p><em>Release Date - 30 september 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added hooks file for actions and filters</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Removed console logs.</li>
+<li class="">Better error handling for WP_Lemon\Controllers\format_phone_number() function.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">More css var usage</li>
+<li class="">WP_Lemon\Controllers\socials() is updated to be a named array.</li>
+<li class="">WP_Lemon\Controllers\log_message() now writes the time in the timezone selected from the site.</li>
+</ul>
+</li>
+<li class="">🗑️ <strong>Removed</strong>
+<ul>
+<li class="">Cleaned up block patterns</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3223">3.22.3:<a href="#3223" class="hash-link" aria-label="Direct link to 3.22.3:" title="Direct link to 3.22.3:" translate="no">​</a></h3>
+<p><em>Release Date - 21 september 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New customizer field added for google tag manager.</li>
+<li class="">new wp-lemon/filter/header/logo filter added</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Re-ordered customizer tabs and fields.</li>
+<li class="">Shorter default css navigation on links.</li>
+<li class="">added template uri to pb_site variable.</li>
+<li class="">Rework of get_attached_file() function</li>
+<li class="">Updated iconfont with nicer icons.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed button hover color.</li>
+<li class="">Fixed menu issue #170</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3221-2">3.22.[1-2]:<a href="#3221-2" class="hash-link" aria-label="Direct link to 3.22.[1-2]:" title="Direct link to 3.22.[1-2]:" translate="no">​</a></h3>
+<p><em>Release Date - 12 september 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed phone number default region</li>
+<li class="">Fixed a bug where section paddings would not be applied to latest section in .entry</li>
+<li class="">Fixed social icons on person card missing</li>
+<li class="">Fixed a not correctly closed heading tag inside the twig marco elements.twig</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3220">3.22.0:<a href="#3220" class="hash-link" aria-label="Direct link to 3.22.0:" title="Direct link to 3.22.0:" translate="no">​</a></h3>
+<p><em>Release Date - 9 september 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New filter added to change share buttons and social buttons.</li>
+<li class="">New filters/actions added in archive-loop.twig to change the load more text and add items before/after the loop.</li>
+<li class="">Added archive page of current singular page to the navigation context. (nav.back)</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed a bug where full/wide sections did not have a margin.</li>
+<li class="">Changed the person card.</li>
+<li class="">Fixed button background color scss variable not working.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better feedback when license server fails.</li>
+<li class="">Added anchor link support for sections</li>
+</ul>
+</li>
+<li class="">📦 <strong>updated packages</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3212">3.21.2:<a href="#3212" class="hash-link" aria-label="Direct link to 3.21.2:" title="Direct link to 3.21.2:" translate="no">​</a></h3>
+<p><em>Release Date - 9 august 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed phonenumber being incorrectly formatted when wpml is not active.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3211">3.21.1:<a href="#3211" class="hash-link" aria-label="Direct link to 3.21.1:" title="Direct link to 3.21.1:" translate="no">​</a></h3>
+<p><em>Release Date - 4 august 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New full height option in container</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed whatsapp button being shown when only call button is set</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3210">3.21.0:<a href="#3210" class="hash-link" aria-label="Direct link to 3.21.0:" title="Direct link to 3.21.0:" translate="no">​</a></h3>
+<p><em>Release Date - 3 august 2022</em></p>
+<ul>
+<li class="">⚠️ <strong>Please add the following to your child theme</strong>
+<ul>
+<li class=""><code>resources/assets/styles/app.scss --&gt; add new rule before @import &quot;01-settings&quot;;</code> and add <code>@use &quot;~parentThemeStyles/02-tools/functions&quot; as *;</code></li>
+<li class="">
+<ul>
+<li class=""><code>resources/assets/styles/editor.scss --&gt; add new rule before @import &quot;01-settings/variables&quot;;</code> and add <code>@use &quot;~parentThemeStyles/02-tools/functions&quot; as *;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Node overview block, fixed undefined fixes on rule 263 and 264</li>
+<li class="">class-site.php, fixed undefined fixes</li>
+<li class="">Fixed a bug where a a full aligned block after a full aligned section block with a background would have a margin-top</li>
+<li class="">Fixed alignment in entry-header.twig</li>
+<li class="">Archive load more buttons are not showing up anymore if there are no more items.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Add ability to easily overwrite color for FAQ item buttons.</li>
+<li class="">New filters added in entry-footer.twig and single.twig</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3202">3.20.2:<a href="#3202" class="hash-link" aria-label="Direct link to 3.20.2:" title="Direct link to 3.20.2:" translate="no">​</a></h3>
+<p><em>Release Date - 1 august 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New get_contact_buttons() method that will return an array to build the contact buttons displayed on the bottom right of the screen when activated. This array can be extended by overwriting this method.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Backend notices in blocks are now visible again when a background image is added to a block.</li>
+<li class="">Fixed a bug where matrix displayed blocks would get css that will get inherited by child blocks.</li>
+<li class=""></li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">card padding classes for pictures are now css vars and added filter for picture classes.</li>
+<li class="">remove lemon blocks from being activated by default.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3201">3.20.1:<a href="#3201" class="hash-link" aria-label="Direct link to 3.20.1:" title="Direct link to 3.20.1:" translate="no">​</a></h3>
+<p><em>Release Date - 27 july 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed a bug where the current menuitem wouldn&#x27;t have an active state.</li>
+<li class="">Fixed a bug where heading fontsizes in the backend were too small</li>
+<li class="">Archive block improvements.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3200">3.20.0:<a href="#3200" class="hash-link" aria-label="Direct link to 3.20.0:" title="Direct link to 3.20.0:" translate="no">​</a></h3>
+<p><em>Release Date - 22 july 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Update bootstrap to 5.2</li>
+<li class="">if you are using a custom archive with loadmore function, please rework your block. see node-overview.php block for reference.<!-- -->
+<ul>
+<li class="">Echo urban design controleren</li>
+<li class="">zalm, vaantje, gouda petanque, chilibra, controleren</li>
+<li class="">nederhoff, geen node-archive.twig gebruiken, want we gebruiken geen filter.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added translation hints.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Rework of archive query mechanism</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3199">3.19.9:<a href="#3199" class="hash-link" aria-label="Direct link to 3.19.9:" title="Direct link to 3.19.9:" translate="no">​</a></h3>
+<p><em>Release Date - 19 july 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New experimental css clamp functionality added.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3198">3.19.8:<a href="#3198" class="hash-link" aria-label="Direct link to 3.19.8:" title="Direct link to 3.19.8:" translate="no">​</a></h3>
+<p><em>Release Date - 14 july 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New checklist style for lists.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Enhanced icon font usage.</li>
+<li class="">Archives now have a getTerm and setTerm function to get and set the active term on the archive holder element.</li>
+<li class="">Transitioned some scss vars to css vars.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fix bug with term_ids in node-overview</li>
+<li class="">Fixed a bug in menu.js where the --scroll modifier wouldn&#x27;t go away.</li>
+<li class="">Fixed a bug in the header an footer where containers were wider then content containers.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3196-and-3197">3.19.6 and 3.19.7:<a href="#3196-and-3197" class="hash-link" aria-label="Direct link to 3.19.6 and 3.19.7:" title="Direct link to 3.19.6 and 3.19.7:" translate="no">​</a></h3>
+<p><em>Release Date - 13 july 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Easier backend styling with .ibb class to add really good section differentiation.</li>
+<li class="">better apply_filter name to easier apply filters on blocks. You now can directly copy the filter name from the source code.</li>
+<li class="">FAQ block doesn&#x27;t have the edit mode anymore.</li>
+<li class="">Added picture.ratio class to automatically set a ratio on images.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">REST api point now has proper permission callback</li>
+<li class="">Several contrast mode improvements</li>
+<li class="">Fix in node-archive</li>
+</ul>
+</li>
+<li class="">📦 <strong>updated packages</strong></li>
+<li class="">🤖 <strong>linted PHP/CSS/JS</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3195">3.19.5:<a href="#3195" class="hash-link" aria-label="Direct link to 3.19.5:" title="Direct link to 3.19.5:" translate="no">​</a></h3>
+<p><em>Release Date - 12 july 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New log function added</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better css for new section block.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed an issue where width and height inside picture element were empty.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3194">3.19.4:<a href="#3194" class="hash-link" aria-label="Direct link to 3.19.4:" title="Direct link to 3.19.4:" translate="no">​</a></h3>
+<p><em>Release Date - 8 july 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">You can now set a initial term on the archive.twig partial.</li>
+<li class="">new post_per_page filter in node-overview block.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Map permanent fix.</li>
+<li class="">Fixed &quot;no more items&quot; message in node-archive</li>
+</ul>
+</li>
+</ul>
+<p><em>Release Date - 6 july 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better css for new section block.</li>
+<li class="">Improved language switcher code.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3192">3.19.2:<a href="#3192" class="hash-link" aria-label="Direct link to 3.19.2:" title="Direct link to 3.19.2:" translate="no">​</a></h3>
+<p><em>Release Date - 6 july 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better css for new section block.</li>
+<li class="">Added extra information on how to create your flexible card grid inside the editor.</li>
+<li class="">person card improved.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">css alignment improvements</li>
+<li class="">Fixed map not being 100% height inside the editor.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3191">3.19.1:<a href="#3191" class="hash-link" aria-label="Direct link to 3.19.1:" title="Direct link to 3.19.1:" translate="no">​</a></h3>
+<p><em>Release Date - 4 july 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Improved block positioning classes. All blocks are now displayed with max width instead of an combination between width and max width. This is a bit experimental.</li>
+<li class="">Better default map styling due to new section class.</li>
+<li class="">Better css styling for headings.</li>
+<li class="">Cleaned css a bit</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Map block fix in backend</li>
+<li class="">Fixed an issue where menu items were not active in sub menus when selected.</li>
+<li class="">Fixed a bug where the block edit block would be behind other block element.</li>
+<li class="">Fixed PHP bug when there were no widgets present.</li>
+<li class="">Fixed a JS bug where the menu.js would crash if the collapse element was not present.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3190">3.19.0:<a href="#3190" class="hash-link" aria-label="Direct link to 3.19.0:" title="Direct link to 3.19.0:" translate="no">​</a></h3>
+<p><em>Release Date - 24 june 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please re-save your customizer fields after updating on the live site. You can do this by changing a value and going back to the old value.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">A page can now be the archive for multiple pages.</li>
+<li class="">class-site.php has been extended to add archive pages to the Timber context.</li>
+<li class="">entry-header now directly uses this new context instead of doing a separate database call.</li>
+<li class="">This overall enhances the experience to link back to an archive page from any custom post type.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3181">3.18.1:<a href="#3181" class="hash-link" aria-label="Direct link to 3.18.1:" title="Direct link to 3.18.1:" translate="no">​</a></h3>
+<p><em>Release Date - 21 june 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New icon block added.</li>
+<li class="">New get_svg_image() function to load the contents of an SVG image from the media library.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">New container block improvements</li>
+<li class="">Three new icons added in iconfont.</li>
+<li class="">Removed unneeded macro imports in blocks.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed an issue with columns block.</li>
+</ul>
+</li>
+<li class="">🪦 <strong>deprecated</strong>
+<ul>
+<li class="">Banner block is now marked as deprecated</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3180">3.18.0:<a href="#3180" class="hash-link" aria-label="Direct link to 3.18.0:" title="Direct link to 3.18.0:" translate="no">​</a></h3>
+<p><em>Release Date - 17 june 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New container block added. This is still in beta.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Only show block ID when one is set via attributes.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Removed unneeded normal font size</li>
+<li class="">Fixed license page not loading</li>
+<li class="">Fixed a bug where you could not overwrite blocks in theme.json</li>
+<li class="">Fixed typo in license class all over the codebase.</li>
+<li class="">Fixed an issue where the phone number could not be empty.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3173">3.17.3:<a href="#3173" class="hash-link" aria-label="Direct link to 3.17.3:" title="Direct link to 3.17.3:" translate="no">​</a></h3>
+<p><em>Release Date - 7 june 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New get_contact_information method that creates a single array of all contact information from the customizer.</li>
+<li class="">The contact_icons macro now requires contact as a first parameter that you will pass.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">PHP linted.</li>
+<li class="">Language switcher is now twig and has a helper function that formats the language switcher. This helps with custom language switcher implementation.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed typo in license class all over the codebase.</li>
+<li class="">Fixed an issue where the phone number could not be empty.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3172">3.17.2:<a href="#3172" class="hash-link" aria-label="Direct link to 3.17.2:" title="Direct link to 3.17.2:" translate="no">​</a></h3>
+<p><em>Release Date - 7 june 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">show bottom bar filter added in footer.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fix contact bar icon color</li>
+<li class="">Fixed blockloader</li>
+<li class="">body background as css var is now working</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3171">3.17.1:<a href="#3171" class="hash-link" aria-label="Direct link to 3.17.1:" title="Direct link to 3.17.1:" translate="no">  ​</a></h3>
+<p><em>Release Date - 2 june 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Password protected pages are now working</li>
+<li class="">New get_fluent_form function</li>
+<li class="">New block loader so you can filter blocks that are loaded by the parent theme.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Added extra class when navbar is on top of the viewport.</li>
+<li class="">Better controls for slide and slider block.</li>
+<li class="">Added a localized phone number option. The site will show an national phonenumber on the default language and an internationized phone number on other languages.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed large padding in wp-block-pullquote</li>
+<li class="">Minor css fixes in block columns and slider arrow colors</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3170">3.17.0:<a href="#3170" class="hash-link" aria-label="Direct link to 3.17.0:" title="Direct link to 3.17.0:" translate="no">​</a></h3>
+<p><em>Release Date - 25 may 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please run <code>composer require giggsey/libphonenumber-for-php</code> in root and upload your vendor folder!</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New site class added for more structured context.</li>
+<li class="">New phone number methods added. This fixes a lot of multilanguage phonenumber issues.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Updated default look and feel of hamburger menu</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Navbar only gets a class when fully on top of the viewport.</li>
+<li class="">Fixed banner display</li>
+<li class="">Banners can now be text center aligned</li>
+<li class="">Proper card footer color</li>
+<li class="">You can now switch to the default font size after change.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3162">3.16.2:<a href="#3162" class="hash-link" aria-label="Direct link to 3.16.2:" title="Direct link to 3.16.2:" translate="no">​</a></h3>
+<p><em>Release Date - 14 may 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Excerpt can now be hidden in default cards.</li>
+<li class="">Banner block: Set background opacity on videos now works again</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">You can now set extra arguments on queries using a filter used in the virtual node-latest and node-overview blocks.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3161">3.16.1:<a href="#3161" class="hash-link" aria-label="Direct link to 3.16.1:" title="Direct link to 3.16.1:" translate="no">​</a></h3>
+<p><em>Release Date - 12 may 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">fixed domready</li>
+<li class="">top adminbar alignment fix</li>
+<li class="">Padding fix inside icons.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3160">3.16.0:<a href="#3160" class="hash-link" aria-label="Direct link to 3.16.0:" title="Direct link to 3.16.0:" translate="no">​</a></h3>
+<p><em>Release Date - 5 may 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Detail page for persons can now be enabled via the customizer</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Slider block improvements</li>
+<li class="">Removed deprecated FAQ fields</li>
+<li class="">Less css due to smart selectors</li>
+<li class="">Better icon positioning</li>
+<li class="">Excerpts can now receive a -1 argument to post all content inside cards.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">fix for lazyload issue on safari mobile</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3151---3154">3.15.1 - 3.15.4:<a href="#3151---3154" class="hash-link" aria-label="Direct link to 3.15.1 - 3.15.4:" title="Direct link to 3.15.1 - 3.15.4:" translate="no">​</a></h3>
+<p><em>Release Date - 3 may 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Updated workflow dependencies</li>
+<li class="">Updated workflow files</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3150">3.15.0:<a href="#3150" class="hash-link" aria-label="Direct link to 3.15.0:" title="Direct link to 3.15.0:" translate="no">​</a></h3>
+<p><em>Release Date - 3 may 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please update basebuilder to 2.8.0</li>
+<li class="">Please update bulldozer to 1.11.0</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Proposed fix for lazyload issue on safari mobile</li>
+<li class="">Footer menu items not aligning properly.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3140">3.14.0:<a href="#3140" class="hash-link" aria-label="Direct link to 3.14.0:" title="Direct link to 3.14.0:" translate="no">​</a></h3>
+<p><em>Release Date - 25 april 2022</em></p>
+<ul>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">PHP linting</li>
+<li class="">Filter added to show share buttons, overwrite labels and platforms of sharer.</li>
+<li class="">Css improvements<!-- -->
+<ul>
+<li class="">⚠️ Overall process of enhancing the default flow of blocks. Please double check your sites on weird margin issues ⚠️</li>
+<li class="">Changed all 30px margins to $vertical-gutter.</li>
+<li class="">logo grid now has same margin on the side as bottom</li>
+<li class="">Eliminated a lot of media queries by using custom properties.</li>
+<li class="">Menu toggler black outline removed on focus</li>
+<li class="">Rework of icons-list.scss for more consistent icons</li>
+<li class="">Table.scss display fix</li>
+<li class="">Media-text block css reworked and reduces total css size by 4kb</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">card grid backend display fix</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3130">3.13.0:<a href="#3130" class="hash-link" aria-label="Direct link to 3.13.0:" title="Direct link to 3.13.0:" translate="no">​</a></h3>
+<p><em>Release Date - 15 april 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please update the version number to 2 in your theme.json in your child theme.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">font sizes inside searchbar are tweaked</li>
+<li class="">Improvements to other-items.twig</li>
+<li class="">Major overhaul to how blocks display their background colors</li>
+<li class="">Nav items with a background now have a has-background class</li>
+<li class="">Load more archives are more responsive to user input.</li>
+<li class="">Theme.json update to v2 and did some householding.</li>
+<li class="">Several queries in queries.php are now leaner and thus should perform better.</li>
+<li class="">Hide empty categories in node-overview block.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">post_type_name() would throw notice on some post types.</li>
+<li class="">gallery block logo view with links now display properly</li>
+<li class="">Translation inside search-list.twig is fixed</li>
+<li class="">Load more archives with filters now load the correct next items.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3121---3122">3.12.1 - 3.12.2:<a href="#3121---3122" class="hash-link" aria-label="Direct link to 3.12.1 - 3.12.2:" title="Direct link to 3.12.1 - 3.12.2:" translate="no">​</a></h3>
+<p><em>Release Date - 4 april 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">REST url added</li>
+<li class="">card-button-color variable added</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">removed image size <code>small</code> and upsized <code>medium_large</code> to 800</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">A11y<!-- -->
+<ul>
+<li class="">set body class directly on startup in head when in a11y mode to prevent flash when switching pages</li>
+<li class="">Fixed a lot of bugs in contrast mode</li>
+</ul>
+</li>
+<li class="">wp-gallery block logo variant is working again</li>
+<li class="">Better image size loaded for content-cards</li>
+<li class="">less compression on webp generation</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3120">3.12.0:<a href="#3120" class="hash-link" aria-label="Direct link to 3.12.0:" title="Direct link to 3.12.0:" translate="no">​</a></h3>
+<p><em>Release Date - 30 march 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">slide block now has a proper option for an image. You can now choose between innerblocks and a single image</li>
+<li class="">Continued on contrast mode</li>
+<li class="">header and nav colors are transformed to css vars</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3114">3.11.4:<a href="#3114" class="hash-link" aria-label="Direct link to 3.11.4:" title="Direct link to 3.11.4:" translate="no">​</a></h3>
+<p><em>Release Date - 25 march 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Fields of person and job are now filterable.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">ACF fields at jobs and persons are translated once more</li>
+<li class="">Css grid fix in backend</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3112">3.11.2:<a href="#3112" class="hash-link" aria-label="Direct link to 3.11.2:" title="Direct link to 3.11.2:" translate="no">​</a></h3>
+<p><em>Release Date - 25 march 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added before footer widgets action</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Card grid backend layout fixed</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Removed instagram feed block references.</li>
+<li class="">dim ratio moved to global</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3111">3.11.1:<a href="#3111" class="hash-link" aria-label="Direct link to 3.11.1:" title="Direct link to 3.11.1:" translate="no">​</a></h3>
+<p><em>Release Date - 22 march 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Archive pages now have an extra body class &#x27;archive-page&#x27;</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Footer widgets css improvements</li>
+<li class="">Card grid backend layout fixed</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Removed instagram feed block references.</li>
+<li class="">dim ratio moved to global</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3110">3.11.0:<a href="#3110" class="hash-link" aria-label="Direct link to 3.11.0:" title="Direct link to 3.11.0:" translate="no">​</a></h3>
+<p><em>Release Date - 21 march 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New logo block for usage in widget areas.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Custom blocks added via the new card-grid filter introduced in 3.10.2 are now displayed the same way as regular cards inside the grid.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3102">3.10.2:<a href="#3102" class="hash-link" aria-label="Direct link to 3.10.2:" title="Direct link to 3.10.2:" translate="no">​</a></h3>
+<p><em>Release Date - 222 march 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Allowed blocks are now filterable so you can add your extra or your own blocks to wp-lemon blocks.</li>
+<li class="">Two new footer actions added.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3100">3.10.0:<a href="#3100" class="hash-link" aria-label="Direct link to 3.10.0:" title="Direct link to 3.10.0:" translate="no">​</a></h3>
+<p><em>Release Date - 21 march 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Bumped bulldozer to 1.10.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Card grid mode now has a flexible layout mode where you can build the layout of the grid by hand. You can choose from 3 different layouts to start with.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Cleanup of setup function.</li>
+<li class="">scss vendor imports no longer prefixed</li>
+<li class="">Better slider JS</li>
+<li class="">Overlaps of media-text are now done purely by css grid instead of after element.</li>
+<li class="">Contrast mode work in progress</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong></li>
+<li class="">Disable alignment on timeline block.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="391">3.9.1:<a href="#391" class="hash-link" aria-label="Direct link to 3.9.1:" title="Direct link to 3.9.1:" translate="no">​</a></h3>
+<p><em>Release Date - 15 march 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes to child block modifications</li>
+<li class="">Temporary fix for color palette issue, see: <a href="https://github.com/Log1x/acf-editor-palette/issues/30" target="_blank" rel="noopener noreferrer" class="">https://github.com/Log1x/acf-editor-palette/issues/30</a></li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="390">3.9.0:<a href="#390" class="hash-link" aria-label="Direct link to 3.9.0:" title="Direct link to 3.9.0:" translate="no">​</a></h3>
+<p><em>Release Date - 9 march 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please update <strong>basedbuilder-config</strong> to 2.6</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Colors are now inserted into the theme.json file for maximum compat with new WordPress versions.</li>
+<li class="">Timeline positioning fixes.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong></li>
+<li class="">Disable alignment on timeline block.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="383">3.8.3:<a href="#383" class="hash-link" aria-label="Direct link to 3.8.3:" title="Direct link to 3.8.3:" translate="no">​</a></h3>
+<p><em>Release Date - 25 february 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Media text fixes</li>
+<li class="">Timeline fixes</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="382">3.8.2:<a href="#382" class="hash-link" aria-label="Direct link to 3.8.2:" title="Direct link to 3.8.2:" translate="no">​</a></h3>
+<p><em>Release Date - 25 february 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Bumped bulldozer to 1.9.8</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better backend block alignment.</li>
+<li class="">Aria improvements to language switcher and currentpage.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed double notices in blocks.</li>
+<li class="">wp-separator block is now properly displayed.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="381">3.8.1:<a href="#381" class="hash-link" aria-label="Direct link to 3.8.1:" title="Direct link to 3.8.1:" translate="no">​</a></h3>
+<p><em>Release Date - 24 february 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Block alignment fixes</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="380">3.8.0:<a href="#380" class="hash-link" aria-label="Direct link to 3.8.0:" title="Direct link to 3.8.0:" translate="no">​</a></h3>
+<p><em>Release Date - 24 february 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Bumped minimal WordPress version to 5.9</li>
+<li class="">Removed the primary sidebar since it is not used in any project.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Complete overhaul to the site.php file.</li>
+<li class="">Animate on scroll library is now handles by css custom properties. This decreases the css size by 20kb</li>
+<li class="">Simplified css for several blocks. This also decreased css size.</li>
+<li class="">Cleaned some PHP files</li>
+<li class="">Editor alignment of blocks on smaller screens is now better.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Cleaned the Ajax query class.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="373">3.7.3:<a href="#373" class="hash-link" aria-label="Direct link to 3.7.3:" title="Direct link to 3.7.3:" translate="no">​</a></h3>
+<p><em>Release Date - 21 february 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Slide block now hase a fade option</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">acf-fluentform class could throw a notice in some cases.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="372">3.7.2:<a href="#372" class="hash-link" aria-label="Direct link to 3.7.2:" title="Direct link to 3.7.2:" translate="no">​</a></h3>
+<p><em>Release Date - 15 february 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Banner block margin backend fix #133</li>
+<li class="">img-container block not having correct background color.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="371">3.7.1:<a href="#371" class="hash-link" aria-label="Direct link to 3.7.1:" title="Direct link to 3.7.1:" translate="no">​</a></h3>
+<p><em>Release Date - 14 february 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Css bootstrap5 gutter fix</li>
+<li class="">Link in colored paragraph now inherits color properly</li>
+<li class="">Fixed logo variant of gallery.</li>
+<li class="">Media and text without background color is now shown correctly without padding on mobile.</li>
+<li class="">Block positioning fixes.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="370">3.7.0:<a href="#370" class="hash-link" aria-label="Direct link to 3.7.0:" title="Direct link to 3.7.0:" translate="no">​</a></h3>
+<p><em>Release Date - 10 february 2022</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please double check custom cards in your theme. We added custom footer in the card-wrap.twig that your card will probably extend. Disable the default footer by adding a twig var in your custom card <code>{% set hide_default_footer = true %}</code> or remake your custom cards and remove the footer.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">All cards now share the same footer.</li>
+<li class="">Allow lists inside faq items.</li>
+<li class="">Add default margin underneath img-container blocks.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed backend notice not being correct.</li>
+<li class="">Hopefully a permanent bug for the overflowing navbar without setting the navbar to overflow: hidden.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="363">3.6.3:<a href="#363" class="hash-link" aria-label="Direct link to 3.6.3:" title="Direct link to 3.6.3:" translate="no">​</a></h3>
+<p><em>Release Date - 08 february 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Rework on menu.js and dropdown.js for better compat with custom dropdown elements outside the navbar.</li>
+<li class="">archive.js now is split into two functions: an ajax call and listereners. This allows to use ajaxcall separately.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">css headings were not displayed correctly because of an css regression introduces in 3.6.0</li>
+<li class="">Better footer css</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="362">3.6.2:<a href="#362" class="hash-link" aria-label="Direct link to 3.6.2:" title="Direct link to 3.6.2:" translate="no">​</a></h3>
+<p><em>Release Date - 07 february 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">content card grid - allow 1 col layouts.</li>
+<li class="">archive - filter is now a overwritable partial.</li>
+<li class="">Footer - don&#x27;t show navholder div when not needed.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">backend - fully aligned blocks cannot overflow anymore.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="361">3.6.1:<a href="#361" class="hash-link" aria-label="Direct link to 3.6.1:" title="Direct link to 3.6.1:" translate="no">​</a></h3>
+<p><em>Release Date - 07 february 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes overflow bug</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="360">3.6.0:<a href="#360" class="hash-link" aria-label="Direct link to 3.6.0:" title="Direct link to 3.6.0:" translate="no">​</a></h3>
+<p><em>Release Date - 06 february 2022</em></p>
+<ul>
+<li class="">Please update bulldozer to 1.9.4 by uploading the vendor folder to the server.</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">⚠️ Enhanced FAQ block with new innerblock, please migrate your FAQ questions to the new innerblocks!</li>
+<li class="">Better editor block alignment</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Minor css fixes in front- and backend</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="353">3.5.3:<a href="#353" class="hash-link" aria-label="Direct link to 3.5.3:" title="Direct link to 3.5.3:" translate="no">​</a></h3>
+<p><em>Release Date - 03 february 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New hook <code>wp-lemon/filter/navwalker/{{item}}/link-attributes</code> to filter attributes</li>
+<li class="">Menu items that function as an archive page now have a specific class named <code>.archive-{{posttype}}</code></li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better editor block alignment</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Minor css fixes in front- and backend</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="352">3.5.2:<a href="#352" class="hash-link" aria-label="Direct link to 3.5.2:" title="Direct link to 3.5.2:" translate="no">​</a></h3>
+<p><em>Release Date - 01 february 2022</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better editor block alignment</li>
+<li class="">img container block now support text alignment</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="351">3.5.1:<a href="#351" class="hash-link" aria-label="Direct link to 3.5.1:" title="Direct link to 3.5.1:" translate="no">​</a></h3>
+<p><em>Release Date - 01 february 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New hook <code>wp-lemon/action/entry/before</code> and <code>wp-lemon/action/entry/after</code> inside single.twig and index.twig</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Linting &amp; security fixes</li>
+<li class="">Better WordPress 5.9 support</li>
+<li class="">Minor scss impromenets</li>
+<li class="">testimonial support inside sliders</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="350">3.5.0:<a href="#350" class="hash-link" aria-label="Direct link to 3.5.0:" title="Direct link to 3.5.0:" translate="no">​</a></h3>
+<p><em>Release Date - 27 january 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New testimonial block</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed smoothscroll bug</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Support responsive embeds.</li>
+<li class="">Tweaked font sizes a bit</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="340">3.4.0:<a href="#340" class="hash-link" aria-label="Direct link to 3.4.0:" title="Direct link to 3.4.0:" translate="no">​</a></h3>
+<p><em>Release Date - 25 january 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Several JS bugs fixed.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Added margin to first block if not full aligned, this reduces the usage of container blocks. Please check layouts of pages.</li>
+<li class="">better positioning of blocks inside editor</li>
+<li class="">acf boxes are not draggable anymore in backend.</li>
+<li class="">cleanup of files</li>
+<li class="">Woocommerce improvements</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="332">3.3.2:<a href="#332" class="hash-link" aria-label="Direct link to 3.3.2:" title="Direct link to 3.3.2:" translate="no">​</a></h3>
+<p><em>Release Date - 17 january 2022</em></p>
+<ul>
+<li class="">Please update bulldozer to 1.9.1 by uploading the vendor folder to the server.</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">block classes would be rendered incorrectly.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="331">3.3.1:<a href="#331" class="hash-link" aria-label="Direct link to 3.3.1:" title="Direct link to 3.3.1:" translate="no">​</a></h3>
+<p><em>Release Date - 17 january 2022</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">antispambot filter fixed</li>
+<li class="">bug where dropdown menus wouldn&#x27;t close is fixed</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Removed no-js function in head</li>
+<li class="">removed overflow from header</li>
+<li class="">faster default fade-in animations</li>
+<li class="">better archive css</li>
+<li class="">some improvements to woocommerce</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="330">3.3.0:<a href="#330" class="hash-link" aria-label="Direct link to 3.3.0:" title="Direct link to 3.3.0:" translate="no">​</a></h3>
+<p><em>Release Date - 11 january 2022</em></p>
+<ul>
+<li class="">Please update bulldozer to 1.9.0 by uploading the vendor folder to the server.</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">No more jQuery dependency in wp-lemon. Read: <a class="" href="/wp-lemon-docs/basics/basic-javascript">Javascript</a></li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Several JS bugs fixed.</li>
+<li class="">bug where dropdown menus wouldn&#x27;t close is fixed</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Its now possible to overwrite block attributes inside a block declaration class.</li>
+<li class="">Cleaned deprecated functions</li>
+<li class="">navwalker improvements. Less classes and better markup.</li>
+<li class="">Vanilla js Archive.js</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="322">3.2.2:<a href="#322" class="hash-link" aria-label="Direct link to 3.2.2:" title="Direct link to 3.2.2:" translate="no">​</a></h3>
+<p><em>Release Date - 05 january 2022</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">wp-lemon now supports nested sub menus.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">JS fix in search.js</li>
+<li class="">JS fix in contact-buttons.js</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">share.js is now vanilla js</li>
+<li class="">smoothscroll.js in now vanilla js</li>
+<li class="">Block-slider.js is now vanilla js</li>
+<li class="">A11y.js is now vanilla js</li>
+</ul>
+</li>
+<li class="">📦 <strong>Updated dependencies</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="320">3.2.0:<a href="#320" class="hash-link" aria-label="Direct link to 3.2.0:" title="Direct link to 3.2.0:" translate="no">​</a></h3>
+<p><em>Release Date - 24 december 2021</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">wp-lemon now supports nested sub menus.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Margin bottom is now fixed in banner block</li>
+<li class="">Button block now has a proper hover color</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Navbar toggle now has an aria label</li>
+<li class="">Search.js is now vanilla JS</li>
+<li class="">Contact-buttons is now vanilla js</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="317">3.1.7:<a href="#317" class="hash-link" aria-label="Direct link to 3.1.7:" title="Direct link to 3.1.7:" translate="no">​</a></h3>
+<p><em>Release Date - 23 december 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed media and text display in backend.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Allow lists inside banner block</li>
+<li class="">Improved navwalker</li>
+<li class="">You are now able to overwrite font sizes inside cards more easily.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="316">3.1.6:<a href="#316" class="hash-link" aria-label="Direct link to 3.1.6:" title="Direct link to 3.1.6:" translate="no">​</a></h3>
+<p><em>Release Date - 21 december 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">fluentform acf field now allows for a null value.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Skip license check on development.</li>
+<li class="">Add possibility to add a margin underneath a banner block</li>
+<li class="">Allow wide alignment on card grid block</li>
+<li class="">other_items_query now supports taxonomies as well.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="315">3.1.5:<a href="#315" class="hash-link" aria-label="Direct link to 3.1.5:" title="Direct link to 3.1.5:" translate="no">​</a></h3>
+<p><em>Release Date - 17 december 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes a bug where the excerpt would always be set</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">New actions and filters added, please check the docs.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="314">3.1.4:<a href="#314" class="hash-link" aria-label="Direct link to 3.1.4:" title="Direct link to 3.1.4:" translate="no">​</a></h3>
+<p><em>Release Date - 17 december 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Woocommerce improvements.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="313">3.1.3:<a href="#313" class="hash-link" aria-label="Direct link to 3.1.3:" title="Direct link to 3.1.3:" translate="no">​</a></h3>
+<p><em>Release Date - 15 december 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes missing media text bg color</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">minor css var improvements</li>
+<li class="">added date filter in entry header</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="312">3.1.2:<a href="#312" class="hash-link" aria-label="Direct link to 3.1.2:" title="Direct link to 3.1.2:" translate="no">​</a></h3>
+<p><em>Release Date - 13 december 2021</em></p>
+<ul>
+<li class="">Please update bulldozer to 1.8.2 by uploading the vendor folder to the server.</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Disable mode switching for several blocks.</li>
+<li class="">Fixes bug where card images would render at incorrect heights in the backend.</li>
+<li class="">Fixes wrong display of card grid with two columns.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Card grid now shows horizontal alignment buttons.</li>
+<li class="">Several backend style improvements.</li>
+<li class="">Better checks if acf fields inside blocks are empty.</li>
+<li class="">Some block fields are no longer required.</li>
+<li class="">Better overwriting of styles</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="311">3.1.1:<a href="#311" class="hash-link" aria-label="Direct link to 3.1.1:" title="Direct link to 3.1.1:" translate="no">​</a></h3>
+<p><em>Release Date - 13 december 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes sass deprecation.</li>
+<li class="">Updated changelog for new theme.json</li>
+</ul>
+</li>
+<li class="">🌐 <strong>Updated Dutch translation</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="310">3.1.0:<a href="#310" class="hash-link" aria-label="Direct link to 3.1.0:" title="Direct link to 3.1.0:" translate="no">​</a></h3>
+<p><em>Release Date - 13 december 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please update bulldozer to 1.8.1 by uploading the vendor folder to the server.</li>
+<li class="">Please create a new file named <code>theme.json</code> with the following contents in your child theme.</li>
+</ul>
+</li>
+</ul>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;$schema&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;https://schemas.wp.org/trunk/theme.json&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;version&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;settings&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;border&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;customRadius&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">false</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;spacing&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;customPadding&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">false</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;customMargin&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">false</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;layout&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;contentSize&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;1100px&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;wideSize&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;1400px&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New Block: Card grid</li>
+<li class="">Filter added: <code>wp-lemon/filter/card/&#x27; ~ card_type ~ &#x27;/image-id&#x27;</code></li>
+<li class="">Filter added: <code>wp-lemon/filter/entry-header/&#x27; ~ post.type ~ &#x27;/type&#x27;</code></li>
+<li class="">Filter added: <code>wp-lemon/filter/card/&#x27; ~ card_type ~ &#x27;/image-el&#x27;</code></li>
+<li class="">Filter added: <code>wp-lemon/filter/entry-header/&#x27; ~ post.type ~ &#x27;/picture-el&#x27;</code></li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Font sizes are now set with css vars.</li>
+<li class="">Smaller css bundle by removing not used styles.</li>
+<li class="">Better icons for block to differentiate between them inside the editor.</li>
+<li class="">Various block context improvements</li>
+<li class="">macro picture now doesn&#x27;t have any children elements when there is now image set.</li>
+<li class="">Move colors to css vars for several blocks<!-- -->
+<ul>
+<li class="">Node latest</li>
+<li class="">Node overview</li>
+<li class="">Timeline</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="302">3.0.2:<a href="#302" class="hash-link" aria-label="Direct link to 3.0.2:" title="Direct link to 3.0.2:" translate="no">​</a></h3>
+<p><em>Release Date - 7 december 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes missing icon in card wrap</li>
+<li class="">Fixes the word &quot;menu&quot; not being translatable.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="301">3.0.1:<a href="#301" class="hash-link" aria-label="Direct link to 3.0.1:" title="Direct link to 3.0.1:" translate="no">​</a></h3>
+<p><em>Release Date - 6 december 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes navbar being sticky top all the time</li>
+<li class="">proposed fix for overflowing navbar due to two transforming element inside each other.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="300">3.0.0:<a href="#300" class="hash-link" aria-label="Direct link to 3.0.0:" title="Direct link to 3.0.0:" translate="no">​</a></h3>
+<p><em>Release Date - 2 december 2021</em></p>
+<p>Please read our upgrade guide for a step-by-step plan to upgrade to the newest version: <a class="" href="/wp-lemon-docs/migrations/2-3">3.0 upgrade guide</a></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please update your dependencies in package.json to
+<code>&quot;@popperjs/core&quot;: &quot;^2.10.2&quot;, &quot;aos&quot;: &quot;^3.0.0-beta.6&quot;, &quot;bootstrap&quot;: &quot;^5.1&quot;, &quot;lodash.throttle&quot;: &quot;^4.1.1&quot;, &quot;swiper&quot;: &quot;^7.2&quot;, &quot;vanilla-lazyload&quot;: &quot;17.5&quot;</code> and run yarn install</li>
+<li class="">Please update your dev dependencies like so:
+<code>&quot;devDependencies&quot;: { &quot;@wordpress/browserslist-config&quot;: &quot;^4.1&quot;, &quot;basebuilder-config&quot;: &quot;^2.2&quot;, &quot;prettier&quot;: &quot;^2.4&quot;, &quot;prettier-plugin-twig-melody&quot;: &quot;^0.4.6&quot;, &quot;stylelint&quot;: &quot;^14.0&quot; },</code></li>
+<li class="">Please check custom bootstrap code against <a href="https://getbootstrap.com/docs/5.1/migration/" target="_blank" rel="noopener noreferrer" class="">https://getbootstrap.com/docs/5.1/migration/</a></li>
+<li class="">Please update custom Swipers against <a href="https://swiperjs.com/migration-guide" target="_blank" rel="noopener noreferrer" class="">https://swiperjs.com/migration-guide</a></li>
+<li class="">Remove &quot;babel-preset-es2015&quot; from your packages</li>
+<li class="">New naming for filters. Please double check if filters are still working.</li>
+<li class="">Icons classnames are now namespaced. So you can more easily add your own icon font.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">New offcanvas bootstrap 5 mobile menu</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="all-changelogs-by-major-version">All changelogs by major version<a href="#all-changelogs-by-major-version" class="hash-link" aria-label="Direct link to All changelogs by major version" title="Direct link to All changelogs by major version" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/wp-lemon-docs/changelog">5.x changelogs (current major version)</a></li>
+<li class=""><a class="" href="/wp-lemon-docs/changelog/4.0">4.x changelogs</a></li>
+<li class=""><a class="" href="/wp-lemon-docs/changelog/3.0">3.x changelogs</a></li>
+<li class=""><a class="" href="/wp-lemon-docs/changelog/2.0">2.x changelogs</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Studio-Lemon/wp-lemon-docs/tree/master/docs/changelog/3.0.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#3360" class="table-of-contents__link toc-highlight">3.36.0:</a></li><li><a href="#3353-5" class="table-of-contents__link toc-highlight">3.35.[3-5]:</a><ul><li><a href="#3352" class="table-of-contents__link toc-highlight">3.35.2:</a></li><li><a href="#3351" class="table-of-contents__link toc-highlight">3.35.1:</a></li><li><a href="#3350" class="table-of-contents__link toc-highlight">3.35.0:</a></li><li><a href="#3341" class="table-of-contents__link toc-highlight">3.34.1</a></li><li><a href="#3340" class="table-of-contents__link toc-highlight">3.34.0:</a></li><li><a href="#3333" class="table-of-contents__link toc-highlight">3.33.3</a></li><li><a href="#3332" class="table-of-contents__link toc-highlight">3.33.2</a></li><li><a href="#3331" class="table-of-contents__link toc-highlight">3.33.1</a></li><li><a href="#3330" class="table-of-contents__link toc-highlight">3.33.0</a></li><li><a href="#3321" class="table-of-contents__link toc-highlight">3.32.1</a></li><li><a href="#3320" class="table-of-contents__link toc-highlight">3.32.0</a></li><li><a href="#3313" class="table-of-contents__link toc-highlight">3.31.3</a></li><li><a href="#3312" class="table-of-contents__link toc-highlight">3.31.2</a></li><li><a href="#3311" class="table-of-contents__link toc-highlight">3.31.1</a></li><li><a href="#3310" class="table-of-contents__link toc-highlight">3.31.0</a></li><li><a href="#3302" class="table-of-contents__link toc-highlight">3.30.2</a></li><li><a href="#3301" class="table-of-contents__link toc-highlight">3.30.1</a></li><li><a href="#3300" class="table-of-contents__link toc-highlight">3.30.0</a></li><li><a href="#3296" class="table-of-contents__link toc-highlight">3.29.6</a></li><li><a href="#3295" class="table-of-contents__link toc-highlight">3.29.5</a></li><li><a href="#3294" class="table-of-contents__link toc-highlight">3.29.4</a></li><li><a href="#3292" class="table-of-contents__link toc-highlight">3.29.2</a></li><li><a href="#3291" class="table-of-contents__link toc-highlight">3.29.1</a></li><li><a href="#3290" class="table-of-contents__link toc-highlight">3.29.0</a></li><li><a href="#3281" class="table-of-contents__link toc-highlight">3.28.1</a></li><li><a href="#3280" class="table-of-contents__link toc-highlight">3.28.0</a></li><li><a href="#3270" class="table-of-contents__link toc-highlight">3.27.0</a></li><li><a href="#3261" class="table-of-contents__link toc-highlight">3.26.1</a></li><li><a href="#3260" class="table-of-contents__link toc-highlight">3.26.0</a></li><li><a href="#3251-tm-3255" class="table-of-contents__link toc-highlight">3.25.1 t/m 3.25.5:</a></li><li><a href="#3250" class="table-of-contents__link toc-highlight">3.25.0:</a></li><li><a href="#3241" class="table-of-contents__link toc-highlight">3.24.1:</a></li><li><a href="#3240" class="table-of-contents__link toc-highlight">3.24.0:</a></li><li><a href="#3233" class="table-of-contents__link toc-highlight">3.23.3:</a></li><li><a href="#3232" class="table-of-contents__link toc-highlight">3.23.2:</a></li><li><a href="#3231" class="table-of-contents__link toc-highlight">3.23.1:</a></li><li><a href="#3230" class="table-of-contents__link toc-highlight">3.23.0:</a></li><li><a href="#3223" class="table-of-contents__link toc-highlight">3.22.3:</a></li><li><a href="#3221-2" class="table-of-contents__link toc-highlight">3.22.[1-2]:</a></li><li><a href="#3220" class="table-of-contents__link toc-highlight">3.22.0:</a></li><li><a href="#3212" class="table-of-contents__link toc-highlight">3.21.2:</a></li><li><a href="#3211" class="table-of-contents__link toc-highlight">3.21.1:</a></li><li><a href="#3210" class="table-of-contents__link toc-highlight">3.21.0:</a></li><li><a href="#3202" class="table-of-contents__link toc-highlight">3.20.2:</a></li><li><a href="#3201" class="table-of-contents__link toc-highlight">3.20.1:</a></li><li><a href="#3200" class="table-of-contents__link toc-highlight">3.20.0:</a></li><li><a href="#3199" class="table-of-contents__link toc-highlight">3.19.9:</a></li><li><a href="#3198" class="table-of-contents__link toc-highlight">3.19.8:</a></li><li><a href="#3196-and-3197" class="table-of-contents__link toc-highlight">3.19.6 and 3.19.7:</a></li><li><a href="#3195" class="table-of-contents__link toc-highlight">3.19.5:</a></li><li><a href="#3194" class="table-of-contents__link toc-highlight">3.19.4:</a></li><li><a href="#3192" class="table-of-contents__link toc-highlight">3.19.2:</a></li><li><a href="#3191" class="table-of-contents__link toc-highlight">3.19.1:</a></li><li><a href="#3190" class="table-of-contents__link toc-highlight">3.19.0:</a></li><li><a href="#3181" class="table-of-contents__link toc-highlight">3.18.1:</a></li><li><a href="#3180" class="table-of-contents__link toc-highlight">3.18.0:</a></li><li><a href="#3173" class="table-of-contents__link toc-highlight">3.17.3:</a></li><li><a href="#3172" class="table-of-contents__link toc-highlight">3.17.2:</a></li><li><a href="#3171" class="table-of-contents__link toc-highlight">3.17.1:</a></li><li><a href="#3170" class="table-of-contents__link toc-highlight">3.17.0:</a></li><li><a href="#3162" class="table-of-contents__link toc-highlight">3.16.2:</a></li><li><a href="#3161" class="table-of-contents__link toc-highlight">3.16.1:</a></li><li><a href="#3160" class="table-of-contents__link toc-highlight">3.16.0:</a></li><li><a href="#3151---3154" class="table-of-contents__link toc-highlight">3.15.1 - 3.15.4:</a></li><li><a href="#3150" class="table-of-contents__link toc-highlight">3.15.0:</a></li><li><a href="#3140" class="table-of-contents__link toc-highlight">3.14.0:</a></li><li><a href="#3130" class="table-of-contents__link toc-highlight">3.13.0:</a></li><li><a href="#3121---3122" class="table-of-contents__link toc-highlight">3.12.1 - 3.12.2:</a></li><li><a href="#3120" class="table-of-contents__link toc-highlight">3.12.0:</a></li><li><a href="#3114" class="table-of-contents__link toc-highlight">3.11.4:</a></li><li><a href="#3112" class="table-of-contents__link toc-highlight">3.11.2:</a></li><li><a href="#3111" class="table-of-contents__link toc-highlight">3.11.1:</a></li><li><a href="#3110" class="table-of-contents__link toc-highlight">3.11.0:</a></li><li><a href="#3102" class="table-of-contents__link toc-highlight">3.10.2:</a></li><li><a href="#3100" class="table-of-contents__link toc-highlight">3.10.0:</a></li><li><a href="#391" class="table-of-contents__link toc-highlight">3.9.1:</a></li><li><a href="#390" class="table-of-contents__link toc-highlight">3.9.0:</a></li><li><a href="#383" class="table-of-contents__link toc-highlight">3.8.3:</a></li><li><a href="#382" class="table-of-contents__link toc-highlight">3.8.2:</a></li><li><a href="#381" class="table-of-contents__link toc-highlight">3.8.1:</a></li><li><a href="#380" class="table-of-contents__link toc-highlight">3.8.0:</a></li><li><a href="#373" class="table-of-contents__link toc-highlight">3.7.3:</a></li><li><a href="#372" class="table-of-contents__link toc-highlight">3.7.2:</a></li><li><a href="#371" class="table-of-contents__link toc-highlight">3.7.1:</a></li><li><a href="#370" class="table-of-contents__link toc-highlight">3.7.0:</a></li><li><a href="#363" class="table-of-contents__link toc-highlight">3.6.3:</a></li><li><a href="#362" class="table-of-contents__link toc-highlight">3.6.2:</a></li><li><a href="#361" class="table-of-contents__link toc-highlight">3.6.1:</a></li><li><a href="#360" class="table-of-contents__link toc-highlight">3.6.0:</a></li><li><a href="#353" class="table-of-contents__link toc-highlight">3.5.3:</a></li><li><a href="#352" class="table-of-contents__link toc-highlight">3.5.2:</a></li><li><a href="#351" class="table-of-contents__link toc-highlight">3.5.1:</a></li><li><a href="#350" class="table-of-contents__link toc-highlight">3.5.0:</a></li><li><a href="#340" class="table-of-contents__link toc-highlight">3.4.0:</a></li><li><a href="#332" class="table-of-contents__link toc-highlight">3.3.2:</a></li><li><a href="#331" class="table-of-contents__link toc-highlight">3.3.1:</a></li><li><a href="#330" class="table-of-contents__link toc-highlight">3.3.0:</a></li><li><a href="#322" class="table-of-contents__link toc-highlight">3.2.2:</a></li><li><a href="#320" class="table-of-contents__link toc-highlight">3.2.0:</a></li><li><a href="#317" class="table-of-contents__link toc-highlight">3.1.7:</a></li><li><a href="#316" class="table-of-contents__link toc-highlight">3.1.6:</a></li><li><a href="#315" class="table-of-contents__link toc-highlight">3.1.5:</a></li><li><a href="#314" class="table-of-contents__link toc-highlight">3.1.4:</a></li><li><a href="#313" class="table-of-contents__link toc-highlight">3.1.3:</a></li><li><a href="#312" class="table-of-contents__link toc-highlight">3.1.2:</a></li><li><a href="#311" class="table-of-contents__link toc-highlight">3.1.1:</a></li><li><a href="#310" class="table-of-contents__link toc-highlight">3.1.0:</a></li><li><a href="#302" class="table-of-contents__link toc-highlight">3.0.2:</a></li><li><a href="#301" class="table-of-contents__link toc-highlight">3.0.1:</a></li><li><a href="#300" class="table-of-contents__link toc-highlight">3.0.0:</a></li></ul></li><li><a href="#all-changelogs-by-major-version" class="table-of-contents__link toc-highlight">All changelogs by major version</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Learn More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://levdbas.github.io/Bulldozer/#/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bulldozer<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://timber.github.io/docs/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Timber<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/StoutLogic/acf-builder/wiki/" target="_blank" rel="noopener noreferrer" class="footer__link-item">ACF Builder<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/roots/bedrock" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bedrock<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bootstrap<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/Studio-Lemon/wp-lemon-docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 wp-lemon. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,1448 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-changelog/2.0" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Changelogs 2.x | wp-lemon Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://studio-lemon.github.io/wp-lemon-docs/img/banner.png"><meta data-rh="true" name="twitter:image" content="https://studio-lemon.github.io/wp-lemon-docs/img/banner.png"><meta data-rh="true" property="og:url" content="https://studio-lemon.github.io/wp-lemon-docs/changelog/2.0"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Changelogs 2.x | wp-lemon Docs"><meta data-rh="true" name="description" content="Changelogs of 2.x"><meta data-rh="true" property="og:description" content="Changelogs of 2.x"><link data-rh="true" rel="icon" href="/wp-lemon-docs/img/favicon.png"><link data-rh="true" rel="canonical" href="https://studio-lemon.github.io/wp-lemon-docs/changelog/2.0"><link data-rh="true" rel="alternate" href="https://studio-lemon.github.io/wp-lemon-docs/changelog/2.0" hreflang="en"><link data-rh="true" rel="alternate" href="https://studio-lemon.github.io/wp-lemon-docs/changelog/2.0" hreflang="x-default"><link rel="stylesheet" href="/wp-lemon-docs/assets/css/styles.abd5626c.css">
+<script src="/wp-lemon-docs/assets/js/runtime~main.04898d94.js" defer="defer"></script>
+<script src="/wp-lemon-docs/assets/js/main.f72733ba.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/wp-lemon-docs/"><div class="navbar__logo"><img src="/wp-lemon-docs/img/favicon.png" alt="wp-lemon Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/wp-lemon-docs/img/favicon.png" alt="wp-lemon Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">wp-lemon Docs</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/Studio-Lemon/wp-lemon-docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Changelogs 2.x</h1></header><p>Back to <a class="" href="/wp-lemon-docs/changelog">current major version</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2220">2.22.0:<a href="#2220" class="hash-link" aria-label="Direct link to 2.22.0:" title="Direct link to 2.22.0:" translate="no">​</a></h3>
+<p><em>Release Date - 29 november 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Removed filter <code>wp-lemon/filter/card-icon</code> use <code>wp-lemon/filter/card/icon</code> instead</li>
+<li class="">Changed filter <code>wp-lemon/filter/card/excerpt-length/CARD_TYPE</code> to <code>wp-lemon/filter/card/CARD_TYPE/excerpt-length</code></li>
+<li class="">Changed filter <code>wp-lemon/filter/card/animation/CARD_TYPE</code> to <code>wp-lemon/filter/card/CARD_TYPE/animation</code></li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class=""><code>.job-meta</code> is not being rendered anymore when all fields are empty.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong></li>
+<li class="">
+<ul>
+<li class="">New filter <code>wp-lemon/filter/entry-header/image-size</code> to change all entry-header sizes at once.,</li>
+<li class="">New filter <code>wp-lemon/filter/entry-header/&#x27; ~ post.type ~ &#x27;/image-size</code> to change one specific post type image size.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2210">2.21.0:<a href="#2210" class="hash-link" aria-label="Direct link to 2.21.0:" title="Direct link to 2.21.0:" translate="no">​</a></h3>
+<p><em>Release Date - 25 november 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please update bulldozer to 1.7.0 by uploading the vendor folder to the server.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class=""><code>.navar__right</code> default margin-left removed.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New social media block/widget added.</li>
+<li class="">You can now easily add a link around an card image by set setting image_link to true</li>
+<li class="">New widgets block category</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better matching LinkedIn icon.</li>
+<li class="">Default social media colors of icons in footer don&#x27;t conflict anymore with background color.</li>
+</ul>
+</li>
+<li class="">🌐 <strong>Updated Dutch translation</strong></li>
+<li class="">🌐 <strong>Updated German translation</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2206">2.20.6:<a href="#2206" class="hash-link" aria-label="Direct link to 2.20.6:" title="Direct link to 2.20.6:" translate="no">​</a></h3>
+<p><em>Release Date - 22 november 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">ul in media text element now does have a margin.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New action added in header. <code>wp-lemon/action/navbar/before</code></li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2205">2.20.5:<a href="#2205" class="hash-link" aria-label="Direct link to 2.20.5:" title="Direct link to 2.20.5:" translate="no">​</a></h3>
+<p><em>Release Date - 17 november 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Footer link color now inherits the current colour.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Timeline-item block, alignment is now disabled</li>
+<li class="">add noopener to social items.</li>
+<li class="">FAQ block, + icon now inherits button color.</li>
+<li class="">PHP, all Timber calls are now properly namespaced.</li>
+<li class="">Widgets now inherit the font family.</li>
+<li class="">Add margin to the right of archive load-more button</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2203-4">2.20.[3-4]:<a href="#2203-4" class="hash-link" aria-label="Direct link to 2.20.[3-4]:" title="Direct link to 2.20.[3-4]:" translate="no">​</a></h3>
+<p><em>Release Date - 12 november 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes licence class activation</li>
+<li class="">Bug fixed where both contact buttons would show when only one of the two was active</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Now shows an error on non-activated websites to please activate the licence.</li>
+<li class="">Navbar now has extra scrolled modifier class when the navbar is not on top anymore.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2202">2.20.2:<a href="#2202" class="hash-link" aria-label="Direct link to 2.20.2:" title="Direct link to 2.20.2:" translate="no">​</a></h3>
+<p><em>Release Date - 8 november 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes an issue where jpg&#x27;s would be loaded twice.</li>
+<li class="">Contact banner block image is now contained</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better entry header markup.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2201">2.20.1:<a href="#2201" class="hash-link" aria-label="Direct link to 2.20.1:" title="Direct link to 2.20.1:" translate="no">​</a></h3>
+<p><em>Release Date - 2 november 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">German translation now loads again</li>
+<li class="">Minor tweaks to new cta block.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2200">2.20.0:<a href="#2200" class="hash-link" aria-label="Direct link to 2.20.0:" title="Direct link to 2.20.0:" translate="no">​</a></h3>
+<p><em>Release Date - 1 november 2021</em></p>
+<ul>
+<li class="">
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-breaking">⛏️ <strong>Breaking</strong><a href="#️-breaking" class="hash-link" aria-label="Direct link to ️-breaking" title="Direct link to ️-breaking" translate="no">​</a></h2>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New contact-cta block</li>
+<li class="">Call button is not contact-buttons. You now have the possibility to show a WhatsApp button as well.</li>
+<li class="">New next_post() function to navigate to the next post in that particular posttype</li>
+<li class="">Updated e-mail and phone icon.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Updated scss for better compat with dart-sass 2.0</li>
+<li class="">Updated dev dependencies</li>
+<li class="">Linted a lot of PHP files</li>
+<li class="">Slide-banner blocks can now only be placed inside a slider.</li>
+<li class="">wp-media-text - Better display inside editor.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Lazyload in the backend now works better.</li>
+</ul>
+</li>
+<li class="">🌐 <strong>Updated Dutch translation</strong></li>
+<li class="">🌐 <strong>Added German translation</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2196">2.19.6:<a href="#2196" class="hash-link" aria-label="Direct link to 2.19.6:" title="Direct link to 2.19.6:" translate="no">​</a></h3>
+<p><em>Release Date - 26 October 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Simpler index.php and twig file</li>
+<li class="">Footer code is now reused in entry-footer.twig</li>
+<li class="">content-header is now entry-header to match footer naming</li>
+<li class="">Simpler search markup.</li>
+<li class="">Reusable blocks are now shown full width. Fixes #105</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes a bug where element colors inside media text block would be hard overwritten</li>
+<li class="">Fixes a bug in node overview and node latest bug where column count was undefined. Fixes #104</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2195">2.19.5:<a href="#2195" class="hash-link" aria-label="Direct link to 2.19.5:" title="Direct link to 2.19.5:" translate="no">​</a></h3>
+<p><em>Release Date - 22 October 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes a bug where videos wouldn&#x27;t autoplay on iphones in serval cases. ### 2.19.5:</li>
+</ul>
+</li>
+</ul>
+<p><em>Release Date - 22 October 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes a bug where videos wouldn&#x27;t autoplay on iphones in serval cases.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2194">2.19.4:<a href="#2194" class="hash-link" aria-label="Direct link to 2.19.4:" title="Direct link to 2.19.4:" translate="no">​</a></h3>
+<p><em>Release Date - 18 October 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes a bug where theme would crash when ACF wasn&#x27;t active. E.G. when setting up a new site.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2192">2.19.2:<a href="#2192" class="hash-link" aria-label="Direct link to 2.19.2:" title="Direct link to 2.19.2:" translate="no">​</a></h3>
+<p><em>Release Date - 15 October 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Overhaul to font sizes. Please check the new scss map structure in the variables file.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes a bug that crashes the website when Fluentforms is deactivated.</li>
+<li class="">Disable gradients when not present.</li>
+<li class="">Footer padding changes</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2190">2.19.0:<a href="#2190" class="hash-link" aria-label="Direct link to 2.19.0:" title="Direct link to 2.19.0:" translate="no">​</a></h3>
+<p><em>Release Date - 10 October 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Basebuilder-config is updated to 2.0, please update manually in your child themes package.json and run yarn install afterwards.</li>
+<li class="">Please search your child themes JavaScript for <code>import &#x27;@wordpress/edit-post&#x27;;</code> and remove it.</li>
+<li class="">Lemon blocks plugin updated to 1.2.3 Please update manually to your FTP.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New ACF field to select a Fluentforms.</li>
+<li class="">Adding actions in header<!-- -->
+<ul>
+<li class=""><code>\{% do action(&#x27;wp-lemon/action/menu-toggle/before&#x27;) %\}</code></li>
+<li class=""><code>\{% do action(&#x27;wp-lemon/action/menu-toggle/after&#x27;) %\}</code></li>
+<li class=""><code>\{% do action(&#x27;wp-lemon/action/main-menu/before&#x27;) %\}</code></li>
+<li class=""><code>\{% do action(&#x27;wp-lemon/action/main-menu/after&#x27;) %\}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">remove <code>.footer__logobar</code> when no logo is present</li>
+<li class="">remove unused variable</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2180">2.18.0:<a href="#2180" class="hash-link" aria-label="Direct link to 2.18.0:" title="Direct link to 2.18.0:" translate="no">​</a></h3>
+<p><em>Release Date - 30 September 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">set default column count in node-latest and node-overview blocks.</li>
+<li class="">Node blocks not having proper col count by default.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better lazyload picture element.</li>
+<li class="">Better content card block defaults.</li>
+<li class="">Don&#x27;t load analytics on production</li>
+<li class="">Add WordPress ENV global to the context.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2179">2.17.9:<a href="#2179" class="hash-link" aria-label="Direct link to 2.17.9:" title="Direct link to 2.17.9:" translate="no">​</a></h3>
+<p><em>Release Date - 21 September 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Add missing collapsed class to menu toggler.</li>
+<li class="">Fixed button margin being applied double inside media-text block</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Renamed has_custom_page_archive() to custom_archive_page().</li>
+<li class="">Deprecated has_custom_page_archive()</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2178">2.17.8:<a href="#2178" class="hash-link" aria-label="Direct link to 2.17.8:" title="Direct link to 2.17.8:" translate="no">​</a></h3>
+<p><em>Release Date - 17 September 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">node-overview block ➡️ add extra tags for block variants</li>
+<li class="">archive query / ajax query ➡️ Render excerpt on load more click if toggle is set to true</li>
+<li class="">wp media / text block ➡️ Smaller margin between buttons inside content area.</li>
+<li class="">node overview/latest blocks ➡️ Render proper images based on col size.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">single-job.twig ➡️ remove meta div when no content is rendered inside.</li>
+<li class="">a11y functionality ➡️ This is now successfully rendered once more.</li>
+<li class="">Node overview block ➡️ Images now render correctly in backend.</li>
+<li class="">Widget editor screen ➡️ fixes notice</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2177">2.17.7:<a href="#2177" class="hash-link" aria-label="Direct link to 2.17.7:" title="Direct link to 2.17.7:" translate="no">​</a></h3>
+<p><em>Release Date - 29 july 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">wp-gallery ➡️ logo style ➡️ items now have same height.</li>
+<li class="">Archive block ➡️ tweaked vertical margins.</li>
+<li class="">wp-columns ➡️ Re-added margins underneath columns except last child.</li>
+<li class="">wp-image ➡️ icon style ➡️ tweaked design.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2175">2.17.5:<a href="#2175" class="hash-link" aria-label="Direct link to 2.17.5:" title="Direct link to 2.17.5:" translate="no">​</a></h3>
+<p><em>Release Date - 29 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed: overflowing cards.</li>
+<li class="">Fixed: Analytics not loading.</li>
+<li class="">Fixed: Don&#x27;t search for missing post types when setting archive pages.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2174">2.17.4:<a href="#2174" class="hash-link" aria-label="Direct link to 2.17.4:" title="Direct link to 2.17.4:" translate="no">​</a></h3>
+<p><em>Release Date - 27 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed: Gallery alignment fixes.</li>
+<li class="">Fixed: Timeline lazyload issue. Items would get loaded too early.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2173">2.17.3:<a href="#2173" class="hash-link" aria-label="Direct link to 2.17.3:" title="Direct link to 2.17.3:" translate="no">​</a></h3>
+<p><em>Release Date - 27 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed: Gallery alignment fixes.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2172">2.17.2:<a href="#2172" class="hash-link" aria-label="Direct link to 2.17.2:" title="Direct link to 2.17.2:" translate="no">​</a></h3>
+<p><em>Release Date - 27 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed: Intrinsic image sizes would error out due to a typo.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">node-overview and node-latest blocks can now query post types that are not public. These items now wont have a link.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2171">2.17.1:<a href="#2171" class="hash-link" aria-label="Direct link to 2.17.1:" title="Direct link to 2.17.1:" translate="no">​</a></h3>
+<p><em>Release Date - 27 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed: array to string conversion in licence class</li>
+<li class="">Only show language switcher if at least two languages are activated (also takes disabled languages into account).</li>
+<li class="">Fixed: timeline items would appear on a wrong spot when OS animations are disabled.</li>
+</ul>
+</li>
+<li class="">🌐 <strong>Updated Dutch translation</strong></li>
+<li class="">🌐 <strong>Added German translation</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2170">2.17.0:<a href="#2170" class="hash-link" aria-label="Direct link to 2.17.0:" title="Direct link to 2.17.0:" translate="no">​</a></h3>
+<p><em>Release Date - 23 july 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">javascript function lazyLoad is now called lazyLoadFunc. If you have custom javascript plugging into this function, please rename accordingly.</li>
+<li class="">Lemon blocks plugin updated to 1.2.2. Please update manually.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed: missing call button</li>
+<li class="">Fixed: missing padding in media-text</li>
+<li class="">Fixed: block quotes being too small</li>
+<li class="">Fixed: deprecation notice since WordPress 5.8 <code>block_categories</code> is now <code>block_categories_all</code></li>
+<li class="">Fixed: banners not lazyloading properly</li>
+<li class="">Fixed: sliders not lazyloading in backend.</li>
+<li class="">Fixed: Timeline dots not connecting.</li>
+<li class="">Proposed fix: Timeline animations stopped abruptly after a large amount of items.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better selector usage for wp-media-text</li>
+<li class="">Set translation setting in timeline block</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New block: slide-banner, this replaces the banner in sliders.</li>
+<li class="">Added new $card-picture-padding variable to control image ratio.</li>
+<li class="">Updated color settings for menu items. You can now set the background and text colors.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2162">2.16.2:<a href="#2162" class="hash-link" aria-label="Direct link to 2.16.2:" title="Direct link to 2.16.2:" translate="no">​</a></h3>
+<p><em>Release Date - 22 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed: Dropdown not closing on click</li>
+<li class="">Fixed: menu animating away on mobile browsers while opening menu</li>
+<li class="">Fixed: Media/text wide aligned didn&#x27;t had padding on mobile</li>
+<li class="">Fixed: paragraphs in cards always had a margin bottom. Now only the last paragraph has no margin.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Copyright message is now placed in a smaller column.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">intrinsic image size added for cards.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2161">2.16.1:<a href="#2161" class="hash-link" aria-label="Direct link to 2.16.1:" title="Direct link to 2.16.1:" translate="no">​</a></h3>
+<p><em>Release Date - 20 july 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Tweak notice inside node-latest block</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added filter to overwrite node-latest no-items message.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2160">2.16.0:<a href="#2160" class="hash-link" aria-label="Direct link to 2.16.0:" title="Direct link to 2.16.0:" translate="no">​</a></h3>
+<p><em>Release Date - 20 july 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please double check custom navbar styling on child sites.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Added notice on front-end when node-latest block does not contain items.</li>
+<li class="">Rework of the javascript that slides the menu in and out. The timings are now snappier.</li>
+</ul>
+</li>
+<li class="">🌐 <strong>Updated Dutch translation</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2154">2.15.4:<a href="#2154" class="hash-link" aria-label="Direct link to 2.15.4:" title="Direct link to 2.15.4:" translate="no">​</a></h3>
+<p><em>Release Date - 14 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Load same amount of items in archive query as original query.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Tweak font sizes</li>
+</ul>
+</li>
+<li class="">📦 <strong>Updated dependencies</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2153">2.15.3:<a href="#2153" class="hash-link" aria-label="Direct link to 2.15.3:" title="Direct link to 2.15.3:" translate="no">​</a></h3>
+<p><em>Release Date - 14 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes heading colors not being inherited in timeline cards</li>
+<li class="">wrap timeline items in div so even/uneven works consistently</li>
+<li class="">Timeline date justify fix</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Simpler language menus</li>
+<li class="">close dropdowns on escape</li>
+<li class="">close dropdowns on click outside dropdown</li>
+<li class="">Restyling of logo gallery style.</li>
+</ul>
+</li>
+<li class="">📦 <strong>Updated dependencies</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2152">2.15.2:<a href="#2152" class="hash-link" aria-label="Direct link to 2.15.2:" title="Direct link to 2.15.2:" translate="no">​</a></h3>
+<p><em>Release Date - 12 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes not loading child</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2151">2.15.1:<a href="#2151" class="hash-link" aria-label="Direct link to 2.15.1:" title="Direct link to 2.15.1:" translate="no">​</a></h3>
+<p><em>Release Date - 12 july 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes not loading child</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2150">2.15.0:<a href="#2150" class="hash-link" aria-label="Direct link to 2.15.0:" title="Direct link to 2.15.0:" translate="no">​</a></h3>
+<p><em>Release Date - 09 july 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Please add ACF color palette plugin by:<!-- -->
+<ul>
+<li class="">Updating your MU section in the composer.json like so: <code>&quot;web/app/mu-plugins/\\{$name\\}/&quot;: [ &quot;type:wordpress-muplugin&quot;, &quot;log1x/acf-editor-palette&quot; ],</code></li>
+<li class="">And add the plugin as a MU-plugi using <code>composer require log1x/acf-editor-palette</code></li>
+<li class="">Don&#x27;t forget to upload the mu-plugins folder when deploying.</li>
+<li class="">Update bulldozer as well by upload the vendor folder in your root.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New Timeline and timeline item blocks.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Removed backend block overrides from partials and added them in separate file.</li>
+<li class="">Translated block keywords</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2142">2.14.2:<a href="#2142" class="hash-link" aria-label="Direct link to 2.14.2:" title="Direct link to 2.14.2:" translate="no">​</a></h3>
+<p><em>Release Date - 30 june 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes missing card type class</li>
+<li class="">Add filter for js translation directory, defaults to parent theme.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2141">2.14.1:<a href="#2141" class="hash-link" aria-label="Direct link to 2.14.1:" title="Direct link to 2.14.1:" translate="no">​</a></h3>
+<p><em>Release Date - 30 june 2021</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New filter for excerpt length in cards.</li>
+<li class="">Moved card filters to card-wrap</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Don&#x27;t align img-container wide by default.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fix missing paddings inside columns and img-container on some elements.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2140">2.14.0:<a href="#2140" class="hash-link" aria-label="Direct link to 2.14.0:" title="Direct link to 2.14.0:" translate="no">​</a></h3>
+<p><em>Release Date - 29 june 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Renaming of actions<!-- -->
+<ul>
+<li class="">wp-lemon_meta ➜ wp-lemon/action/head/meta</li>
+<li class="">wp-lemon_before ➜ wp-lemon/action/body/before</li>
+<li class="">wp-lemon_before_header ➜ wp-lemon/action/header/before</li>
+<li class="">wp-lemon_after_header ➜ wp-lemon/action/header/after</li>
+<li class="">wp-lemon_before_content ➜ wp-lemon/action/content/before</li>
+<li class="">wp-lemon_after_content ➜ wp-lemon/action/content/after</li>
+<li class="">wp-lemon_before_footer ➜ wp-lemon/action/footer/before</li>
+<li class="">wp-lemon_after_footer_widgets ➜ wp-lemon/action/footer-widgets/after</li>
+<li class="">wp-lemon_after_footer ➜ wp-lemon/action/footer/after</li>
+<li class="">wp-lemon_after ➜ wp-lemon/action/body/after</li>
+</ul>
+</li>
+<li class="">Rename of filter<!-- -->
+<ul>
+<li class="">wp-lemon/card-icon ➜ wp-lemon/filter/card-icon</li>
+<li class="">wp-lemon/image_sizes ➜ wp-lemon/filter/image_sizes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New filter for filtering copyright message <code>wp-lemon/filter/copyright-message</code></li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">if no ga_id context tag is set, don&#x27;t try to sent event on search.</li>
+<li class="">Better styling for instagram block.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Linktree template is now simpler.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2131">2.13.1:<a href="#2131" class="hash-link" aria-label="Direct link to 2.13.1:" title="Direct link to 2.13.1:" translate="no">​</a></h3>
+<p><em>Release Date - 26 june 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Media/Text block that was wide aligned had no padding on mobile. This is now fixed.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better mobile styling for repeating blocks.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2130">2.13.0:<a href="#2130" class="hash-link" aria-label="Direct link to 2.13.0:" title="Direct link to 2.13.0:" translate="no">​</a></h3>
+<p><em>Release Date - 23 june 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Better scss styling for media and text block. <strong>Please double check your existing blocks</strong></li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Removed unused class form img-container block</li>
+<li class="">Better way to tell if block is disabled or not, fixes issue on bit site.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added support for custom excerpts. We don&#x27;t ... the sentence if a custom excerpt is written.</li>
+<li class="">Arrow icons in cards are now overwritable by filter.</li>
+<li class="">Added mixin for shevron button.</li>
+<li class="">Added variables for better dropdown styling</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2122">2.12.2:<a href="#2122" class="hash-link" aria-label="Direct link to 2.12.2:" title="Direct link to 2.12.2:" translate="no">​</a></h3>
+<p><em>Release Date - 23 june 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better translation default options</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2121">2.12.1:<a href="#2121" class="hash-link" aria-label="Direct link to 2.12.1:" title="Direct link to 2.12.1:" translate="no">​</a></h3>
+<p><em>Release Date - 23 june 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes css bug where columns would not be 100% width on several screen sizes.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Node blocks can now have a background and text color.</li>
+<li class="">new colored block now has some extra styling.</li>
+<li class="">Remove default margin beneath media-text block.</li>
+<li class="">Set image sizes on generic card block.</li>
+<li class="">Added .h1, .h2, etc classes for faster styling.</li>
+<li class="">Added transition to theme-button to target all buttons having this class.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added filters for image sizes for node blocks and generic card block.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2120">2.12.0:<a href="#2120" class="hash-link" aria-label="Direct link to 2.12.0:" title="Direct link to 2.12.0:" translate="no">​</a></h3>
+<p><em>Release Date - 22 june 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Updated bulldozer to 1.5.3, please update as well.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Added wp-image block scss</li>
+<li class="">Block attribute saved with wrong heading level leads to error message in backend.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Rework of enqueue names</li>
+<li class="">Better names for innerBlocks</li>
+<li class="">Removed unneeded api call function</li>
+<li class="">Only load block patterns in backend.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New color block added!</li>
+<li class="">Added block style for columns for removing the gap between the columns.</li>
+</ul>
+</li>
+<li class="">🌐 <strong>Updated Dutch translation</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2110">2.11.0:<a href="#2110" class="hash-link" aria-label="Direct link to 2.11.0:" title="Direct link to 2.11.0:" translate="no">​</a></h3>
+<p><em>Release Date - 21 june 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Remove invalid field settings from banner</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">acf image container block: add wide alignment.</li>
+<li class="">Removed unused JS</li>
+<li class="">acf slide block: added visual aid in editor.</li>
+<li class="">acf slider block: added ability to toggle autoplay and set delay.</li>
+<li class="">acf node overview block: You can now overwrite the node-latest block by creating <code>node-latest-{{card_type}}.twig</code> in the child theme for custom archive loops.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">wp image block: New icon style added.</li>
+<li class="">Add button macro</li>
+</ul>
+</li>
+<li class="">📦 <strong>Updated dependencies &amp; merged dependabot PR&#x27;s</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2100">2.10.0:<a href="#2100" class="hash-link" aria-label="Direct link to 2.10.0:" title="Direct link to 2.10.0:" translate="no">​</a></h3>
+<p><em>Release Date - 11 june 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Updated bulldozer to 1.52. <strong>Please upload vendor folder.</strong></li>
+<li class="">Removed 2 block styles from banner block<!-- -->
+<ul>
+<li class="">No margin bottom has been removed</li>
+<li class="">Small banner has been removed.</li>
+<li class="">Default margin underneath block has been removed. This has been done for better styling compat when working with containers for example.</li>
+<li class="">Added the removed margins back on the first heading, paragraph or list elements underneath the banner as a margin-top.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better placements of hook in footer.twig</li>
+<li class="">Better menu styling</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed some typos in code.</li>
+<li class="">Fixed field group name for person post type</li>
+<li class="">added animation back in archive for the navigation buttons</li>
+<li class="">Fixes bug where multiple dropdowns could be opened at the same time.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="292">2.9.2:<a href="#292" class="hash-link" aria-label="Direct link to 2.9.2:" title="Direct link to 2.9.2:" translate="no">​</a></h3>
+<p><em>Release Date - 31 may 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Update job card with new meta fields.</li>
+<li class="">Added <code>wp-lemon_after_footer_widgets</code> action to add context to the footer.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fix missing label bug when post type is no longer present.</li>
+<li class="">Ancestor pages are now shown active in the main menu</li>
+<li class="">Added fallback to post.type when post_type is not actively set in a card.</li>
+</ul>
+</li>
+<li class="">📦 <strong>Updated dependencies &amp; merged dependabot PR&#x27;s</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="291">2.9.1:<a href="#291" class="hash-link" aria-label="Direct link to 2.9.1:" title="Direct link to 2.9.1:" translate="no">​</a></h3>
+<p><em>Release Date - 28 may 2021</em></p>
+<ul>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Missing title on content cards is now fixed.</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Added custom excerpt function for twig. <code>lemon_excerpt($post, $characters)</code>.</li>
+<li class="">Remove title from picture element to prevent floating label.</li>
+<li class="">Converted last fields groups to PHP.</li>
+<li class="">Updated iconfont</li>
+<li class="">Better colors for A11y search bar and menu items</li>
+</ul>
+</li>
+<li class="">
+<p>💡 <strong>Newly added</strong></p>
+<ul>
+<li class="">Added new meta fields for jobs &amp; added them to the single-job.twig</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="290">2.9.0:<a href="#290" class="hash-link" aria-label="Direct link to 2.9.0:" title="Direct link to 2.9.0:" translate="no">​</a></h3>
+<p><em>Release Date - 27 may 2021</em></p>
+<ul>
+<li class="">
+<p>⛏️ <strong>Breaking</strong></p>
+<ul>
+<li class="">Removed blocks that where deprecated in version 2.6</li>
+<li class="">Easier way to define custom archive pages. Please set <code>&#x27;maybe_has_archive_page&#x27;</code> in your custom post types to <code>true</code> and remove the get_theme_mod code.</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Padding is applied on paragraphs inside FAQ blocks once more.</li>
+<li class="">Fix gallery alignment</li>
+<li class="">Fall back to default card in ajax query when there is no specific card present.</li>
+<li class="">Fixed button radius variable</li>
+<li class="">Fixed bug where margin would be applied on whole archive block instead of the filters only.</li>
+<li class="">Font size small is now properly set on back-end.</li>
+<li class="">No arrow is shown in generic content card when no link is present.</li>
+<li class="">Removed relative from .lazyload class</li>
+<li class="">Fix alignment of contact bar in backend.</li>
+<li class="">Removed margin-top from headings inside banners.</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Complete overhaul on the way we define the taxonomy to filter by on node-overview and node-latest blocks.</li>
+<li class="">You can now select one or multiple terms inside the node-latest block to filter on.</li>
+<li class="">Better alignment for image container block.</li>
+<li class="">Updated messages in node blocks.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="281">2.8.1:<a href="#281" class="hash-link" aria-label="Direct link to 2.8.1:" title="Direct link to 2.8.1:" translate="no">​</a></h3>
+<p><em>Release Date - 25 may 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed wrong field in map block</li>
+<li class="">Fixed regression in wide aligned blocks</li>
+<li class="">removed default margin from archive partial</li>
+<li class="">Added proper notice when no default taxonomy was selected.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="280">2.8.0:<a href="#280" class="hash-link" aria-label="Direct link to 2.8.0:" title="Direct link to 2.8.0:" translate="no">​</a></h3>
+<p><em>Release Date - 24 may 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class=""><code>enable_query_block</code> in post type definitions has been replaces by two new <code>enable_overview_block</code> and <code>enable_latest_block</code> options. This way you have granular control which blocks you want per posttype. Please update your custom post types on child theme level accordingly.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fluent forms pagination bar now really has the proper color.</li>
+<li class="">maybe_has_archive_page is now false when no customizer page is set.</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New latest nodes block added. This will give an overview of the latest items of a specific post type.</li>
+<li class="">node overview block now has a variable taxonomy. This way you can choose taxonomy you want as a filter.</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Better keywords for blocks</li>
+<li class="">Add dynamic modifier class for node-overview block for easier styling.</li>
+</ul>
+</li>
+<li class="">🌐 <strong>Updated Dutch translation</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="272---273">2.7.2 - 2.7.3:<a href="#272---273" class="hash-link" aria-label="Direct link to 2.7.2 - 2.7.3:" title="Direct link to 2.7.2 - 2.7.3:" translate="no">​</a></h3>
+<p><em>Release Date - 22 may 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fluentforms multipage form progress bar now has the primary color of the child theme.</li>
+<li class="">Fixed a minor backend issue where the block inserter would interfere with center and right aligned blocks.</li>
+<li class="">Fixed an issue where images inside media-text blocks weren&#x27;t full height.</li>
+<li class="">Other minor css fixes.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="271">2.7.1:<a href="#271" class="hash-link" aria-label="Direct link to 2.7.1:" title="Direct link to 2.7.1:" translate="no">​</a></h3>
+<p><em>Release Date - 21 may 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Lemon Blocks - Fixed an issue where no Block appender was added when blocks where already present. Please upload the lemon-blocks plugin manually.</li>
+<li class="">SVGs had a margin in last release. This margin has now been removed for better compatibility with the editor.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="270">2.7.0:<a href="#270" class="hash-link" aria-label="Direct link to 2.7.0:" title="Direct link to 2.7.0:" translate="no">​</a></h3>
+<p><em>Release Date - 20 may 2021</em></p>
+<ul>
+<li class="">
+<p>⛏️ <strong>Breaking</strong></p>
+<ul>
+<li class="">Please update BaseBuilder to version 1.4.1 by setting ^1.4.1 in in your package.json and run yarn install.</li>
+<li class="">Set the new scssSettingsFolder in your config.json. For older projects this is still <code>&quot;scssSettingsFolder&quot;: &quot;1_common/&quot;,</code> don&#x27;t forget to add this snippet to your example config as well for future reference.</li>
+</ul>
+</li>
+<li class="">
+<p>💡 <strong>Newly added</strong></p>
+<ul>
+<li class="">Generic content card can now have a background color.</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">node-overview can now toggle excerpts</li>
+<li class="">SCSS folder structure overhaul for both parent and child theme.</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Fix to font size variable</li>
+<li class="">Sliders work again</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="263">2.6.3:<a href="#263" class="hash-link" aria-label="Direct link to 2.6.3:" title="Direct link to 2.6.3:" translate="no">​</a></h3>
+<p><em>Release Date - 17 may 2021</em></p>
+<ul>
+<li class="">
+<p>💡 <strong>Newly added</strong></p>
+<ul>
+<li class="">Introduced a new function to check whether the correct version of Bulldozer is installed.</li>
+<li class="">Introduced a new post type argument to enable the node-block.</li>
+<li class="">Introduced two new customizer fields for linking to the contact and terms/conditions page.</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Blocks migrated from json fields to php fields.<!-- -->
+<ul>
+<li class="">Banner block</li>
+<li class="">Deprecation notice in block names in the block inserter as well.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">FAQ block now aligns the question better.</li>
+<li class="">Fixes duplicate helper function issue in Bulldozer. Duplicated function calls are removed and migrated.</li>
+<li class="">Several typos in documentation fixed.</li>
+<li class="">If querieing an empty category in a Ajax call a proper notification pops up.</li>
+<li class="">Fixed large padding in text-banner variant.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="261">2.6.1:<a href="#261" class="hash-link" aria-label="Direct link to 2.6.1:" title="Direct link to 2.6.1:" translate="no">​</a></h3>
+<p><em>Release Date - 13 may 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">First blocks migrated from json fields to php fields.<!-- -->
+<ul>
+<li class="">FAQ block</li>
+<li class="">Generic content block</li>
+<li class="">Image container block</li>
+<li class="">Slider block</li>
+<li class="">Map block</li>
+</ul>
+</li>
+<li class="">Improvements on cards classes.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fix regression in block context.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="260">2.6.0:<a href="#260" class="hash-link" aria-label="Direct link to 2.6.0:" title="Direct link to 2.6.0:" translate="no">​</a></h3>
+<p><em>Release Date - 12 may 2021</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New generic post type block added.</li>
+<li class="">Add fallback card if no specific content card is found.</li>
+<li class="">Added notification when Ajax query is empty.</li>
+<li class="">Added a new way to mark blocks as deprecated.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixes to new ajax class.</li>
+</ul>
+</li>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Older custom blocks need to add the add_fields() method. See the example block in the parent theme.</li>
+<li class=""><em>block</em> context used inside gutenberg blocks has been renamed to attributes.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="250">2.5.0:<a href="#250" class="hash-link" aria-label="Direct link to 2.5.0:" title="Direct link to 2.5.0:" translate="no">​</a></h3>
+<p><em>Release Date - 10 may 2021</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">New Generic Ajax call class added which can be extended for your specific needs.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed smootscroll issue where links wouldn&#x27;t work if navigated to other page.</li>
+<li class="">Updated example posttype to have proper properties</li>
+</ul>
+</li>
+<li class="">📦 <strong>Updated dependencies</strong></li>
+<li class="">🌐 <strong>Updated Dutch translation</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="246">2.4.6:<a href="#246" class="hash-link" aria-label="Direct link to 2.4.6:" title="Direct link to 2.4.6:" translate="no">​</a></h3>
+<p><em>Release Date - 3 may 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Minor javascript fixes</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="245">2.4.5:<a href="#245" class="hash-link" aria-label="Direct link to 2.4.5:" title="Direct link to 2.4.5:" translate="no">​</a></h3>
+<p><em>Release Date - 25 april 2021</em></p>
+<ul>
+<li class="">⛏️ <strong>Breaking</strong>
+<ul>
+<li class="">Moved Site_icons class to Bulldozer. <a href="https://studio-lemon.github.io/wp-lemon-docs/basics/favicons-manifest" target="_blank" rel="noopener noreferrer" class="">Please check docs</a> on how to update.</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed a bug where the nav items would be too high in mobile menu.</li>
+<li class="">Minor archive fixes</li>
+</ul>
+</li>
+<li class="">📦 <strong>Updated dependencies</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="244">2.4.4:<a href="#244" class="hash-link" aria-label="Direct link to 2.4.4:" title="Direct link to 2.4.4:" translate="no">​</a></h3>
+<p><em>Release Date - 14 april 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Added way to skip smoothscroll by adding class</li>
+<li class="">Removed important padding from nav links</li>
+<li class="">removed console.log from function</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="243">2.4.3:<a href="#243" class="hash-link" aria-label="Direct link to 2.4.3:" title="Direct link to 2.4.3:" translate="no">​</a></h3>
+<p><em>Release Date - 12 april 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Language switcher shown twice.</li>
+<li class="">Minor bugfixes</li>
+</ul>
+</li>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Code validation &amp; documentation</li>
+<li class="">Own dropdown function for smaller js build.</li>
+<li class="">Sanatize Ajax calls</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="242">2.4.2:<a href="#242" class="hash-link" aria-label="Direct link to 2.4.2:" title="Direct link to 2.4.2:" translate="no">​</a></h3>
+<p><em>Release Date - 23 march 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Flex bugs in ie11</li>
+<li class="">fixed bug with undefined localstorage setting.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="240">2.4.0:<a href="#240" class="hash-link" aria-label="Direct link to 2.4.0:" title="Direct link to 2.4.0:" translate="no">​</a></h3>
+<p><em>Release Date - 23 march 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Using rem values for font sizes instead of px</li>
+<li class="">Removed site icon field from customizer</li>
+<li class="">Updated iconfont</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">A11y<!-- -->
+<ul>
+<li class="">Skiplinks</li>
+<li class="">Contrastmode</li>
+<li class="">Reduced motion stylesheet</li>
+<li class="">Larger font size toggle</li>
+</ul>
+</li>
+<li class="">Slide block</li>
+<li class="">Add arrow button variant</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="231---233">2.3.1 - 2.3.3:<a href="#231---233" class="hash-link" aria-label="Direct link to 2.3.1 - 2.3.3:" title="Direct link to 2.3.1 - 2.3.3:" translate="no">​</a></h3>
+<p><em>Release Date - 17 march 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed a few w3.org errors and warnings</li>
+<li class="">Fix ie11 bug</li>
+<li class="">Add padding to full aligned media-text blocks back</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="230">2.3.0:<a href="#230" class="hash-link" aria-label="Direct link to 2.3.0:" title="Direct link to 2.3.0:" translate="no">​</a></h3>
+<p><em>Release Date - 16 march 2021</em></p>
+<ul>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added a new way to add favicons and generate a manifest. See <a href="https://studio-lemon.github.io/wp-lemon-docs/basics/favicons-manifest" target="_blank" rel="noopener noreferrer" class="">updated docs</a></li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">The curl call to get the latest version of the theme is now updated.</li>
+<li class="">Better alignment of wide media-text blocks</li>
+<li class="">Better font scaling.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="224">2.2.4:<a href="#224" class="hash-link" aria-label="Direct link to 2.2.4:" title="Direct link to 2.2.4:" translate="no">​</a></h3>
+<p><em>Release Date - 10 march 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">You are now able to overwrite the card title</li>
+<li class="">You can now completely disable a picture inside a card.</li>
+<li class="">Better latest items query</li>
+<li class="">Archive id is now overwritable in archive-loop.twig</li>
+<li class="">Enhanced ajax archive</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="223">2.2.3:<a href="#223" class="hash-link" aria-label="Direct link to 2.2.3:" title="Direct link to 2.2.3:" translate="no">​</a></h3>
+<p><em>Release Date - 08 march 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">better image sizes compat for picture macro.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="222">2.2.2:<a href="#222" class="hash-link" aria-label="Direct link to 2.2.2:" title="Direct link to 2.2.2:" translate="no">​</a></h3>
+<p><em>Release Date - 02 march 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">fix e-mail icon not showing up in contact bar block</li>
+<li class="">Remove unused customizer fields.</li>
+<li class="">Fix archive query bug when using categories.</li>
+<li class="">Fall back to default bootstrap navwalker.</li>
+<li class="">Several html fixes for ie11</li>
+<li class="">Proper image sizes now gets loaded in crd-wrap.twig</li>
+<li class="">Customizer analytics fix.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="221">2.2.1:<a href="#221" class="hash-link" aria-label="Direct link to 2.2.1:" title="Direct link to 2.2.1:" translate="no">​</a></h3>
+<p><em>Release Date - 02 march 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fix customizer loading</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="220">2.2.0:<a href="#220" class="hash-link" aria-label="Direct link to 2.2.0:" title="Direct link to 2.2.0:" translate="no">​</a></h3>
+<p><em>Release Date - 02 march 2021</em></p>
+<ul>
+<li class="">
+<p>💡 <strong>Newly added</strong></p>
+<ul>
+<li class="">Added hooks in the templates for theme developers to hook into.</li>
+<li class="">404 pages are now manageable via the customizer</li>
+<li class="">You can now set custom archive pages via the customizer.</li>
+<li class="">Custom archive pages are now active in the menu when on a single item of that archive page.</li>
+<li class="">Linktree alternative. See the linktree page template.</li>
+<li class="">Added back navigation in single posts.</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Single.twig improvements to queries.</li>
+<li class="">Complete rework of the customizer. You can now <strong>uninstall</strong> kirki plugin.</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Fixed alignment in media/text block</li>
+<li class="">Widgets now have the same fontsize as their parents.</li>
+<li class="">Fixed issue where footer and header nav would show up when no nav was set on that location.</li>
+<li class="">Fixed a bug where the generic card would not have a valid link.</li>
+<li class="">Fixed a bug that prevented custom font sizes to show up in the generic card.</li>
+</ul>
+</li>
+<li class="">
+<p>🌐 <strong>Updated Dutch translation</strong></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="213">2.1.3:<a href="#213" class="hash-link" aria-label="Direct link to 2.1.3:" title="Direct link to 2.1.3:" translate="no">​</a></h3>
+<p><em>Release Date - 25 february 2021</em></p>
+<ul>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Bump dependencies</li>
+<li class="">Better contact-bar styling and backend features</li>
+<li class="">New way icons are added to the theme.</li>
+<li class="">Map block now scales better</li>
+<li class="">Styled native pullquote block</li>
+<li class="">Styled native blockquote block</li>
+<li class="">Better person card styling</li>
+<li class="">Rework of customizer options</li>
+<li class="">Added 404 page settings in customizer</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">lazyload fix for iframes</li>
+<li class="">Added margin underneath content header</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="212">2.1.2:<a href="#212" class="hash-link" aria-label="Direct link to 2.1.2:" title="Direct link to 2.1.2:" translate="no">​</a></h3>
+<p><em>Release Date - 23 february 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed contact bar showing notification when there was no need.</li>
+<li class="">Updated block pattern for generic content card and removed button from block template.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="211">2.1.1:<a href="#211" class="hash-link" aria-label="Direct link to 2.1.1:" title="Direct link to 2.1.1:" translate="no">​</a></h3>
+<p><em>Release Date - 22 february 2021</em></p>
+<ul>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Theme font size support is now in REM.</li>
+<li class="">Updated theme screenshot</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Text in footer now has a consistent line height.</li>
+<li class="">Fixed rare case where webp filter would prefix image urls with home path.</li>
+</ul>
+</li>
+<li class="">
+<p>🌐 <strong>Updated Dutch translation</strong></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="210">2.1.0:<a href="#210" class="hash-link" aria-label="Direct link to 2.1.0:" title="Direct link to 2.1.0:" translate="no">​</a></h3>
+<p><em>Release Date - 20 february 2021</em></p>
+<ul>
+<li class="">
+<p>💡 <strong>Newly added</strong></p>
+<ul>
+<li class="">Added: First version of licence system. The system doesn&#x27;t take action yet when no licence is present. This will come in later versions.</li>
+<li class="">Added: Block style php file in <code>lib/models/register-block-styles.php</code> where native block styles are registered.</li>
+<li class="">Added: <code>font-weight: $base-font-weight;</code> variable to set the default font weight in your child-theme</li>
+<li class="">Updated default favicons and logo for wp-lemon</li>
+<li class="">Added: two new block patterns.</li>
+</ul>
+</li>
+<li class="">
+<p>✨ <strong>Enhanced</strong></p>
+<ul>
+<li class="">Better variables file in both parent and child themes</li>
+</ul>
+</li>
+<li class="">
+<p>🐛 <strong>Bugs Fixed</strong></p>
+<ul>
+<li class="">Removed unused css partials.</li>
+<li class="">Removed rem calculations so 2rem would be 20px. This caused issues in the backend.</li>
+<li class="">When changes are made in the customizer they will show up instantly instead after page load.</li>
+</ul>
+</li>
+<li class="">
+<p>🌐 <strong>Updated Dutch translation</strong></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2011">2.0.11:<a href="#2011" class="hash-link" aria-label="Direct link to 2.0.11:" title="Direct link to 2.0.11:" translate="no">​</a></h3>
+<p><em>Release Date - 17 february 2021</em></p>
+<ul>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Fixed card link and title on regular posttype grids.</li>
+<li class="">Updated singular name of news.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2010">2.0.10:<a href="#2010" class="hash-link" aria-label="Direct link to 2.0.10:" title="Direct link to 2.0.10:" translate="no">​</a></h3>
+<p><em>Release Date - 16 february 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">Added 3rem padding above fluentform blocks for better content low</li>
+<li class="">card-wrap.twig now has a new way to add classes. Use the variable (array) extra_card_classes to add more classes to the block</li>
+<li class="">Updated soon to be deprecated Timer method</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">Removed extra padding when adding a container inside a container</li>
+<li class="">Text in editor now renders 100%</li>
+<li class="">img-container block now displays proper background color in editor</li>
+<li class="">Removed double padding inside image container block</li>
+<li class="">Block appender inside container block now aligns better</li>
+<li class="">Background color on banner block now shows again</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added: Generic content card</li>
+<li class="">Ability to define block patterns in parent theme</li>
+<li class="">First two block patterns added<!-- -->
+<ul>
+<li class="">Container with heading, text and form</li>
+<li class="">3 Columns with the new generic cards inside them</li>
+</ul>
+</li>
+<li class="">Added: ability to add a video background to the banner block</li>
+</ul>
+</li>
+<li class="">🌐 <strong>Updated Dutch translation</strong></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="209">2.0.9:<a href="#209" class="hash-link" aria-label="Direct link to 2.0.9:" title="Direct link to 2.0.9:" translate="no">​</a></h3>
+<p><em>Release Date - 15 february 2021</em></p>
+<ul>
+<li class="">✨ <strong>Enhanced</strong>
+<ul>
+<li class="">better package.json defaults</li>
+<li class="">Banner now has a larger min-height</li>
+<li class="">$fancy-list-mb has now a more sane default value</li>
+<li class="">Removed bootstrap dropdown js to remove popper.js from bundle</li>
+<li class="">Added noreferer to external link in footer</li>
+<li class="">Better _example files for compat with upcoming block creation tool</li>
+</ul>
+</li>
+<li class="">🐛 <strong>Bugs Fixed</strong>
+<ul>
+<li class="">footer widgets are now always full width</li>
+<li class="">Version is now false in the enqueue hooks</li>
+<li class="">Fixed invalid color in head.twig</li>
+<li class="">Fixed favicon path containing two slashes</li>
+<li class="">Fixed paths to favicons in site.webmanifest</li>
+<li class="">Activate lemon-blocks on activation of theme</li>
+</ul>
+</li>
+<li class="">💡 <strong>Newly added</strong>
+<ul>
+<li class="">Added bundle analyzer to get a grid on bundle sizes</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="208">2.0.8:<a href="#208" class="hash-link" aria-label="Direct link to 2.0.8:" title="Direct link to 2.0.8:" translate="no">​</a></h3>
+<ul>
+<li class="">Workflow fix: fixed deploypath to remote server</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="207">2.0.7:<a href="#207" class="hash-link" aria-label="Direct link to 2.0.7:" title="Direct link to 2.0.7:" translate="no">​</a></h3>
+<ul>
+<li class="">update: bump npm dependencies</li>
+<li class="">Fix: removed footer role from footer</li>
+<li class="">Fix: added do action(&#x27;get_header&#x27;) for compat with SEO plugin rankmath.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="206">2.0.6:<a href="#206" class="hash-link" aria-label="Direct link to 2.0.6:" title="Direct link to 2.0.6:" translate="no">​</a></h3>
+<ul>
+<li class="">update: Dutch translations</li>
+<li class="">Added: composer.json file for automated updating via composer.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="205">2.0.5:<a href="#205" class="hash-link" aria-label="Direct link to 2.0.5:" title="Direct link to 2.0.5:" translate="no">​</a></h3>
+<ul>
+<li class="">New: theme color used in browser bar in chrome can now be set via $context[&#x27;theme_color&#x27;];</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="204">2.0.4:<a href="#204" class="hash-link" aria-label="Direct link to 2.0.4:" title="Direct link to 2.0.4:" translate="no">​</a></h3>
+<ul>
+<li class="">update: better style.css for theme</li>
+<li class="">Added: gradient support</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="201---203">2.0.1 - 2.0.3:<a href="#201---203" class="hash-link" aria-label="Direct link to 2.0.1 - 2.0.3:" title="Direct link to 2.0.1 - 2.0.3:" translate="no">​</a></h3>
+<ul>
+<li class="">Setting up github workflow</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="200">2.0.0:<a href="#200" class="hash-link" aria-label="Direct link to 2.0.0:" title="Direct link to 2.0.0:" translate="no">​</a></h3>
+<ul>
+<li class="">Initial commit</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="all-changelogs-by-major-version">All changelogs by major version<a href="#all-changelogs-by-major-version" class="hash-link" aria-label="Direct link to All changelogs by major version" title="Direct link to All changelogs by major version" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/wp-lemon-docs/changelog">5.x changelogs (current major version)</a></li>
+<li class=""><a class="" href="/wp-lemon-docs/changelog/4.0">4.x changelogs</a></li>
+<li class=""><a class="" href="/wp-lemon-docs/changelog/3.0">3.x changelogs</a></li>
+<li class=""><a class="" href="/wp-lemon-docs/changelog/2.0">2.x changelogs</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Studio-Lemon/wp-lemon-docs/tree/master/docs/changelog/2.0.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#2220" class="table-of-contents__link toc-highlight">2.22.0:</a></li><li><a href="#2210" class="table-of-contents__link toc-highlight">2.21.0:</a></li><li><a href="#2206" class="table-of-contents__link toc-highlight">2.20.6:</a></li><li><a href="#2205" class="table-of-contents__link toc-highlight">2.20.5:</a></li><li><a href="#2203-4" class="table-of-contents__link toc-highlight">2.20.[3-4]:</a></li><li><a href="#2202" class="table-of-contents__link toc-highlight">2.20.2:</a></li><li><a href="#2201" class="table-of-contents__link toc-highlight">2.20.1:</a></li><li><a href="#2200" class="table-of-contents__link toc-highlight">2.20.0:</a></li><li><a href="#️-breaking" class="table-of-contents__link toc-highlight">⛏️ <strong>Breaking</strong></a><ul><li><a href="#2196" class="table-of-contents__link toc-highlight">2.19.6:</a></li><li><a href="#2195" class="table-of-contents__link toc-highlight">2.19.5:</a></li><li><a href="#2194" class="table-of-contents__link toc-highlight">2.19.4:</a></li><li><a href="#2192" class="table-of-contents__link toc-highlight">2.19.2:</a></li><li><a href="#2190" class="table-of-contents__link toc-highlight">2.19.0:</a></li><li><a href="#2180" class="table-of-contents__link toc-highlight">2.18.0:</a></li><li><a href="#2179" class="table-of-contents__link toc-highlight">2.17.9:</a></li><li><a href="#2178" class="table-of-contents__link toc-highlight">2.17.8:</a></li><li><a href="#2177" class="table-of-contents__link toc-highlight">2.17.7:</a></li><li><a href="#2175" class="table-of-contents__link toc-highlight">2.17.5:</a></li><li><a href="#2174" class="table-of-contents__link toc-highlight">2.17.4:</a></li><li><a href="#2173" class="table-of-contents__link toc-highlight">2.17.3:</a></li><li><a href="#2172" class="table-of-contents__link toc-highlight">2.17.2:</a></li><li><a href="#2171" class="table-of-contents__link toc-highlight">2.17.1:</a></li><li><a href="#2170" class="table-of-contents__link toc-highlight">2.17.0:</a></li><li><a href="#2162" class="table-of-contents__link toc-highlight">2.16.2:</a></li><li><a href="#2161" class="table-of-contents__link toc-highlight">2.16.1:</a></li><li><a href="#2160" class="table-of-contents__link toc-highlight">2.16.0:</a></li><li><a href="#2154" class="table-of-contents__link toc-highlight">2.15.4:</a></li><li><a href="#2153" class="table-of-contents__link toc-highlight">2.15.3:</a></li><li><a href="#2152" class="table-of-contents__link toc-highlight">2.15.2:</a></li><li><a href="#2151" class="table-of-contents__link toc-highlight">2.15.1:</a></li><li><a href="#2150" class="table-of-contents__link toc-highlight">2.15.0:</a></li><li><a href="#2142" class="table-of-contents__link toc-highlight">2.14.2:</a></li><li><a href="#2141" class="table-of-contents__link toc-highlight">2.14.1:</a></li><li><a href="#2140" class="table-of-contents__link toc-highlight">2.14.0:</a></li><li><a href="#2131" class="table-of-contents__link toc-highlight">2.13.1:</a></li><li><a href="#2130" class="table-of-contents__link toc-highlight">2.13.0:</a></li><li><a href="#2122" class="table-of-contents__link toc-highlight">2.12.2:</a></li><li><a href="#2121" class="table-of-contents__link toc-highlight">2.12.1:</a></li><li><a href="#2120" class="table-of-contents__link toc-highlight">2.12.0:</a></li><li><a href="#2110" class="table-of-contents__link toc-highlight">2.11.0:</a></li><li><a href="#2100" class="table-of-contents__link toc-highlight">2.10.0:</a></li><li><a href="#292" class="table-of-contents__link toc-highlight">2.9.2:</a></li><li><a href="#291" class="table-of-contents__link toc-highlight">2.9.1:</a></li><li><a href="#290" class="table-of-contents__link toc-highlight">2.9.0:</a></li><li><a href="#281" class="table-of-contents__link toc-highlight">2.8.1:</a></li><li><a href="#280" class="table-of-contents__link toc-highlight">2.8.0:</a></li><li><a href="#272---273" class="table-of-contents__link toc-highlight">2.7.2 - 2.7.3:</a></li><li><a href="#271" class="table-of-contents__link toc-highlight">2.7.1:</a></li><li><a href="#270" class="table-of-contents__link toc-highlight">2.7.0:</a></li><li><a href="#263" class="table-of-contents__link toc-highlight">2.6.3:</a></li><li><a href="#261" class="table-of-contents__link toc-highlight">2.6.1:</a></li><li><a href="#260" class="table-of-contents__link toc-highlight">2.6.0:</a></li><li><a href="#250" class="table-of-contents__link toc-highlight">2.5.0:</a></li><li><a href="#246" class="table-of-contents__link toc-highlight">2.4.6:</a></li><li><a href="#245" class="table-of-contents__link toc-highlight">2.4.5:</a></li><li><a href="#244" class="table-of-contents__link toc-highlight">2.4.4:</a></li><li><a href="#243" class="table-of-contents__link toc-highlight">2.4.3:</a></li><li><a href="#242" class="table-of-contents__link toc-highlight">2.4.2:</a></li><li><a href="#240" class="table-of-contents__link toc-highlight">2.4.0:</a></li><li><a href="#231---233" class="table-of-contents__link toc-highlight">2.3.1 - 2.3.3:</a></li><li><a href="#230" class="table-of-contents__link toc-highlight">2.3.0:</a></li><li><a href="#224" class="table-of-contents__link toc-highlight">2.2.4:</a></li><li><a href="#223" class="table-of-contents__link toc-highlight">2.2.3:</a></li><li><a href="#222" class="table-of-contents__link toc-highlight">2.2.2:</a></li><li><a href="#221" class="table-of-contents__link toc-highlight">2.2.1:</a></li><li><a href="#220" class="table-of-contents__link toc-highlight">2.2.0:</a></li><li><a href="#213" class="table-of-contents__link toc-highlight">2.1.3:</a></li><li><a href="#212" class="table-of-contents__link toc-highlight">2.1.2:</a></li><li><a href="#211" class="table-of-contents__link toc-highlight">2.1.1:</a></li><li><a href="#210" class="table-of-contents__link toc-highlight">2.1.0:</a></li><li><a href="#2011" class="table-of-contents__link toc-highlight">2.0.11:</a></li><li><a href="#2010" class="table-of-contents__link toc-highlight">2.0.10:</a></li><li><a href="#209" class="table-of-contents__link toc-highlight">2.0.9:</a></li><li><a href="#208" class="table-of-contents__link toc-highlight">2.0.8:</a></li><li><a href="#207" class="table-of-contents__link toc-highlight">2.0.7:</a></li><li><a href="#206" class="table-of-contents__link toc-highlight">2.0.6:</a></li><li><a href="#205" class="table-of-contents__link toc-highlight">2.0.5:</a></li><li><a href="#204" class="table-of-contents__link toc-highlight">2.0.4:</a></li><li><a href="#201---203" class="table-of-contents__link toc-highlight">2.0.1 - 2.0.3:</a></li><li><a href="#200" class="table-of-contents__link toc-highlight">2.0.0:</a></li></ul></li><li><a href="#all-changelogs-by-major-version" class="table-of-contents__link toc-highlight">All changelogs by major version</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Learn More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://levdbas.github.io/Bulldozer/#/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bulldozer<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://timber.github.io/docs/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Timber<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/StoutLogic/acf-builder/wiki/" target="_blank" rel="noopener noreferrer" class="footer__link-item">ACF Builder<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/roots/bedrock" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bedrock<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bootstrap<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/Studio-Lemon/wp-lemon-docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 wp-lemon. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
