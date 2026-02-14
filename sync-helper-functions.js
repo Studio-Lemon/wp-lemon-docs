@@ -49,8 +49,18 @@ const SEARCH_REPLACE_PATTERNS = [
    },
    {
       search: '\\]\\(migrations/',
-      replace: '](/migrations/',
+      replace: '](/docs/migrations/',
       description: 'Fix relative migrations links to absolute paths'
+   },
+   {
+      search: '\\]\\(/basics/',
+      replace: '](/docs/basics/',
+      description: 'Fix absolute basics links to include /docs prefix'
+   },
+   {
+      search: '\\]\\(/migrations/',
+      replace: '](/docs/migrations/',
+      description: 'Fix absolute migrations links to include /docs prefix'
    }
 ];
 

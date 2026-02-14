@@ -1,0 +1,169 @@
+/* Announcement Banner */
+.announcementBanner {
+  background: linear-gradient(90deg, #f7d600 0%, #ffeb75 100%);
+  color: #2d3748;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.announcementBanner p {
+  margin: 0;
+}
+
+.announcementBanner a {
+  color: #2d3748;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.announcementBanner a:hover {
+  color: #1a202c;
+}
+
+/* Hero Section */
+.heroBanner {
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f7d600 0%, #ffde33 100%);
+}
+
+[data-theme="dark"] .heroBanner {
+  background: #c09d11;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.buttons .button {
+  border: 2px solid #2d3748;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.buttons .button:hover {
+  background: #2d3748;
+  color: #fff;
+  border-color: #2d3748;
+}
+
+.buttons .button--outline {
+  background: transparent;
+}
+
+.buttons .button--outline:hover {
+  background: #2d3748;
+  color: #fff;
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 2rem;
+  background: var(--ifm-background-color);
+}
+
+.feature {
+  margin-bottom: 2rem;
+}
+
+.featureCard {
+  padding: 2rem;
+  height: 100%;
+  border-radius: 8px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.featureEmoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary-dark);
+  text-align: center;
+}
+
+.featureCard p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ifm-color-content);
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3rem 1rem;
+  }
+
+  .heroBanner .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .heroBanner .hero__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .features {
+    padding: 2rem 1rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+  }
+
+  .heroBanner .hero__title {
+    font-size: 2rem;
+  }
+
+  .heroBanner .hero__subtitle {
+    font-size: 1.25rem;
+  }
+}

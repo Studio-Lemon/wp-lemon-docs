@@ -1256,7 +1256,7 @@ _Release Date - 11 january 2022_
 
 - Please update bulldozer to 1.9.0 by uploading the vendor folder to the server.
 - 💡 **Newly added**
-  - No more jQuery dependency in wp-lemon. Read: [Javascript](/basics/basic-javascript)
+  - No more jQuery dependency in wp-lemon. Read: [Javascript](/docs/basics/basic-javascript)
 - 🐛 **Bugs Fixed**
   - Several JS bugs fixed.
   - bug where dropdown menus wouldn't close is fixed
@@ -1435,7 +1435,7 @@ _Release Date - 6 december 2021_
 
 _Release Date - 2 december 2021_
 
-Please read our upgrade guide for a step-by-step plan to upgrade to the newest version: [3.0 upgrade guide](/migrations/2-3)
+Please read our upgrade guide for a step-by-step plan to upgrade to the newest version: [3.0 upgrade guide](/docs/migrations/2-3)
 
 - ⛏️ **Breaking**
   - Please update your dependencies in package.json to

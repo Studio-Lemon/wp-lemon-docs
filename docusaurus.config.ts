@@ -40,7 +40,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/', // Serve docs at the site's root
+          routeBasePath: '/docs', // Serve docs at the site's root
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -67,6 +67,12 @@ const config: Config = {
         src: 'img/favicon.png',
       },
       items: [
+        {
+          type: 'doc',
+          position: 'left',
+          docId: 'introduction',
+          label: 'Docs',
+        },
         {
           href: 'https://github.com/Studio-Lemon/wp-lemon-docs',
           label: 'GitHub',

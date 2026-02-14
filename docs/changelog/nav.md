@@ -1,5 +1,6 @@
 ## All changelogs by major version
-- [5.x changelogs (current major version)](/changelog/)
-- [4.x changelogs](/changelog/4.0)
-- [3.x changelogs](/changelog/3.0)
-- [2.x changelogs](/changelog/2.0)
+
+- [5.x changelogs (current major version)](/docs/changelog/)
+- [4.x changelogs](/docs/changelog/4.0)
+- [3.x changelogs](/docs/changelog/3.0)
+- [2.x changelogs](/docs/changelog/2.0)
