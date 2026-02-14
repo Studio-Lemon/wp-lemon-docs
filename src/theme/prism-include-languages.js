@@ -1,4 +1,6 @@
 import siteConfig from '@generated/docusaurus.config';
+import twigLanguage from '../prism-twig';
+
 export default function prismIncludeLanguages(PrismObject) {
   const {
     themeConfig: { prism },
@@ -12,20 +14,13 @@ export default function prismIncludeLanguages(PrismObject) {
   // long as you don't re-assign it
   const PrismBefore = globalThis.Prism;
   globalThis.Prism = PrismObject;
-  additionalLanguages.forEach((lang) => {
-    if (lang === 'php') {
-      // eslint-disable-next-line global-require
-      require('prismjs/components/prism-markup-templating.js');
-    }
 
-
-
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    require(`prismjs/components/prism-${lang}`);
-  });
-
+  require('prismjs/components/prism-markup-templating.js');
+  require(`prismjs/components/prism-php.js`);
   require(`prismjs/components/prism-scss.js`);
-  require('prismjs/components/prism-twig.js');
+  
+  // Use our custom enhanced Twig syntax definition
+  twigLanguage(PrismObject);
 
   // Clean up and eventually restore former globalThis.Prism object (if any)
   // delete globalThis.Prism;
