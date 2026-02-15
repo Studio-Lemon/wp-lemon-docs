@@ -3,21 +3,23 @@ title: "Extending post objects"
 description: "Extending post objects in wp-lemon"
 ---
 
-
-In wp-lemon it's possible to extend the post objects to add functionality if needed. 
-This can be very useful when further customizing your site. 
+In wp-lemon it's possible to extend the post objects to add functionality if needed.
+This can be very useful when further customizing your site.
 Later on in this chapter we'll show you a couple of examples of how you can use this functionality.
 
-## Setting up 
+## Setting up
+
 For the set-up you'll need to do the following:
+
 1. Create a new file in the `/library/classes/` directory with the pattern `class-object-<post_type_name>.php` where `post_type_name` is the name of your post type.
 2. Add the new class to the classmap.
 3. Include the file in your functions file.
 
 ### Create new file
+
 Navigate to the `/library/classes/` directory.
 Here you can create a new file that extends the `LemonPost` class. This will look something like this:
-    
+
 ```php
 
 <?php
@@ -52,8 +54,9 @@ class post_type_name extends LemonPost
 ```
 
 ### Add to classmap
+
 After you've created this file you'll need to add it to the classmap, this needs to be done so that Timber knows where to find the new class.
-You should do this inside the `/library` directory. 
+You should do this inside the `/library` directory.
 In essence you could place it anywhere like in the `hooks.php` file but we prever to place it in the `child-setup.php` file since it's part of the setup process.
 This will look something like this:
 
@@ -79,10 +82,10 @@ add_filter(
 ```
 
 ### Include the file
-Then last but not least you'll have to include the file so that it gets loaded when the theme is loaded. 
+
+Then last but not least you'll have to include the file so that it gets loaded when the theme is loaded.
 Navigate to the `functions.php` file in the root of your theme.
 Here you can include the file like this:
-
 
 ```php
 
@@ -95,6 +98,7 @@ function parent_loaded()
 	$includes = [
 		'library/classes/class-child-site.php',
 		'library/classes/class-object-news.php',
+		// highlight-next-line
 		'library/classes/class-object-<post_type_name>.php',
 		'library/child-setup.php',
 		'library/hooks.php',
@@ -116,12 +120,13 @@ add_action('parent_loaded', __NAMESPACE__ . '\\parent_loaded');
 
 ```
 
-
 ## Examples
-Below you can see a couple simple examples that you could use in your extended post object, 
-and also how you can then use it in your front-end. 
+
+Below you can see a couple simple examples that you could use in your extended post object,
+and also how you can then use it in your front-end.
 
 ### Example 1
+
 Below you'll find a simple example of a function that calculates the reading time of a post.
 
 ```php
@@ -167,10 +172,11 @@ This newly created function can be used in your single page for example like thi
 ```
 
 ### Example 2
-In this example the name of a person needed to be formatted in a certain way, ofc we could've also done it in the front-end 
+
+In this example the name of a person needed to be formatted in a certain way, ofc we could've also done it in the front-end
 but we believe that it's best to let the back-end handle most of the logic.
 
-```php	
+```php
 /**
  * Fetch the full name of the person, including title.
  *
@@ -196,19 +202,19 @@ public function get_full_name(): string
 ```
 
 ## Wp-lemon queries
+
 In wp-lemon we've added a set of predefined queries that you can use to fetch posts. You could use these for example in your block context.
 For more documentation on how to use them within your block context take a look at the [block context documentation](/docs/blocks/block-controller).
 Below you can find a list of all the queries that are available in wp-lemon.
 
-| Function                    | Description                                                                                  |
-|-----------------------------|----------------------------------------------------------------------------------------------|
-| `latest_items_query`        | Retrieves the latest posts of a specific type, optionally filtered by taxonomy and terms.    |
-| `other_items_query`         | Fetches posts of a specific type, excluding a given post, optionally filtered by taxonomy and terms. |
-| `specific_items_query`      | Retrieves specific posts by their IDs and type.                                              |
-| `archive_query`             | Fetches a set of posts of a specific type for archive display, supporting pagination.        |
-| `get_total_posts`           | Calculates the total number of posts available for an AJAX "load more" functionality.        |
-| `adjacent_post_info`        | Gets information about the next or previous post, or returns the first/last post if unavailable. |
-| `next_post_info`            | Returns information about the next post or the first post if no next post exists.            |
-| `previous_post_info`        | Returns information about the previous post or the last post if no previous post exists.     |
-| `taxonomy_post_collection`  | Retrieves a collection of posts organized by category, based on a taxonomy and post type.    |
-
+| Function                   | Description                                                                                          |
+| -------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `latest_items_query`       | Retrieves the latest posts of a specific type, optionally filtered by taxonomy and terms.            |
+| `other_items_query`        | Fetches posts of a specific type, excluding a given post, optionally filtered by taxonomy and terms. |
+| `specific_items_query`     | Retrieves specific posts by their IDs and type.                                                      |
+| `archive_query`            | Fetches a set of posts of a specific type for archive display, supporting pagination.                |
+| `get_total_posts`          | Calculates the total number of posts available for an AJAX "load more" functionality.                |
+| `adjacent_post_info`       | Gets information about the next or previous post, or returns the first/last post if unavailable.     |
+| `next_post_info`           | Returns information about the next post or the first post if no next post exists.                    |
+| `previous_post_info`       | Returns information about the previous post or the last post if no previous post exists.             |
+| `taxonomy_post_collection` | Retrieves a collection of posts organized by category, based on a taxonomy and post type.            |

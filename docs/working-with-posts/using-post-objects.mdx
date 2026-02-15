@@ -3,18 +3,34 @@ title: "Using post objects"
 description: "Using post objects in wp-lemon"
 ---
 
-After you're done with setting up your post and added your custom functionality in the controller layer. 
-You can now use the post object in your templates. 
-In de post object extend file you can find an example of a function that returns the full name of a person.
-In below example you can see how you could use this function in your template.
+After you're done with setting up your post and added your custom functionality in the controller layer.
+You can now use the post object in your templates.
 
 ```twig
 
 {% block content %}
 	<header class="section">
-		<h1>{{ person.get_full_name }}</h1>
+		<h1>{{ person.get_full_name() }}</h1>
 	</header>
 	{{ person.content }}
 {% endblock %}
 
 ```
+
+## Default Timber post methods.
+
+Timber's post objects have a lot of default methods that you can use in your templates. You can find a list of all the default methods in the [Timber Post documentation](https://timber.github.io/docs/reference/post/). Below we give the most commonly used methods.
+
+- `post.link()`: Get the permalink of the post.
+- `post.title()`: Get the title of the post.
+- `post.content()`: Get the content of the post.
+- `post.excerpt()`: Get the excerpt of the post.
+
+```twig
+post.excerpt({
+    read_more: false,
+    words: 15
+})
+```
+
+- `post.meta('my_field_name')`: Get the value of a custom field.
