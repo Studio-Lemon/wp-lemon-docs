@@ -3,16 +3,17 @@ title: "Post type registration"
 description: How to register your posts and taxonomies
 ---
 
-Since WordPress started as a blogging platform post objects are an inherent part of the WordPress ecosystem. 
+Since WordPress started as a blogging platform post objects are an inherent part of the WordPress ecosystem.
 In wp-lemon we've extended the default post object to make it more flexible and easier to use.
 We've hidden the default post type `post` and added our own custom post types; `news`, `team` and `jobs`.
-Besides that, you can easily create your own custom post types. In this chapter we'll first explain how to create a custom post type 
+Besides that, you can easily create your own custom post types. In this chapter we'll first explain how to create a custom post type
 and then how to use it in your site.
 
 ## Creating a custom post type
+
 To create your own custom post type you'll need to create a new file in the `/library/models/post-types/` directory.
 In this file you'll find a example file that looks like this:
-    
+
 ```php
 <?php
 
@@ -80,11 +81,12 @@ After you've created your custom post type you can go to the WordPress backend a
 Don't forget to save your permalinks after you've created your custom post type.
 
 ### Archive page
-Now you can create a custom archive page for your custom post type. 
+
+Now you can create a custom archive page for your custom post type.
 On this archive page you can display all the posts of your custom post type using the overview block.
 Once you've created your archive page you can use the WordPress customizer to link your archive page to your custom post type.
 If for whatever reason you don't want your post type to have a archive-page you can change the following arguments in your custom post type file:
-    
+
 ```php
 $args = [
 	'maybe_has_archive_page' => true, // change to false if you don't want an archive page
@@ -94,8 +96,9 @@ $args = [
 ```
 
 ### Single page
-Your custom post type will also have a single page by default. This single page is default in wp-lemon. 
-But if you want to overwrite and customize the single page that's possible as well. 
+
+Your custom post type will also have a single page by default. This single page is default in wp-lemon.
+But if you want to overwrite and customize the single page that's possible as well.
 You can do this by navigating to `resources/views/templates`, here you can create a new file: `single-post_type_name.twig`.
 
 If for whatever reason you don't want your post type to have a single-page you can change the following argument in your custom post type file:
@@ -104,4 +107,35 @@ If for whatever reason you don't want your post type to have a single-page you c
 $args = [
 	'publicly_queryable'     => true, // change to false if you don't want a single page
 ];
+```
+
+## Custom order of posttypes in the admin menu
+
+By default, the post types are ordered alphabetically in the admin menu. You can customize the order by using the `menu_order` and `custom_menu_order` filters.
+
+```php
+/**
+ * Admin custom order
+ *
+ * @param array $menu_order The current menu order.
+ * @return array The modified menu order.
+ */
+function custom_menu_order($menu_order)
+{
+   return [
+      'index.php', // Dashboard
+      'edit.php?post_type=page',
+      'edit.php?post_type=news',
+      'separator1',
+      'edit.php?post_type=event',
+      'edit.php?post_type=webinar',
+      'edit.php?post_type=training',
+      'separator2',
+      'edit.php?post_type=person',
+      'edit.php?post_type=whitepaper',
+      'separator3',
+   ];
+}
+add_filter('menu_order', __NAMESPACE__ . '\\custom_menu_order', 10, 1);
+add_filter('custom_menu_order', '__return_true');
 ```
