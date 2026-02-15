@@ -3,39 +3,54 @@ title: Icon picker
 description: How to use an icon-picker in wp-lemon
 ---
 
-When building a website using icons in your design is common. In wp-lemon you can easily add an icon-picker. 
-When incorporating the icon-picker you and/or your client can easily select icons and use them in the website. 
+When building a website using icons in your design is common. In wp-lemon you can easily add an icon-picker.
+When incorporating the icon-picker you and/or your client can easily select icons and use them in the website.
 Now how do we go about doing this?
 
 ## Installation and set-up
+
 ### Install & activate icon plugin
-First, you'll need to install and activate the the ACF icon picker plugin.
-You can do this by running `composer require smithfield-studio/acf-svg-icon-picker` in the root directory.
-Once that is finished, navigate to the plugin list in WP Admin. Here, you'll find the plugin "Advanced Custom Fields: Icon Picker". 
+
+First, you'll need to install and activate the the ACF icon picker plugin thats is being co-created by us and Smithfield Studio. This plugin is built on top of the ACF plugin, so make sure you have that installed and activated as well.
+
+You can install the plugin by running the following command in your terminal while being in the root directory of your project:
+
+```bash
+composer require smithfield-studio/acf-svg-icon-picker
+wp plugin activate acf-svg-icon-picker
+```
+
+in the root directory.
+Once that is finished, navigate to the plugin list in WP Admin. Here, you'll find the plugin "Advanced Custom Fields: Icon Picker".
 Once you find it, activate it.
 
 ### Create folder and add your icons
-We want to keep all our icons in one place, therefore you can create a new folder in the `resources` directory. 
+
+We want to keep all our icons in one place, therefore you can create a new folder in the `resources` directory.
 We'll call this new folder: `icons`.
 In this new icons folder you can add all your svg icons.
 
 ### Optimize your svg's
-Even though your icons will work fine this way, we strongly advice you to optimize your svg's. 
-We prefer using only outlines in our svg's, instead of for example paths. 
+
+Even though your icons will work fine this way, we strongly advice you to optimize your svg's.
+We prefer using only outlines in our svg's, instead of for example paths.
 We found that only using outlines adds consistency and the icons scale better and colors can be changed easily.
-Additionally, it will be easier to style your icons later on. 
+Additionally, it will be easier to style your icons later on.
 
 A popular tool to convert your svg's with is Adobe Illustrator, but you can use whichever tool works best for you!
 
 ### Remove colors
-You'll also want to remove all inline colors in your svg's. To stay consistent and use best practices we 
+
+You'll also want to remove all inline colors in your svg's. To stay consistent and use best practices we
 want to do all the styling in one place so it will be easier to maintain the code.
 
-## Using your icons 
+## Using your icons
+
 ### Icon field
+
 You can add the icon picker to your fieldgroup by adding the following code to your fieldgroup.
 
-``` php
+```php
 $my_existing_fieldgroup
 ->addField(
 	'icon', // field name,
@@ -50,10 +65,11 @@ $my_existing_fieldgroup
 
 With this field added to the fieldgroup you'll now find the icon picker in your WordPress editor.
 
-### Placing your icons 
+### Placing your icons
+
 If you want to use your icons in your twig file you can do so by using our build in function `get_svg_icon('icon-name')`.
 
-Please note that the icon field will return a list of icons. 
+Please note that the icon field will return a list of icons.
 To use it in your Twig file, you'll need to loop through it as follows:
 
 ```twig
@@ -102,6 +118,7 @@ class Service extends LemonPost
    }
 }
 ```
+
 And then use in your Twig file like this:
 
 ```twig
@@ -111,5 +128,3 @@ And then use in your Twig file like this:
 	</div>
 {% endfor %}
 ```
-
-

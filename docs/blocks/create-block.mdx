@@ -3,15 +3,22 @@ title: Creating blocks
 description: Documentation on how to create your own custom block.
 ---
 
-Because blocks are so common in our websites we've build a tool that helps you creating your blocks automatically. 
-All though we recommend using our tool to prevent any mistakes, 
+Because blocks are so common in our websites we've build a tool that helps you creating your blocks automatically.
+All though we recommend using our tool to prevent any mistakes,
 it is also possible to create your block manually.
 
 Below we've laid out the steps to take when taking either route.
 
 ## Creating a block automatically
-Navigate to your block folder in the terminal and run `npx wp-lemon block create`. 
+
+Navigate to your block folder in the terminal and run `npx wp-lemon block create`.
 This will run a cli tool that will scaffold a new block for you based on the example block in your child theme. Nice and easy!
+
+## Create blocks in bulk
+
+If you have a lot of blocks to create you can also run `npx wp-lemon blocks create my-csv.csv` to create blocks in bulk.
+
+You can also run `npx wp-lemon blocks create-excel` to put an Excel sheet in your current directory that you can fill in and use to create blocks in bulk.
 
 ## Creating a block manually
 
@@ -19,12 +26,11 @@ in you child theme there is a `blocks`folder in which you'll find `_example/`. W
 
 You can now rename the scss, php and twig file to match the folder name.
 
+### Change the block.json
 
-### change the block.json
 The block.json file holds the metadata for your new block. You can set an icon, description, tags and much more. For now change name to reflect your folder name. See all the variables you can add to the `$block` array over here at the [ACF docs](https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/).
 
-### change the php file
-
+### Change the php file
 
 After that you want to change the
 `Example_Block` class to also reflect your block name and activate the class on the bottom of this file by uncommenting the class call. After that you can update the NAME, constant to also reflect the name. This file automatically gets loaded.
@@ -99,9 +105,10 @@ class Example_Block extends BlockRenderer
 After completing the above steps you can check if the twig file has something to show.
 
 ## Common mistakes
+
 You can now add the block to a page and see if it works. Common reasons why the block doesn't work:
+
 - You forgot to uncomment the block register call in your PHP file.
 - You didn't change the classnames on all places.
 - The folder name, php file name and twig file, the name in your block.json and the NAME constant in your php file don't match.
 - Once verified that the block is working you can continue developing your new block.
-
