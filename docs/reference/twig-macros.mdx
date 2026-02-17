@@ -45,11 +45,12 @@ Import: `{% import 'macros/elements.twig' as elements %}`
 Renders a heading element with optional link wrapper.
 
 **Parameters:**
+
 - `heading` (object) - The heading configuration
-  - `title` (string) - The heading text content
-  - `level` (string) - The heading level (1-6), defaults to '2'
-  - `classes` (string) - CSS classes to apply
-  - `url` (string, optional) - URL for wrapping in an anchor tag
+    - `title` (string) - The heading text content
+    - `level` (string) - The heading level (1-6), defaults to '2'
+    - `classes` (string) - CSS classes to apply
+    - `url` (string, optional) - URL for wrapping in an anchor tag
 
 **Returns:** `string` - Rendered heading HTML
 
@@ -59,34 +60,42 @@ Renders a heading element with optional link wrapper.
 {% import 'macros/elements.twig' as elements %}
 
 {# Basic heading #}
-{{ elements.heading({
-    title: 'My Heading',
-    level: '2',
-    classes: 'section-title'
-}) }}
+{{
+    elements.heading({
+        title: 'My Heading',
+        level: '2',
+        classes: 'section-title'
+    })
+}}
 
 {# Heading with link #}
-{{ elements.heading({
-    title: 'Click here',
-    level: '3',
-    classes: 'heading heading--linked',
-    url: 'https://example.com'
-}) }}
+{{
+    elements.heading({
+        title: 'Click here',
+        level: '3',
+        classes: 'heading heading--linked',
+        url: 'https://example.com'
+    })
+}}
 
 {# H1 with multiple classes #}
-{{ elements.heading({
-    title: post.title,
-    level: '1',
-    classes: 'page-title text-center'
-}) }}
+{{
+    elements.heading({
+        title: post.title,
+        level: '1',
+        classes: 'page-title text-center'
+    })
+}}
 
 {# Dynamic heading level #}
 {% set heading_level = loop.first ? '2' : '3' %}
-{{ elements.heading({
-    title: item.title,
-    level: heading_level,
-    classes: 'item-title'
-}) }}
+{{
+    elements.heading({
+        title: item.title,
+        level: heading_level,
+        classes: 'item-title'
+    })
+}}
 ```
 
 ---
@@ -96,10 +105,11 @@ Renders a heading element with optional link wrapper.
 Renders an HTML anchor element styled as a button with optional color variant.
 
 **Parameters:**
+
 - `link` (array) - Link object containing:
-  - `url` (string) - The href destination
-  - `title` (string) - The link text and title attribute
-  - `target` (string, optional) - The target attribute (e.g., '_blank')
+    - `url` (string) - The href destination
+    - `title` (string) - The link text and title attribute
+    - `target` (string, optional) - The target attribute (e.g., '\_blank')
 - `color` (string, optional) - Color variant class name
 
 **Returns:** `string` - HTML anchor element with button styling, or empty if link is empty
@@ -117,11 +127,16 @@ Renders an HTML anchor element styled as a button with optional color variant.
 {{ elements.button(fields.cta_button, 'secondary') }}
 
 {# Button with external link #}
-{{ elements.button({
-    url: 'https://example.com',
-    title: 'Visit Website',
-    target: '_blank'
-}, 'outline') }}
+{{
+    elements.button(
+        {
+            url: 'https://example.com',
+            title: 'Visit Website',
+            target: '_blank'
+        },
+        'outline'
+    )
+}}
 
 {# Multiple buttons #}
 <div class="button-group">
@@ -146,6 +161,7 @@ Import: `{% import 'macros/helpers.twig' as helpers %}`
 Generates AOS (Animate On Scroll) data attributes for elements.
 
 **Parameters:**
+
 - `no_animation` (bool) - Flag to disable animation
 - `animation_name` (string) - Name of the animation (e.g., 'fade', 'slide-up', 'zoom-in'). Use 'none' to disable
 - `timeout` (int|null) - Optional delay in milliseconds before animation starts
@@ -199,11 +215,12 @@ Generates AOS (Animate On Scroll) data attributes for elements.
 Renders backend notification messages in the block editor.
 
 **Parameters:**
+
 - `notification` (object)
-  - `title` (string) - Notification title
-  - `message` (string) - Notification message
-  - `type` (string) - Type: 'info', 'notice', 'warning', or 'error'
-  - `type_name` (string) - Display name: 'Info', 'Notice', 'Warning', or 'Error'
+    - `title` (string) - Notification title
+    - `message` (string) - Notification message
+    - `type` (string) - Type: 'info', 'notice', 'warning', or 'error'
+    - `type_name` (string) - Display name: 'Info', 'Notice', 'Warning', or 'Error'
 
 **Returns:** `string` - HTML for the notification
 
@@ -213,28 +230,34 @@ Renders backend notification messages in the block editor.
 {% import 'macros/helpers.twig' as helpers %}
 
 {# Info notification #}
-{{ helpers.backend_notification({
-    title: 'Configuration Required',
-    message: 'Please configure the block settings in the sidebar.',
-    type: 'info',
-    type_name: 'Info'
-}) }}
+{{
+    helpers.backend_notification({
+        title: 'Configuration Required',
+        message: 'Please configure the block settings in the sidebar.',
+        type: 'info',
+        type_name: 'Info'
+    })
+}}
 
 {# Warning notification #}
-{{ helpers.backend_notification({
-    title: 'Missing Content',
-    message: 'Add at least one item to display this block.',
-    type: 'warning',
-    type_name: 'Warning'
-}) }}
+{{
+    helpers.backend_notification({
+        title: 'Missing Content',
+        message: 'Add at least one item to display this block.',
+        type: 'warning',
+        type_name: 'Warning'
+    })
+}}
 
 {# Error notification #}
-{{ helpers.backend_notification({
-    title: 'Invalid Configuration',
-    message: 'The selected post type does not exist.',
-    type: 'error',
-    type_name: 'Error'
-}) }}
+{{
+    helpers.backend_notification({
+        title: 'Invalid Configuration',
+        message: 'The selected post type does not exist.',
+        type: 'error',
+        type_name: 'Error'
+    })
+}}
 
 {# In block preview with multiple notifications #}
 {% if is_preview and (notifications|length) %}
@@ -253,6 +276,7 @@ Renders backend notification messages in the block editor.
 Renders a TODO item which links to a project board. Used for development purposes.
 
 **Parameters:**
+
 - `link` (string) - The URL to the task in the project board
 - `description` (string) - Description of the TODO item
 
@@ -268,18 +292,12 @@ Renders a TODO item which links to a project board. Used for development purpose
 
 {# TODO in development block #}
 {% if is_preview %}
-    {{ helpers.todo(
-        'https://linear.app/team/issue/ABC-123',
-        'Add responsive styles for mobile devices'
-    ) }}
+    {{ helpers.todo('https://linear.app/team/issue/ABC-123', 'Add responsive styles for mobile devices') }}
 {% endif %}
 
 {# Conditional TODO based on incomplete work #}
 {% if not fields.completed %}
-    {{ helpers.todo(
-        fields.task_url,
-        'Complete block configuration'
-    ) }}
+    {{ helpers.todo(fields.task_url, 'Complete block configuration') }}
 {% endif %}
 ```
 
@@ -294,15 +312,16 @@ Import: `{% import 'macros/media.twig' as media %}`
 Renders a responsive picture element with WebP support, focal point positioning, and lazy loading.
 
 **Parameters:**
+
 - `image` (int|object) - Image ID or image object
 - `args` (object) - Configuration arguments:
-  - `picture_class` (string) - CSS class(es) for the picture wrapper
-  - `image_class` (string) - CSS class(es) for the img element
-  - `image_size` (string) - WordPress image size key (default: 'large')
-  - `image_sizes` (string) - Responsive image sizes attribute
-  - `loading` (string) - Loading strategy (default: 'lazy', or 'eager')
-  - `show_title` (bool) - Whether to render the title attribute (default: false)
-  - `focalpoint` (bool) - Whether to apply focal point positioning (default: false)
+    - `picture_class` (string) - CSS class(es) for the picture wrapper
+    - `image_class` (string) - CSS class(es) for the img element
+    - `image_size` (string) - WordPress image size key (default: 'large')
+    - `image_sizes` (string) - Responsive image sizes attribute
+    - `loading` (string) - Loading strategy (default: 'lazy', or 'eager')
+    - `show_title` (bool) - Whether to render the title attribute (default: false)
+    - `focalpoint` (bool) - Whether to apply focal point positioning (default: false)
 
 **Returns:** `string` - HTML picture element with source and img tags
 
@@ -374,6 +393,7 @@ Renders a responsive picture element with WebP support, focal point positioning,
 Renders an HTML5 video element with configurable attributes.
 
 **Parameters:**
+
 - `src` (string) - The source URL of the video file
 - `class` (string) - CSS classes to apply to the video element
 - `poster_id` (int) - WordPress attachment ID for the poster/thumbnail image
@@ -387,45 +407,26 @@ Renders an HTML5 video element with configurable attributes.
 {% import 'macros/media.twig' as media %}
 
 {# Basic video #}
-{{ media.video(
-    fields.video_url,
-    'video-player',
-    fields.video_poster,
-    'lazy'
-) }}
+{{ media.video(fields.video_url, 'video-player', fields.video_poster, 'lazy') }}
 
 {# Hero video with eager loading #}
-{{ media.video(
-    fields.hero_video,
-    'hero-video',
-    fields.hero_poster,
-    'eager'
-) }}
+{{ media.video(fields.hero_video, 'hero-video', fields.hero_poster, 'eager') }}
 
 {# Background video #}
 <div class="video-background">
-    {{ media.video(
-        fields.background_video,
-        'bg-video',
-        fields.bg_poster,
-        'lazy'
-    ) }}
+    {{ media.video(fields.background_video, 'bg-video', fields.bg_poster, 'lazy') }}
 </div>
 
 {# Multiple videos #}
 {% for video_item in fields.videos %}
     <div class="video-container">
-        {{ media.video(
-            video_item.video_file,
-            'content-video',
-            video_item.poster_image,
-            'lazy'
-        ) }}
+        {{ media.video(video_item.video_file, 'content-video', video_item.poster_image, 'lazy') }}
     </div>
 {% endfor %}
 ```
 
 **Note:** The video element includes:
+
 - `autoPlay` - Automatically starts playing
 - `muted` - Video is muted by default
 - `playsInline` - Plays inline on mobile devices
@@ -444,6 +445,7 @@ Import: `{% import 'macros/socials.twig' as socials %}`
 Renders a set of share buttons for various social media platforms.
 
 **Parameters:**
+
 - `share_title` (string) - Optional title for the share buttons section
 - `platforms` (array) - Array of platform keys to include (e.g., `['facebook', 'twitter', 'linkedin']`)
 - `share_context` (object) - Object containing share URL and metadata for each platform
@@ -457,45 +459,20 @@ Renders a set of share buttons for various social media platforms.
 {% import 'macros/socials.twig' as socials %}
 
 {# Basic share buttons #}
-{{ socials.share(
-    'Share this post',
-    ['facebook', 'twitter', 'linkedin'],
-    site.share_context,
-    false
-) }}
+{{ socials.share('Share this post', ['facebook', 'twitter', 'linkedin'], site.share_context, false) }}
 
 {# Share buttons without labels (icons only) #}
-{{ socials.share(
-    null,
-    ['facebook', 'twitter', 'linkedin', 'email'],
-    post.share_context,
-    true
-) }}
+{{ socials.share(null, ['facebook', 'twitter', 'linkedin', 'email'], post.share_context, true) }}
 
 {# Custom title #}
-{{ socials.share(
-    'Spread the word',
-    ['facebook', 'twitter'],
-    share_context,
-    false
-) }}
+{{ socials.share('Spread the word', ['facebook', 'twitter'], share_context, false) }}
 
 {# All available platforms #}
-{{ socials.share(
-    'Share',
-    ['facebook', 'twitter', 'linkedin', 'pinterest', 'email', 'whatsapp'],
-    post.share_context,
-    false
-) }}
+{{ socials.share('Share', ['facebook', 'twitter', 'linkedin', 'pinterest', 'email', 'whatsapp'], post.share_context, false) }}
 
 {# Conditional share buttons #}
 {% if fields.enable_sharing %}
-    {{ socials.share(
-        fields.share_title,
-        fields.selected_platforms,
-        post.share_context,
-        fields.hide_labels
-    ) }}
+    {{ socials.share(fields.share_title, fields.selected_platforms, post.share_context, fields.hide_labels) }}
 {% endif %}
 ```
 
@@ -506,11 +483,12 @@ Renders a set of share buttons for various social media platforms.
 Renders a list of social media icons with links.
 
 **Parameters:**
+
 - `socials` (array) - Array of social media objects:
-  - `url` (string) - URL to the social media profile
-  - `label` (string) - Label for the social media platform
-  - `icon` (string, optional) - Optional SVG icon markup
-  - `icon_class` (string, optional) - CSS class for icon if no SVG provided
+    - `url` (string) - URL to the social media profile
+    - `label` (string) - Label for the social media platform
+    - `icon` (string, optional) - Optional SVG icon markup
+    - `icon_class` (string, optional) - CSS class for icon if no SVG provided
 - `title` (string) - Title attribute for links (typically the site or person name)
 
 **Returns:** `string` - HTML markup for social icons list
@@ -567,10 +545,11 @@ Renders a list of social media icons with links.
 Renders a list of social/contact icons with optional labels. Supports email, phone, and WhatsApp contact methods.
 
 **Parameters:**
+
 - `contact` (object) - Contact information object:
-  - `email` (string) - Email address
-  - `phone` (object) - Phone object (from `phonenumber()` function)
-  - `whatsapp` (object) - WhatsApp object (from `phonenumber()` function)
+    - `email` (string) - Email address
+    - `phone` (object) - Phone object (from `phonenumber()` function)
+    - `whatsapp` (object) - WhatsApp object (from `phonenumber()` function)
 - `title` (string) - Contact person/entity name for title attributes
 - `with_labels` (bool) - Whether to display contact information labels below icons
 
@@ -637,18 +616,25 @@ Renders a list of social/contact icons with optional labels. Supports email, pho
 {# Hero section with animated content #}
 <section class="hero">
     <div {{ helpers.animation(false, 'fade-up', 200) }}>
-        {{ elements.heading({
-            title: fields.hero_title,
-            level: '1',
-            classes: 'hero__title'
-        }) }}
+        {{
+            elements.heading({
+                title: fields.hero_title,
+                level: '1',
+                classes: 'hero__title'
+            })
+        }}
         {{ elements.button(fields.hero_cta, 'primary') }}
     </div>
-    {{ media.picture(fields.hero_image, {
-        image_class: 'hero__image',
-        loading: 'eager',
-        focalpoint: true
-    }) }}
+    {{
+        media.picture(
+            fields.hero_image,
+            {
+                image_class: 'hero__image',
+                loading: 'eager',
+                focalpoint: true
+            }
+        )
+    }}
 </section>
 ```
 
@@ -662,22 +648,36 @@ Renders a list of social/contact icons with optional labels. Supports email, pho
 {% for post in posts %}
     {% set delay = 100 * loop.index %}
     <article class="card" {{ helpers.animation(false, 'fade-up', delay) }}>
-        {{ media.picture(post.thumbnail.id, {
-            image_class: 'card__image',
-            image_size: 'medium'
-        }) }}
+        {{
+            media.picture(
+                post.thumbnail.id,
+                {
+                    image_class: 'card__image',
+                    image_size: 'medium'
+                }
+            )
+        }}
         <div class="card__content">
-            {{ elements.heading({
-                title: post.title,
-                level: '3',
-                classes: 'card__title'
-            }) }}
-            <p>{{ lemon_excerpt(post, 100) }}</p>
-            {{ elements.button({
-                url: post.link,
-                title: 'Read more',
-                target: ''
-            }, 'secondary') }}
+            {{
+                elements.heading({
+                    title: post.title,
+                    level: '3',
+                    classes: 'card__title'
+                })
+            }}
+            <p>
+                {{ lemon_excerpt(post, 100) }}
+            </p>
+            {{
+                elements.button(
+                    {
+                        url: post.link,
+                        title: 'Read more',
+                        target: ''
+                    },
+                    'secondary'
+                )
+            }}
         </div>
     </article>
 {% endfor %}
@@ -706,13 +706,20 @@ Renders a list of social/contact icons with optional labels. Supports email, pho
 {% import 'macros/helpers.twig' as helpers %}
 
 <div class="team-member" {{ helpers.animation(false, 'fade-up', 200) }}>
-    {{ media.picture(post.thumbnail.id, {
-        image_class: 'team-member__photo',
-        focalpoint: true
-    }) }}
+    {{
+        media.picture(
+            post.thumbnail.id,
+            {
+                image_class: 'team-member__photo',
+                focalpoint: true
+            }
+        )
+    }}
     <h3>{{ post.title }}</h3>
-    <p class="team-member__role">{{ post.meta('role') }}</p>
-    
+    <p class="team-member__role">
+        {{ post.meta('role') }}
+    </p>
+
     {% set contact = {
         email: post.meta('email'),
         phone: phonenumber(post.meta('phone'))
@@ -762,11 +769,16 @@ Renders a list of social/contact icons with optional labels. Supports email, pho
 
 ```twig
 {# ✅ Clear and maintainable #}
-{{ media.picture(image_id, {
-    image_class: 'hero-image',
-    loading: 'eager',
-    focalpoint: true
-}) }}
+{{
+    media.picture(
+        image_id,
+        {
+            image_class: 'hero-image',
+            loading: 'eager',
+            focalpoint: true
+        }
+    )
+}}
 
 {# Less clear #}
 {{ media.picture(image_id, '', 'hero-image', 'large', '100vw', 'eager') }}
@@ -783,13 +795,3 @@ Renders a list of social/contact icons with optional labels. Supports email, pho
     </div>
 {% endfor %}
 ```
-
----
-
-## See Also
-
-- [Twig Functions](twig-functions) - Custom Twig functions
-- [Twig Filters](twig-filters) - Custom Twig filters
-- [Helper Functions](helper-functions) - PHP helper functions
-- [Action Hooks](hooks/actions) - Available action hooks
-- [Filter Hooks](hooks/filters) - Available filter hooks
