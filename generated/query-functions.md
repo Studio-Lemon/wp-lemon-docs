@@ -1,5 +1,3 @@
-# Functions
-
 <div class="table-methods table-responsive">
 
 | Name | Return Type | Summary/Returns |

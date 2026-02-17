@@ -21,6 +21,7 @@ Converts email addresses to HTML entities to help prevent email address harvesti
 This filter wraps the WordPress `antispambot()` function for use in Twig templates.
 
 **Parameters:**
+
 - `text` (string) - The email address to encode
 
 **Returns:** `string|false` - The encoded email address, or false if empty
@@ -43,17 +44,9 @@ This filter wraps the WordPress `antispambot()` function for use in Twig templat
     {% set email = post.meta('email')|antispambot %}
     <span class="crd__metaitem">
         <i class="wp-lemon-icon-e-mail"></i>
-        <a href="mailto:{{ email }}" title="{{ __('Mail %s', 'wp-lemon')|format(post.title) }}">
-            {{ email }}
-        </a>
+        <a href="mailto:{{ email }}" title="{{ __('Mail %s', 'wp-lemon')|format(post.title) }}">{{ email }}</a>
     </span>
 {% endif %}
-
-{# Multiple email addresses #}
-{% for staff in fields.staff_members %}
-    {% set email = staff.email|antispambot %}
-    <li><a href="mailto:{{ email }}">{{ staff.name }}</a></li>
-{% endfor %}
 ```
 
 ---
@@ -67,6 +60,7 @@ This filter creates a srcset attribute value with WebP versions of images at dif
 **Since:** 4.9.2
 
 **Parameters:**
+
 - `img` (Timber\Image) - The image object
 
 **Returns:** `string|false` - The srcset string with WebP images, or false if unavailable
@@ -75,38 +69,25 @@ This filter creates a srcset attribute value with WebP versions of images at dif
 
 ```twig
 {# Basic usage #}
-<img 
-    src="{{ image.src }}" 
-    srcset="{{ image|towebpSrcset }}"
-    sizes="(max-width: 768px) 100vw, 50vw"
-    alt="{{ image.alt }}">
+<img src="{{ image.src }}" srcset="{{ image|towebpSrcset }}" sizes="(max-width: 768px) 100vw, 50vw" alt="{{ image.alt }}" />
 
 {# With picture element for better control #}
 <picture>
-    <source 
-        type="image/webp"
-        srcset="{{ image|towebpSrcset }}"
-        sizes="(max-width: 768px) 100vw, 50vw">
-    <img src="{{ image.src }}" alt="{{ image.alt }}">
+    <source type="image/webp" srcset="{{ image|towebpSrcset }}" sizes="(max-width: 768px) 100vw, 50vw" />
+    <img src="{{ image.src }}" alt="{{ image.alt }}" />
 </picture>
 
 {# In a card loop #}
 {% for post in posts %}
     {% if post.thumbnail %}
-        <img 
-            src="{{ post.thumbnail.src('medium') }}"
-            srcset="{{ post.thumbnail|towebpSrcset }}"
-            alt="{{ post.title }}">
+        <img src="{{ post.thumbnail.src('medium') }}" srcset="{{ post.thumbnail|towebpSrcset }}" alt="{{ post.title }}" />
     {% endif %}
 {% endfor %}
 
 {# Hero image with WebP #}
-{% set hero = Image(fields.hero_image) %}
+{% set hero = get_image(fields.hero_image) %}
 <div class="hero" style="background-image: url({{ hero.src('large') }})">
-    <img 
-        srcset="{{ hero|towebpSrcset }}"
-        sizes="100vw"
-        alt="{{ fields.hero_alt_text }}">
+    <img srcset="{{ hero|towebpSrcset }}" sizes="100vw" alt="{{ fields.hero_alt_text }}" />
 </div>
 ```
 
@@ -123,6 +104,7 @@ This filter allows you to use deprecated filters while properly logging deprecat
 **Since:** 5.3.0
 
 **Parameters:**
+
 - `value` (mixed) - The value to be filtered
 - `filter_name` (string) - The name of the deprecated filter
 - `args` (array) - Arguments to pass to the filter
@@ -138,20 +120,10 @@ This filter allows you to use deprecated filters while properly logging deprecat
 {% set title = post.title|apply_filters_deprecated('old_filter_name', [post], '5.0.0', 'new_filter_name') %}
 
 {# With multiple arguments #}
-{% set content = post.content|apply_filters_deprecated(
-    'wp-lemon/deprecated/content', 
-    [post.ID, post.type], 
-    '4.5.0', 
-    'wp-lemon/filter/content'
-) %}
+{% set content = post.content|apply_filters_deprecated('wp-lemon/deprecated/content', [post.ID, post.type], '4.5.0', 'wp-lemon/filter/content') %}
 
 {# Filtering excerpt with deprecated filter #}
-{% set excerpt = post.excerpt|apply_filters_deprecated(
-    'theme_excerpt_filter',
-    [150],
-    '3.0.0',
-    'wp-lemon/filter/excerpt'
-) %}
+{% set excerpt = post.excerpt|apply_filters_deprecated('theme_excerpt_filter', [150], '3.0.0', 'wp-lemon/filter/excerpt') %}
 ```
 
 ---
@@ -165,6 +137,7 @@ This filter formats phone numbers by adding spaces at specific positions, useful
 **Since:** 3.33.1
 
 **Parameters:**
+
 - `phone` (string) - The phone number to format
 - `pattern` (array) - Array of integers defining where to add spaces. Default: `[2, 2, 2, 2]`
 
@@ -198,6 +171,7 @@ This filter formats phone numbers by adding spaces at specific positions, useful
 ```
 
 **Common Patterns:**
+
 - `[2, 2, 2, 2]` - Default: "06 12 34 56 78"
 - `[2, 3, 3]` - Mobile: "06 123 456 78"
 - `[3, 2, 3, 3]` - International mobile: "+31 61 234 5678"
@@ -215,6 +189,7 @@ This filter is particularly useful for converting ACF textarea fields into array
 **Since:** 5.12.3
 
 **Parameters:**
+
 - `text` (string) - The textarea content with line breaks
 
 **Returns:** `array|false` - Array of lines, or false if empty
@@ -262,7 +237,9 @@ This filter is particularly useful for converting ACF textarea fields into array
         {% for step in steps %}
             <div class="step">
                 <span class="step-number">{{ loop.index }}</span>
-                <p>{{ step }}</p>
+                <p>
+                    {{ step }}
+                </p>
             </div>
         {% endfor %}
     </div>
@@ -270,8 +247,10 @@ This filter is particularly useful for converting ACF textarea fields into array
 
 {# Conditional rendering #}
 {% set items = fields.list_items|textarea_to_array %}
-{% if items|length > 0 %}
-    <p>We have {{ items|length }} items:</p>
+{% if (items|length) > 0 %}
+    <p>
+        We have {{ items|length }} items:
+    </p>
     <ul>
         {% for item in items %}
             <li>{{ item }}</li>
@@ -294,6 +273,7 @@ This filter is useful for displaying clean website names in links or references.
 **Since:** 5.55.0
 
 **Parameters:**
+
 - `url` (string) - The URL to convert
 
 **Returns:** `string` - The website name without protocol and trailing slash
@@ -307,22 +287,20 @@ This filter is useful for displaying clean website names in links or references.
 
 {# Display clean website names #}
 {% set website = 'https://www.github.com/Studio-Lemon'|url_to_website_name %}
-<p>Visit us on {{ website }}</p>
+<p>
+    Visit us on {{ website }}
+</p>
 {# Output: "Visit us on www.github.com/Studio-Lemon" #}
 
 {# Social media links #}
 {% if fields.website_url %}
-    <a href="{{ fields.website_url }}" target="_blank">
-        {{ fields.website_url|url_to_website_name }}
-    </a>
+    <a href="{{ fields.website_url }}" target="_blank">{{ fields.website_url|url_to_website_name }}</a>
 {% endif %}
 
 {# Multiple links #}
 {% for link in fields.partner_websites %}
     <div class="partner">
-        <a href="{{ link.url }}" target="_blank">
-            {{ link.url|url_to_website_name }}
-        </a>
+        <a href="{{ link.url }}" target="_blank">{{ link.url|url_to_website_name }}</a>
     </div>
 {% endfor %}
 
@@ -349,6 +327,7 @@ Capitalize the first character of a string.
 This filter wraps PHP's `ucfirst()` function for use in Twig templates.
 
 **Parameters:**
+
 - `text` (string) - The string to capitalize
 
 **Returns:** `string` - The string with the first character capitalized
@@ -382,18 +361,7 @@ This filter wraps PHP's `ucfirst()` function for use in Twig templates.
 {{ description|ucfirst }}
 
 {# Custom field labels #}
-<label for="{{ field.name }}">
-    {{ field.name|replace('_', ' ')|ucfirst }}:
-</label>
+<label for="{{ field.name }}">{{ field.name|replace('_', ' ')|ucfirst }}:</label>
 ```
 
 **Note:** This filter only capitalizes the first character. For title case (capitalizing each word), consider using additional logic or the `title` filter.
-
----
-
-## See Also
-
-- [Twig Functions](twig-functions.md) - Custom Twig functions
-- [Helper Functions](helper-functions.md) - PHP helper functions
-- [Action Hooks](hooks/actions.md) - Available action hooks
-- [Filter Hooks](hooks/filters.md) - Available filter hooks

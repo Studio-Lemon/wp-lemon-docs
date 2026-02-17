@@ -26,6 +26,7 @@ Get a theme modification value from the WordPress Customizer.
 This function provides direct access to WordPress theme modifications within Twig templates.
 
 **Parameters:**
+
 - `mod_name` (string) - The name of the theme modification
 - `default` (mixed, optional) - Default value to return if the theme mod doesn't exist
 
@@ -57,6 +58,7 @@ This function renders a Fluent Forms form with optional theme styling.
 **Since:** 3.17.0
 
 **Parameters:**
+
 - `id` (string|int) - The ID of the form
 - `theme` (string, optional) - The theme of the form, use `'ffs_inherit_theme'` to inherit wp-lemon theme styling
 - `type` (string, optional) - The type of the form, can be `'classic'` or `'conversational'`. Default: `'classic'`
@@ -87,11 +89,13 @@ This function formats phone numbers into different formats including URI, WhatsA
 **Since:** 3.17.0
 
 **Parameters:**
+
 - `number` (string|int) - The phone number to format
 
 **Returns:** `array|false` - Array with phone number information or false if invalid
 
 **Array contains:**
+
 - `uri` - The tel: URI for links
 - `whatsapp` - WhatsApp link
 - `timezone` - Phone number timezone
@@ -113,9 +117,7 @@ This function formats phone numbers into different formats including URI, WhatsA
 {# WhatsApp link #}
 {% set phone = phonenumber(post.meta('phone')) %}
 {% if phone %}
-    <a href="{{ phone.whatsapp }}" target="_blank">
-        Contact via WhatsApp
-    </a>
+    <a href="{{ phone.whatsapp }}" target="_blank">Contact via WhatsApp</a>
 {% endif %}
 
 {# Display international format #}
@@ -132,6 +134,7 @@ Get the singular or plural name of a post type.
 This function retrieves the label for a post type as registered in WordPress.
 
 **Parameters:**
+
 - `post_type` (string) - The post type slug
 - `type` (string, optional) - Either `'plural'` or `'singular'`. Default: `'singular'`
 
@@ -164,6 +167,7 @@ Get SVG image contents from a media attachment.
 This function retrieves the raw SVG content from a WordPress media attachment.
 
 **Parameters:**
+
 - `attachment_id` (int) - The attachment ID
 
 **Returns:** `string|false` - The SVG image data or false if not found
@@ -202,6 +206,7 @@ This function returns SVG icons from the `resources/icons/` folder.
 **Since:** 5.7.0
 
 **Parameters:**
+
 - `filename` (string|null) - The filename of the icon (without .svg extension)
 
 **Returns:** `string|false` - The SVG icon or false if not found
@@ -241,11 +246,13 @@ This function returns metadata about a file attachment including filename, link,
 **Since:** 5.4.0
 
 **Parameters:**
+
 - `attachment_id` (int|null) - The attachment ID
 
 **Returns:** `array|false` - The attachment file info or false if not found
 
 **Array contains:**
+
 - `filename` - The name of the file
 - `link` - The link to the file
 - `extension` - The file extension
@@ -259,9 +266,7 @@ This function returns metadata about a file attachment including filename, link,
 {% if attachment %}
     <div class="attachment-info">
         <h3>{{ attachment.filename }}</h3>
-        <a href="{{ attachment.link }}" download>
-            Download {{ attachment.extension|upper }} ({{ attachment.filesize }})
-        </a>
+        <a href="{{ attachment.link }}" download>Download {{ attachment.extension|upper }} ({{ attachment.filesize }})</a>
     </div>
 {% endif %}
 
@@ -269,11 +274,7 @@ This function returns metadata about a file attachment including filename, link,
 {% for doc in fields.documents %}
     {% set file = get_attachment_info(doc.file) %}
     {% if file %}
-        <li>
-            <a href="{{ file.link }}">
-                {{ file.filename }} - {{ file.filesize }}
-            </a>
-        </li>
+        <li><a href="{{ file.link }}">{{ file.filename }} - {{ file.filesize }}</a></li>
     {% endif %}
 {% endfor %}
 ```
@@ -289,6 +290,7 @@ This function loads a template part from the theme's block templates and renders
 **Since:** 4.6.1
 
 **Parameters:**
+
 - `part` (string) - The template part slug to load
 
 **Returns:** `string|false` - The rendered content or false if not found
@@ -320,6 +322,7 @@ Get asset URI, contents, or JSON data from the theme's asset manifest.
 This function provides access to theme assets managed by the build system, with support for cache-busting and different output formats.
 
 **Parameters:**
+
 - `key` (string) - The asset key name
 - `type` (string, optional) - Type of output: `'uri'` (default), `'contents'`, or `'json'`
 
@@ -341,7 +344,7 @@ This function provides access to theme assets managed by the build system, with 
 {{ config.version }}
 
 {# Images #}
-<img src="{{ asset('images/logo.svg') }}" alt="Logo">
+<img src="{{ asset('images/logo.svg') }}" alt="Logo" />
 
 {# Inline SVG #}
 {{ asset('icons/menu.svg', 'contents')|raw }}
@@ -358,6 +361,7 @@ This function creates an excerpt with a specified character length, stripping HT
 **Since:** 2.9.1
 
 **Parameters:**
+
 - `post` (Timber\Post) - The post object
 - `length` (int) - Number of characters (use `-1` for full content)
 
@@ -367,7 +371,9 @@ This function creates an excerpt with a specified character length, stripping HT
 
 ```twig
 {# Basic excerpt #}
-<p>{{ lemon_excerpt(post, 150) }}</p>
+<p>
+    {{ lemon_excerpt(post, 150) }}
+</p>
 
 {# Short excerpt #}
 <div class="card__excerpt">
@@ -381,7 +387,9 @@ This function creates an excerpt with a specified character length, stripping HT
 {% for item in posts %}
     <div class="card">
         <h3>{{ item.title }}</h3>
-        <p>{{ lemon_excerpt(item, 120) }}</p>
+        <p>
+            {{ lemon_excerpt(item, 120) }}
+        </p>
     </div>
 {% endfor %}
 
@@ -401,6 +409,7 @@ This function allows you to call deprecated action hooks while properly logging 
 **Since:** 5.0.0
 
 **Parameters:**
+
 - Variable arguments passed to the deprecated action
 
 **Returns:** `void`
@@ -452,12 +461,3 @@ This function determines whether the current context is the WordPress admin/bloc
 {# Use with filters #}
 {% set hide_animation = is_preview|apply_filters('wp-lemon/filter/block/animation/hide') %}
 ```
-
----
-
-## See Also
-
-- [Helper Functions](helper-functions.md) - PHP helper functions
-- [Twig Filters](twig-filters.md) - Custom Twig filters
-- [Action Hooks](hooks/actions.md) - Available action hooks
-- [Filter Hooks](hooks/filters.md) - Available filter hooks

@@ -1,5 +1,3 @@
-# Action Hooks
-
 ## wp-lemon/action/head/meta
 
 Fires in the head for custom meta tags.

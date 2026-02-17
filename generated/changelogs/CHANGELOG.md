@@ -1,52 +1,17 @@
-## 5.55.2 - 05 February 2026
+## 5.55.3 - 17 February 2026
 
 ### 🐛 Bug Fixes
 
-- Remove unneeded global style. Fixes #323
-- Remove top padding from contact-cta styles for improved layout
-
-## 5.55.1 - 05 February 2026
-
-### ⛰️ Features
-
-- (js) Add isAdmin function to check for WordPress admin area and update block-carousel to use it
-
-### 🐛 Bug Fixes
-
-- Refine post class assignment for 'person' post type in add_wp_lemon_post_classes function
-- Ensure proper escaping of phone URI in crd-person.twig
-- Correct syntax for LinkedIn social entry and update email icon class
-- Update return type for get_phonenumber method in class Person
-
-### 🚜 Refactor
-
-- Remove backwards-compatible alias for extendDropDownAreas function
+- Remove 'wp-element-button' class from theme button
+- Decode search query before passing to context
+- Adjust margin-top for pagination component
+- Cast background and text color fields to string in Bootstrap_Navwalker
+- Remove unused lock-reusable-block.js script and related enqueue
 
 ### 📚 Documentation
 
-- Add filter example for wp-lemon/filter/socials-context
-
-## 5.55.0 - 25 January 2026
-
-### ⛰️ Features
-
-- Add Person Post Object for handling phone number retrieval and update card template to use it
-
-### 🐛 Bug Fixes
-
-- Fix overwritten styles for .crd.crd--price class in acf-price-card.scss
-- Correct calculation for --max-width-smaller variable in \_global.scss
-- Replace is_null checks with isset for better clarity in image and post classes
-- Simplify previous pagination item condition in pagination.twig
-
-### 📚 Documentation
-
-- Update return type documentation for format_phone_number function to include detailed structure
-- Add example usage for picture-args filter in twig-filters.php
-
-### ⚙️ Miscellaneous Tasks
-
-- !fix: remove unused social media URL fields from person fields
+- Update documentation structure and enhance function references
+- Fixes to documentation files related to the new documentation software.
 
 ## 5.55.2 - 05 February 2026
 
@@ -596,10 +561,10 @@
 
 - [**breaking**] Fix function imports after update of sass
 
-  to fix this in your child theme, search replace the following:
+    to fix this in your child theme, search replace the following:
 
-  Search for: @use "~parentThemeStyles/02-tools/functions" as \*;
-  Replace with: @import "~parentThemeStyles/02-tools/functions";
+    Search for: @use "~parentThemeStyles/02-tools/functions" as \*;
+    Replace with: @import "~parentThemeStyles/02-tools/functions";
 
 ## 5.42.0 - 03 July 2025
 
@@ -2006,36 +1971,36 @@ BREAKING CHANGE: classes have been changed, please check your codebase if you re
 _Release Date - 13 november 2023_
 
 - 🐛 **Bugs Fixed**
-  - PHP - Temporary fix added for Timber 2.0.0 bug where the wrong twig files would be loaded when you want to overwrite a twig file from the parent theme.
-  - SCSS - Fix section background color in contrast mode.
+    - PHP - Temporary fix added for Timber 2.0.0 bug where the wrong twig files would be loaded when you want to overwrite a twig file from the parent theme.
+    - SCSS - Fix section background color in contrast mode.
 
 ## 5.0.1:
 
 _Release Date - 13 november 2023_
 
 - ✨ **Enhanced**
-  - Workflow - run changelog sync separately from build
+    - Workflow - run changelog sync separately from build
 - 🐛 **Bugs Fixed**
-  - PHP - Update return type of query API functions to be more specific
-  - PHP - load correct dependencies for lock-reusable-block.js
-  - PHP - Fix array_map function in faq-highlight.php block
-  - PHP - Merge in full color settings from palette.json
-  - Twig - fix deprecated Image call in media.twig
+    - PHP - Update return type of query API functions to be more specific
+    - PHP - load correct dependencies for lock-reusable-block.js
+    - PHP - Fix array_map function in faq-highlight.php block
+    - PHP - Merge in full color settings from palette.json
+    - Twig - fix deprecated Image call in media.twig
 
 ## 5.0.0:
 
 _Release Date - 10 november 2023_
 
 - ⛏️ **Breaking**
-  - JS `bp_site` is renamed to `wpLemon` to be more consistent with the rest of the codebase. Please update your own javascript functions accordingly.
-  - Minimal PHP version is now 8.1
-  - Timber 2.0 introduces breaking changes. Most of them are handled by wp-lemon but please check your child theme `Timber` calls to see if they are still valid. Also check your debug.log for any errors or deprecation notices.
-  - Swiper is updated to 11.x
+    - JS `bp_site` is renamed to `wpLemon` to be more consistent with the rest of the codebase. Please update your own javascript functions accordingly.
+    - Minimal PHP version is now 8.1
+    - Timber 2.0 introduces breaking changes. Most of them are handled by wp-lemon but please check your child theme `Timber` calls to see if they are still valid. Also check your debug.log for any errors or deprecation notices.
+    - Swiper is updated to 11.x
 - 💡 **Newly added**
-  - wp-lemon now uses Timber 2.0 which is way more modern then Timber 1. See [upgrade guide](https://timber.github.io/docs/v2/upgrade-guides/2.0/). We updated wp-lemon to be fully compatible with Timber 2.0
+    - wp-lemon now uses Timber 2.0 which is way more modern then Timber 1. See [upgrade guide](https://timber.github.io/docs/v2/upgrade-guides/2.0/). We updated wp-lemon to be fully compatible with Timber 2.0
 
 - ✨ **Enhanced**
-  - Frontend translations are now handles via wp_localize_script instead of i18n.js. This leads to ~600kb less files loaded on the frontend.
+    - Frontend translations are now handles via wp_localize_script instead of i18n.js. This leads to ~600kb less files loaded on the frontend.
 - 📋 **Docs**
-  - Documentation is updated
-  - Changelogs are now generated automatically for all major versions. See [changelog](https://studio-lemon.github.io/wp-lemon-docs/changelog)
+    - Documentation is updated
+    - Changelogs are now generated automatically for all major versions. See [changelog](https://studio-lemon.github.io/wp-lemon-docs/changelog)
