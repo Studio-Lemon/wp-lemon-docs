@@ -1,4 +1,11 @@
 
+## 5.55.5 - 25 February 2026
+
+### 🐛 Bug Fixes
+
+- Prevent editor script loading on the front-end
+
+
 ## 5.55.4 - 25 February 2026
 
 ### 🐛 Bug Fixes
