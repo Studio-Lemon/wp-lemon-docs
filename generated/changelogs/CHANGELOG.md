@@ -1,3 +1,15 @@
+
+## 5.55.4 - 25 February 2026
+
+### 🐛 Bug Fixes
+
+- Add inline text editing attributes to accordion item label for better accessibility
+- Update 404 template for improved semantic structure and consistency
+- Strip HTML tags from accordion item label for improved output
+- Update language switcher structure to use language codes as keys
+- Ensure backend functions are only called in the admin context
+- Change heading from h5 to h2 for better semantic structure in search result component
+
 ## 5.55.3 - 17 February 2026
 
 ### 🐛 Bug Fixes
