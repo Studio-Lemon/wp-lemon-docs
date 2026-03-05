@@ -82,6 +82,16 @@ Filters the loaded card type for the node-latest block.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/share-context', function (array $context): array {
+$context['linkedin']['icon_class'] = 'icon-logo-linkedin';
+$context['x']['name'] = 'X';
+return $context;
+});
+```
+
 ## wp-lemon/filter/social-platforms
 
 Filters the social platforms available.
@@ -97,6 +107,15 @@ Use this filter to create additional social platform as well in the Customizer.
 | $platforms | `array<string,string>` | An array of social platforms where the key is the platform slug and the value is the platform name. |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/social-platforms', function ($platforms) {
+	$platforms['tiktok'] = 'TikTok';
+return $platforms;
+});
+```
 
 ## wp-lemon/filter/socials-context
 
@@ -1258,6 +1277,20 @@ add_filter('wp-lemon/filter/macro/picture/default-args', function($args) {
 });
 ```
 
+## wp-lemon/filter/single/templates
+
+Filters the templates used to render a single post.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $templates | `array` | An array of template file names. |
+| $post_type | `string` | The post type slug. |
+| $post | `\Timber\Post` | The current post object. |
+
+</div>
+
 ## wp-lemon/filter/translations/frontend
 
 Filters the front-end translations.
@@ -1315,18 +1348,6 @@ add_filter('wp-lemon/filter/header/scroll-settings', function ($settings) {
 ## wp-lemon/filter/block/accordion-item/allowed-blocks
 
 Filters the allowed blocks for the accordion-item block.
-
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $blocks | `array` | the allowed blocks. |
-
-</div>
-
-## wp-lemon/filter/block/accordion/allowed-blocks
-
-Filters the allowed blocks for the accordion block.
 
 <div class="table-responsive">
 
