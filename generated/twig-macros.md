@@ -440,7 +440,7 @@ Renders a set of share buttons for various social media platforms.
 **Parameters:**
 
 - `share_title` (string) - Optional title for the share buttons section
-- `platforms` (array) - Array of platform keys to include (e.g., `['facebook', 'twitter', 'linkedin']`)
+- `platforms` (array) - Array of platform keys to include (e.g., `['facebook', 'x', 'linkedin']`)
 - `share_context` (object) - Object containing share URL and metadata for each platform
 - `hide_platform_labels` (bool) - Whether to hide platform labels next to icons
 
@@ -452,16 +452,16 @@ Renders a set of share buttons for various social media platforms.
 {% import 'macros/socials.twig' as socials %}
 
 {# Basic share buttons #}
-{{ socials.share('Share this post', ['facebook', 'twitter', 'linkedin'], site.share_context, false) }}
+{{ socials.share('Share this post', ['facebook', 'x', 'linkedin'], site.share_context, false) }}
 
 {# Share buttons without labels (icons only) #}
-{{ socials.share(null, ['facebook', 'twitter', 'linkedin', 'email'], post.share_context, true) }}
+{{ socials.share(null, ['facebook', 'x', 'linkedin', 'email'], post.share_context, true) }}
 
 {# Custom title #}
-{{ socials.share('Spread the word', ['facebook', 'twitter'], share_context, false) }}
+{{ socials.share('Spread the word', ['facebook', 'x'], share_context, false) }}
 
 {# All available platforms #}
-{{ socials.share('Share', ['facebook', 'twitter', 'linkedin', 'pinterest', 'email', 'whatsapp'], post.share_context, false) }}
+{{ socials.share('Share', ['facebook', 'x', 'linkedin', 'pinterest', 'email', 'whatsapp'], post.share_context, false) }}
 
 {# Conditional share buttons #}
 {% if fields.enable_sharing %}
@@ -505,9 +505,8 @@ Renders a list of social media icons with links.
         icon_class: 'wp-lemon-icon-facebook'
     },
     {
-        url: 'https://twitter.com/example',
-        label: 'Twitter',
-        icon_class: 'wp-lemon-icon-twitter'
+        url: 'https://x.com/example',
+        icon_class: 'wp-lemon-icon-x'
     },
     {
         url: 'https://linkedin.com/company/example',

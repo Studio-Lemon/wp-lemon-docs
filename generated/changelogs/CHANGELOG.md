@@ -1,4 +1,18 @@
 
+## 5.55.6 - 05 March 2026
+
+### ⛰️  Features
+
+- Enhance accordion block functionality and styling
+
+### 🐛 Bug Fixes
+
+- Update search form action to use correct search page link
+- Simplify no search results message in search list component
+- Update social media references from Twitter to X in share buttons and related documentation
+- Ensure header and footer rendering variables are properly initialized
+
+
 ## 5.55.5 - 25 February 2026
 
 ### 🐛 Bug Fixes
