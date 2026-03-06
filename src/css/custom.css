@@ -86,3 +86,10 @@ blockquote p {
   color: var(--hero-text-color);
   font-weight: 600;
 }
+
+.menu__list-item-collapsible > a {
+  color: var(--ifm-menu-color);
+}
+.menu__list-item-collapsible > a:hover {
+  color: var(--ifm-menu-color);
+}
