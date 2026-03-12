@@ -1,4 +1,25 @@
 
+## 5.56.0 - 12 March 2026
+
+### 🐛 Bug Fixes
+
+- Add carousel content wrapper to enhance structure in carousel.twig
+- Optimize stylesheet directory URI retrieval in frontend_assets function
+- Simplify active post type retrieval in Bootstrap_Navwalker constructor
+- Disable meta box callback editing in ACF settings
+- Update ACF settings for post types, options pages UI, and shortcode
+- Prevent dynamic block examples from loading in non-admin contexts
+- Optimize unique ID assignment for accordion blocks by refining change detection logic
+- Enhance accordion block functionality with inner blocks and unique ID handling
+- Refactor accordion block structure and styles for improved layout and functionality
+- Update search form action to use site link for improved functionality
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove unnecessary paths from Timber loader and thus speeding up loading
+- Housekeeping and speeding up file i/o
+
+
 ## 5.55.6 - 05 March 2026
 
 ### ⛰️  Features
