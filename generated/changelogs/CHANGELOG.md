@@ -1,4 +1,34 @@
 
+## 5.57.0 - 30 March 2026
+
+### ⛰️  Features
+
+- Add filter for items in node-latest block and fallback query
+- Add noindex directive for paginated archive pages to improve SEO
+- [**breaking**] Removing obsolete and slow tracking code injection. This reduces one ajax call. Make sure that you check that the fields google_tracking_code - Analytics scripts and analytics_code_body_open - Analytics scripts - body are no longer in use
+
+### 🐛 Bug Fixes
+
+- Update max-width calculations for responsive design
+- Update deprecation message in video macro to reflect argument usage
+- Refactor video macro to use args object for improved configurability
+- Wrap acf_update_setting calls in a function_exists check for better compatibility
+- Add check for empty filename or directory in remove_generated_webp function
+- Change font-display property to swap for faster font loading
+- Update medium and large image size options for better media handling
+- Add post_parent parameter to get_total_posts function for better post retrieval
+- Update Site_Icons short name to remove unnecessary wording
+
+### 📚 Documentation
+
+- Add example usage for filters in node-latest and node-overview blocks
+- Add detailed descriptions for marketing and preferences checkboxes in cookie bar filters
+
+### ⚙️ Miscellaneous Tasks
+
+- Delete unneeded file
+
+
 ## 5.56.0 - 12 March 2026
 
 ### 🐛 Bug Fixes

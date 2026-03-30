@@ -553,6 +553,10 @@ add_filter('wp-lemon/filter/cookiebar/show-analytics-checkbox', '__return_true')
 
 Filters whether or not to show the marketing checkbox in the cookie bar.
 
+If applied, this will add a checkbox for marketing cookies in the cookie bar, allowing users to opt-in or opt-out of marketing cookies.
+
+This will lead to the following consent levels: `ad_storage`,  `ad_user_data` and `ad_personalization`.
+
 Default is false.
 
 <div class="table-responsive">
@@ -572,6 +576,10 @@ add_filter('wp-lemon/filter/cookiebar/show-marketing-checkbox', '__return_true')
 ## wp-lemon/filter/cookiebar/show-preferences-checkbox
 
 Filters whether or not to show the preferences checkbox in the cookie bar.
+
+If applied, this will add a checkbox for the preferences cookies in the cookie bar.
+
+This will lead to the following consent levels: `personalization_storage`
 
 Default is false.
 
@@ -1566,6 +1574,35 @@ function ignore_noindexed_posts( $args ) {
 add_filter( 'wp-lemon/filter/block/node-latest/case/args', __NAMESPACE__ . '\\ignore_noindexed_posts' );
 ```
 
+## "wp-lemon/filter/block/node-latest/{$post\_type}/items
+
+Filters the items for the node-latest block.
+
+You can use this filter to change the items on a per post type basis, or to short circuit the query if you want to provide your own items.
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $items | `array` | the items to show in the block |
+| $terms | `array` | the terms to filter on |
+| $taxonomy | `string` | the taxonomy to filter on |
+| $args | `array` | the query args |
+
+</div>
+
+**PHP**
+
+```php
+function provide_own_items( $items, $terms, $taxonomy, $args ) {
+ $items = my_custom_query() ?? [];
+ return $items;
+}
+add_filter( 'wp-lemon/filter/block/node-latest/case/items', __NAMESPACE__ . '\\provide_own_items', 10, 4 );
+```
+
 ## "wp-lemon/filter/block/node-latest/{$post\_type}/no-items-message
 
 Filters the no items message for the node-latest block.
@@ -1601,6 +1638,12 @@ You can use this filter to change the classes on a per post type basis.
 
 </div>
 
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/node-overview/person/holder-classes', fn($classes): string => 'col-6 col-lg-3');
+```
+
 ## wp-lemon/filter/block/node-latest/card-type
 
 Filters the default card type for the node-latest block.
@@ -1628,6 +1671,13 @@ You can use this filter to change the card type on a per post type basis.
 | $card_name | `string` | the card name without the crd- prefix |
 
 </div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/node-latest/card-type', function ($card_type) {
+ return 'product-small';
+});
 
 ## "wp-lemon/filter/block/node-overview/{$post\_type}/args
 
@@ -1823,6 +1873,18 @@ You can use this filter to change the action for the load more button for a spec
 | $fields | `array` | The fields of the block. |
 
 </div>
+
+**PHP**
+
+```php
+function filter_dog_node_overview_action($action, $fields)
+{
+  $gender = isset($fields['gender_to_show']) ? $fields['gender_to_show'] : 'male';
+  $action = 'load_' . $gender;
+  return $action;
+}
+
+add_filter('wp-lemon/filter/block/node-overview/dog/load-more-action', __NAMESPACE__ . '\\filter_dog_node_overview_action', 10, 2);
 
 ## wp-lemon/filter/block/timeline-item/allowed-blocks
 

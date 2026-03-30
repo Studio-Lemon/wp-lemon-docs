@@ -388,9 +388,12 @@ Renders an HTML5 video element with configurable attributes.
 **Parameters:**
 
 - `src` (string) - The source URL of the video file
-- `class` (string) - CSS classes to apply to the video element
-- `poster_id` (int) - WordPress attachment ID for the poster/thumbnail image
-- `loading` (string) - Loading strategy ('lazy' or 'eager'). Defaults to 'lazy'
+- `args` (object) - Configuration arguments:
+    - `class` (string) - CSS class(es) for the video element
+    - `src` (string) - The source URL (overrides first parameter if set)
+    - `poster_id` (int|string) - WordPress attachment ID for poster image (default: 'large')
+    - `loading` (string) - Loading strategy: 'lazy' or 'eager' (default: 'lazy')
+    - `fetchpriority` (string) - Fetch priority: 'auto', 'high', or 'low' (default: 'auto')
 
 **Returns:** `string` - Rendered HTML5 video element
 
@@ -399,23 +402,72 @@ Renders an HTML5 video element with configurable attributes.
 ```twig
 {% import 'macros/media.twig' as media %}
 
-{# Basic video #}
-{{ media.video(fields.video_url, 'video-player', fields.video_poster, 'lazy') }}
+{# Basic video with new args format #}
+{{
+    media.video(
+        fields.video_url,
+        {
+            class: 'video-player',
+            poster_id: fields.video_poster,
+            loading: 'lazy'
+        }
+    )
+}}
 
-{# Hero video with eager loading #}
-{{ media.video(fields.hero_video, 'hero-video', fields.hero_poster, 'eager') }}
+{# Hero video with eager loading and high priority #}
+{{
+    media.video(
+        fields.hero_video,
+        {
+            class: 'hero-video',
+            poster_id: fields.hero_poster,
+            loading: 'eager',
+            fetchpriority: 'high'
+        }
+    )
+}}
 
 {# Background video #}
 <div class="video-background">
-    {{ media.video(fields.background_video, 'bg-video', fields.bg_poster, 'lazy') }}
+    {{
+        media.video(
+            fields.background_video,
+            {
+                class: 'bg-video',
+                poster_id: fields.bg_poster
+            }
+        )
+    }}
 </div>
 
-{# Multiple videos #}
+{# Multiple videos with lazy loading #}
 {% for video_item in fields.videos %}
     <div class="video-container">
-        {{ media.video(video_item.video_file, 'content-video', video_item.poster_image, 'lazy') }}
+        {{
+            media.video(
+                video_item.video_file,
+                {
+                    class: 'content-video',
+                    poster_id: video_item.poster_image,
+                    loading: 'lazy',
+                    fetchpriority: 'auto'
+                }
+            )
+        }}
     </div>
 {% endfor %}
+
+{# Video with custom poster size #}
+{{
+    media.video(
+        fields.video_url,
+        {
+            class: 'featured-video',
+            poster_id: fields.custom_poster,
+            loading: 'lazy'
+        }
+    )
+}}
 ```
 
 **Note:** The video element includes:
