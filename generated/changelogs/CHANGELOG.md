@@ -1,7 +1,29 @@
+## 5.58.0 - 03 April 2026
+
+### ⛰️ Features
+
+- _(a11y)_ Add phone_accessible function and filter for improved phone number accessibility
+- _(admin)_ Add admin controller for dashboard modifications and welcome widget
+- Add filter to skip diagnostics sending based on user-defined condition
+- Replace get_terms with Timber::get_terms in Node_Overview_Block
+- Enhance Diagnostics class error handling and add action hook on success
+
+### 🐛 Bug Fixes
+
+- Update max-width-smaller calculation for consistency in layout. Fixes #340
+- Update visibility handling for platform labels in share buttons and social icons
+- Update title assignment logic in archive template for better context handling
+
+### ⚙️ Miscellaneous Tasks
+
+- Enhance accessibility for pagination controls with aria-labels and visually hidden text
+- Hide site icon control in customizer and add admin footer styles
+- Continue on dashboard widget
+- Update packages
 
 ## 5.57.0 - 30 March 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add filter for items in node-latest block and fallback query
 - Add noindex directive for paginated archive pages to improve SEO
@@ -28,7 +50,6 @@
 
 - Delete unneeded file
 
-
 ## 5.56.0 - 12 March 2026
 
 ### 🐛 Bug Fixes
@@ -49,10 +70,9 @@
 - Remove unnecessary paths from Timber loader and thus speeding up loading
 - Housekeeping and speeding up file i/o
 
-
 ## 5.55.6 - 05 March 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Enhance accordion block functionality and styling
 
@@ -63,13 +83,11 @@
 - Update social media references from Twitter to X in share buttons and related documentation
 - Ensure header and footer rendering variables are properly initialized
 
-
 ## 5.55.5 - 25 February 2026
 
 ### 🐛 Bug Fixes
 
 - Prevent editor script loading on the front-end
-
 
 ## 5.55.4 - 25 February 2026
 

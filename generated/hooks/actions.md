@@ -454,3 +454,7 @@ Fires after the entry content.
 
 **see** templates/index.twig for example
 
+## wp-lemon/action/diagnostics/after
+
+Fires on a successful diagnostics send. Can be used to trigger other actions, like clearing caches or similar.
+

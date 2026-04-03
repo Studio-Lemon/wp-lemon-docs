@@ -8,6 +8,7 @@ This document lists all custom Twig filters available in the WP Lemon theme. The
 - [towebpSrcset](#towebpsrcset)
 - [apply_filters_deprecated](#apply_filters_deprecated)
 - [add_spaces_to_phonenumber](#add_spaces_to_phonenumber)
+- [phone_accessible](#phone_accessible)
 - [textarea_to_array](#textarea_to_array)
 - [url_to_website_name](#url_to_website_name)
 - [ucfirst](#ucfirst)
@@ -177,6 +178,64 @@ This filter formats phone numbers by adding spaces at specific positions, useful
 - `[3, 2, 3, 3]` - International mobile: "+31 61 234 5678"
 - `[3, 4, 2, 3]` - Combined format: "+31 (0)6 12 345 678"
 - `[3, 6, 2, 2]` - Service numbers: "+31 (0)180 12 34 56"
+
+---
+
+## phone_accessible
+
+Format a phone number for screen readers to improve accessibility.
+
+This filter converts phone numbers into a format that is easier for screen readers to pronounce. It adds spaces between each digit and periods (pauses) between digit groups, making the number easier to listen to and understand.
+
+**Since:** 5.58.0
+
+**Parameters:**
+
+- `phone_number` (string) - The phone number to format
+
+**Returns:** `string` - The formatted phone number for accessibility
+
+### Usage
+
+```twig
+{# Basic usage #}
+{{ '052 203 45 00'|phone_accessible }}
+{# Output: "0 5 2. 2 0 3. 4 5. 0 0" #}
+
+{# In a phone link with aria-label #}
+{% set number = '052 203 45 00' %}
+<a href="tel:{{ number }}" aria-label="{{ number|phone_accessible }}">{{ number }}</a>
+
+{# Using with format_phone_number function #}
+{% set phone = format_phone_number(fields.contact_number) %}
+{% if phone %}
+    <a href="{{ phone.uri }}" aria-label="{{ phone.national|phone_accessible }}">{{ phone.national }}</a>
+{% endif %}
+
+{# In a contact card #}
+{% if post.meta('phone') %}
+    <div class="contact-info">
+        <span class="label">{{ __('Phone', 'wp-lemon') }}:</span>
+        <a href="tel:{{ post.meta('phone') }}" aria-label="{{ post.meta('phone')|phone_accessible }}">{{ post.meta('phone') }}</a>
+    </div>
+{% endif %}
+```
+
+**How it works:**
+
+1. Removes all non-digit characters except spaces
+2. Replaces spaces with periods (which tell screen readers to pause)
+3. Adds a space after each digit (so each digit is read individually)
+
+**Example transformations:**
+
+- `"052 203 45 00"` → `"0 5 2. 2 0 3. 4 5. 0 0"`
+- `"06-12345678"` → `"0 6 1 2 3 4 5 6 7 8"`
+- `"+31 20 123 4567"` → `"3 1 2 0 1 2 3 4 5 6 7"`
+
+**Accessibility Note:** Always use this filter in the `aria-label` attribute of phone links, not as the visible text. The visible text should remain in a human-readable format.
+
+**Reference:** [Accessibility Phone Number Formatting](http://www.jhalabi.com/blog/accessibility-phone-number-formatting/)
 
 ---
 

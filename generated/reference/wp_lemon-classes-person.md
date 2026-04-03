@@ -1,0 +1,121 @@
+# Person
+
+## Overview
+
+*This class extends `WP_Lemon\Classes\LemonPost`*  
+  
+
+### Methods
+
+<div class="table-methods table-responsive">
+
+| Name | Return Type | Summary/Returns |
+| --- | --- | --- |
+| <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Method to get the archive page for the post type.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The archive link.</span></span> |
+| <span class="method-name">[get_email()](#get_email)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get the person's email address<br><br><span class="method-return"><span class="method-return-label">Returns:</span> the escaped email address or false if not set</span></span> |
+| <span class="method-name">[get_excerpt()](#get_excerpt)</span> | <span class="method-type">`string`</span> | <span class="method-description">Custom excerpt.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> Returns the excerpt.</span></span> |
+| <span class="method-name">[get_other_items()](#get_other_items)</span> | <span class="method-type">`\Timber\PostCollectionInterface` or `array`</span> | <span class="method-description">Method to get other post items.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The other items.</span></span> |
+| <span class="method-name">[get_phonenumber()](#get_phonenumber)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get the person's phone number</span> |
+
+</div>
+
+
+## Class Methods
+
+### get\_archive\_page()
+
+Method to get the archive page for the post type.
+
+**Returns:** `array|false` The archive link.
+
+
+*This method is inherited from `\WP_Lemon\Classes\LemonPost`.*
+
+---
+
+### get\_email()
+
+Get the person's email address
+
+**since** 5.55.0
+
+**Returns:** `string|false` the escaped email address or false if not set
+
+---
+
+### get\_excerpt()
+
+Custom excerpt.
+
+This method if a wrapper around the excerpt method.
+It allows you to get a custom excerpt for the post with predefined settings.
+
+In case you have an empty excerpt, please add your custom blocks that are most likely used on the top of the page to the the excerpt_allowed_wrapper_blocks filter .
+
+TODO:  Use this function inside our twig templates and deprecated the lemon_excerpt function inside Twig files.
+
+`get_excerpt( string|int $length = 100 )`
+
+**Returns:** `string` Returns the excerpt.
+
+
+*This method is inherited from `\WP_Lemon\Classes\LemonPost`.*
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $length | `string` or `int` | Amount of characters, if -1 all characters are returned. |
+
+</div>
+
+---
+
+### get\_other\_items()
+
+Method to get other post items.
+
+`get_other_items( int $number, string $taxonomy = null, array $terms = [] )`
+
+**Returns:** `\Timber\PostCollectionInterface|array` The other items.
+
+
+*This method is inherited from `\WP_Lemon\Classes\LemonPost`.*
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $number | `int` | The number of items to get. |
+| $taxonomy | `string` | Name of the taxonomy to query. |
+| $terms | `array` | ID of the term to query inside $taxonomy. |
+
+</div>
+
+**Twig**
+
+```twig
+{% include 'components/other-items.twig' with {
+  more: {
+       title: __('Bekijk gerelateerde vacatures', 'wp-lemon-child'),
+       items: post.get_other_items(2, 'category', [12,34]),
+       classes: ['section'],
+       button: false
+  },
+ card_type: 'job',
+ link: true
+} %}
+```
+
+---
+
+### get\_phonenumber()
+
+Get the person's phone number
+
+**since** 5.55.0
+
+**Returns:** `array|false` 
+
+---
+
