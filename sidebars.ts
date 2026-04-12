@@ -108,6 +108,8 @@ const sidebars: SidebarsConfig = {
         'reference/classes/generic-ajax-query',
         'reference/classes/wp-lemon-site',
         'reference/classes/lemon-post',
+        'reference/classes/image',
+        'reference/classes/person',
       ],
     },
     {
