@@ -51,23 +51,23 @@ $choices = get_post_type_options('person');
 
 ... additional customizer code ...
 $wp_customize->add_setting(
-   'job_contact',
-   [
-       'sanitize_callback' => 'absint',
-   ]
+    'job_contact',
+    [
+        'sanitize_callback' => 'absint',
+    ]
 );
 $wp_customize->add_control(
-       'job_contact',
-       [
+    'job_contact',
+    [
         'label'          => esc_html_x('Job contact', 'Backend - Customizer field label', 'wp-lemon'),
         'section'        => 'project',
         'allow_addition' => true,
         'type'           => 'select',
         'settings'       => 'job_contact',
         'choices'        => $choices
-      ]
+    ]
     );
- ```
+```
 
 ---
 
@@ -77,7 +77,7 @@ Context function that queries the latest x amount of posts.
 
 Does have a $predefined_posts param to filter which post to query.
 
-`latest_items_query( string $type, int $amount = 2, array $predefined_posts = null, string $taxonomy = null, int[] $term_ids = null, array<string,mixed>|bool|null $extra_args = null )`
+`latest_items_query( string $type, int $amount = 2, ?array $predefined_posts = null, ?string $taxonomy = null, ?array $term_ids = null, array<string,mixed>|bool|null $extra_args = null )`
 
 **Returns:** `\Timber\PostCollectionInterface|null` Returns collection of posts.
 
@@ -178,17 +178,17 @@ Querying the all jobs in a custom block context:
 ```php
 use function WP_Lemon\API\archive_query;
 
- public function block_context($context): array
- {
+public function block_context($context): array
+{
 
     $args = [
-       'jobs' => archive_query('job', -1),
-       'link' => true,
-       'holder_classes' => 'col-md-6',
-     ];
+        'jobs' => archive_query('job', -1),
+        'link' => true,
+        'holder_classes' => 'col-md-6',
+    ];
 
-     return array_merge($context, $args);
-  }
+    return array_merge($context, $args);
+}
 ```
 
 ---
@@ -198,7 +198,7 @@ use function WP_Lemon\API\archive_query;
 Count function to use in relation with the above archive_query()
 Counts total amount of posts that can be queried in our ajax load more archives.
 
-`get_total_posts( string $post_type, int $loaded_posts = '', string $taxonomy = null, array $term = null, array $extra_args = null )`
+`get_total_posts( string $post_type, int $loaded_posts = '', ?string $taxonomy = null, ?array $term = null, ?array $extra_args = null )`
 
 **Returns:** `array` Array with context data to be added to the archive.twig.
 
@@ -258,10 +258,10 @@ Get next post when available, otherwise get the first post.
 ```php
 use function WP_Lemon\API\next_post_info;
 $context = Timber::context(
- [
-   'next'            => next_post_info(),
-   'prev'            => previous_post_info(),
- ]
+    [
+        'next'            => next_post_info(),
+        'prev'            => previous_post_info(),
+    ]
 );
 ```
 
@@ -290,10 +290,10 @@ Get previous post when available, otherwise get the last post.
 ```php
 use function WP_Lemon\API\next_post_info;
 $context = Timber::context(
- [
-   'next'            => next_post_info(),
-   'prev'            => previous_post_info(),
- ]
+    [
+        'next'            => next_post_info(),
+        'prev'            => previous_post_info(),
+    ]
 );
 ```
 

@@ -300,10 +300,10 @@ This way you can add additional dynamic content
 ```php
 function render_hero_banner($fields)
 {
- if (isset($fields['hide_banner']) && true == $fields['hide_banner']) {
-     return;
- }
- echo block_template_part('banner');
+    if (isset($fields['hide_banner']) && true == $fields['hide_banner']) {
+        return;
+    }
+    echo block_template_part('banner');
 
 }
 add_action('wp-lemon/action/block/hero-image/after', __NAMESPACE__ . '\render_hero_banner', 10, 1);
