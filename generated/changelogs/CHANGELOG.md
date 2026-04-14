@@ -1,12 +1,21 @@
+## 5.59.1 - 14 April 2026
+
+### ⛰️ Features
+
+- Update accordion block to use blockAppender for better editor experience.
+
+### 🐛 Bug Fixes
+
+- Update rsync-deployments action version to v8
 
 ## 5.59.0 - 14 April 2026
 
 ### 🐛 Bug Fixes
 
-- *(accordion)* Update filter namespace for button appender
-- *(acf)* Refactor location rules registration and update function names
-- *(acf-fields)* Change action hook from 'acf/init' to 'acf/include_fields'
-- *(block-carousel)* Streamline slide configuration logic
+- _(accordion)_ Update filter namespace for button appender
+- _(acf)_ Refactor location rules registration and update function names
+- _(acf-fields)_ Change action hook from 'acf/init' to 'acf/include_fields'
+- _(block-carousel)_ Streamline slide configuration logic
 
 ### 📚 Documentation
 
