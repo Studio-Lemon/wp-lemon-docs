@@ -51,9 +51,9 @@ Example usage:
 
 ```php
 protected function my_custom_method() {
-  $my_custom_value = [];
+    $my_custom_value = [];
 
-  self::add_site_information('my-key', $my_custom_value);
+    self::add_site_information('my-key', $my_custom_value);
 }
 ```
 
@@ -76,9 +76,9 @@ Example usage from within the child-site class:
 ```php
 function extend_site_information(): array
 {
-   return [
-       //'key' => and use your custom child method here
-   ];
+    return [
+        //'key' => and use your custom child method here
+    ];
 }
 ```
 
@@ -108,7 +108,7 @@ Example usage:
 
 ```php
 public function block_context($context): array {
-  $news_archive = WP_Lemon_Child_Site::get_archive_page('news');
+    $news_archive = WP_Lemon_Child_Site::get_archive_page('news');
 
 }
 ```
@@ -163,7 +163,7 @@ Example usage:
 
 ```php
 public function block_context($context): array {
-  $contact_page = WP_Lemon_Child_Site::get_special_page('contact');
+    $contact_page = WP_Lemon_Child_Site::get_special_page('contact');
 }
 ```
 
@@ -175,7 +175,7 @@ Check if the current page is an archive page for a specific post type.
 
 **since** 5.48.1
 
-`is_archive_page( string $post_type = null )`
+`is_archive_page( ?string $post_type = null )`
 
 **Returns:** `bool` True if the current page is an archive page for the specified post type, false otherwise.
 
@@ -258,7 +258,7 @@ Example usage:
 
 ```php
 if (!WP_Lemon_Child_Site::is_special_page('contact')) {
- return;
+    return;
 }
 // Do something on the contact page.
 Timber::render('partials/contact-form.twig', $context);

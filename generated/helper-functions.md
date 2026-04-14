@@ -93,9 +93,9 @@ Use this field in your ACF field group:
 
 ```php
 ->addField('form', 'fluentforms', [
-   'label' => __('Form', 'wp-lemon'),
-   'instructions' => __('Select the form you want to display.', 'wp-lemon'),
-   'return_format' => 'id',
+    'label' => __('Form', 'wp-lemon'),
+    'instructions' => __('Select the form you want to display.', 'wp-lemon'),
+    'return_format' => 'id',
 ]);
 ```
 
@@ -136,8 +136,8 @@ You can use this function in your classes and functions to log errors and other 
 ```php
 log_message('Diagnostics cron', 'Starting diagnostics', special: 'first');
 if (is_wp_error($response)) {
-     log_message('Diagnostic error', 'wp-error' . $response->get_error_message(), 'special': 'last');
-     return;
+    log_message('Diagnostic error', 'wp-error' . $response->get_error_message(), 'special': 'last');
+    return;
 }
 
 log_message('Diagnostics cron', 'Diagnostics completed', special: 'last');
@@ -192,7 +192,7 @@ Also available in Twig files via the `phonenumber` function.
 ```php
 $phone = format_phone_number('+31612345678');
 if ($phone) {
-  echo '<a href="' . $phone['uri'] . '">' . $phone['localized'] . '</a>';
+    echo '<a href="' . $phone['uri'] . '">' . $phone['localized'] . '</a>';
 }
 ```
 Or in Twig:
@@ -201,7 +201,7 @@ Or in Twig:
 ```twig
 {% set phone = phonenumber('+31612345678') %}
 {% if phone %}
- <a href="{{ phone.uri }}">{{ phone.localized }}</a>
+  <a href="{{ phone.uri }}">{{ phone.localized }}</a>
 {% endif %}
 ```
 
@@ -234,8 +234,8 @@ You can use this function to get the archive page for a specific post type.
 ```php
 $archive_id = get_archive_page('job');
 if ($archive_id) {
-  $archive = Timber::get_post($archive_id);
-  echo '<a href="' . $archive->link() . '">' . $archive->title() . '</a>';
+    $archive = Timber::get_post($archive_id);
+    echo '<a href="' . $archive->link() . '">' . $archive->title() . '</a>';
 }
 ```
 
@@ -246,7 +246,7 @@ Or even easier by using the `WP_Lemon_Site::get_archive_page()` method like this
 ```php
 $archive = WP_Lemon_Site::get_archive_page('job');
 if ($archive) {
-  echo '<a href="' . $archive['link'] . '">' . $archive['title'] . '</a>';
+    echo '<a href="' . $archive['link'] . '">' . $archive['title'] . '</a>';
 }
 ```
 
@@ -309,12 +309,12 @@ This function can be used to add a specific pattern of spaces to a phone number.
 function filter_phone_numbers(array $result, int $countrycode): array
 {
 
- if (31 === $countrycode && str_starts_with($result['national'], '0180')) {
-     // add spaces after 3, 6, 2, 2 characters, so we have +31 (0)180 12 34 56.
-     $result['combined'] = add_spaces_to_phonenumber($result['combined'], [3, 6, 2, 2]);
-  }
+    if (31 === $countrycode && str_starts_with($result['national'], '0180')) {
+        // add spaces after 3, 6, 2, 2 characters, so we have +31 (0)180 12 34 56.
+        $result['combined'] = add_spaces_to_phonenumber($result['combined'], [3, 6, 2, 2]);
+    }
 
-  return $result;
+    return $result;
 }
 add_filter('wp-lemon/filter/phone-number/result', __NAMESPACE__ . '\\filter_phone_numbers', 11, 2);
 ```
@@ -450,9 +450,9 @@ Also available in Twig files via the `get_attachment_info` function.
   <p>({{ file_info.filesize }} / {{ file_info.extension }})</p>
   <p>{{ attachment.extension }}</p>
   <a href="{{ attachment.link }}">{{ attachment.link }}</a>
- </div>
+  </div>
 {% endif %}
- ```
+```
 
 ---
 
@@ -485,11 +485,11 @@ This function also works in Twig files. See the example below.
 ```twig
 <div class="row">
 {% for item in fields.repeater %}
-   <div class="icons-block__item col-md-4">
+  <div class="icons-block__item col-md-4">
       <div class="icons-block__icon">{{ get_svg_icon(item.icon) }}</div>
-         {{ item.text }}
+        {{ item.text }}
       </div>
- {% endfor %}
+{% endfor %}
 </div>
 ```
 
@@ -521,12 +521,12 @@ Convert a textarea ACF field with line breaks to an array.
 
 ```twig
 {% set usps = fields.usps|textarea_to_array %}
- {% if usps %}
-   <ul>
-   {% for item in usps %}
-     <li>{{ item }}</li>
-   {% endfor %}
- </ul>
+{% if usps %}
+  <ul>
+  {% for item in usps %}
+    <li>{{ item }}</li>
+  {% endfor %}
+  </ul>
 {% endif %}
 ```
 

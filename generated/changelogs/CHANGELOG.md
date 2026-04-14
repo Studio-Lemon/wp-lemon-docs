@@ -1,3 +1,35 @@
+
+## 5.59.0 - 14 April 2026
+
+### 🐛 Bug Fixes
+
+- *(accordion)* Update filter namespace for button appender
+- *(acf)* Refactor location rules registration and update function names
+- *(acf-fields)* Change action hook from 'acf/init' to 'acf/include_fields'
+- *(block-carousel)* Streamline slide configuration logic
+
+### 📚 Documentation
+
+- Update doc examples
+- Fix @example indentation in node-overview and load-blocks
+- Update docblock for get_focalpoint method
+- Format docblocks
+- Format docsblocks
+
+### ⚙️ Miscellaneous Tasks
+
+- Update packages
+- Ignore PHPCompatibility warning in log_message function
+- Fix last two errors
+- Phpstan
+- Compat with PHP 8.4
+- Update phpcompatibility version to 10.0.0@dev and adjust related configurations
+- More linting
+- Update author email in composer.json
+- Run lint
+- Run rector
+- Update dependencies
+
 ## 5.58.0 - 03 April 2026
 
 ### ⛰️ Features
