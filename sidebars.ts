@@ -105,11 +105,11 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Classes',
       items: [
-        'reference/classes/generic-ajax-query',
         'reference/classes/wp-lemon-site',
         'reference/classes/lemon-post',
         'reference/classes/image',
         'reference/classes/person',
+        'reference/classes/generic-ajax-query',
       ],
     },
     {

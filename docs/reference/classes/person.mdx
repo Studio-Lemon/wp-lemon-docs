@@ -5,13 +5,10 @@ description: Person class
 
 # Person
 
-Example post class that extends LemonPost. Can be used as a reference for creating custom post classes.
-
-<!--more-->
-
 ## Overview
 
-*This class extends `WP_Lemon\Classes\LemonPost`*
+*This class extends `WP_Lemon\Classes\LemonPost`*  
+  
 
 ### Methods
 
@@ -36,6 +33,7 @@ Method to get the archive page for the post type.
 
 **Returns:** `array|false` The archive link.
 
+
 *This method is inherited from `\WP_Lemon\Classes\LemonPost`.*
 
 ---
@@ -54,12 +52,17 @@ Get the person's email address
 
 Custom excerpt.
 
-This method is a wrapper around the excerpt method.
+This method if a wrapper around the excerpt method.
 It allows you to get a custom excerpt for the post with predefined settings.
+
+In case you have an empty excerpt, please add your custom blocks that are most likely used on the top of the page to the the excerpt_allowed_wrapper_blocks filter .
+
+TODO:  Use this function inside our twig templates and deprecated the lemon_excerpt function inside Twig files.
 
 `get_excerpt( string|int $length = 100 )`
 
 **Returns:** `string` Returns the excerpt.
+
 
 *This method is inherited from `\WP_Lemon\Classes\LemonPost`.*
 
@@ -81,6 +84,7 @@ Method to get other post items.
 
 **Returns:** `\Timber\PostCollectionInterface|array` The other items.
 
+
 *This method is inherited from `\WP_Lemon\Classes\LemonPost`.*
 
 <div class="table-responsive">
@@ -93,6 +97,21 @@ Method to get other post items.
 
 </div>
 
+**Twig**
+
+```twig
+{% include 'components/other-items.twig' with {
+  more: {
+       title: __('Bekijk gerelateerde vacatures', 'wp-lemon-child'),
+       items: post.get_other_items(2, 'category', [12,34]),
+       classes: ['section'],
+       button: false
+  },
+ card_type: 'job',
+ link: true
+} %}
+```
+
 ---
 
 ### get\_phonenumber()
@@ -101,6 +120,7 @@ Get the person's phone number
 
 **since** 5.55.0
 
-**Returns:** `array|false`
+**Returns:** `array|false` 
 
 ---
+

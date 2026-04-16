@@ -143,6 +143,24 @@ const FILE_MAPPINGS = [
       introText: null
    },
    {
+      source: 'generated/reference/wp_lemon-classes-image.md',
+      dest: 'docs/reference/classes/image.mdx',
+      frontmatter: {
+         title: 'Image',
+         description: 'Image class'
+      },
+      introText: null
+   },
+   {
+      source: 'generated/reference/wp_lemon-classes-person.md',
+      dest: 'docs/reference/classes/person.mdx',
+      frontmatter: {
+         title: 'Person',
+         description: 'Person class'
+      },
+      introText: null
+   },
+   {
       source: 'generated/twig-macros.md',
       dest: 'docs/reference/twig-macros.mdx',
       frontmatter: {
