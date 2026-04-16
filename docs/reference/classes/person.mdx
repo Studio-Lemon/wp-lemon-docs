@@ -102,13 +102,13 @@ Method to get other post items.
 ```twig
 {% include 'components/other-items.twig' with {
   more: {
-       title: __('Bekijk gerelateerde vacatures', 'wp-lemon-child'),
-       items: post.get_other_items(2, 'category', [12,34]),
-       classes: ['section'],
-       button: false
+    title: __('Bekijk gerelateerde vacatures', 'wp-lemon-child'),
+    items: post.get_other_items(2, 'category', [12,34]),
+    classes: ['section'],
+    button: false
   },
- card_type: 'job',
- link: true
+  card_type: 'job',
+  link: true
 } %}
 ```
 
