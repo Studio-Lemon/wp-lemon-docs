@@ -372,12 +372,12 @@ function overwrite_news_card_media($content, $id)
 {
 
     if (!get_field('video', $id)) {
-    return $content;
+    	return $content;
     }
 
     return Timber::compile('components/cards/video.twig', [
-    'video' => get_field('video', $id),
-    'id' => get_post_thumbnail_id($id),
+    	'video' => get_field('video', $id),
+    	'id' => get_post_thumbnail_id($id),
     ]);
 }
 add_filter('wp-lemon/filter/card/case/picture-el', __NAMESPACE__ . '\\overwrite_news_card_media', 10, 2); description
@@ -405,7 +405,7 @@ function overwrite_person_card_media($args)
 
     return $args;
 }
-add_filter('wp-lemon/filter/card/{$card_type}/picture-args', __NAMESPACE__ . '\\overwrite_person_card_media', 10, 2);
+add_filter('wp-lemon/filter/card/person/picture-args', __NAMESPACE__ . '\\overwrite_person_card_media', 10, 2);
 ```
 
 ## "wp-lemon/filter/card/{$card\_type}/picture-args
@@ -1346,6 +1346,49 @@ add_filter('wp-lemon/filter/header/scroll-settings', function ($settings) {
 });
 ```
 
+## wp-lemon/filter/translations/frontend
+
+Filters the front-end translations.
+
+This filter is used to add or modify the translations array.
+
+**PHP**
+
+```php
+function add_translations($translations)
+{
+    return array_merge($translations, [
+        'name'                    => __('Name', 'wp-lemon-child'),
+        'apply'                   => __('Apply', 'wp-lemon-child'),
+    ]);
+}
+add_filter('wp-lemon/filter/translations/frontend', __NAMESPACE__ . '\\add_translations');
+```
+
+## wp-lemon/filter/frontend/script-data
+
+Filters the front-end script data.
+
+This filter is used to add or modify the data that is localized to the wplemon JavaScript object.
+The data is available in JavaScript via the global `wplemon` variable.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $site | `array` | An array of script data.<br><br><ul><li>**$template**<br>`string` The stylesheet directory URI.</li><li>**$dist**<br>`string` The dist directory URI.</li><li>**$url**<br>`string` The site URL.</li><li>**$ajax**<br>`string` The admin-ajax.php URL.</li><li>**$ajax_nonce**<br>`string` The AJAX nonce for archive operations.</li><li>**$rest**<br>`string` The REST API URL.</li><li>**$archives**<br>`array` Archive-specific data used in archive.js.</li><li>**$i18n**<br>`array` Translations for frontend JavaScript.</li><li>**$nav_scroll**<br>`array` Navigation scroll settings.</li></ul> |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/frontend/script-data', function ($site) {
+    $site['custom_api'] = 'https://api.example.com';
+    return $site;
+});
+```
+
 ## wp-lemon/filter/block/accordion-item/allowed-blocks
 
 Filters the allowed blocks for the accordion-item block.
@@ -1675,9 +1718,10 @@ You can use this filter to change the card type on a per post type basis.
 **PHP**
 
 ```php
-add_filter('wp-lemon/filter/block/node-latest/card-type', function ($card_type) {
+add_filter('wp-lemon/filter/block/node-latest/product/card-type', function ($card_type) {
     return 'product-small';
 });
+```
 
 ## "wp-lemon/filter/block/node-overview/{$post\_type}/args
 
@@ -1883,6 +1927,7 @@ function filter_dog_node_overview_action($action, $fields)
     $action = 'load_' . $gender;
     return $action;
 }
+```
 
 add_filter('wp-lemon/filter/block/node-overview/dog/load-more-action', __NAMESPACE__ . '\\filter_dog_node_overview_action', 10, 2);
 

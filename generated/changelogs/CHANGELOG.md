@@ -1819,7 +1819,7 @@ This reverts commit 2e9a3a3b48bebf29df7b044cea08288bbb2cf183.
 
 ### ⛰️ Features
 
-- _(css)_ Better configuarable animations
+- _(css)_ Better configurable animations
 
 ### 🐛 Bug Fixes
 
@@ -2093,7 +2093,7 @@ BREAKING CHANGE: classes have been changed, please check your codebase if you re
 - _(lang)_ updated languages
 - _(css)_ Footer update - Realized by section of footer is now less intrusive
 - _(css)_ partially revert changes to remove default font weight in favor of a variable.
-- _(js)_ New eventHanler function added
+- _(js)_ New eventHandler function added
 - _(Twig)_ Background images in sections now scale to 100vw
 - _(Twig)_ Remove deprecated action
 - Add automatic changelog generation

@@ -739,7 +739,7 @@ _Release Date - 12 april 2021_
 - ✨ **Enhanced**
     - Code validation & documentation
     - Own dropdown function for smaller js build.
-    - Sanatize Ajax calls
+    - Sanitize Ajax calls
 
 ### 2.4.2:
 
