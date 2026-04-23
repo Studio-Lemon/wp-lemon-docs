@@ -1,3 +1,25 @@
+
+## 5.59.2 - 23 April 2026
+
+### ⛰️  Features
+
+- Add filters for front-end translations and script data
+- Add filters for front-end translations and script data in frontend_assets function
+
+### 🐛 Bug Fixes
+
+- Remove flex-wrap from card layout for improved responsiveness
+- Update card type filter to use 'product' instead of 'node'
+- Update example filter for card type to use 'product' instead of 'node'
+- Correct formatting in block documentation for card type filter
+- Update footer management URL to use current theme slug in welcome dashboard widget
+- Correct typo in parameter description for customize_register function
+- Correct typos in changelog entries
+
+### 📚 Documentation
+
+- Update docs for two filters
+
 ## 5.59.1 - 14 April 2026
 
 ### ⛰️ Features

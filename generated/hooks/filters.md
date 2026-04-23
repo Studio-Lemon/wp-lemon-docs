@@ -1183,7 +1183,7 @@ You can change the order of the share buttons as well via this filter.
 
 ```php
 add_filter('wp-lemon/filter/entry-footer/share-buttons/platforms', function ($platforms) {
-    return array_diff($platforms, ['x', 'facebook']);
+    return ['linkedin', 'e-mail', 'whatsapp'];
 });
 ```
 
@@ -1207,7 +1207,7 @@ Contains 'linkedin', 'x', 'facebook', 'e-mail', 'whatsapp'
 
 ```php
 add_filter('wp-lemon/filter/entry-footer/job/share-buttons/platforms', function ($platforms) {
-    return array_diff($platforms, ['x', 'facebook']);
+    return ['linkedin', 'e-mail', 'whatsapp'];
 });
 ```
 
