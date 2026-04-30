@@ -1,4 +1,15 @@
 
+## 5.59.3 - 30 April 2026
+
+### 🐛 Bug Fixes
+
+- Update title and description filters for paginated archive pages instead of setting them to noindex. This fixes the regression introduced in 5.57.0
+
+### 📚 Documentation
+
+- Update example in macro picture default args to use boolean true instead of string 'true'
+
+
 ## 5.59.2 - 23 April 2026
 
 ### ⛰️  Features
