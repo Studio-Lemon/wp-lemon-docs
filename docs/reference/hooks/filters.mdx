@@ -1280,7 +1280,7 @@ Filters the default arguments for the picture macro.
 
 ```php
 add_filter('wp-lemon/filter/macro/picture/default-args', function($args) {
-    $args['focalpoint'] = 'true';
+    $args['focalpoint'] = true;
     return $args;
 });
 ```
