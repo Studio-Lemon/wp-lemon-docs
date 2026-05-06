@@ -549,6 +549,26 @@ Default is true.
 add_filter('wp-lemon/filter/cookiebar/show-analytics-checkbox', '__return_true');
 ```
 
+## wp-lemon/filter/cookiebar/show-read-more
+
+Filters whether or not to show the read more link in the cookie bar.
+
+Default is true.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $show_read_more | `string` | True if the read more link should be shown, false if it should be hidden. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/cookiebar/show-read-more', '__return_true');
+```
+
 ## wp-lemon/filter/cookiebar/show-marketing-checkbox
 
 Filters whether or not to show the marketing checkbox in the cookie bar.

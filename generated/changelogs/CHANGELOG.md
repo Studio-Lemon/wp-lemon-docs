@@ -1,4 +1,22 @@
 
+## 5.60.0 - 06 May 2026
+
+### ⛰️  Features
+
+- *(card-grid)* Add two new layout options for the card grid
+- Add filter for showing read more link in cookie bar
+
+### 🐛 Bug Fixes
+
+- Adjust order logic in adjacent_post_info function for correct post retrieval
+- Correct href for read more link in cookie bar to use the correct URL
+
+### ⚙️ Miscellaneous Tasks
+
+- Add additional class to cookiebar
+- Update translations
+
+
 ## 5.59.3 - 30 April 2026
 
 ### 🐛 Bug Fixes
