@@ -1,4 +1,28 @@
 
+## 5.61.1 - 01 June 2026
+
+### ⛰️  Features
+
+- *(header.twig)* Update navbar class logic to conditionally apply 'navbar-expand' based on breakpoint
+- *(taxonomy)* Add custom taxonomy 'example' with labels and arguments
+
+### 🐛 Bug Fixes
+
+- *(app.twig)* Correct logic for render_header and render_footer variables
+- *(card)* Ensure maybe_hide_animation is set correctly based on preview state
+- *(cookiebar)* Manage inert state of cookie bar during initialization and visibility changes. This prevents that users can tab to the cookiebar if it is not visible.
+- *(package.json)* Update node engine requirement to >=22.11
+- *(pagination)* Update selector to target direct children of pagination items for improved styling
+
+### 🚜 Refactor
+
+- *(socials)* Simplify get_socials function and update usage in related classes
+
+### 📚 Documentation
+
+- Add filter example
+
+
 ## 5.60.0 - 06 May 2026
 
 ### ⛰️  Features

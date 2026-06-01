@@ -110,6 +110,31 @@ add_filter('wp-lemon/filter/social-platforms', function ($platforms) {
 });
 ```
 
+## wp-lemon/filter/socials-order
+
+Filters the order or add/remove social media platforms.
+
+We use this filter to change the order of social media platforms in the footer.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $social_media_platforms | `array` | An array of social media platforms. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter(
+'wp-lemon/filter/socials-order',
+function () {
+    return ['linkedin', 'x', 'facebook', 'instagram', 'youtube'];
+}
+);
+```
+
 ## wp-lemon/filter/socials-context
 
 Filters the socials context.
@@ -787,8 +812,14 @@ Filters the logo HTML for the header.
 
 ```php
 add_filter('wp-lemon/filter/header/logo', function () {
-    return Timber::compile('partials/header-logo.twig');
+    return Timber::compile('components/header-logo.twig');
 });
+```
+
+**Twig**
+
+```twig title="/resources/components/header-logo.twig"
+    <div class="navbar__logo">{{ asset('images/logo.svg', 'contents') }}</div>
 ```
 
 ## wp-lemon/filter/header/breakpoint
@@ -801,7 +832,7 @@ This filter is used to determine the breakpoint at which the header will change 
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $breakpoint | `string` | default: 'lg' |
+| $breakpoint | `string` or `false` | default: 'lg', can be 'sm', 'md', 'lg', 'xl' or false to always show the offcanvas menu. |
 
 </div>
 
@@ -831,7 +862,7 @@ This way, the offcanvas menu will scroll to the desired section when the menu it
 **PHP**
 
 ```php
-add_filter('wp-lemon/filter/header/offcanvas/enable-onepager', '__return_true');
+	add_filter('wp-lemon/filter/header/offcanvas/enable-onepager', '__return_true');
 ```
 
 ## wp-lemon/filter/header/offcanvas/title
@@ -845,6 +876,16 @@ Filters the title of the offcanvas menu.
 | $title | `string` | The title of the offcanvas menu. |
 
 </div>
+
+**PHP**
+
+```php
+function render_small_logo()
+{
+    return asset('images/logo.svg')->contents();
+}
+add_filter('wp-lemon/filter/header/offcanvas/title', __NAMESPACE__ . '\render_small_logo');
+```
 
 ## wp-lemon/filter/header/offcanvas/open
 
@@ -2208,31 +2249,6 @@ You can read more about special pages in the documentation.
 | $special_pages | `array` | The special pages. |
 
 </div>
-
-## wp-lemon/filter/socials-order
-
-Filters the order or add/remove social media platforms.
-
-We use this filter to change the order of social media platforms in the footer.
-
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $social_media_platforms | `array` | An array of social media platforms. |
-
-</div>
-
-**PHP**
-
-```php
-add_filter(
-'wp-lemon/filter/socials-order',
-function () {
-    return ['linkedin', 'x', 'facebook', 'instagram', 'youtube'];
-}
-);
-```
 
 ## wp-lemon/filter/a11y/skip-links
 
