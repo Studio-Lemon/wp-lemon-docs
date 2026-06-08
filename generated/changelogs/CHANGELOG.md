@@ -1,33 +1,52 @@
+## 5.61.2 - 08 June 2026
 
-## 5.61.1 - 01 June 2026
+### ⛰️ Features
 
-### ⛰️  Features
-
-- *(header.twig)* Update navbar class logic to conditionally apply 'navbar-expand' based on breakpoint
-- *(taxonomy)* Add custom taxonomy 'example' with labels and arguments
+- _(cache)_ Add cache clearing function for flying press
+- _(cache)_ Add support for FlyingPress cache purging in cache_clearer function
+- _(cookiebar)_ Clear local storage consent mode when no cookie preference is set
+- _(cookiebar)_ Update marketing checkbox to default to true
 
 ### 🐛 Bug Fixes
 
-- *(app.twig)* Correct logic for render_header and render_footer variables
-- *(card)* Ensure maybe_hide_animation is set correctly based on preview state
-- *(cookiebar)* Manage inert state of cookie bar during initialization and visibility changes. This prevents that users can tab to the cookiebar if it is not visible.
-- *(package.json)* Update node engine requirement to >=22.11
-- *(pagination)* Update selector to target direct children of pagination items for improved styling
+- _(card-wrap)_ Ensure icon is set only if null in crd-wrap.twig
+- _(log)_ Include seconds in log timestamp format
+- _(media)_ Update video macro to accept attachment ID as source
+- _(media.twig)_ Set default poster_id to null in video macro
+- _(styles)_ Prevent pointer events on links within ACF blocks
 
 ### 🚜 Refactor
 
-- *(socials)* Simplify get_socials function and update usage in related classes
+- _(cache)_ Rename function to clear cache on post status change and update parameters
+
+## 5.61.1 - 01 June 2026
+
+### ⛰️ Features
+
+- _(header.twig)_ Update navbar class logic to conditionally apply 'navbar-expand' based on breakpoint
+- _(taxonomy)_ Add custom taxonomy 'example' with labels and arguments
+
+### 🐛 Bug Fixes
+
+- _(app.twig)_ Correct logic for render_header and render_footer variables
+- _(card)_ Ensure maybe_hide_animation is set correctly based on preview state
+- _(cookiebar)_ Manage inert state of cookie bar during initialization and visibility changes. This prevents that users can tab to the cookiebar if it is not visible.
+- _(package.json)_ Update node engine requirement to >=22.11
+- _(pagination)_ Update selector to target direct children of pagination items for improved styling
+
+### 🚜 Refactor
+
+- _(socials)_ Simplify get_socials function and update usage in related classes
 
 ### 📚 Documentation
 
 - Add filter example
 
-
 ## 5.60.0 - 06 May 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
-- *(card-grid)* Add two new layout options for the card grid
+- _(card-grid)_ Add two new layout options for the card grid
 - Add filter for showing read more link in cookie bar
 
 ### 🐛 Bug Fixes
@@ -40,7 +59,6 @@
 - Add additional class to cookiebar
 - Update translations
 
-
 ## 5.59.3 - 30 April 2026
 
 ### 🐛 Bug Fixes
@@ -51,10 +69,9 @@
 
 - Update example in macro picture default args to use boolean true instead of string 'true'
 
-
 ## 5.59.2 - 23 April 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add filters for front-end translations and script data
 - Add filters for front-end translations and script data in frontend_assets function
