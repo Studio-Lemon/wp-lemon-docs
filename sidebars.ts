@@ -65,6 +65,7 @@ const sidebars: SidebarsConfig = {
         'extend/cards',
         'extend/internationalization',
         'extend/plugins',
+        'extend/media-from-production',
       ],
     },
     {

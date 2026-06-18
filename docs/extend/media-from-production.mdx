@@ -1,0 +1,34 @@
+---
+title: "Media from Production"
+description: Use BE Media from Production to avoid broken media on staging and local environments.
+---
+
+# Media from Production
+
+`BE Media from Production` is a WordPress plugin by Bill Erickson that helps when your local or staging environment does not contain the full uploads directory.
+
+If an image or other media file exists locally, WordPress serves the local file as usual.
+If the file is missing locally, the plugin falls back to a configured production/staging URL, so you avoid broken media while developing.
+
+This is useful for wp-lemon projects where copying all production media to every environment would take up a lot of disk space.
+
+## Install
+
+Run the following commands:
+
+```bash
+wp plugin install https://github.com/billerickson/be-media-from-production/releases/latest/download/be-media-from-production.zip --force --activate
+wp dotenv set BE_MEDIA_FROM_PRODUCTION_URL https://staging.example.com # replace with your actual source environment URL
+```
+
+## How It Works
+
+- Existing local media is always preferred.
+- Missing local media is loaded from `BE_MEDIA_FROM_PRODUCTION_URL`.
+- No manual content updates are needed in posts and blocks.
+
+## Notes
+
+- Use an environment URL that has public access to your uploads.
+- Keep this value environment-specific in your `.env` setup.
+- Replace `https://staging.example.com` with your actual source environment URL.
