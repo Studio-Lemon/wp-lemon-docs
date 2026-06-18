@@ -4,6 +4,7 @@
 
 *This class extends `WP_Lemon\Classes\LemonPost`*  
   
+  
 
 ### Methods
 

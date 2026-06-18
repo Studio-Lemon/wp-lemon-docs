@@ -1,3 +1,42 @@
+## 5.62.0 - 18 June 2026
+
+### ⛰️ Features
+
+- Add filter to remove ACF blocks from excerpts while preserving acf/section
+- Add filter to run analytics code on non-production environments
+
+### 🐛 Bug Fixes
+
+- Simplify accordion instance creation by removing unnecessary variable
+- Update documentation for extendDropDownAreas function
+- Enhance old container transform handling
+
+### 🚜 Refactor
+
+- Remove unused variable 'terms' in archiveListeners function
+- Remove unused import of unregisterBlockType in deregisterBlocks function
+- Remove unused import of getBlockType in nodeBlockVariants
+- Remove unnecessary variable assignment for Swiper instance
+
+### 📚 Documentation
+
+- Added/updated 64 filter examples in documentation
+
+### 🎨 Styling
+
+- Adjust socials icon font label size and update gap for icons list
+- Update padding variables for wp-block-media-text\_\_content
+
+### ⚙️ Miscellaneous Tasks
+
+- Use strict comparison for asset and constant function imports
+- Lint files
+- Use strict comparison for post status checks in cache clearing function
+- Streamline license activation checks by consolidating duplicate conditions
+- Improve condition checks and simplify adjacent post retrieval logic
+- Update dependencies
+- Add loading state to load more button during AJAX calls
+
 ## 5.61.2 - 08 June 2026
 
 ### ⛰️ Features
@@ -115,7 +154,7 @@
 - Fix @example indentation in node-overview and load-blocks
 - Update docblock for get_focalpoint method
 - Format docblocks
-- Format docsblocks
+- Format docblocks
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -326,7 +365,7 @@
 ### 📚 Documentation
 
 - Fix several docblocks
-- Add documentation for TWIG marco's
+- Add documentation for TWIG macros
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -1272,7 +1311,7 @@
 ### ⚙️ Miscellaneous Tasks
 
 - _(css)_ Some css improvements
-- Iupdate translations
+- Update translations
 
 ## 5.26.1 - 11 November 2024
 
