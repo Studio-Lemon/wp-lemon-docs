@@ -141,7 +141,7 @@ Get special page information.
 
 Use in conjunction with the special pages filter to setup special pages and then retrieve them via this method.
 
-**see** [](https://studio-lemon.github.io/wp-lemon-docs/extend/special-pages)
+**see** https://studio-lemon.github.io/wp-lemon-docs/extend/special-pages
 
 **since** 5.36.0
 

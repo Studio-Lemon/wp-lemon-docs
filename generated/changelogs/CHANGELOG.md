@@ -1,3 +1,134 @@
+## 5.62.0 - 18 June 2026
+
+### ⛰️ Features
+
+- Add filter to remove ACF blocks from excerpts while preserving acf/section
+- Add filter to run analytics code on non-production environments
+
+### 🐛 Bug Fixes
+
+- Simplify accordion instance creation by removing unnecessary variable
+- Update documentation for extendDropDownAreas function
+- Enhance old container transform handling
+
+### 🚜 Refactor
+
+- Remove unused variable 'terms' in archiveListeners function
+- Remove unused import of unregisterBlockType in deregisterBlocks function
+- Remove unused import of getBlockType in nodeBlockVariants
+- Remove unnecessary variable assignment for Swiper instance
+
+### 📚 Documentation
+
+- Added/updated 64 filter examples in documentation
+
+### 🎨 Styling
+
+- Adjust socials icon font label size and update gap for icons list
+- Update padding variables for wp-block-media-text\_\_content
+
+### ⚙️ Miscellaneous Tasks
+
+- Use strict comparison for asset and constant function imports
+- Lint files
+- Use strict comparison for post status checks in cache clearing function
+- Streamline license activation checks by consolidating duplicate conditions
+- Improve condition checks and simplify adjacent post retrieval logic
+- Update dependencies
+- Add loading state to load more button during AJAX calls
+
+## 5.61.2 - 08 June 2026
+
+### ⛰️ Features
+
+- _(cache)_ Add cache clearing function for flying press
+- _(cache)_ Add support for FlyingPress cache purging in cache_clearer function
+- _(cookiebar)_ Clear local storage consent mode when no cookie preference is set
+- _(cookiebar)_ Update marketing checkbox to default to true
+
+### 🐛 Bug Fixes
+
+- _(card-wrap)_ Ensure icon is set only if null in crd-wrap.twig
+- _(log)_ Include seconds in log timestamp format
+- _(media)_ Update video macro to accept attachment ID as source
+- _(media.twig)_ Set default poster_id to null in video macro
+- _(styles)_ Prevent pointer events on links within ACF blocks
+
+### 🚜 Refactor
+
+- _(cache)_ Rename function to clear cache on post status change and update parameters
+
+## 5.61.1 - 01 June 2026
+
+### ⛰️ Features
+
+- _(header.twig)_ Update navbar class logic to conditionally apply 'navbar-expand' based on breakpoint
+- _(taxonomy)_ Add custom taxonomy 'example' with labels and arguments
+
+### 🐛 Bug Fixes
+
+- _(app.twig)_ Correct logic for render_header and render_footer variables
+- _(card)_ Ensure maybe_hide_animation is set correctly based on preview state
+- _(cookiebar)_ Manage inert state of cookie bar during initialization and visibility changes. This prevents that users can tab to the cookiebar if it is not visible.
+- _(package.json)_ Update node engine requirement to >=22.11
+- _(pagination)_ Update selector to target direct children of pagination items for improved styling
+
+### 🚜 Refactor
+
+- _(socials)_ Simplify get_socials function and update usage in related classes
+
+### 📚 Documentation
+
+- Add filter example
+
+## 5.60.0 - 06 May 2026
+
+### ⛰️ Features
+
+- _(card-grid)_ Add two new layout options for the card grid
+- Add filter for showing read more link in cookie bar
+
+### 🐛 Bug Fixes
+
+- Adjust order logic in adjacent_post_info function for correct post retrieval
+- Correct href for read more link in cookie bar to use the correct URL
+
+### ⚙️ Miscellaneous Tasks
+
+- Add additional class to cookiebar
+- Update translations
+
+## 5.59.3 - 30 April 2026
+
+### 🐛 Bug Fixes
+
+- Update title and description filters for paginated archive pages instead of setting them to noindex. This fixes the regression introduced in 5.57.0
+
+### 📚 Documentation
+
+- Update example in macro picture default args to use boolean true instead of string 'true'
+
+## 5.59.2 - 23 April 2026
+
+### ⛰️ Features
+
+- Add filters for front-end translations and script data
+- Add filters for front-end translations and script data in frontend_assets function
+
+### 🐛 Bug Fixes
+
+- Remove flex-wrap from card layout for improved responsiveness
+- Update card type filter to use 'product' instead of 'node'
+- Update example filter for card type to use 'product' instead of 'node'
+- Correct formatting in block documentation for card type filter
+- Update footer management URL to use current theme slug in welcome dashboard widget
+- Correct typo in parameter description for customize_register function
+- Correct typos in changelog entries
+
+### 📚 Documentation
+
+- Update docs for two filters
+
 ## 5.59.1 - 14 April 2026
 
 ### ⛰️ Features
@@ -23,7 +154,7 @@
 - Fix @example indentation in node-overview and load-blocks
 - Update docblock for get_focalpoint method
 - Format docblocks
-- Format docsblocks
+- Format docblocks
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -234,7 +365,7 @@
 ### 📚 Documentation
 
 - Fix several docblocks
-- Add documentation for TWIG marco's
+- Add documentation for TWIG macros
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -1180,7 +1311,7 @@
 ### ⚙️ Miscellaneous Tasks
 
 - _(css)_ Some css improvements
-- Iupdate translations
+- Update translations
 
 ## 5.26.1 - 11 November 2024
 
@@ -1819,7 +1950,7 @@ This reverts commit 2e9a3a3b48bebf29df7b044cea08288bbb2cf183.
 
 ### ⛰️ Features
 
-- _(css)_ Better configuarable animations
+- _(css)_ Better configurable animations
 
 ### 🐛 Bug Fixes
 
@@ -2093,7 +2224,7 @@ BREAKING CHANGE: classes have been changed, please check your codebase if you re
 - _(lang)_ updated languages
 - _(css)_ Footer update - Realized by section of footer is now less intrusive
 - _(css)_ partially revert changes to remove default font weight in favor of a variable.
-- _(js)_ New eventHanler function added
+- _(js)_ New eventHandler function added
 - _(Twig)_ Background images in sections now scale to 100vw
 - _(Twig)_ Remove deprecated action
 - Add automatic changelog generation

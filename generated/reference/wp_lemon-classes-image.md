@@ -4,6 +4,7 @@
 
 *This class extends `Timber\Image`*  
   
+  
 
 ### Methods
 

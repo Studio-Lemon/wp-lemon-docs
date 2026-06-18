@@ -347,7 +347,7 @@ Builds the social context.
 
 This sets up the social content that is being used in the social buttons macro.
 
-`get_socials( array<string,mixed> $platform_order )`
+`get_socials( array $platform_order = [] )`
 
 **Returns:** `array` Array of platforms that can be addressed by the share macro.
 
@@ -464,7 +464,7 @@ This function will return the SVG icon from the resources/icons folder.
 
 This function also works in Twig files. See the example below.
 
-**see** [https://github.com/smithfield-studio/acf-svg-icon-picker](https://github.com/smithfield-studio/acf-svg-icon-picker Uses the following plugin)
+**see** https://github.com/smithfield-studio/acf-svg-icon-picker Uses the following plugin
 
 **since** 5.7.0
 
