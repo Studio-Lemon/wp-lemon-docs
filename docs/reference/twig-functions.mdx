@@ -23,6 +23,7 @@ This document lists all custom Twig functions available in the WP Lemon theme. T
 - [lemon_excerpt](#lemon_excerpt)
 - [action_deprecated](#action_deprecated)
 - [is_preview](#is_preview)
+- [render_acf_block](#render_acf_block)
 
 ---
 
@@ -467,4 +468,52 @@ This function determines whether the current context is the WordPress admin/bloc
 
 {# Use with filters #}
 {% set hide_animation = is_preview|apply_filters('wp-lemon/filter/block/animation/hide') %}
+```
+
+---
+
+## render_acf_block
+
+Render an ACF block Twig template with the correct classes and optional context.
+
+This function compiles a block template from the theme's `blocks/` directory and merges the provided context into the default Timber context.
+
+**Since:** 5.63.0
+
+**Parameters:**
+
+- `block_name` (string) - The block folder and template name
+- `attr` (array, optional) - Block attributes and render context
+
+**`attr` supports:**
+
+- `is_section` (bool) - Adds the `section` class
+- `has_background` (bool) - Adds the `has-background` class
+- `context` (array) - Additional context passed to the Twig template
+- `align` (string) - Adds an alignment class like `alignwide`
+- `background_color` (string) - Adds a background color utility class
+- `text_color` (string) - Adds a text color utility class
+- `additional_classes` (array) - Extra classes appended to the block wrapper
+
+**Returns:** `string|false` - The rendered block HTML
+
+### Usage
+
+```twig
+{{
+    render_acf_block(
+        'testimonial-slider',
+        {
+            is_section: true,
+            has_background: true,
+            background_color: 'sand',
+            text_color: 'forest',
+            additional_classes: ['homepage-testimonials'],
+            context: {
+                fields: fields,
+                post_id: post.id
+            }
+        }
+    )
+}}
 ```

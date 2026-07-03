@@ -1,0 +1,36 @@
+{
+    "items": [
+        {
+            "image_url": "https://studiolemon.nl/dashboard/team/ray.jpg",
+            "name": "Ray",
+            "function": "Branding / Creatie",
+            "phone": "+31 6 19945833",
+            "email": "ray@studiolemon.nl",
+            "linkedin": "https://www.linkedin.com/in/ray-example"
+        },
+        {
+            "image_url": "https://studiolemon.nl/dashboard/team/charlie.jpg",
+            "name": "Charlie",
+            "function": "Development / (UX) Design",
+            "phone": "+31 6 42523021",
+            "email": "charlie@studiolemon.nl",
+            "linkedin": "https://www.linkedin.com/in/charlie-example"
+        },
+        {
+            "image_url": "https://studiolemon.nl/dashboard/team/erik.jpg",
+            "name": "Erik",
+            "function": "Development",
+            "phone": "+31 6 57557263",
+            "email": "erik@studiolemon.nl",
+            "linkedin": "https://www.linkedin.com/in/erik-example"
+        },
+        {
+            "image_url": "https://studiolemon.nl/dashboard/team/marcel.jpg",
+            "name": "Marcel",
+            "function": "Online Marketing & Advertenties",
+            "phone": "+31 6 46334938",
+            "email": "marcel@studiolemon.nl",
+            "linkedin": "https://www.linkedin.com/in/marcel-example"
+        }
+    ]
+}

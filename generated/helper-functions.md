@@ -17,6 +17,7 @@
 | <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type"></span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
 | <span class="method-name">[log_message()](#log_message)</span> | <span class="method-type">`void`</span> | <span class="method-description">Adds a log message to a specific log file in the website base folder.</span> |
 | <span class="method-name">[post_type_name()](#post_type_name)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get singular name of a posttype.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The post type label, defaults to the singular name.</span></span> |
+| <span class="method-name">[render_acf_block()](#render_acf_block)</span> | <span class="method-type">`string` or `bool`</span> | <span class="method-description">Renders an ACF block.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The rendered block HTML.</span></span> |
 | <span class="method-name">[textarea_to_array()](#textarea_to_array)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Text helper to convert a textarea to an array.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The array of text or false if empty.</span></span> |
 | <span class="method-name">[url_to_website_name()](#url_to_website_name)</span> | <span class="method-type">`string`</span> | <span class="method-description">Convert a URL to a website name.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The website name.</span></span> |
 
@@ -557,6 +558,60 @@ This function will remove the protocol and trailing slash from a URL.
 ```php
 $website_name = url_to_website_name('https://www.example.com/');
 // $website_name will be 'www.example.com'
+```
+
+---
+
+### render\_acf\_block()
+
+Renders an ACF block.
+
+**since** 5.63.0
+
+`render_acf_block( string $block_name, array $attr = ['is_section' => false, 'has_background' => false, 'context' => [], 'align' => '', 'background_color' => '', 'text_color' => '', 'additional_classes' => []] )`
+
+**Returns:** `string|bool` The rendered block HTML.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $block_name | `string` | The name of the block. |
+| $attr | `array` | Block attributes. |
+
+</div>
+
+**PHP**
+
+```php
+echo render_acf_block('testimonial-slider', [
+    'is_section' => true,
+    'has_background' => true,
+    'background_color' => 'sand',
+    'text_color' => 'forest',
+    'additional_classes' => ['homepage-testimonials'],
+    'context' => [
+        'fields' => get_fields(),
+        'post_id' => get_the_ID(),
+    ],
+]);
+```
+
+Also available in Twig files:
+**Twig**
+
+```twig
+{{ render_acf_block('testimonial-slider', {
+    is_section: true,
+    has_background: true,
+    background_color: 'sand',
+    text_color: 'forest',
+    additional_classes: ['homepage-testimonials'],
+    context: {
+        fields: fields,
+        post_id: post.id,
+    },
+}) }}
 ```
 
 ---
