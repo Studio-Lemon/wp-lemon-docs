@@ -1,3 +1,56 @@
+## 5.63.0 - 03 July 2026
+
+### ⛰️ Features
+
+- Enhance support widget author handling and update settings resolution
+- Add remote team widget with configurable settings and display
+- Enhance Admin_Controller with configurable settings for dashboard widgets and support behavior
+- Introduce new dashboard support widget
+- Add render_acf_block function API function
+- Add README.md for project documentation and setup instructions
+- Update GitHub Actions workflow to checkout Bedrock and plugin dependencies; install Composer dependencies for theme
+- Add check for REST_REQUEST in webp_src_set function to prevent processing during REST API requests
+- Add initial parameter to send_diagnostics method for activation tracking
+
+### 🐛 Bug Fixes
+
+- Update text domain property format in PHPCS ruleset
+- Correct argument merging in picture and video macros
+- Adjust cookie consent event triggers for consistency
+- Exclude wp-content directory from PHPCS checks
+- Add missing type hint for Person in PersonObjectTest
+
+### 🚜 Refactor
+
+- Implement Admin_Controller class for dashboard widget management and remove legacy admin controller
+
+### 📚 Documentation
+
+- Update documentation for new filters related to the admin class.
+
+### 🧪 Testing
+
+- Add test suite for wp-lemon
+    - Add feature tests for API queries, diagnostics, license management, and Twig functions
+    - Implement ApiQueriesTest to validate API query helpers against post fixtures.
+    - Create DeprecatedTwigActionTest to ensure deprecated Twig actions function correctly.
+    - Add DiagnosticsTest to verify cron registration and environment guards.
+    - Introduce LicenseManagerTest for testing license manager behavior without remote calls.
+    - Develop SetupTest to confirm theme setup contracts and child theme overrides.
+    - Create SiteTest to validate site context assembly and special page handling.
+    - Implement TwigFunctionsAndFiltersTest to test custom Twig functions and filters.
+    - Add TestState helper for resetting static theme state between tests.
+    - Establish a base TestCase class for shared test state management.
+
+### ⚙️ Miscellaneous Tasks
+
+- Start work on PHPStan plugin stubs
+
+### Lang
+
+- Update german translation
+- NL lang update
+
 ## 5.62.0 - 18 June 2026
 
 ### ⛰️ Features
