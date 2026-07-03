@@ -2449,6 +2449,60 @@ add_filter('wp-lemon/filter/block/widget-row/allowed-blocks', function ($blocks)
 });
 ```
 
+## wp-lemon/filter/admin-controller/settings
+
+Filters admin controller settings.
+
+**since** 5.63.0 Use this filter to control all admin controller features from one place.
+The filter receives a nested settings array with two top-level groups:
+- `widgets`: Controls dashboard widget visibility and display metadata.
+- `support`: Controls support-mail behavior and submission permissions.
+
+Settings reference:
+- `widgets.welcome` (bool): Show/hide the welcome dashboard widget.
+- `widgets.support` (bool): Show/hide the support dashboard widget.
+- `widgets.team` (bool): Show/hide the remote team dashboard widget.
+  for support content. When empty, fallback logic is used.
+- `support.capability` (string): Required capability to submit support
+  requests via the dashboard form.
+- `support.recipient` (string): Recipient email address for support mail.
+- `support.email_subject_prefix` (string): Prefix prepended to support
+  email subjects.
+- `team.title` (string): Team widget heading shown in dashboard.
+- `team.description` (string): Optional short intro text.
+- `team.endpoint_url` (string): Remote JSON endpoint with team data.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $settings | `array<string,mixed>` | Default settings. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/admin-controller/settings', function (array $settings): array {
+    // Dashboard widgets.
+    $settings['widgets']['welcome'] = false; // Disable welcome widget.
+    $settings['widgets']['support'] = true; // Keep support widget enabled.
+    $settings['widgets']['team'] = true; // Enable remote team widget.
+
+    // Support form behavior.
+    $settings['support']['capability'] = 'edit_theme_options';
+    $settings['support']['recipient'] = 'helpdesk@example.com';
+    $settings['support']['email_subject_prefix'] = 'Website support: ' . get_bloginfo('name');
+    // Team widget endpoint.
+    $settings['team']['title'] = 'Meet our team';
+    $settings['team']['description'] = 'Direct contact with our specialists';
+    $settings['team']['endpoint_url'] = 'https://studiolemon.nl/wp-json/studiolemon/v1/dashboard-team';
+
+
+    return $settings;
+});
+```
+
 ## wp-lemon/filter/navwalker/archive-pages
 
 Filters the archive page for the current post type.
