@@ -1,3 +1,26 @@
+## 5.63.1 - 07 July 2026
+
+### ⛰️ Features
+
+- Implement HTML email template for support requests and update email headers
+- Add example URL placeholder to support widget form
+
+### 🐛 Bug Fixes
+
+- Streamline email body generation in support email template
+- Simplify condition checks in render_acf_block and Admin_Controller
+- Fix: update alignment and background color checks in render_acf_block function
+- Cast email body to string in wp_mail function
+- Correct spelling of 'collapsible' in block field label
+
+### 📚 Documentation
+
+- Add team settings description to admin controller filters
+
+### 🧪 Testing
+
+- Cover support widget mail failure redirect
+
 ## 5.63.0 - 03 July 2026
 
 ### ⛰️ Features

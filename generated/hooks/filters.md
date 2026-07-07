@@ -2450,6 +2450,7 @@ Filters admin controller settings.
 The filter receives a nested settings array with two top-level groups:
 - `widgets`: Controls dashboard widget visibility and display metadata.
 - `support`: Controls support-mail behavior and submission permissions.
+- `team`: Controls the remote team widget and endpoint URL.
 
 Settings reference:
 - `widgets.welcome` (bool): Show/hide the welcome dashboard widget.
