@@ -1,3 +1,10 @@
+
+## 5.63.2 - 10 July 2026
+
+### 🐛 Bug Fixes
+
+- Correct args merging logic in picture macro to use default arguments
+
 ## 5.63.1 - 07 July 2026
 
 ### ⛰️ Features
