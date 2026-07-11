@@ -1,4 +1,15 @@
 
+## 5.63.3 - 11 July 2026
+
+### ⛰️  Features
+
+- (section block) provide an option to provide additional smaller variants in class logic
+
+### 🐛 Bug Fixes
+
+- Pass holder_classes to node-overview loop actions for improved flexibility
+
+
 ## 5.63.2 - 10 July 2026
 
 ### 🐛 Bug Fixes
