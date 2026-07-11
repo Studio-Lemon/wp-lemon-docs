@@ -1,4 +1,11 @@
 
+## 5.63.4 - 11 July 2026
+
+### 🐛 Bug Fixes
+
+- Update video source merging logic to use provided args instead of default args
+
+
 ## 5.63.3 - 11 July 2026
 
 ### ⛰️  Features
