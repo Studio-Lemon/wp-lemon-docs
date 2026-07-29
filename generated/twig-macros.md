@@ -314,6 +314,7 @@ Renders a responsive picture element with WebP support, focal point positioning,
     - `image_sizes` (string) - Responsive image sizes attribute
     - `loading` (string) - Loading strategy (default: 'lazy', or 'eager')
     - `show_title` (bool) - Whether to render the title attribute (default: false)
+    - `show_alt` (bool) - Whether to render the alt attribute (default: true)
     - `focalpoint` (bool) - Whether to apply focal point positioning (default: false)
 
 **Returns:** `string` - HTML picture element with source and img tags
@@ -376,6 +377,12 @@ Renders a responsive picture element with WebP support, focal point positioning,
 {{ media.picture(fields.featured_image, {
     image_class: 'cropped-image',
     focalpoint: true  {# Uses ACF focal point picker #}
+}) }}
+
+{# Decorative image - suppress alt text #}
+{{ media.picture(fields.decorative_image, {
+    image_class: 'decorative',
+    show_alt: false
 }) }}
 ```
 

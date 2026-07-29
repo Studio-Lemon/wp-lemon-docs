@@ -1,3 +1,17 @@
+## 5.63.5 - 29 July 2026
+
+### ⛰️ Features
+
+- Add show_alt parameter to picture macro for alt attribute control
+
+### 🐛 Bug Fixes
+
+- (A11y) Mark images in cards always as decorative
+- (JS) Enhance isAdmin function to support block editor iframe detection
+
+### 📚 Documentation
+
+- Document missing arguments for video marco
 
 ## 5.63.4 - 11 July 2026
 
@@ -5,17 +19,15 @@
 
 - Update video source merging logic to use provided args instead of default args
 
-
 ## 5.63.3 - 11 July 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
 - (section block) provide an option to provide additional smaller variants in class logic
 
 ### 🐛 Bug Fixes
 
 - Pass holder_classes to node-overview loop actions for improved flexibility
-
 
 ## 5.63.2 - 10 July 2026
 
