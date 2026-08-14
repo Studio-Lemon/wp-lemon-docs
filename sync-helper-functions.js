@@ -74,6 +74,14 @@ const SEARCH_REPLACE_PATTERNS = [
  */
 const FILE_MAPPINGS = [
    {
+      source: 'generated/upgrade-guides/swiper-14-upgrade.md',
+      dest: 'docs/migrations/swiper-14-upgrade.mdx',
+      frontmatter: {
+         title: 'Swiper 14 upgrade guide'
+      },
+      introText: null
+   },
+   {
       source: 'generated/helper-functions.md',
       dest: 'docs/reference/helper-functions.mdx',
       frontmatter: {

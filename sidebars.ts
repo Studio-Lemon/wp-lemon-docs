@@ -125,6 +125,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Migration guides',
       items: [
+        'migrations/swiper-14-upgrade',
         'migrations/4-5',
         'migrations/3-4',
         'migrations/2-3',

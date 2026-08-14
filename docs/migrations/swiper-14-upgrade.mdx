@@ -1,3 +1,7 @@
+---
+title: Swiper 14 upgrade guide
+---
+
 # Swiper 14 upgrade guide for child sites
 
 wp-lemon now uses Swiper 14.1 as a dependency. This guide explains what changed and what child sites need to do to upgrade.
@@ -19,15 +23,15 @@ wp-lemon now uses Swiper 14.1 as a dependency. This guide explains what changed 
 2. If your child site imports Swiper styles directly, replace old SCSS imports:
 
 ```scss
-@import "swiper/scss";
-@import "swiper/scss/navigation";
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
 ```
 
 with:
 
 ```scss
-@import "swiper/css";
-@import "swiper/css/navigation";
+@import 'swiper/css';
+@import 'swiper/css/navigation';
 ```
 
 Use the same pattern for any other Swiper modules, for example:
@@ -39,8 +43,8 @@ Use the same pattern for any other Swiper modules, for example:
 3. Keep the JS module imports as they are if you already use the modern syntax:
 
 ```js
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 ```
 
 No JS migration is needed for that import style.
