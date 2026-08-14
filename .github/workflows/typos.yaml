@@ -14,4 +14,4 @@ jobs:
         uses: crate-ci/typos@master
         with:
           config: ./typos.toml
-          files: "./src/"
+          files: "./src/ ./docs/"
