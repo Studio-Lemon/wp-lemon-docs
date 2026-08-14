@@ -1,0 +1,72 @@
+# Swiper 14 upgrade guide for child sites
+
+wp-lemon now uses Swiper 14.1 as a dependency. This guide explains what changed and what child sites need to do to upgrade.
+
+## What changed in wp-lemon
+
+- The parent theme dependency moved from Swiper 11.2 to Swiper 14.1.
+- Swiper's old SCSS entrypoints are no longer used.
+- Parent-theme imports now use CSS entrypoints such as `swiper/css` and `swiper/css/navigation`.
+
+## Required child-site changes
+
+1. Update the Swiper dependency in your child theme `package.json`:
+
+```json
+"swiper": "^14.1.0"
+```
+
+2. If your child site imports Swiper styles directly, replace old SCSS imports:
+
+```scss
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+```
+
+with:
+
+```scss
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+```
+
+Use the same pattern for any other Swiper modules, for example:
+
+- `swiper/css/pagination`
+- `swiper/css/effect-fade`
+- `swiper/css/scrollbar`
+
+3. Keep the JS module imports as they are if you already use the modern syntax:
+
+```js
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+```
+
+No JS migration is needed for that import style.
+
+4. Reinstall and rebuild assets:
+
+```bash
+yarn install
+yarn production
+```
+
+## What to check after rebuilding
+
+- Slider and carousel blocks still initialize on the frontend.
+- Navigation, pagination, and fade effects still render correctly.
+- Any site-specific scrollbar styling still looks correct if the child site uses Swiper scrollbars.
+- The project only needs to support modern evergreen browsers. Swiper 14 drops older browser support.
+
+## Quick search targets for custom child code
+
+If a child repo has its own slider code, search for:
+
+- `swiper/scss`
+- `swiper/css`
+- `from 'swiper'`
+- `from 'swiper/modules'`
+- `new Swiper(`
+
+If those searches only hit compiled `dist/` assets, update the real source files first and then rebuild.

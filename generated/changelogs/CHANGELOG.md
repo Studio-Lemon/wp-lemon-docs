@@ -1,3 +1,47 @@
+## 5.64.0 - 14 August 2026
+
+### ⛰️ Features
+
+- _(analytics)_ Extend Google Tag Manager integration with customizable endpoints
+- Apply WPML filter to page links in site class, so page links are correct in multilingual setups
+- _(js)_ Update Swiper dependency to version 14.1.0 and add upgrade guide
+- Add filter for navwalker link attributes
+
+### 🐛 Bug Fixes
+
+- Adjust log_message function to handle WP_Post instances correctly
+- Enhance archive pagination by adding support for multiple languages in rewrite rules
+- Update advanced-custom-fields plugin to version 6.8.6 and add test for blocks directory exposure
+- Remove unnecessary --prefer-dist option from Composer install command
+- Correct HTML syntax in support email template
+- Remove unnecessary remote_user parameter from release workflow
+
+### 📚 Documentation
+
+- Add Swiper 14 upgrade guide for child sites
+- Add section for creating custom Twig filters in documentation
+
+### 🧪 Testing
+
+- Restore Timber locations during state reset
+
+### ⚙️ Miscellaneous Tasks
+
+- Lint files
+- Break up GitHub workflows for linting, static analysis, and testing
+- Update dependencies
+- Update release workflow for building and deploying theme
+
+### Lang
+
+- Update Dutch language files
+
+## 5.63.6 - 29 July 2026
+
+### 🐛 Bug Fixes
+
+- Exclude README.md and tests from rsync deployments
+
 ## 5.63.5 - 29 July 2026
 
 ### ⛰️ Features

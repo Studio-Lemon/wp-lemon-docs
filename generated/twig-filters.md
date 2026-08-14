@@ -12,6 +12,7 @@ This document lists all custom Twig filters available in the WP Lemon theme. The
 - [textarea_to_array](#textarea_to_array)
 - [url_to_website_name](#url_to_website_name)
 - [ucfirst](#ucfirst)
+- [Adding your own filters](#adding-your-own-filters)
 
 ---
 
@@ -424,3 +425,43 @@ This filter wraps PHP's `ucfirst()` function for use in Twig templates.
 ```
 
 **Note:** This filter only capitalizes the first character. For title case (capitalizing each word), consider using additional logic or the `title` filter.
+
+---
+
+## Adding your own filters
+
+You can register custom Twig filters in WP Lemon by hooking into `timber/twig/filters`.
+
+Add this to your theme (for example in `library/hooks.php` or a dedicated filter file):
+
+```php
+add_filter(
+    'timber/twig/filters',
+    function ($filters) {
+        $lemon_filters = [
+            'add_leading_zero' => [
+                'callable' => __NAMESPACE__ . '\\add_leading_zero',
+            ],
+        ];
+
+        return array_merge($filters, $lemon_filters);
+    }
+);
+
+function add_leading_zero($number)
+{
+    return str_pad($number, 2, '0', STR_PAD_LEFT);
+}
+```
+
+### Usage in Twig
+
+```twig
+{{ 1|add_leading_zero }}
+{# Output: "01" #}
+
+{{ loop.index|add_leading_zero }}
+{# Useful for counters like 01, 02, 03... #}
+```
+
+Tip: Use unique, descriptive filter names to avoid collisions with existing Twig or WP Lemon filters.
