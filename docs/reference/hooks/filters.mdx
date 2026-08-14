@@ -2661,7 +2661,7 @@ if ($count > 0) {
 add_filter('wp-lemon/filter/navwalker/job/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
 ```
 
-## wp-lemon/filter/navwalker/\{$menu\_item\_id\}/link-attributes
+## wp-lemon/filter/navwalker/link-attributes
 
 Filters the link attributes for a menu item based on the menu item ID.
 
@@ -2859,6 +2859,50 @@ By default, analytics code will be skipped on non-production environments.
 | $skip_on_production | `bool` | Whether to skip analytics code on production environment. Default true. |
 
 </div>
+
+## wp-lemon/filter/analytics/tagmanager/head-endpoint
+
+Filters the endpoint used for the Google Tag Manager script in the head.
+
+**since** 6.64.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $tagmanager_head_endpoint | `string` | The endpoint for the Google Tag Manager head script. Default 'https://www.googletagmanager.com/gtm.js?id='. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/analytics/tagmanager/head-endpoint', function () {
+    return 'https://www.googletagmanager.com/gtm.js?id=';
+});
+```
+
+## wp-lemon/filter/analytics/tagmanager/body-endpoint
+
+Filters the endpoint used for the Google Tag Manager noscript iframe in the body.
+
+**since** 6.64.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $tagmanager_body_endpoint | `string` | The endpoint for the Google Tag Manager body noscript iframe. Default 'https://www.googletagmanager.com/ns.html'. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/analytics/tagmanager/body-endpoint', function () {
+    return 'https://www.googletagmanager.com/ns.html';
+});
+```
 
 ## wp-lemon/filter/palette
 
