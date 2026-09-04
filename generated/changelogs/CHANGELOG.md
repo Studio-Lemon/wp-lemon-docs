@@ -1,10 +1,47 @@
+## 5.65.0 - 04 September 2026
+
+### ⛰️ Features
+
+- _(ajax-query)_ Add getter for allowlisted properties and enhance rendering filters
+- _(card-grid)_ Add filter for default card block in card grid template
+- _(iframe)_ Add iframeReady function to execute callback when iframe content is loaded
+- _(scss)_ Add header box shadow variable and apply it to navbar
+
+### 🐛 Bug Fixes
+
+- _(acf-block-preview)_ Update notice styles to use CSS variables for consistency
+- _(adjacent-post-info)_ Enhance functionality to support custom post order and wrap-around navigation
+- _(block)_ Simplify null check for items using null coalescing assignment
+- _(blocks)_ Streamline example attribute assignment in add_dynamic_block_examples function
+- _(blocks)_ Add check to prevent processing of unrecognized block metadata
+- _(changelog)_ Add link to Swiper 14 upgrade guide in changelog
+- _(editor)_ First steps in fixes for iframed editor since WordPress 7.1
+- _(lint)_ Remove unnecessary paths from workflow triggers
+- _(static-analysis)_ Remove unnecessary paths from workflow triggers
+- _(theme)_ Update button color properties to use CSS variables for consistency in wp7.1
+- _(theme)_ Simplify button class addition by removing unnecessary block type check
+- Cast theme author and version to string for consistency
+- Improve backend notification display by conditionally rendering type name
+
+### 📚 Documentation
+
+- Update filter and generic ajax query docs
+
+### 🧪 Testing
+
+- _(taxonomy-post-collection)_ Add tests for handling missing taxonomy and grouping posts by top-level term
+
+### ⚙️ Miscellaneous Tasks
+
+- Update packages
+
 ## 5.64.0 - 14 August 2026
 
 ### ⛰️ Features
 
 - _(analytics)_ Extend Google Tag Manager integration with customizable endpoints
 - Apply WPML filter to page links in site class, so page links are correct in multilingual setups
-- _(js)_ Update Swiper dependency to version 14.1.0 and add upgrade guide
+- _(js)_ Update Swiper dependency to version 14.1.0 and add [upgrade guide](https://studio-lemon.github.io/wp-lemon-docs/docs/migrations/swiper-14-upgrade)
 - Add filter for navwalker link attributes
 
 ### 🐛 Bug Fixes
