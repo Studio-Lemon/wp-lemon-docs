@@ -1694,6 +1694,26 @@ add_filter('wp-lemon/filter/block/accordion-item/allowed-blocks', function ($blo
 });
 ```
 
+## wp-lemon/filter/block/card-grid/default-card
+
+Filters the default card block for the card grid template.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $default_card | `string` | The default card block name. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/card-grid/default-card', function ($default_card) {
+    return 'acf/icon-card';
+});
+```
+
 ## wp-lemon/filter/block/card-grid/allowed-blocks
 
 Filters the allowed blocks for the card grid block.
@@ -2751,7 +2771,7 @@ add_filter('wp-lemon/filter/faq/related-posts', function ($items) {
 
 ## wp-lemon/filter/ajax-query/\{$this->current\_action\}/context
 
-Filters the context before rendering the cards.
+Filters the context before rendering the cards in a specific AJAX query.
 
 This allows developers to add or remove context before rendering the cards.
 
@@ -2767,10 +2787,119 @@ This allows developers to add or remove context before rendering the cards.
 **PHP**
 
 ```php
-add_filter('wp-lemon/filter/ajax-query/news/context', function ($context, $instance) {
+add_filter('wp-lemon/filter/ajax-query/my-custom-action/context', function ($context, $instance) {
+  /** @var Generic_Ajax_Query $instance */
   $context['custom_data'] = get_option('my_custom_option');
   return $context;
 }, 10, 2);
+```
+
+## wp-lemon/filter/ajax-query/\{$this->card\_type\}/rendered-html/before
+
+Filters the rendered HTML before it gets compiled.
+
+This allows developers to add html before the rest of the loop is rendered.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $rendered_html | `string` | The HTML rendered so far. |
+| $context | `array` | The context array used to render the next card. |
+| $instance | `\Generic_Ajax_Query` | The current instance of the class. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/ajax-query/news/rendered-html/before', function ($rendered_html, $context, $instance) {
+  /** @var Generic_Ajax_Query $instance */
+  return Timber::compile('components/cards/crd-news-intro.twig', $context) . $rendered_html;
+}, 10, 3);
+```
+
+## wp-lemon/filter/block/node-overview/\{$this->card\_type\}/delay-multiplier
+
+Filters the delay multiplier for the delay of the cards.
+
+You can use this to reset the delay multiplier after for example starting the next row of cards when you insert an additional card in front of the loop.
+
+**since** 5.65.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $delay_multiplier | `int` | The current delay multiplier. |
+| $counter | `int` | The current loop counter. |
+| $instance | `\Generic_Ajax_Query` | The current instance of the class. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/node-overview/news/delay-multiplier', function ($delay_multiplier, $counter, $instance) {
+  /** @var Generic_Ajax_Query $instance */
+  if (3 === $counter) {
+    return 1; // Reset the delay multiplier after the 3rd card.
+  }
+  return $delay_multiplier;
+}, 10, 3);
+```
+
+## wp-lemon/filter/ajax-query/\{$this->card\_type\}/templates
+
+Filters the templates used to render a card before it gets compiled.
+
+**since** 5.65.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $templates | `array` | The array of template paths, in order of priority. |
+| $context | `array` | The context array used to render the template. |
+| $counter | `int` | The current loop counter. |
+| $instance | `\Generic_Ajax_Query` | The current instance of the class. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/ajax-query/news/templates', function ($templates, $context, $counter, $instance) {
+  array_unshift($templates, 'components/cards/crd-news-custom.twig');
+  return $templates;
+}, 10, 4);
+```
+
+## wp-lemon/filter/ajax-query/\{$this->card\_type\}/context
+
+Filters the context before rendering the cards in a specific AJAX query.
+
+This allows developers to add or remove context before rendering the cards.
+
+**since** 5.65.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $context | `array` | The context array. |
+| $counter | `int` | The current loop counter. |
+| $instance | `\Generic_Ajax_Query` | The current instance of the class. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/ajax-query/news/context', function ($context, $counter, $instance) {
+  $context['custom_data'] = get_option('my_custom_option');
+  return $context;
+}, 10, 3);
 ```
 
 ## wp-lemon/filter/special-pages
