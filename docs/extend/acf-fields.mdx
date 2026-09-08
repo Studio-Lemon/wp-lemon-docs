@@ -191,6 +191,45 @@ The Gravity Forms field allows you to select a form from Gravity Forms in your A
 ]);
 ```
 
+### Oembed field formatting
+
+wp-lemon automatically formats the value of native ACF `oembed` fields so the embed is responsive. The returned `<iframe>` is given `loading="lazy"` and wrapped in a `<div class="ratio ratio-16x9">`, so you don't have to add this markup yourself.
+
+```php
+<?php echo get_field('oembed'); ?>
+```
+
+If you only need the raw video URL instead of the full embed markup (for example to pass it to a lightbox or a custom player), you can set `return_format` to `url` on the field. This returns just the `src` attribute of the embed, or an empty string if the value can't be resolved.
+
+```php
+->addOembed('video', [
+   'label'         => __('Video', 'wp-lemon'),
+   'return_format' => 'url',
+]);
+```
+
+Since 5.66.0 you can combine `return_format = "url"` with an `autoplay` option to append the `autoplay=1` query argument to the returned URL:
+
+```php
+->addOembed('video', [
+   'label'         => __('Video', 'wp-lemon'),
+   'return_format' => 'url',
+   'autoplay'      => true,
+]);
+```
+
+Since 5.67.0 you can also pass a `query_args` array to add any additional query arguments to the returned URL:
+
+```php
+->addOembed('video', [
+   'label'         => __('Video', 'wp-lemon'),
+   'return_format' => 'url',
+   'query_args'    => [
+      'dnt' => '1',
+   ],
+]);
+```
+
 ### Menu field
 
 The Menu field allows you to select a menu in your ACF field.
