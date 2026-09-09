@@ -1,3 +1,22 @@
+## 5.65.1 - 09 September 2026
+
+### ⛰️ Features
+
+- _(acf)_ Enhance filter_acf_oembed to support additional query_args for URLs
+- _(acf)_ Add support for return_format = "url" with autoplay option in filter_acf_oembed
+- _(header)_ Add filter for customizing navbar brand HTML in header
+
+### 🐛 Bug Fixes
+
+- _(admin-controller)_ Ensure example URL has a trailing slash in support dashboard widget
+- _(deps)_ Update phpdocumentor packages and webmozart/assert to latest versions
+- _(node-overview)_ Initialize $args as an empty array in block_context method
+- _(twig-filters)_ Correct parameter documentation for tags and back button filters
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix docs
+
 ## 5.65.0 - 04 September 2026
 
 ### ⛰️ Features

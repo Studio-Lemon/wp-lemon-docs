@@ -67,7 +67,7 @@ By using this filter you can change the output of the language switcher.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $switcher | `array<string,mixed>` | The language switcher array. |
+| $switcher | `array<string, mixed>` | The language switcher array. |
 
 </div>
 
@@ -89,7 +89,7 @@ Filters the loaded card type for the node-latest block.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $shares | `array<string,mixed>` | an array of shares that can be addressed by the share partial.  Array format: 'name' 'icon_class' 'share_url' |
+| $shares | `array<string, mixed>` | an array of shares that can be addressed by the share partial.  Array format: 'name' 'icon_class' 'share_url' |
 
 </div>
 
@@ -115,7 +115,7 @@ Use this filter to create additional social platform as well in the Customizer.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $platforms | `array<string,string>` | An array of social platforms where the key is the platform slug and the value is the platform name. |
+| $platforms | `array<string, string>` | An array of social platforms where the key is the platform slug and the value is the platform name. |
 
 </div>
 
@@ -163,7 +163,7 @@ This filter can be used to change the socials that are being outputted.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $socials | `array<int` or `string,array>` | array of socials that can be addressed by the socials partial. |
+| $socials | `array<int` or `string, array>` | array of socials that can be addressed by the socials partial. |
 
 </div>
 
@@ -465,7 +465,7 @@ Filters the picture element for the card.
 | Name | Type | Description |
 | --- | --- | --- |
 | $picture_el | `string` | The picture element. |
-| $args | `array` | additional arguments to help you filter the picture element.<br><br><ul><li>**$**<br>`object` post the post object.</li><li>**$**<br>`object` loop the loop object.</li><li>**$**<br>`string` card_type the card type.</li><li>**$**<br>`int` attachment_id the attachment ID.</li><li>**$**<br>`string` picture_classes the picture classes.</li><li>**$**<br>`string` image_size the image size.</li><li>**$**<br>`\image_sizes` the image sizes attribute.</li><li>**$**<br>`bool` focalpoint whether or not to use the focal point.</li></ul> |
+| $args | `array` | additional arguments to help you filter the picture element.<br><br><ul><li>**$post**<br>`object` the post object.</li><li>**$loop**<br>`object` the loop object.</li><li>**$card_type**<br>`string` the card type.</li><li>**$attachment_id**<br>`int` the attachment ID.</li><li>**$picture_classes**<br>`string` the picture classes.</li><li>**$image_size**<br>`string` the image size.</li><li>**$the**<br>`\image_sizes` image sizes attribute.</li><li>**$focalpoint**<br>`bool` whether or not to use the focal point.</li></ul> |
 
 </div>
 
@@ -496,7 +496,7 @@ Filters the picture arguments to render the picture element in the card.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $args | `array` | the arguments used by the picture macro to render the picture element.<br><br><ul><li>**$**<br>`string` picture_class the picture classes.</li><li>**$**<br>`string` image_size the image size.</li><li>**$**<br>`\image_sizes` the image sizes attribute.</li><li>**$**<br>`bool` focalpoint whether or not to use the focal point.</li></ul> |
+| $args | `array` | the arguments used by the picture macro to render the picture element.<br><br><ul><li>**$picture_class**<br>`string` the picture classes.</li><li>**$image_size**<br>`string` the image size.</li><li>**$the**<br>`\image_sizes` image sizes attribute.</li><li>**$focalpoint**<br>`bool` whether or not to use the focal point.</li></ul> |
 | $attachment_id | `int` | The attachment ID. |
 
 </div>
@@ -523,7 +523,7 @@ Filters the picture arguments to render the picture element in the card.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $args | `array` | the arguments used by the picture macro to render the picture element.<br><br><ul><li>**$**<br>`string` picture_class the picture classes.</li><li>**$**<br>`string` image_size the image size.</li><li>**$**<br>`\image_sizes` the image sizes attribute.</li><li>**$**<br>`bool` focalpoint whether or not to use the focal point.</li></ul> |
+| $args | `array` | the arguments used by the picture macro to render the picture element.<br><br><ul><li>**$picture_class**<br>`string` the picture classes.</li><li>**$image_size**<br>`string` the image size.</li><li>**$the**<br>`\image_sizes` image sizes attribute.</li><li>**$focalpoint**<br>`bool` whether or not to use the focal point.</li></ul> |
 | $attachment_id | `int` | The attachment ID. |
 
 </div>
@@ -900,6 +900,34 @@ This is intended to be used on custom landing pages where you want to hide the h
 add_filter('wp-lemon/filter/header/render', '__return_false');
 ```
 
+## wp-lemon/filter/header/navbar-brand
+
+Filters the html of the .navbar-brand element
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $navbar_brand_html | `string` | defaults to the navbar brand HTML. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/header/navbar-brand', function () {
+    return Timber::compile('components/navbar-brand.twig');
+});
+```
+
+**Twig**
+
+```twig title="/resources/components/navbar-brand.twig"
+	<div class="navbar__logo-holder">
+    	<div class="navbar__logo">{{ asset('images/logo.svg', 'contents') }}</div>
+	</div>
+```
+
 ## wp-lemon/filter/header/logo
 
 Filters the logo HTML for the header.
@@ -1143,7 +1171,7 @@ Filters the tags/categories in the entry header.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $ | `array` | An array of taxonomies. |
+| $ags | `array` | An array of taxonomies. |
 
 </div>
 
@@ -1163,7 +1191,7 @@ Filters the back button information that leads back to the archive page.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $ | `array` | An array containing the back button information. |
+| $nav_back | `array` | An array containing the back button information. |
 
 </div>
 
@@ -2492,7 +2520,7 @@ Settings reference:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $settings | `array<string,mixed>` | Default settings. |
+| $settings | `array<string, mixed>` | Default settings. |
 
 </div>
 
@@ -3130,7 +3158,7 @@ This will override the block removal list and short-circuit the function.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $blocks | `array<string,mixed>` | to allow array of core blocks that we only want to show in the editor. |
+| $blocks | `array<string, mixed>` | to allow array of core blocks that we only want to show in the editor. |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
@@ -3174,7 +3202,7 @@ Filters the list of core blocks that will be allowed in the editor.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $blocks | `array<string,mixed>` | to allow array of core blocks that we only want to show in the editor. |
+| $blocks | `array<string, mixed>` | to allow array of core blocks that we only want to show in the editor. |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 | $registered_blocks | `string[]` | Array of all registered blocks. |
 
@@ -3214,7 +3242,7 @@ We have a list of blocks that we do not want to show in the editor, this filter 
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $blocks_to_remove | `array<string,mixed>` | array of blocks that we do not want to show in the editor. |
+| $blocks_to_remove | `array<string, mixed>` | array of blocks that we do not want to show in the editor. |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>
@@ -3241,7 +3269,7 @@ We have a list of blocks that we do not want to show in the editor, this filter 
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $blocks_to_remove | `array<string,mixed>` | array of blocks that we do not want to show in the editor. |
+| $blocks_to_remove | `array<string, mixed>` | array of blocks that we do not want to show in the editor. |
 | $post_type | `string` | The current post type. Use this to remove blocks for a specific post type. |
 
 </div>

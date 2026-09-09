@@ -6,10 +6,10 @@
 | <span class="method-name">[cache_clearer()](#cache_clearer)</span> | <span class="method-type">`void`</span> | <span class="method-description">Cache clearer for spinupwp and wp-rocket.</span> |
 | <span class="method-name">[format_phone_number()](#format_phone_number)</span> | <span class="method-type">`array{uri: string, whatsapp: string, timezone: string, countrycode: string, national: string, international: string, combined: string, localized: string}` or `false`</span> | <span class="method-description">Function to format phone numbers throughout our template.</span> |
 | <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`int` or `false`</span> | <span class="method-description">Retrieves the archive page for a specific post type.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> the page id or false if not found.</span></span> |
-| <span class="method-name">[get_attachment_info()](#get_attachment_info)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get the attachment file info.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The attachment file info or false if not found.</span></span> |
+| <span class="method-name">[get_attachment_info()](#get_attachment_info)</span> | <span class="method-type">`mixed[]` or `false`</span> | <span class="method-description">Get the attachment file info.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The attachment file info or false if not found.</span></span> |
 | <span class="method-name">[get_constant()](#get_constant)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get constant value.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> the value of the constant or false if not found.</span></span> |
 | <span class="method-name">[get_fluent_form()](#get_fluent_form)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Return a fluent form.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The html of the form.</span></span> |
-| <span class="method-name">[get_language_switcher()](#get_language_switcher)</span> | <span class="method-type">`false` or `array`</span> | <span class="method-description">Collects all languages and returns them as an array for twig language switcher.</span> |
+| <span class="method-name">[get_language_switcher()](#get_language_switcher)</span> | <span class="method-type">`false` or `mixed[]`</span> | <span class="method-description">Collects all languages and returns them as an array for twig language switcher.</span> |
 | <span class="method-name">[get_shares()](#get_shares)</span> | <span class="method-type">`array`</span> | <span class="method-description">Builds the sharing links.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> Array of shares that can be addressed by the share macro.</span></span> |
 | <span class="method-name">[get_socials()](#get_socials)</span> | <span class="method-type">`array`</span> | <span class="method-description">Builds the social context.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> Array of platforms that can be addressed by the share macro.</span></span> |
 | <span class="method-name">[get_svg_icon()](#get_svg_icon)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Retrieve a SVG icon from the acf-svg-icon-picker plugin.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The svg icon or false if not found.</span></span> |
@@ -117,7 +117,7 @@ You can use this function in your classes and functions to log errors and other 
 
 **since** 3.19.5
 
-`log_message( string $prefix, string|array|object|null|bool|\WP_Error $message, string $filename = 'application', string|bool $special = false )`
+`log_message( string $prefix, string|mixed[]|object|null|bool|\WP_Error $message, string $filename = 'application', string|bool $special = false )`
 
 **Returns:** `void` 
 
@@ -126,7 +126,7 @@ You can use this function in your classes and functions to log errors and other 
 | Name | Type | Description |
 | --- | --- | --- |
 | $prefix | `string` | The prefix of the log message. |
-| $message | `string` or `array` or `object` or `null` or `bool` or `\WP_Error` | The message to log. |
+| $message | `string` or `mixed[]` or `object` or `null` or `bool` or `\WP_Error` | The message to log. |
 | $filename | `string` | The filename of the log file. |
 | $special | `string` or `bool` | Special log message, can be 'first' or 'last' to add a special message. |
 
@@ -259,7 +259,7 @@ Collects all languages and returns them as an array for twig language switcher.
 
 **since** 3.18.0
 
-**Returns:** `false|array` 
+**Returns:** `false|mixed[]` 
 
 ---
 
@@ -356,7 +356,7 @@ This sets up the social content that is being used in the social buttons macro.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $platform_order | `array<string,mixed>` | platforms in an order we want to output the socials. |
+| $platform_order | `array<string, mixed>` | platforms in an order we want to output the socials. |
 
 </div>
 
@@ -431,7 +431,7 @@ Also available in Twig files via the `get_attachment_info` function.
 
 `get_attachment_info( int|null $attachment_id )`
 
-**Returns:** `array|false` The attachment file info or false if not found.
+**Returns:** `mixed[]|false` The attachment file info or false if not found.
 
 <div class="table-responsive">
 
