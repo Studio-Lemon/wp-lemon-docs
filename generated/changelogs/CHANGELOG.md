@@ -1,3 +1,20 @@
+
+## 5.65.2 - 10 September 2026
+
+### ⛰️  Features
+
+- Add publish workflow and update agent instructions
+
+### 🐛 Bug Fixes
+
+- *(composer)* Update package versions and references in composer.lock
+- *(filters)* Update $args description for picture element filtering
+- *(gitattributes)* Add phpunit.xml.dist and README.md to export-ignore list
+- *(gitattributes)* Add resources/agents to export-ignore list
+- *(license-manager)* Update Timber version reference to use constant VERSION
+- *(theme)* Correct filter names for button and file block rendering
+- *(twig-filters)* Correct parameter type documentation for image_sizes attribute
+
 ## 5.65.1 - 09 September 2026
 
 ### ⛰️ Features
