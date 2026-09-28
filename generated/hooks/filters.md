@@ -523,7 +523,7 @@ Filters the picture arguments to render the picture element in the card.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $args | `array` | the arguments used by the picture macro to render the picture element.<br><br><ul><li>**$picture_class**<br>`string` the picture classes.</li><li>**$image_size**<br>`string` the image size.</li><li>**$the**<br>`\stringimage_sizes` image sizes attribute.</li><li>**$focalpoint**<br>`bool` whether or not to use the focal point.</li></ul> |
+| $args | `array` | the arguments used by the picture macro to render the picture element.<br><br><ul><li>**$picture_class**<br>`string` the picture classes.</li><li>**$image_size**<br>`string` the image size.</li><li>**$image_sizes**<br>`string` the image sizes attribute.</li><li>**$focalpoint**<br>`bool` whether or not to use the focal point.</li></ul> |
 | $attachment_id | `int` | The attachment ID. |
 
 </div>
@@ -923,9 +923,9 @@ add_filter('wp-lemon/filter/header/navbar-brand', function () {
 **Twig**
 
 ```twig title="/resources/components/navbar-brand.twig"
-	<div class="navbar__logo-holder">
-    	<div class="navbar__logo">{{ asset('images/logo.svg', 'contents') }}</div>
-	</div>
+ <div class="navbar__logo-holder">
+     <div class="navbar__logo">{{ asset('images/logo.svg', 'contents') }}</div>
+ </div>
 ```
 
 ## wp-lemon/filter/header/logo
@@ -975,6 +975,16 @@ This filter is used to determine the breakpoint at which the header will change 
 add_filter('wp-lemon/filter/header/breakpoint', function () {
     return 'xl';
 });
+```
+
+Then based on the breakpoint set above, the offcanvas menu will adjust its layout accordingly.
+
+```scss
+ In your _variables.scss file, define the menu breakpoints as follows:
+$menu-breakpoints: (
+    xs: 0,
+    menu: 1198px,
+) !default;
 ```
 
 ## wp-lemon/filter/header/offcanvas/enable-onepager
@@ -1167,19 +1177,21 @@ add_filter('wp-lemon/filter/copyright-message', __NAMESPACE__ . '\\filter_copyri
 
 Filters the tags/categories in the entry header.
 
+The output is formed like "tag1, tag2 and tag3" via the `join` twig function.
+
 <div class="table-responsive">
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $ags | `array` | An array of taxonomies. |
+| $tags | `string` | a joined string of tags. |
 
 </div>
 
 **PHP**
 
 ```php
-add_filter("wp-lemon/filter/entry-header/news/tags", function ($tag) {
-    return get_the_date() . " | " . $tag;
+add_filter("wp-lemon/filter/entry-header/news/tags", function ($tags) {
+    return get_the_date() . " | " . $tags;
 });
 ```
 
@@ -2446,9 +2458,8 @@ function filter_dog_node_overview_action($action, $fields)
     $action = 'load_' . $gender;
     return $action;
 }
-```
-
 add_filter('wp-lemon/filter/block/node-overview/dog/load-more-action', __NAMESPACE__ . '\\filter_dog_node_overview_action', 10, 2);
+```
 
 ## wp-lemon/filter/block/timeline-item/allowed-blocks
 
@@ -3195,6 +3206,9 @@ add_filter('wp-lemon/filter/blocks-to-allow', __NAMESPACE__ . '\\blocks_to_allow
 ## wp-lemon/filter/core-blocks-to-allow
 
 Filters the list of core blocks that will be allowed in the editor.
+
+This filter allows you to specify which core blocks should be allowed in the editor, overriding the default behavior of removing certain core blocks.
+Use this in combination with `wp-lemon/filter/blocks-to-remove` to have full control over which blocks are available in the editor without having to define the entire list of allowed blocks.
 
 **since** 5.8.0 introduced the filter.
 

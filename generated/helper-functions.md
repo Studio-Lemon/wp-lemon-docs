@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | <span class="method-name">[add_spaces_to_phonenumber()](#add_spaces_to_phonenumber)</span> | <span class="method-type">`string`</span> | <span class="method-description">Markup a phone number<br><br><span class="method-return"><span class="method-return-label">Returns:</span> the filtered phone number.</span></span> |
 | <span class="method-name">[cache_clearer()](#cache_clearer)</span> | <span class="method-type">`void`</span> | <span class="method-description">Cache clearer for spinupwp and wp-rocket.</span> |
-| <span class="method-name">[format_phone_number()](#format_phone_number)</span> | <span class="method-type">`array{uri: string, whatsapp: string, timezone: string, countrycode: string, national: string, international: string, combined: string, localized: string}` or `false`</span> | <span class="method-description">Function to format phone numbers throughout our template.</span> |
+| <span class="method-name">[format_phone_number()](#format_phone_number)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Function to format phone numbers throughout our template.</span> |
 | <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`int` or `false`</span> | <span class="method-description">Retrieves the archive page for a specific post type.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> the page id or false if not found.</span></span> |
 | <span class="method-name">[get_attachment_info()](#get_attachment_info)</span> | <span class="method-type">`mixed[]` or `false`</span> | <span class="method-description">Get the attachment file info.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The attachment file info or false if not found.</span></span> |
 | <span class="method-name">[get_constant()](#get_constant)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get constant value.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> the value of the constant or false if not found.</span></span> |
@@ -16,6 +16,7 @@
 | <span class="method-name">[get_svg_image()](#get_svg_image)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get SVG image contents.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> the attachment image svg data or false if not found.</span></span> |
 | <span class="method-name">[is_post_type()](#is_post_type)</span> | <span class="method-type"></span> | <span class="method-description">Check if the current post type is one of the given post types.</span> |
 | <span class="method-name">[log_message()](#log_message)</span> | <span class="method-type">`void`</span> | <span class="method-description">Adds a log message to a specific log file in the website base folder.</span> |
+| <span class="method-name">[phone_accessible()](#phone_accessible)</span> | <span class="method-type">`string`</span> | <span class="method-description">Formats phone number for screenreaders.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> Formatted telephone number for accessibility.</span></span> |
 | <span class="method-name">[post_type_name()](#post_type_name)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Get singular name of a posttype.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The post type label, defaults to the singular name.</span></span> |
 | <span class="method-name">[render_acf_block()](#render_acf_block)</span> | <span class="method-type">`string` or `bool`</span> | <span class="method-description">Renders an ACF block.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The rendered block HTML.</span></span> |
 | <span class="method-name">[textarea_to_array()](#textarea_to_array)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Text helper to convert a textarea to an array.<br><br><span class="method-return"><span class="method-return-label">Returns:</span> The array of text or false if empty.</span></span> |
@@ -178,7 +179,7 @@ Also available in Twig files via the `phonenumber` function.
 
 `format_phone_number( string|int $number )`
 
-**Returns:** `array{uri: string, whatsapp: string, timezone: string, countrycode: string, national: string, international: string, combined: string, localized: string}|false` 
+**Returns:** `array|false` <ul><li>**uri**<br>`string`</li><li>**whatsapp**<br>`string`</li><li>**timezone**<br>`string`</li><li>**countrycode**<br>`string`</li><li>**national**<br>`string`</li><li>**international**<br>`string`</li><li>**combined**<br>`string`</li><li>**localized**<br>`string`</li></ul>
 
 <div class="table-responsive">
 
@@ -204,6 +205,48 @@ Or in Twig:
 {% if phone %}
   <a href="{{ phone.uri }}">{{ phone.localized }}</a>
 {% endif %}
+```
+
+---
+
+### phone\_accessible()
+
+Formats phone number for screenreaders.
+
+Will convert `052 203 45 00` to `0 5 2. 2 0 3. 4 5. 0 0`. This makes a phone number easier to listen to. Adds
+spaces and periods to the phone number. The spaces tell the screen reader to read each digit individually. The
+periods tell the screen reader to pause (like at the end of a sentence).
+
+Add the resulting string as an aria-label to your phone number link.
+
+**see** http://www.jhalabi.com/blog/accessibility-phone-number-formatting/
+
+**since** 5.58.0
+
+`phone_accessible( string $phone_number )`
+
+**Returns:** `string` Formatted telephone number for accessibility.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $phone_number | `string` | Telephone number. |
+
+</div>
+
+**PHP**
+
+```php
+<?php $number = '052 203 45 00'; ?>
+
+<a href="tel:<?php echo $number; ?>" aria-label="<?php echo phone_accessible( $number ); ?>"><?php echo $number; ?></a>
+```
+
+**Twig**
+
+```twig
+<a href="tel:{{ number }}" aria-label="{{ number|phone_accessible }}">{{ number }}</a>
 ```
 
 ---

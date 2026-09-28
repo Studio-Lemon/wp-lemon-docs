@@ -1,4 +1,34 @@
 
+## 5.66.0 - 28 September 2026
+
+### ⛰️  Features
+
+- *(customizer)* Add location control with ACF Google Map support and sanitize location function
+- *(location)* Add Location_Customize_Control for ACF Google Map integration and enhance business location retrieval
+- *(site)* Add get_business_location method to retrieve configured business location
+
+### 🐛 Bug Fixes
+
+- *(accordion-item)* Correct typo in itemprop attribute
+- *(acf)* Prevent multiple ACF initialization by checking if ACF is already defined
+- *(blocks)* Enhance core blocks filtering logic and improve documentation
+- *(docs)* Clarify naming conventions and class usage in SKILL.md
+- *(rank-math-schema-item)* Update width and max-width properties to unset
+- *(twig-filters)* Correct parameter type descriptions for picture sizes and tags
+- Correct comment formatting for load more action filter in Node Overview Block
+
+### 📚 Documentation
+
+- *(helper-functions)* Add @api annotation to format_phone_number function
+- *(twig-filters)* Update documentation for header breakpoint and offcanvas menu layout adjustments
+- Document the JS skill
+- Fix docs
+
+### ⚙️ Miscellaneous Tasks
+
+- Lint files
+
+
 ## 5.65.2 - 10 September 2026
 
 ### ⛰️  Features
