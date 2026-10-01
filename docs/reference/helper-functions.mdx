@@ -16,6 +16,7 @@ The following function documentation is automatically generated.
 | <span class="method-name">[get_constant()](#get_constant)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get constant value.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> the value of the constant or false if not found.</span></span> |
 | <span class="method-name">[get_fluent_form()](#get_fluent_form)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Return a fluent form.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The html of the form.</span></span> |
 | <span class="method-name">[get_language_switcher()](#get_language_switcher)</span> | <span class="method-type">`false` or `mixed[]`</span> | <span class="method-description">Collects all languages and returns them as an array for twig language switcher.</span> |
+| <span class="method-name">[get_search_page()](#get_search_page)</span> | <span class="method-type">`string`</span> | <span class="method-description">Get the search page URL.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The URL to the search page.</span></span> |
 | <span class="method-name">[get_shares()](#get_shares)</span> | <span class="method-type">`array`</span> | <span class="method-description">Builds the sharing links.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array of shares that can be addressed by the share macro.</span></span> |
 | <span class="method-name">[get_socials()](#get_socials)</span> | <span class="method-type">`array`</span> | <span class="method-description">Builds the social context.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Array of platforms that can be addressed by the share macro.</span></span> |
 | <span class="method-name">[get_svg_icon()](#get_svg_icon)</span> | <span class="method-type">`string` or `false`</span> | <span class="method-description">Retrieve a SVG icon from the acf-svg-icon-picker plugin.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The svg icon or false if not found.</span></span> |
@@ -661,6 +662,27 @@ Also available in Twig files:
         post_id: post.id,
     },
 }) }}
+```
+
+---
+
+### get\_search\_page()
+
+Get the search page URL.
+
+This helper returns the URL for the search page, respecting the configured
+WordPress search permalink structure. If a custom search base is not set,
+it falls back to the default query-string based search URL.
+
+**since** 5.69.0
+
+**Returns:** `string` The URL to the search page.
+
+**PHP**
+
+```php
+$search_url = get_search_page();
+echo '<a href="' . esc_url($search_url) . '">Search</a>';
 ```
 
 ---
