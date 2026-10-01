@@ -1,20 +1,30 @@
 
-## 5.66.1 - 01 October 2026
-
-### ⛰️  Features
-
-- *(agent skills)* Add skill and script for self-hosting Google Fonts
-- *(search)* Enhance search result title styling and increase excerpt length
-- *(site)* Add get_search_page function for dynamic search URL generation
+## 5.66.2 - 01 October 2026
 
 ### 🐛 Bug Fixes
 
-- *(sdearch)* Update search results count in data layer for improved analytics
-- *(search)* Update search URL generation to remove unnecessary query parameter
-- *(search)* Remove search results count from context in search template
-- *(search)* Update dataLayer to use correct search results count
-- *(site)* Update search link to ensure proper URL generation
-- *(style)* Prevent navbar to be partially hidden under admin bar when logged in
+- *(a11y)* Add aria-hidden attributes to icons for improved accessibility
+- *(pagination)* Enhance accessibility with ARIA attributes and improve styles
+- *(style)* Add excerpt styling for improved layout
+
+### ⚙️ Miscellaneous Tasks
+
+- Format CHANGELOG entries for consistency and clarity
+
+## 5.66.1 - 01 October 2026
+
+### ⛰️ Features
+
+- _(agent skills)_ Add skill and script for self-hosting Google Fonts
+- _(search)_ Enhance search result title styling and increase excerpt length
+- _(site)_ Add get_search_page function for dynamic search URL generation
+
+### 🐛 Bug Fixes
+
+- _(search)_ Update search results count in data layer for improved analytics
+- _(search)_ Update search URL generation to remove unnecessary query parameter
+- _(site)_ Update search link to ensure proper URL generation
+- _(style)_ Prevent navbar to be partially hidden under admin bar when logged in
 
 ### 📚 Documentation
 
@@ -24,29 +34,28 @@
 
 - Update dependencies
 
-
 ## 5.66.0 - 28 September 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
-- *(customizer)* Add location control with ACF Google Map support and sanitize location function
-- *(location)* Add Location_Customize_Control for ACF Google Map integration and enhance business location retrieval
-- *(site)* Add get_business_location method to retrieve configured business location
+- _(customizer)_ Add location control with ACF Google Map support and sanitize location function
+- _(location)_ Add Location_Customize_Control for ACF Google Map integration and enhance business location retrieval
+- _(site)_ Add get_business_location method to retrieve configured business location
 
 ### 🐛 Bug Fixes
 
-- *(accordion-item)* Correct typo in itemprop attribute
-- *(acf)* Prevent multiple ACF initialization by checking if ACF is already defined
-- *(blocks)* Enhance core blocks filtering logic and improve documentation
-- *(docs)* Clarify naming conventions and class usage in SKILL.md
-- *(rank-math-schema-item)* Update width and max-width properties to unset
-- *(twig-filters)* Correct parameter type descriptions for picture sizes and tags
+- _(accordion-item)_ Correct typo in itemprop attribute
+- _(acf)_ Prevent multiple ACF initialization by checking if ACF is already defined
+- _(blocks)_ Enhance core blocks filtering logic and improve documentation
+- _(docs)_ Clarify naming conventions and class usage in SKILL.md
+- _(rank-math-schema-item)_ Update width and max-width properties to unset
+- _(twig-filters)_ Correct parameter type descriptions for picture sizes and tags
 - Correct comment formatting for load more action filter in Node Overview Block
 
 ### 📚 Documentation
 
-- *(helper-functions)* Add @api annotation to format_phone_number function
-- *(twig-filters)* Update documentation for header breakpoint and offcanvas menu layout adjustments
+- _(helper-functions)_ Add @api annotation to format_phone_number function
+- _(twig-filters)_ Update documentation for header breakpoint and offcanvas menu layout adjustments
 - Document the JS skill
 - Fix docs
 
@@ -54,22 +63,21 @@
 
 - Lint files
 
-
 ## 5.65.2 - 10 September 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Add publish workflow and update agent instructions
 
 ### 🐛 Bug Fixes
 
-- *(composer)* Update package versions and references in composer.lock
-- *(filters)* Update $args description for picture element filtering
-- *(gitattributes)* Add phpunit.xml.dist and README.md to export-ignore list
-- *(gitattributes)* Add resources/agents to export-ignore list
-- *(license-manager)* Update Timber version reference to use constant VERSION
-- *(theme)* Correct filter names for button and file block rendering
-- *(twig-filters)* Correct parameter type documentation for image_sizes attribute
+- _(composer)_ Update package versions and references in composer.lock
+- _(filters)_ Update $args description for picture element filtering
+- _(gitattributes)_ Add phpunit.xml.dist and README.md to export-ignore list
+- _(gitattributes)_ Add resources/agents to export-ignore list
+- _(license-manager)_ Update Timber version reference to use constant VERSION
+- _(theme)_ Correct filter names for button and file block rendering
+- _(twig-filters)_ Correct parameter type documentation for image_sizes attribute
 
 ## 5.65.1 - 09 September 2026
 
