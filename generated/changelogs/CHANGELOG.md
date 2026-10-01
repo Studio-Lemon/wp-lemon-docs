@@ -1,4 +1,30 @@
 
+## 5.66.1 - 01 October 2026
+
+### ⛰️  Features
+
+- *(agent skills)* Add skill and script for self-hosting Google Fonts
+- *(search)* Enhance search result title styling and increase excerpt length
+- *(site)* Add get_search_page function for dynamic search URL generation
+
+### 🐛 Bug Fixes
+
+- *(sdearch)* Update search results count in data layer for improved analytics
+- *(search)* Update search URL generation to remove unnecessary query parameter
+- *(search)* Remove search results count from context in search template
+- *(search)* Update dataLayer to use correct search results count
+- *(site)* Update search link to ensure proper URL generation
+- *(style)* Prevent navbar to be partially hidden under admin bar when logged in
+
+### 📚 Documentation
+
+- Document new get_search_page function
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies
+
+
 ## 5.66.0 - 28 September 2026
 
 ### ⛰️  Features
