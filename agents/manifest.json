@@ -1,10 +1,10 @@
 {
   "version": "5.66.2",
-  "agents_revision": "83bc40ce0b3fe33b39e42aae9fb331e93a9e6fce07e689273b957372368425c6",
-  "revision": 1,
-  "released_at": "2026-10-09T07:27:36Z",
-  "sha256": "83bc40ce0b3fe33b39e42aae9fb331e93a9e6fce07e689273b957372368425c6",
+  "agents_revision": "5b4f45ea4f3f36f0e31607a3cc05d593f7a94b76423757039be7e641519dedc3",
+  "revision": 2,
+  "released_at": "2026-10-12T12:44:05Z",
+  "sha256": "5b4f45ea4f3f36f0e31607a3cc05d593f7a94b76423757039be7e641519dedc3",
   "file_count": 19,
-  "source_commit": "aadceb5c00f6f1547ece65a010b7abbfea3c3ab5",
+  "source_commit": "e1d0daf868ab9217463be3e22a8ea9d177bec4dc",
   "tarball": "agents/agents.tar.gz"
 }
