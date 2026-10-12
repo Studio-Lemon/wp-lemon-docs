@@ -1,11 +1,36 @@
+## 5.66.3 - 12 October 2026
+
+### ⛰️ Features
+
+- _(ci)_ Publish agent instructions independently of theme releases
+- Add filters to modify JSON-LD data and OpenGraph Slack enhanced data
+- Add 'show_in_rest' option to ACF fields for job, person, and menu
+
+### 🐛 Bug Fixes
+
+- _(fonts)_ Update font URL path in SCSS generation for correct referencing
+- _(style)_ Prevent contact button labels wrapping on hover ([#364](https://github.com/orhun/git-cliff/issues/364))
+
+### 📚 Documentation
+
+- _(agents)_ Add two gaps found in docs vs skills
+- _(agents)_ Clarify blocks SCSS auto-import is CLI-only
+- _(agents)_ Fix blocks skill — SCSS lives next to block, import is manual
+- _(agents)_ Fix ACF fields skill — loader order, acf/init pattern, file naming
+- _(skills)_ Update SKILL.md with CLI block creation instructions and clarify SCSS import process
+
+### ⚙️ Miscellaneous Tasks
+
+- Upgrade actions/checkout from v6 to v7 in workflow files
+- Remove publish-resources action and update workflows to use new path
 
 ## 5.66.2 - 01 October 2026
 
 ### 🐛 Bug Fixes
 
-- *(a11y)* Add aria-hidden attributes to icons for improved accessibility
-- *(pagination)* Enhance accessibility with ARIA attributes and improve styles
-- *(style)* Add excerpt styling for improved layout
+- _(a11y)_ Add aria-hidden attributes to icons for improved accessibility
+- _(pagination)_ Enhance accessibility with ARIA attributes and improve styles
+- _(style)_ Add excerpt styling for improved layout
 
 ### ⚙️ Miscellaneous Tasks
 

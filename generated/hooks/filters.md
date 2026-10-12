@@ -3122,6 +3122,26 @@ add_filter('wp-lemon/filter/webp-quality', function ($quality) {
 });
 ```
 
+## wp-lemon/seo/json-ld/person/allowed-post-types
+
+Filters the allowlist of post types for which Person entities should remain in the JSON-LD data.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $allowed_post_types | `array` | The allowlist of post types for which Person entities should remain in the JSON-LD data. |
+
+</div>
+
+**PHP**
+
+```php
+    add_filter( 'wp-lemon/seo/json-ld/person/allowed-post-types', function ( $allowed_post_types ) {
+        return ['article', 'news', 'post'];
+    } );
+```
+
 ## wp-lemon/filter/blocks
 
 Filters the blocks to load.
