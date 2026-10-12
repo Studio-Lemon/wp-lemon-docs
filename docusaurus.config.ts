@@ -34,6 +34,19 @@ const config: Config = {
   markdown: {
     mermaid: false,
   },
+  plugins: [
+    [
+      'docusaurus-plugin-llms',
+      {
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        docsDir: 'docs',
+        title: 'wp-lemon Docs',
+        description:
+          'Documentation for wp-lemon, a WordPress theme for creating good looking and lean websites.',
+      },
+    ],
+  ],
   themes: [
     // ... Your other themes.
     [
