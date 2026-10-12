@@ -45,7 +45,7 @@ This filter wraps the WordPress `antispambot()` function for use in Twig templat
 {% if post.meta('email') %}
     {% set email = post.meta('email')|antispambot %}
     <span class="crd__metaitem">
-        <i class="wp-lemon-icon-e-mail"></i>
+        <i class="wp-lemon-icon-e-mail" aria-hidden="true"></i>
         <a href="mailto:{{ email }}" title="{{ __('Mail %s', 'wp-lemon')|format(post.title) }}">{{ email }}</a>
     </span>
 {% endif %}

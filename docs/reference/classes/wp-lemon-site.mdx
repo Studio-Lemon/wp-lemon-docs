@@ -20,6 +20,7 @@ You will be able to retrieve this information from the context in your twig file
 | <span class="method-name">[add_site_information()](#add_site_information)</span> | <span class="method-type"></span> | <span class="method-description">Static method to add site information from wherever you want.</span> |
 | <span class="method-name">[extend_site_information()](#extend_site_information)</span> | <span class="method-type">`array`</span> | <span class="method-description">This is the main method that is overridden by the child-site class.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> $context The updated Timber context.</span></span> |
 | <span class="method-name">[get_archive_page()](#get_archive_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get archive information of singular item.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['id', 'title', 'url/link', 'status']</span></span> |
+| <span class="method-name">[get_business_location()](#get_business_location)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get the configured business location.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The business location, or false when none is configured.</span></span> |
 | <span class="method-name">[get_site_information()](#get_site_information)</span> | <span class="method-type">`mixed`</span> | <span class="method-description">Get specific site information.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> $value     The value retrieved from the site information.</span></span> |
 | <span class="method-name">[get_special_page()](#get_special_page)</span> | <span class="method-type">`array` or `false`</span> | <span class="method-description">Get special page information.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> Contains ['id', 'title', 'url/link'] or false if key does not exist.</span></span> |
 | <span class="method-name">[is_archive_page()](#is_archive_page)</span> | <span class="method-type">`bool`</span> | <span class="method-description">Check if the current page is an archive page for a specific post type.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> True if the current page is an archive page for the specified post type, false otherwise.</span></span> |
@@ -116,6 +117,48 @@ public function block_context($context): array {
     $news_archive = WP_Lemon_Child_Site::get_archive_page('news');
 
 }
+```
+
+---
+
+### get\_business\_location()
+
+Get the configured business location.
+
+Returns the location selected in the Contact section of the Customizer.
+
+The returned array can contain:
+
+- `address` (`string`): The formatted address.
+- `lat` (`string`): The latitude.
+- `lng` (`string`): The longitude.
+- `zoom` (`int`): The Google Maps zoom level.
+- `place_id` (`string`): The Google Maps place ID.
+- `name` (`string`): The location name.
+- `street_number` (`string`): The street number.
+- `street_name` (`string`): The street name.
+- `street_name_short` (`string`): The abbreviated street name.
+- `city` (`string`): The city.
+- `state` (`string`): The state or province.
+- `state_short` (`string`): The abbreviated state or province.
+- `post_code` (`string`): The postal code.
+- `country` (`string`): The country.
+- `country_short` (`string`): The country code.
+- `location_link` (`string`): The Google Maps location URL.
+- `route_link` (`string`): The Google Maps directions URL.
+
+**since** 5.66.0
+
+**Returns:** `array|false` The business location, or false when none is configured.
+
+<ul><li>**address**<br/>`string`</li><li>**lat**<br/>`string`</li><li>**lng**<br/>`string`</li><li>**zoom**<br/>`int`</li><li>**place_id**<br/>`string`</li><li>**name**<br/>`string`</li><li>**street_number**<br/>`string`</li><li>**street_name**<br/>`string`</li><li>**street_name_short**<br/>`string`</li><li>**city**<br/>`string`</li><li>**state**<br/>`string`</li><li>**state_short**<br/>`string`</li><li>**post_code**<br/>`string`</li><li>**country**<br/>`string`</li><li>**country_short**<br/>`string`</li><li>**location_link**<br/>`string`</li><li>**route_link**<br/>`string`</li></ul>
+
+Example usage:
+
+**PHP**
+
+```php
+$location = WP_Lemon_Child_Site::get_business_location();
 ```
 
 ---

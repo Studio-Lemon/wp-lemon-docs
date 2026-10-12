@@ -1,3 +1,103 @@
+
+## 5.66.2 - 01 October 2026
+
+### 🐛 Bug Fixes
+
+- *(a11y)* Add aria-hidden attributes to icons for improved accessibility
+- *(pagination)* Enhance accessibility with ARIA attributes and improve styles
+- *(style)* Add excerpt styling for improved layout
+
+### ⚙️ Miscellaneous Tasks
+
+- Format CHANGELOG entries for consistency and clarity
+
+## 5.66.1 - 01 October 2026
+
+### ⛰️ Features
+
+- _(agent skills)_ Add skill and script for self-hosting Google Fonts
+- _(search)_ Enhance search result title styling and increase excerpt length
+- _(site)_ Add get_search_page function for dynamic search URL generation
+
+### 🐛 Bug Fixes
+
+- _(search)_ Update search results count in data layer for improved analytics
+- _(search)_ Update search URL generation to remove unnecessary query parameter
+- _(site)_ Update search link to ensure proper URL generation
+- _(style)_ Prevent navbar to be partially hidden under admin bar when logged in
+
+### 📚 Documentation
+
+- Document new get_search_page function
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies
+
+## 5.66.0 - 28 September 2026
+
+### ⛰️ Features
+
+- _(customizer)_ Add location control with ACF Google Map support and sanitize location function
+- _(location)_ Add Location_Customize_Control for ACF Google Map integration and enhance business location retrieval
+- _(site)_ Add get_business_location method to retrieve configured business location
+
+### 🐛 Bug Fixes
+
+- _(accordion-item)_ Correct typo in itemprop attribute
+- _(acf)_ Prevent multiple ACF initialization by checking if ACF is already defined
+- _(blocks)_ Enhance core blocks filtering logic and improve documentation
+- _(docs)_ Clarify naming conventions and class usage in SKILL.md
+- _(rank-math-schema-item)_ Update width and max-width properties to unset
+- _(twig-filters)_ Correct parameter type descriptions for picture sizes and tags
+- Correct comment formatting for load more action filter in Node Overview Block
+
+### 📚 Documentation
+
+- _(helper-functions)_ Add @api annotation to format_phone_number function
+- _(twig-filters)_ Update documentation for header breakpoint and offcanvas menu layout adjustments
+- Document the JS skill
+- Fix docs
+
+### ⚙️ Miscellaneous Tasks
+
+- Lint files
+
+## 5.65.2 - 10 September 2026
+
+### ⛰️ Features
+
+- Add publish workflow and update agent instructions
+
+### 🐛 Bug Fixes
+
+- _(composer)_ Update package versions and references in composer.lock
+- _(filters)_ Update $args description for picture element filtering
+- _(gitattributes)_ Add phpunit.xml.dist and README.md to export-ignore list
+- _(gitattributes)_ Add resources/agents to export-ignore list
+- _(license-manager)_ Update Timber version reference to use constant VERSION
+- _(theme)_ Correct filter names for button and file block rendering
+- _(twig-filters)_ Correct parameter type documentation for image_sizes attribute
+
+## 5.65.1 - 09 September 2026
+
+### ⛰️ Features
+
+- _(acf)_ Enhance filter_acf_oembed to support additional query_args for URLs
+- _(acf)_ Add support for return_format = "url" with autoplay option in filter_acf_oembed
+- _(header)_ Add filter for customizing navbar brand HTML in header
+
+### 🐛 Bug Fixes
+
+- _(admin-controller)_ Ensure example URL has a trailing slash in support dashboard widget
+- _(deps)_ Update phpdocumentor packages and webmozart/assert to latest versions
+- _(node-overview)_ Initialize $args as an empty array in block_context method
+- _(twig-filters)_ Correct parameter documentation for tags and back button filters
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix docs
+
 ## 5.65.0 - 04 September 2026
 
 ### ⛰️ Features
