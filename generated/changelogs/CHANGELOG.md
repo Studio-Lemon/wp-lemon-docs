@@ -1,3 +1,18 @@
+
+## 5.66.4 - 14 October 2026
+
+### 🐛 Bug Fixes
+
+- *(a11y)* Correct focus outline and offset calculations in enhanced tab experience
+- Prevent cache clearing for auto-draft post status in archive cache function
+- Improve cache clearing logic on post status change
+- Enhance license manager error handling and caching for theme version requests
+- Optimize dynamic block examples fetching and add block editor request check
+- Remove unnecessary blank lines in JSON-LD filter
+- Fix get_archive_page
+- Correct action hook for simple page ordering cache clearing
+- Fix wordpress quirk where colors are suddenly hidden
+
 ## 5.66.3 - 12 October 2026
 
 ### ⛰️ Features
