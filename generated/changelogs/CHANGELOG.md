@@ -1,4 +1,12 @@
 
+## 5.66.5 - 15 October 2026
+
+### 🐛 Bug Fixes
+
+- Fix wrong check in js code
+- Clarify instructions for modifying generated block PHP files in SKILL.md
+
+
 ## 5.66.4 - 14 October 2026
 
 ### 🐛 Bug Fixes
