@@ -1,4 +1,4 @@
-## 5.67.beta1 - 19 October 2026
+## 5.67.0-beta.1 - 19 October 2026
 
 ### ⛰️ Features
 
