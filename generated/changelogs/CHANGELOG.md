@@ -1,3 +1,19 @@
+## 5.67.beta1 - 19 October 2026
+
+### ⛰️ Features
+
+- Add consent_preferences to cookie_consent_update event
+- Add consent flags to cookie_consent_update and document GTM pageview setup
+
+### 🐛 Bug Fixes
+
+- Make cookiebar consent persistent and restore it reliably
+
+### 📚 Documentation
+
+- Enhance SKILL.md with Bootstrap grid and BEM guidelines for layout and styling
+- Improve formatting in tag manager consent mode guide
+- Describe all consent flags in the tag manager guide
 
 ## 5.66.5 - 15 October 2026
 
@@ -6,12 +22,11 @@
 - Fix wrong check in js code
 - Clarify instructions for modifying generated block PHP files in SKILL.md
 
-
 ## 5.66.4 - 14 October 2026
 
 ### 🐛 Bug Fixes
 
-- *(a11y)* Correct focus outline and offset calculations in enhanced tab experience
+- _(a11y)_ Correct focus outline and offset calculations in enhanced tab experience
 - Prevent cache clearing for auto-draft post status in archive cache function
 - Improve cache clearing logic on post status change
 - Enhance license manager error handling and caching for theme version requests

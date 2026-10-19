@@ -1693,7 +1693,7 @@ The data is available in JavaScript via the global `wplemon` variable.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| $site | `array` | An array of script data.<br><br><ul><li>**$template**<br>`string` The stylesheet directory URI.</li><li>**$dist**<br>`string` The dist directory URI.</li><li>**$url**<br>`string` The site URL.</li><li>**$ajax**<br>`string` The admin-ajax.php URL.</li><li>**$ajax_nonce**<br>`string` The AJAX nonce for archive operations.</li><li>**$rest**<br>`string` The REST API URL.</li><li>**$archives**<br>`array` Archive-specific data used in archive.js.</li><li>**$i18n**<br>`array` Translations for frontend JavaScript.</li><li>**$nav_scroll**<br>`array` Navigation scroll settings.</li></ul> |
+| $site | `array` | An array of script data.<br><br><ul><li>**$template**<br>`string` The stylesheet directory URI.</li><li>**$dist**<br>`string` The dist directory URI.</li><li>**$url**<br>`string` The site URL.</li><li>**$ajax**<br>`string` The admin-ajax.php URL.</li><li>**$ajax_nonce**<br>`string` The AJAX nonce for archive operations.</li><li>**$rest**<br>`string` The REST API URL.</li><li>**$cookiebar**<br>`string` The REST endpoint that stores the cookiebar choice in a server-set cookie.</li><li>**$archives**<br>`array` Archive-specific data used in archive.js.</li><li>**$i18n**<br>`array` Translations for frontend JavaScript.</li><li>**$nav_scroll**<br>`array` Navigation scroll settings.</li></ul> |
 
 </div>
 
