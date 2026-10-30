@@ -17,6 +17,7 @@ This class is used for the node-archive block. Can be extended for custom ajax q
 
 | Name | Return Type | Summary/Returns |
 | --- | --- | --- |
+| <span class="method-name">[encode_fields()](#encode_fields)</span> | <span class="method-type">`string`</span> | <span class="method-description">Encode block fields into a signed token that can be sent to the client and back.<br/><br/><span class="method-return"><span class="method-return-label">Returns:</span> The signed token.</span></span> |
 | <span class="method-name">[extra_args()](#extra_args)</span> | <span class="method-type"></span> | <span class="method-description">Add extra arguments to the query.</span> |
 | <span class="method-name">[get()](#get)</span> | <span class="method-type"></span> | <span class="method-description">Get an allowlisted protected property value.</span> |
 | <span class="method-name">[prepare()](#prepare)</span> | <span class="method-type"></span> | <span class="method-description">Prepare parameters before building the query arguments.</span> |
@@ -27,6 +28,26 @@ This class is used for the node-archive block. Can be extended for custom ajax q
 
 
 ## Class Methods
+
+### encode\_fields()
+
+Encode block fields into a signed token that can be sent to the client and back.
+
+The signature prevents the client from tampering with the values.
+
+`encode_fields( array $fields )`
+
+**Returns:** `string` The signed token.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $fields | `array` | The block field values. |
+
+</div>
+
+---
 
 ### extra\_args()
 
@@ -66,6 +87,7 @@ Allowed properties:
 - show_excerpt
 - card_classes
 - columns
+- fields
 - current_action
 
 `get( string $property )`

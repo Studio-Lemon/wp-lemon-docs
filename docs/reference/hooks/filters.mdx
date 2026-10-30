@@ -2468,6 +2468,30 @@ function filter_dog_node_overview_action($action, $fields)
 add_filter('wp-lemon/filter/block/node-overview/dog/load-more-action', __NAMESPACE__ . '\\filter_dog_node_overview_action', 10, 2);
 ```
 
+## wp-lemon/filter/block/node-overview/\{$post\_type\}/ajax-fields
+
+Filters which block fields are sent (signed) to the AJAX query.
+
+The values end up in the page source and are passed as second argument to the
+`wp-lemon/filter/block/node-overview/\{$post_type\}/args` filter during load more / filter requests.
+Use this to limit the payload to the fields you need.
+
+`$post_type` the post type dynamically set in the block.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $fields | `array` | The fields of the block. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/node-overview/dog/ajax-fields', fn($fields) => array_intersect_key($fields, ['gender_to_show' => true]));
+```
+
 ## wp-lemon/filter/block/timeline-item/allowed-blocks
 
 Filters the allowed blocks for the timeline-item block.
@@ -2762,6 +2786,27 @@ if ($count > 0) {
 }
 
 add_filter('wp-lemon/filter/navwalker/10/link-attributes', __NAMESPACE__ . '\\link_attributes_job', 10, 4);
+```
+
+## wp-lemon/filter/diagnostics/data
+
+Filters the diagnostics data before it is sent.
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $data | `array` | Diagnostics data. |
+
+</div>
+
+**PHP**
+
+```php
+    add_filter( 'wp-lemon/filter/diagnostics/data', function ( $data ) {
+        $data['custom'] = 'value';
+        return $data;
+    } );
 ```
 
 ## wp-lemon/filter/model/faq-slug
