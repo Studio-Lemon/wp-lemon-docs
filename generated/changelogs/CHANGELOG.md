@@ -1,3 +1,25 @@
+
+## 5.67.0-beta.2 - 30 October 2026
+
+### ⛰️  Features
+
+- *(node-overview)* Pass block fields to the AJAX query args filter
+- Add PHP version to diagnostics data and introduce filter for customization
+
+### 🐛 Bug Fixes
+
+- Change widget title heading from h3 to h2 for improved semantics
+
+### 📚 Documentation
+
+- *(agents)* Update block and styling skills
+- Enhance SKILL.md with guidelines for block spacing and context management
+- Update tagmanager-consent-mode.md for clarity and localization improvements
+
+### 🎨 Styling
+
+- Update padding and min-height calculations to support fallback values
+
 ## 5.67.0-beta.1 - 19 October 2026
 
 ### ⛰️ Features

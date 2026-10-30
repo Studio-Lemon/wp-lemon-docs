@@ -28,19 +28,20 @@ Because returning visitors are not affected, the extra `page_view` is never sent
 
 ### 1. Create the variable
 
-- Variable type: **Data Layer Variable**
-- Data Layer Variable Name: `consent_analytics`
 - Name: `DLV - consent_analytics`
+- Variable type: **Data Layer Variable (Variabele voor gegevenslaag)**
+- Data Layer Variable Name: `consent_analytics`
 
 ### 2. Create the trigger
 
-- Trigger type: **Custom Event** (CE)
+- Name: `CE - cookie_consent_update (analytics granted)`
+- Trigger type: **Custom Event** (CE) (Aangepaste gebeurtenis)
 - Event name: `cookie_consent_update`
 - Fires on: **Some Custom Events**, `DLV - consent_analytics` equals `true`
-- Name: `CE - cookie_consent_update (analytics granted)`
 
 ### 3. Create the tag
 
+- Name: `GA4 - page_view (analytics granted)`
 - Tag type: **Google Analytics: GA4 Event**
 - Measurement ID: the same ID as your Google tag
 - Event name: `page_view`
