@@ -1,9 +1,12 @@
+## 5.67.0 - 02 November 2026
+
+- Release of the two beta versions
 
 ## 5.67.0-beta.2 - 30 October 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
-- *(node-overview)* Pass block fields to the AJAX query args filter
+- _(node-overview)_ Pass block fields to the AJAX query args filter
 - Add PHP version to diagnostics data and introduce filter for customization
 
 ### 🐛 Bug Fixes
@@ -12,7 +15,7 @@
 
 ### 📚 Documentation
 
-- *(agents)* Update block and styling skills
+- _(agents)_ Update block and styling skills
 - Enhance SKILL.md with guidelines for block spacing and context management
 - Update tagmanager-consent-mode.md for clarity and localization improvements
 
