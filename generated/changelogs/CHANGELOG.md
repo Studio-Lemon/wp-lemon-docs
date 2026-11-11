@@ -1,3 +1,22 @@
+
+## 5.67.1 - 11 November 2026
+
+### ⛰️  Features
+
+- *(cookiebar)* Add tracking events for cookiebar interactions
+- Enhance backend notification accessibility with role attribute
+- Add button on where to edit the opening hours in the opening hours block
+
+### 🚜 Refactor
+
+- Remove redundant h3 styling from widget title
+- Remove FAQ blocks and related classes for cleanup
+
+### ⚙️ Miscellaneous Tasks
+
+- Update lang
+- Remove redundant error patterns from PHPStan configuration
+
 ## 5.67.0 - 02 November 2026
 
 - Release of the two beta versions
