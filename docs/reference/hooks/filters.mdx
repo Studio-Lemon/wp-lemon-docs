@@ -1896,67 +1896,6 @@ Filters the allowed post types to link to in the content-card block link field.
 add_filter('wp-lemon/filter/block/content-card/fields/post-types', fn(): array => ['page', 'news', 'case']);
 ```
 
-## wp-lemon/filter/block/faq-highlights/posts-per-page
-
-Filters the amount of posts per page for the faq-highlights block.
-
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $blocks | `int` | the amount of posts per page. |
-
-</div>
-
-**PHP**
-
-```php
-add_filter('wp-lemon/filter/block/faq-highlights/posts-per-page', function () {
-    return 9;
-});
-```
-
-## wp-lemon/filter/block/faq-highlights/allowed-blocks
-
-Filters the allowed blocks for the faq-highlights block.
-
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $blocks | `array` | the allowed blocks. |
-
-</div>
-
-**PHP**
-
-```php
-add_filter('wp-lemon/filter/block/faq-highlights/allowed-blocks', function ($blocks) {
-    $blocks[] = 'acf/custom-block';
-    return $blocks;
-});
-```
-
-## wp-lemon/filter/block/faq-highlights/overview-button-text
-
-Filters the overview button text for the faq-highlights block.
-
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $overview_button_text | `string` | the overview button text. |
-
-</div>
-
-**PHP**
-
-```php
-add_filter('wp-lemon/filter/block/faq-highlights/overview-button-text', function ($text) {
-    return __('View all FAQs', 'wp-lemon-child');
-});
-```
-
 ## wp-lemon/filter/block/image-card/allowed-blocks"
 
 Filters the allowed blocks for the image-card block.
@@ -2807,50 +2746,6 @@ Filters the diagnostics data before it is sent.
         $data['custom'] = 'value';
         return $data;
     } );
-```
-
-## wp-lemon/filter/model/faq-slug
-
-Filters the FAQ slug.
-
-Use this filter to change the slug of the FAQ post type.
-
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $faq_slug | `string` | The FAQ slug. |
-
-</div>
-
-**PHP**
-
-```php
-add_filter('wp-lemon/filter/model/faq-slug', function ($faq_slug) {
-    return 'veelgestelde-vragen';
-});
-```
-
-## wp-lemon/filter/faq/related-posts
-
-Filters the number of related posts to query.
-
-Defaults to 6.
-
-<div class="table-responsive">
-
-| Name | Type | Description |
-| --- | --- | --- |
-| $items | `int` | The number of items to query. |
-
-</div>
-
-**PHP**
-
-```php
-add_filter('wp-lemon/filter/faq/related-posts', function ($items) {
-    return 9;
-});
 ```
 
 ## wp-lemon/filter/ajax-query/\{$this->current\_action\}/context
