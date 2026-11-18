@@ -1,4 +1,27 @@
 
+## 5.68.0 - 18 November 2026
+
+### ⛰️  Features
+
+- Feat: add filters for HTML attributes of blocks and cards in documentation
+fix: simplify search page URL generation in helper functions
+fix: update location validation to use empty array check
+fix: refine HTML attribute filtering logic in Timber extension
+fix: optimize media fetching logic in block loader
+- Enhance block rendering with new HTML attribute filters for outer and inner containers
+- Add html_attr and html_attr_merge functions with filters for rendering HTML attributes in Twig
+- Add alignment attribute to ACF block rendering
+
+### 🐛 Bug Fixes
+
+- Ensure default text for link in price card footer
+- Correct outline-offset calculation in enhanced tab experience styles
+
+### ⚙️ Miscellaneous Tasks
+
+- Update required version for Bulldozer to 5.14.1
+
+
 ## 5.67.1 - 11 November 2026
 
 ### ⛰️  Features

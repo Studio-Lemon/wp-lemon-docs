@@ -218,6 +218,117 @@ Use this filter to toggle the animation for a specific block.
 add_filter('wp-lemon/filter/block/section/animation/hide', '__return_true');
 ```
 
+## wp-lemon/filter/block/attributes
+
+Filters the HTML attributes of the outer wrapper element of all blocks.
+
+The attributes are rendered with the Twig `html_attr` function, so iterable values
+become space separated lists, `null`/`false` values are omitted and `true` renders an empty attribute.
+
+**since** 5.68.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $html_attributes | `array` | The wrapper attributes.<br><br><ul><li>**$class**<br>`array` The block classes.</li><li>**$id**<br>`string` The block ID or anchor, if set.</li></ul> |
+| $post | `\Timber\Post` or `null` | The current post, if available. |
+| $fields | `array` or `false` | The ACF fields of the block. |
+| $attributes | `array` | The block attributes. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/attributes', function ($html_attributes, $post, $fields, $attributes) {
+    $html_attributes['data-block'] = $attributes['name'];
+    return $html_attributes;
+}, 10, 4);
+```
+
+## "wp-lemon/filter/block/{$slug}/attributes
+
+Filters the HTML attributes of the outer wrapper element of a specific block.
+
+`$slug` the block slug.
+
+**since** 5.68.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $html_attributes | `array` | The wrapper attributes, see `wp-lemon/filter/block/attributes`. |
+| $post | `\Timber\Post` or `null` | The current post, if available. |
+| $fields | `array` or `false` | The ACF fields of the block. |
+| $attributes | `array` | The block attributes. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/section/attributes', function ($html_attributes, $post, $fields, $attributes) {
+    $html_attributes['class'][] = 'section--custom';
+    return $html_attributes;
+}, 10, 4);
+```
+
+## wp-lemon/filter/block/inner-attributes
+
+Filters the HTML attributes of the inner container of all full width, non-fluid blocks.
+
+**since** 5.68.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $html_attributes | `array` | The inner container attributes.<br><br><ul><li>**$class**<br>`array` The inner container classes.</li></ul> |
+| $post | `\Timber\Post` or `null` | The current post, if available. |
+| $fields | `array` or `false` | The ACF fields of the block. |
+| $attributes | `array` | The block attributes. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/inner-attributes', function ($html_attributes, $post, $fields, $attributes) {
+    $html_attributes['class'][] = 'my-inner-class';
+    return $html_attributes;
+}, 10, 4);
+```
+
+## "wp-lemon/filter/block/{$slug}/inner-attributes
+
+Filters the HTML attributes of the inner container of a specific full width, non-fluid block.
+
+`$slug` the block slug.
+
+**since** 5.68.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $html_attributes | `array` | The inner container attributes, see `wp-lemon/filter/block/inner-attributes`. |
+| $post | `\Timber\Post` or `null` | The current post, if available. |
+| $fields | `array` or `false` | The ACF fields of the block. |
+| $attributes | `array` | The block attributes. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/block/section/inner-attributes', function ($html_attributes, $post, $fields, $attributes) {
+    $html_attributes['class'][] = 'section__container--wide';
+    return $html_attributes;
+}, 10, 4);
+```
+
 ## wp-lemon/filter/date-notation
 
 Filters the default date notation
@@ -561,6 +672,115 @@ function custom_card_footer($card_footer, $post_id, $fields)
     return Timber::compile('components/cards/custom-footer.twig', []);
 }
 add_filter("wp-lemon/filter/card/{$card_type}/footer", __NAMESPACE__ . '\\custom_card_footer', 10, 3);
+```
+
+## wp-lemon/filter/card/holder-attributes
+
+Filters the HTML attributes of the card holder element of all cards.
+
+The attributes are rendered with the Twig `html_attr` function, so iterable values
+become space separated lists, `null`/`false` values are omitted and `true` renders an empty attribute.
+
+**since** 5.68.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $attributes | `array` | The holder attributes.<br><br><ul><li>**$class**<br>`array` The holder classes.</li><li>**$id**<br>`string` The card ID, if set.</li><li>**$data**<br>`string` -aos        The animation name, if animated.</li><li>**$data**<br>`int` -aos-delay  The animation delay, if set.</li><li>**$data**<br>`string` -aos-anchor The animation anchor, if set.</li></ul> |
+| $post | `\Timber\Post` or `null` | The post of the card, if available. |
+| $fields | `array` or `null` | The fields if the current card is an ACF block. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/card/holder-attributes', function ($attributes, $post, $fields) {
+    $attributes['class'][] = 'my-holder-class';
+    return $attributes;
+}, 10, 3);
+```
+
+## "wp-lemon/filter/card/{$card\_type}/holder-attributes
+
+Filters the HTML attributes of the card holder element for a specific card type.
+
+`$card_type` the post type dynamically set in the block.
+
+**since** 5.68.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $attributes | `array` | The holder attributes, see `wp-lemon/filter/card/holder-attributes`. |
+| $post | `\Timber\Post` or `null` | The post of the card, if available. |
+| $fields | `array` or `null` | The fields if the current card is an ACF block. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/card/news/holder-attributes', function ($attributes, $post, $fields) {
+    $attributes['data-post-id'] = $post?->id;
+    return $attributes;
+}, 10, 3);
+```
+
+## wp-lemon/filter/card/attributes
+
+Filters the HTML attributes of the card element (`a.crd` or `div.crd`) of all cards.
+
+**since** 5.68.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $attributes | `array` | The card attributes.<br><br><ul><li>**$class**<br>`array` The card classes.</li><li>**$href**<br>`string` The link url, only when the card is a link.</li><li>**$title**<br>`string` The link title, only when the card is a link.</li><li>**$target**<br>`string` The link target, only when the card is a link and a target is set.</li></ul> |
+| $post | `\Timber\Post` or `null` | The post of the card, if available. |
+| $fields | `array` or `null` | The fields if the current card is an ACF block. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/card/attributes', function ($attributes, $post, $fields) {
+    if (isset($attributes['href'])) {
+        $attributes['aria-label'] = $attributes['title'];
+    }
+    return $attributes;
+}, 10, 3);
+```
+
+## "wp-lemon/filter/card/{$card\_type}/attributes
+
+Filters the HTML attributes of the card element (`a.crd` or `div.crd`) for a specific card type.
+
+`$card_type` the post type dynamically set in the block.
+
+**since** 5.68.0
+
+<div class="table-responsive">
+
+| Name | Type | Description |
+| --- | --- | --- |
+| $attributes | `array` | The card attributes, see `wp-lemon/filter/card/attributes`. |
+| $post | `\Timber\Post` or `null` | The post of the card, if available. |
+| $fields | `array` or `null` | The fields if the current card is an ACF block. |
+
+</div>
+
+**PHP**
+
+```php
+add_filter('wp-lemon/filter/card/news/attributes', function ($attributes, $post, $fields) {
+    $attributes['class'][] = 'crd--highlighted';
+    return $attributes;
+}, 10, 3);
 ```
 
 ## "wp-lemon/filter/block/node-overview/{$card\_type}/load-more-text
