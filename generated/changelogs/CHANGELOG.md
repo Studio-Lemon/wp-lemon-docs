@@ -1,13 +1,26 @@
+## 5.68.1 - 19 November 2026
+
+### 🐛 Bug Fixes
+
+- Update pre-release script to use yarn for PHP docs generation
+
+### ⚙️ Miscellaneous Tasks
+
+- _(js)_ Reorganize cookie functions
+
+### 📚 Documentation
+
+- Add new methods to API and filters documentation for enhanced functionality
 
 ## 5.68.0 - 18 November 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
 - Feat: add filters for HTML attributes of blocks and cards in documentation
-fix: simplify search page URL generation in helper functions
-fix: update location validation to use empty array check
-fix: refine HTML attribute filtering logic in Timber extension
-fix: optimize media fetching logic in block loader
+  fix: simplify search page URL generation in helper functions
+  fix: update location validation to use empty array check
+  fix: refine HTML attribute filtering logic in Timber extension
+  fix: optimize media fetching logic in block loader
 - Enhance block rendering with new HTML attribute filters for outer and inner containers
 - Add html_attr and html_attr_merge functions with filters for rendering HTML attributes in Twig
 - Add alignment attribute to ACF block rendering
@@ -21,12 +34,11 @@ fix: optimize media fetching logic in block loader
 
 - Update required version for Bulldozer to 5.14.1
 
-
 ## 5.67.1 - 11 November 2026
 
-### ⛰️  Features
+### ⛰️ Features
 
-- *(cookiebar)* Add tracking events for cookiebar interactions
+- _(cookiebar)_ Add tracking events for cookiebar interactions
 - Enhance backend notification accessibility with role attribute
 - Add button on where to edit the opening hours in the opening hours block
 
